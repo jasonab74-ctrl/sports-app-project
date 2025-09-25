@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sports App Project v1</title>
+  <meta name="description" content="Single-file, GitHub Pages–friendly sports feed template with embedded teams." />
+  <style>
+    :root { --bg: #0b0b0f; --fg: #eaeaea; --muted: #9aa0a6; --card: #111318; --line: #23262d; --brand-1:#1b1f3b; --brand-2:#6574cd; }
+    * { box-sizing: border-box; }
+    body { margin:0; background:var(--bg); color:var(--fg); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 12px; }
+    .site-header { background: linear-gradient(90deg, var(--brand-1), var(--brand-2)); color: #fff; }
+    .site-header .wrap { display:flex; align-items:center; gap:12px; }
+    .logo { width:48px; height:48px; object-fit:contain; border-radius:10px; background: rgba(255,255,255,.15); padding:6px; }
+    h1 { margin:0; font-size:1.6rem; }
+    .tagline { margin:2px 0 0; opacity:.9; }
+    .nav a { color:#fff; text-decoration:none; margin-left:12px; font-weight:600; }
+    .controls { display:flex; gap:8px; margin:12px 0; align-items:center; flex-wrap: wrap; }
+    button, .btn { background:#1f2937; color:#fff; border:0; padding:8px 12px; border-radius:10px; cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; gap:6px;}
+    button:hover, .btn:hover { opacity:.9; }
+    input, select, textarea { background:#111318; color:#eaeaea; border:1px solid #23262d; border-radius:10px; padding:8px 10px; }
+    .inline { display:inline-flex; align-items:center; gap:6px; }
+    .section-title { margin:16px 0 8px; opacity:.9; }
+    .cards { display:grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap:12px; }
+    .layout-list .cards { grid-template-columns: 1fr; }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:12px; display:flex; gap:8px; }
+    .card h3 { margin:2px 0 0; font-size:1.05rem; }
+    .card .meta { color:var(--muted); font-size:.85rem; margin-bottom:6px; }
+    .site-footer { color:var(--muted); font-size:.9rem; padding:20px 0; border-top:1px solid var(--line); margin-top:20px; }
+    a { color:#9dd4ff; }
+    .kbd { padding:2px 6px; border:1px solid #444; border-bottom-width:2px; border-radius:6px; background:#0e1117; font-size:.9em; }
+    dialog { border:1px solid var(--line); border-radius:14px; padding:0; max-width:800px; width:clamp(300px, 90vw, 800px); background:#0e1117; color:#eaeaea; }
+    dialog header { padding:12px; border-bottom:1px solid var(--line); display:flex; justify-content:space-between; align-items:center; }
+    dialog main { padding:12px; }
+    dialog footer { padding:12px; border-top:1px solid var(--line); display:flex; gap:8px; justify-content:flex-end; }
+    .muted { color:var(--muted); }
+    .row { display:flex; gap:8px; flex-wrap:wrap; }
+    .grow { flex:1 1 auto; }
+    .select { min-width: 200px; }
+  </style>
+</head>
+<body class="layout-grid">
+  <header class="site-header">
+    <div class="wrap">
+      <img class="logo" id="logo" src="" alt="logo" />
+      <div class="titles">
+        <h1 id="team-title">Sports App Project v1</h1>
+        <p class="tagline" id="team-tagline">Single-file, GitHub Pages–friendly</p>
+      </div>
+      <nav class="nav" id="nav-links" style="margin-left:auto;"></nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="controls">
+      <button id="btn-refresh">Refresh</button>
+      <div class="view-switch inline">
+        <span class="muted">View:</span>
+        <button data-view="grid">Grid</button>
+        <button data-view="list">List</button>
+      </div>
+      <div class="inline" style="margin-left:auto; gap:10px;">
+        <label class="inline"><span class="muted">Team:</span>
+          <select id="team-select" class="select">
+            <option value="purdue-mbb">Purdue MBB</option>
+            <option value="philadelphia-eagles">Philadelphia Eagles</option>
+            <option value="indianapolis-colts">Indianapolis Colts</option>
+          </select>
+        </label>
+        <input id="team-input" placeholder="or type a slug (e.g. purdue-mbb)" />
+        <button id="btn-load">Load</button>
+        <button id="btn-config">Config</button>
+        <button id="btn-items">Items</button>
+      </div>
+    </section>
+
+    <section class="row muted" style="margin-top:-6px;">
+      <div class="grow">
+        <span class="kbd">Tip</span> Add <code>?team=&lt;slug&gt;</code> to the URL (e.g. <code>?team=purdue-mbb</code>).
+        The app tries to fetch <code>./config/&lt;slug&gt;.json</code> and <code>./static/teams/&lt;slug&gt;/items.json</code>.
+        If not found, it falls back to the embedded configs below.
+      </div>
+    </section>
+
+    <h3 class="section-title">Latest</h3>
+    <section id="feed" class="cards"></section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Sports App Project v1 • Single file with Purdue/Eagles/Colts embedded. Later, add real JSON files to your repo to override.</p>
+    </div>
+  </footer>
+
+  <!-- Config dialog -->
+  <dialog id="dlg-config">
+    <header>
+      <strong>Team Config JSON</strong>
+      <button id="cfg-close">✕</button>
+    </header>
+    <main>
+      <p class="muted">Paste/edit the JSON. Applies for this session only (unless you add it as <code>config/&lt;slug&gt;.json</code> in your repo).</p>
+      <textarea id="cfg-json" rows="16" style="width:100%;"></textarea>
+    </main>
+    <footer>
+      <button id="cfg-cancel">Cancel</button>
+      <button id="cfg-apply">Apply</button>
+    </footer>
+  </dialog>
+
+  <!-- Items dialog -->
+  <dialog id="dlg-items">
+    <header>
+      <strong>Items JSON</strong>
+      <button id="itm-close">✕</button>
+    </header>
+    <main>
+      <p class="muted">Paste/edit items JSON like <code>{"slug":"...","items":[...]}</code>. Applies for this session only (unless you add it as <code>static/teams/&lt;slug&gt;/items.json</code>).</p>
+      <textarea id="itm-json" rows="16" style="width:100%;"></textarea>
+    </main>
+    <footer>
+      <button id="itm-cancel">Cancel</button>
+      <button id="itm-apply">Apply</button>
+    </footer>
+  </dialog>
+
+  <script>
+    // ------------------ Embedded starter configs & items (fallbacks) ------------------
+    const EMBEDDED_CONFIGS = {
+      "purdue-mbb": {
+        "team_name": "Purdue Men's Basketball",
+        "team_slug": "purdue-mbb",
+        "tagline": "News, videos, and updates — all in one place",
+        "assets": { "logo": "", "favicon": "", "hero_image": "", "fight_song": "" },
+        "theme": { "colors": ["#000000", "#CFB991"], "font_family": "ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial", "layout": "grid", "card_variant": "media", "show_hero": false },
+        "hero": { "title": "Boiler Up", "subtitle": "Latest Purdue MBB headlines & videos" },
+        "modules": { "news": true, "videos": true, "power_rankings": false },
+        "links": {
+          "schedule": "https://purduesports.com/sports/mens-basketball/schedule",
+          "standings": "https://www.ncaa.com/rankings/basketball-men/d1",
+          "tickets": "https://purduesports.com/sports/2020/5/15/tickets.aspx"
+        }
+      },
+      "philadelphia-eagles": {
+        "team_name": "Philadelphia Eagles",
+        "team_slug": "philadelphia-eagles",
+        "tagline": "Fly Eagles Fly — News & videos",
+        "assets": { "logo": "", "favicon": "", "hero_image": "", "fight_song": "" },
+        "theme": { "colors": ["#004C54", "#A5ACAF"], "font_family": "ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial", "layout": "grid", "card_variant": "media", "show_hero": false },
+        "hero": { "title": "Fly Eagles Fly", "subtitle": "Headlines, analysis, and highlights" },
+        "modules": { "news": true, "videos": true, "power_rankings": false },
+        "links": {
+          "schedule": "https://www.philadelphiaeagles.com/schedule/",
+          "standings": "https://www.nfl.com/standings/league/2025/REG",
+          "tickets": "https://www.ticketmaster.com/philadelphia-eagles-tickets/artist/805999"
+        }
+      },
+      "indianapolis-colts": {
+        "team_name": "Indianapolis Colts",
+        "team_slug": "indianapolis-colts",
+        "tagline": "For The Shoe — News & videos",
+        "assets": { "logo": "", "favicon": "", "hero_image": "", "fight_song": "" },
+        "theme": { "colors": ["#002C5F", "#A2AAAD"], "font_family": "ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial", "layout": "grid", "card_variant": "media", "show_hero": false },
+        "hero": { "title": "For The Shoe", "subtitle": "Headlines, analysis, and highlights" },
+        "modules": { "news": true, "videos": true, "power_rankings": false },
+        "links": {
+          "schedule": "https://www.colts.com/schedule/",
+          "standings": "https://www.nfl.com/standings/league/2025/REG",
+          "tickets": "https://www.ticketmaster.com/indianapolis-colts-tickets/artist/805987"
+        }
+      }
+    };
+
+    const now = () => Math.floor(Date.now()/1000);
+    const EMBEDDED_ITEMS = {
+      "purdue-mbb": {
+        "slug": "purdue-mbb",
+        "generated_at": now(),
+        "count": 2,
+        "items": [
+          {
+            "source": "CBS Sports",
+            "title": "Purdue opens preseason at No. 1 in major poll",
+            "url": "https://www.cbssports.com/college-basketball/",
+            "published": now() - 3600,
+            "extra": {"summary": "Early outlook puts Boilermakers at the top; schedule and roster notes."}
+          },
+          {
+            "source": "YouTube — BoilerBall",
+            "title": "Purdue MBB | Practice Highlights",
+            "url": "https://www.youtube.com/@boilerball1",
+            "published": now() - 7200,
+            "extra": {"summary": "Highlights from this week’s practice and player interviews."}
+          }
+        ]
+      },
+      "philadelphia-eagles": {
+        "slug": "philadelphia-eagles",
+        "generated_at": now(),
+        "count": 2,
+        "items": [
+          {
+            "source": "ESPN",
+            "title": "Eagles film room: offense trends & takeaways",
+            "url": "https://www.espn.com/nfl/team/_/name/phi/philadelphia-eagles",
+            "published": now() - 5400,
+            "extra": {"summary": "What’s clicking, what needs work, and how the schedule lines up."}
+          },
+          {
+            "source": "YouTube — Team Channel",
+            "title": "Mic’d Up: sideline sounds",
+            "url": "https://www.youtube.com/results?search_query=philadelphia+eagles+mic%27d+up",
+            "published": now() - 86000,
+            "extra": {"summary": "Best moments from the latest game, straight from the field."}
+          }
+        ]
+      },
+      "indianapolis-colts": {
+        "slug": "indianapolis-colts",
+        "generated_at": now(),
+        "count": 2,
+        "items": [
+          {
+            "source": "NFL.com",
+            "title": "Colts notebook: defense surging",
+            "url": "https://www.nfl.com/teams/indianapolis-colts/",
+            "published": now() - 4600,
+            "extra": {"summary": "Pressure packages, injury notes, and what’s next on the slate."}
+          },
+          {
+            "source": "YouTube — Team Channel",
+            "title": "Locker room recap",
+            "url": "https://www.youtube.com/results?search_query=indianapolis+colts+locker+room",
+            "published": now() - 91000,
+            "extra": {"summary": "Postgame reactions and highlights from players and coaches."}
+          }
+        ]
+      }
+    };
+
+    // ------------------ App core ------------------
+    function qp(name) { try { return new URL(location.href).searchParams.get(name); } catch(e){ return null; } }
+    function setTheme(theme = {}) {
+      const colors = theme.colors || ["#1b1f3b", "#6574cd"];
+      document.documentElement.style.setProperty("--brand-1", colors[0]);
+      document.documentElement.style.setProperty("--brand-2", colors[1] || colors[0]);
+      if (theme.font_family) document.body.style.fontFamily = theme.font_family;
+    }
+    function linkify(href, text) { return href ? `<a href="${href}" target="_blank" rel="noopener noreferrer">${text}</a>` : ""; }
+    async function fetchJSON(path) {
+      const res = await fetch(path, { cache: "no-store" });
+      if (!res.ok) throw new Error("Fetch failed: " + path);
+      return await res.json();
+    }
+
+    const mem = { configs: {}, items: {} };
+
+    function renderHeader(team) {
+      document.getElementById("team-title").textContent = team.team_name || "Sports App Project v1";
+      document.getElementById("team-tagline").textContent = team.tagline || "Single-file, GitHub Pages–friendly";
+      const logo = document.getElementById("logo");
+      const logoPath = team.assets?.logo || "";
+      if (logoPath) {
+        logo.src = logoPath;
+      } else {
+        logo.src = "data:image/svg+xml;utf8," + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"><rect width="100%" height="100%" rx="8" fill="#ffffff22"/></svg>');
+      }
+      const nav = document.getElementById("nav-links");
+      nav.innerHTML = [
+        linkify(team.links?.schedule, "Schedule"),
+        linkify(team.links?.standings, "Standings"),
+        linkify(team.links?.tickets, "Tickets"),
+      ].join("");
+    }
+
+    function renderItems(data) {
+      const feed = document.getElementById("feed");
+      feed.innerHTML = "";
+      const items = (data && data.items) ? data.items : [];
+      for (const it of items) {
+        const d = it.published ? new Date(it.published * 1000) : null;
+        const timeStr = d ? d.toLocaleString() : "—";
+        const card = document.createElement("article");
+        card.className = "card";
+        card.innerHTML = `
+          <div class="stack">
+            <div class="meta">${it.source || "Source"} • ${timeStr}</div>
+            <a href="${it.url}" target="_blank" rel="noopener noreferrer"><h3>${it.title || "Untitled"}</h3></a>
+            ${it.extra && it.extra.summary ? `<p>${it.extra.summary}</p>` : ""}
+          </div>
+        `;
+        feed.appendChild(card);
+      }
+    }
+
+    async function loadConfig(slug) {
+      if (mem.configs[slug]) return mem.configs[slug];
+      try {
+        const cfg = await fetchJSON(`./config/${slug}.json`);
+        mem.configs[slug] = cfg;
+        return cfg;
+      } catch(e) {
+        if (EMBEDDED_CONFIGS[slug]) return EMBEDDED_CONFIGS[slug];
+        return null;
+      }
+    }
+
+    async function loadItems(slug) {
+      if (mem.items[slug]) return mem.items[slug];
+      try {
+        const data = await fetchJSON(`./static/teams/${slug}/items.json`);
+        mem.items[slug] = data;
+        return data;
+      } catch(e) {
+        if (EMBEDDED_ITEMS[slug]) return EMBEDDED_ITEMS[slug];
+        return { items: [] };
+      }
+    }
+
+    async function loadTeam(slug) {
+      const cfg = mem.configs[slug] || await loadConfig(slug);
+      if (!cfg) {
+        document.getElementById("team-title").textContent = "Missing config";
+        document.getElementById("team-tagline").textContent = "Use the Team dropdown or type a slug, or click Config to paste JSON";
+        renderItems({ items: [] });
+        return;
+      }
+      setTheme(cfg.theme || {});
+      renderHeader(cfg);
+      const data = await loadItems(slug);
+      renderItems(data);
+      document.getElementById("team-input").value = slug;
+      document.getElementById("team-select").value = slug;
+    }
+
+    function bindUI() {
+      const btnGrid = document.querySelector('button[data-view="grid"]');
+      const btnList = document.querySelector('button[data-view="list"]');
+      btnGrid.addEventListener("click", () => document.body.classList.remove("layout-list"));
+      btnList.addEventListener("click", () => document.body.classList.add("layout-list"));
+
+      document.getElementById("btn-refresh").addEventListener("click", async () => {
+        const slug = document.getElementById("team-input").value.trim() || qp("team") || document.getElementById("team-select").value || "purdue-mbb";
+        const data = await loadItems(slug);
+        renderItems(data);
+      });
+
+      document.getElementById("btn-load").addEventListener("click", () => {
+        const s = (document.getElementById("team-input").value.trim() || document.getElementById("team-select").value);
+        if (s) {
+          const u = new URL(location.href); u.searchParams.set("team", s); location.href = u.toString();
+        }
+      });
+
+      document.getElementById("team-select").addEventListener("change", (e) => {
+        const s = e.target.value;
+        const u = new URL(location.href); u.searchParams.set("team", s); location.href = u.toString();
+      });
+
+      // Config dialog
+      const dlgCfg = document.getElementById("dlg-config");
+      const cfgTxt = document.getElementById("cfg-json");
+      const openCfg = () => {
+        const slug = document.getElementById("team-input").value.trim() || qp("team") || document.getElementById("team-select").value || "purdue-mbb";
+        const current = mem.configs[slug] || EMBEDDED_CONFIGS[slug] || { team_slug: slug };
+        cfgTxt.value = JSON.stringify(current, null, 2);
+        dlgCfg.showModal();
+      };
+      const closeCfg = () => dlgCfg.close();
+      document.getElementById("btn-config").addEventListener("click", openCfg);
+      document.getElementById("cfg-close").addEventListener("click", closeCfg);
+      document.getElementById("cfg-cancel").addEventListener("click", closeCfg);
+      document.getElementById("cfg-apply").addEventListener("click", () => {
+        try {
+          const parsed = JSON.parse(cfgTxt.value);
+          const slug = parsed.team_slug || (document.getElementById("team-input").value.trim() || "purdue-mbb");
+          mem.configs[slug] = parsed;
+          setTheme(parsed.theme || {});
+          renderHeader(parsed);
+          const u = new URL(location.href); u.searchParams.set("team", slug); history.replaceState({}, "", u.toString());
+          closeCfg();
+        } catch(e) { alert("Invalid JSON: " + e.message); }
+      });
+
+      // Items dialog
+      const dlgItm = document.getElementById("dlg-items");
+      const itmTxt = document.getElementById("itm-json");
+      const openItm = () => {
+        const slug = document.getElementById("team-input").value.trim() || qp("team") || document.getElementById("team-select").value || "purdue-mbb";
+        const current = mem.items[slug] || EMBEDDED_ITEMS[slug] || { slug, items: [] };
+        itmTxt.value = JSON.stringify(current, null, 2);
+        dlgItm.showModal();
+      };
+      const closeItm = () => dlgItm.close();
+      document.getElementById("btn-items").addEventListener("click", openItm);
+      document.getElementById("itm-close").addEventListener("click", closeItm);
+      document.getElementById("itm-cancel").addEventListener("click", closeItm);
+      document.getElementById("itm-apply").addEventListener("click", () => {
+        try {
+          const parsed = JSON.parse(itmTxt.value);
+          const slug = parsed.slug || (document.getElementById("team-input").value.trim() || "purdue-mbb");
+          mem.items[slug] = parsed;
+          renderItems(parsed);
+          const u = new URL(location.href); u.searchParams.set("team", slug); history.replaceState({}, "", u.toString());
+          closeItm();
+        } catch(e) { alert("Invalid JSON: " + e.message); }
+      });
+    }
+
+    window.addEventListener("DOMContentLoaded", async () => {
+      bindUI();
+      const slug = qp("team") || "purdue-mbb";
+      document.getElementById("team-input").value = slug;
+      document.getElementById("team-select").value = slug;
+      await loadTeam(slug);
+    });
+  </script>
+</body>
+</html>
