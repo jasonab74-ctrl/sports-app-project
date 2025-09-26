@@ -1,5 +1,6 @@
   # Team Hub (Static, GitHub Pages Only)
 
+
 A **zero-backend**, self-updating team news hub.  
 GitHub Actions collects trusted sources and writes ranked, de-duplicated JSON to `/static/teams/<team>/items.json`.  
 The frontend (this repo’s `index.html`) fetches that JSON and renders a clean **Daily Brief** + **Top Feed**.
