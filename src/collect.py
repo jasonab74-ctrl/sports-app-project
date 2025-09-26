@@ -84,10 +84,7 @@ def collect_from_feedlist(team, feedlist):
     return all_items
 
 def collect_team(team, feeds, out_file):
-    # Try your configured feeds first
     all_items = collect_from_feedlist(team, feeds)
-
-    # Fallback so the page is never empty
     if len(all_items) == 0:
         fallback = [
             {
@@ -118,11 +115,9 @@ def main():
     conf = yaml.safe_load(open("src/feeds.yaml", "r", encoding="utf-8"))
     teams_env = os.environ.get("TEAMS","").strip()
     teams = [t.strip() for t in teams_env.split(",") if t.strip()] if teams_env else list(conf.keys())
-    if not teams:
-        raise SystemExit("No teams specified and feeds.yaml is empty.")
+    if not teams: raise SystemExit("No teams specified and feeds.yaml is empty.")
     for team in teams:
-        if team not in conf:
-            continue
+        if team not in conf: continue
         collect_team(team, conf[team], f"static/teams/{team}/items.json")
 
 if __name__ == "__main__":
