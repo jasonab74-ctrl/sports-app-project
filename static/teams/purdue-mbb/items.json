@@ -1,30 +1,5 @@
 {
   "team": "purdue-mbb",
-  "generated_at": "2025-09-26T00:00:00Z",
-  "items": [
-    {
-      "team": "purdue-mbb",
-      "source": "Purdue Athletics",
-      "source_type": "rss",
-      "trust_level": "official",
-      "title": "Purdue announces 2025–26 non-conference slate",
-      "url": "https://purduesports.com/mbb-schedule-announce",
-      "guid": "demo-1",
-      "published_at": "2025-09-20T15:00:00Z",
-      "image_url": "https://purduesports.com/images/mbb.jpg",
-      "author": "Purdue Athletics"
-    },
-    {
-      "team": "purdue-mbb",
-      "source": "CBS Sports",
-      "source_type": "rss",
-      "trust_level": "national",
-      "title": "Way-too-early Big Ten power rankings: Purdue near the top again",
-      "url": "https://www.cbssports.com/college-basketball/big-ten-power-rankings/",
-      "guid": "demo-2",
-      "published_at": "2025-09-21T12:00:00Z",
-      "image_url": "https://www.cbssports.com/images/cbb.jpg",
-      "author": "CBS Sports"
-    }
-  ]
+  "generated_at": "2025-09-26T17:21:51.484414+00:00",
+  "items": []
 }
