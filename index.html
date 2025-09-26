@@ -3,236 +3,79 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Purdue Basketball — News</title>
-  <meta name="description" content="Live team news feed • auto-updates" />
-  <!-- Self-contained styles (no path issues on project Pages) -->
-  <style>
-    :root { --bg:#07171a; --card:#0d2227; --muted:#8aa2b2; --text:#eaf3f8; --accent:#2bd1ff; --chip:#103039; --chip-on:#1b4f5d; --border:#0e3a44; }
-    * { box-sizing: border-box; }
-    html, body { margin:0; padding:0; background:var(--bg); color:var(--text); font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    /* Header */
-    .topbar { position: sticky; top:0; z-index: 50; background: linear-gradient(180deg, #051216, #081b20); border-bottom: 1px solid var(--border); }
-    .topbar-inner { max-width: 1100px; margin: 0 auto; padding: 14px 16px; display:flex; align-items:center; gap:12px; }
-    .logo { width:36px; height:36px; border-radius: 8px; background:#0c2b33; display:grid; place-items:center; font-weight:700; border:1px solid var(--border); }
-    .title { display:flex; flex-direction:column; gap:2px; }
-    .title h1 { margin:0; font-size:18px; letter-spacing:.2px; }
-    .subtitle { color:var(--muted); font-size:12px; }
-
-    /* Toolbar */
-    .toolbar { max-width: 1100px; margin: 0 auto; padding: 10px 16px; display:flex; gap:10px; flex-wrap: wrap; align-items:center; border-bottom:1px solid var(--border); }
-    select, button { background:#0d2931; color:var(--text); border:1px solid var(--border); border-radius: 10px; padding:8px 10px; font-size:14px; }
-    button.primary { background:#1a88a0; border-color:#1a88a0; }
-    .stamp { margin-left:auto; color:var(--muted); font-size:12px; }
-
-    /* Chips */
-    .chips { max-width: 1100px; margin: 0 auto; padding: 10px 16px; display:flex; gap:8px; flex-wrap: wrap; }
-    .chip { background:var(--chip); color:#bfe6f1; border:1px solid var(--border); padding:6px 10px; border-radius: 999px; font-size:12px; cursor:pointer; user-select:none; }
-    .chip.active { background:var(--chip-on); }
-
-    /* Content */
-    .wrap { max-width:1100px; margin: 12px auto 40px; padding: 0 16px; }
-    .section-title { margin: 14px 0 8px; font-size:14px; color:#9cd6e6; text-transform: uppercase; letter-spacing:.6px; }
-    .list { display:flex; flex-direction:column; gap:8px; }
-    .item { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; display:grid; grid-template-columns: 1fr auto; gap:8px; }
-    .item h3 { margin:0; font-size:15px; line-height:1.25; }
-    .meta { font-size:12px; color:var(--muted); display:flex; gap:8px; align-items:center; }
-    .badge { background:#0f323a; border:1px solid var(--border); padding:2px 6px; border-radius:6px; font-size:11px; color:#bfe6f1; }
-    .thumb { width: 84px; height: 54px; border-radius: 8px; object-fit: cover; border:1px solid var(--border); display:block; }
-    .right { display:flex; align-items:center; gap:10px; }
-    .hidden { display:none; }
-
-    /* Empty state */
-    .empty { color:var(--muted); background: #092026; border:1px dashed var(--border); border-radius:12px; padding:16px; }
-    .code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; font-size:12px; background:#0a1f24; border:1px solid var(--border); padding:3px 6px; border-radius:6px; color:#bfe6f1; }
-
-    /* New items banner */
-    .banner { position: sticky; top:56px; z-index: 40; display:none; background:#114856; color:#d8f7ff; border-bottom:1px solid var(--border); }
-    .banner-inner { max-width:1100px; margin:0 auto; padding:8px 16px; display:flex; justify-content:space-between; align-items:center; gap:10px; }
-    .banner.show { display:block; }
-  </style>
+  <title>Team Hub</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/styles.css" />
+  <link rel="icon" href="./static/icons/icon-192.png" />
+  <meta name="theme-color" content="#0b0d12" />
 </head>
 <body>
-  <!-- Header -->
-  <div class="topbar">
-    <div class="topbar-inner">
-      <div class="logo">PB</div>
-      <div class="title">
-        <h1>Purdue Basketball — News</h1>
-        <div class="subtitle">Live team feed • auto-updates</div>
+  <header class="site-header">
+    <div class="wrap">
+      <div class="brand">
+        <img src="./static/icons/icon-192.png" alt="" class="brand-icon" />
+        <div class="brand-text">
+          <h1>Team Hub</h1>
+          <p class="subtitle">Trusted, fast, one place.</p>
+        </div>
+      </div>
+      <div class="controls">
+        <label class="sr-only" for="team">Team</label>
+        <select id="team" class="select">
+          <option value="purdue-mbb" selected>Purdue MBB</option>
+          <!-- Add more teams here when you add their items.json -->
+        </select>
+        <button id="refresh" class="btn">Refresh</button>
       </div>
     </div>
-  </div>
+  </header>
 
-  <!-- “New items available” banner -->
-  <div id="newBanner" class="banner">
-    <div class="banner-inner">
-      <div>New items available.</div>
-      <div>
-        <button class="primary" id="applyBtn">Refresh now</button>
+  <main class="wrap">
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Daily Brief</h2>
+        <span id="dailyCount" class="count-badge"></span>
       </div>
+      <div id="daily" class="cards"></div>
+      <div id="dailyEmpty" class="empty hidden">No items yet. Check back soon.</div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Top Feed</h2>
+        <span id="feedCount" class="count-badge"></span>
+      </div>
+      <div id="feed" class="cards"></div>
+      <div id="feedEmpty" class="empty hidden">No items yet. Check back soon.</div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Hosted on GitHub Pages • Auto-updates via GitHub Actions</p>
     </div>
-  </div>
+  </footer>
 
-  <!-- Toolbar -->
-  <div class="toolbar">
-    <select id="teamSelect">
-      <option value="purdue-mbb">Purdue MBB</option>
-    </select>
-    <button id="refreshBtn">Manual refresh</button>
-    <span class="stamp" id="stamp">Updated: —</span>
-  </div>
+  <template id="card-template">
+    <article class="card">
+      <a class="thumb" target="_blank" rel="noopener">
+        <img alt="">
+      </a>
+      <div class="content">
+        <a class="title" target="_blank" rel="noopener"></a>
+        <div class="meta">
+          <span class="source"></span>
+          <span class="dot">•</span>
+          <time class="when"></time>
+          <span class="dot">•</span>
+          <span class="trust"></span>
+        </div>
+        <p class="summary"></p>
+      </div>
+    </article>
+  </template>
 
-  <!-- Source chips -->
-  <div class="chips" id="chips"></div>
-
-  <!-- Content -->
-  <div class="wrap">
-    <div class="section-title">Daily Brief</div>
-    <div id="daily" class="list"></div>
-
-    <div class="section-title" style="margin-top:18px;">Top Feed</div>
-    <div id="feed" class="list"></div>
-
-    <div id="emptyState" class="empty hidden">
-      <div style="margin-bottom:6px;">Nothing to show yet.</div>
-      <div>Once the GitHub Action writes data to <span class="code">static/teams/&lt;team&gt;/items.json</span>, stories will appear here.</div>
-      <div style="margin-top:8px;">Current JSON: <a id="jsonLink" class="code" href="#">open items.json</a></div>
-    </div>
-  </div>
-
-  <!-- Self-contained JS -->
-  <script>
-    // ---- Utilities ----
-    const fmtTime = (iso) => {
-      try { return new Date(iso).toLocaleString(); } catch { return ""; }
-    };
-    const by = (sel) => document.querySelector(sel);
-
-    // ---- State ----
-    let currentTeam = "purdue-mbb";
-    let lastGeneratedAt = null;
-    let currentItems = [];
-    let activeSource = "All sources";
-
-    // ---- Rendering ----
-    function renderItems(items) {
-      const dailyEl = by("#daily");
-      const feedEl = by("#feed");
-      const emptyEl = by("#emptyState");
-
-      const makeRow = (it) => {
-        const img = it.image_url ? `<img class="thumb" src="${it.image_url}" alt="">` : "";
-        return `
-          <div class="item" data-source="${it.source}">
-            <div>
-              <h3><a href="${it.url}" target="_blank" rel="noopener">${it.title}</a></h3>
-              <div class="meta">
-                <span class="badge">${it.source}</span>
-                ${it.author ? `<span>${it.author}</span>` : ""}
-                ${it.published_at ? `<span>• ${fmtTime(it.published_at)}</span>` : ""}
-              </div>
-            </div>
-            <div class="right">
-              ${img}
-            </div>
-          </div>
-        `;
-      };
-
-      const daily = items.slice(0, 8);
-      const feed = items.slice(0, 50);
-
-      dailyEl.innerHTML = daily.map(makeRow).join("");
-      feedEl.innerHTML  = feed.map(makeRow).join("");
-
-      const hasAny = items.length > 0;
-      emptyEl.classList.toggle("hidden", hasAny);
-    }
-
-    function renderChips(items) {
-      const chipsEl = by("#chips");
-      const sources = Array.from(new Set(items.map(it => it.source))).sort();
-      const all = ["All sources", ...sources];
-      chipsEl.innerHTML = all.map(s => `<div class="chip ${s === activeSource ? "active" : ""}" data-src="${s}">${s}</div>`).join("");
-      chipsEl.querySelectorAll(".chip").forEach(ch => {
-        ch.addEventListener("click", () => {
-          activeSource = ch.getAttribute("data-src");
-          chipsEl.querySelectorAll(".chip").forEach(c => c.classList.remove("active"));
-          ch.classList.add("active");
-          applySourceFilter();
-        });
-      });
-    }
-
-    function applySourceFilter() {
-      const cards = document.querySelectorAll(".item");
-      cards.forEach(card => {
-        const src = card.getAttribute("data-source");
-        const show = (activeSource === "All sources") || (src === activeSource);
-        card.style.display = show ? "" : "none";
-      });
-    }
-
-    // ---- Data Loading ----
-    async function fetchJSON(url) {
-      const resp = await fetch(url, { cache: "no-store" });
-      if (!resp.ok) throw new Error("HTTP " + resp.status + " for " + url);
-      return resp.json();
-    }
-
-    const jsonUrlForTeam = (team) => `static/teams/${team}/items.json`;
-
-    async function loadTeam(team, { quiet=false } = {}) {
-      currentTeam = team;
-      const url = jsonUrlForTeam(team);
-      by("#jsonLink").href = url;
-
-      try {
-        const data = await fetchJSON(url);
-        const generated = data.generated_at || "";
-        const items = Array.isArray(data.items) ? data.items : [];
-
-        // Update header stamp
-        by("#stamp").textContent = "Updated: " + (generated ? fmtTime(generated) : "—");
-
-        // First load or manual refresh
-        if (!quiet) {
-          currentItems = items;
-          lastGeneratedAt = generated || null;
-          renderItems(currentItems);
-          renderChips(currentItems);
-          applySourceFilter();
-        } else {
-          // Quiet check: show banner if something changed
-          if (generated && lastGeneratedAt && generated !== lastGeneratedAt) {
-            by("#newBanner").classList.add("show");
-          }
-        }
-      } catch (e) {
-        console.error(e);
-        by("#daily").innerHTML = "";
-        by("#feed").innerHTML = "";
-        by("#emptyState").classList.remove("hidden");
-        by("#stamp").textContent = "Updated: —";
-      }
-    }
-
-    // ---- Auto-check for new data every 60s (but don't clobber the UI) ----
-    setInterval(() => loadTeam(currentTeam, { quiet: true }), 60000);
-    by("#applyBtn").addEventListener("click", async () => {
-      await loadTeam(currentTeam);
-      by("#newBanner").classList.remove("show");
-    });
-
-    // ---- Controls ----
-    by("#teamSelect").addEventListener("change", (e) => loadTeam(e.target.value));
-    by("#refreshBtn").addEventListener("click", () => loadTeam(currentTeam));
-
-    // ---- Init ----
-    loadTeam(currentTeam);
-  </script>
+  <script src="./static/js/app.js"></script>
 </body>
 </html>
