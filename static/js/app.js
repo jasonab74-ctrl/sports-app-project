@@ -1,6 +1,6 @@
 async function getJSON(path){
-  const r = await fetch(path, {cache: "no-store"});
-  if(!r.ok) throw new Error("HTTP " + r.status);
+  const r = await fetch(path, { cache: "no-store" });
+  if(!r.ok) throw new Error("HTTP " + r.status + " for " + path);
   return await r.json();
 }
 
@@ -20,7 +20,8 @@ function cardHTML(item){
 
 async function loadTeam(team){
   try{
-    const data = await getJSON(`/static/teams/${team}/items.json`);
+    // IMPORTANT: relative path for project Pages
+    const data = await getJSON(`static/teams/${team}/items.json`);
     const items = data.items || [];
     const daily = items.slice(0, 8);
     const feed = items.slice(0, 50);
