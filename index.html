@@ -4,9 +4,26 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Team Hub (Static)</title>
-  <!-- IMPORTANT: use relative paths on project Pages -->
-  <link rel="stylesheet" href="static/css/styles.css" />
   <meta name="description" content="Team-focused curated sports hub (GitHub Pages only)." />
+
+  <style>
+  :root { font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; }
+  body { margin:0; background:#0b0d12; color:#e8edf6; }
+  header { display:flex; justify-content:space-between; align-items:center; padding:12px 16px; background:#121722; position:sticky; top:0; }
+  h1 { margin:0; font-size:22px; }
+  .controls { display:flex; gap:8px; align-items:center; }
+  main { padding:16px; display:grid; gap:24px; max-width:1000px; margin:0 auto; }
+  section h2 { margin:0 0 8px; font-size:16px; color:#9db3ff; }
+  .card { background:#161c2e; border-radius:12px; padding:12px; display:flex; gap:12px; margin-bottom:10px; }
+  .card img { width:96px; height:96px; object-fit:cover; border-radius:8px; }
+  .card .meta { font-size:12px; color:#9aa3b2; margin-top:4px; }
+  .card a { color:#a7c4ff; text-decoration:none; }
+  .card a:hover { text-decoration:underline; }
+  button { background:#2b59ff; color:#fff; border:none; border-radius:10px; padding:8px 12px; cursor:pointer; }
+  button:hover { opacity:0.92; }
+  select { background:#161c2e; color:#e8edf6; border:1px solid #263149; border-radius:10px; padding:6px; }
+  .empty { color:#9aa3b2; padding:6px 0; }
+  </style>
 </head>
 <body>
   <header>
@@ -22,19 +39,58 @@
   <main>
     <section>
       <h2>Daily Brief</h2>
-      <div id="daily"></div>
+      <div id="daily" class="empty">Loading…</div>
     </section>
+
     <section>
       <h2>Top Feed</h2>
-      <div id="feed"></div>
+      <div id="feed" class="empty">Loading…</div>
     </section>
   </main>
 
-  <footer>
-    <p>Hosted on GitHub Pages • Auto-updates via GitHub Actions</p>
+  <footer style="max-width:1000px;margin:8px auto 24px;padding:0 16px;color:#9aa3b2;">
+    Hosted on GitHub Pages • Auto-updates via GitHub Actions
   </footer>
 
-  <!-- IMPORTANT: relative path -->
-  <script src="static/js/app.js"></script>
+  <script>
+  async function getJSON(path){
+    const r = await fetch(path, { cache: "no-store" });
+    if(!r.ok) throw new Error("HTTP " + r.status + " for " + path);
+    return r.json();
+  }
+  function cardHTML(item){
+    const dt = item.published_at ? new Date(item.published_at) : null;
+    const when = dt ? dt.toLocaleString() : "";
+    const img = item.image_url ? `<img src="${item.image_url}" alt="">` : "";
+    return `
+      <div class="card">
+        ${img}
+        <div>
+          <a href="${item.url}" target="_blank"><strong>${item.title}</strong></a>
+          <div class="meta">${item.source}${when ? " • " + when : ""}</div>
+        </div>
+      </div>`;
+  }
+  function render(list, el){
+    if(!list.length){ el.innerHTML = '<div class="empty">Nothing yet.</div>'; return; }
+    el.classList.remove('empty');
+    el.innerHTML = list.map(cardHTML).join('');
+  }
+  async function loadTeam(team){
+    try{
+      const data = await getJSON(`static/teams/${team}/items.json`);
+      const items = data.items || [];
+      render(items.slice(0,8), document.getElementById('daily'));
+      render(items.slice(0,50), document.getElementById('feed'));
+    }catch(err){
+      console.error(err);
+      document.getElementById('daily').innerHTML = '<div class="empty">Nothing yet.</div>';
+      document.getElementById('feed').innerHTML = '<div class="empty">Nothing yet.</div>';
+    }
+  }
+  const teamSelect = document.getElementById('teamSelect');
+  document.getElementById('refreshBtn').addEventListener('click', () => loadTeam(teamSelect.value));
+  loadTeam(teamSelect.value);
+  </script>
 </body>
 </html>
