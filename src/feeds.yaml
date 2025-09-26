@@ -1,0 +1,35 @@
+purdue-mbb:
+  - name: Purdue Athletics (Official MBB)
+    url: https://purduesports.com/rss.aspx?path=mbball
+    type: rss
+    trust_level: official
+
+  - name: Journal & Courier Purdue
+    url: https://rssfeeds.jconline.com/purdue/mbb
+    type: rss
+    trust_level: local
+
+  - name: GoldandBlack.com (On3)
+    url: https://www.on3.com/teams/purdue-boilermakers/feed/
+    type: rss
+    trust_level: beat
+
+  - name: Hammer and Rails (SB Nation)
+    url: https://www.hammerandrails.com/rss/current
+    type: rss
+    trust_level: blog
+
+  - name: r/CollegeBasketball (search Purdue)
+    url: https://www.reddit.com/r/CollegeBasketball/search.rss?q=Purdue&restrict_sr=on&sort=new&t=week
+    type: rss
+    trust_level: fan_forum
+
+  - name: YouTube Highlights (query Purdue Basketball)
+    url: https://www.youtube.com/feeds/videos.xml?search_query=Purdue+Basketball
+    type: rss
+    trust_level: national
+
+  - name: CBS Sports Purdue
+    url: https://www.cbssports.com/college-basketball/teams/PUR/purdue-boilermakers/rss/
+    type: rss
+    trust_level: national
