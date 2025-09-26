@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Team Hub (Static)</title>
+  <link rel="stylesheet" href="/static/css/styles.css">
+  <meta name="description" content="Team-focused curated sports hub (GitHub Pages only).">
+</head>
+<body>
+  <header>
+    <h1>Team Hub (Static)</h1>
+    <div class="controls">
+      <select id="teamSelect">
+        <option value="purdue-mbb">Purdue MBB</option>
+      </select>
+      <button id="refreshBtn">Refresh</button>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2>Daily Brief</h2>
+      <div id="daily"></div>
+    </section>
+    <section>
+      <h2>Top Feed</h2>
+      <div id="feed"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Hosted on GitHub Pages • Auto-updates via GitHub Actions</p>
+  </footer>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
