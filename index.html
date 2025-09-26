@@ -3,92 +3,236 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Team Hub (Static)</title>
-  <meta name="description" content="Team-focused curated sports hub (GitHub Pages only)." />
+  <title>Purdue Basketball — News</title>
+  <meta name="description" content="Live team news feed • auto-updates" />
+  <!-- Self-contained styles (no path issues on project Pages) -->
   <style>
-  :root { font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; }
-  body { margin:0; background:#0b0d12; color:#e8edf6; }
-  header { display:flex; justify-content:space-between; align-items:center; padding:12px 16px; background:#121722; position:sticky; top:0; }
-  h1 { margin:0; font-size:22px; }
-  .controls { display:flex; gap:8px; align-items:center; }
-  main { padding:16px; display:grid; gap:24px; max-width:1000px; margin:0 auto; }
-  section h2 { margin:0 0 8px; font-size:16px; color:#9db3ff; }
-  .card { background:#161c2e; border-radius:12px; padding:12px; display:flex; gap:12px; margin-bottom:10px; }
-  .card img { width:96px; height:96px; object-fit:cover; border-radius:8px; }
-  .card .meta { font-size:12px; color:#9aa3b2; margin-top:4px; }
-  .card a { color:#a7c4ff; text-decoration:none; }
-  .card a:hover { text-decoration:underline; }
-  button { background:#2b59ff; color:#fff; border:none; border-radius:10px; padding:8px 12px; cursor:pointer; }
-  button:hover { opacity:0.92; }
-  select { background:#161c2e; color:#e8edf6; border:1px solid #263149; border-radius:10px; padding:6px; }
-  .empty { color:#9aa3b2; padding:6px 0; }
+    :root { --bg:#07171a; --card:#0d2227; --muted:#8aa2b2; --text:#eaf3f8; --accent:#2bd1ff; --chip:#103039; --chip-on:#1b4f5d; --border:#0e3a44; }
+    * { box-sizing: border-box; }
+    html, body { margin:0; padding:0; background:var(--bg); color:var(--text); font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Header */
+    .topbar { position: sticky; top:0; z-index: 50; background: linear-gradient(180deg, #051216, #081b20); border-bottom: 1px solid var(--border); }
+    .topbar-inner { max-width: 1100px; margin: 0 auto; padding: 14px 16px; display:flex; align-items:center; gap:12px; }
+    .logo { width:36px; height:36px; border-radius: 8px; background:#0c2b33; display:grid; place-items:center; font-weight:700; border:1px solid var(--border); }
+    .title { display:flex; flex-direction:column; gap:2px; }
+    .title h1 { margin:0; font-size:18px; letter-spacing:.2px; }
+    .subtitle { color:var(--muted); font-size:12px; }
+
+    /* Toolbar */
+    .toolbar { max-width: 1100px; margin: 0 auto; padding: 10px 16px; display:flex; gap:10px; flex-wrap: wrap; align-items:center; border-bottom:1px solid var(--border); }
+    select, button { background:#0d2931; color:var(--text); border:1px solid var(--border); border-radius: 10px; padding:8px 10px; font-size:14px; }
+    button.primary { background:#1a88a0; border-color:#1a88a0; }
+    .stamp { margin-left:auto; color:var(--muted); font-size:12px; }
+
+    /* Chips */
+    .chips { max-width: 1100px; margin: 0 auto; padding: 10px 16px; display:flex; gap:8px; flex-wrap: wrap; }
+    .chip { background:var(--chip); color:#bfe6f1; border:1px solid var(--border); padding:6px 10px; border-radius: 999px; font-size:12px; cursor:pointer; user-select:none; }
+    .chip.active { background:var(--chip-on); }
+
+    /* Content */
+    .wrap { max-width:1100px; margin: 12px auto 40px; padding: 0 16px; }
+    .section-title { margin: 14px 0 8px; font-size:14px; color:#9cd6e6; text-transform: uppercase; letter-spacing:.6px; }
+    .list { display:flex; flex-direction:column; gap:8px; }
+    .item { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; display:grid; grid-template-columns: 1fr auto; gap:8px; }
+    .item h3 { margin:0; font-size:15px; line-height:1.25; }
+    .meta { font-size:12px; color:var(--muted); display:flex; gap:8px; align-items:center; }
+    .badge { background:#0f323a; border:1px solid var(--border); padding:2px 6px; border-radius:6px; font-size:11px; color:#bfe6f1; }
+    .thumb { width: 84px; height: 54px; border-radius: 8px; object-fit: cover; border:1px solid var(--border); display:block; }
+    .right { display:flex; align-items:center; gap:10px; }
+    .hidden { display:none; }
+
+    /* Empty state */
+    .empty { color:var(--muted); background: #092026; border:1px dashed var(--border); border-radius:12px; padding:16px; }
+    .code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; font-size:12px; background:#0a1f24; border:1px solid var(--border); padding:3px 6px; border-radius:6px; color:#bfe6f1; }
+
+    /* New items banner */
+    .banner { position: sticky; top:56px; z-index: 40; display:none; background:#114856; color:#d8f7ff; border-bottom:1px solid var(--border); }
+    .banner-inner { max-width:1100px; margin:0 auto; padding:8px 16px; display:flex; justify-content:space-between; align-items:center; gap:10px; }
+    .banner.show { display:block; }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Team Hub (Static)</h1>
-    <div class="controls">
-      <select id="teamSelect">
-        <option value="purdue-mbb">Purdue MBB</option>
-      </select>
-      <button id="refreshBtn">Refresh</button>
+  <!-- Header -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="logo">PB</div>
+      <div class="title">
+        <h1>Purdue Basketball — News</h1>
+        <div class="subtitle">Live team feed • auto-updates</div>
+      </div>
     </div>
-  </header>
+  </div>
 
-  <main>
-    <section>
-      <h2>Daily Brief</h2>
-      <div id="daily" class="empty">Loading…</div>
-    </section>
+  <!-- “New items available” banner -->
+  <div id="newBanner" class="banner">
+    <div class="banner-inner">
+      <div>New items available.</div>
+      <div>
+        <button class="primary" id="applyBtn">Refresh now</button>
+      </div>
+    </div>
+  </div>
 
-    <section>
-      <h2>Top Feed</h2>
-      <div id="feed" class="empty">Loading…</div>
-    </section>
-  </main>
+  <!-- Toolbar -->
+  <div class="toolbar">
+    <select id="teamSelect">
+      <option value="purdue-mbb">Purdue MBB</option>
+    </select>
+    <button id="refreshBtn">Manual refresh</button>
+    <span class="stamp" id="stamp">Updated: —</span>
+  </div>
 
-  <footer style="max-width:1000px;margin:8px auto 24px;padding:0 16px;color:#9aa3b2;">
-    Hosted on GitHub Pages • Auto-updates via GitHub Actions
-  </footer>
+  <!-- Source chips -->
+  <div class="chips" id="chips"></div>
 
+  <!-- Content -->
+  <div class="wrap">
+    <div class="section-title">Daily Brief</div>
+    <div id="daily" class="list"></div>
+
+    <div class="section-title" style="margin-top:18px;">Top Feed</div>
+    <div id="feed" class="list"></div>
+
+    <div id="emptyState" class="empty hidden">
+      <div style="margin-bottom:6px;">Nothing to show yet.</div>
+      <div>Once the GitHub Action writes data to <span class="code">static/teams/&lt;team&gt;/items.json</span>, stories will appear here.</div>
+      <div style="margin-top:8px;">Current JSON: <a id="jsonLink" class="code" href="#">open items.json</a></div>
+    </div>
+  </div>
+
+  <!-- Self-contained JS -->
   <script>
-  async function getJSON(path){
-    const r = await fetch(path, { cache: "no-store" });
-    if(!r.ok) throw new Error("HTTP " + r.status + " for " + path);
-    return r.json();
-  }
-  function cardHTML(item){
-    const dt = item.published_at ? new Date(item.published_at) : null;
-    const when = dt ? dt.toLocaleString() : "";
-    const img = item.image_url ? `<img src="${item.image_url}" alt="">` : "";
-    return `
-      <div class="card">
-        ${img}
-        <div>
-          <a href="${item.url}" target="_blank"><strong>${item.title}</strong></a>
-          <div class="meta">${item.source}${when ? " • " + when : ""}</div>
-        </div>
-      </div>`;
-  }
-  function render(list, el){
-    if(!list.length){ el.innerHTML = '<div class="empty">Nothing yet.</div>'; return; }
-    el.classList.remove('empty');
-    el.innerHTML = list.map(cardHTML).join('');
-  }
-  async function loadTeam(team){
-    try{
-      const data = await getJSON(`static/teams/${team}/items.json`);
-      const items = data.items || [];
-      render(items.slice(0,8), document.getElementById('daily'));
-      render(items.slice(0,50), document.getElementById('feed'));
-    }catch(err){
-      document.getElementById('daily').innerHTML = '<div class="empty">Nothing yet.</div>';
-      document.getElementById('feed').innerHTML = '<div class="empty">Nothing yet.</div>';
+    // ---- Utilities ----
+    const fmtTime = (iso) => {
+      try { return new Date(iso).toLocaleString(); } catch { return ""; }
+    };
+    const by = (sel) => document.querySelector(sel);
+
+    // ---- State ----
+    let currentTeam = "purdue-mbb";
+    let lastGeneratedAt = null;
+    let currentItems = [];
+    let activeSource = "All sources";
+
+    // ---- Rendering ----
+    function renderItems(items) {
+      const dailyEl = by("#daily");
+      const feedEl = by("#feed");
+      const emptyEl = by("#emptyState");
+
+      const makeRow = (it) => {
+        const img = it.image_url ? `<img class="thumb" src="${it.image_url}" alt="">` : "";
+        return `
+          <div class="item" data-source="${it.source}">
+            <div>
+              <h3><a href="${it.url}" target="_blank" rel="noopener">${it.title}</a></h3>
+              <div class="meta">
+                <span class="badge">${it.source}</span>
+                ${it.author ? `<span>${it.author}</span>` : ""}
+                ${it.published_at ? `<span>• ${fmtTime(it.published_at)}</span>` : ""}
+              </div>
+            </div>
+            <div class="right">
+              ${img}
+            </div>
+          </div>
+        `;
+      };
+
+      const daily = items.slice(0, 8);
+      const feed = items.slice(0, 50);
+
+      dailyEl.innerHTML = daily.map(makeRow).join("");
+      feedEl.innerHTML  = feed.map(makeRow).join("");
+
+      const hasAny = items.length > 0;
+      emptyEl.classList.toggle("hidden", hasAny);
     }
-  }
-  const teamSelect = document.getElementById('teamSelect');
-  document.getElementById('refreshBtn').addEventListener('click', () => loadTeam(teamSelect.value));
-  loadTeam(teamSelect.value);
+
+    function renderChips(items) {
+      const chipsEl = by("#chips");
+      const sources = Array.from(new Set(items.map(it => it.source))).sort();
+      const all = ["All sources", ...sources];
+      chipsEl.innerHTML = all.map(s => `<div class="chip ${s === activeSource ? "active" : ""}" data-src="${s}">${s}</div>`).join("");
+      chipsEl.querySelectorAll(".chip").forEach(ch => {
+        ch.addEventListener("click", () => {
+          activeSource = ch.getAttribute("data-src");
+          chipsEl.querySelectorAll(".chip").forEach(c => c.classList.remove("active"));
+          ch.classList.add("active");
+          applySourceFilter();
+        });
+      });
+    }
+
+    function applySourceFilter() {
+      const cards = document.querySelectorAll(".item");
+      cards.forEach(card => {
+        const src = card.getAttribute("data-source");
+        const show = (activeSource === "All sources") || (src === activeSource);
+        card.style.display = show ? "" : "none";
+      });
+    }
+
+    // ---- Data Loading ----
+    async function fetchJSON(url) {
+      const resp = await fetch(url, { cache: "no-store" });
+      if (!resp.ok) throw new Error("HTTP " + resp.status + " for " + url);
+      return resp.json();
+    }
+
+    const jsonUrlForTeam = (team) => `static/teams/${team}/items.json`;
+
+    async function loadTeam(team, { quiet=false } = {}) {
+      currentTeam = team;
+      const url = jsonUrlForTeam(team);
+      by("#jsonLink").href = url;
+
+      try {
+        const data = await fetchJSON(url);
+        const generated = data.generated_at || "";
+        const items = Array.isArray(data.items) ? data.items : [];
+
+        // Update header stamp
+        by("#stamp").textContent = "Updated: " + (generated ? fmtTime(generated) : "—");
+
+        // First load or manual refresh
+        if (!quiet) {
+          currentItems = items;
+          lastGeneratedAt = generated || null;
+          renderItems(currentItems);
+          renderChips(currentItems);
+          applySourceFilter();
+        } else {
+          // Quiet check: show banner if something changed
+          if (generated && lastGeneratedAt && generated !== lastGeneratedAt) {
+            by("#newBanner").classList.add("show");
+          }
+        }
+      } catch (e) {
+        console.error(e);
+        by("#daily").innerHTML = "";
+        by("#feed").innerHTML = "";
+        by("#emptyState").classList.remove("hidden");
+        by("#stamp").textContent = "Updated: —";
+      }
+    }
+
+    // ---- Auto-check for new data every 60s (but don't clobber the UI) ----
+    setInterval(() => loadTeam(currentTeam, { quiet: true }), 60000);
+    by("#applyBtn").addEventListener("click", async () => {
+      await loadTeam(currentTeam);
+      by("#newBanner").classList.remove("show");
+    });
+
+    // ---- Controls ----
+    by("#teamSelect").addEventListener("change", (e) => loadTeam(e.target.value));
+    by("#refreshBtn").addEventListener("click", () => loadTeam(currentTeam));
+
+    // ---- Init ----
+    loadTeam(currentTeam);
   </script>
 </body>
 </html>
