@@ -8,7 +8,6 @@ RECENCY_HALFLIFE_HOURS = 18.0
 DEDUP_TITLE_SIM_THRESHOLD = 85
 DEFAULT_LIMIT = 200
 
-# Feeds sometimes block default UA from CI runners
 FEED_HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) TeamHubBot/1.0"
 }
@@ -58,18 +57,15 @@ def extract_image(entry):
                     return href
     return None
 
-def collect_team(team, feeds, out_file):
+def collect_from_feedlist(team, feedlist):
     all_items = []
-    print(f"== Collecting team: {team} ==")
-    for feed in feeds:
+    for feed in feedlist:
         name, url = feed["name"], feed["url"]
-        print(f"[FETCH] {name} -> {url}")
         d = feedparser.parse(url, request_headers=FEED_HEADERS)
-        print(f"[INFO] Entries parsed: {len(d.entries)}")
         for e in d.entries[:50]:
             title = e.get("title") or "(no title)"
             link = canonicalize_url(e.get("link") or e.get("id") or "")
-            if not link:
+            if not link: 
                 continue
             dt = parse_dt(e)
             all_items.append({
@@ -85,11 +81,30 @@ def collect_team(team, feeds, out_file):
                 "image_url": extract_image(e),
                 "author": e.get("author")
             })
+    return all_items
 
-    print(f"[INFO] Total raw items: {len(all_items)}")
+def collect_team(team, feeds, out_file):
+    # Try your configured feeds first
+    all_items = collect_from_feedlist(team, feeds)
+
+    # Fallback so the page is never empty
+    if len(all_items) == 0:
+        fallback = [
+            {
+              "name": "Google News (Purdue Basketball)",
+              "url": "https://news.google.com/rss/search?q=Purdue+Boilermakers+basketball&hl=en-US&gl=US&ceid=US:en",
+              "type": "rss", "trust_level": "national"
+            },
+            {
+              "name": "YouTube (Purdue Basketball)",
+              "url": "https://www.youtube.com/feeds/videos.xml?search_query=Purdue+Basketball",
+              "type": "rss", "trust_level": "national"
+            }
+        ]
+        all_items = collect_from_feedlist(team, fallback)
+
     all_items.sort(key=score_item, reverse=True)
     all_items = dedupe(all_items)[:DEFAULT_LIMIT]
-    print(f"[INFO] After dedupe/limit: {len(all_items)}")
 
     os.makedirs(os.path.dirname(out_file), exist_ok=True)
     with open(out_file, "w", encoding="utf-8") as f:
@@ -98,19 +113,15 @@ def collect_team(team, feeds, out_file):
             "generated_at": datetime.now(timezone.utc).isoformat(),
             "items": all_items
         }, f, indent=2, ensure_ascii=False)
-    print(f"[WRITE] {out_file} ({len(all_items)} items)")
 
 def main():
-    feeds_path = os.environ.get("FEEDS_FILE","src/feeds.yaml")
-    conf = yaml.safe_load(open(feeds_path, "r", encoding="utf-8"))
+    conf = yaml.safe_load(open("src/feeds.yaml", "r", encoding="utf-8"))
     teams_env = os.environ.get("TEAMS","").strip()
     teams = [t.strip() for t in teams_env.split(",") if t.strip()] if teams_env else list(conf.keys())
     if not teams:
         raise SystemExit("No teams specified and feeds.yaml is empty.")
-
     for team in teams:
         if team not in conf:
-            print(f"[WARN] No feeds configured for {team}, skipping.")
             continue
         collect_team(team, conf[team], f"static/teams/{team}/items.json")
 
