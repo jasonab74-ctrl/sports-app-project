@@ -1,9 +1,11 @@
 name: Collect & Publish
 
 on:
+  push:                     # <-- run on any commit to main
+    branches: [ main ]
   schedule:
-    - cron: "*/30 * * * *"
-  workflow_dispatch:
+    - cron: "*/30 * * * *"  # every 30 min
+  workflow_dispatch:        # optional manual run
 
 permissions:
   contents: write
@@ -25,27 +27,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install feedparser PyYAML rapidfuzz
 
-      - name: Show repo tree (debug)
-        run: |
-          echo "ROOT:"; ls -la
-          echo "SRC:"; ls -la src || true
-          echo "feeds.yaml (head):"; sed -n '1,80p' src/feeds.yaml || true
-
-      - name: Verify feeds.yaml loads
-        run: |
-          python - <<'PY'
-          import yaml,sys
-          conf = yaml.safe_load(open("src/feeds.yaml"))
-          if not conf or not isinstance(conf, dict):
-            print("ERROR: feeds.yaml not parsed or empty"); sys.exit(2)
-          print("Teams found:", list(conf.keys()))
-          PY
-
-      - name: Collect feeds (verbose)
-        run: |
-          set -e
-          python src/collect.py
-          echo "Collector finished."
+      - name: Collect feeds
+        run: python src/collect.py
 
       - name: Commit JSON (if changed)
         run: |
