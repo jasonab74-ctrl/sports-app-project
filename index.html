@@ -4,78 +4,160 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Team Hub</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./static/css/styles.css" />
-  <link rel="icon" href="./static/icons/icon-192.png" />
-  <meta name="theme-color" content="#0b0d12" />
+  <style>
+    *{box-sizing:border-box}html,body{margin:0;padding:0}
+    :root{--bg:#0b0d12;--panel:#111727;--card:#151c2f;--muted:#93a0b8;--text:#eaf0ff;--brand:#2b59ff;--border:#233052;--radius:16px;--shadow:0 10px 30px rgba(0,0,0,.35)}
+    body{background:radial-gradient(1200px 600px at 10% -10%,rgba(43,89,255,.12),transparent) no-repeat,var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    .wrap{width:min(1100px,92vw);margin:0 auto}
+    header{position:sticky;top:0;z-index:10;backdrop-filter:blur(8px);background:rgba(11,13,18,.6);border-bottom:1px solid var(--border)}
+    header .wrap{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:14px 8px}
+    h1{margin:0;font-size:20px;font-weight:800}
+    .controls{display:flex;gap:8px;align-items:center}
+    select{background:var(--card);color:var(--text);border:1px solid var(--border);padding:8px 10px;border-radius:10px}
+    button{background:linear-gradient(180deg,var(--brand),#1f46d9);color:#fff;border:0;padding:9px 14px;border-radius:12px;font-weight:700;cursor:pointer;box-shadow:var(--shadow)}
+    main .panel{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:16px;margin:18px 0;box-shadow:var(--shadow)}
+    .panel h2{margin:0 0 12px 0;font-size:18px}
+    .cards{display:grid;grid-template-columns:repeat(1,1fr);gap:12px}
+    @media (min-width:640px){.cards{grid-template-columns:repeat(2,1fr)}}
+    @media (min-width:980px){.cards{grid-template-columns:repeat(3,1fr)}}
+    .card{display:grid;grid-template-columns:120px 1fr;gap:12px;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:10px;transition:transform .08s ease-in-out}
+    .card:hover{transform:translateY(-1px)}
+    .thumb{display:block;width:100%;height:100%;border-radius:10px;overflow:hidden;background:#0c1223;border:1px solid var(--border)}
+    .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+    .title{font-weight:800;color:#cfe0ff;text-decoration:none;display:inline-block;margin:2px 0 6px}
+    .title:hover{text-decoration:underline}
+    .meta{font-size:12px;color:var(--muted);display:flex;gap:6px;align-items:center}
+    .summary{margin:8px 0 0;color:#d7def0}
+    .empty{color:var(--muted);font-style:italic;padding:12px;border:1px dashed var(--border);border-radius:12px}
+    .hidden{display:none}
+    footer{border-top:1px solid var(--border);color:var(--muted);font-size:13px}
+    footer .wrap{padding:16px 8px}
+  </style>
 </head>
 <body>
-  <header class="site-header">
+  <header>
     <div class="wrap">
-      <div class="brand">
-        <img src="./static/icons/icon-192.png" alt="" class="brand-icon" />
-        <div class="brand-text">
-          <h1>Team Hub</h1>
-          <p class="subtitle">Trusted, fast, one place.</p>
-        </div>
-      </div>
+      <h1>Team Hub</h1>
       <div class="controls">
-        <label class="sr-only" for="team">Team</label>
-        <select id="team" class="select">
+        <select id="team">
           <option value="purdue-mbb" selected>Purdue MBB</option>
-          <!-- Add more teams here when you add their items.json -->
         </select>
-        <button id="refresh" class="btn">Refresh</button>
+        <button id="refresh">Refresh</button>
       </div>
     </div>
   </header>
 
   <main class="wrap">
     <section class="panel">
-      <div class="panel-head">
-        <h2>Daily Brief</h2>
-        <span id="dailyCount" class="count-badge"></span>
-      </div>
+      <h2>Daily Brief</h2>
       <div id="daily" class="cards"></div>
-      <div id="dailyEmpty" class="empty hidden">No items yet. Check back soon.</div>
+      <div id="dailyEmpty" class="empty hidden">No items yet.</div>
     </section>
 
     <section class="panel">
-      <div class="panel-head">
-        <h2>Top Feed</h2>
-        <span id="feedCount" class="count-badge"></span>
-      </div>
+      <h2>Top Feed</h2>
       <div id="feed" class="cards"></div>
-      <div id="feedEmpty" class="empty hidden">No items yet. Check back soon.</div>
+      <div id="feedEmpty" class="empty hidden">No items yet.</div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="wrap">
-      <p>Hosted on GitHub Pages • Auto-updates via GitHub Actions</p>
-    </div>
-  </footer>
+  <footer><div class="wrap">GitHub Pages • Static JSON • No backend required</div></footer>
 
   <template id="card-template">
     <article class="card">
-      <a class="thumb" target="_blank" rel="noopener">
-        <img alt="">
-      </a>
-      <div class="content">
+      <a class="thumb" target="_blank" rel="noopener"><img alt=""></a>
+      <div>
         <a class="title" target="_blank" rel="noopener"></a>
-        <div class="meta">
-          <span class="source"></span>
-          <span class="dot">•</span>
-          <time class="when"></time>
-          <span class="dot">•</span>
-          <span class="trust"></span>
-        </div>
+        <div class="meta"><span class="source"></span><span>•</span><time class="when"></time><span>•</span><span class="trust"></span></div>
         <p class="summary"></p>
       </div>
     </article>
   </template>
 
-  <script src="./static/js/app.js"></script>
+  <script>
+    // ---------- HARD FAILSAFE SAMPLE (renders even if fetch fails) ----------
+    const SAMPLE_DATA = [
+      {"id":1,"team":"purdue-mbb","source":"Purdue Athletics","source_type":"rss","trust_level":"official",
+       "title":"Boilermakers release non-conference schedule",
+       "url":"https://purduesports.com/news/sample","guid":"sample-1",
+       "published_at":"2025-09-24T14:05:00Z",
+       "summary":"Purdue announces non-conference opponents and dates, including a marquee neutral-site game.",
+       "image_url":"https://via.placeholder.com/480x360.png?text=Purdue"},
+      {"id":2,"team":"purdue-mbb","source":"GoldandBlack.com","source_type":"rss","trust_level":"beat",
+       "title":"Practice notes: backcourt rotations taking shape",
+       "url":"https://www.on3.com/teams/purdue-boilermakers/news/sample","guid":"sample-2",
+       "published_at":"2025-09-23T19:30:00Z",
+       "summary":"Early practice observations with quotes from coaches on guard depth and roles.",
+       "image_url":"https://via.placeholder.com/480x360.png?text=G%26B"}
+    ];
+    // -----------------------------------------------------------------------
+
+    const FALLBACK_IMG = "https://via.placeholder.com/240x180.png?text=Team+Hub";
+    const DAILY_LIMIT = 8, FEED_LIMIT = 50;
+    const els = {
+      team: document.getElementById("team"),
+      refresh: document.getElementById("refresh"),
+      daily: document.getElementById("daily"),
+      dailyEmpty: document.getElementById("dailyEmpty"),
+      feed: document.getElementById("feed"),
+      feedEmpty: document.getElementById("feedEmpty"),
+      tmpl: document.getElementById("card-template")
+    };
+
+    function fmtWhen(iso){ if(!iso) return ""; const d=new Date(iso); return d.toLocaleString(undefined,{month:"short",day:"numeric",hour:"numeric",minute:"2-digit"}); }
+
+    function renderCard(it){
+      const frag = els.tmpl.content.cloneNode(true);
+      const aThumb = frag.querySelector(".thumb");
+      const img = frag.querySelector("img");
+      const aTitle = frag.querySelector(".title");
+      const source = frag.querySelector(".source");
+      const when = frag.querySelector(".when");
+      const trust = frag.querySelector(".trust");
+      const summary = frag.querySelector(".summary");
+
+      aThumb.href = it.url || "#";
+      img.src = it.image_url || FALLBACK_IMG;
+      img.alt = it.title || "";
+      aTitle.href = it.url || "#";
+      aTitle.textContent = it.title || "Untitled";
+      source.textContent = it.source || "Source";
+      when.textContent = fmtWhen(it.published_at);
+      trust.textContent = (it.trust_level || "blog").replace("_"," ");
+      summary.textContent = it.summary || "";
+      return frag;
+    }
+
+    async function load(team){
+      let data = [];
+      try {
+        const url = `./static/teams/${encodeURIComponent(team)}/items.json?ts=${Date.now()}`;
+        const r = await fetch(url, {cache:"no-store"});
+        if(!r.ok) throw new Error("HTTP " + r.status);
+        data = await r.json();
+      } catch(e) {
+        // Fallback ensures page always renders
+        console.warn("Using SAMPLE_DATA fallback:", e.message);
+        data = SAMPLE_DATA;
+      }
+
+      // newest first
+      data.sort((a,b)=> new Date(b.published_at||0) - new Date(a.published_at||0));
+      const dailyItems = data.slice(0, DAILY_LIMIT);
+      const feedItems  = data.slice(0, FEED_LIMIT);
+
+      // render
+      els.daily.innerHTML = ""; els.feed.innerHTML = "";
+      if (dailyItems.length){ const df=document.createDocumentFragment(); dailyItems.forEach(i=>df.appendChild(renderCard(i))); els.daily.appendChild(df); }
+      else els.dailyEmpty.classList.remove("hidden");
+
+      if (feedItems.length){ const df2=document.createDocumentFragment(); feedItems.forEach(i=>df2.appendChild(renderCard(i))); els.feed.appendChild(df2); }
+      else els.feedEmpty.classList.remove("hidden");
+    }
+
+    els.refresh.addEventListener("click",()=>load(els.team.value));
+    els.team.addEventListener("change",()=>load(els.team.value));
+    load(els.team.value);
+  </script>
 </body>
 </html>
