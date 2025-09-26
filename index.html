@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Team Hub (Static)</title>
   <meta name="description" content="Team-focused curated sports hub (GitHub Pages only)." />
-
   <style>
   :root { font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; }
   body { margin:0; background:#0b0d12; color:#e8edf6; }
@@ -83,7 +82,6 @@
       render(items.slice(0,8), document.getElementById('daily'));
       render(items.slice(0,50), document.getElementById('feed'));
     }catch(err){
-      console.error(err);
       document.getElementById('daily').innerHTML = '<div class="empty">Nothing yet.</div>';
       document.getElementById('feed').innerHTML = '<div class="empty">Nothing yet.</div>';
     }
