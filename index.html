@@ -26,7 +26,7 @@
     .thumb img{width:100%;height:100%;object-fit:cover;display:block}
     .title{font-weight:800;color:#cfe0ff;text-decoration:none;display:inline-block;margin:2px 0 6px}
     .title:hover{text-decoration:underline}
-    .meta{font-size:12px;color:var(--muted);display:flex;gap:6px;align-items:center}
+    .meta{font-size:12px;color:var(--muted);display:flex;gap:6px;align-items:center;flex-wrap:wrap}
     .summary{margin:8px 0 0;color:#d7def0}
     .empty{color:var(--muted);font-style:italic;padding:12px;border:1px dashed var(--border);border-radius:12px}
     .hidden{display:none}
@@ -75,7 +75,7 @@
   </template>
 
   <script>
-    // ---------- HARD FAILSAFE SAMPLE (renders even if fetch fails) ----------
+    // Embedded sample so the page NEVER looks empty.
     const SAMPLE_DATA = [
       {"id":1,"team":"purdue-mbb","source":"Purdue Athletics","source_type":"rss","trust_level":"official",
        "title":"Boilermakers release non-conference schedule",
@@ -88,12 +88,18 @@
        "url":"https://www.on3.com/teams/purdue-boilermakers/news/sample","guid":"sample-2",
        "published_at":"2025-09-23T19:30:00Z",
        "summary":"Early practice observations with quotes from coaches on guard depth and roles.",
-       "image_url":"https://via.placeholder.com/480x360.png?text=G%26B"}
+       "image_url":"https://via.placeholder.com/480x360.png?text=G%26B"},
+      {"id":3,"team":"purdue-mbb","source":"CBS Sports","source_type":"rss","trust_level":"national",
+       "title":"Way-too-early Big Ten tiers",
+       "url":"https://www.cbssports.com/college-basketball/","guid":"sample-3",
+       "published_at":"2025-09-22T17:10:00Z",
+       "summary":"Where Purdue sits among preseason favorites and who could challenge.",
+       "image_url":"https://via.placeholder.com/480x360.png?text=CBSSports"}
     ];
-    // -----------------------------------------------------------------------
 
     const FALLBACK_IMG = "https://via.placeholder.com/240x180.png?text=Team+Hub";
     const DAILY_LIMIT = 8, FEED_LIMIT = 50;
+
     const els = {
       team: document.getElementById("team"),
       refresh: document.getElementById("refresh"),
@@ -131,32 +137,41 @@
     async function load(team){
       let data = [];
       try {
-        const url = `./static/teams/${encodeURIComponent(team)}/items.json?ts=${Date.now()}`;
-        const r = await fetch(url, {cache:"no-store"});
-        if(!r.ok) throw new Error("HTTP " + r.status);
+        // Try your JSON first
+        const r = await fetch(`./static/teams/${encodeURIComponent(team)}/items.json?ts=${Date.now()}`, {cache:"no-store"});
+        if (!r.ok) throw new Error("HTTP " + r.status);
         data = await r.json();
       } catch(e) {
-        // Fallback ensures page always renders
-        console.warn("Using SAMPLE_DATA fallback:", e.message);
+        // Hard fallback so it still looks good
         data = SAMPLE_DATA;
       }
 
-      // newest first
       data.sort((a,b)=> new Date(b.published_at||0) - new Date(a.published_at||0));
       const dailyItems = data.slice(0, DAILY_LIMIT);
       const feedItems  = data.slice(0, FEED_LIMIT);
 
-      // render
-      els.daily.innerHTML = ""; els.feed.innerHTML = "";
-      if (dailyItems.length){ const df=document.createDocumentFragment(); dailyItems.forEach(i=>df.appendChild(renderCard(i))); els.daily.appendChild(df); }
-      else els.dailyEmpty.classList.remove("hidden");
+      els.daily.innerHTML = "";
+      els.feed.innerHTML = "";
 
-      if (feedItems.length){ const df2=document.createDocumentFragment(); feedItems.forEach(i=>df2.appendChild(renderCard(i))); els.feed.appendChild(df2); }
-      else els.feedEmpty.classList.remove("hidden");
+      if (dailyItems.length){
+        const df=document.createDocumentFragment();
+        dailyItems.forEach(i=>df.appendChild(renderCard(i)));
+        els.daily.appendChild(df);
+      } else {
+        els.dailyEmpty.classList.remove("hidden");
+      }
+
+      if (feedItems.length){
+        const df2=document.createDocumentFragment();
+        feedItems.forEach(i=>df2.appendChild(renderCard(i)));
+        els.feed.appendChild(df2);
+      } else {
+        els.feedEmpty.classList.remove("hidden");
+      }
     }
 
-    els.refresh.addEventListener("click",()=>load(els.team.value));
-    els.team.addEventListener("change",()=>load(els.team.value));
+    els.refresh.addEventListener("click", ()=>load(els.team.value));
+    els.team.addEventListener("change", ()=>load(els.team.value));
     load(els.team.value);
   </script>
 </body>
