@@ -1,10 +1,7 @@
-name: Collect & Publish
-
+name: Build Purdue feed (write items.json)
 on:
-  push:
-    branches: [ main ]
   schedule:
-    - cron: "*/30 * * * *"
+    - cron: "*/30 * * * *"   # every 30 minutes
   workflow_dispatch:
 
 permissions:
@@ -14,26 +11,126 @@ jobs:
   collect:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
-          fetch-depth: 0
-      - uses: actions/setup-python@v5
+          persist-credentials: true
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+
       - name: Install deps
         run: |
           python -m pip install --upgrade pip
-          pip install feedparser PyYAML rapidfuzz
-      - name: Collect feeds
-        run: python src/collect.py
-      - name: Commit JSON (if changed)
+          pip install feedparser python-dateutil beautifulsoup4 rapidfuzz PyYAML
+
+      - name: Build items.json
         run: |
-          git config user.name "gh-actions"
-          git config user.email "actions@users.noreply.github.com"
-          git add static/teams/**/*.json || true
-          if git diff --cached --quiet; then
-            echo "No changes to commit."
-          else
-            git commit -m "Update items.json ($(date -u +'%Y-%m-%dT%H:%M:%SZ'))"
+          python - <<'PY'
+import feedparser, json, re
+from datetime import datetime, timezone
+from dateutil import parser as dtp
+from rapidfuzz import fuzz
+
+TEAM = "purdue-mbb"
+
+FEEDS = [
+  # trust_level, name, url
+  ("official","Purdue Athletics","https://purduesports.com/rss.aspx?path=mbball"),
+  ("beat","GoldandBlack.com","https://www.on3.com/teams/purdue-boilermakers/feed/"),
+  ("local","Journal & Courier Purdue","https://rssfeeds.jconline.com/purdue/mbb"),
+  ("blog","Hammer and Rails","https://www.hammerandrails.com/rss/current"),
+  ("national","CBS Sports Purdue","https://www.cbssports.com/college-basketball/teams/PUR/purdue-boilermakers/rss/"),
+  ("national","YouTube Search: Purdue Basketball","https://www.youtube.com/feeds/videos.xml?search_query=Purdue+Basketball"),
+  ("fan_forum","r/CollegeBasketball (Purdue)","https://www.reddit.com/r/CollegeBasketball/search.rss?q=Purdue&restrict_sr=on&sort=new&t=week"),
+]
+
+def clean(t):
+    if not t: return ""
+    t = re.sub(r"<[^>]+>", " ", t)
+    t = re.sub(r"\s+", " ", t).strip()
+    return t
+
+def when(entry):
+    for k in ("published","updated","created"):
+        v = getattr(entry, k, None)
+        if v:
+            try: return dtp.parse(v)
+            except: pass
+    return datetime.now(timezone.utc)
+
+def image(entry):
+    for k in ("media_thumbnail","media_content","links"):
+        v = entry.get(k)
+        if isinstance(v, list):
+            for it in v:
+                url = it.get("url") or it.get("href")
+                if url and url.startswith("http"): return url
+    return None
+
+items = []
+for trust, name, url in FEEDS:
+    d = feedparser.parse(url)
+    for e in d.entries[:50]:
+        items.append({
+            "team": TEAM,
+            "source": name,
+            "source_type": "rss",
+            "trust_level": trust,
+            "title": e.get("title") or "(no title)",
+            "url": e.get("link") or e.get("id") or "",
+            "guid": e.get("id") or e.get("guid") or (e.get("link") or ""),
+            "published_at": when(e).astimezone(timezone.utc).isoformat(),
+            "summary": clean(e.get("summary") or (e.get("content",[{}])[0].get("value"))),
+            "image_url": image(e),
+        })
+
+# de-dupe by URL and similar titles
+seen = set()
+deduped = []
+for it in items:
+    url = re.sub(r"[?#].*$","", it["url"])
+    if not url or url in seen: continue
+    dup = False
+    for kept in deduped:
+        if fuzz.token_set_ratio(it["title"], kept["title"]) >= 87:
+            dup = True; break
+    if not dup:
+        seen.add(url); deduped.append(it)
+
+# simple score: trust + recency
+trust_w = {"official":1.0,"beat":0.9,"national":0.8,"local":0.75,"blog":0.6,"fan_forum":0.5}
+def recency_weight(iso):
+    try:
+        dt = dtp.parse(iso)
+        hrs = (datetime.now(timezone.utc)-dt).total_seconds()/3600
+        # half-life 18h
+        import math
+        return math.pow(0.5, max(0,hrs)/18.0)
+    except: return 0.5
+
+for it in deduped:
+    it["_score"] = 0.6*trust_w.get(it["trust_level"],0.6) + 0.4*recency_weight(it["published_at"])
+
+deduped.sort(key=lambda x: x["_score"], reverse=True)
+top = deduped[:60]
+for it in top: it.pop("_score", None)
+
+import os, pathlib
+pathlib.Path("static/teams/purdue-mbb").mkdir(parents=True, exist_ok=True)
+open("static/teams/purdue-mbb/items.json","w").write(json.dumps(top, indent=2))
+print("Wrote", len(top), "items to static/teams/purdue-mbb/items.json")
+PY
+
+      - name: Commit & push JSON
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add static/teams/purdue-mbb/items.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Update items.json"
             git push
-          fi
+          else
+            echo "No changes."
