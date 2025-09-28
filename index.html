@@ -2,140 +2,80 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Team Hub – Purdue</title>
-<style>
-*{box-sizing:border-box}html,body{margin:0}
-:root{--bg:#0b0d12;--panel:#0f1524;--card:#141b2e;--muted:#9aa6bf;--text:#ebf1ff;--brand:#2b59ff;--border:#253253;--radius:16px;--shadow:0 10px 30px rgba(0,0,0,.35)}
-body{background:radial-gradient(900px 500px at 10% -10%,rgba(43,89,255,.12),transparent),var(--bg);color:var(--text);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
-.wrap{width:min(1100px,92vw);margin:0 auto}
-header{position:sticky;top:0;z-index:10;backdrop-filter:blur(8px);background:rgba(11,13,18,.55);border-bottom:1px solid var(--border)}
-header .bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 8px}
-h1{margin:0;font-size:20px;font-weight:800}
-.controls{display:flex;gap:8px;align-items:center}
-.select{background:var(--card);color:var(--text);border:1px solid var(--border);padding:8px 10px;border-radius:10px}
-.btn{background:linear-gradient(180deg,var(--brand),#1f46d9);color:#fff;border:0;padding:9px 14px;border-radius:12px;font-weight:700;cursor:pointer;box-shadow:var(--shadow)}
-.panel{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:16px;margin:18px 0;box-shadow:var(--shadow)}
-.panel h2{margin:0 0 12px 0;font-size:18px}
-.cards{display:grid;grid-template-columns:repeat(1,1fr);gap:12px}
-@media (min-width:640px){.cards{grid-template-columns:repeat(2,1fr)}}
-@media (min-width:980px){.cards{grid-template-columns:repeat(3,1fr)}}
-.card{display:grid;grid-template-columns:120px 1fr;gap:12px;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:10px;transition:transform .08s}
-.card:hover{transform:translateY(-1px)}
-.thumb{display:block;width:100%;height:100%;border-radius:10px;overflow:hidden;background:#0c1223;border:1px solid var(--border)}
-.thumb img{width:100%;height:100%;object-fit:cover;display:block}
-.title{font-weight:800;color:#cfe0ff;text-decoration:none;display:inline-block;margin:2px 0 6px}
-.title:hover{text-decoration:underline}
-.meta{font-size:12px;color:var(--muted);display:flex;gap:6px;align-items:center;flex-wrap:wrap}
-.summary{margin:8px 0 0;color:#d7def0}
-.empty{color:var(--muted);font-style:italic;padding:12px;border:1px dashed var(--border);border-radius:12px}
-footer{border-top:1px solid var(--border);color:var(--muted);font-size:13px}
-footer .wrap{padding:16px 8px}
-.badge{color:#aee0ff;border:1px solid rgba(174,224,255,.35);border-radius:999px;padding:2px 8px;font-size:12px}
-</style>
+<title>Team Hub — Pro Template</title>
+<link rel="stylesheet" href="./static/css/pro.css"/>
 </head>
 <body>
-<header><div class="wrap bar">
-  <h1>Team Hub</h1>
-  <div class="controls">
-    <select id="team" class="select"><option value="purdue-mbb">Purdue MBB</option></select>
-    <button id="refresh" class="btn">Refresh</button>
+<header class="header">
+  <div class="wrap bar">
+    <div class="brand">
+      <img id="logo" src="./static/assets/logo.png" alt="logo"/>
+      <strong id="wordmark">Team Hub</strong>
+    </div>
+    <nav class="nav"></nav>
+    <div class="controls">
+      <select class="select" id="teamSelect">
+        <option value="purdue-mbb">Purdue MBB</option>
+      </select>
+      <button class="btn" id="refreshBtn">Refresh</button>
+    </div>
   </div>
-</div></header>
+</header>
+
+<section class="hero">
+  <div class="image"></div>
+  <div class="wrap overlay">
+    <h1 style="margin:0 0 6px 0; font-size:28px; font-weight:850;">Top Stories</h1>
+    <div class="kpis">
+      <div class="kpi">Latest updates</div>
+      <div class="kpi">Videos &amp; Highlights</div>
+      <div class="kpi">Schedule</div>
+    </div>
+  </div>
+</section>
 
 <main class="wrap">
-  <section class="panel">
-    <div style="display:flex;justify-content:space-between;align-items:center">
-      <h2>Daily Brief</h2><span id="dailyCount" class="badge"></span>
-    </div>
-    <div id="daily" class="cards"></div>
-    <div id="dailyEmpty" class="empty" style="display:none">No items yet.</div>
-  </section>
+  <div class="grid">
+    <div>
+      <section id="videos" class="panel">
+        <div class="head"><h2 style="margin:0;font-size:18px">Videos & Highlights</h2></div>
+        <div class="body">
+          <div id="videoRow" class="video-row"></div>
+        </div>
+      </section>
 
-  <section class="panel">
-    <div style="display:flex;justify-content:space-between;align-items:center">
-      <h2>Top Feed</h2><span id="feedCount" class="badge"></span>
+      <section id="news" class="panel">
+        <div class="head"><h2 style="margin:0;font-size:18px">Latest News</h2></div>
+        <div class="body">
+          <div id="newsGrid" class="news-grid"></div>
+        </div>
+      </section>
     </div>
-    <div id="feed" class="cards"></div>
-    <div id="feedEmpty" class="empty" style="display:none">No items yet.</div>
-  </section>
+
+    <aside>
+      <section id="schedule" class="panel widget">
+        <div class="head"><h2 style="margin:0;font-size:18px">Upcoming Schedule</h2></div>
+        <div class="body">
+          <div id="scheduleList" class="schedule-list"></div>
+          <div style="margin-top:10px"><a class="btn" href="#" style="text-decoration:none; display:inline-block">Full Schedule</a></div>
+        </div>
+      </section>
+
+      <section class="panel widget">
+        <div class="head"><h2 style="margin:0;font-size:18px">Social</h2></div>
+        <div class="body">
+          <div id="socialCol" class="social"></div>
+        </div>
+      </section>
+    </aside>
+  </div>
 </main>
 
-<footer><div class="wrap">GitHub Pages • Auto-curated JSON • No server</div></footer>
+<footer class="footer"><div class="wrap">© Team Hub. Themeable pro-style template.</div></footer>
 
-<template id="card-template">
-  <article class="card">
-    <a class="thumb" target="_blank" rel="noopener"><img alt=""></a>
-    <div>
-      <a class="title" target="_blank" rel="noopener"></a>
-      <div class="meta"><span class="source"></span><span>•</span><time class="when"></time><span>•</span><span class="trust"></span></div>
-      <p class="summary"></p>
-    </div>
-  </article>
-</template>
-
+<script src="./static/js/pro.js"></script>
 <script>
-const FALLBACK = [{
-  "team":"purdue-mbb","source":"Team Hub","source_type":"note","trust_level":"official",
-  "title":"Waiting for first data sync…","url":"#","published_at":new Date().toISOString(),
-  "summary":"The GitHub Action will write items.json within a few minutes. This is just a placeholder so the page never looks empty.",
-  "image_url":"https://via.placeholder.com/480x360.png?text=Team+Hub"
-}];
-
-const DAILY_LIMIT=8, FEED_LIMIT=50, FALLBACK_IMG="https://via.placeholder.com/240x180.png?text=Team+Hub";
-const els={team:document.getElementById("team"),refresh:document.getElementById("refresh"),
-daily:document.getElementById("daily"),dailyEmpty:document.getElementById("dailyEmpty"),dailyCount:document.getElementById("dailyCount"),
-feed:document.getElementById("feed"),feedEmpty:document.getElementById("feedEmpty"),feedCount:document.getElementById("feedCount"),
-tmpl:document.getElementById("card-template")};
-
-function when(s){ try{const d=new Date(s);return d.toLocaleString(undefined,{month:"short",day:"numeric",hour:"numeric",minute:"2-digit"})}catch{return""}}
-function card(it){
-  const f=els.tmpl.content.cloneNode(true);
-  f.querySelector(".thumb").href = it.url||"#";
-  f.querySelector("img").src = it.image_url||FALLBACK_IMG;
-  f.querySelector(".title").href = it.url||"#";
-  f.querySelector(".title").textContent = it.title||"";
-  f.querySelector(".source").textContent = it.source||"";
-  f.querySelector(".when").textContent = when(it.published_at);
-  f.querySelector(".trust").textContent = (it.trust_level||"").replace("_"," ");
-  f.querySelector(".summary").textContent = it.summary||"";
-  return f;
-}
-function render(data){
-  data.sort((a,b)=> new Date(b.published_at||0)-new Date(a.published_at||0));
-  const daily = data.slice(0, DAILY_LIMIT);
-  const feed  = data.slice(0, FEED_LIMIT);
-  els.daily.innerHTML=""; els.feed.innerHTML="";
-  if(daily.length){ const df=document.createDocumentFragment(); daily.forEach(i=>df.appendChild(card(i))); els.daily.appendChild(df); els.dailyCount.textContent = daily.length; }
-  else{ els.dailyEmpty.style.display="block"; els.dailyCount.textContent="0"; }
-  if(feed.length){ const df2=document.createDocumentFragment(); feed.forEach(i=>df2.appendChild(card(i))); els.feed.appendChild(df2); els.feedCount.textContent = feed.length; }
-  else{ els.feedEmpty.style.display="block"; els.feedCount.textContent="0"; }
-}
-async function load(team){
-  // Render fallback immediately so page is never empty
-  render(FALLBACK);
-
-  let data=[];
-  try{
-    const r=await fetch(`./static/teams/${encodeURIComponent(team)}/items.json?ts=${Date.now()}`,{cache:"no-store"});
-    if(!r.ok) throw new Error("HTTP "+r.status);
-    data = await r.json();
-  }catch(e){ data = FALLBACK; }
-
-  data.sort((a,b)=> new Date(b.published_at||0)-new Date(a.published_at||0));
-
-  const daily = data.slice(0, DAILY_LIMIT);
-  const feed  = data.slice(0, FEED_LIMIT);
-
-  els.daily.innerHTML=""; els.feed.innerHTML="";
-  if(daily.length){ const df=document.createDocumentFragment(); daily.forEach(i=>df.appendChild(card(i))); els.daily.appendChild(df); els.dailyCount.textContent = daily.length; }
-  else{ els.dailyEmpty.style.display="block"; els.dailyCount.textContent="0"; }
-
-  if(feed.length){ const df2=document.createDocumentFragment(); feed.forEach(i=>df2.appendChild(card(i))); els.feed.appendChild(df2); els.feedCount.textContent = feed.length; }
-  else{ els.feedEmpty.style.display="block"; els.feedCount.textContent="0"; }
-}
-els.refresh.addEventListener("click",()=>load(els.team.value));
-els.team.addEventListener("change",()=>load(els.team.value));
-load(els.team.value);
+document.getElementById('refreshBtn').addEventListener('click', ()=> location.reload());
 </script>
 </body>
 </html>
