@@ -1,45 +1,14 @@
-{
-  "team": "purdue-mbb",
-  "generated_at": "2025-09-27T17:00:03.672437+00:00",
-  "items": [
-    {
-      "team": "purdue-mbb",
-      "source": "r/CollegeBasketball (search Purdue)",
-      "source_type": "rss",
-      "trust_level": "fan_forum",
-      "title": "Who’s Got the Strongest Top 8? EvanMiya BPR Team Rankings",
-      "url": "https://www.reddit.com/r/CollegeBasketball/comments/1nrar5s/whos_got_the_strongest_top_8_evanmiya_bpr_team/",
-      "guid": "https://www.reddit.com/r/CollegeBasketball/t3_1nrar5s",
-      "published_at": "2025-09-26T19:36:34+00:00",
-      "recency": 0.43878533378492723,
-      "image_url": "https://b.thumbs.redditmedia.com/hOEkisykiXoOL5SQUxGAknUYW_q7ZnsnguUpSxN94TY.jpg",
-      "author": "/u/Critical-Mango-341"
-    },
-    {
-      "team": "purdue-mbb",
-      "source": "r/CollegeBasketball (search Purdue)",
-      "source_type": "rss",
-      "trust_level": "fan_forum",
-      "title": "Way-Too-Early men's Bracketology: Can Ryan Odom bring success back to Virginia, ACC?",
-      "url": "https://www.reddit.com/r/CollegeBasketball/comments/1nohkbc/waytooearly_mens_bracketology_can_ryan_odom_bring/",
-      "guid": "https://www.reddit.com/r/CollegeBasketball/t3_1nohkbc",
-      "published_at": "2025-09-23T13:34:59+00:00",
-      "recency": 0.021744401751052363,
-      "image_url": "https://external-preview.redd.it/hYgLytozYIFsX01iSM5-cdfcYHufrxMrZgTF7p9KCyo.jpeg?width=640&crop=smart&auto=webp&s=22ac87218ba585a459e096326d8f0f988a6b8c55",
-      "author": "/u/HailLeroy"
-    },
-    {
-      "team": "purdue-mbb",
-      "source": "r/CollegeBasketball (search Purdue)",
-      "source_type": "rss",
-      "trust_level": "fan_forum",
-      "title": "Is it a Purdue Year this season?",
-      "url": "https://www.reddit.com/r/CollegeBasketball/comments/1nnzkfv/is_it_a_purdue_year_this_season/",
-      "guid": "https://www.reddit.com/r/CollegeBasketball/t3_1nnzkfv",
-      "published_at": "2025-09-22T21:45:14+00:00",
-      "recency": 0.011820129719540195,
-      "image_url": "https://preview.redd.it/4ap8jpvtdsqf1.jpeg?width=640&crop=smart&auto=webp&s=9e61416c6b9e1f1ac88e89736036065ed639b22e",
-      "author": "/u/BigMatch_JohnCena"
-    }
-  ]
-}
+[
+  {
+    "team": "purdue-mbb",
+    "source": "Purdue Athletics",
+    "source_type": "rss",
+    "trust_level": "official",
+    "title": "Boilermakers release non-conference schedule",
+    "url": "https://purduesports.com/news/sample",
+    "guid": "sample-1",
+    "published_at": "2025-09-24T14:05:00Z",
+    "summary": "Purdue announces non-conference opponents and dates.",
+    "image_url": "https://via.placeholder.com/480x360.png?text=Purdue"
+  }
+]
