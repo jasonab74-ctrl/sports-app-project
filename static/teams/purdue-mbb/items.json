@@ -1,14 +1,24 @@
 [
   {
+    "type": "video",
     "team": "purdue-mbb",
     "source": "Purdue Athletics",
-    "source_type": "rss",
     "trust_level": "official",
-    "title": "Boilermakers release non-conference schedule",
-    "url": "https://purduesports.com/news/sample",
-    "guid": "sample-1",
+    "title": "Highlights: Boilermakers Media Day",
+    "url": "https://example.com/video-1",
     "published_at": "2025-09-24T14:05:00Z",
-    "summary": "Purdue announces non-conference opponents and dates.",
-    "image_url": "https://via.placeholder.com/480x360.png?text=Purdue"
+    "summary": "Quick hits and best moments from media day.",
+    "image_url": "https://via.placeholder.com/800x450.png?text=Highlights"
+  },
+  {
+    "type": "news",
+    "team": "purdue-mbb",
+    "source": "GoldandBlack.com",
+    "trust_level": "beat",
+    "title": "Practice report: rotations taking shape",
+    "url": "https://example.com/article-1",
+    "published_at": "2025-09-23T19:30:00Z",
+    "summary": "Notes from Tuesday’s session with quotes from coaches.",
+    "image_url": "https://via.placeholder.com/800x450.png?text=Practice"
   }
 ]
