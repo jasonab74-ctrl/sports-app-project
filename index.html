@@ -100,7 +100,20 @@ function card(it){
   f.querySelector(".summary").textContent = it.summary||"";
   return f;
 }
+function render(data){
+  data.sort((a,b)=> new Date(b.published_at||0)-new Date(a.published_at||0));
+  const daily = data.slice(0, DAILY_LIMIT);
+  const feed  = data.slice(0, FEED_LIMIT);
+  els.daily.innerHTML=""; els.feed.innerHTML="";
+  if(daily.length){ const df=document.createDocumentFragment(); daily.forEach(i=>df.appendChild(card(i))); els.daily.appendChild(df); els.dailyCount.textContent = daily.length; }
+  else{ els.dailyEmpty.style.display="block"; els.dailyCount.textContent="0"; }
+  if(feed.length){ const df2=document.createDocumentFragment(); feed.forEach(i=>df2.appendChild(card(i))); els.feed.appendChild(df2); els.feedCount.textContent = feed.length; }
+  else{ els.feedEmpty.style.display="block"; els.feedCount.textContent="0"; }
+}
 async function load(team){
+  // Render fallback immediately so page is never empty
+  render(FALLBACK);
+
   let data=[];
   try{
     const r=await fetch(`./static/teams/${encodeURIComponent(team)}/items.json?ts=${Date.now()}`,{cache:"no-store"});
