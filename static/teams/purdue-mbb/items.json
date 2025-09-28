@@ -4,11 +4,44 @@
     "team": "purdue-mbb",
     "source": "Purdue Athletics",
     "trust_level": "official",
-    "title": "Highlights: Boilermakers Media Day",
-    "url": "https://example.com/video-1",
-    "published_at": "2025-09-24T14:05:00Z",
+    "title": "Highlights: Media Day Top Moments",
+    "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "published_at": "2025-09-24T18:00:00Z",
     "summary": "Quick hits and best moments from media day.",
-    "image_url": "https://via.placeholder.com/800x450.png?text=Highlights"
+    "image_url": "https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg"
+  },
+  {
+    "type": "video",
+    "team": "purdue-mbb",
+    "source": "BTN",
+    "trust_level": "national",
+    "title": "Player Interview: Preseason Outlook",
+    "url": "https://www.youtube.com/watch?v=ysz5S6PUM-U",
+    "published_at": "2025-09-23T21:10:00Z",
+    "summary": "Guard talks depth, defense, and expectations.",
+    "image_url": "https://i.ytimg.com/vi/ysz5S6PUM-U/hqdefault.jpg"
+  },
+  {
+    "type": "video",
+    "team": "purdue-mbb",
+    "source": "Purdue Athletics",
+    "trust_level": "official",
+    "title": "Coach Presser: Practice Takeaways",
+    "url": "https://www.youtube.com/watch?v=aqz-KE-bpKQ",
+    "published_at": "2025-09-22T16:45:00Z",
+    "summary": "Coach on rotations and conditioning.",
+    "image_url": "https://i.ytimg.com/vi/aqz-KE-bpKQ/hqdefault.jpg"
+  },
+  {
+    "type": "news",
+    "team": "purdue-mbb",
+    "source": "Purdue Athletics",
+    "trust_level": "official",
+    "title": "Boilermakers release non-conference schedule",
+    "url": "https://purduesports.com/",
+    "published_at": "2025-09-24T14:05:00Z",
+    "summary": "Purdue announces non-conference opponents and dates.",
+    "image_url": "https://images.unsplash.com/photo-1521417531039-95e91480f0f5?q=80&w=1200&auto=format&fit=crop"
   },
   {
     "type": "news",
@@ -16,9 +49,42 @@
     "source": "GoldandBlack.com",
     "trust_level": "beat",
     "title": "Practice report: rotations taking shape",
-    "url": "https://example.com/article-1",
+    "url": "https://www.on3.com/",
     "published_at": "2025-09-23T19:30:00Z",
     "summary": "Notes from Tuesday’s session with quotes from coaches.",
-    "image_url": "https://via.placeholder.com/800x450.png?text=Practice"
+    "image_url": "https://images.unsplash.com/photo-1534531409543-0f4d9a2a3b89?q=80&w=1200&auto=format&fit=crop"
+  },
+  {
+    "type": "news",
+    "team": "purdue-mbb",
+    "source": "CBS Sports",
+    "trust_level": "national",
+    "title": "Preseason Power Rankings: Purdue in Tier 1",
+    "url": "https://www.cbssports.com/college-basketball/",
+    "published_at": "2025-09-22T17:10:00Z",
+    "summary": "Where Purdue sits among early favorites.",
+    "image_url": "https://images.unsplash.com/photo-1544914379-806667cd9482?q=80&w=1200&auto=format&fit=crop"
+  },
+  {
+    "type": "news",
+    "team": "purdue-mbb",
+    "source": "Journal & Courier",
+    "trust_level": "local",
+    "title": "Roster preview: backcourt depth",
+    "url": "https://www.jconline.com/",
+    "published_at": "2025-09-21T12:00:00Z",
+    "summary": "How the guard rotation could shake out.",
+    "image_url": "https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1200&auto=format&fit=crop"
+  },
+  {
+    "type": "news",
+    "team": "purdue-mbb",
+    "source": "Hammer & Rails",
+    "trust_level": "blog",
+    "title": "Mailbag: expectations & breakout candidates",
+    "url": "https://www.hammerandrails.com/",
+    "published_at": "2025-09-20T15:50:00Z",
+    "summary": "Fans ask about lineups, NIL, and more.",
+    "image_url": "https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1200&auto=format&fit=crop"
   }
 ]
