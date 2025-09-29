@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Team Hub — Pro Template</title>
+<title>Team Hub — Pro Template v1.5</title>
 <link rel="stylesheet" href="./static/css/pro.css"/>
 </head>
 <body>
@@ -22,10 +22,11 @@
   </div>
 </header>
 
+<!-- Slim hero background -->
 <section class="hero">
   <div class="image"></div>
   <div class="wrap overlay">
-    <h1 style="margin:0 0 6px 0; font-size:28px; font-weight:850;">Top Stories</h1>
+    <h1 class="pageTitle">Top Stories</h1>
     <div class="kpis">
       <div class="kpi">Latest updates</div>
       <div class="kpi">Videos &amp; Highlights</div>
@@ -35,34 +36,71 @@
 </section>
 
 <main class="wrap">
+
+  <!-- FEATURED STORY -->
+  <section id="feature" class="feature panel">
+    <div class="feature-media">
+      <a id="featureLink" class="feature-thumb" href="#" target="_blank" rel="noopener">
+        <img id="featureImg" alt="">
+      </a>
+    </div>
+    <div class="feature-content">
+      <div class="feature-meta">
+        <span id="featureTrust" class="badge"></span>
+        <span id="featureSource"></span>
+        <span>•</span>
+        <time id="featureWhen"></time>
+      </div>
+      <a id="featureTitle" class="feature-title" href="#" target="_blank" rel="noopener">Top Story</a>
+      <p id="featureSummary" class="feature-summary"></p>
+      <div class="feature-actions">
+        <a id="featureRead" class="btn" href="#" target="_blank" rel="noopener">Read Story</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMO / CTAs -->
+  <section id="promos" class="promo panel">
+    <div class="head"><h2>Get Closer to the Team</h2></div>
+    <div class="body">
+      <div id="promoRow" class="promo-row"></div>
+    </div>
+  </section>
+
   <div class="grid">
+    <!-- Main column -->
     <div>
+      <!-- Videos -->
       <section id="videos" class="panel">
-        <div class="head"><h2 style="margin:0;font-size:18px">Videos & Highlights</h2></div>
+        <div class="head"><h2>Videos & Highlights</h2></div>
         <div class="body">
           <div id="videoRow" class="video-row"></div>
         </div>
       </section>
 
+      <!-- News -->
       <section id="news" class="panel">
-        <div class="head"><h2 style="margin:0;font-size:18px">Latest News</h2></div>
+        <div class="head"><h2>Latest Headlines</h2></div>
         <div class="body">
           <div id="newsGrid" class="news-grid"></div>
         </div>
       </section>
     </div>
 
+    <!-- Sidebar -->
     <aside>
       <section id="schedule" class="panel widget">
-        <div class="head"><h2 style="margin:0;font-size:18px">Upcoming Schedule</h2></div>
+        <div class="head"><h2>Upcoming Schedule</h2></div>
         <div class="body">
           <div id="scheduleList" class="schedule-list"></div>
-          <div style="margin-top:10px"><a class="btn" href="#" style="text-decoration:none; display:inline-block">Full Schedule</a></div>
+          <div style="margin-top:10px">
+            <a class="btn" href="#" style="text-decoration:none; display:inline-block">Full Schedule</a>
+          </div>
         </div>
       </section>
 
       <section class="panel widget">
-        <div class="head"><h2 style="margin:0;font-size:18px">Social</h2></div>
+        <div class="head"><h2>Social</h2></div>
         <div class="body">
           <div id="socialCol" class="social"></div>
         </div>
@@ -71,11 +109,8 @@
   </div>
 </main>
 
-<footer class="footer"><div class="wrap">© Team Hub. Themeable pro-style template.</div></footer>
+<footer class="footer"><div class="wrap">© Team Hub. Pro template v1.5.</div></footer>
 
 <script src="./static/js/pro.js"></script>
-<script>
-document.getElementById('refreshBtn').addEventListener('click', ()=> location.reload());
-</script>
 </body>
 </html>
