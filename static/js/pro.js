@@ -1,227 +1,181 @@
-/* Team Hub — Purdue MBB — static JS (v5)
- * - Featured hero + Videos + Headlines + Schedule
- * - Lazy-loading images, safe fallbacks, promo auto-hide
- * - Absolute fetch paths for GitHub Pages
- */
+// static/js/pro.js
+document.addEventListener("DOMContentLoaded", () => {
+  loadTeam();
+  loadItems();
+  loadSchedule();
+  setupRefresh();
+});
 
-const REPO_BASE = "/sports-app-project";
-
-async function loadJSON(path){
-  const r = await fetch(path + (path.includes("?") ? "" : "?ts=" + Date.now()), { cache: "no-store" });
-  if(!r.ok) throw new Error("HTTP " + r.status + " for " + path);
-  return await r.json();
-}
-
-/* ----------------------------- THEME ----------------------------- */
-function setTheme(t){
-  document.documentElement.style.setProperty("--primary",  t.primary_color   || "#CEB888");
-  document.documentElement.style.setProperty("--secondary",t.secondary_color || "#000000");
-  document.documentElement.style.setProperty("--bg",       t.dark_bg         || "#0a0a0a");
-  document.documentElement.style.setProperty("--panel",    t.light_bg        || "#111217");
-
-  const hero = document.querySelector(".hero .image");
-  if (hero && t.hero_image) hero.style.backgroundImage = `url('${t.hero_image}')`;
+async function loadTeam() {
+  const res = await fetch("/sports-app-project/static/team.json");
+  const team = await res.json();
+  document.getElementById("wordmark").textContent = team.wordmark || team.team_name;
 
   const logo = document.getElementById("logo");
-  if (logo && t.logo_url) logo.src = t.logo_url;
+  if (logo) logo.src = team.logo_url;
 
-  const mark = document.getElementById("wordmark");
-  if (mark) mark.textContent = t.wordmark || t.team_name || "Team Hub";
+  document.body.style.setProperty("--primary", team.primary_color);
+  document.body.style.setProperty("--accent", team.accent);
 
+  setTheme(team);
+  renderPromos(team.promos);
+}
+
+function setTheme(team) {
   const nav = document.querySelector(".nav");
-  if (nav) {
-    nav.innerHTML = "";
-    (t.links || []).forEach(link => {
-      const a = document.createElement("a");
-      a.href = link.href; a.textContent = link.label;
-      nav.appendChild(a);
-    });
+  nav.innerHTML = "";
+
+  team.links.forEach(link => {
+    const a = document.createElement("a");
+    a.href = link.href;
+    a.textContent = link.label;
+
+    // ✅ open external links in new tab
+    if (link.href.startsWith("http")) {
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+    }
+
+    nav.appendChild(a);
+  });
+
+  const heroImg = document.querySelector(".hero .image");
+  if (heroImg) {
+    heroImg.style.backgroundImage = `url('${team.hero_image}')`;
   }
 }
 
-/* ----------------------------- RENDER ----------------------------- */
-const FALLBACK_IMG = `${REPO_BASE}/static/assets/share.jpg`; // use any 1200x630 jpg if a card image is missing
+function renderPromos(promos) {
+  const row = document.getElementById("promoRow");
+  if (!row) return;
+  row.innerHTML = "";
 
-function fmtWhen(iso){
-  if(!iso) return "";
-  const d = new Date(iso);
-  return d.toLocaleString(undefined, { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" });
-}
-
-function escapeAttr(s){ return (s||"").replace(/"/g,"&quot;"); }
-
-function cardHTML(it){
-  const img = it.image_url ? `<img src="${escapeAttr(it.image_url)}" alt="" loading="lazy" onerror="this.src='${FALLBACK_IMG}'">`
-                           : `<img src="${FALLBACK_IMG}" alt="" loading="lazy">`;
-  const trust = (it.trust_level || "").replace("_"," ");
-  const source = it.source || "";
-  const when = fmtWhen(it.published_at);
-
-  return `<article class="card">
-    <a class="thumb" href="${it.url || "#"}" target="_blank" rel="noopener">${img}</a>
-    <div class="meta"><span class="badge">${trust}</span><span>${source}</span>${when?`<span>•</span><time>${when}</time>`:""}</div>
-    <a class="title" href="${it.url || "#"}" target="_blank" rel="noopener">${it.title || ""}</a>
-    ${it.summary ? `<p class="summary">${it.summary}</p>` : ""}
-  </article>`;
-}
-
-function pickFeatured(items){
-  const explicit = items.find(i => i.featured === true);
-  if (explicit) return explicit;
-  const news = items.filter(i => !((i.type||"").toLowerCase().includes("video")));
-  if (news.length) return news[0];
-  return items[0] || null;
-}
-
-function renderFeature(item){
-  const FALL = {
-    title: "Waiting for first data sync…",
-    url: "#",
-    summary: "Add items.json with images to see a featured story.",
-    source: "Team Hub",
-    trust_level: "official",
-    published_at: new Date().toISOString(),
-    image_url: FALLBACK_IMG
-  };
-  const it = item || FALL;
-  const img = document.getElementById("featureImg");
-  const link = document.getElementById("featureLink");
-  const title = document.getElementById("featureTitle");
-  const summary = document.getElementById("featureSummary");
-  const trust = document.getElementById("featureTrust");
-  const src = document.getElementById("featureSource");
-  const when = document.getElementById("featureWhen");
-  const read = document.getElementById("featureRead");
-
-  if (img){
-    img.src = it.image_url || FALLBACK_IMG;
-    img.alt = it.title || "Featured story";
-    img.loading = "eager";
-    img.onerror = () => { img.src = FALLBACK_IMG; };
+  if (!promos || promos.length === 0) {
+    document.getElementById("promos").style.display = "none";
+    return;
   }
-  if (link) link.href = it.url || "#";
-  if (title){ title.textContent = it.title || ""; title.href = it.url || "#"; }
-  if (summary) summary.textContent = it.summary || "";
-  if (trust) trust.textContent = (it.trust_level || "").replace("_"," ");
-  if (src) src.textContent = it.source || "";
-  if (when) when.textContent = fmtWhen(it.published_at);
-  if (read) read.href = it.url || "#";
+
+  promos.forEach(p => {
+    const card = document.createElement("div");
+    card.className = "promo-card";
+    card.innerHTML = `
+      <h3>${p.title}</h3>
+      <p>${p.text}</p>
+      <a href="${p.href}" target="_blank" rel="noopener noreferrer" class="btn">${p.cta}</a>
+    `;
+    row.appendChild(card);
+  });
 }
 
-function renderPromos(theme){
-  const section = document.getElementById("promos");
-  const host = document.getElementById("promoRow");
-  if (!host || !section) return;
+async function loadItems() {
+  const res = await fetch("/sports-app-project/static/teams/purdue-mbb/items.json");
+  const items = await res.json();
 
-  const defaults = [
-    {"title":"Buy Tickets","text":"Secure your seats for the next home game.","href":"https://purduesports.com/tickets","cta":"Tickets"},
-    {"title":"Team Shop","text":"New gear just dropped.","href":"https://shop.purduesports.com/","cta":"Shop"},
-    {"title":"Download App","text":"Scores, alerts, and more.","href":"https://apps.apple.com/","cta":"Get App"}
-  ];
-  const promos = (theme && Array.isArray(theme.promos)) ? theme.promos : defaults;
-  if (!promos.length){ section.style.display = "none"; return; }
+  const feature = items.find(i => i.featured) || items[0];
+  if (feature) renderFeature(feature);
 
-  host.innerHTML = promos.map(p => `
-    <article class="promo-card">
-      <h3 style="margin:0 0 6px 0">${p.title}</h3>
-      <p style="margin:0 0 8px 0; color:#cfe0e6">${p.text}</p>
-      <div class="promo-cta"><a class="btn" href="${p.href || '#'}" target="_blank" rel="noopener">${p.cta || 'Learn more'}</a></div>
-    </article>
+  const videos = items.filter(i => i.type === "video");
+  const news = items.filter(i => i.type === "news");
+
+  renderVideos(videos);
+  renderNews(news);
+}
+
+function renderFeature(item) {
+  document.getElementById("featureImg").src = item.image_url || "";
+  document.getElementById("featureLink").href = item.url;
+  document.getElementById("featureTitle").textContent = item.title;
+  document.getElementById("featureTitle").href = item.url;
+  document.getElementById("featureSummary").textContent = item.summary || "";
+  document.getElementById("featureSource").textContent = item.source || "";
+  document.getElementById("featureTrust").textContent = item.trust_level || "";
+  document.getElementById("featureWhen").textContent = formatTime(item.published_at);
+  document.getElementById("featureRead").href = item.url;
+}
+
+function renderVideos(videos) {
+  const row = document.getElementById("videoRow");
+  if (!row) return;
+  row.innerHTML = "";
+
+  videos.slice(0, 8).forEach(v => {
+    const card = document.createElement("div");
+    card.className = "video-card";
+    card.innerHTML = `
+      <a href="${v.url}" target="_blank" rel="noopener noreferrer" class="thumb">
+        <img src="${v.image_url}" alt="${v.title}" loading="lazy" />
+      </a>
+      <div class="video-meta">
+        <h4><a href="${v.url}" target="_blank" rel="noopener noreferrer">${v.title}</a></h4>
+        <p class="meta">${v.source} • ${formatTime(v.published_at)}</p>
+      </div>
+    `;
+    row.appendChild(card);
+  });
+}
+
+function renderNews(news) {
+  const grid = document.getElementById("newsGrid");
+  if (!grid) return;
+  grid.innerHTML = "";
+
+  news.slice(0, 20).forEach(n => {
+    const card = document.createElement("div");
+    card.className = "news-card";
+    card.innerHTML = `
+      <a href="${n.url}" target="_blank" rel="noopener noreferrer" class="thumb">
+        <img src="${n.image_url}" alt="${n.title}" loading="lazy" />
+      </a>
+      <div class="news-meta">
+        <h4><a href="${n.url}" target="_blank" rel="noopener noreferrer">${n.title}</a></h4>
+        <p class="summary">${n.summary || ""}</p>
+        <p class="meta">${n.source} • ${formatTime(n.published_at)}</p>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+async function loadSchedule() {
+  const res = await fetch("/sports-app-project/static/schedule.json");
+  if (!res.ok) return;
+  const schedule = await res.json();
+  const list = document.getElementById("scheduleList");
+  if (!list) return;
+
+  list.innerHTML = schedule.map(game => `
+    <div class="game">
+      <div class="date">${formatDate(game.date)}</div>
+      <div class="matchup">${game.home ? "vs" : "@"} ${game.opp}</div>
+      <div class="time">${game.time_local}</div>
+    </div>
   `).join("");
 }
 
-function renderLists(items){
-  const videos = items.filter(i => (i.type || "").toLowerCase().includes("video")).slice(0, 8);
-  const news   = items.filter(i => !((i.type || "").toLowerCase().includes("video"))).slice(0, 24);
-
-  const newsGrid = document.getElementById("newsGrid");
-  const videoRow = document.getElementById("videoRow");
-
-  if (newsGrid) newsGrid.innerHTML = news.map(cardHTML).join("");
-
-  if (videoRow) {
-    videoRow.innerHTML = videos.map(i => {
-      const img = i.image_url ? `<img src="${escapeAttr(i.image_url)}" alt="" loading="lazy" onerror="this.src='${FALLBACK_IMG}'">`
-                              : `<img src="${FALLBACK_IMG}" alt="" loading="lazy">`;
-      return `
-        <article class="card video-card">
-          <a class="thumb" href="${i.url || "#"}" target="_blank" rel="noopener">${img}</a>
-          <a class="title" href="${i.url || "#"}" target="_blank" rel="noopener">${i.title || ""}</a>
-          <div class="meta"><span>${i.source || ""}</span>${i.published_at ? `<span>•</span><time>${fmtWhen(i.published_at)}</time>` : ""}</div>
-        </article>`;
-    }).join("");
-  }
-}
-
-/* ----------------------------- SCHEDULE ----------------------------- */
-async function loadSchedule(){
-  const host = document.getElementById("scheduleList");
-  if (!host) return;
-  try{
-    const data = await loadJSON(`${REPO_BASE}/static/schedule.json`);
-    host.innerHTML = data.map(g => {
-      const date = new Date(g.date);
-      const dateTxt = isNaN(date) ? (g.date || "") :
-        date.toLocaleDateString(undefined, { month: "short", day: "2-digit" });
-      const where = g.home ? "Home" : "Away";
-      return `
-        <div class="game">
-          <div>
-            <div class="date">${dateTxt}</div>
-            <div class="opp">${g.home ? "" : "@ "}${g.opp || ""}</div>
-          </div>
-          <div>${where}${g.time_local ? ` • ${g.time_local}` : ""}</div>
-        </div>`;
-    }).join("");
-  }catch(e){
-    console.warn("schedule.json not found (optional)", e.message);
-  }
-}
-
-/* ----------------------------- MAIN ----------------------------- */
-async function main(){
-  // Theme
-  let theme = { team_slug: "purdue-mbb" };
-  try{ theme = await loadJSON(`${REPO_BASE}/static/team.json`); }catch(e){ console.warn("Theme load failed", e.message); }
-  setTheme(theme);
-  renderPromos(theme);
-
-  // Items
-  const slug = (theme.team_slug || "purdue-mbb").toLowerCase();
-  const path = `${REPO_BASE}/static/teams/${encodeURIComponent(slug)}/items.json`;
-  let items = [];
-  try{
-    items = await loadJSON(path);
-    // de-dupe by URL, newest first
-    const seen = new Set();
-    items = items.filter(x => {
-      const k = (x.url||"") + "|" + (x.title||"");
-      if (seen.has(k)) return false; seen.add(k); return true;
-    });
-    items.sort((a,b) => new Date(b.published_at||0) - new Date(a.published_at||0));
-  }catch(e){
-    console.warn("Items load failed, showing placeholder", e.message);
-    items = [{
-      "type":"news",
-      "title":"Waiting for first data sync…",
-      "url":"#",
-      "summary":"Add static/teams/"+slug+"/items.json (with image_url) or wire the Action to generate it.",
-      "published_at": new Date().toISOString(),
-      "source":"Team Hub",
-      "trust_level":"official",
-      "image_url": FALLBACK_IMG
-    }];
-  }
-
-  renderFeature(pickFeatured(items));
-  renderLists(items);
-  loadSchedule();
-
-  const soc = document.getElementById("socialCol");
-  if (soc) soc.innerHTML = `<div class="x-embed">Follow on X: <strong>@${(theme.team_name||'Purdue').replace(/\s+/g,'')}</strong><br/>Embed live feed here later.</div>`;
-
+function setupRefresh() {
   const btn = document.getElementById("refreshBtn");
-  if (btn) btn.addEventListener("click", () => location.reload());
+  if (btn) {
+    btn.addEventListener("click", () => {
+      loadItems();
+      loadSchedule();
+    });
+  }
 }
 
-document.addEventListener("DOMContentLoaded", main);
+function formatTime(ts) {
+  try {
+    const d = new Date(ts);
+    return d.toLocaleDateString("en-US", { month: "short", day: "numeric" });
+  } catch {
+    return "";
+  }
+}
+
+function formatDate(ts) {
+  try {
+    const d = new Date(ts);
+    return d.toLocaleDateString("en-US", { month: "short", day: "numeric" });
+  } catch {
+    return "";
+  }
+}
