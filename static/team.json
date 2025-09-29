@@ -14,10 +14,13 @@
     { "label": "News", "href": "#news" },
     { "label": "Videos", "href": "#videos" },
     { "label": "Schedule", "href": "#schedule" },
-    { "label": "Tickets", "href": "https://purduesports.com/tickets" },
-    { "label": "Shop", "href": "https://shop.purduesports.com/" },
     { "label": "Roster", "href": "https://purduesports.com/sports/mens-basketball/roster" },
-    { "label": "Stats", "href": "https://www.espn.com/mens-college-basketball/team/stats/_/id/2509/purdue-boilermakers" }
+    { "label": "Stats", "href": "https://www.espn.com/mens-college-basketball/team/stats/_/id/2509/purdue-boilermakers" },
+    { "label": "AP Poll", "href": "https://www.espn.com/mens-college-basketball/rankings" },
+    { "label": "KenPom", "href": "https://kenpom.com/" },
+    { "label": "NIL Portal", "href": "https://www.on3.com/nil/" },
+    { "label": "Tickets", "href": "https://purduesports.com/tickets" },
+    { "label": "Shop", "href": "https://shop.purduesports.com/" }
   ],
   "promos": [
     {
