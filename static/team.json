@@ -1,18 +1,5 @@
-{
-  "team_slug": "purdue-mbb",
-  "team_name": "Purdue Boilermakers",
-  "city": "West Lafayette",
-  "primary_color": "#CEB888",            // gold
-  "secondary_color": "#000000",          // black
-  "dark_bg": "#0a0a0a",
-  "light_bg": "#111217",
-  "accent": "#CEB888",
-  "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Purdue_Boilermakers_wordmark.svg/512px-Purdue_Boilermakers_wordmark.svg.png",
-  "hero_image": "https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1600&auto=format&fit=crop",
-  "wordmark": "Team Hub",
-  "links": [
-    {"label": "News", "href": "#news"},
-    {"label": "Videos", "href": "#videos"},
-    {"label": "Schedule", "href": "#schedule"}
-  ]
-}
+"promos": [
+  {"title":"Buy Tickets","text":"Secure your seats.","href":"https://tickets.example.com","cta":"Tickets"},
+  {"title":"Team Shop","text":"New arrivals in stock.","href":"https://shop.example.com","cta":"Shop"},
+  {"title":"Download App","text":"Real-time alerts & stats.","href":"https://apps.example.com","cta":"Get App"}
+]
