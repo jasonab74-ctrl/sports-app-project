@@ -1,5 +1,17 @@
 [
   {
+    "featured": true,
+    "type": "news",
+    "team": "purdue-mbb",
+    "source": "Purdue Athletics",
+    "trust_level": "official",
+    "title": "Boilermakers release non-conference schedule",
+    "url": "https://purduesports.com/",
+    "published_at": "2025-09-24T14:05:00Z",
+    "summary": "Purdue announces non-conference opponents and dates, including a marquee neutral-site game.",
+    "image_url": "https://images.unsplash.com/photo-1544914379-806667cd9482?q=80&w=1600&auto=format&fit=crop"
+  },
+  {
     "type": "video",
     "team": "purdue-mbb",
     "source": "Purdue Athletics",
@@ -31,17 +43,6 @@
     "published_at": "2025-09-22T16:45:00Z",
     "summary": "Coach on rotations and conditioning.",
     "image_url": "https://i.ytimg.com/vi/aqz-KE-bpKQ/hqdefault.jpg"
-  },
-  {
-    "type": "news",
-    "team": "purdue-mbb",
-    "source": "Purdue Athletics",
-    "trust_level": "official",
-    "title": "Boilermakers release non-conference schedule",
-    "url": "https://purduesports.com/",
-    "published_at": "2025-09-24T14:05:00Z",
-    "summary": "Purdue announces non-conference opponents and dates.",
-    "image_url": "https://images.unsplash.com/photo-1521417531039-95e91480f0f5?q=80&w=1200&auto=format&fit=crop"
   },
   {
     "type": "news",
