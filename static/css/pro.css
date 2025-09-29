@@ -60,6 +60,7 @@ a{color:inherit}
 .promo .body{padding:12px 14px}
 .promo-row{display:grid; grid-template-columns: repeat(3,1fr); gap:12px}
 .promo-card{background:var(--card); border:1px solid var(--border); border-radius:12px; padding:14px; display:flex; flex-direction:column; gap:8px}
+.promo-card:hover{outline:1px solid #3a4049}
 .promo-cta{margin-top:auto}
 
 /* Layout grid */
@@ -81,7 +82,8 @@ a{color:inherit}
 @media (min-width:620px){ .news-grid{ grid-template-columns: repeat(2,1fr)} }
 @media (min-width:1020px){ .news-grid{ grid-template-columns: repeat(3,1fr)} }
 
-.card{display:flex; flex-direction:column; gap:8px; background:var(--card); border:1px solid var(--border); border-radius:12px; overflow:hidden}
+.card{display:flex; flex-direction:column; gap:8px; background:var(--card); border:1px solid var(--border); border-radius:12px; overflow:hidden; transition:transform .08s ease}
+.card:hover{transform:translateY(-1px)}
 .thumb{ aspect-ratio:16/9; background:#0c1218 }
 .thumb img{ width:100%; height:100%; object-fit:cover; display:block }
 .meta{ display:flex; gap:8px; color:var(--muted); font-size:12px; align-items:center; padding:0 12px}
@@ -105,3 +107,6 @@ a{color:inherit}
 /* Footer */
 .footer{border-top:1px solid var(--border); color:var(--muted)}
 .footer .wrap{ padding:16px 8px }
+
+/* Accessibility helpers */
+.sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
