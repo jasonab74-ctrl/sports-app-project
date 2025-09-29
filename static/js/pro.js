@@ -1,4 +1,4 @@
-/* v1.5 — Featured hero, promos, better mobile */
+/* Team Hub — Purdue MBB — static JS (v4) */
 
 async function loadJSON(path){
   const r = await fetch(path + (path.includes("?") ? "" : "?ts=" + Date.now()), { cache: "no-store" });
@@ -8,10 +8,10 @@ async function loadJSON(path){
 
 /* ----------------------------- THEME ----------------------------- */
 function setTheme(t){
-  document.documentElement.style.setProperty("--primary",  t.primary_color   || "#004C54");
-  document.documentElement.style.setProperty("--secondary",t.secondary_color || "#A5ACAF");
-  document.documentElement.style.setProperty("--bg",       t.dark_bg         || "#0a1114");
-  document.documentElement.style.setProperty("--panel",    t.light_bg        || "#0f1a1e");
+  document.documentElement.style.setProperty("--primary",  t.primary_color   || "#CEB888");
+  document.documentElement.style.setProperty("--secondary",t.secondary_color || "#000000");
+  document.documentElement.style.setProperty("--bg",       t.dark_bg         || "#0a0a0a");
+  document.documentElement.style.setProperty("--panel",    t.light_bg        || "#111217");
 
   const hero = document.querySelector(".hero .image");
   if (hero && t.hero_image) hero.style.backgroundImage = `url('${t.hero_image}')`;
@@ -55,7 +55,6 @@ function cardHTML(it){
 }
 
 function pickFeatured(items){
-  // priority: featured:true -> latest non-video -> any item
   const explicit = items.find(i => i.featured === true);
   if (explicit) return explicit;
   const news = items.filter(i => !((i.type||"").toLowerCase().includes("video")));
@@ -64,7 +63,7 @@ function pickFeatured(items){
 }
 
 function renderFeature(item){
-  const FALLBACK = {
+  const FALL = {
     title: "Waiting for first data sync…",
     url: "#",
     summary: "Add items.json with images to see a featured story.",
@@ -73,7 +72,7 @@ function renderFeature(item){
     published_at: new Date().toISOString(),
     image_url: ""
   };
-  const it = item || FALLBACK;
+  const it = item || FALL;
   const img = document.getElementById("featureImg");
   const link = document.getElementById("featureLink");
   const title = document.getElementById("featureTitle");
@@ -97,15 +96,15 @@ function renderPromos(theme){
   const host = document.getElementById("promoRow");
   if (!host) return;
   const defaults = [
-    {title:"Buy Tickets", text:"Grab seats for upcoming games.", href:"#", cta:"Tickets"},
-    {title:"Team Shop", text:"Rep the squad with new gear.", href:"#", cta:"Shop"},
-    {title:"Download the App", text:"Scores, alerts, and more.", href:"#", cta:"Get App"}
+    {"title":"Buy Tickets","text":"Secure your seats for the next home game.","href":"https://purduesports.com/tickets","cta":"Tickets"},
+    {"title":"Team Shop","text":"New gear just dropped.","href":"https://shop.purduesports.com/","cta":"Shop"},
+    {"title":"Download App","text":"Scores, alerts, and more.","href":"https://apps.apple.com/","cta":"Get App"}
   ];
   const promos = (theme && theme.promos && theme.promos.length) ? theme.promos : defaults;
   host.innerHTML = promos.map(p => `
     <article class="promo-card">
       <h3 style="margin:0 0 6px 0">${p.title}</h3>
-      <p style="margin:0 0 8px 0; color:#cfe7ea">${p.text}</p>
+      <p style="margin:0 0 8px 0; color:#cfe0e6">${p.text}</p>
       <div class="promo-cta"><a class="btn" href="${p.href || '#'}" target="_blank" rel="noopener">${p.cta || 'Learn more'}</a></div>
     </article>
   `).join("");
@@ -138,7 +137,7 @@ async function loadSchedule(){
   const host = document.getElementById("scheduleList");
   if (!host) return;
   try{
-    const data = await loadJSON("./static/schedule.json");
+    const data = await loadJSON("/sports-app-project/static/schedule.json");
     host.innerHTML = data.map(g => {
       const date = new Date(g.date);
       const dateTxt = isNaN(date) ? (g.date || "") :
@@ -160,31 +159,26 @@ async function loadSchedule(){
 
 /* ----------------------------- MAIN ----------------------------- */
 async function main(){
+  // Theme
   let theme = { team_slug: "purdue-mbb" };
-
-  // Theme (colors/logo/hero/nav + optional promos)
-  try{
-    theme = await loadJSON("./static/team.json");
-  }catch(e){
-    console.warn("Theme load failed (using defaults)", e.message);
-  }
+  try{ theme = await loadJSON("/sports-app-project/static/team.json"); }catch(e){ console.warn("Theme load failed", e.message); }
   setTheme(theme);
   renderPromos(theme);
 
   // Items
-  let items = [];
   const slug = (theme.team_slug || "purdue-mbb").toLowerCase();
-  const itemsPath = `./static/teams/${encodeURIComponent(slug)}/items.json`;
+  const path = `/sports-app-project/static/teams/${encodeURIComponent(slug)}/items.json`;
+  let items = [];
   try{
-    items = await loadJSON(itemsPath);
-    items.sort((a,b) => new Date(b.published_at || 0) - new Date(a.published_at || 0));
+    items = await loadJSON(path);
+    items.sort((a,b) => new Date(b.published_at||0) - new Date(a.published_at||0));
   }catch(e){
     console.warn("Items load failed, showing placeholder", e.message);
     items = [{
       "type":"news",
       "title":"Waiting for first data sync…",
       "url":"#",
-      "summary":"Add static/teams/"+slug+"/items.json or enable the Action to generate it.",
+      "summary":"Add static/teams/"+slug+"/items.json (with image_url) or wire the Action to generate it.",
       "published_at": new Date().toISOString(),
       "source":"Team Hub",
       "trust_level":"official",
@@ -192,18 +186,13 @@ async function main(){
     }];
   }
 
-  // Featured + lists
   renderFeature(pickFeatured(items));
   renderLists(items);
-
-  // Widgets
   loadSchedule();
 
-  // Social placeholder
   const soc = document.getElementById("socialCol");
-  if (soc) soc.innerHTML = `<div class="x-embed">Follow on X: <strong>@${(theme.team_name||'Team').replace(/\s+/g,'')}</strong><br/>Embed live feed here later.</div>`;
+  if (soc) soc.innerHTML = `<div class="x-embed">Follow on X: <strong>@${(theme.team_name||'Purdue').replace(/\s+/g,'')}</strong><br/>Embed live feed here later.</div>`;
 
-  // Refresh button
   const btn = document.getElementById("refreshBtn");
   if (btn) btn.addEventListener("click", () => location.reload());
 }
