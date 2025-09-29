@@ -1,181 +1,221 @@
-// static/js/pro.js
-document.addEventListener("DOMContentLoaded", () => {
-  loadTeam();
-  loadItems();
-  loadSchedule();
-  setupRefresh();
-});
-
-async function loadTeam() {
-  const res = await fetch("/sports-app-project/static/team.json");
-  const team = await res.json();
-  document.getElementById("wordmark").textContent = team.wordmark || team.team_name;
-
-  const logo = document.getElementById("logo");
-  if (logo) logo.src = team.logo_url;
-
-  document.body.style.setProperty("--primary", team.primary_color);
-  document.body.style.setProperty("--accent", team.accent);
-
-  setTheme(team);
-  renderPromos(team.promos);
+:root {
+  --primary: #CEB888;
+  --secondary: #000000;
+  --accent: #CEB888;
+  --bg: #0a0a0a;
+  --panel: #111217;
+  --card: #141b1f;
+  --text: #e6f2f3;
+  --muted: #a6bcc0;
+  --border: #232a2d;
 }
 
-function setTheme(team) {
-  const nav = document.querySelector(".nav");
-  nav.innerHTML = "";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-  team.links.forEach(link => {
-    const a = document.createElement("a");
-    a.href = link.href;
-    a.textContent = link.label;
+body {
+  font-family: "Helvetica Neue", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
 
-    // ✅ open external links in new tab
-    if (link.href.startsWith("http")) {
-      a.target = "_blank";
-      a.rel = "noopener noreferrer";
-    }
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
 
-    nav.appendChild(a);
-  });
+.header {
+  background: var(--panel);
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+.wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.brand img {
+  height: 36px;
+}
+.nav {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.nav a {
+  color: var(--text);
+  font-weight: 600;
+  padding: 6px 0;
+}
 
-  const heroImg = document.querySelector(".hero .image");
-  if (heroImg) {
-    heroImg.style.backgroundImage = `url('${team.hero_image}')`;
+.controls {
+  display: flex;
+  gap: 8px;
+}
+.btn {
+  background: var(--accent);
+  border: none;
+  padding: 6px 12px;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.btn:hover {
+  opacity: 0.85;
+}
+
+.hero {
+  height: 320px;
+  background: #000;
+  position: relative;
+}
+.hero .image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+.hero .overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  color: #fff;
+}
+.pageTitle {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.feature {
+  display: flex;
+  flex-wrap: wrap;
+  background: var(--panel);
+  margin-top: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.feature-media {
+  flex: 1 1 50%;
+  min-height: 300px;
+}
+.feature-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.feature-content {
+  flex: 1 1 50%;
+  padding: 24px;
+}
+.feature-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 12px 0;
+}
+
+.promo {
+  margin: 30px 0;
+}
+.promo-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+.promo-card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.video-row {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 10px 0;
+}
+.video-card {
+  background: var(--card);
+  width: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.thumb {
+  aspect-ratio: 16/9;
+  background: #0c171a;
+  overflow: hidden;
+}
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.news-card {
+  background: var(--card);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.schedule-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.game {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: var(--panel);
+  color: var(--muted);
+  margin-top: 40px;
+}
+
+/* ✅ Responsive tweaks */
+@media (max-width: 800px) {
+  .feature {
+    flex-direction: column;
   }
-}
-
-function renderPromos(promos) {
-  const row = document.getElementById("promoRow");
-  if (!row) return;
-  row.innerHTML = "";
-
-  if (!promos || promos.length === 0) {
-    document.getElementById("promos").style.display = "none";
-    return;
+  .feature-media, .feature-content {
+    flex: 1 1 100%;
   }
-
-  promos.forEach(p => {
-    const card = document.createElement("div");
-    card.className = "promo-card";
-    card.innerHTML = `
-      <h3>${p.title}</h3>
-      <p>${p.text}</p>
-      <a href="${p.href}" target="_blank" rel="noopener noreferrer" class="btn">${p.cta}</a>
-    `;
-    row.appendChild(card);
-  });
-}
-
-async function loadItems() {
-  const res = await fetch("/sports-app-project/static/teams/purdue-mbb/items.json");
-  const items = await res.json();
-
-  const feature = items.find(i => i.featured) || items[0];
-  if (feature) renderFeature(feature);
-
-  const videos = items.filter(i => i.type === "video");
-  const news = items.filter(i => i.type === "news");
-
-  renderVideos(videos);
-  renderNews(news);
-}
-
-function renderFeature(item) {
-  document.getElementById("featureImg").src = item.image_url || "";
-  document.getElementById("featureLink").href = item.url;
-  document.getElementById("featureTitle").textContent = item.title;
-  document.getElementById("featureTitle").href = item.url;
-  document.getElementById("featureSummary").textContent = item.summary || "";
-  document.getElementById("featureSource").textContent = item.source || "";
-  document.getElementById("featureTrust").textContent = item.trust_level || "";
-  document.getElementById("featureWhen").textContent = formatTime(item.published_at);
-  document.getElementById("featureRead").href = item.url;
-}
-
-function renderVideos(videos) {
-  const row = document.getElementById("videoRow");
-  if (!row) return;
-  row.innerHTML = "";
-
-  videos.slice(0, 8).forEach(v => {
-    const card = document.createElement("div");
-    card.className = "video-card";
-    card.innerHTML = `
-      <a href="${v.url}" target="_blank" rel="noopener noreferrer" class="thumb">
-        <img src="${v.image_url}" alt="${v.title}" loading="lazy" />
-      </a>
-      <div class="video-meta">
-        <h4><a href="${v.url}" target="_blank" rel="noopener noreferrer">${v.title}</a></h4>
-        <p class="meta">${v.source} • ${formatTime(v.published_at)}</p>
-      </div>
-    `;
-    row.appendChild(card);
-  });
-}
-
-function renderNews(news) {
-  const grid = document.getElementById("newsGrid");
-  if (!grid) return;
-  grid.innerHTML = "";
-
-  news.slice(0, 20).forEach(n => {
-    const card = document.createElement("div");
-    card.className = "news-card";
-    card.innerHTML = `
-      <a href="${n.url}" target="_blank" rel="noopener noreferrer" class="thumb">
-        <img src="${n.image_url}" alt="${n.title}" loading="lazy" />
-      </a>
-      <div class="news-meta">
-        <h4><a href="${n.url}" target="_blank" rel="noopener noreferrer">${n.title}</a></h4>
-        <p class="summary">${n.summary || ""}</p>
-        <p class="meta">${n.source} • ${formatTime(n.published_at)}</p>
-      </div>
-    `;
-    grid.appendChild(card);
-  });
-}
-
-async function loadSchedule() {
-  const res = await fetch("/sports-app-project/static/schedule.json");
-  if (!res.ok) return;
-  const schedule = await res.json();
-  const list = document.getElementById("scheduleList");
-  if (!list) return;
-
-  list.innerHTML = schedule.map(game => `
-    <div class="game">
-      <div class="date">${formatDate(game.date)}</div>
-      <div class="matchup">${game.home ? "vs" : "@"} ${game.opp}</div>
-      <div class="time">${game.time_local}</div>
-    </div>
-  `).join("");
-}
-
-function setupRefresh() {
-  const btn = document.getElementById("refreshBtn");
-  if (btn) {
-    btn.addEventListener("click", () => {
-      loadItems();
-      loadSchedule();
-    });
+  .bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
   }
-}
-
-function formatTime(ts) {
-  try {
-    const d = new Date(ts);
-    return d.toLocaleDateString("en-US", { month: "short", day: "numeric" });
-  } catch {
-    return "";
-  }
-}
-
-function formatDate(ts) {
-  try {
-    const d = new Date(ts);
-    return d.toLocaleDateString("en-US", { month: "short", day: "numeric" });
-  } catch {
-    return "";
+  .nav {
+    flex-wrap: wrap;
+    gap: 10px;
   }
 }
