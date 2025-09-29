@@ -1,4 +1,10 @@
-/* Team Hub — Purdue MBB — static JS (v4) */
+/* Team Hub — Purdue MBB — static JS (v5)
+ * - Featured hero + Videos + Headlines + Schedule
+ * - Lazy-loading images, safe fallbacks, promo auto-hide
+ * - Absolute fetch paths for GitHub Pages
+ */
+
+const REPO_BASE = "/sports-app-project";
 
 async function loadJSON(path){
   const r = await fetch(path + (path.includes("?") ? "" : "?ts=" + Date.now()), { cache: "no-store" });
@@ -34,14 +40,19 @@ function setTheme(t){
 }
 
 /* ----------------------------- RENDER ----------------------------- */
+const FALLBACK_IMG = `${REPO_BASE}/static/assets/share.jpg`; // use any 1200x630 jpg if a card image is missing
+
 function fmtWhen(iso){
   if(!iso) return "";
   const d = new Date(iso);
   return d.toLocaleString(undefined, { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" });
 }
 
+function escapeAttr(s){ return (s||"").replace(/"/g,"&quot;"); }
+
 function cardHTML(it){
-  const img = it.image_url ? `<img src="${it.image_url}" alt="">` : "";
+  const img = it.image_url ? `<img src="${escapeAttr(it.image_url)}" alt="" loading="lazy" onerror="this.src='${FALLBACK_IMG}'">`
+                           : `<img src="${FALLBACK_IMG}" alt="" loading="lazy">`;
   const trust = (it.trust_level || "").replace("_"," ");
   const source = it.source || "";
   const when = fmtWhen(it.published_at);
@@ -70,7 +81,7 @@ function renderFeature(item){
     source: "Team Hub",
     trust_level: "official",
     published_at: new Date().toISOString(),
-    image_url: ""
+    image_url: FALLBACK_IMG
   };
   const it = item || FALL;
   const img = document.getElementById("featureImg");
@@ -82,7 +93,12 @@ function renderFeature(item){
   const when = document.getElementById("featureWhen");
   const read = document.getElementById("featureRead");
 
-  if (img) img.src = it.image_url || "";
+  if (img){
+    img.src = it.image_url || FALLBACK_IMG;
+    img.alt = it.title || "Featured story";
+    img.loading = "eager";
+    img.onerror = () => { img.src = FALLBACK_IMG; };
+  }
   if (link) link.href = it.url || "#";
   if (title){ title.textContent = it.title || ""; title.href = it.url || "#"; }
   if (summary) summary.textContent = it.summary || "";
@@ -93,14 +109,18 @@ function renderFeature(item){
 }
 
 function renderPromos(theme){
+  const section = document.getElementById("promos");
   const host = document.getElementById("promoRow");
-  if (!host) return;
+  if (!host || !section) return;
+
   const defaults = [
     {"title":"Buy Tickets","text":"Secure your seats for the next home game.","href":"https://purduesports.com/tickets","cta":"Tickets"},
     {"title":"Team Shop","text":"New gear just dropped.","href":"https://shop.purduesports.com/","cta":"Shop"},
     {"title":"Download App","text":"Scores, alerts, and more.","href":"https://apps.apple.com/","cta":"Get App"}
   ];
-  const promos = (theme && theme.promos && theme.promos.length) ? theme.promos : defaults;
+  const promos = (theme && Array.isArray(theme.promos)) ? theme.promos : defaults;
+  if (!promos.length){ section.style.display = "none"; return; }
+
   host.innerHTML = promos.map(p => `
     <article class="promo-card">
       <h3 style="margin:0 0 6px 0">${p.title}</h3>
@@ -120,15 +140,16 @@ function renderLists(items){
   if (newsGrid) newsGrid.innerHTML = news.map(cardHTML).join("");
 
   if (videoRow) {
-    videoRow.innerHTML = videos.map(i => `
-      <article class="card video-card">
-        <a class="thumb" href="${i.url || "#"}" target="_blank" rel="noopener">
-          ${i.image_url ? `<img src="${i.image_url}" alt="">` : ""}
-        </a>
-        <a class="title" href="${i.url || "#"}" target="_blank" rel="noopener">${i.title || ""}</a>
-        <div class="meta"><span>${i.source || ""}</span>${i.published_at ? `<span>•</span><time>${fmtWhen(i.published_at)}</time>` : ""}</div>
-      </article>
-    `).join("");
+    videoRow.innerHTML = videos.map(i => {
+      const img = i.image_url ? `<img src="${escapeAttr(i.image_url)}" alt="" loading="lazy" onerror="this.src='${FALLBACK_IMG}'">`
+                              : `<img src="${FALLBACK_IMG}" alt="" loading="lazy">`;
+      return `
+        <article class="card video-card">
+          <a class="thumb" href="${i.url || "#"}" target="_blank" rel="noopener">${img}</a>
+          <a class="title" href="${i.url || "#"}" target="_blank" rel="noopener">${i.title || ""}</a>
+          <div class="meta"><span>${i.source || ""}</span>${i.published_at ? `<span>•</span><time>${fmtWhen(i.published_at)}</time>` : ""}</div>
+        </article>`;
+    }).join("");
   }
 }
 
@@ -137,7 +158,7 @@ async function loadSchedule(){
   const host = document.getElementById("scheduleList");
   if (!host) return;
   try{
-    const data = await loadJSON("/sports-app-project/static/schedule.json");
+    const data = await loadJSON(`${REPO_BASE}/static/schedule.json`);
     host.innerHTML = data.map(g => {
       const date = new Date(g.date);
       const dateTxt = isNaN(date) ? (g.date || "") :
@@ -161,16 +182,22 @@ async function loadSchedule(){
 async function main(){
   // Theme
   let theme = { team_slug: "purdue-mbb" };
-  try{ theme = await loadJSON("/sports-app-project/static/team.json"); }catch(e){ console.warn("Theme load failed", e.message); }
+  try{ theme = await loadJSON(`${REPO_BASE}/static/team.json`); }catch(e){ console.warn("Theme load failed", e.message); }
   setTheme(theme);
   renderPromos(theme);
 
   // Items
   const slug = (theme.team_slug || "purdue-mbb").toLowerCase();
-  const path = `/sports-app-project/static/teams/${encodeURIComponent(slug)}/items.json`;
+  const path = `${REPO_BASE}/static/teams/${encodeURIComponent(slug)}/items.json`;
   let items = [];
   try{
     items = await loadJSON(path);
+    // de-dupe by URL, newest first
+    const seen = new Set();
+    items = items.filter(x => {
+      const k = (x.url||"") + "|" + (x.title||"");
+      if (seen.has(k)) return false; seen.add(k); return true;
+    });
     items.sort((a,b) => new Date(b.published_at||0) - new Date(a.published_at||0));
   }catch(e){
     console.warn("Items load failed, showing placeholder", e.message);
@@ -182,7 +209,7 @@ async function main(){
       "published_at": new Date().toISOString(),
       "source":"Team Hub",
       "trust_level":"official",
-      "image_url":""
+      "image_url": FALLBACK_IMG
     }];
   }
 
