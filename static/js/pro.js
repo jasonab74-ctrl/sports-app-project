@@ -1,10 +1,4 @@
-/* static/js/pro.js
- * Pro-style, team-site template JS for GitHub Pages (static only)
- * - Reads theme from ./static/team.json
- * - Reads items from ./static/teams/<team_slug>/items.json
- * - Renders Videos row + News grid
- * - Loads schedule from ./static/schedule.json (if present)
- */
+/* v1.5 — Featured hero, promos, better mobile */
 
 async function loadJSON(path){
   const r = await fetch(path + (path.includes("?") ? "" : "?ts=" + Date.now()), { cache: "no-store" });
@@ -14,23 +8,20 @@ async function loadJSON(path){
 
 /* ----------------------------- THEME ----------------------------- */
 function setTheme(t){
-  // CSS variables
   document.documentElement.style.setProperty("--primary",  t.primary_color   || "#004C54");
   document.documentElement.style.setProperty("--secondary",t.secondary_color || "#A5ACAF");
   document.documentElement.style.setProperty("--bg",       t.dark_bg         || "#0a1114");
   document.documentElement.style.setProperty("--panel",    t.light_bg        || "#0f1a1e");
 
-  // Hero image
   const hero = document.querySelector(".hero .image");
   if (hero && t.hero_image) hero.style.backgroundImage = `url('${t.hero_image}')`;
 
-  // Logo + wordmark
   const logo = document.getElementById("logo");
   if (logo && t.logo_url) logo.src = t.logo_url;
+
   const mark = document.getElementById("wordmark");
   if (mark) mark.textContent = t.wordmark || t.team_name || "Team Hub";
 
-  // Top nav links
   const nav = document.querySelector(".nav");
   if (nav) {
     nav.innerHTML = "";
@@ -63,7 +54,64 @@ function cardHTML(it){
   </article>`;
 }
 
-function render(items){
+function pickFeatured(items){
+  // priority: featured:true -> latest non-video -> any item
+  const explicit = items.find(i => i.featured === true);
+  if (explicit) return explicit;
+  const news = items.filter(i => !((i.type||"").toLowerCase().includes("video")));
+  if (news.length) return news[0];
+  return items[0] || null;
+}
+
+function renderFeature(item){
+  const FALLBACK = {
+    title: "Waiting for first data sync…",
+    url: "#",
+    summary: "Add items.json with images to see a featured story.",
+    source: "Team Hub",
+    trust_level: "official",
+    published_at: new Date().toISOString(),
+    image_url: ""
+  };
+  const it = item || FALLBACK;
+  const img = document.getElementById("featureImg");
+  const link = document.getElementById("featureLink");
+  const title = document.getElementById("featureTitle");
+  const summary = document.getElementById("featureSummary");
+  const trust = document.getElementById("featureTrust");
+  const src = document.getElementById("featureSource");
+  const when = document.getElementById("featureWhen");
+  const read = document.getElementById("featureRead");
+
+  if (img) img.src = it.image_url || "";
+  if (link) link.href = it.url || "#";
+  if (title){ title.textContent = it.title || ""; title.href = it.url || "#"; }
+  if (summary) summary.textContent = it.summary || "";
+  if (trust) trust.textContent = (it.trust_level || "").replace("_"," ");
+  if (src) src.textContent = it.source || "";
+  if (when) when.textContent = fmtWhen(it.published_at);
+  if (read) read.href = it.url || "#";
+}
+
+function renderPromos(theme){
+  const host = document.getElementById("promoRow");
+  if (!host) return;
+  const defaults = [
+    {title:"Buy Tickets", text:"Grab seats for upcoming games.", href:"#", cta:"Tickets"},
+    {title:"Team Shop", text:"Rep the squad with new gear.", href:"#", cta:"Shop"},
+    {title:"Download the App", text:"Scores, alerts, and more.", href:"#", cta:"Get App"}
+  ];
+  const promos = (theme && theme.promos && theme.promos.length) ? theme.promos : defaults;
+  host.innerHTML = promos.map(p => `
+    <article class="promo-card">
+      <h3 style="margin:0 0 6px 0">${p.title}</h3>
+      <p style="margin:0 0 8px 0; color:#cfe7ea">${p.text}</p>
+      <div class="promo-cta"><a class="btn" href="${p.href || '#'}" target="_blank" rel="noopener">${p.cta || 'Learn more'}</a></div>
+    </article>
+  `).join("");
+}
+
+function renderLists(items){
   const videos = items.filter(i => (i.type || "").toLowerCase().includes("video")).slice(0, 8);
   const news   = items.filter(i => !((i.type || "").toLowerCase().includes("video"))).slice(0, 24);
 
@@ -106,31 +154,29 @@ async function loadSchedule(){
         </div>`;
     }).join("");
   }catch(e){
-    // Silent if no schedule.json — page still works
     console.warn("schedule.json not found (optional)", e.message);
   }
 }
 
 /* ----------------------------- MAIN ----------------------------- */
 async function main(){
-  let team = { team_slug: "purdue-mbb" };  // default
+  let theme = { team_slug: "purdue-mbb" };
 
-  // 1) Load theme (colors, hero, nav, logo, and team_slug)
+  // Theme (colors/logo/hero/nav + optional promos)
   try{
-    team = await loadJSON("./static/team.json");
-    window.theme = team;
-    setTheme(team);
+    theme = await loadJSON("./static/team.json");
   }catch(e){
     console.warn("Theme load failed (using defaults)", e.message);
   }
+  setTheme(theme);
+  renderPromos(theme);
 
-  // 2) Load items for this team
+  // Items
   let items = [];
-  const slug = (team.team_slug || "purdue-mbb").toLowerCase();
+  const slug = (theme.team_slug || "purdue-mbb").toLowerCase();
   const itemsPath = `./static/teams/${encodeURIComponent(slug)}/items.json`;
   try{
     items = await loadJSON(itemsPath);
-    // newest first
     items.sort((a,b) => new Date(b.published_at || 0) - new Date(a.published_at || 0));
   }catch(e){
     console.warn("Items load failed, showing placeholder", e.message);
@@ -146,14 +192,20 @@ async function main(){
     }];
   }
 
-  // 3) Render content + schedule
-  render(items);
+  // Featured + lists
+  renderFeature(pickFeatured(items));
+  renderLists(items);
+
+  // Widgets
   loadSchedule();
+
+  // Social placeholder
+  const soc = document.getElementById("socialCol");
+  if (soc) soc.innerHTML = `<div class="x-embed">Follow on X: <strong>@${(theme.team_name||'Team').replace(/\s+/g,'')}</strong><br/>Embed live feed here later.</div>`;
+
+  // Refresh button
+  const btn = document.getElementById("refreshBtn");
+  if (btn) btn.addEventListener("click", () => location.reload());
 }
 
-// Kick off once DOM is ready
 document.addEventListener("DOMContentLoaded", main);
-
-// Optional: top-right Refresh button (if present in HTML)
-const btn = document.getElementById("refreshBtn");
-if (btn) btn.addEventListener("click", () => location.reload());
