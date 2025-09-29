@@ -1,116 +1,109 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Team Hub — Pro Template v1.5</title>
-<link rel="stylesheet" href="./static/css/pro.css"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Purdue MBB — Team Hub</title>
+  <!-- Use absolute repo path + cache buster so Pages never serves stale CSS -->
+  <link rel="stylesheet" href="/sports-app-project/static/css/pro.css?v=4" />
 </head>
 <body>
-<header class="header">
-  <div class="wrap bar">
-    <div class="brand">
-      <img id="logo" src="./static/assets/logo.png" alt="logo"/>
-      <strong id="wordmark">Team Hub</strong>
-    </div>
-    <nav class="nav"></nav>
-    <div class="controls">
-      <select class="select" id="teamSelect">
-        <option value="purdue-mbb">Purdue MBB</option>
-      </select>
-      <button class="btn" id="refreshBtn">Refresh</button>
-    </div>
-  </div>
-</header>
-
-<!-- Slim hero background -->
-<section class="hero">
-  <div class="image"></div>
-  <div class="wrap overlay">
-    <h1 class="pageTitle">Top Stories</h1>
-    <div class="kpis">
-      <div class="kpi">Latest updates</div>
-      <div class="kpi">Videos &amp; Highlights</div>
-      <div class="kpi">Schedule</div>
-    </div>
-  </div>
-</section>
-
-<main class="wrap">
-
-  <!-- FEATURED STORY -->
-  <section id="feature" class="feature panel">
-    <div class="feature-media">
-      <a id="featureLink" class="feature-thumb" href="#" target="_blank" rel="noopener">
-        <img id="featureImg" alt="">
-      </a>
-    </div>
-    <div class="feature-content">
-      <div class="feature-meta">
-        <span id="featureTrust" class="badge"></span>
-        <span id="featureSource"></span>
-        <span>•</span>
-        <time id="featureWhen"></time>
+  <header class="header">
+    <div class="wrap bar">
+      <div class="brand">
+        <img id="logo" src="/sports-app-project/static/assets/logo.png" alt="logo" />
+        <strong id="wordmark">Team Hub</strong>
       </div>
-      <a id="featureTitle" class="feature-title" href="#" target="_blank" rel="noopener">Top Story</a>
-      <p id="featureSummary" class="feature-summary"></p>
-      <div class="feature-actions">
-        <a id="featureRead" class="btn" href="#" target="_blank" rel="noopener">Read Story</a>
+      <nav class="nav"></nav>
+      <div class="controls">
+        <select class="select" id="teamSelect">
+          <option value="purdue-mbb" selected>Purdue MBB</option>
+        </select>
+        <button class="btn" id="refreshBtn">Refresh</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero background -->
+  <section class="hero">
+    <div class="image"></div>
+    <div class="wrap overlay">
+      <h1 class="pageTitle">Top Stories</h1>
+      <div class="kpis">
+        <div class="kpi">Latest updates</div>
+        <div class="kpi">Videos &amp; Highlights</div>
+        <div class="kpi">Schedule</div>
       </div>
     </div>
   </section>
 
-  <!-- PROMO / CTAs -->
-  <section id="promos" class="promo panel">
-    <div class="head"><h2>Get Closer to the Team</h2></div>
-    <div class="body">
-      <div id="promoRow" class="promo-row"></div>
-    </div>
-  </section>
+  <main class="wrap">
 
-  <div class="grid">
-    <!-- Main column -->
-    <div>
-      <!-- Videos -->
-      <section id="videos" class="panel">
-        <div class="head"><h2>Videos & Highlights</h2></div>
-        <div class="body">
-          <div id="videoRow" class="video-row"></div>
+    <!-- FEATURED STORY -->
+    <section id="feature" class="feature panel">
+      <div class="feature-media">
+        <a id="featureLink" class="feature-thumb" href="#" target="_blank" rel="noopener">
+          <img id="featureImg" alt="Featured story image">
+        </a>
+      </div>
+      <div class="feature-content">
+        <div class="feature-meta">
+          <span id="featureTrust" class="badge"></span>
+          <span id="featureSource"></span>
+          <span>•</span>
+          <time id="featureWhen"></time>
         </div>
-      </section>
-
-      <!-- News -->
-      <section id="news" class="panel">
-        <div class="head"><h2>Latest Headlines</h2></div>
-        <div class="body">
-          <div id="newsGrid" class="news-grid"></div>
+        <a id="featureTitle" class="feature-title" href="#" target="_blank" rel="noopener">Top Story</a>
+        <p id="featureSummary" class="feature-summary"></p>
+        <div class="feature-actions">
+          <a id="featureRead" class="btn" href="#" target="_blank" rel="noopener">Read Story</a>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
 
-    <!-- Sidebar -->
-    <aside>
-      <section id="schedule" class="panel widget">
-        <div class="head"><h2>Upcoming Schedule</h2></div>
-        <div class="body">
-          <div id="scheduleList" class="schedule-list"></div>
-          <div style="margin-top:10px">
-            <a class="btn" href="#" style="text-decoration:none; display:inline-block">Full Schedule</a>
+    <!-- PROMOS / CTAs -->
+    <section id="promos" class="promo panel">
+      <div class="head"><h2>Get Closer to the Team</h2></div>
+      <div class="body"><div id="promoRow" class="promo-row"></div></div>
+    </section>
+
+    <div class="grid">
+      <!-- Main column -->
+      <div>
+        <section id="videos" class="panel">
+          <div class="head"><h2>Videos &amp; Highlights</h2></div>
+          <div class="body"><div id="videoRow" class="video-row"></div></div>
+        </section>
+
+        <section id="news" class="panel">
+          <div class="head"><h2>Latest Headlines</h2></div>
+          <div class="body"><div id="newsGrid" class="news-grid"></div></div>
+        </section>
+      </div>
+
+      <!-- Sidebar -->
+      <aside>
+        <section id="schedule" class="panel widget">
+          <div class="head"><h2>Upcoming Schedule</h2></div>
+          <div class="body">
+            <div id="scheduleList" class="schedule-list"></div>
+            <div style="margin-top:10px">
+              <a class="btn" href="#" style="text-decoration:none; display:inline-block">Full Schedule</a>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="panel widget">
-        <div class="head"><h2>Social</h2></div>
-        <div class="body">
-          <div id="socialCol" class="social"></div>
-        </div>
-      </section>
-    </aside>
-  </div>
-</main>
+        <section class="panel widget">
+          <div class="head"><h2>Social</h2></div>
+          <div class="body"><div id="socialCol" class="social"></div></div>
+        </section>
+      </aside>
+    </div>
+  </main>
 
-<footer class="footer"><div class="wrap">© Team Hub. Pro template v1.5.</div></footer>
+  <footer class="footer"><div class="wrap">© Team Hub. Purdue MBB one-stop hub.</div></footer>
 
-<script src="./static/js/pro.js"></script>
+  <!-- Absolute path + cache buster -->
+  <script src="/sports-app-project/static/js/pro.js?v=4"></script>
 </body>
 </html>
