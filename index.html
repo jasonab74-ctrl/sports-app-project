@@ -3,30 +3,46 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Purdue MBB — Team Hub</title>
-  <!-- Use absolute repo path + cache buster so Pages never serves stale CSS -->
-  <link rel="stylesheet" href="/sports-app-project/static/css/pro.css?v=4" />
+
+  <title>Purdue Men’s Basketball — Team Hub</title>
+  <meta name="description" content="One-stop hub for Purdue Men’s Basketball: top story, videos, latest headlines, and schedule." />
+  <!-- Social share -->
+  <meta property="og:title" content="Purdue Men’s Basketball — Team Hub" />
+  <meta property="og:description" content="Top story, videos, latest headlines, and schedule in one place." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://jasonab74-ctrl.github.io/sports-app-project/" />
+  <meta property="og:image" content="https://jasonab74-ctrl.github.io/sports-app-project/static/assets/share.jpg" />
+
+  <!-- Favicon (optional; drop a 64x64 png at static/assets/favicon.png) -->
+  <link rel="icon" href="/sports-app-project/static/assets/favicon.png" />
+
+  <!-- Performance: preconnect to ytimg for video thumbs -->
+  <link rel="preconnect" href="https://i.ytimg.com" crossorigin>
+
+  <!-- Absolute repo path + cache buster -->
+  <link rel="stylesheet" href="/sports-app-project/static/css/pro.css?v=5" />
 </head>
 <body>
-  <header class="header">
+  <header class="header" aria-label="Site header">
     <div class="wrap bar">
       <div class="brand">
-        <img id="logo" src="/sports-app-project/static/assets/logo.png" alt="logo" />
+        <img id="logo" src="/sports-app-project/static/assets/logo.png" alt="Team logo" />
         <strong id="wordmark">Team Hub</strong>
       </div>
-      <nav class="nav"></nav>
+      <nav class="nav" aria-label="Primary"></nav>
       <div class="controls">
-        <select class="select" id="teamSelect">
+        <label class="sr-only" for="teamSelect">Team</label>
+        <select class="select" id="teamSelect" aria-label="Choose team">
           <option value="purdue-mbb" selected>Purdue MBB</option>
         </select>
-        <button class="btn" id="refreshBtn">Refresh</button>
+        <button class="btn" id="refreshBtn" type="button" aria-label="Refresh content">Refresh</button>
       </div>
     </div>
   </header>
 
   <!-- Hero background -->
-  <section class="hero">
-    <div class="image"></div>
+  <section class="hero" aria-label="Site hero">
+    <div class="image" role="img" aria-label="Team hero image"></div>
     <div class="wrap overlay">
       <h1 class="pageTitle">Top Stories</h1>
       <div class="kpis">
@@ -37,13 +53,12 @@
     </div>
   </section>
 
-  <main class="wrap">
-
+  <main class="wrap" id="main">
     <!-- FEATURED STORY -->
-    <section id="feature" class="feature panel">
+    <section id="feature" class="feature panel" aria-label="Featured story">
       <div class="feature-media">
         <a id="featureLink" class="feature-thumb" href="#" target="_blank" rel="noopener">
-          <img id="featureImg" alt="Featured story image">
+          <img id="featureImg" alt="" loading="eager">
         </a>
       </div>
       <div class="feature-content">
@@ -51,7 +66,7 @@
           <span id="featureTrust" class="badge"></span>
           <span id="featureSource"></span>
           <span>•</span>
-          <time id="featureWhen"></time>
+          <time id="featureWhen" aria-live="polite"></time>
         </div>
         <a id="featureTitle" class="feature-title" href="#" target="_blank" rel="noopener">Top Story</a>
         <p id="featureSummary" class="feature-summary"></p>
@@ -62,7 +77,7 @@
     </section>
 
     <!-- PROMOS / CTAs -->
-    <section id="promos" class="promo panel">
+    <section id="promos" class="promo panel" aria-label="Promotions">
       <div class="head"><h2>Get Closer to the Team</h2></div>
       <div class="body"><div id="promoRow" class="promo-row"></div></div>
     </section>
@@ -70,20 +85,20 @@
     <div class="grid">
       <!-- Main column -->
       <div>
-        <section id="videos" class="panel">
+        <section id="videos" class="panel" aria-label="Videos and highlights">
           <div class="head"><h2>Videos &amp; Highlights</h2></div>
           <div class="body"><div id="videoRow" class="video-row"></div></div>
         </section>
 
-        <section id="news" class="panel">
+        <section id="news" class="panel" aria-label="Latest headlines">
           <div class="head"><h2>Latest Headlines</h2></div>
           <div class="body"><div id="newsGrid" class="news-grid"></div></div>
         </section>
       </div>
 
       <!-- Sidebar -->
-      <aside>
-        <section id="schedule" class="panel widget">
+      <aside aria-label="Sidebar">
+        <section id="schedule" class="panel widget" aria-label="Upcoming schedule">
           <div class="head"><h2>Upcoming Schedule</h2></div>
           <div class="body">
             <div id="scheduleList" class="schedule-list"></div>
@@ -93,7 +108,7 @@
           </div>
         </section>
 
-        <section class="panel widget">
+        <section class="panel widget" aria-label="Social">
           <div class="head"><h2>Social</h2></div>
           <div class="body"><div id="socialCol" class="social"></div></div>
         </section>
@@ -103,7 +118,6 @@
 
   <footer class="footer"><div class="wrap">© Team Hub. Purdue MBB one-stop hub.</div></footer>
 
-  <!-- Absolute path + cache buster -->
-  <script src="/sports-app-project/static/js/pro.js?v=4"></script>
+  <script src="/sports-app-project/static/js/pro.js?v=5"></script>
 </body>
 </html>
