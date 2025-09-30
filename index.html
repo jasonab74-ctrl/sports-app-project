@@ -1,123 +1,112 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Purdue Men's Basketball — Team Hub Pro</title>
+  <meta name="description" content="One-stop Purdue Men's Basketball hub: breaking news, insider analysis, videos, rankings, and schedule — updated automatically.">
 
-  <title>Purdue Men’s Basketball — Team Hub</title>
-  <meta name="description" content="One-stop hub for Purdue Men’s Basketball: top story, videos, latest headlines, and schedule." />
-  <!-- Social share -->
-  <meta property="og:title" content="Purdue Men’s Basketball — Team Hub" />
-  <meta property="og:description" content="Top story, videos, latest headlines, and schedule in one place." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://jasonab74-ctrl.github.io/sports-app-project/" />
-  <meta property="og:image" content="https://jasonab74-ctrl.github.io/sports-app-project/static/assets/share.jpg" />
-
-  <!-- Favicon (optional; drop a 64x64 png at static/assets/favicon.png) -->
-  <link rel="icon" href="/sports-app-project/static/assets/favicon.png" />
-
-  <!-- Performance: preconnect to ytimg for video thumbs -->
-  <link rel="preconnect" href="https://i.ytimg.com" crossorigin>
-
-  <!-- Absolute repo path + cache buster -->
-  <link rel="stylesheet" href="/sports-app-project/static/css/pro.css?v=5" />
+  <!-- Styles -->
+  <link rel="stylesheet" href="static/css/pro.css" />
 </head>
 <body>
-  <header class="header" aria-label="Site header">
+  <!-- Header -->
+  <header class="header">
     <div class="wrap bar">
       <div class="brand">
-        <img id="logo" src="/sports-app-project/static/assets/logo.png" alt="Team logo" />
-        <strong id="wordmark">Team Hub</strong>
+        <img id="logo" alt="Team Logo" />
+        <h1 id="wordmark">Team Hub</h1>
       </div>
       <nav class="nav" aria-label="Primary"></nav>
       <div class="controls">
-        <label class="sr-only" for="teamSelect">Team</label>
-        <select class="select" id="teamSelect" aria-label="Choose team">
-          <option value="purdue-mbb" selected>Purdue MBB</option>
-        </select>
-        <button class="btn" id="refreshBtn" type="button" aria-label="Refresh content">Refresh</button>
+        <button class="btn ghost" id="refreshBtn" type="button">Refresh</button>
       </div>
+    </div>
+    <!-- News Ticker -->
+    <div class="ticker" aria-live="polite">
+      <div class="ticker-track" id="tickerTrack"></div>
     </div>
   </header>
 
-  <!-- Hero background -->
-  <section class="hero" aria-label="Site hero">
-    <div class="image" role="img" aria-label="Team hero image"></div>
-    <div class="wrap overlay">
-      <h1 class="pageTitle">Top Stories</h1>
-      <div class="kpis">
-        <div class="kpi">Latest updates</div>
-        <div class="kpi">Videos &amp; Highlights</div>
-        <div class="kpi">Schedule</div>
-      </div>
+  <!-- Featured Hero -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <a id="featureLink" class="feature-hero" target="_blank" rel="noopener">
+        <img id="featureImg" alt="Featured image" />
+        <div class="feature-overlay">
+          <div class="feature-chip">
+            <span id="featureTrust"></span> <span id="featureSource"></span>
+          </div>
+          <h1 id="featureTitle">Top Story</h1>
+          <p id="featureSummary"></p>
+          <time id="featureWhen"></time>
+        </div>
+      </a>
     </div>
   </section>
 
-  <main class="wrap" id="main">
-    <!-- FEATURED STORY -->
-    <section id="feature" class="feature panel" aria-label="Featured story">
-      <div class="feature-media">
-        <a id="featureLink" class="feature-thumb" href="#" target="_blank" rel="noopener">
-          <img id="featureImg" alt="" loading="eager">
-        </a>
+  <!-- Main Content -->
+  <main class="wrap main-grid">
+    <!-- Video Carousel -->
+    <section class="panel">
+      <div class="head">
+        <h2>Videos & Highlights</h2>
+        <div class="carousel-ctrls">
+          <button class="ctrl" id="prevVid" aria-label="Previous">&larr;</button>
+          <button class="ctrl" id="nextVid" aria-label="Next">&rarr;</button>
+        </div>
       </div>
-      <div class="feature-content">
-        <div class="feature-meta">
-          <span id="featureTrust" class="badge"></span>
-          <span id="featureSource"></span>
-          <span>•</span>
-          <time id="featureWhen" aria-live="polite"></time>
-        </div>
-        <a id="featureTitle" class="feature-title" href="#" target="_blank" rel="noopener">Top Story</a>
-        <p id="featureSummary" class="feature-summary"></p>
-        <div class="feature-actions">
-          <a id="featureRead" class="btn" href="#" target="_blank" rel="noopener">Read Story</a>
-        </div>
+      <div class="body">
+        <div class="carousel" id="videoCarousel"></div>
       </div>
     </section>
 
-    <!-- PROMOS / CTAs -->
-    <section id="promos" class="promo panel" aria-label="Promotions">
-      <div class="head"><h2>Get Closer to the Team</h2></div>
-      <div class="body"><div id="promoRow" class="promo-row"></div></div>
+    <!-- Latest Headlines -->
+    <section class="panel">
+      <div class="head"><h2>Latest Headlines</h2></div>
+      <div class="body">
+        <div class="news-grid" id="newsGrid"></div>
+      </div>
     </section>
 
-    <div class="grid">
-      <!-- Main column -->
-      <div>
-        <section id="videos" class="panel" aria-label="Videos and highlights">
-          <div class="head"><h2>Videos &amp; Highlights</h2></div>
-          <div class="body"><div id="videoRow" class="video-row"></div></div>
-        </section>
-
-        <section id="news" class="panel" aria-label="Latest headlines">
-          <div class="head"><h2>Latest Headlines</h2></div>
-          <div class="body"><div id="newsGrid" class="news-grid"></div></div>
-        </section>
+    <!-- Insider Coverage -->
+    <section class="panel">
+      <div class="head"><h2>Insider Coverage</h2></div>
+      <div class="body">
+        <div class="news-grid" id="insiderGrid"></div>
       </div>
+    </section>
 
-      <!-- Sidebar -->
-      <aside aria-label="Sidebar">
-        <section id="schedule" class="panel widget" aria-label="Upcoming schedule">
-          <div class="head"><h2>Upcoming Schedule</h2></div>
-          <div class="body">
-            <div id="scheduleList" class="schedule-list"></div>
-            <div style="margin-top:10px">
-              <a class="btn" href="#" style="text-decoration:none; display:inline-block">Full Schedule</a>
-            </div>
-          </div>
-        </section>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <section class="panel widget">
+        <div class="head"><h3>Upcoming Schedule</h3></div>
+        <div class="body"><div class="schedule-list" id="scheduleList"></div></div>
+      </section>
 
-        <section class="panel widget" aria-label="Social">
-          <div class="head"><h2>Social</h2></div>
-          <div class="body"><div id="socialCol" class="social"></div></div>
-        </section>
-      </aside>
-    </div>
+      <section class="panel widget">
+        <div class="head"><h3>Rankings</h3></div>
+        <div class="body" id="rankingsBox">
+          <div class="rank-row"><strong>AP Poll:</strong> <span id="apRank">—</span></div>
+          <div class="rank-row"><strong>KenPom:</strong> <span id="kpRank">—</span></div>
+        </div>
+      </section>
+
+      <section class="panel widget">
+        <div class="head"><h3>NIL Leaderboard</h3></div>
+        <div class="body">
+          <ol class="nil-list" id="nilList"></ol>
+        </div>
+      </section>
+    </aside>
   </main>
 
-  <footer class="footer"><div class="wrap">© Team Hub. Purdue MBB one-stop hub.</div></footer>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="wrap">© Team Hub Pro — Purdue Men's Basketball</div>
+  </footer>
 
-  <script src="/sports-app-project/static/js/pro.js?v=5"></script>
+  <!-- JavaScript -->
+  <script src="static/js/pro.js"></script>
 </body>
 </html>
