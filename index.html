@@ -1,1 +1,76 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sports App Project — Team Hub</title><link rel="stylesheet" href="static/css/pro.css"></head><body><header class="app-header"><button id="hamburger" class="icon-btn">☰</button><img id="team-logo" class="team-logo" alt="Team Logo"/><h1 id="site-title">Team Hub</h1><button id="refresh" class="pill-btn">Refresh</button></header><nav id="drawer" class="drawer"><div class="drawer-head"><strong id="drawer-team-name">Team</strong><button id="drawer-close" class="icon-btn">✕</button></div><ul class="drawer-links"><li><a href="#news">News</a></li><li><a href="#videos">Videos</a></li><li><a href="#rankings">Rankings</a></li><li><a href="#schedule">Schedule</a></li><li><a href="#nil">NIL</a></li><li><a href="#insider">Insider</a></li></ul></nav><section class="tabs"><button class="chip active" data-tab="news">News</button><button class="chip" data-tab="videos">Videos</button><button class="chip" data-tab="rankings">Rankings</button><button class="chip" data-tab="schedule">Schedule</button><button class="chip" data-tab="nil">NIL</button><button class="chip" data-tab="insider">Insider</button></section><section id="ticker" class="ticker"><div class="ticker__track" id="ticker-track"></div></section><main id="content"><section id="news" class="tab visible"><h2>Latest Headlines</h2><div id="carousel" class="carousel"></div><div id="news-grid" class="grid"></div></section><section id="videos" class="tab"><h2>Latest Videos</h2><div id="video-grid" class="grid"></div></section><aside class="sidebar"><section id="rankings" class="widget"><h3>Rankings & Analytics</h3><div id="rankings-body" class="widget-body"></div></section><section id="schedule" class="widget"><h3>Schedule</h3><div id="schedule-body" class="widget-body"></div></section><section id="nil" class="widget"><h3>NIL Leaderboard</h3><div id="nil-body" class="widget-body"></div></section><section id="insider" class="widget"><h3>Insider & Beat Writers</h3><div id="insider-body" class="widget-body"></div></section></aside></main><footer class="app-footer"><small>Sports App Project • JSON-driven • Auto-updating</small></footer><script src="static/js/pro.js" defer></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Sports App Project — Team Hub</title>
+  <meta name="theme-color" content="#000000" />
+  <link rel="preload" href="static/css/pro.css" as="style" />
+  <link rel="stylesheet" href="static/css/pro.css" />
+  <link rel="preload" href="static/js/pro.js" as="script" />
+</head>
+<body>
+  <header class="app-header">
+    <img id="team-logo" class="team-logo" alt="Team Logo" src="" />
+    <h1 id="site-title">Team Hub</h1>
+    <button id="refresh" class="pill-btn" aria-label="Refresh">Refresh</button>
+  </header>
+
+  <!-- Primary nav chips (mobile + desktop) -->
+  <nav class="tabs" aria-label="Sections">
+    <button class="chip active" data-tab="news">News</button>
+    <button class="chip" data-tab="videos">Videos</button>
+    <button class="chip" data-tab="rankings">Rankings</button>
+    <button class="chip" data-tab="schedule">Schedule</button>
+    <button class="chip" data-tab="nil">NIL</button>
+    <button class="chip" data-tab="insider">Insider</button>
+  </nav>
+
+  <!-- Slim ticker only shows when there are items -->
+  <section id="ticker" class="ticker" aria-label="Top headlines">
+    <div class="ticker__track" id="ticker-track"></div>
+  </section>
+
+  <main id="content">
+    <section id="news" class="tab visible">
+      <h2>Latest Headlines</h2>
+      <div id="carousel" class="carousel" aria-label="Headline carousel"></div>
+      <div id="news-grid" class="grid"></div>
+    </section>
+
+    <section id="videos" class="tab">
+      <h2>Latest Videos</h2>
+      <div id="video-grid" class="grid"></div>
+    </section>
+
+    <aside class="sidebar">
+      <section id="rankings" class="widget">
+        <h3>Rankings & Analytics</h3>
+        <div id="rankings-body" class="widget-body"></div>
+      </section>
+
+      <section id="schedule" class="widget">
+        <h3>Schedule</h3>
+        <div id="schedule-body" class="widget-body"></div>
+      </section>
+
+      <section id="nil" class="widget">
+        <h3>NIL Leaderboard</h3>
+        <div id="nil-body" class="widget-body"></div>
+      </section>
+
+      <section id="insider" class="widget">
+        <h3>Insider & Beat Writers</h3>
+        <div id="insider-body" class="widget-body"></div>
+      </section>
+    </aside>
+  </main>
+
+  <footer class="app-footer">
+    <small>Sports App Project • JSON-driven • Auto-updating</small>
+  </footer>
+
+  <script src="static/js/pro.js" defer></script>
+</body>
+</html>
