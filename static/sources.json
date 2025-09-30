@@ -1,48 +1,58 @@
 {
-  "team_slug": "purdue-mbb",
-  "max_items": 20,
-  "min_trust": "blog",
   "sources": [
     {
       "name": "Purdue Athletics",
-      "trust_level": "official",
-      "type": "html_list",
-      "url": "https://purduesports.com/sports/mens-basketball/news",
-      "link_selector": "a[href*='/news/']",
-      "time_selector": "time, span.datetime, .ArticleTime, .time"
+      "type": "news",
+      "url": "https://purduesports.com/rss.aspx?path=mbball",
+      "trust": "official"
+    },
+    {
+      "name": "ESPN College Basketball",
+      "type": "news",
+      "url": "https://www.espn.com/espn/rss/ncb/news",
+      "trust": "national"
+    },
+    {
+      "name": "CBS Sports",
+      "type": "news",
+      "url": "https://www.cbssports.com/partners/feeds/rss/ncaab/news/",
+      "trust": "national"
     },
     {
       "name": "Journal & Courier",
-      "trust_level": "local",
-      "type": "html_list",
-      "url": "https://www.jconline.com/sports/boilermakers/",
-      "link_selector": "a[href*='/story/']"
+      "type": "news",
+      "url": "https://rssfeeds.jconline.com/purdue/basketball",
+      "trust": "local"
     },
     {
       "name": "Hammer & Rails",
-      "trust_level": "beat",
-      "type": "html_list",
-      "url": "https://www.hammerandrails.com/mens-basketball",
-      "link_selector": "a[href*='/mens-basketball/'], a[href*='/general/'], a[href*='/basketball']"
+      "type": "news",
+      "url": "https://www.hammerandrails.com/rss/index.xml",
+      "trust": "insider"
     },
     {
-      "name": "ESPN",
-      "trust_level": "national",
-      "type": "html_list",
-      "url": "https://www.espn.com/mens-college-basketball/team/_/id/2509/purdue-boilermakers",
-      "link_selector": "a.AnchorLink[href*='/story/']"
+      "name": "On3 / GoldandBlack",
+      "type": "news",
+      "url": "https://www.on3.com/teams/purdue-boilermakers/feed/",
+      "trust": "insider"
+    },
+    {
+      "name": "Field of 68",
+      "type": "video",
+      "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCyO3CYYeLQY0oKJr6R8z7Vw",
+      "trust": "insider"
+    },
+    {
+      "name": "BTN Purdue",
+      "type": "video",
+      "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCc3yq7x8sUB4U1bQlb8vZ7w",
+      "trust": "official"
     },
     {
       "name": "PurdueSports YouTube",
-      "trust_level": "official",
-      "type": "youtube_channel",
-      "url": "https://www.youtube.com/purduesports"
-    },
-    {
-      "name": "Big Ten Network YouTube",
-      "trust_level": "national",
-      "type": "youtube_channel",
-      "url": "https://www.youtube.com/bigtennetwork"
+      "type": "video",
+      "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UC4fM0vJU0zbfztR9vCsq0hA",
+      "trust": "official"
     }
   ]
 }
