@@ -1,45 +1,17 @@
 {
-  "team_slug": "purdue-mbb",
-  "team_name": "Purdue Boilermakers",
-  "city": "West Lafayette",
-  "primary_color": "#CEB888",
-  "secondary_color": "#000000",
-  "dark_bg": "#0a0a0a",
-  "light_bg": "#111217",
-  "accent": "#CEB888",
-  "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Purdue_Boilermakers_wordmark.svg/512px-Purdue_Boilermakers_wordmark.svg.png",
-  "hero_image": "https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1600&auto=format&fit=crop",
-  "wordmark": "Team Hub",
+  "name": "Purdue Men's Basketball",
+  "short_name": "Purdue",
+  "primary_color": "#000000",
+  "secondary_color": "#CEB888",
+  "logo": "static/teams/purdue-mbb/logo.png",
+  "wordmark": "Boilermakers",
   "links": [
     { "label": "News", "href": "#news" },
     { "label": "Videos", "href": "#videos" },
+    { "label": "Rankings", "href": "#rankings" },
     { "label": "Schedule", "href": "#schedule" },
-    { "label": "Roster", "href": "https://purduesports.com/sports/mens-basketball/roster" },
-    { "label": "Stats", "href": "https://www.espn.com/mens-college-basketball/team/stats/_/id/2509/purdue-boilermakers" },
-    { "label": "AP Poll", "href": "https://www.espn.com/mens-college-basketball/rankings" },
-    { "label": "KenPom", "href": "https://kenpom.com/" },
-    { "label": "NIL Portal", "href": "https://www.on3.com/nil/" },
+    { "label": "NIL Portal", "href": "#nil" },
     { "label": "Tickets", "href": "https://purduesports.com/tickets" },
     { "label": "Shop", "href": "https://shop.purduesports.com/" }
-  ],
-  "promos": [
-    {
-      "title": "Buy Tickets",
-      "text": "Secure your seats for the next home game.",
-      "href": "https://purduesports.com/tickets",
-      "cta": "Tickets"
-    },
-    {
-      "title": "Team Shop",
-      "text": "New gear just dropped.",
-      "href": "https://shop.purduesports.com/",
-      "cta": "Shop"
-    },
-    {
-      "title": "Download App",
-      "text": "Scores, alerts, and more.",
-      "href": "https://apps.apple.com/",
-      "cta": "Get App"
-    }
   ]
 }
