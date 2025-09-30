@@ -1,7 +1,4 @@
-// ===============================
-// Team Hub Pro — Frontend Logic
-// Returns top links (subnav), Purdue-focused curation
-// ===============================
+// Team Hub Pro — Frontend (working hamburger + subnav + Purdue bias)
 
 const TEAM_URL     = "static/team.json";
 const ITEMS_URL    = "static/teams/purdue-mbb/items.json";
@@ -11,7 +8,7 @@ const INSIDERS_URL = "static/insiders.json";
 
 let ALL_ITEMS = [];
 let CURRENT_FILTER = null;
-let TEAM_KEYWORDS = []; // from team.json to bias Purdue-specific content
+let TEAM_KEYWORDS = [];
 
 const FALLBACK_IMG = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
 
@@ -30,14 +27,13 @@ async function init(){
     TEAM_KEYWORDS = (team.keywords || []).map(s => String(s).toLowerCase());
 
     ALL_ITEMS = Array.isArray(itemsData) ? itemsData : (itemsData.items || []);
+
     renderBrand(team);
     renderAllNavs(team.links || []);
     setupDrawer(team.links || []);
     bindRefresh();
 
-    // curate items for Purdue (soft filter)
     const curated = curateForTeam(ALL_ITEMS);
-
     renderEverything(curated, schedule, widgets, insiders.links);
     wireTickerFilter();
   }catch(e){
@@ -45,7 +41,7 @@ async function init(){
   }
 }
 
-/* ---------- data & helpers ---------- */
+/* ---------- helpers ---------- */
 async function fetchJSON(url){
   const res = await fetch(url + (url.includes("?") ? "" : `?t=${Date.now()}`));
   if(!res.ok) throw new Error(`Failed to load ${url}`);
@@ -53,18 +49,10 @@ async function fetchJSON(url){
 }
 function truncate(t="",n=140){return t.length>n?t.slice(0,n)+"…":t}
 function imgOrFallback(u){return (u && typeof u==="string")?u:FALLBACK_IMG}
-function safeDate(d){
-  if(!d) return "";
-  const dt = new Date(d);
-  return isNaN(dt.getTime()) ? String(d).slice(0,16) :
-    dt.toLocaleDateString(undefined,{month:"short",day:"numeric"});
-}
+function safeDate(d){ if(!d) return ""; const dt=new Date(d); return isNaN(dt.getTime())?String(d).slice(0,16):dt.toLocaleDateString(undefined,{month:"short",day:"numeric"}); }
 function escapeHtml(s){return String(s||"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]))}
-function isVideoItem(i){
-  const t=(i.type||"").toLowerCase(); const l=(i.link||"").toLowerCase();
-  return t==="video"||l.includes("youtube.com/")||l.includes("youtu.be/");
-}
-function bindRefresh(){ document.getElementById("refreshBtn")?.addEventListener("click",()=>location.reload()); }
+function isVideoItem(i){ const t=(i.type||"").toLowerCase(); const l=(i.link||"").toLowerCase(); return t==="video"||l.includes("youtube.com/")||l.includes("youtu.be/"); }
+function bindRefresh(){ const b=document.getElementById("refreshBtn"); if(b){ b.addEventListener("click",()=>location.reload()); }}
 
 /* ---------- Purdue-biased curation ---------- */
 function curateForTeam(items){
@@ -74,73 +62,79 @@ function curateForTeam(items){
     return TEAM_KEYWORDS.some(k => text.includes(k));
   };
   const hits = items.filter(isHit);
-  if (hits.length >= 12) return hits;         // plenty of Purdue content
+  if (hits.length >= 12) return hits;
   const needed = Math.max(0, 12 - hits.length);
-  const non = items.filter(i => !hits.includes(i)).slice(0, needed);
-  return hits.concat(non);                     // fill with best recent items
+  const filler = items.filter(i => !hits.includes(i)).slice(0, needed);
+  return hits.concat(filler);
 }
 
-/* ---------- Render orchestrator ---------- */
+/* ---------- render orchestration ---------- */
 function renderEverything(items, schedule, widgets, insiderLinks){
   const filtered = applyFilter(items, CURRENT_FILTER);
-  renderTicker(items);               // ticker shows all (gives global context)
+  renderTicker(items);
   renderFeatured(filtered, items);
   renderVideos(filtered, items);
   renderNews(filtered);
   renderInsiders(filtered, insiderLinks);
-  if (schedule) renderSchedule(schedule);
-  if (widgets)  renderWidgets(widgets);
+  if(schedule) renderSchedule(schedule);
+  if(widgets) renderWidgets(widgets);
 }
 
-/* ---------- Brand & Navs ---------- */
+/* ---------- brand + navs ---------- */
 function renderBrand(team){
   const logo=document.getElementById("logo"), word=document.getElementById("wordmark");
   if(logo) logo.src = team.logo || "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Purdue_Boilermakers_wordmark.svg/512px-Purdue_Boilermakers_wordmark.svg.png";
-  if(word) word.textContent = team.name || team.wordmark || "Team Hub";
+  if(word) word.textContent = team.name || "Team Hub";
 }
 function renderAllNavs(links){
-  // Desktop nav
   const nav=document.querySelector(".nav");
-  if (nav) nav.innerHTML = links.map(l => linkHTML(l)).join("");
-  // Subnav chips (always visible)
+  if(nav) nav.innerHTML = links.map(l => linkHTML(l)).join("");
   const sub=document.getElementById("subNav");
-  if (sub) sub.innerHTML = links.map(l => `<a href="${l.href}" target="${String(l.href).startsWith('http')?'_blank':'_self'}" rel="noopener">${escapeHtml(l.label)}</a>`).join("");
+  if(sub) sub.innerHTML = links.map(l => `<a href="${l.href}" target="${String(l.href).startsWith('http')?'_blank':'_self'}" rel="noopener">${escapeHtml(l.label)}</a>`).join("");
 }
 function linkHTML(l){
   const ext = String(l.href).startsWith('http');
   return `<a href="${l.href}" target="${ext ? '_blank' : '_self'}" rel="noopener">${escapeHtml(l.label)}</a>`;
 }
 
-/* ---------- Drawer ---------- */
+/* ---------- mobile drawer (WORKING) ---------- */
 function setupDrawer(links){
   const btn = document.getElementById("mobileMenuBtn");
   const drawer = document.getElementById("mobileDrawer");
-  const panel = drawer?.querySelector(".drawer-panel");
+  const panel = drawer ? drawer.querySelector(".drawer-panel") : null;
   const closeBtn = document.getElementById("drawerClose");
   const backdrop = document.getElementById("drawerBackdrop");
   const mobileNav = document.getElementById("mobileNav");
   const drawerRefresh = document.getElementById("drawerRefresh");
 
-  if (mobileNav) mobileNav.innerHTML = links.map(l=>linkHTML(l)).join("");
+  if(mobileNav){ mobileNav.innerHTML = links.map(l=>linkHTML(l)).join(""); }
 
-  const open = () => {drawer?.setAttribute("aria-hidden","false"); btn?.setAttribute("aria-expanded","true"); document.body.style.overflow="hidden";};
-  const close = () => {drawer?.setAttribute("aria-hidden","true");  btn?.setAttribute("aria-expanded","false"); document.body.style.overflow="";};
+  function open(){
+    if(!drawer) return;
+    drawer.setAttribute("aria-hidden","false");
+    if(btn) btn.setAttribute("aria-expanded","true");
+    document.body.style.overflow="hidden";
+  }
+  function close(){
+    if(!drawer) return;
+    drawer.setAttribute("aria-hidden","true");
+    if(btn) btn.setAttribute("aria-expanded","false");
+    document.body.style.overflow="";
+  }
 
-  btn?.addEventListener("click", open);
-  closeBtn?.addEventListener("click", close);
-  backdrop?.addEventListener("click", close);
-  panel?.addEventListener("click", e => { e.stopPropagation(); });
-
-  drawerRefresh?.addEventListener("click", ()=>location.reload());
+  if(btn) btn.addEventListener("click", open);
+  if(closeBtn) closeBtn.addEventListener("click", close);
+  if(backdrop) backdrop.addEventListener("click", close);
+  if(panel) panel.addEventListener("click", e => e.stopPropagation());
+  if(drawerRefresh) drawerRefresh.addEventListener("click", ()=>location.reload());
 }
 
-/* ---------- Filter (ticker chips) ---------- */
+/* ---------- filter / ticker ---------- */
 function applyFilter(items, tag){ if(!tag) return items; return items.filter(i => (i.trust||"").toLowerCase()===tag); }
 function setFilter(tag){
   CURRENT_FILTER = tag;
-  document.querySelectorAll(".ticker .chip").forEach(ch=>{
-    ch.classList.toggle("active", (ch.dataset.filter||"")===tag);
-  });
+  const chips = document.querySelectorAll(".ticker .chip");
+  for(const ch of chips){ ch.classList.toggle("active", (ch.getAttribute("data-filter")||"")===tag); }
   const curated = curateForTeam(ALL_ITEMS);
   renderEverything(curated, null, null, null);
 }
@@ -148,14 +142,12 @@ function wireTickerFilter(){
   const t=document.querySelector(".ticker");
   if(!t) return;
   t.addEventListener("click",e=>{
-    const btn=e.target.closest(".chip");
+    const btn = e.target.closest(".chip");
     if(!btn) return;
-    const tag=(btn.dataset.filter||"").toLowerCase();
+    const tag = (btn.getAttribute("data-filter")||"").toLowerCase();
     setFilter(CURRENT_FILTER===tag?null:tag);
   });
 }
-
-/* ---------- Ticker / Featured / Videos / News ---------- */
 function renderTicker(items){
   const track=document.getElementById("tickerTrack");
   if(!track) return;
@@ -169,34 +161,27 @@ function renderTicker(items){
   track.innerHTML = `${slice} • ${slice} • ${slice}`;
 }
 
+/* ---------- featured / videos / news / insiders / sidebar ---------- */
 function renderFeatured(filtered, all){
   const pickNews = arr => arr.find(i => (i.type||"").toLowerCase()==="news");
   let f = pickNews(filtered.filter(i=>i.image)) || pickNews(filtered) ||
           pickNews(all.filter(i=>i.image)) || pickNews(all) || null;
   if(!f) return;
-  document.getElementById("featureLink").href = f.link || "#";
-  document.getElementById("featureImg").src = imgOrFallback(f.image);
+  setHref("featureLink", f.link || "#");
+  setSrc("featureImg", imgOrFallback(f.image));
   setText("featureSource", f.source||"");
   setText("featureTrust", (f.trust||"").replace("_"," "));
   setText("featureTitle", f.title||"");
   setText("featureSummary", truncate(f.summary||"", 160));
   setText("featureWhen", safeDate(f.date));
 }
-function setText(id,val){const el=document.getElementById(id); if(el) el.textContent=val??""}
-
 function renderVideos(filtered, all){
   const vids = filtered.filter(isVideoItem);
   const list = vids.length? vids : all.filter(isVideoItem);
   const c = document.getElementById("videoCarousel");
   if(!c) return;
-
-  if(!list.length){
-    c.parentElement.parentElement.style.display="none";
-    return;
-  } else {
-    c.parentElement.parentElement.style.display="";
-  }
-
+  if(!list.length){ c.parentElement.parentElement.style.display="none"; return; }
+  c.parentElement.parentElement.style.display="";
   c.innerHTML = list.slice(0,12).map(v=>`
     <a href="${v.link}" class="card video-card" target="_blank" rel="noopener">
       <div class="thumb"><img src="${imgOrFallback(v.image)}" alt="${escapeHtml(v.title)}"></div>
@@ -205,11 +190,9 @@ function renderVideos(filtered, all){
       ${v.summary?`<div class="summary">${truncate(v.summary,120)}</div>`:""}
     </a>
   `).join("");
-
-  document.getElementById("prevVid")?.addEventListener("click",()=>c.scrollBy({left:-280,behavior:"smooth"}));
-  document.getElementById("nextVid")?.addEventListener("click",()=>c.scrollBy({left: 280,behavior:"smooth"}));
+  addClick("prevVid", ()=>c.scrollBy({left:-280,behavior:"smooth"}));
+  addClick("nextVid", ()=>c.scrollBy({left: 280,behavior:"smooth"}));
 }
-
 function renderNews(items){
   const news=items.filter(i => (i.type||"").toLowerCase()==="news").slice(0,24);
   const grid=document.getElementById("newsGrid");
@@ -223,14 +206,10 @@ function renderNews(items){
     </a>
   `).join("");
 }
-
-/* ---------- Insiders & Sidebar ---------- */
 function renderInsiders(items, insiderLinks=[]){
   const grid=document.getElementById("insiderGrid");
   if(!grid) return;
-
   const insiders = items.filter(i => (i.trust||"").toLowerCase()==="insider" || (i.trust||"").toLowerCase()==="beat");
-
   const hub = insiderLinks.length ? `
     <div class="card" style="padding:12px">
       <div class="title" style="margin:8px 0">Insider Hub</div>
@@ -238,7 +217,6 @@ function renderInsiders(items, insiderLinks=[]){
         ${insiderLinks.map(l=>`<li><a href="${l.href}" target="_blank" rel="noopener">${escapeHtml(l.label)}</a></li>`).join("")}
       </ul>
     </div>` : "";
-
   grid.innerHTML = hub + insiders.map(n=>`
     <a href="${n.link}" class="card" target="_blank" rel="noopener">
       <div class="thumb"><img src="${imgOrFallback(n.image)}" alt="${escapeHtml(n.title)}"></div>
@@ -248,7 +226,6 @@ function renderInsiders(items, insiderLinks=[]){
     </a>
   `).join("");
 }
-
 function renderSchedule(s){
   const list=document.getElementById("scheduleList");
   if(!list || !s?.games) return;
@@ -266,3 +243,9 @@ function renderWidgets(w){
   if(!nil || !Array.isArray(w?.nil)) return;
   nil.innerHTML = w.nil.map(p=>`<li>${escapeHtml(p.name)} — ${escapeHtml(p.valuation)}</li>`).join("");
 }
+
+/* DOM helpers */
+function setText(id,v){const el=document.getElementById(id); if(el) el.textContent=v??""}
+function setSrc(id,v){const el=document.getElementById(id); if(el) el.src=v}
+function setHref(id,v){const el=document.getElementById(id); if(el) el.href=v}
+function addClick(id,fn){const el=document.getElementById(id); if(el) el.addEventListener("click",fn)}
