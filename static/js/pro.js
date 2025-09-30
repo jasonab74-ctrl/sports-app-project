@@ -1,116 +1,268 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Purdue Men's Basketball — Team Hub Pro</title>
-  <meta name="description" content="One-stop Purdue Men's Basketball hub: breaking news, insider analysis, videos, rankings, and schedule — updated automatically.">
-  <link rel="stylesheet" href="static/css/pro.css" />
-</head>
-<body>
-  <!-- Header -->
-  <header class="header" role="banner">
-    <div class="wrap bar">
-      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu" aria-controls="mobileDrawer" aria-expanded="false">☰</button>
-      <div class="brand">
-        <img id="logo" alt="Team Logo" />
-        <h1 id="wordmark">Team Hub</h1>
-      </div>
-      <nav class="nav" aria-label="Primary"></nav>
-      <div class="controls">
-        <button class="btn ghost" id="refreshBtn" type="button">Refresh</button>
-      </div>
+// ===============================
+// Team Hub Pro — Frontend Logic
+// Returns top links (subnav), Purdue-focused curation
+// ===============================
+
+const TEAM_URL     = "static/team.json";
+const ITEMS_URL    = "static/teams/purdue-mbb/items.json";
+const SCHEDULE_URL = "static/schedule.json";
+const WIDGETS_URL  = "static/widgets.json";
+const INSIDERS_URL = "static/insiders.json";
+
+let ALL_ITEMS = [];
+let CURRENT_FILTER = null;
+let TEAM_KEYWORDS = []; // from team.json to bias Purdue-specific content
+
+const FALLBACK_IMG = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
+
+document.addEventListener("DOMContentLoaded", init);
+
+async function init(){
+  try{
+    const [team, itemsData, schedule, widgets, insiders] = await Promise.all([
+      fetchJSON(TEAM_URL),
+      fetchJSON(ITEMS_URL),
+      fetchJSON(SCHEDULE_URL),
+      fetchJSON(WIDGETS_URL),
+      fetchJSON(INSIDERS_URL).catch(()=>({links:[]}))
+    ]);
+
+    TEAM_KEYWORDS = (team.keywords || []).map(s => String(s).toLowerCase());
+
+    ALL_ITEMS = Array.isArray(itemsData) ? itemsData : (itemsData.items || []);
+    renderBrand(team);
+    renderAllNavs(team.links || []);
+    setupDrawer(team.links || []);
+    bindRefresh();
+
+    // curate items for Purdue (soft filter)
+    const curated = curateForTeam(ALL_ITEMS);
+
+    renderEverything(curated, schedule, widgets, insiders.links);
+    wireTickerFilter();
+  }catch(e){
+    console.error("Init failed:", e);
+  }
+}
+
+/* ---------- data & helpers ---------- */
+async function fetchJSON(url){
+  const res = await fetch(url + (url.includes("?") ? "" : `?t=${Date.now()}`));
+  if(!res.ok) throw new Error(`Failed to load ${url}`);
+  return res.json();
+}
+function truncate(t="",n=140){return t.length>n?t.slice(0,n)+"…":t}
+function imgOrFallback(u){return (u && typeof u==="string")?u:FALLBACK_IMG}
+function safeDate(d){
+  if(!d) return "";
+  const dt = new Date(d);
+  return isNaN(dt.getTime()) ? String(d).slice(0,16) :
+    dt.toLocaleDateString(undefined,{month:"short",day:"numeric"});
+}
+function escapeHtml(s){return String(s||"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]))}
+function isVideoItem(i){
+  const t=(i.type||"").toLowerCase(); const l=(i.link||"").toLowerCase();
+  return t==="video"||l.includes("youtube.com/")||l.includes("youtu.be/");
+}
+function bindRefresh(){ document.getElementById("refreshBtn")?.addEventListener("click",()=>location.reload()); }
+
+/* ---------- Purdue-biased curation ---------- */
+function curateForTeam(items){
+  if (!TEAM_KEYWORDS.length) return items;
+  const isHit = (i) => {
+    const text = `${i.title||""} ${i.summary||""} ${i.source||""}`.toLowerCase();
+    return TEAM_KEYWORDS.some(k => text.includes(k));
+  };
+  const hits = items.filter(isHit);
+  if (hits.length >= 12) return hits;         // plenty of Purdue content
+  const needed = Math.max(0, 12 - hits.length);
+  const non = items.filter(i => !hits.includes(i)).slice(0, needed);
+  return hits.concat(non);                     // fill with best recent items
+}
+
+/* ---------- Render orchestrator ---------- */
+function renderEverything(items, schedule, widgets, insiderLinks){
+  const filtered = applyFilter(items, CURRENT_FILTER);
+  renderTicker(items);               // ticker shows all (gives global context)
+  renderFeatured(filtered, items);
+  renderVideos(filtered, items);
+  renderNews(filtered);
+  renderInsiders(filtered, insiderLinks);
+  if (schedule) renderSchedule(schedule);
+  if (widgets)  renderWidgets(widgets);
+}
+
+/* ---------- Brand & Navs ---------- */
+function renderBrand(team){
+  const logo=document.getElementById("logo"), word=document.getElementById("wordmark");
+  if(logo) logo.src = team.logo || "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Purdue_Boilermakers_wordmark.svg/512px-Purdue_Boilermakers_wordmark.svg.png";
+  if(word) word.textContent = team.name || team.wordmark || "Team Hub";
+}
+function renderAllNavs(links){
+  // Desktop nav
+  const nav=document.querySelector(".nav");
+  if (nav) nav.innerHTML = links.map(l => linkHTML(l)).join("");
+  // Subnav chips (always visible)
+  const sub=document.getElementById("subNav");
+  if (sub) sub.innerHTML = links.map(l => `<a href="${l.href}" target="${String(l.href).startsWith('http')?'_blank':'_self'}" rel="noopener">${escapeHtml(l.label)}</a>`).join("");
+}
+function linkHTML(l){
+  const ext = String(l.href).startsWith('http');
+  return `<a href="${l.href}" target="${ext ? '_blank' : '_self'}" rel="noopener">${escapeHtml(l.label)}</a>`;
+}
+
+/* ---------- Drawer ---------- */
+function setupDrawer(links){
+  const btn = document.getElementById("mobileMenuBtn");
+  const drawer = document.getElementById("mobileDrawer");
+  const panel = drawer?.querySelector(".drawer-panel");
+  const closeBtn = document.getElementById("drawerClose");
+  const backdrop = document.getElementById("drawerBackdrop");
+  const mobileNav = document.getElementById("mobileNav");
+  const drawerRefresh = document.getElementById("drawerRefresh");
+
+  if (mobileNav) mobileNav.innerHTML = links.map(l=>linkHTML(l)).join("");
+
+  const open = () => {drawer?.setAttribute("aria-hidden","false"); btn?.setAttribute("aria-expanded","true"); document.body.style.overflow="hidden";};
+  const close = () => {drawer?.setAttribute("aria-hidden","true");  btn?.setAttribute("aria-expanded","false"); document.body.style.overflow="";};
+
+  btn?.addEventListener("click", open);
+  closeBtn?.addEventListener("click", close);
+  backdrop?.addEventListener("click", close);
+  panel?.addEventListener("click", e => { e.stopPropagation(); });
+
+  drawerRefresh?.addEventListener("click", ()=>location.reload());
+}
+
+/* ---------- Filter (ticker chips) ---------- */
+function applyFilter(items, tag){ if(!tag) return items; return items.filter(i => (i.trust||"").toLowerCase()===tag); }
+function setFilter(tag){
+  CURRENT_FILTER = tag;
+  document.querySelectorAll(".ticker .chip").forEach(ch=>{
+    ch.classList.toggle("active", (ch.dataset.filter||"")===tag);
+  });
+  const curated = curateForTeam(ALL_ITEMS);
+  renderEverything(curated, null, null, null);
+}
+function wireTickerFilter(){
+  const t=document.querySelector(".ticker");
+  if(!t) return;
+  t.addEventListener("click",e=>{
+    const btn=e.target.closest(".chip");
+    if(!btn) return;
+    const tag=(btn.dataset.filter||"").toLowerCase();
+    setFilter(CURRENT_FILTER===tag?null:tag);
+  });
+}
+
+/* ---------- Ticker / Featured / Videos / News ---------- */
+function renderTicker(items){
+  const track=document.getElementById("tickerTrack");
+  if(!track) return;
+  const news=items.filter(i => (i.type||"").toLowerCase()==="news");
+  const mk=i=>{
+    const tag=(i.trust||"news").toLowerCase();
+    const chip=`<button class="chip" data-filter="${tag}" aria-label="Filter: ${tag}">${tag.toUpperCase()}</button>`;
+    return `${chip} <a href="${i.link}" target="_blank" rel="noopener">${escapeHtml(i.title||"")}</a>`;
+  };
+  const slice=news.slice(0,18).map(mk).join(" • ");
+  track.innerHTML = `${slice} • ${slice} • ${slice}`;
+}
+
+function renderFeatured(filtered, all){
+  const pickNews = arr => arr.find(i => (i.type||"").toLowerCase()==="news");
+  let f = pickNews(filtered.filter(i=>i.image)) || pickNews(filtered) ||
+          pickNews(all.filter(i=>i.image)) || pickNews(all) || null;
+  if(!f) return;
+  document.getElementById("featureLink").href = f.link || "#";
+  document.getElementById("featureImg").src = imgOrFallback(f.image);
+  setText("featureSource", f.source||"");
+  setText("featureTrust", (f.trust||"").replace("_"," "));
+  setText("featureTitle", f.title||"");
+  setText("featureSummary", truncate(f.summary||"", 160));
+  setText("featureWhen", safeDate(f.date));
+}
+function setText(id,val){const el=document.getElementById(id); if(el) el.textContent=val??""}
+
+function renderVideos(filtered, all){
+  const vids = filtered.filter(isVideoItem);
+  const list = vids.length? vids : all.filter(isVideoItem);
+  const c = document.getElementById("videoCarousel");
+  if(!c) return;
+
+  if(!list.length){
+    c.parentElement.parentElement.style.display="none";
+    return;
+  } else {
+    c.parentElement.parentElement.style.display="";
+  }
+
+  c.innerHTML = list.slice(0,12).map(v=>`
+    <a href="${v.link}" class="card video-card" target="_blank" rel="noopener">
+      <div class="thumb"><img src="${imgOrFallback(v.image)}" alt="${escapeHtml(v.title)}"></div>
+      <div class="meta"><span>${v.source||""}</span>${v.date?` • <time>${safeDate(v.date)}</time>`:""}</div>
+      <div class="title">${v.title||""}</div>
+      ${v.summary?`<div class="summary">${truncate(v.summary,120)}</div>`:""}
+    </a>
+  `).join("");
+
+  document.getElementById("prevVid")?.addEventListener("click",()=>c.scrollBy({left:-280,behavior:"smooth"}));
+  document.getElementById("nextVid")?.addEventListener("click",()=>c.scrollBy({left: 280,behavior:"smooth"}));
+}
+
+function renderNews(items){
+  const news=items.filter(i => (i.type||"").toLowerCase()==="news").slice(0,24);
+  const grid=document.getElementById("newsGrid");
+  if(!grid) return;
+  grid.innerHTML = news.map(n=>`
+    <a href="${n.link}" class="card" target="_blank" rel="noopener">
+      <div class="thumb"><img src="${imgOrFallback(n.image)}" alt="${escapeHtml(n.title)}"></div>
+      <div class="meta"><span>${n.source||""}</span>${n.date?` • <time>${safeDate(n.date)}</time>`:""}</div>
+      <div class="title">${n.title||""}</div>
+      ${n.summary?`<div class="summary">${truncate(n.summary,150)}</div>`:""}
+    </a>
+  `).join("");
+}
+
+/* ---------- Insiders & Sidebar ---------- */
+function renderInsiders(items, insiderLinks=[]){
+  const grid=document.getElementById("insiderGrid");
+  if(!grid) return;
+
+  const insiders = items.filter(i => (i.trust||"").toLowerCase()==="insider" || (i.trust||"").toLowerCase()==="beat");
+
+  const hub = insiderLinks.length ? `
+    <div class="card" style="padding:12px">
+      <div class="title" style="margin:8px 0">Insider Hub</div>
+      <ul class="insider-links">
+        ${insiderLinks.map(l=>`<li><a href="${l.href}" target="_blank" rel="noopener">${escapeHtml(l.label)}</a></li>`).join("")}
+      </ul>
+    </div>` : "";
+
+  grid.innerHTML = hub + insiders.map(n=>`
+    <a href="${n.link}" class="card" target="_blank" rel="noopener">
+      <div class="thumb"><img src="${imgOrFallback(n.image)}" alt="${escapeHtml(n.title)}"></div>
+      <div class="meta"><span class="badge">Insider</span> ${n.source||""}</div>
+      <div class="title">${n.title||""}</div>
+      ${n.summary?`<div class="summary">${truncate(n.summary,150)}</div>`:""}
+    </a>
+  `).join("");
+}
+
+function renderSchedule(s){
+  const list=document.getElementById("scheduleList");
+  if(!list || !s?.games) return;
+  list.innerHTML = s.games.map(g=>`
+    <div class="game-row">
+      <strong>${g.opponent}</strong><br>
+      <time>${safeDate(g.date)}</time> – <span>${g.venue||""}</span>
     </div>
-
-    <!-- Always-visible slim subnav (scrollable chips) -->
-    <div class="subnav-wrap">
-      <div class="wrap">
-        <nav id="subNav" class="subnav" aria-label="Quick links"></nav>
-      </div>
-    </div>
-
-    <div class="ticker" aria-live="polite">
-      <div class="ticker-track" id="tickerTrack"></div>
-    </div>
-  </header>
-
-  <!-- Mobile drawer -->
-  <aside id="mobileDrawer" class="drawer" aria-hidden="true">
-    <div class="drawer-panel" role="dialog" aria-label="Menu">
-      <div class="drawer-head">
-        <div class="drawer-title">Menu</div>
-        <button class="drawer-close" id="drawerClose" aria-label="Close menu">✕</button>
-      </div>
-      <nav id="mobileNav" class="drawer-nav" aria-label="Mobile"></nav>
-      <div class="drawer-actions">
-        <button class="btn ghost block" id="drawerRefresh">Refresh</button>
-      </div>
-    </div>
-    <div class="drawer-backdrop" id="drawerBackdrop"></div>
-  </aside>
-
-  <!-- Hero -->
-  <section class="hero">
-    <div class="wrap hero-inner">
-      <a id="featureLink" class="feature-hero" target="_blank" rel="noopener">
-        <img id="featureImg" alt="Featured image" />
-        <div class="feature-overlay">
-          <div class="feature-chip">
-            <span id="featureTrust"></span> <span id="featureSource"></span>
-          </div>
-          <h1 id="featureTitle">Top Story</h1>
-          <p id="featureSummary"></p>
-          <time id="featureWhen"></time>
-        </div>
-      </a>
-    </div>
-  </section>
-
-  <!-- Main grid -->
-  <main class="wrap main-grid">
-    <section class="panel">
-      <div class="head">
-        <h2>Videos & Highlights</h2>
-        <div class="carousel-ctrls">
-          <button class="ctrl" id="prevVid" aria-label="Previous videos">←</button>
-          <button class="ctrl" id="nextVid" aria-label="Next videos">→</button>
-        </div>
-      </div>
-      <div class="body"><div class="carousel" id="videoCarousel"></div></div>
-    </section>
-
-    <section class="panel">
-      <div class="head"><h2>Latest Headlines</h2></div>
-      <div class="body"><div class="news-grid" id="newsGrid"></div></div>
-    </section>
-
-    <section class="panel">
-      <div class="head"><h2>Insider Coverage</h2></div>
-      <div class="body"><div class="news-grid" id="insiderGrid"></div></div>
-    </section>
-
-    <aside class="sidebar">
-      <section class="panel widget">
-        <div class="head"><h3>Upcoming Schedule</h3></div>
-        <div class="body"><div class="schedule-list" id="scheduleList"></div></div>
-      </section>
-
-      <section class="panel widget">
-        <div class="head"><h3>Rankings</h3></div>
-        <div class="body" id="rankingsBox">
-          <div class="rank-row"><strong>AP Poll:</strong> <span id="apRank">—</span></div>
-          <div class="rank-row"><strong>KenPom:</strong> <span id="kpRank">—</span></div>
-        </div>
-      </section>
-
-      <section class="panel widget">
-        <div class="head"><h3>NIL Leaderboard</h3></div>
-        <div class="body"><ol class="nil-list" id="nilList"></ol></div>
-      </section>
-    </aside>
-  </main>
-
-  <footer class="footer"><div class="wrap">© Team Hub Pro — Purdue Men's Basketball</div></footer>
-  <script src="static/js/pro.js"></script>
-</body>
-</html>
+  `).join("");
+}
+function renderWidgets(w){
+  setText("apRank", w?.ap_rank ?? "—");
+  setText("kpRank", w?.kenpom_rank ?? "—");
+  const nil=document.getElementById("nilList");
+  if(!nil || !Array.isArray(w?.nil)) return;
+  nil.innerHTML = w.nil.map(p=>`<li>${escapeHtml(p.name)} — ${escapeHtml(p.valuation)}</li>`).join("");
+}
