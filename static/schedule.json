@@ -1,29 +1,49 @@
 {
   "games": [
     {
-      "date": "2025-11-05",
       "opponent": "Duke Blue Devils",
+      "date": "2025-11-05",
       "venue": "Mackey Arena (West Lafayette, IN)"
     },
     {
-      "date": "2025-11-12",
       "opponent": "Gonzaga Bulldogs",
-      "venue": "Madison Square Garden (New York, NY)"
+      "date": "2025-11-12",
+      "venue": "Phil Knight Invitational (Portland, OR)"
     },
     {
-      "date": "2025-11-19",
+      "opponent": "Indiana Hoosiers",
+      "date": "2025-12-01",
+      "venue": "Assembly Hall (Bloomington, IN)"
+    },
+    {
       "opponent": "Michigan State Spartans",
-      "venue": "Breslin Center (East Lansing, MI)"
-    },
-    {
-      "date": "2025-11-25",
-      "opponent": "Ohio State Buckeyes",
+      "date": "2025-12-08",
       "venue": "Mackey Arena (West Lafayette, IN)"
     },
     {
-      "date": "2025-12-02",
-      "opponent": "Indiana Hoosiers",
-      "venue": "Assembly Hall (Bloomington, IN)"
+      "opponent": "Illinois Fighting Illini",
+      "date": "2025-12-15",
+      "venue": "State Farm Center (Champaign, IL)"
+    },
+    {
+      "opponent": "Wisconsin Badgers",
+      "date": "2026-01-03",
+      "venue": "Mackey Arena (West Lafayette, IN)"
+    },
+    {
+      "opponent": "Ohio State Buckeyes",
+      "date": "2026-01-10",
+      "venue": "Schottenstein Center (Columbus, OH)"
+    },
+    {
+      "opponent": "Big Ten Tournament",
+      "date": "2026-03-13",
+      "venue": "United Center (Chicago, IL)"
+    },
+    {
+      "opponent": "NCAA Tournament - First Round",
+      "date": "2026-03-20",
+      "venue": "TBD"
     }
   ]
 }
