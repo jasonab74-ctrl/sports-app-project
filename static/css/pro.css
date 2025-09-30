@@ -38,11 +38,11 @@ body{
 .team-logo{width:28px;height:28px;border-radius:6px;object-fit:contain;background:#111;padding:2px}
 #site-title{font-size:18px;margin:0 0 0 .1rem;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
-/* ---------- Drawer + Backdrop ---------- */
+/* ---------- Drawer (LEFT) + Backdrop ---------- */
 .drawer{
-  position:fixed; inset:0 0 0 auto; width:min(88%,340px);
-  transform:translateX(100%); transition:transform .28s ease;
-  background:#0d141f; border-left:1px solid var(--border); z-index:60;
+  position:fixed; inset:0 auto 0 0; width:min(88%,340px);
+  transform:translateX(-100%); transition:transform .28s ease;
+  background:#0d141f; border-right:1px solid var(--border); z-index:60;
   display:flex; flex-direction:column;
 }
 .drawer.open{transform:translateX(0)}
@@ -50,10 +50,13 @@ body{
 .drawer-links{list-style:none;margin:0;padding:.25rem .5rem}
 .drawer-links a{display:block; padding:.9rem .9rem; margin:.25rem 0; color:var(--text); background:#0f1726; border-radius:12px; text-decoration:none}
 .drawer-links a:active{background:#131c30}
-body.drawer-open::before{
-  content:""; position:fixed; inset:0; z-index:55; backdrop-filter:blur(2px);
-  background:rgba(0,0,0,.45);
+
+.backdrop{
+  position:fixed; inset:0; z-index:55; background:rgba(0,0,0,.45);
+  backdrop-filter:blur(2px);
+  opacity:0; pointer-events:none; transition:opacity .2s ease;
 }
+.backdrop.show{opacity:1; pointer-events:auto}
 
 /* ---------- Tabs ---------- */
 .tabs{
@@ -91,12 +94,18 @@ body.drawer-open::before{
 @media(min-width:640px){ .grid{ grid-template-columns:1fr 1fr } }
 
 /* ---------- Cards ---------- */
+a.card{color:inherit; text-decoration:none}
 .card{
   background:var(--card); border:1px solid var(--border); border-radius:16px; overflow:hidden;
   display:flex; flex-direction:column; min-height:100%;
 }
 .card__thumb{position:relative; aspect-ratio:16/9; background:#0b111a}
 .card__thumb img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
+.card__thumb.placeholder::after{
+  content:""; position:absolute; inset:0;
+  background:repeating-linear-gradient(135deg,#0f1726 0 12px,#152234 12px 24px);
+  opacity:.8;
+}
 .card__body{padding:.85rem}
 .card__kicker{color:var(--accent); font-size:.8rem; font-weight:700; text-transform:uppercase; letter-spacing:.03em}
 .card__title{margin:.25rem 0; font-size:1.05rem; line-height:1.25; font-weight:750}
