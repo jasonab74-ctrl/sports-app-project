@@ -1,181 +1,154 @@
-// static/js/pro.js
-document.addEventListener("DOMContentLoaded", () => {
-  loadTeam();
-  loadItems();
-  loadSchedule();
-  setupRefresh();
+// ======== CONFIG =========
+const ITEMS_URL = "static/teams/purdue-mbb/items.json";
+const TEAM_URL = "static/team.json";
+const SCHEDULE_URL = "static/schedule.json";
+const WIDGETS_URL = "static/widgets.json";
+
+// ======== LOAD EVERYTHING =========
+document.addEventListener("DOMContentLoaded", async () => {
+  try {
+    const [team, items, schedule, widgets] = await Promise.all([
+      fetchJSON(TEAM_URL),
+      fetchJSON(ITEMS_URL),
+      fetchJSON(SCHEDULE_URL),
+      fetchJSON(WIDGETS_URL)
+    ]);
+
+    renderNav(team.links);
+    renderBrand(team);
+    renderTicker(items);
+    renderFeatured(items);
+    renderVideos(items);
+    renderNews(items);
+    renderInsiders(items);
+    renderSchedule(schedule);
+    renderWidgets(widgets);
+
+  } catch (err) {
+    console.error("🚨 Failed to load site data:", err);
+  }
 });
 
-async function loadTeam() {
-  const res = await fetch("/sports-app-project/static/team.json");
-  const team = await res.json();
-  document.getElementById("wordmark").textContent = team.wordmark || team.team_name;
-
-  const logo = document.getElementById("logo");
-  if (logo) logo.src = team.logo_url;
-
-  document.body.style.setProperty("--primary", team.primary_color);
-  document.body.style.setProperty("--accent", team.accent);
-
-  setTheme(team);
-  renderPromos(team.promos);
+// ======== HELPERS =========
+async function fetchJSON(url) {
+  const res = await fetch(url + "?t=" + Date.now()); // cache-bust
+  if (!res.ok) throw new Error(`Failed to load ${url}`);
+  return res.json();
 }
 
-function setTheme(team) {
+function truncate(text, len = 140) {
+  return text.length > len ? text.slice(0, len) + "…" : text;
+}
+
+// ======== NAV =========
+function renderNav(links) {
   const nav = document.querySelector(".nav");
-  nav.innerHTML = "";
-
-  team.links.forEach(link => {
-    const a = document.createElement("a");
-    a.href = link.href;
-    a.textContent = link.label;
-
-    // ✅ open external links in new tab
-    if (link.href.startsWith("http")) {
-      a.target = "_blank";
-      a.rel = "noopener noreferrer";
-    }
-
-    nav.appendChild(a);
-  });
-
-  const heroImg = document.querySelector(".hero .image");
-  if (heroImg) {
-    heroImg.style.backgroundImage = `url('${team.hero_image}')`;
-  }
+  nav.innerHTML = links
+    .map(l => `<a href="${l.href}" target="${l.href.startsWith('http') ? '_blank' : '_self'}">${l.label}</a>`)
+    .join("");
 }
 
-function renderPromos(promos) {
-  const row = document.getElementById("promoRow");
-  if (!row) return;
-  row.innerHTML = "";
-
-  if (!promos || promos.length === 0) {
-    document.getElementById("promos").style.display = "none";
-    return;
-  }
-
-  promos.forEach(p => {
-    const card = document.createElement("div");
-    card.className = "promo-card";
-    card.innerHTML = `
-      <h3>${p.title}</h3>
-      <p>${p.text}</p>
-      <a href="${p.href}" target="_blank" rel="noopener noreferrer" class="btn">${p.cta}</a>
-    `;
-    row.appendChild(card);
-  });
+function renderBrand(team) {
+  document.getElementById("logo").src = team.logo;
+  document.getElementById("wordmark").textContent = team.name;
 }
 
-async function loadItems() {
-  const res = await fetch("/sports-app-project/static/teams/purdue-mbb/items.json");
-  const items = await res.json();
+// ======== TICKER =========
+function renderTicker(items) {
+  const ticker = document.getElementById("tickerTrack");
+  const headlines = items
+    .filter(i => i.type === "news")
+    .slice(0, 10)
+    .map(i => `<a href="${i.link}" target="_blank">${i.title}</a>`)
+    .join(" • ");
+  ticker.innerHTML = headlines.repeat(3); // repeat for infinite scroll
+}
 
-  const feature = items.find(i => i.featured) || items[0];
-  if (feature) renderFeature(feature);
+// ======== FEATURED =========
+function renderFeatured(items) {
+  const feature = items.find(i => i.type === "news");
+  if (!feature) return;
+  document.getElementById("featureLink").href = feature.link;
+  document.getElementById("featureImg").src = feature.image || "static/placeholder.jpg";
+  document.getElementById("featureSource").textContent = feature.source || "";
+  document.getElementById("featureTrust").textContent = feature.trust || "";
+  document.getElementById("featureTitle").textContent = feature.title;
+  document.getElementById("featureSummary").textContent = truncate(feature.summary || "", 180);
+  document.getElementById("featureWhen").textContent = feature.date || "";
+}
 
+// ======== VIDEOS =========
+function renderVideos(items) {
   const videos = items.filter(i => i.type === "video");
-  const news = items.filter(i => i.type === "news");
-
-  renderVideos(videos);
-  renderNews(news);
-}
-
-function renderFeature(item) {
-  document.getElementById("featureImg").src = item.image_url || "";
-  document.getElementById("featureLink").href = item.url;
-  document.getElementById("featureTitle").textContent = item.title;
-  document.getElementById("featureTitle").href = item.url;
-  document.getElementById("featureSummary").textContent = item.summary || "";
-  document.getElementById("featureSource").textContent = item.source || "";
-  document.getElementById("featureTrust").textContent = item.trust_level || "";
-  document.getElementById("featureWhen").textContent = formatTime(item.published_at);
-  document.getElementById("featureRead").href = item.url;
-}
-
-function renderVideos(videos) {
-  const row = document.getElementById("videoRow");
-  if (!row) return;
-  row.innerHTML = "";
-
-  videos.slice(0, 8).forEach(v => {
-    const card = document.createElement("div");
-    card.className = "video-card";
-    card.innerHTML = `
-      <a href="${v.url}" target="_blank" rel="noopener noreferrer" class="thumb">
-        <img src="${v.image_url}" alt="${v.title}" loading="lazy" />
-      </a>
-      <div class="video-meta">
-        <h4><a href="${v.url}" target="_blank" rel="noopener noreferrer">${v.title}</a></h4>
-        <p class="meta">${v.source} • ${formatTime(v.published_at)}</p>
+  const container = document.getElementById("videoCarousel");
+  container.innerHTML = videos
+    .slice(0, 12)
+    .map(v => `
+      <div class="card video-card">
+        <div class="thumb"><img src="${v.image}" alt="${v.title}"></div>
+        <div class="meta"><span>${v.source}</span></div>
+        <div class="title">${v.title}</div>
       </div>
-    `;
-    row.appendChild(card);
+    `).join("");
+
+  document.getElementById("prevVid").addEventListener("click", () => {
+    container.scrollBy({ left: -300, behavior: "smooth" });
+  });
+  document.getElementById("nextVid").addEventListener("click", () => {
+    container.scrollBy({ left: 300, behavior: "smooth" });
   });
 }
 
-function renderNews(news) {
+// ======== NEWS GRID =========
+function renderNews(items) {
+  const news = items.filter(i => i.type === "news").slice(0, 20);
   const grid = document.getElementById("newsGrid");
-  if (!grid) return;
-  grid.innerHTML = "";
-
-  news.slice(0, 20).forEach(n => {
-    const card = document.createElement("div");
-    card.className = "news-card";
-    card.innerHTML = `
-      <a href="${n.url}" target="_blank" rel="noopener noreferrer" class="thumb">
-        <img src="${n.image_url}" alt="${n.title}" loading="lazy" />
-      </a>
-      <div class="news-meta">
-        <h4><a href="${n.url}" target="_blank" rel="noopener noreferrer">${n.title}</a></h4>
-        <p class="summary">${n.summary || ""}</p>
-        <p class="meta">${n.source} • ${formatTime(n.published_at)}</p>
-      </div>
-    `;
-    grid.appendChild(card);
-  });
+  grid.innerHTML = news.map(n => `
+    <a href="${n.link}" class="card" target="_blank">
+      <div class="thumb"><img src="${n.image}" alt="${n.title}"></div>
+      <div class="meta"><span>${n.source}</span> • <time>${n.date}</time></div>
+      <div class="title">${n.title}</div>
+      <div class="summary">${truncate(n.summary, 150)}</div>
+    </a>
+  `).join("");
 }
 
-async function loadSchedule() {
-  const res = await fetch("/sports-app-project/static/schedule.json");
-  if (!res.ok) return;
-  const schedule = await res.json();
-  const list = document.getElementById("scheduleList");
-  if (!list) return;
+// ======== INSIDERS =========
+function renderInsiders(items) {
+  const insiders = items.filter(i => i.trust === "insider");
+  const grid = document.getElementById("insiderGrid");
+  grid.innerHTML = insiders.map(n => `
+    <a href="${n.link}" class="card" target="_blank">
+      <div class="thumb"><img src="${n.image}" alt="${n.title}"></div>
+      <div class="meta"><span class="badge">Insider</span> ${n.source}</div>
+      <div class="title">${n.title}</div>
+      <div class="summary">${truncate(n.summary, 150)}</div>
+    </a>
+  `).join("");
+}
 
-  list.innerHTML = schedule.map(game => `
-    <div class="game">
-      <div class="date">${formatDate(game.date)}</div>
-      <div class="matchup">${game.home ? "vs" : "@"} ${game.opp}</div>
-      <div class="time">${game.time_local}</div>
+// ======== SCHEDULE =========
+function renderSchedule(schedule) {
+  const list = document.getElementById("scheduleList");
+  list.innerHTML = schedule.games.map(g => `
+    <div class="game-row">
+      <strong>${g.opponent}</strong><br>
+      <time>${g.date}</time> – <span>${g.venue}</span>
     </div>
   `).join("");
 }
 
-function setupRefresh() {
-  const btn = document.getElementById("refreshBtn");
-  if (btn) {
-    btn.addEventListener("click", () => {
-      loadItems();
-      loadSchedule();
-    });
-  }
+// ======== SIDEBAR WIDGETS =========
+function renderWidgets(widgets) {
+  document.getElementById("apRank").textContent = widgets.ap_rank || "—";
+  document.getElementById("kpRank").textContent = widgets.kenpom_rank || "—";
+  const nilList = document.getElementById("nilList");
+  nilList.innerHTML = widgets.nil
+    .map(p => `<li>${p.name} — ${p.valuation}</li>`)
+    .join("");
 }
 
-function formatTime(ts) {
-  try {
-    const d = new Date(ts);
-    return d.toLocaleDateString("en-US", { month: "short", day: "numeric" });
-  } catch {
-    return "";
-  }
-}
-
-function formatDate(ts) {
-  try {
-    const d = new Date(ts);
-    return d.toLocaleDateString("en-US", { month: "short", day: "numeric" });
-  } catch {
-    return "";
-  }
-}
+// ======== REFRESH =========
+document.getElementById("refreshBtn").addEventListener("click", () => {
+  location.reload();
+});
