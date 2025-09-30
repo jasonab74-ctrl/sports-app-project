@@ -1,74 +1,86 @@
 #!/usr/bin/env python3
-import feedparser, json, re, requests
-from datetime import datetime
+import json, re
 from pathlib import Path
+from datetime import datetime
+import feedparser
 from bs4 import BeautifulSoup
 
-BASE_DIR = Path(__file__).resolve().parents[1]
-SOURCES_FILE = BASE_DIR / "static" / "sources.json"
-OUTPUT_FILE = BASE_DIR / "static" / "teams" / "purdue-mbb" / "items.json"
+BASE = Path(__file__).resolve().parents[1]
+SOURCES_PATH = BASE / "static" / "sources.json"
+OUTPUT_PATH = BASE / "static" / "teams" / "purdue-mbb" / "items.json"
 
-def clean_html(text):
-    return re.sub("<[^<]+?>", "", text or "")
+def clean_html(txt):
+    return re.sub(r"<[^>]+>", "", txt or "")
 
-def fetch_youtube_thumb(link):
-    # Extract video ID for YouTube links
-    match = re.search(r"v=([a-zA-Z0-9_-]{11})", link)
-    return f"https://img.youtube.com/vi/{match.group(1)}/hqdefault.jpg" if match else None
+def parse_date(entry):
+    # Prefer parsed published date, fall back to today
+    try:
+      if hasattr(entry, "published_parsed") and entry.published_parsed:
+        dt = datetime(*entry.published_parsed[:6])
+        return dt.strftime("%Y-%m-%d")
+    except Exception:
+      pass
+    return datetime.utcnow().strftime("%Y-%m-%d")
 
-def parse_feed(source):
-    print(f"Fetching from: {source['name']}")
-    feed = feedparser.parse(source['url'])
-    results = []
-    for entry in feed.entries[:15]:
+def youtube_thumb(url):
+    m = re.search(r"[?&]v=([a-zA-Z0-9_-]{11})", url)
+    return f"https://img.youtube.com/vi/{m.group(1)}/hqdefault.jpg" if m else None
+
+def entry_image(entry):
+    # Try media content, then first <img> in summary
+    media = getattr(entry, "media_content", None)
+    if media and isinstance(media, list) and media:
+        u = media[0].get("url")
+        if u: return u
+    summ = getattr(entry, "summary", "") or ""
+    try:
+        soup = BeautifulSoup(summ, "html.parser")
+        tag = soup.find("img")
+        if tag and tag.get("src"): return tag["src"]
+    except Exception:
+        pass
+    return None
+
+def parse_feed(src):
+    print(f"Fetching: {src['name']} ({src['type']})")
+    d = feedparser.parse(src["url"])
+    out = []
+    for e in d.entries[:25]:
         item = {
-            "type": source["type"],
-            "source": source["name"],
-            "trust": source["trust"],
-            "title": entry.get("title", "Untitled"),
-            "link": entry.get("link", "#"),
-            "date": entry.get("published", "")[:10],
-            "summary": clean_html(entry.get("summary", "")),
+            "type": "video" if src["type"] == "video" else "news",
+            "source": src["name"],
+            "trust": src.get("trust", "national"),
+            "title": e.get("title", "").strip(),
+            "link": e.get("link", "").strip(),
+            "date": parse_date(e),
+            "summary": clean_html(e.get("summary", ""))[:240],
             "image": None
         }
-
-        # Try to get a thumbnail
-        if source["type"] == "video":
-            thumb = fetch_youtube_thumb(item["link"])
-            item["image"] = thumb or "static/placeholder.jpg"
+        if src["type"] == "video":
+            item["image"] = youtube_thumb(item["link"]) or entry_image(e)
         else:
-            # Attempt to get image from content if available
-            if "media_content" in entry and len(entry.media_content) > 0:
-                item["image"] = entry.media_content[0].get("url")
-            elif "summary" in entry:
-                soup = BeautifulSoup(entry.summary, "html.parser")
-                img_tag = soup.find("img")
-                if img_tag and img_tag.get("src"):
-                    item["image"] = img_tag["src"]
-
-        results.append(item)
-    return results
+            item["image"] = entry_image(e)
+        out.append(item)
+    return out
 
 def main():
-    print("📡 Starting feed collection...")
-    with open(SOURCES_FILE) as f:
+    with open(SOURCES_PATH, "r", encoding="utf-8") as f:
         sources = json.load(f)["sources"]
 
     all_items = []
     for src in sources:
         try:
-            all_items.extend(parse_feed(src))
-        except Exception as e:
-            print(f"⚠️ Error fetching {src['name']}: {e}")
+            all_items += parse_feed(src)
+        except Exception as ex:
+            print("WARN:", src["name"], ex)
 
-    # Sort items by date (newest first)
-    all_items = sorted(all_items, key=lambda x: x.get("date", ""), reverse=True)
-
-    data = {"items": all_items[:50]}  # limit to 50 total
-    OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
-    with open(OUTPUT_FILE, "w") as f:
-        json.dump(data, f, indent=2)
-    print(f"✅ Wrote {len(data['items'])} items to {OUTPUT_FILE}")
+    # sort newest first, limit
+    all_items.sort(key=lambda x: x.get("date",""), reverse=True)
+    data = {"items": all_items[:50]}
+    OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+    print(f"Wrote {len(data['items'])} to {OUTPUT_PATH}")
 
 if __name__ == "__main__":
     main()
