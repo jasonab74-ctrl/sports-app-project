@@ -3,7 +3,7 @@
   "short_name": "Purdue",
   "primary_color": "#000000",
   "secondary_color": "#CEB888",
-  "logo": "static/teams/purdue-mbb/logo.png",
+  "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Purdue_Boilermakers_wordmark.svg/512px-Purdue_Boilermakers_wordmark.svg.png",
   "wordmark": "Boilermakers",
   "links": [
     { "label": "News", "href": "#news" },
