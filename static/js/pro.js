@@ -1,14 +1,10 @@
-/* Core App JS — polished drawer, ticker, carousel, loading states, fallbacks */
+/* Core App JS — left drawer + backdrop, better placeholders and fallbacks */
 
 const qs = (s, el = document) => el.querySelector(s);
 const qsa = (s, el = document) => [...el.querySelectorAll(s)];
 
 const state = {
-  teamSlug: new URL(location.href).searchParams.get('team') || 'purdue-mbb',
-  items: [],
-  team: null,
-  widgets: null,
-  schedule: null
+  teamSlug: new URL(location.href).searchParams.get('team') || 'purdue-mbb'
 };
 
 const paths = {
@@ -23,17 +19,27 @@ function decodeEntities(str){ if(!str) return ''; const t = document.createEleme
 function html(str){ const d=document.createElement('div'); d.innerHTML=str.trim(); return d.firstChild; }
 function safeJSON(url){ return fetch(url,{cache:'no-store'}).then(r=>r.ok?r.json():{}).catch(()=>({})); }
 
-/* ---------- Drawer ---------- */
+/* ---------- Drawer (left) + Backdrop ---------- */
 function initDrawer(){
   const drawer = qs('#drawer');
   const openBtn = qs('#hamburger');
   const closeBtn = qs('#drawer-close');
 
-  const open = () => { drawer.classList.add('open'); drawer.setAttribute('aria-hidden','false'); document.body.classList.add('drawer-open'); };
-  const close = () => { drawer.classList.remove('open'); drawer.setAttribute('aria-hidden','true'); document.body.classList.remove('drawer-open'); };
+  // create backdrop once
+  let backdrop = qs('#_backdrop');
+  if(!backdrop){
+    backdrop = document.createElement('div');
+    backdrop.className = 'backdrop';
+    backdrop.id = '_backdrop';
+    document.body.appendChild(backdrop);
+  }
+
+  const open = () => { drawer.classList.add('open'); backdrop.classList.add('show'); };
+  const close = () => { drawer.classList.remove('open'); backdrop.classList.remove('show'); };
 
   openBtn.addEventListener('click', open);
   closeBtn.addEventListener('click', close);
+  backdrop.addEventListener('click', close);
   drawer.addEventListener('click', e => { if(e.target.matches('a')) close(); });
   document.addEventListener('keydown', e => { if(e.key === 'Escape') close(); });
 }
@@ -69,12 +75,13 @@ function renderTicker(items){
 /* ---------- Cards / Carousel ---------- */
 function makeCard(item){
   const a = document.createElement('a');
-  a.className = 'card'; a.href = item.url; a.target = '_blank'; a.rel = 'noopener';
+  a.className = 'card'; a.href = item.url || '#'; a.target = '_blank'; a.rel = 'noopener';
 
   const thumb = html(`<div class="card__thumb"><img loading="lazy" alt=""></div>`);
   const img = thumb.querySelector('img');
-  img.src = item.image || item.thumbnail || '';
-  img.alt = decodeEntities(item.title);
+  const src = item.image || item.thumbnail || '';
+  if(src){ img.src = src; } else { thumb.classList.add('placeholder'); }
+  img.alt = decodeEntities(item.title || '');
 
   const body = html(`<div class="card__body">
     <div class="card__kicker"></div>
@@ -83,9 +90,9 @@ function makeCard(item){
   </div>`);
 
   body.querySelector('.card__kicker').textContent = item.tag || (item.is_video ? 'Video' : 'News');
-  body.querySelector('.card__title').textContent = decodeEntities(item.title);
-  const date = item.date ? new Date(item.date) : null;
-  const datestr = date ? date.toLocaleDateString(undefined, {month:'short', day:'numeric'}) : '';
+  body.querySelector('.card__title').textContent = decodeEntities(item.title || '');
+  const d = item.date ? new Date(item.date) : null;
+  const datestr = d ? d.toLocaleDateString(undefined, {month:'short', day:'numeric'}) : '';
   body.querySelector('.card__meta').textContent = [item.source || '', datestr].filter(Boolean).join(' • ');
 
   a.append(thumb, body);
@@ -96,19 +103,19 @@ function renderCarousel(items){
   const el = qs('#carousel'); el.innerHTML='';
   items.slice(0,8).forEach(i => el.appendChild(makeCard(i)));
   let timer;
-  const start = ()=>{ stop(); timer=setInterval(()=>{
+  const start = ()=>{ stop(); if(!items.length) return; timer=setInterval(()=>{
     el.scrollBy({left: el.clientWidth * 0.8, behavior:'smooth'});
     if(el.scrollLeft + el.clientWidth >= el.scrollWidth - 4){ el.scrollTo({left:0, behavior:'smooth'}); }
   }, 4500); };
   const stop = ()=> timer && clearInterval(timer);
   el.addEventListener('mouseenter',stop); el.addEventListener('mouseleave',start);
   el.addEventListener('touchstart',stop,{passive:true}); el.addEventListener('touchend',start,{passive:true});
-  if(items.length) start();
+  start();
 }
 
 function renderGrid(items, selector){
   const grid = qs(selector); grid.innerHTML='';
-  if(!items.length){ grid.innerHTML = `<div class="empty">No items yet — tap <strong>Refresh</strong> to reload.</div>`; return; }
+  if(!items.length){ grid.innerHTML = `<div class="empty">No items yet — add feeds in <code>static/sources.json</code> and run the collector.</div>`; return; }
   items.slice(0,24).forEach(i => grid.appendChild(makeCard(i)));
 }
 
@@ -187,8 +194,6 @@ async function boot(){
     ]);
 
     let items = (itemsJson.items||[]).map(i => ({...i, title: decodeEntities(i.title)}));
-
-    // Fallback demo if empty so the UI never looks blank
     if(!items.length){
       items = [{
         title:'Welcome to your Team Hub — connect feeds to populate live content',
@@ -201,14 +206,15 @@ async function boot(){
         is_video:false
       }];
     }
-
     const widgets = widgetsAll[state.teamSlug] || widgetsAll.default || {};
     const schedule = scheduleAll[state.teamSlug] || scheduleAll;
 
     renderTicker(items);
-    renderCarousel(items.filter(i=>!i.is_video));
-    renderGrid(items.filter(i=>!i.is_video), '#news-grid');
-    renderGrid(items.filter(i=> i.is_video), '#video-grid');
+    const news = items.filter(i=>!i.is_video);
+    const vids = items.filter(i=> i.is_video);
+    renderCarousel(news.length?news:items);
+    renderGrid(news.length?news:items, '#news-grid');
+    renderGrid(vids, '#video-grid');
     renderRankings(widgets);
     renderSchedule(schedule);
     renderNIL(widgets);
