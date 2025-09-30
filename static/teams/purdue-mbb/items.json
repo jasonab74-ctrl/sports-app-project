@@ -1,91 +1,74 @@
-[
-  {
-    "featured": true,
-    "type": "news",
-    "team": "purdue-mbb",
-    "source": "Purdue Athletics",
-    "trust_level": "official",
-    "title": "Boilermakers release non-conference schedule",
-    "url": "https://purduesports.com/",
-    "published_at": "2025-09-24T14:05:00Z",
-    "summary": "Purdue announces non-conference opponents and dates, including a marquee neutral-site game.",
-    "image_url": "https://images.unsplash.com/photo-1544914379-806667cd9482?q=80&w=1600&auto=format&fit=crop"
-  },
-  {
-    "type": "video",
-    "team": "purdue-mbb",
-    "source": "Purdue Athletics",
-    "trust_level": "official",
-    "title": "Highlights: Media Day Top Moments",
-    "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    "published_at": "2025-09-24T18:00:00Z",
-    "summary": "Quick hits and best moments from media day.",
-    "image_url": "https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg"
-  },
-  {
-    "type": "video",
-    "team": "purdue-mbb",
-    "source": "BTN",
-    "trust_level": "national",
-    "title": "Player Interview: Preseason Outlook",
-    "url": "https://www.youtube.com/watch?v=ysz5S6PUM-U",
-    "published_at": "2025-09-23T21:10:00Z",
-    "summary": "Guard talks depth, defense, and expectations.",
-    "image_url": "https://i.ytimg.com/vi/ysz5S6PUM-U/hqdefault.jpg"
-  },
-  {
-    "type": "video",
-    "team": "purdue-mbb",
-    "source": "Purdue Athletics",
-    "trust_level": "official",
-    "title": "Coach Presser: Practice Takeaways",
-    "url": "https://www.youtube.com/watch?v=aqz-KE-bpKQ",
-    "published_at": "2025-09-22T16:45:00Z",
-    "summary": "Coach on rotations and conditioning.",
-    "image_url": "https://i.ytimg.com/vi/aqz-KE-bpKQ/hqdefault.jpg"
-  },
-  {
-    "type": "news",
-    "team": "purdue-mbb",
-    "source": "GoldandBlack.com",
-    "trust_level": "beat",
-    "title": "Practice report: rotations taking shape",
-    "url": "https://www.on3.com/",
-    "published_at": "2025-09-23T19:30:00Z",
-    "summary": "Notes from Tuesday’s session with quotes from coaches.",
-    "image_url": "https://images.unsplash.com/photo-1534531409543-0f4d9a2a3b89?q=80&w=1200&auto=format&fit=crop"
-  },
-  {
-    "type": "news",
-    "team": "purdue-mbb",
-    "source": "CBS Sports",
-    "trust_level": "national",
-    "title": "Preseason Power Rankings: Purdue in Tier 1",
-    "url": "https://www.cbssports.com/college-basketball/",
-    "published_at": "2025-09-22T17:10:00Z",
-    "summary": "Where Purdue sits among early favorites.",
-    "image_url": "https://images.unsplash.com/photo-1544914379-806667cd9482?q=80&w=1200&auto=format&fit=crop"
-  },
-  {
-    "type": "news",
-    "team": "purdue-mbb",
-    "source": "Journal & Courier",
-    "trust_level": "local",
-    "title": "Roster preview: backcourt depth",
-    "url": "https://www.jconline.com/",
-    "published_at": "2025-09-21T12:00:00Z",
-    "summary": "How the guard rotation could shake out.",
-    "image_url": "https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1200&auto=format&fit=crop"
-  },
-  {
-    "type": "news",
-    "team": "purdue-mbb",
-    "source": "Hammer & Rails",
-    "trust_level": "blog",
-    "title": "Mailbag: expectations & breakout candidates",
-    "url": "https://www.hammerandrails.com/",
-    "published_at": "2025-09-20T15:50:00Z",
-    "summary": "Fans ask about lineups, NIL, and more.",
-    "image_url": "https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1200&auto=format&fit=crop"
-  }
-]
+{
+  "items": [
+    {
+      "type": "news",
+      "title": "Purdue Lands Top-50 Recruit Ahead of 2025 Season",
+      "summary": "The Boilermakers added another highly touted player to their roster, strengthening their frontcourt depth and boosting expectations for another deep tournament run.",
+      "link": "https://www.on3.com/teams/purdue-boilermakers/",
+      "source": "On3",
+      "trust": "insider",
+      "date": "2025-09-27",
+      "image": "https://via.placeholder.com/640x360.png?text=Purdue+Recruit"
+    },
+    {
+      "type": "news",
+      "title": "Matt Painter Discusses Early Practice Standouts",
+      "summary": "Head coach Matt Painter shared updates from the first week of practice, highlighting the development of key sophomores and the leadership of veteran guards.",
+      "link": "https://www.jconline.com/",
+      "source": "Journal & Courier",
+      "trust": "local",
+      "date": "2025-09-26",
+      "image": "https://via.placeholder.com/640x360.png?text=Matt+Painter"
+    },
+    {
+      "type": "news",
+      "title": "Purdue Ranked #2 in Preseason AP Poll",
+      "summary": "With returning All-American talent and a loaded roster, the Boilermakers open the season near the top of the rankings.",
+      "link": "https://www.espn.com/mens-college-basketball/",
+      "source": "ESPN",
+      "trust": "national",
+      "date": "2025-09-25",
+      "image": "https://via.placeholder.com/640x360.png?text=AP+Poll"
+    },
+    {
+      "type": "video",
+      "title": "Field of 68: Purdue Season Preview Show",
+      "summary": "The Field of 68 crew breaks down Purdue’s chances to cut down the nets this season.",
+      "link": "https://www.youtube.com/watch?v=123456",
+      "source": "Field of 68",
+      "trust": "insider",
+      "date": "2025-09-25",
+      "image": "https://img.youtube.com/vi/123456/hqdefault.jpg"
+    },
+    {
+      "type": "video",
+      "title": "BTN: Zach Edey Offseason Workout Feature",
+      "summary": "BTN goes behind the scenes with Zach Edey as he prepares for his senior season.",
+      "link": "https://www.youtube.com/watch?v=abcdef",
+      "source": "BTN",
+      "trust": "official",
+      "date": "2025-09-24",
+      "image": "https://img.youtube.com/vi/abcdef/hqdefault.jpg"
+    },
+    {
+      "type": "news",
+      "title": "Hammer & Rails: Keys to a Big Ten Championship",
+      "summary": "Breaking down the key matchups and potential pitfalls that could determine Purdue’s conference fate.",
+      "link": "https://www.hammerandrails.com/",
+      "source": "Hammer & Rails",
+      "trust": "insider",
+      "date": "2025-09-23",
+      "image": "https://via.placeholder.com/640x360.png?text=Big+Ten+Race"
+    },
+    {
+      "type": "news",
+      "title": "Edey Named Preseason National Player of the Year",
+      "summary": "Purdue’s star center is already drawing national attention ahead of the 2025-26 campaign.",
+      "link": "https://www.cbssports.com/",
+      "source": "CBS Sports",
+      "trust": "national",
+      "date": "2025-09-22",
+      "image": "https://via.placeholder.com/640x360.png?text=Edey+POY"
+    }
+  ]
+}
