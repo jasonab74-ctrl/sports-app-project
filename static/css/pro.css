@@ -3,9 +3,10 @@
   --card:#121722;
   --text:#eef2f7;
   --muted:#a2adc2;
-  --accent:#cfb991; /* Purdue gold default; overridden by team.json */
+  --accent:#cfb991;          /* team accent (overridden via team.json) */
   --accent-2:#1c1f26;
   --chip:#18202c;
+  --border:#101827;
 }
 
 *{box-sizing:border-box}
@@ -17,9 +18,9 @@ body{
   font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
 }
 
-/* Header */
+/* ---------- Header ---------- */
 .app-header{
-  position:sticky; top:0; z-index:20;
+  position:sticky; top:0; z-index:40;
   display:flex; align-items:center; gap:.75rem;
   padding:.6rem .9rem;
   background:linear-gradient(180deg,#0b0f14 0%,#0b0f14e0 65%,transparent 100%);
@@ -37,22 +38,26 @@ body{
 .team-logo{width:28px;height:28px;border-radius:6px;object-fit:contain;background:#111;padding:2px}
 #site-title{font-size:18px;margin:0 0 0 .1rem;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
-/* Drawer */
+/* ---------- Drawer + Backdrop ---------- */
 .drawer{
-  position:fixed; inset:0 35% 0 auto; width:65%; max-width:380px;
+  position:fixed; inset:0 0 0 auto; width:min(88%,340px);
   transform:translateX(100%); transition:transform .28s ease;
-  background:#0d141f; border-left:1px solid #111827; z-index:30;
+  background:#0d141f; border-left:1px solid var(--border); z-index:60;
   display:flex; flex-direction:column;
 }
 .drawer.open{transform:translateX(0)}
 .drawer-head{display:flex; align-items:center; justify-content:space-between; padding:1rem; border-bottom:1px solid #0f1625}
 .drawer-links{list-style:none;margin:0;padding:.25rem .5rem}
-.drawer-links a{display:block; padding:.75rem .75rem; margin:.15rem 0; color:var(--text); background:#0f1726; border-radius:10px; text-decoration:none}
+.drawer-links a{display:block; padding:.9rem .9rem; margin:.25rem 0; color:var(--text); background:#0f1726; border-radius:12px; text-decoration:none}
 .drawer-links a:active{background:#131c30}
+body.drawer-open::before{
+  content:""; position:fixed; inset:0; z-index:55; backdrop-filter:blur(2px);
+  background:rgba(0,0,0,.45);
+}
 
-/* Tabs */
+/* ---------- Tabs ---------- */
 .tabs{
-  display:flex; gap:.5rem; overflow:auto; padding:.5rem .75rem .8rem; border-bottom:1px solid #101624
+  display:flex; gap:.5rem; overflow:auto; padding:.6rem .9rem .9rem; border-bottom:1px solid #101624
 }
 .chip{
   border:1px solid #1d2738; background:var(--chip); color:var(--text);
@@ -60,36 +65,35 @@ body{
 }
 .chip.active{background:var(--accent); color:#111; border-color:transparent; font-weight:700}
 
-/* Ticker */
+/* ---------- Ticker ---------- */
 .ticker{position:relative; overflow:hidden; border-bottom:1px solid #101624; background:#0b101a}
+.ticker.hidden{display:none}
 .ticker__track{display:flex; gap:2rem; white-space:nowrap; will-change:transform; padding:.5rem .75rem}
 .ticker a{color:var(--muted); text-decoration:none}
 .ticker:hover .ticker__track, .ticker.tapped .ticker__track{animation-play-state:paused}
-@keyframes marquee{
-  from{transform:translateX(0)}
-  to{transform:translateX(-50%)}
-}
+@keyframes marquee{from{transform:translateX(0)} to{transform:translateX(-50%)}}
 
-/* Layout */
-#content{display:grid; grid-template-columns:1fr; gap:1rem; padding:1rem}
+/* ---------- Main Layout ---------- */
+#content{
+  padding:1rem;
+  display:grid; gap:1rem; grid-template-columns:1fr;
+  max-width:1200px; margin:0 auto;
+}
 @media(min-width:980px){
-  #content{grid-template-columns: minmax(0,1fr) 360px}
+  #content{grid-template-columns:minmax(0,1fr) 380px}
 }
 
 /* Sections */
 .tab{display:none}
 .tab.visible{display:block}
 
-.grid{
-  display:grid; gap:12px; grid-template-columns:1fr;
-}
+.grid{display:grid; gap:12px; grid-template-columns:1fr}
 @media(min-width:640px){ .grid{ grid-template-columns:1fr 1fr } }
-@media(min-width:980px){ .grid{ grid-template-columns:1fr 1fr } }
 
-/* Cards */
+/* ---------- Cards ---------- */
 .card{
-  background:var(--card); border:1px solid #101827; border-radius:16px; overflow:hidden;
-  display:flex; flex-direction:column;
+  background:var(--card); border:1px solid var(--border); border-radius:16px; overflow:hidden;
+  display:flex; flex-direction:column; min-height:100%;
 }
 .card__thumb{position:relative; aspect-ratio:16/9; background:#0b111a}
 .card__thumb img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
@@ -103,14 +107,23 @@ body{
 .carousel .card{min-width:86%; scroll-snap-align:start}
 @media(min-width:640px){ .carousel .card{min-width:60%} }
 
-/* Widgets / Sidebar */
+/* ---------- Widgets / Sidebar ---------- */
 .sidebar{display:grid; gap:1rem}
-.widget{background:#0e1522; border:1px solid #101827; border-radius:16px; overflow:hidden}
-.widget h3{margin:0; padding:.9rem 1rem; background:#0c1220; border-bottom:1px solid #101827}
+.widget{background:#0e1522; border:1px solid var(--border); border-radius:16px; overflow:hidden}
+.widget h3{margin:0; padding:.9rem 1rem; background:#0c1220; border-bottom:1px solid var(--border)}
 .widget-body{padding:1rem}
 .list{list-style:none; margin:0; padding:0}
-.list li{display:flex; justify-content:space-between; padding:.4rem 0; border-bottom:1px dotted #172035}
+.list li{display:flex; justify-content:space-between; gap:.75rem; padding:.5rem 0; border-bottom:1px dotted #172035}
 .list li:last-child{border-bottom:0}
 
-/* Footer */
+/* ---------- Skeletons & Empty ---------- */
+.skel{
+  background:linear-gradient(90deg, #0f1726 25%, #132036 37%, #0f1726 63%);
+  background-size:400% 100%; animation:shimmer 1.2s infinite; border-radius:10px;
+}
+@keyframes shimmer{0%{background-position:100% 0}100%{background-position:0 0}}
+.skel.card{height:220px; border-radius:16px}
+.empty{color:var(--muted); font-size:.95rem; padding:1rem}
+
+/* ---------- Footer ---------- */
 .app-footer{padding:2rem 1rem; text-align:center; color:var(--muted)}
