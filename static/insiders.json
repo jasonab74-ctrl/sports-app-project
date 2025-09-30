@@ -1,1 +1,9 @@
- 
+ {
+  "links": [
+    { "label": "GoldandBlack (On3)", "href": "https://www.on3.com/teams/purdue-boilermakers/" },
+    { "label": "Hammer & Rails", "href": "https://www.hammerandrails.com/" },
+    { "label": "Journal & Courier (Purdue)", "href": "https://www.jconline.com/sports/purdue/" },
+    { "label": "Field of 68 (YouTube)", "href": "https://www.youtube.com/@thefieldof68" },
+    { "label": "BTN Purdue (YouTube)", "href": "https://www.youtube.com/@BigTenNetwork" }
+  ]
+}
