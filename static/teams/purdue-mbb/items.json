@@ -2,73 +2,253 @@
   "items": [
     {
       "type": "news",
-      "title": "Purdue Lands Top-50 Recruit Ahead of 2025 Season",
-      "summary": "The Boilermakers added another highly touted player to their roster, strengthening their frontcourt depth and boosting expectations for another deep tournament run.",
-      "link": "https://www.on3.com/teams/purdue-boilermakers/",
-      "source": "On3",
-      "trust": "insider",
-      "date": "2025-09-27",
-      "image": "https://via.placeholder.com/640x360.png?text=Purdue+Recruit"
-    },
-    {
-      "type": "news",
-      "title": "Matt Painter Discusses Early Practice Standouts",
-      "summary": "Head coach Matt Painter shared updates from the first week of practice, highlighting the development of key sophomores and the leadership of veteran guards.",
-      "link": "https://www.jconline.com/",
-      "source": "Journal & Courier",
-      "trust": "local",
-      "date": "2025-09-26",
-      "image": "https://via.placeholder.com/640x360.png?text=Matt+Painter"
-    },
-    {
-      "type": "news",
-      "title": "Purdue Ranked #2 in Preseason AP Poll",
-      "summary": "With returning All-American talent and a loaded roster, the Boilermakers open the season near the top of the rankings.",
-      "link": "https://www.espn.com/mens-college-basketball/",
-      "source": "ESPN",
+      "source": "ESPN College Basketball",
       "trust": "national",
-      "date": "2025-09-25",
-      "image": "https://via.placeholder.com/640x360.png?text=AP+Poll"
-    },
-    {
-      "type": "video",
-      "title": "Field of 68: Purdue Season Preview Show",
-      "summary": "The Field of 68 crew breaks down Purdue’s chances to cut down the nets this season.",
-      "link": "https://www.youtube.com/watch?v=123456",
-      "source": "Field of 68",
-      "trust": "insider",
-      "date": "2025-09-25",
-      "image": "https://img.youtube.com/vi/123456/hqdefault.jpg"
-    },
-    {
-      "type": "video",
-      "title": "BTN: Zach Edey Offseason Workout Feature",
-      "summary": "BTN goes behind the scenes with Zach Edey as he prepares for his senior season.",
-      "link": "https://www.youtube.com/watch?v=abcdef",
-      "source": "BTN",
-      "trust": "official",
-      "date": "2025-09-24",
-      "image": "https://img.youtube.com/vi/abcdef/hqdefault.jpg"
+      "title": "Iowa State's Lipsey injures knee, out 4-6 weeks",
+      "link": "https://www.espn.com/mens-college-basketball/story/_/id/46361571/iowa-state-basketball-tamin-lipsey-4-6-weeks-knee-injury",
+      "date": "Wed, 24 Se",
+      "summary": "Iowa State starting point guard Tamin Lipsey will miss four to six weeks after injuring his knee at practice Tuesday, the school announced.",
+      "image": null
     },
     {
       "type": "news",
-      "title": "Hammer & Rails: Keys to a Big Ten Championship",
-      "summary": "Breaking down the key matchups and potential pitfalls that could determine Purdue’s conference fate.",
-      "link": "https://www.hammerandrails.com/",
+      "source": "ESPN College Basketball",
+      "trust": "national",
+      "title": "Virginia Tech proposes adding $229M for athletics",
+      "link": "https://www.espn.com/college-sports/story/_/id/46346630/virginia-tech-proposes-adding-extra-229m-athletics-budget",
+      "date": "Wed, 24 Se",
+      "summary": "Virginia Tech has proposed adding an extra $229 million to its athletics budget over the next four years to help position the Hokies to compete with the top programs in the ACC, a crucial moment with the hire of a new football coach looming.",
+      "image": null
+    },
+    {
+      "type": "news",
+      "source": "ESPN College Basketball",
+      "trust": "national",
+      "title": "Loyola Ramblers chaplain Sister Jean announces retirement due to health concerns",
+      "link": "https://www.espn.com/mens-college-basketball/story/_/id/46365815/loyola-chicago-ramblers-sister-jean-retirement",
+      "date": "Wed, 24 Se",
+      "summary": "Jean Dolores Schmidt, who is 106, rose to prominence during Loyola Chicago's epic 2018 NCAA tournament Final Four run.",
+      "image": null
+    },
+    {
+      "type": "news",
+      "source": "ESPN College Basketball",
+      "trust": "national",
+      "title": "NCAA grants former G League player eligibility",
+      "link": "https://www.espn.com/mens-college-basketball/story/_/id/46356407/ncaa-rules-former-g-league-player-thierry-darlan-eligible",
+      "date": "Tue, 23 Se",
+      "summary": "NCAA ruled that former G League Ignite player Thierry Darlan, 21, is eligible to play Division I basketball at Santa Clara, his agent told ESPN.",
+      "image": null
+    },
+    {
+      "type": "news",
+      "source": "ESPN College Basketball",
+      "trust": "national",
+      "title": "Early men's Bracketology: Houston stays No. 1, Virginia gives ACC hope",
+      "link": "https://www.espn.com/espn/feature/story/_/page/bracketology/ncaa-bracketology-2026-march-madness-men-field-predictions",
+      "date": "Tue, 23 Se",
+      "summary": "The new Cavaliers coach is tasked with winning as big as the coach he once beat in a historic upset. Can it be done in Year 1?",
+      "image": null
+    },
+    {
+      "type": "news",
+      "source": "ESPN College Basketball",
+      "trust": "national",
+      "title": "The No. 1 men's hoops recruit at every position in the 2026 class -- and his competition",
+      "link": "https://www.espn.com/mens-college-basketball/story/_/id/46272949/boys-high-school-basketball-recruiting-top-players-class-2026-every-position",
+      "date": "Tue, 16 Se",
+      "summary": "Five positions, five potential No. 1s at each in the 2026 class. Which high school prospects are in the mix?",
+      "image": null
+    },
+    {
+      "type": "news",
+      "source": "ESPN College Basketball",
+      "trust": "national",
+      "title": "Okla. State lands No. 44 hoops recruit Montonati",
+      "link": "https://www.espn.com/recruiting/basketball/story/_/id/46379840/oklahoma-state-lands-no-44-basketball-recruit-jalen-montonati",
+      "date": "Thu, 25 Se",
+      "summary": "Senior Jalen Montonati, the No. 44 player in the 2026 SportsCenter NEXT 100 basketball rankings, announced his commitment to Oklahoma State.",
+      "image": null
+    },
+    {
+      "type": "news",
+      "source": "ESPN College Basketball",
+      "trust": "national",
+      "title": "How Kansas beat Louisville for five-star recruit Taylen Kinney, more commit fits",
+      "link": "https://www.espn.com/mens-college-basketball/story/_/id/45769515/how-mens-college-basketball-five-star-commits-2026-espn-100-class-fit-new-school",
+      "date": "Sun, 28 Se",
+      "summary": "Breaking down the fits of every top class of 2026 commitment, including Kansas' first five-star of the cycle.",
+      "image": null
+    },
+    {
+      "type": "news",
+      "source": "ESPN College Basketball",
+      "trust": "national",
+      "title": "PG Kinney, No. 17 hoops recruit, picks Jayhawks",
+      "link": "https://www.espn.com/recruiting/basketball/story/_/id/46410329/taylen-kinney-no-17-basketball-recruit-commits-kansas",
+      "date": "Sun, 28 Se",
+      "summary": "Five-star senior Taylen Kinney, the No. 4 point guard in the 2026 SportsCenter NEXT rankings, announced his commitment to Kansas.",
+      "image": null
+    },
+    {
+      "type": "news",
+      "source": "ESPN College Basketball",
+      "trust": "national",
+      "title": "Hakeem Olajuwon's son, Aziz, picks Stanford",
+      "link": "https://www.espn.com/mens-college-basketball/story/_/id/46325382/aziz-olajuwon-son-hakeem-commits-stanford",
+      "date": "Sat, 20 Se",
+      "summary": "Aziz Olajuwon, a top-40 recruit and the son of NBA Hall of Famer Hakeem Olajuwon, has committed to Stanford, he told ESPN on Saturday.",
+      "image": null
+    },
+    {
+      "type": "news",
+      "source": "ESPN College Basketball",
+      "trust": "national",
+      "title": "'Be a coach': Dan Hurley on ego, Maui losses, Lakers -- and Geno Auriemma's wake-up call",
+      "link": "https://www.espn.com/mens-college-basketball/story/_/id/46413102/dan-hurley-never-stop-book-excerpt-geno-auriemma-uconn-meltdowns",
+      "date": "Mon, 29 Se",
+      "summary": "In Hurley's \"Never Stop: Life, Leadership, and What It Takes To Be Great,\" he writes that he reached out to Auriemma after UConn's 0-3 trip to the Maui Invitational last November.",
+      "image": null
+    },
+    {
+      "type": "news",
+      "source": "ESPN College Basketball",
+      "trust": "national",
+      "title": "Men's college basketball coaching changes for 2025-26",
+      "link": "https://www.espn.com/mens-college-basketball/story/_/id/43939856/mens-college-basketball-coaching-changes-tracker-2025-2026",
+      "date": "Mon, 29 Se",
+      "summary": "An up-to-date list of every coaching vacancy in men's college basketball ahead of the 2025-26 season.",
+      "image": null
+    },
+    {
+      "type": "news",
+      "source": "ESPN College Basketball",
+      "trust": "national",
+      "title": "Pearl steps down after 11 seasons at Auburn",
+      "link": "https://www.espn.com/mens-college-basketball/story/_/id/46347451/sources-bruce-pearl-expected-retire-auburn-hoops-coach",
+      "date": "Mon, 22 Se",
+      "summary": "Bruce Pearl has stepped down as the men's hoops coach at Auburn and will move into an ambassador's role in the athletic department as special assistant to the athletics director, the school announced Monday.",
+      "image": null
+    },
+    {
+      "type": "news",
+      "source": "ESPN College Basketball",
+      "trust": "national",
+      "title": "What Bruce Pearl's retirement means for Auburn, college basketball",
+      "link": "https://www.espn.com/mens-college-basketball/story/_/id/46347950/bruce-pearl-auburn-retirement-steven-pearl-legacy-college-basketball-next",
+      "date": "Fri, 26 Se",
+      "summary": "The Tigers' winningest coach is retiring. Here's what that means with 42 days until the 2025-26 season tips off.",
+      "image": null
+    },
+    {
+      "type": "news",
+      "source": "ESPN College Basketball",
+      "trust": "national",
+      "title": "UF restores Maxwell's stats, including points mark",
+      "link": "https://www.espn.com/mens-college-basketball/story/_/id/46313345/vernon-maxwell-regains-florida-scoring-mark-stats-restored",
+      "date": "Fri, 19 Se",
+      "summary": "The University of Florida has restored basketball great Vernon Maxwell's final two years of college statistics, a move that once again makes him the program's all-time leading scorer.",
+      "image": null
+    },
+    {
+      "type": "news",
       "source": "Hammer & Rails",
       "trust": "insider",
-      "date": "2025-09-23",
-      "image": "https://via.placeholder.com/640x360.png?text=Big+Ten+Race"
+      "title": "The Whistlestop Tour: Week 5 of Big Ten Football",
+      "link": "https://www.hammerandrails.com/football/55564/the-whistlestop-tour-week-5-of-big-ten-football",
+      "date": "2025-09-29",
+      "summary": "We live in an utterly unfamiliar and terrifying world. Yes, I am referring to the fact that Indiana is actually good at football. If there is one thing we learned in the last couple of weeks it is that Indiana is good. Like, good good. They are not the product of any easy schedule. Curt [&#8230;]",
+      "image": null
     },
     {
       "type": "news",
-      "title": "Edey Named Preseason National Player of the Year",
-      "summary": "Purdue’s star center is already drawing national attention ahead of the 2025-26 campaign.",
-      "link": "https://www.cbssports.com/",
-      "source": "CBS Sports",
-      "trust": "national",
-      "date": "2025-09-22",
-      "image": "https://via.placeholder.com/640x360.png?text=Edey+POY"
+      "source": "Hammer & Rails",
+      "trust": "insider",
+      "title": "2025 Purdue Football Game 5 &#8211; Purdue (2-2, 0-1) vs. Illinois (4-1, 1-0)",
+      "link": "https://www.hammerandrails.com/football/55559/2025-purdue-football-game-5-purdue-2-2-0-1-vs-illinois-4-1-1-0",
+      "date": "2025-09-29",
+      "summary": "\n\n\n\t\n\t\t\n\n\n\n\t\t\t\tPurdue Football: FanDuel odds for Illinois at Purdue\n\t\t\t\n\n\t\t\t\tPreview: University of Illinois Fighting Illini\n\t\t\t\n\n\t\t\t\tBoiler Alert &#8211; A Look at Illinois\n\t\t\t\n",
+      "image": "https://platform.hammerandrails.com/wp-content/uploads/sites/91/2025/09/imagn-27187103.jpg?quality=90&strip=all&crop=0,0,100,100"
+    },
+    {
+      "type": "news",
+      "source": "Hammer & Rails",
+      "trust": "insider",
+      "title": "Purdue Football: FanDuel odds for Illinois at Purdue",
+      "link": "https://www.hammerandrails.com/football/55555/purdue-football-fanduel-odds-for-illinois-at-purdue",
+      "date": "2025-09-29",
+      "summary": "Barry Odom\u2019s path to redeeming Purdue football doesn\u2019t get much easier this week following Purdue\u2019s first bye week of the season. Purdue will play host to Illinois on Saturday at noon on the Big Ten Network. Illinois is coming off an uneven last two weeks. Illinois was trounced by Indiana two weeks ago, 63-10, in [&#8230;]",
+      "image": null
+    },
+    {
+      "type": "news",
+      "source": "Hammer & Rails",
+      "trust": "insider",
+      "title": "Omer Mayer has found his place at Purdue",
+      "link": "https://www.hammerandrails.com/mens-basketball/55546/omer-mayer-has-found-his-place-at-purdue",
+      "date": "2025-09-26",
+      "summary": "\u201cDon\u2019t worry about anything but being where your feet are\u2026\u201dPurdue\u2019s offensive coordinator, PJ Thompson, has seen a lot at Purdue. After a full playing career under Matt Painter, Thompson returned to Purdue to coach alongside Painter and eventually take over Purdue\u2019s offense. He\u2019s been in charge of an offense that lost in the first round [&#8230;]",
+      "image": null
+    },
+    {
+      "type": "news",
+      "source": "Hammer & Rails",
+      "trust": "insider",
+      "title": "Staff Roundtable: Purdue Men\u2019s Basketball Expectations",
+      "link": "https://www.hammerandrails.com/mens-basketball/55537/staff-roundtable-purdue-mens-basketball-expectations",
+      "date": "2025-09-26",
+      "summary": "Basketball is (basically) just around the corner so let\u2019s check in with the staff and see how sky high the expectations are for this team that did so much in the offseason to shore up their weaknesses. I wanted to get a variety of opinions so I asked the staff. After reading through ours, make [&#8230;]",
+      "image": null
+    },
+    {
+      "type": "news",
+      "source": "Hammer & Rails",
+      "trust": "insider",
+      "title": "Week 5 Big Ten Preview",
+      "link": "https://www.hammerandrails.com/football/55541/week-5-big-ten-preview",
+      "date": "2025-09-26",
+      "summary": "The Oregon-Penn State matchup is the big one this week. I think we can agree that on paper there are some definite tiers to the league. Ohio State, Oregon, Penn State and Indiana(!) are the true league contenders. USC and Michigan are trying to break into that tier. Everyone else is just trying to play [&#8230;]",
+      "image": null
+    },
+    {
+      "type": "news",
+      "source": "Hammer & Rails",
+      "trust": "insider",
+      "title": "Hammer and Rails Reader Results &#8211; Which Defensive Position Group Most Needs an Upgrade?",
+      "link": "https://www.hammerandrails.com/football/55531/hammer-and-rails-reader-results-which-defensive-position-group-most-needs-an-upgrade",
+      "date": "2025-09-26",
+      "summary": "We are at the end of another week. This one a bye week that the Purdue football team desperately needed. The defense at Notre Dame was all sorts of out of sorts. It marked two weeks straight where the opposing punter did not see the field. Yes, there were turnovers on downs, yes there were [&#8230;]",
+      "image": null
+    },
+    {
+      "type": "news",
+      "source": "Hammer & Rails",
+      "trust": "insider",
+      "title": "Big Ten Football Power Rankings: Post Week 4",
+      "link": "https://www.hammerandrails.com/football/55473/big-ten-football-power-rankings-post-week-4",
+      "date": "2025-09-25",
+      "summary": "In the Big Ten, expectations for the most part, have been met. With a few exceptions (looking at you UCLA and Wisconsin), teams are primarily where they should be, but take a look at our power rankings anyway: Travis: No power rankings from Travis this week as life can get in the way. Look for [&#8230;]",
+      "image": null
+    },
+    {
+      "type": "news",
+      "source": "Hammer & Rails",
+      "trust": "insider",
+      "title": "Notes from Purdue basketball\u2019s first practice",
+      "link": "https://www.hammerandrails.com/general/55505/notes-from-purdue-basketballs-first-practice",
+      "date": "2025-09-24",
+      "summary": "Time continues to work its magic and that means we\u2019re back again, Purdue basketball is here. Just a month away from Purdue\u2019s exhibition opener at Kentucky, media was invited to Purdue\u2019s first practice of the 2025/26 season. I got to talk with PJ Thompson in depth about the offseason, Omer Mayer\u2019s addition to the roster, [&#8230;]",
+      "image": null
+    },
+    {
+      "type": "news",
+      "source": "Hammer & Rails",
+      "trust": "insider",
+      "title": "How Many Games Could Purdue Football Win?",
+      "link": "https://www.hammerandrails.com/football/55486/how-many-games-could-purdue-football-win",
+      "date": "2025-09-24",
+      "summary": "We are a third of the way through Purdue\u2019s football season and the Boilermakers sit at 2-2. Starting in October, Purdue will play 8 more conference games: against Illinois, Rutgers, Ohio State, and Indiana while traveling to Minnesota, Northwestern, Michigan, and Washington. Because Purdue has been scrappy in its losses to USC and Notre Dame [&#8230;]",
+      "image": null
     }
   ]
 }
