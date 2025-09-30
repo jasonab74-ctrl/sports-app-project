@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Purdue Men's Basketball — Team Hub Pro</title>
-  <meta name="description" content="One-stop Purdue Men's Basketball hub: breaking news, insider analysis, videos, rankings, and schedule — updated automatically.">
+  <meta name="description" content="One-stop Purdue Men's Basketball hub: breaking news, insider analysis, videos, rankings, and schedule — auto-updated.">
   <link rel="stylesheet" href="static/css/pro.css" />
 </head>
 <body>
-  <!-- Header -->
+  <!-- ===== Header ===== -->
   <header class="header" role="banner">
     <div class="wrap bar">
       <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu" aria-controls="mobileDrawer" aria-expanded="false">☰</button>
@@ -21,12 +21,21 @@
         <button class="btn ghost" id="refreshBtn" type="button">Refresh</button>
       </div>
     </div>
+
+    <!-- Always-visible slim subnav (scrollable chips) -->
+    <div class="subnav-wrap">
+      <div class="wrap">
+        <nav id="subNav" class="subnav" aria-label="Quick links"></nav>
+      </div>
+    </div>
+
+    <!-- Ticker -->
     <div class="ticker" aria-live="polite">
       <div class="ticker-track" id="tickerTrack"></div>
     </div>
   </header>
 
-  <!-- Mobile drawer -->
+  <!-- ===== Mobile drawer ===== -->
   <aside id="mobileDrawer" class="drawer" aria-hidden="true">
     <div class="drawer-panel" role="dialog" aria-label="Menu">
       <div class="drawer-head">
@@ -35,13 +44,13 @@
       </div>
       <nav id="mobileNav" class="drawer-nav" aria-label="Mobile"></nav>
       <div class="drawer-actions">
-        <button class="btn ghost block" id="drawerRefresh">Refresh</button>
+        <button class="btn ghost block" id="drawerRefresh" type="button">Refresh</button>
       </div>
     </div>
     <div class="drawer-backdrop" id="drawerBackdrop"></div>
   </aside>
 
-  <!-- Hero -->
+  <!-- ===== Hero ===== -->
   <section class="hero">
     <div class="wrap hero-inner">
       <a id="featureLink" class="feature-hero" target="_blank" rel="noopener">
@@ -58,7 +67,7 @@
     </div>
   </section>
 
-  <!-- Main grid -->
+  <!-- ===== Main ===== -->
   <main class="wrap main-grid">
     <section class="panel">
       <div class="head">
