@@ -1,4 +1,4 @@
-/* Core App JS — left drawer + backdrop, better placeholders and fallbacks */
+/* Core App JS — chips only, slim ticker, placeholders, widgets, fade-ins */
 
 const qs = (s, el = document) => el.querySelector(s);
 const qsa = (s, el = document) => [...el.querySelectorAll(s)];
@@ -19,32 +19,7 @@ function decodeEntities(str){ if(!str) return ''; const t = document.createEleme
 function html(str){ const d=document.createElement('div'); d.innerHTML=str.trim(); return d.firstChild; }
 function safeJSON(url){ return fetch(url,{cache:'no-store'}).then(r=>r.ok?r.json():{}).catch(()=>({})); }
 
-/* ---------- Drawer (left) + Backdrop ---------- */
-function initDrawer(){
-  const drawer = qs('#drawer');
-  const openBtn = qs('#hamburger');
-  const closeBtn = qs('#drawer-close');
-
-  // create backdrop once
-  let backdrop = qs('#_backdrop');
-  if(!backdrop){
-    backdrop = document.createElement('div');
-    backdrop.className = 'backdrop';
-    backdrop.id = '_backdrop';
-    document.body.appendChild(backdrop);
-  }
-
-  const open = () => { drawer.classList.add('open'); backdrop.classList.add('show'); };
-  const close = () => { drawer.classList.remove('open'); backdrop.classList.remove('show'); };
-
-  openBtn.addEventListener('click', open);
-  closeBtn.addEventListener('click', close);
-  backdrop.addEventListener('click', close);
-  drawer.addEventListener('click', e => { if(e.target.matches('a')) close(); });
-  document.addEventListener('keydown', e => { if(e.key === 'Escape') close(); });
-}
-
-/* ---------- Tabs ---------- */
+/* ---------- Tabs (primary nav) ---------- */
 function initTabs(){
   qsa('.tabs .chip').forEach(btn=>{
     btn.addEventListener('click', ()=>{
@@ -61,26 +36,33 @@ function initTabs(){
 function renderTicker(items){
   const ticker = qs('#ticker');
   const track = qs('#ticker-track');
-  const list = (items||[]).slice(0,12).map(i=>`<a href="${i.url}" target="_blank" rel="noopener">${decodeEntities(i.title)}</a>`);
+  const list = (items||[]).slice(0,16).map(i=>`<a href="${i.url}" target="_blank" rel="noopener">${decodeEntities(i.title)}</a>`);
   if(!list.length){ ticker.classList.add('hidden'); return; }
   ticker.classList.remove('hidden');
   track.innerHTML = [...list, ...list].join(' • ');
   const totalWidth = track.scrollWidth / 2;
-  const duration = Math.max(20, Math.min(60, Math.round(totalWidth / 30)));
+  const duration = Math.max(22, Math.min(55, Math.round(totalWidth / 32))); // seconds
   track.style.animation = `marquee ${duration}s linear infinite`;
-  let tapped=false;
-  ticker.addEventListener('touchstart',()=>{tapped=!tapped; ticker.classList.toggle('tapped',tapped);},{passive:true});
 }
 
-/* ---------- Cards / Carousel ---------- */
+/* ---------- Card factory ---------- */
+const FALLBACK_SVG = encodeURIComponent(`
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675">
+  <defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+    <stop stop-color="#101726" offset="0"/><stop stop-color="#0d1423" offset="1"/></linearGradient></defs>
+  <rect fill="url(#g)" width="1200" height="675"/>
+  <text x="50%" y="52%" dominant-baseline="middle" text-anchor="middle" fill="#415070" font-family="system-ui,Segoe UI,Roboto" font-size="42">Sports App Project</text>
+</svg>`);
+
 function makeCard(item){
   const a = document.createElement('a');
-  a.className = 'card'; a.href = item.url || '#'; a.target = '_blank'; a.rel = 'noopener';
+  a.className = 'card fade-in'; a.href = item.url || '#'; a.target = '_blank'; a.rel = 'noopener';
 
   const thumb = html(`<div class="card__thumb"><img loading="lazy" alt=""></div>`);
   const img = thumb.querySelector('img');
-  const src = item.image || item.thumbnail || '';
-  if(src){ img.src = src; } else { thumb.classList.add('placeholder'); }
+  const src = item.image || item.thumbnail || `data:image/svg+xml;charset=utf-8,${FALLBACK_SVG}`;
+  if(!item.image && !item.thumbnail) thumb.classList.add('placeholder');
+  img.src = src;
   img.alt = decodeEntities(item.title || '');
 
   const body = html(`<div class="card__body">
@@ -99,6 +81,7 @@ function makeCard(item){
   return a;
 }
 
+/* ---------- Renders ---------- */
 function renderCarousel(items){
   const el = qs('#carousel'); el.innerHTML='';
   items.slice(0,8).forEach(i => el.appendChild(makeCard(i)));
@@ -166,27 +149,26 @@ function renderInsider(w){
 
 /* ---------- Boot ---------- */
 async function boot(){
-  initDrawer(); initTabs();
+  initTabs();
 
-  // skeletons while loading
+  // Skeletons while loading
   qs('#carousel').innerHTML = `<div class="skel card"></div>`;
   qs('#news-grid').innerHTML = `<div class="skel card"></div><div class="skel card"></div>`;
   qs('#video-grid').innerHTML = `<div class="skel card"></div><div class="skel card"></div>`;
 
   try{
-    // theme
+    // Theme
     const teamCfg = await safeJSON(paths.team).then(t => t.teams?.[state.teamSlug] || Object.values(t.teams||{})[0] || {
       name:'Team Hub', logo:'', colors:{accent:'#cfb991', bg:'#0b0f14', card:'#121722'}
     });
     document.title = `${teamCfg.name} — Team Hub`;
     qs('#site-title').textContent = teamCfg.name;
-    qs('#drawer-team-name').textContent = teamCfg.name;
     if(teamCfg.logo) qs('#team-logo').src = teamCfg.logo;
     document.documentElement.style.setProperty('--accent', teamCfg.colors.accent);
     document.documentElement.style.setProperty('--bg', teamCfg.colors.bg);
     document.documentElement.style.setProperty('--card', teamCfg.colors.card);
 
-    // data
+    // Data
     const [itemsJson, widgetsAll, scheduleAll] = await Promise.all([
       safeJSON(paths.items(state.teamSlug)),
       safeJSON(paths.widgets),
@@ -209,9 +191,11 @@ async function boot(){
     const widgets = widgetsAll[state.teamSlug] || widgetsAll.default || {};
     const schedule = scheduleAll[state.teamSlug] || scheduleAll;
 
-    renderTicker(items);
+    // Split
     const news = items.filter(i=>!i.is_video);
     const vids = items.filter(i=> i.is_video);
+
+    renderTicker(items);
     renderCarousel(news.length?news:items);
     renderGrid(news.length?news:items, '#news-grid');
     renderGrid(vids, '#video-grid');
