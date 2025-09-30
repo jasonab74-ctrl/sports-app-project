@@ -2,16 +2,6 @@
   "items": [
     {
       "type": "news",
-      "source": "Hammer & Rails",
-      "trust": "insider",
-      "title": "Boilerball Adds Two for 2026 Recruiting Class",
-      "link": "https://www.hammerandrails.com/mens-basketball/55580/boilerball-adds-two-for-2026-recruiting-class",
-      "date": "2025-09-30",
-      "summary": "Purdue and Head Coach Matt Painter have secured two important commitments over the last several days for the 2026 recruiting class. This class will be an incredibly important one for the immediate and long term future of the program with th",
-      "image": null
-    },
-    {
-      "type": "news",
       "source": "ESPN College Basketball",
       "trust": "national",
       "title": "'Be a coach': Dan Hurley on ego, Maui losses, Lakers -- and Geno Auriemma's wake-up call",
@@ -158,6 +148,16 @@
       "link": "https://www.hammerandrails.com/football/55473/big-ten-football-power-rankings-post-week-4",
       "date": "2025-09-25",
       "summary": "In the Big Ten, expectations for the most part, have been met. With a few exceptions (looking at you UCLA and Wisconsin), teams are primarily where they should be, but take a look at our power rankings anyway: Travis: No power rankings from",
+      "image": null
+    },
+    {
+      "type": "news",
+      "source": "Hammer & Rails",
+      "trust": "insider",
+      "title": "Notes from Purdue basketball’s first practice",
+      "link": "https://www.hammerandrails.com/general/55505/notes-from-purdue-basketballs-first-practice",
+      "date": "2025-09-25",
+      "summary": "Time continues to work its magic and that means we’re back again, Purdue basketball is here. Just a month away from Purdue’s exhibition opener at Kentucky, media was invited to Purdue’s first practice of the 2025/26 season. I got to talk wi",
       "image": null
     },
     {
