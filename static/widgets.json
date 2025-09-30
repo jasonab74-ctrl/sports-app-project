@@ -1,11 +1,1 @@
-{
-  "ap_rank": 2,
-  "kenpom_rank": 1,
-  "nil": [
-    { "name": "Zach Edey", "valuation": "$1.3M" },
-    { "name": "Fletcher Loyer", "valuation": "$420K" },
-    { "name": "Braden Smith", "valuation": "$380K" },
-    { "name": "Trey Kaufman-Renn", "valuation": "$260K" },
-    { "name": "Caleb Furst", "valuation": "$210K" }
-  ]
-}
+{"default":{},"purdue-mbb":{}}
