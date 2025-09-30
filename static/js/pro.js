@@ -1,11 +1,11 @@
-/* Core App JS — hamburger, ticker, carousel, data rendering, encoding fix */
+/* Core App JS — polished drawer, ticker, carousel, loading states, fallbacks */
 
 const qs = (s, el = document) => el.querySelector(s);
 const qsa = (s, el = document) => [...el.querySelectorAll(s)];
+
 const state = {
   teamSlug: new URL(location.href).searchParams.get('team') || 'purdue-mbb',
   items: [],
-  videos: [],
   team: null,
   widgets: null,
   schedule: null
@@ -15,269 +15,211 @@ const paths = {
   team: 'static/team.json',
   items: (slug) => `static/teams/${slug}/items.json`,
   widgets: 'static/widgets.json',
-  schedule: 'static/schedule.json',
-  sources: 'static/sources.json'
+  schedule: 'static/schedule.json'
 };
 
-// ---- Utility: decode HTML entities (fixes &#8211; etc.)
-function decodeEntities(str) {
-  if (!str) return '';
-  const txt = document.createElement('textarea');
-  txt.innerHTML = str;
-  return txt.value;
-}
+/* ---------- Utilities ---------- */
+function decodeEntities(str){ if(!str) return ''; const t = document.createElement('textarea'); t.innerHTML = str; return t.value; }
+function html(str){ const d=document.createElement('div'); d.innerHTML=str.trim(); return d.firstChild; }
+function safeJSON(url){ return fetch(url,{cache:'no-store'}).then(r=>r.ok?r.json():{}).catch(()=>({})); }
 
-// ---- Drawer / Hamburger
-function initDrawer() {
+/* ---------- Drawer ---------- */
+function initDrawer(){
   const drawer = qs('#drawer');
   const openBtn = qs('#hamburger');
   const closeBtn = qs('#drawer-close');
 
-  const open = () => {
-    drawer.classList.add('open');
-    drawer.setAttribute('aria-hidden', 'false');
-  };
-  const close = () => {
-    drawer.classList.remove('open');
-    drawer.setAttribute('aria-hidden', 'true');
-  };
+  const open = () => { drawer.classList.add('open'); drawer.setAttribute('aria-hidden','false'); document.body.classList.add('drawer-open'); };
+  const close = () => { drawer.classList.remove('open'); drawer.setAttribute('aria-hidden','true'); document.body.classList.remove('drawer-open'); };
 
   openBtn.addEventListener('click', open);
   closeBtn.addEventListener('click', close);
-  drawer.addEventListener('click', (e) => {
-    if (e.target.matches('a')) close();
-  });
+  drawer.addEventListener('click', e => { if(e.target.matches('a')) close(); });
+  document.addEventListener('keydown', e => { if(e.key === 'Escape') close(); });
 }
 
-// ---- Tabs
-function initTabs() {
-  qsa('.tabs .chip').forEach(btn => {
-    btn.addEventListener('click', () => {
-      qsa('.tabs .chip').forEach(b => b.classList.remove('active'));
+/* ---------- Tabs ---------- */
+function initTabs(){
+  qsa('.tabs .chip').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      qsa('.tabs .chip').forEach(b=>b.classList.remove('active'));
       btn.classList.add('active');
       const tab = btn.dataset.tab;
-      qsa('.tab').forEach(sec => sec.classList.remove('visible'));
-      qs('#' + tab).classList.add('visible');
+      qsa('.tab').forEach(sec=>sec.classList.remove('visible'));
+      qs('#'+tab).classList.add('visible');
     });
   });
 }
 
-// ---- Ticker
-function renderTicker(items) {
+/* ---------- Ticker ---------- */
+function renderTicker(items){
+  const ticker = qs('#ticker');
   const track = qs('#ticker-track');
-  const headlines = items.slice(0, 12)
-    .map(i => `<a href="${i.url}" target="_blank" rel="noopener">${decodeEntities(i.title)}</a>`);
-  // Duplicate to create seamless marquee
-  track.innerHTML = [...headlines, ...headlines].join(' • ');
+  const list = (items||[]).slice(0,12).map(i=>`<a href="${i.url}" target="_blank" rel="noopener">${decodeEntities(i.title)}</a>`);
+  if(!list.length){ ticker.classList.add('hidden'); return; }
+  ticker.classList.remove('hidden');
+  track.innerHTML = [...list, ...list].join(' • ');
   const totalWidth = track.scrollWidth / 2;
-  const duration = Math.max(20, Math.min(60, Math.round(totalWidth / 30))); // seconds
+  const duration = Math.max(20, Math.min(60, Math.round(totalWidth / 30)));
   track.style.animation = `marquee ${duration}s linear infinite`;
-
-  // tap-to-pause on touch
-  let tapped = false;
-  qs('#ticker').addEventListener('touchstart', () => {
-    tapped = !tapped;
-    qs('#ticker').classList.toggle('tapped', tapped);
-  }, {passive:true});
+  let tapped=false;
+  ticker.addEventListener('touchstart',()=>{tapped=!tapped; ticker.classList.toggle('tapped',tapped);},{passive:true});
 }
 
-// ---- Carousel
-function renderCarousel(items) {
-  const el = qs('#carousel');
-  el.innerHTML = '';
-  items.slice(0, 8).forEach(i => el.appendChild(makeCard(i)));
-  // auto-snap scroll
-  let autoScroll;
-  const start = () => {
-    stop();
-    autoScroll = setInterval(() => {
-      el.scrollBy({left: el.clientWidth * 0.8, behavior: 'smooth'});
-      if (el.scrollLeft + el.clientWidth >= el.scrollWidth - 8) {
-        el.scrollTo({left: 0, behavior: 'smooth'});
-      }
-    }, 4500);
-  };
-  const stop = () => autoScroll && clearInterval(autoScroll);
-  el.addEventListener('mouseenter', stop);
-  el.addEventListener('mouseleave', start);
-  el.addEventListener('touchstart', stop, {passive:true});
-  el.addEventListener('touchend', start, {passive:true});
-  start();
-}
-
-// ---- Card factory
-function makeCard(item) {
+/* ---------- Cards / Carousel ---------- */
+function makeCard(item){
   const a = document.createElement('a');
-  a.className = 'card';
-  a.href = item.url;
-  a.target = '_blank';
-  a.rel = 'noopener';
+  a.className = 'card'; a.href = item.url; a.target = '_blank'; a.rel = 'noopener';
 
-  const thumb = document.createElement('div');
-  thumb.className = 'card__thumb';
-  const img = document.createElement('img');
-  img.loading = 'lazy';
+  const thumb = html(`<div class="card__thumb"><img loading="lazy" alt=""></div>`);
+  const img = thumb.querySelector('img');
   img.src = item.image || item.thumbnail || '';
   img.alt = decodeEntities(item.title);
-  thumb.appendChild(img);
 
-  const body = document.createElement('div');
-  body.className = 'card__body';
-  const kicker = document.createElement('div');
-  kicker.className = 'card__kicker';
-  kicker.textContent = item.tag || item.type || (item.is_video ? 'Video' : 'News');
+  const body = html(`<div class="card__body">
+    <div class="card__kicker"></div>
+    <div class="card__title"></div>
+    <div class="card__meta"></div>
+  </div>`);
 
-  const title = document.createElement('div');
-  title.className = 'card__title';
-  title.textContent = decodeEntities(item.title);
-
-  const meta = document.createElement('div');
-  meta.className = 'card__meta';
+  body.querySelector('.card__kicker').textContent = item.tag || (item.is_video ? 'Video' : 'News');
+  body.querySelector('.card__title').textContent = decodeEntities(item.title);
   const date = item.date ? new Date(item.date) : null;
   const datestr = date ? date.toLocaleDateString(undefined, {month:'short', day:'numeric'}) : '';
-  meta.textContent = [item.source || '', datestr].filter(Boolean).join(' • ');
+  body.querySelector('.card__meta').textContent = [item.source || '', datestr].filter(Boolean).join(' • ');
 
-  body.appendChild(kicker); body.appendChild(title); body.appendChild(meta);
-  a.appendChild(thumb); a.appendChild(body);
+  a.append(thumb, body);
   return a;
 }
 
-// ---- Render grids
-function renderNews(items) {
-  const grid = qs('#news-grid');
-  grid.innerHTML = '';
-  items.slice(0, 24).forEach(i => grid.appendChild(makeCard(i)));
-}
-function renderVideos(items) {
-  const grid = qs('#video-grid');
-  grid.innerHTML = '';
-  items.filter(i => i.is_video).slice(0, 24).forEach(i => grid.appendChild(makeCard(i)));
+function renderCarousel(items){
+  const el = qs('#carousel'); el.innerHTML='';
+  items.slice(0,8).forEach(i => el.appendChild(makeCard(i)));
+  let timer;
+  const start = ()=>{ stop(); timer=setInterval(()=>{
+    el.scrollBy({left: el.clientWidth * 0.8, behavior:'smooth'});
+    if(el.scrollLeft + el.clientWidth >= el.scrollWidth - 4){ el.scrollTo({left:0, behavior:'smooth'}); }
+  }, 4500); };
+  const stop = ()=> timer && clearInterval(timer);
+  el.addEventListener('mouseenter',stop); el.addEventListener('mouseleave',start);
+  el.addEventListener('touchstart',stop,{passive:true}); el.addEventListener('touchend',start,{passive:true});
+  if(items.length) start();
 }
 
-// ---- Sidebar widgets
-function renderRankings(widgets) {
-  const el = qs('#rankings-body');
-  el.innerHTML = '';
+function renderGrid(items, selector){
+  const grid = qs(selector); grid.innerHTML='';
+  if(!items.length){ grid.innerHTML = `<div class="empty">No items yet — tap <strong>Refresh</strong> to reload.</div>`; return; }
+  items.slice(0,24).forEach(i => grid.appendChild(makeCard(i)));
+}
+
+/* ---------- Widgets ---------- */
+function renderRankings(w){
+  const el = qs('#rankings-body'); el.innerHTML='';
   const rows = [
-    ['AP Rank', widgets.ap_rank ?? '—'],
-    ['KenPom', widgets.kenpom ?? '—'],
-    ['NET', widgets.net ?? '—']
+    ['AP Rank', w?.ap_rank ?? '—'],
+    ['KenPom',  w?.kenpom  ?? '—'],
+    ['NET',     w?.net     ?? '—']
   ];
-  const ul = document.createElement('ul'); ul.className = 'list';
-  rows.forEach(([k,v]) => {
-    const li = document.createElement('li');
-    const l = document.createElement('span'); l.textContent = k;
-    const r = document.createElement('strong'); r.textContent = v;
-    li.append(l,r); ul.appendChild(li);
-  });
-  el.appendChild(ul);
-}
-
-function renderSchedule(schedule) {
-  const el = qs('#schedule-body'); el.innerHTML='';
-  const now = new Date();
-  const upcoming = schedule.games
-    .filter(g => new Date(g.date) >= now)
-    .sort((a,b) => new Date(a.date) - new Date(b.date))
-    .slice(0,6);
-  if (upcoming.length === 0) {
-    el.innerHTML = '<div class="muted">No upcoming games.</div>'; return;
-  }
   const ul = document.createElement('ul'); ul.className='list';
-  upcoming.forEach(g => {
-    const li = document.createElement('li');
-    const left = document.createElement('span');
-    const right = document.createElement('span');
+  rows.forEach(([k,v])=>{ const li=document.createElement('li'); li.innerHTML=`<span>${k}</span><strong>${v}</strong>`; ul.appendChild(li); });
+  el.appendChild(ul);
+}
+function renderSchedule(sch){
+  const el = qs('#schedule-body'); el.innerHTML='';
+  const games = sch?.games || [];
+  const now = new Date();
+  const upcoming = games.filter(g => new Date(g.date) >= now).sort((a,b)=>new Date(a.date)-new Date(b.date)).slice(0,6);
+  if(!upcoming.length){ el.innerHTML = `<div class="empty">No upcoming games.</div>`; return; }
+  const ul = document.createElement('ul'); ul.className='list';
+  upcoming.forEach(g=>{
     const d = new Date(g.date);
-    left.textContent = d.toLocaleDateString(undefined,{month:'short', day:'numeric'}) + ' • ' + g.opponent;
-    right.textContent = g.venue || (g.home ? 'Home' : 'Away');
-    li.append(left,right); ul.appendChild(li);
+    const left = `${d.toLocaleDateString(undefined,{month:'short',day:'numeric'})} • ${g.opponent}`;
+    const right = g.venue || (g.home ? 'Home' : 'Away');
+    const li = document.createElement('li'); li.innerHTML = `<span>${left}</span><span>${right}</span>`;
+    ul.appendChild(li);
   });
   el.appendChild(ul);
 }
-
-function renderNIL(widgets) {
-  const el = qs('#nil-body'); el.innerHTML='';
-  const list = document.createElement('ul'); list.className='list';
-  (widgets.nil || []).slice(0,5).forEach(p => {
-    const li = document.createElement('li');
-    const left = document.createElement('span'); left.textContent = p.name;
-    const right = document.createElement('span'); right.textContent = p.value;
-    li.append(left,right); list.appendChild(li);
-  });
-  if ((widgets.nil || []).length === 0) {
-    el.innerHTML = '<div class="muted">NIL data not available.</div>';
-  } else {
-    el.appendChild(list);
-  }
+function renderNIL(w){
+  const el=qs('#nil-body'); el.innerHTML='';
+  const list=(w?.nil)||[];
+  if(!list.length){ el.innerHTML=`<div class="empty">NIL data not available.</div>`; return; }
+  const ul=document.createElement('ul'); ul.className='list';
+  list.slice(0,5).forEach(p=>{ const li=document.createElement('li'); li.innerHTML=`<span>${p.name}</span><span>${p.value}</span>`; ul.appendChild(li); });
+  el.appendChild(ul);
 }
-function renderInsider(widgets) {
-  const el = qs('#insider-body'); el.innerHTML='';
-  const list = document.createElement('ul'); list.className='list';
-  (widgets.insider || []).forEach(link => {
-    const li = document.createElement('li');
-    const a = document.createElement('a'); a.href = link.url; a.target='_blank'; a.rel='noopener'; a.textContent=link.name;
-    const r = document.createElement('span'); r.textContent = link.note || '';
-    li.append(a,r); list.appendChild(li);
-  });
-  el.appendChild(list);
+function renderInsider(w){
+  const el=qs('#insider-body'); el.innerHTML='';
+  const links=(w?.insider)||[];
+  if(!links.length){ el.innerHTML=`<div class="empty">Add insider links in <code>static/widgets.json</code>.</div>`; return; }
+  const ul = document.createElement('ul'); ul.className='list';
+  links.forEach(l=>{ const li=document.createElement('li'); li.innerHTML=`<a href="${l.url}" target="_blank" rel="noopener">${l.name}</a><span>${l.note||''}</span>`; ul.appendChild(li); });
+  el.appendChild(ul);
 }
 
-// ---- Theme
-function applyTheme(team) {
-  document.title = `${team.name} — Team Hub`;
-  qs('#site-title').textContent = team.name;
-  qs('#team-logo').src = team.logo;
-  qs('#drawer-team-name').textContent = team.name;
-  document.documentElement.style.setProperty('--accent', team.colors.accent);
-  document.documentElement.style.setProperty('--bg', team.colors.bg);
-  document.documentElement.style.setProperty('--card', team.colors.card);
-}
+/* ---------- Boot ---------- */
+async function boot(){
+  initDrawer(); initTabs();
 
-// ---- Fetch JSON + render
-async function loadJSON(url) {
-  const r = await fetch(url, {cache:'no-store'});
-  if (!r.ok) throw new Error(`Failed to fetch ${url}`);
-  return r.json();
-}
+  // skeletons while loading
+  qs('#carousel').innerHTML = `<div class="skel card"></div>`;
+  qs('#news-grid').innerHTML = `<div class="skel card"></div><div class="skel card"></div>`;
+  qs('#video-grid').innerHTML = `<div class="skel card"></div><div class="skel card"></div>`;
 
-async function boot() {
-  initDrawer();
-  initTabs();
+  try{
+    // theme
+    const teamCfg = await safeJSON(paths.team).then(t => t.teams?.[state.teamSlug] || Object.values(t.teams||{})[0] || {
+      name:'Team Hub', logo:'', colors:{accent:'#cfb991', bg:'#0b0f14', card:'#121722'}
+    });
+    document.title = `${teamCfg.name} — Team Hub`;
+    qs('#site-title').textContent = teamCfg.name;
+    qs('#drawer-team-name').textContent = teamCfg.name;
+    if(teamCfg.logo) qs('#team-logo').src = teamCfg.logo;
+    document.documentElement.style.setProperty('--accent', teamCfg.colors.accent);
+    document.documentElement.style.setProperty('--bg', teamCfg.colors.bg);
+    document.documentElement.style.setProperty('--card', teamCfg.colors.card);
 
-  try {
-    state.team = await loadJSON(paths.team);
-    const teamCfg = state.team.teams[state.teamSlug] || Object.values(state.team.teams)[0];
-    applyTheme(teamCfg);
-
-    const [items, widgets, schedule] = await Promise.all([
-      loadJSON(paths.items(state.teamSlug)).catch(()=>({items:[]})),
-      loadJSON(paths.widgets).catch(()=>({})),
-      loadJSON(paths.schedule).catch(()=>({games:[]}))
+    // data
+    const [itemsJson, widgetsAll, scheduleAll] = await Promise.all([
+      safeJSON(paths.items(state.teamSlug)),
+      safeJSON(paths.widgets),
+      safeJSON(paths.schedule)
     ]);
 
-    state.items = (items.items || []).map(i => ({...i, title: decodeEntities(i.title)}));
-    state.widgets = widgets[ state.teamSlug ] || widgets.default || {};
-    state.schedule = schedule[ state.teamSlug ] || schedule;
+    let items = (itemsJson.items||[]).map(i => ({...i, title: decodeEntities(i.title)}));
 
-    // Split videos/news
-    state.videos = state.items.filter(i => i.is_video);
-    const news = state.items.filter(i => !i.is_video);
+    // Fallback demo if empty so the UI never looks blank
+    if(!items.length){
+      items = [{
+        title:'Welcome to your Team Hub — connect feeds to populate live content',
+        url:'#',
+        image:'',
+        thumbnail:'',
+        source:'Sports App Project',
+        date:new Date().toISOString(),
+        tag:'News',
+        is_video:false
+      }];
+    }
 
-    renderTicker(state.items);
-    renderCarousel(news.length ? news : state.items);
-    renderNews(news.length ? news : state.items);
-    renderVideos(state.videos);
-    renderRankings(state.widgets);
-    renderSchedule(state.schedule);
-    renderNIL(state.widgets);
-    renderInsider(state.widgets);
-  } catch (e) {
-    console.error(e);
+    const widgets = widgetsAll[state.teamSlug] || widgetsAll.default || {};
+    const schedule = scheduleAll[state.teamSlug] || scheduleAll;
+
+    renderTicker(items);
+    renderCarousel(items.filter(i=>!i.is_video));
+    renderGrid(items.filter(i=>!i.is_video), '#news-grid');
+    renderGrid(items.filter(i=> i.is_video), '#video-grid');
+    renderRankings(widgets);
+    renderSchedule(schedule);
+    renderNIL(widgets);
+    renderInsider(widgets);
+
+  }catch(err){
+    console.error(err);
+    qs('#news-grid').innerHTML = `<div class="empty">Couldn’t load data. Check your JSON paths and try again.</div>`;
   }
 
-  // Manual refresh (re-fetch)
-  qs('#refresh').addEventListener('click', () => location.reload());
+  qs('#refresh').addEventListener('click', ()=>location.reload());
 }
 
 document.addEventListener('DOMContentLoaded', boot);
