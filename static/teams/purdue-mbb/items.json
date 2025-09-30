@@ -2,6 +2,16 @@
   "items": [
     {
       "type": "news",
+      "source": "ESPN College Basketball",
+      "trust": "national",
+      "title": "Va. Tech plan to add $229M to budget approved",
+      "link": "https://www.espn.com/college-sports/story/_/id/46435657/virginia-tech-plan-add-229m-budget-next-4-years-approved",
+      "date": "2025-09-30",
+      "summary": "The Virginia Tech Board of Visitors overwhelmingly approved a plan to add $229 million to its athletics budget over the next four years.",
+      "image": null
+    },
+    {
+      "type": "news",
       "source": "Hammer & Rails",
       "trust": "insider",
       "title": "Hammer and Rails Reader Reacts Survey: How Many Big Ten Wins for Purdue Basketball?",
@@ -238,16 +248,6 @@
       "link": "https://www.espn.com/mens-college-basketball/story/_/id/46313345/vernon-maxwell-regains-florida-scoring-mark-stats-restored",
       "date": "2025-09-19",
       "summary": "The University of Florida has restored basketball great Vernon Maxwell's final two years of college statistics, a move that once again makes him the program's all-time leading scorer.",
-      "image": null
-    },
-    {
-      "type": "news",
-      "source": "ESPN College Basketball",
-      "trust": "national",
-      "title": "The No. 1 men's hoops recruit at every position in the 2026 class -- and his competition",
-      "link": "https://www.espn.com/mens-college-basketball/story/_/id/46272949/boys-high-school-basketball-recruiting-top-players-class-2026-every-position",
-      "date": "2025-09-16",
-      "summary": "Five positions, five potential No. 1s at each in the 2026 class. Which high school prospects are in the mix?",
       "image": null
     }
   ]
