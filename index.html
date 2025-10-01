@@ -11,8 +11,7 @@
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="icon" href="static/icons/favicon.svg" type="image/svg+xml"/>
 
-  <!-- Styles -->
-  <link rel="preload" href="static/css/pro.css" as="style" />
+  <!-- Styles (correct relative path) -->
   <link rel="stylesheet" href="static/css/pro.css" />
 </head>
 <body>
@@ -74,13 +73,15 @@
     <small>Sports App Project • JSON-driven • Auto-updating</small>
   </footer>
 
-  <!-- App JS -->
+  <!-- JS (correct relative path) -->
   <script src="static/js/pro.js" defer></script>
 
-  <!-- Register service worker (PWA) -->
+  <!-- Register service worker -->
   <script>
     if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => navigator.serviceWorker.register('/sports-app-project/sw.js').catch(()=>{}));
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js').catch(()=>{});
+      });
     }
   </script>
 </body>
