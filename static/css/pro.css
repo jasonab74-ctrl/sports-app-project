@@ -31,10 +31,20 @@ body{
   border-bottom:1px solid #0e1420
 }
 .pill-btn{padding:.45rem .85rem;border-radius:999px;background:var(--accent);color:#111;border:0;font-weight:700;cursor:pointer}
-.team-logo{width:32px;height:32px;border-radius:6px;object-fit:contain;background:#111;padding:2px}
+
+/* Logo */
+.team-logo{
+  width:40px;              /* larger */
+  height:40px;
+  object-fit:contain;
+  border-radius:0;         /* no rounded bg */
+  background:none;         /* remove black box */
+  padding:0;
+}
+
 #site-title{
-  font-size:22px;    /* bumped up */
-  font-weight:800;   /* stronger weight */
+  font-size:22px;          /* larger font */
+  font-weight:800;
   letter-spacing:-0.25px;
   margin:0;
   flex:1;
