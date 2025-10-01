@@ -1,1 +1,36 @@
-{ "purdue-mbb": { "games": [] } }
+{
+  "purdue-mbb": {
+    "games": [
+      {
+        "date": "2025-11-05T00:00:00Z",
+        "opponent": "Exhibition",
+        "home": true,
+        "venue": "Mackey Arena",
+        "tv": "",
+        "result": "",
+        "score": "",
+        "boxscore_url": ""
+      },
+      {
+        "date": "2025-11-12T00:00:00Z",
+        "opponent": "Marquette",
+        "home": false,
+        "venue": "Fiserv Forum",
+        "tv": "",
+        "result": "",
+        "score": "",
+        "boxscore_url": ""
+      },
+      {
+        "date": "2025-11-19T00:00:00Z",
+        "opponent": "Indiana State",
+        "home": true,
+        "venue": "Mackey Arena",
+        "tv": "",
+        "result": "",
+        "score": "",
+        "boxscore_url": ""
+      }
+    ]
+  }
+}
