@@ -11,7 +11,7 @@
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="icon" href="static/icons/favicon.svg" type="image/svg+xml"/>
 
-  <!-- Styles (correct relative path) -->
+  <!-- Styles -->
   <link rel="stylesheet" href="static/css/pro.css" />
 </head>
 <body>
@@ -21,6 +21,7 @@
     <button id="refresh" class="pill-btn" aria-label="Refresh">Refresh</button>
   </header>
 
+  <!-- Primary nav -->
   <nav class="tabs" aria-label="Sections">
     <button class="chip active" data-tab="news">News</button>
     <button class="chip" data-tab="videos">Videos</button>
@@ -30,11 +31,13 @@
     <button class="chip" data-tab="insider">Insider</button>
   </nav>
 
+  <!-- Ticker -->
   <section id="ticker" class="ticker" aria-label="Top headlines">
     <div class="ticker__track" id="ticker-track"></div>
   </section>
 
   <main id="content">
+    <!-- Left column -->
     <section id="news" class="tab visible">
       <h2>Latest Headlines</h2>
       <div id="carousel" class="carousel" aria-label="Headline carousel"></div>
@@ -46,6 +49,7 @@
       <div id="video-grid" class="grid"></div>
     </section>
 
+    <!-- Sidebar -->
     <aside class="sidebar">
       <section id="rankings" class="widget">
         <h3>Rankings & Analytics</h3>
@@ -73,10 +77,10 @@
     <small>Sports App Project • JSON-driven • Auto-updating</small>
   </footer>
 
-  <!-- JS (correct relative path) -->
+  <!-- App JS -->
   <script src="static/js/pro.js" defer></script>
 
-  <!-- Register service worker -->
+  <!-- Service worker (kept simple) -->
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
