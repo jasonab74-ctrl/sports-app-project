@@ -1,1 +1,14 @@
-{ "default_team": "purdue-mbb", "teams": {} }
+{
+  "default_team": "purdue-mbb",
+  "teams": {
+    "purdue-mbb": {
+      "name": "Purdue Men's Basketball",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Purdue_Boilermakers_primary_logo.svg",
+      "colors": {
+        "accent": "#cfb991",
+        "bg": "#0b0f14",
+        "card": "#121722"
+      }
+    }
+  }
+}
