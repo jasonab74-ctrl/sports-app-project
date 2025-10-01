@@ -1,1 +1,82 @@
-/* full CSS content from assistant message */
+:root{
+  --bg:#0b0f14;
+  --card:#121722;
+  --text:#eef2f7;
+  --muted:#a2adc2;
+  --accent:#cfb991;
+  --accent-2:#1c1f26;
+  --chip:#18202c;
+  --border:#101827;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
+}
+
+/* Header */
+.app-header{
+  position:sticky; top:0; z-index:40;
+  display:flex; align-items:center; gap:.75rem;
+  padding:.65rem .95rem;
+  background:linear-gradient(180deg,#0b0f14 0%,#0b0f14e6 60%,transparent 100%);
+  border-bottom:1px solid #0e1420;
+}
+.pill-btn{padding:.45rem .85rem; border-radius:999px; background:var(--accent); color:#111; border:0; font-weight:700; cursor:pointer}
+.team-logo{width:28px;height:28px;border-radius:6px;object-fit:contain;background:#111;padding:2px}
+#site-title{font-size:18px;margin:0;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* Tabs */
+.tabs{display:flex; gap:.5rem; overflow:auto; padding:.6rem .9rem .8rem; border-bottom:1px solid #101624}
+.chip{border:1px solid #1d2738; background:var(--chip); color:var(--text); padding:.5rem .9rem; border-radius:999px; cursor:pointer; white-space:nowrap}
+.chip.active{background:var(--accent); color:#111; border-color:transparent; font-weight:700}
+
+/* Ticker */
+.ticker{position:relative; overflow:hidden; border-bottom:1px solid #101624; background:#0c111a}
+.ticker.hidden{display:none}
+.ticker__track{display:flex; gap:1.4rem; white-space:nowrap; padding:.35rem .75rem; opacity:.8}
+.ticker a{color:var(--muted); text-decoration:none}
+@keyframes marquee{from{transform:translateX(0)} to{transform:translateX(-50%)}}
+
+/* Layout */
+#content{padding:1rem; display:grid; gap:1rem; grid-template-columns:1fr; max-width:1200px; margin:0 auto}
+@media(min-width:980px){#content{grid-template-columns:minmax(0,1fr) 380px}}
+.tab{display:none}
+.tab.visible{display:block}
+.grid{display:grid; gap:12px; grid-template-columns:1fr}
+@media(min-width:640px){.grid{grid-template-columns:1fr 1fr}}
+
+/* Cards */
+a.card{color:inherit; text-decoration:none}
+.card{background:var(--card); border:1px solid var(--border); border-radius:16px; overflow:hidden; display:flex; flex-direction:column; transition:transform .18s ease, box-shadow .18s ease}
+.card:hover{transform:translateY(-2px); box-shadow:0 6px 22px rgba(0,0,0,.25)}
+.card__thumb{position:relative; aspect-ratio:16/9; background:#0b111a}
+.card__thumb img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
+.card__body{padding:.85rem}
+.card__kicker{color:var(--accent); font-size:.8rem; font-weight:700; text-transform:uppercase}
+.card__title{margin:.25rem 0; font-size:1.05rem; line-height:1.25; font-weight:750; max-width:60ch}
+.card__meta{color:var(--muted); font-size:.82rem}
+
+/* Carousel */
+.carousel{display:flex; gap:.75rem; overflow:auto; scroll-snap-type:x mandatory; padding-bottom:.25rem; margin-bottom:.6rem}
+.carousel .card{min-width:86%; scroll-snap-align:start}
+@media(min-width:980px){.carousel .card{min-width:55%}}
+
+/* Widgets */
+.sidebar{display:grid; gap:1rem}
+.widget{background:#0e1522; border:1px solid var(--border); border-radius:16px; overflow:hidden}
+.widget h3{margin:0; padding:.9rem 1rem; background:#0c1220; border-bottom:1px solid var(--border)}
+.widget-body{padding:1rem}
+.list{list-style:none; margin:0; padding:0}
+.list li{display:flex; justify-content:space-between; gap:.75rem; padding:.55rem 0; border-bottom:1px dotted #172035}
+.list li:last-child{border-bottom:0}
+
+/* Skeletons */
+.skel{background:linear-gradient(90deg,#0f1726 25%,#132036 37%,#0f1726 63%); background-size:400% 100%; animation:shimmer 1.2s infinite; border-radius:10px}
+@keyframes shimmer{0%{background-position:100% 0}100%{background-position:0 0}}
+.skel.card{height:220px; border-radius:16px}
+.empty{color:var(--muted); font-size:.95rem; padding:1rem}
