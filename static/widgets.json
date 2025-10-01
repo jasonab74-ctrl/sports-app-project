@@ -1,1 +1,21 @@
-{ "default": {}, "purdue-mbb": {} }
+{
+  "default": {
+    "ap_rank": "—",
+    "kenpom": "—",
+    "net": "—",
+    "nil": [],
+    "insider": []
+  },
+  "purdue-mbb": {
+    "ap_rank": "5",
+    "kenpom": "2",
+    "net": "—",
+    "nil": [
+      { "name": "Player A", "value": "$320k" },
+      { "name": "Player B", "value": "$240k" },
+      { "name": "Player C", "value": "$210k" }
+    ],
+    "insider": [
+      { "name": "Hammer & Rails", "url": "https://www.hammerandrails.com/", "note": "SB Nation" },
+      { "name": "GoldandBlack", "url": "https://purdue.rivals.com/", "note": "Rivals (premium)" },
+      { "name": "Purdue Athletics", "url": "https://purduesports.com/sports/mens-basketball
