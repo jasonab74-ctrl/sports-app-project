@@ -1,1 +1,35 @@
-{"generated_at":"2025-09-30T00:00:00Z","items":[]}
+{
+  "generated_at": "2025-10-01T00:00:00Z",
+  "items": [
+    {
+      "title": "Welcome to your Team Hub — connect feeds to populate live content",
+      "url": "https://purduesports.com/",
+      "image": "",
+      "thumbnail": "",
+      "source": "Sports App Project",
+      "date": "2025-10-01T00:00:00Z",
+      "tag": "News",
+      "is_video": false
+    },
+    {
+      "title": "Purdue announces non-conference tipoff dates",
+      "url": "https://purduesports.com/sports/mens-basketball",
+      "image": "",
+      "thumbnail": "",
+      "source": "PurdueSports.com",
+      "date": "2025-09-10T12:00:00Z",
+      "tag": "News",
+      "is_video": false
+    },
+    {
+      "title": "Early look at Purdue’s rotation this season",
+      "url": "https://www.hammerandrails.com/",
+      "image": "",
+      "thumbnail": "",
+      "source": "Hammer & Rails",
+      "date": "2025-09-05T10:00:00Z",
+      "tag": "News",
+      "is_video": false
+    }
+  ]
+}
