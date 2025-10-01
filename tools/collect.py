@@ -1,1 +1,1 @@
-# python collector (truncated for zip)
+# full Python collector script from assistant message

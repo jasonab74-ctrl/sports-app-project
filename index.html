@@ -5,10 +5,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Sports App Project — Team Hub</title>
-  <meta name="theme-color" content="#000000" />
+
+  <!-- Theme + PWA -->
+  <meta name="theme-color" content="#0b0f14" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="static/icons/favicon.svg" type="image/svg+xml"/>
+
+  <!-- Styles -->
   <link rel="preload" href="static/css/pro.css" as="style" />
   <link rel="stylesheet" href="static/css/pro.css" />
-  <link rel="preload" href="static/js/pro.js" as="script" />
 </head>
 <body>
   <header class="app-header">
@@ -17,7 +22,6 @@
     <button id="refresh" class="pill-btn" aria-label="Refresh">Refresh</button>
   </header>
 
-  <!-- Primary nav chips (mobile + desktop) -->
   <nav class="tabs" aria-label="Sections">
     <button class="chip active" data-tab="news">News</button>
     <button class="chip" data-tab="videos">Videos</button>
@@ -27,7 +31,6 @@
     <button class="chip" data-tab="insider">Insider</button>
   </nav>
 
-  <!-- Slim ticker only shows when there are items -->
   <section id="ticker" class="ticker" aria-label="Top headlines">
     <div class="ticker__track" id="ticker-track"></div>
   </section>
@@ -71,6 +74,14 @@
     <small>Sports App Project • JSON-driven • Auto-updating</small>
   </footer>
 
+  <!-- App JS -->
   <script src="static/js/pro.js" defer></script>
+
+  <!-- Register service worker (PWA) -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => navigator.serviceWorker.register('/sports-app-project/sw.js').catch(()=>{}));
+    }
+  </script>
 </body>
 </html>
