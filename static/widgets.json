@@ -18,4 +18,7 @@
     "insider": [
       { "name": "Hammer & Rails", "url": "https://www.hammerandrails.com/", "note": "SB Nation" },
       { "name": "GoldandBlack", "url": "https://purdue.rivals.com/", "note": "Rivals (premium)" },
-      { "name": "Purdue Athletics", "url": "https://purduesports.com/sports/mens-basketball
+      { "name": "Purdue Athletics", "url": "https://purduesports.com/sports/mens-basketball", "note": "Official" }
+    ]
+  }
+}
