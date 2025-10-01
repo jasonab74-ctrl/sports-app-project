@@ -3,10 +3,10 @@
     "games": [
       {
         "date": "2025-11-05T00:00:00Z",
-        "opponent": "Exhibition",
+        "opponent": "Exhibition Game",
         "home": true,
         "venue": "Mackey Arena",
-        "tv": "",
+        "tv": "BTN+",
         "result": "",
         "score": "",
         "boxscore_url": ""
@@ -16,7 +16,7 @@
         "opponent": "Marquette",
         "home": false,
         "venue": "Fiserv Forum",
-        "tv": "",
+        "tv": "FS1",
         "result": "",
         "score": "",
         "boxscore_url": ""
@@ -26,7 +26,7 @@
         "opponent": "Indiana State",
         "home": true,
         "venue": "Mackey Arena",
-        "tv": "",
+        "tv": "BTN",
         "result": "",
         "score": "",
         "boxscore_url": ""
