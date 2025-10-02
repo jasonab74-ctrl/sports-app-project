@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Team Hub — Purdue Men's Basketball</title>
   <meta name="theme-color" content="#0c0c0e"/>
-  <link rel="stylesheet" href="static/css/pro.css?v=20251002f" />
+  <link rel="stylesheet" href="static/css/pro.css?v=20251002g" />
 </head>
 <body>
   <header class="topbar">
@@ -150,11 +150,11 @@
   </div>
 
   <script>window.__TEAM_SLUG = "purdue-mbb";</script>
-  <script src="static/js/pro.js?v=20251002f" defer></script>
+  <script src="static/js/pro.js?v=20251002g" defer></script>
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js?v=20251002f').then(reg=>{
+        navigator.serviceWorker.register('./sw.js?v=20251002g').then(reg=>{
           navigator.serviceWorker.addEventListener('message', (e) => {
             if (e.data && e.data.type === 'NEW_VERSION') {
               document.getElementById('toast').hidden = false;
