@@ -45,6 +45,19 @@ function renderTicker(items){
 
 const FALLBACK_SVG=encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675"><rect fill="#101726" width="1200" height="675"/><text x="50%" y="52%" text-anchor="middle" fill="#415070" font-family="system-ui,Segoe UI,Roboto" font-size="42">Sports App Project</text></svg>`);
 
+/* Source niceties */
+function prettySource(src){
+  if(!src) return '';
+  const s = src.toLowerCase();
+  if(s.includes('youtube.com')) return 'BoilerBall • YouTube';
+  if(s.includes('purduesports.com')) return 'Purdue Athletics';
+  if(s.includes('hammerandrails')) return 'Hammer & Rails';
+  if(s.includes('on3.com')) return 'On3';
+  if(s.includes('si.com')) return 'Sports Illustrated';
+  if(s.includes('goldandblack')) return 'GoldandBlack';
+  return src.replace(/^www\./,'');
+}
+
 function makeCard(item){
   const a=document.createElement('a'); a.className='card'; a.href=item.url||'#'; a.target='_blank' ; a.rel='noopener';
   const thumb=document.createElement('div'); thumb.className='card__thumb';
@@ -59,7 +72,16 @@ function makeCard(item){
   const kicker=document.createElement('div'); kicker.className='card__kicker'; kicker.textContent=item.tag||(item.is_video?'Video':'News');
   const title=document.createElement('div'); title.className='card__title'; title.textContent=(item.title||'').replace(/&[#0-9a-z]+;/gi,' ');
   const meta=document.createElement('div'); meta.className='card__meta';
-  const d=item.date?new Date(item.date):null; meta.textContent=[item.source||'',d?d.toLocaleDateString(undefined,{month:'short',day:'numeric'}):''].filter(Boolean).join(' • ');
+
+  const srcBadge = document.createElement('span');
+  srcBadge.className='badge';
+  srcBadge.textContent = prettySource(item.source || '');
+
+  const d=item.date?new Date(item.date):null;
+  const when = document.createElement('span');
+  when.textContent = d ? d.toLocaleDateString(undefined,{month:'short',day:'numeric'}) : '';
+
+  meta.append(srcBadge, when);
   body.append(kicker,title,meta); a.append(thumb,body); return a;
 }
 
@@ -97,6 +119,8 @@ function renderGridWithMore(items, sel, initialCount=12){
     grid.after(btn);
   }
 }
+
+function renderCarousel(items){const el=qs('#carousel');el.innerHTML='';items.slice(0,8).forEach(i=>el.appendChild(makeCard(i)));}
 
 function renderRankings(w){
   const el=qs('#rankings-body');el.innerHTML='';
