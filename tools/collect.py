@@ -1,33 +1,62 @@
 #!/usr/bin/env python3
 """
-Collects news/video items for each team defined in static/sources.json and writes
-static/teams/<slug>/items.json
+Collector: builds static/teams/<slug>/items.json from static/sources.json
 
-Improvements:
-- OpenGraph fallback (grabs og:image if feed doesn't expose an image)
-- Title de-duplication across feeds (drops near-duplicates)
-- Gentle hardening (timeouts, user-agent, keeps newest items)
+Upgrades vs prior:
+- Retries with backoff, sane timeouts & UA
+- Per-source cap + global cap + max age filter
+- Stronger dedupe (URL + fuzzy title)
+- Better image picking: media tags -> <img> -> OpenGraph og:image
+- UTM/tracking param stripping
+- Lightweight language/garbage filter
 """
 
 from __future__ import annotations
-import os, re, json, time, argparse, datetime as dt
-from urllib.parse import urlparse, urljoin
+import os, re, json, time, math, hashlib, datetime as dt
+from urllib.parse import urlparse, urlunparse, parse_qsl, urlencode, urljoin
 
 import requests
 import feedparser
 from bs4 import BeautifulSoup
 
+# Paths
 ROOT = os.path.dirname(os.path.dirname(__file__))  # repo root from tools/
 SRC_PATH = os.path.join(ROOT, "static", "sources.json")
 OUT_ROOT = os.path.join(ROOT, "static", "teams")
 
-UA = "SportsAppCollector/1.1 (+https://github.com/)"
-TIMEOUT = 20
+# HTTP
+UA = "SportsAppCollector/1.2 (+https://github.com/)"
+TIMEOUT = 18
+RETRIES = 2
+BACKOFF = 1.6
+
+# Regex
+IMG_RE = re.compile(r'<img[^>]+src=["\']([^"\']+)["\']', re.I)
+WS_RE = re.compile(r'\s+')
+
+def clean_url(u: str) -> str:
+    """Strip tracking params (utm_*, fbclid, gclid, etc.)."""
+    try:
+        p = urlparse(u)
+        q = [(k, v) for k, v in parse_qsl(p.query, keep_blank_values=True)
+             if not (k.lower().startswith("utm_") or k.lower() in {"fbclid","gclid","mc_cid","mc_eid","cmpid"})]
+        return urlunparse((p.scheme, p.netloc, p.path, p.params, urlencode(q, doseq=True), ""))  # drop fragment
+    except Exception:
+        return u
 
 def fetch(url: str) -> bytes:
-    r = requests.get(url, headers={"User-Agent": UA}, timeout=TIMEOUT)
-    r.raise_for_status()
-    return r.content
+    last = None
+    for i in range(RETRIES + 1):
+        try:
+            r = requests.get(url, headers={"User-Agent": UA}, timeout=TIMEOUT)
+            r.raise_for_status()
+            return r.content
+        except Exception as e:
+            last = e
+            if i < RETRIES:
+                time.sleep((BACKOFF ** i) + (0.05 * i))
+            else:
+                raise last
 
 def to_iso(ts) -> str:
     if ts is None:
@@ -49,40 +78,36 @@ def to_iso(ts) -> str:
     except Exception:
         return dt.datetime.utcnow().replace(microsecond=0).isoformat() + "Z"
 
-IMG_RE = re.compile(r'<img[^>]+src=["\']([^"\']+)["\']', re.I)
-
 def extract_open_graph(url: str) -> str:
-    """Fetches the page and returns og:image if present."""
     try:
         html = fetch(url)
         soup = BeautifulSoup(html, "lxml")
         og = soup.find("meta", property="og:image")
-        return (og.get("content") or "").strip() if og else ""
+        if og and og.get("content"):
+            return og["content"].strip()
     except Exception:
-        return ""
+        pass
+    return ""
 
 def extract_image(entry, base_link: str | None) -> str:
-    # media:thumbnail / media:content / image fields
+    # media tags first
     for key in ("media_thumbnail", "media_content", "image"):
         val = entry.get(key)
         if isinstance(val, list) and val:
             url = val[0].get("url")
-            if url:
-                return url
+            if url: return url
         if isinstance(val, dict):
             url = val.get("url")
-            if url:
-                return url
+            if url: return url
         if isinstance(val, str) and val:
             return val
 
-    # content / summary <img>
+    # HTML content/summary <img>
     html = ""
-    if "content" in entry and entry["content"]:
+    if entry.get("content"):
         html = entry["content"][0].get("value") or ""
-    elif "summary" in entry:
-        html = entry.get("summary", "") or ""
-
+    elif entry.get("summary"):
+        html = entry.get("summary") or ""
     m = IMG_RE.search(html or "")
     if m:
         src = m.group(1)
@@ -93,22 +118,20 @@ def extract_image(entry, base_link: str | None) -> str:
                 pass
         return src
 
-    # fallback: OpenGraph from article page
+    # Fallback: OG image
     if base_link:
         og = extract_open_graph(base_link)
         if og:
             return og
-
     return ""
 
 def is_video(entry, link: str) -> bool:
     if "yt_videoid" in entry or "media_player" in entry:
         return True
-    if "enclosures" in entry:
-        for enc in entry["enclosures"]:
-            t = (enc.get("type") or "").lower()
-            if "video" in t:
-                return True
+    for enc in entry.get("enclosures", []):
+        t = (enc.get("type") or "").lower()
+        if "video" in t:
+            return True
     return "youtube.com" in link or "youtu.be" in link
 
 def source_name(link: str) -> str:
@@ -118,55 +141,71 @@ def source_name(link: str) -> str:
     except Exception:
         return ""
 
-def normalize_feed_items(feed_url: str) -> list[dict]:
+def norm_title(t: str) -> str:
+    t = t or ""
+    t = t.lower()
+    t = re.sub(r'&[#0-9a-z]+;', ' ', t)  # entities
+    t = re.sub(r'[^a-z0-9 ]+', ' ', t)
+    t = WS_RE.sub(' ', t).strip()
+    return t[:110]
+
+def plausible_language_ok(t: str) -> bool:
+    # super-light check to avoid non-English junk: ASCII ratio test
+    if not t: return False
+    ascii_count = sum(1 for ch in t if ord(ch) < 128)
+    return ascii_count / max(1, len(t)) > 0.80
+
+def normalize_entry(e) -> dict | None:
+    link = clean_url(e.get("link") or "")
+    title = (e.get("title") or "").strip()
+    if not (link and title and plausible_language_ok(title)):
+        return None
+    pub = e.get("published") or e.get("updated") or None
+    date_iso = to_iso(pub)
+    img = extract_image(e, link)
+    video = is_video(e, link)
+    return {
+        "title": title,
+        "url": link,
+        "image": img,
+        "thumbnail": img,
+        "source": source_name(link),
+        "date": date_iso,
+        "tag": "Video" if video else "News",
+        "is_video": video
+    }
+
+def normalize_feed_items(feed_url: str, max_per_source: int) -> list[dict]:
+    out: list[dict] = []
     data = fetch(feed_url)
     parsed = feedparser.parse(data)
-    items = []
-    for e in parsed.entries:
-        link = e.get("link") or ""
-        if not link:
-            continue
-        title = e.get("title") or ""
-        pub = e.get("published") or e.get("updated") or None
-        date_iso = to_iso(pub)
-        img = extract_image(e, link)
-        items.append({
-            "title": title,
-            "url": link,
-            "image": img,
-            "thumbnail": img,
-            "source": source_name(link),
-            "date": date_iso,
-            "tag": "Video" if is_video(e, link) else "News",
-            "is_video": is_video(e, link)
-        })
-    return items
+    for e in parsed.entries[: max_per_source * 2]:  # scan a little deeper; we'll cap later
+        item = normalize_entry(e)
+        if item:
+            out.append(item)
+    return out[:max_per_source]
 
 def youtube_feed(channel_id: str) -> str:
     return f"https://www.youtube.com/feeds/videos.xml?channel_id={channel_id}"
 
-def norm_title(t: str) -> str:
-    t = t.lower()
-    t = re.sub(r'&[#0-9a-z]+;', ' ', t)
-    t = re.sub(r'[^a-z0-9 ]+', ' ', t)
-    t = re.sub(r'\s+', ' ', t).strip()
-    return t[:100]
-
 def collect_for_team(slug: str, cfg: dict) -> dict:
     max_items = int(cfg.get("max_items", 60))
+    max_per_source = int(cfg.get("max_per_source", 20))
+    max_age_days = int(cfg.get("max_age_days", 21))
+
     items: list[dict] = []
 
     # RSS feeds
     for url in cfg.get("feeds", []):
         try:
-            items.extend(normalize_feed_items(url))
+            items.extend(normalize_feed_items(url, max_per_source))
         except Exception as ex:
             print(f"[warn] {slug} feed failed: {url} -> {ex}")
 
-    # YouTube channels via RSS
+    # YouTube via RSS
     for cid in cfg.get("youtube_channels", []):
         try:
-            yitems = normalize_feed_items(youtube_feed(cid))
+            yitems = normalize_feed_items(youtube_feed(cid), max_per_source // 2 or 5)
             for it in yitems:
                 it["is_video"] = True
                 it["tag"] = "Video"
@@ -177,10 +216,13 @@ def collect_for_team(slug: str, cfg: dict) -> dict:
     # Sort newest first
     items.sort(key=lambda x: x.get("date",""), reverse=True)
 
+    # Age filter
+    if max_age_days > 0:
+        cutoff = dt.datetime.utcnow() - dt.timedelta(days=max_age_days)
+        items = [it for it in items if dt.datetime.fromisoformat(it["date"].replace("Z","")) >= cutoff]
+
     # De-duplicate by URL and fuzzy title
-    seen_urls = set()
-    seen_titles = set()
-    dedup = []
+    seen_urls, seen_titles, dedup = set(), set(), []
     for it in items:
         u = it["url"]
         tkey = norm_title(it.get("title",""))
