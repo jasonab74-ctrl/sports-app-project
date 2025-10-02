@@ -1,9 +1,8 @@
 {
   "links": [
-    {
-      "label": "Hammer & Rails",
-      "href": "https://www.hammerandrails.com/",
-      "note": "SB Nation"
-    }
+    { "label": "Hammer & Rails", "href": "https://www.hammerandrails.com/", "note": "SB Nation — Purdue" },
+    { "label": "Gold and Black", "href": "https://purdue.rivals.com/", "note": "Rivals — subscription" },
+    { "label": "247Sports Purdue", "href": "https://247sports.com/college/purdue/", "note": "Team page" },
+    { "label": "Journal & Courier", "href": "https://www.jconline.com/sports/purdue/", "note": "Local coverage" }
   ]
 }
