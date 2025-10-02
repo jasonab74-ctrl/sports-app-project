@@ -1,17 +1,7 @@
 {
-  "nil": [
-    { "name": "Top Player A", "value": "$1.2M est." },
-    { "name": "Top Player B", "value": "$900k est." },
-    { "name": "Top Player C", "value": "$700k est." }
-  ],
-  "sources": [
-    "Purdue Athletics RSS",
-    "ESPN College Basketball",
-    "CBS Sports CBB",
-    "The Athletic CBB",
-    "Yahoo CBB",
-    "Sports Illustrated CBB",
-    "BTN Purdue YouTube",
-    "PurdueSports YouTube"
-  ]
+  "ap_rank": 3,
+  "ap_url": "https://apnews.com/hub/ap-top-25-mens-college-basketball-poll",
+  "kenpom_rank": 2,
+  "kenpom_url": "https://kenpom.com",
+  "updated_at": "2025-10-02T20:29:58.471958Z"
 }

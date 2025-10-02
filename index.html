@@ -1,128 +1,149 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Purdue Men's Basketball — Team Hub</title>
-  <meta name="description" content="Purdue Men’s Basketball hub: headlines, videos, insider links, rankings, schedule." />
-  <link rel="stylesheet" href="static/css/pro.css" />
-  <link rel="preconnect" href="https://i.ytimg.com" crossorigin />
-  <link rel="preconnect" href="https://www.youtube-nocookie.com" crossorigin />
+  <title>Team Hub — Purdue Men's Basketball</title>
+  <meta name="theme-color" content="#0c0c0e"/>
+  <link rel="stylesheet" href="static/css/pro.css?v=20251002" />
 </head>
 <body>
-  <!-- Header -->
-  <header class="header">
-    <div class="wrap bar">
-      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu" aria-controls="mobileDrawer" aria-expanded="false">☰</button>
-      <div class="brand">
-        <img id="logo" alt="Team Logo" />
-        <h1 id="wordmark">Team Hub</h1>
+  <header class="topbar">
+    <button id="navToggle" aria-label="Menu" class="hamburger" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="brand">
+      <div class="brand-logo">🏀</div>
+      <div>
+        <div class="brand-line1">Team Hub</div>
+        <div class="brand-line2">Boilermakers</div>
       </div>
-      <nav class="topnav" aria-label="Primary">
-        <a href="#news">News</a>
-        <a href="#videos">Videos</a>
-        <a href="#rankings">Rankings</a>
-        <a href="#schedule">Schedule</a>
-        <a href="#nil">NIL</a>
-      </nav>
     </div>
-    <div class="ticker" id="ticker" aria-live="polite"></div>
+    <nav id="mainNav" class="nav">
+      <a href="#news">News</a>
+      <a href="#videos">Videos</a>
+      <a href="#rankings">Rankings</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#nil">NIL</a>
+    </nav>
   </header>
 
-  <!-- Drawer -->
-  <aside id="mobileDrawer" class="drawer" aria-hidden="true">
-    <div class="drawer-head">
-      <button id="drawerClose" aria-label="Close menu">✕</button>
-      <div class="drawer-brand">
-        <img id="drawerLogo" alt="Team Logo" />
-        <strong id="drawerWordmark">Purdue</strong>
-      </div>
-    </div>
-    <nav class="drawer-nav" id="drawerNav" aria-label="Drawer links"></nav>
-  </aside>
+  <section class="ticker" id="ticker" aria-label="Top ticker">
+    <div class="ticker-track" id="tickerTrack"></div>
+  </section>
 
-  <!-- Main -->
-  <main class="wrap">
-    <!-- Hero -->
-    <section class="panel" id="hero">
-      <div class="head"><h2>Top Headlines</h2></div>
-      <div class="carousel edge-fade" id="headlineCarousel" role="region" aria-label="Headline highlights"></div>
+  <main class="container">
+    <!-- Hero / Top Headlines -->
+    <section id="news" class="panel">
+      <div class="panel-hd">
+        <h2>Top Headlines</h2>
+        <div class="panel-actions">
+          <button class="pill pill-all" data-filter="all">All</button>
+          <button class="pill" data-filter="official">Official</button>
+          <button class="pill" data-filter="insiders">Insiders</button>
+          <button class="pill" data-filter="national">National</button>
+        </div>
+      </div>
+      <div id="hero" class="hero skeleton">
+        <div class="hero-img skeleton-box"></div>
+        <div class="hero-meta">
+          <div class="pills"><span class="pill">loading</span></div>
+          <h3 class="hero-title">Loading…</h3>
+          <div class="hero-sub">Please wait</div>
+        </div>
+      </div>
+
+      <div id="headlines" class="card-grid"></div>
     </section>
 
-    <section class="layout">
-      <div class="content">
-        <section class="panel" id="news">
-          <div class="head subnav">
-            <h3>Latest Headlines</h3>
-            <div class="links" id="filterBar">
-              <button class="chip is-active" data-filter="all">All</button>
-              <button class="chip" data-filter="official">Official</button>
-              <button class="chip" data-filter="insider">Insiders</button>
-              <button class="chip" data-filter="national">National</button>
-            </div>
-          </div>
-          <div class="cards" id="newsList"></div>
-        </section>
+    <!-- Right rail -->
+    <aside class="rail">
+      <section id="rankings" class="panel">
+        <div class="panel-hd"><h3>Rankings</h3></div>
+        <div id="rankingsBody" class="rankings">
+          <div class="rank-line"><span>AP Top 25:</span> <b id="apRank">—</b> <a id="apLink" href="#" target="_blank" rel="noopener">View</a></div>
+          <div class="rank-line"><span>KenPom:</span> <b id="kpRank">—</b> <a id="kpLink" href="#" target="_blank" rel="noopener">View</a></div>
+          <div class="rank-updated" id="rankUpdated"></div>
+        </div>
+      </section>
 
-        <section class="panel" id="videos">
-          <div class="head subnav">
-            <h3>Latest Videos</h3>
-            <div class="links" id="videoFilterBar">
-              <button class="chip is-active" data-filter="all">All</button>
-              <button class="chip" data-filter="official">Official</button>
-              <button class="chip" data-filter="insider">Insiders</button>
-            </div>
+      <section id="schedule" class="panel">
+        <div class="panel-hd"><h3>Upcoming Schedule</h3></div>
+        <div id="scheduleList" class="schedule-list"></div>
+      </section>
+
+      <section id="insiders" class="panel">
+        <div class="panel-hd"><h3>Insider / Beat Links</h3>
+          <div class="panel-actions">
+            <button class="pill pill-all" data-insider-filter="all">All</button>
+            <button class="pill" data-insider-filter="official">Official</button>
+            <button class="pill" data-insider-filter="insiders">Insiders</button>
           </div>
-          <div class="cards" id="videoList"></div>
-        </section>
+        </div>
+        <div id="insiderList" class="links-grid"></div>
+      </section>
+
+      <section id="nil" class="panel">
+        <div class="panel-hd"><h3>NIL Leaderboard</h3></div>
+        <ol class="nil">
+          <li><b>Top Player A</b> — $1.2M est.</li>
+          <li><b>Top Player B</b> — $900k est.</li>
+          <li><b>Top Player C</b> — $700k est.</li>
+        </ol>
+      </section>
+    </aside>
+
+    <!-- Videos -->
+    <section id="videos" class="panel">
+      <div class="panel-hd">
+        <h2>Latest Videos</h2>
+        <div class="panel-actions">
+          <button class="pill pill-all" data-video-filter="all">All</button>
+          <button class="pill" data-video-filter="official">Official</button>
+          <button class="pill" data-video-filter="insiders">Insiders</button>
+        </div>
       </div>
-
-      <!-- Sidebar -->
-      <aside class="sidebar">
-        <section class="panel widget" id="rankings">
-          <div class="head"><h3>Rankings</h3></div>
-          <div class="body">
-            <div class="rank-row"><strong>AP Top 25:</strong> <a id="apLink" href="https://www.espn.com/mens-college-basketball/rankings" target="_blank" rel="noopener">View</a></div>
-            <div class="rank-row"><strong>KenPom:</strong> <a id="kpLink" href="https://kenpom.com/" target="_blank" rel="noopener">View</a></div>
-          </div>
-        </section>
-
-        <section class="panel widget">
-          <div class="head"><h3>Upcoming Schedule</h3></div>
-          <div class="body"><ul class="list" id="scheduleList"></ul></div>
-        </section>
-
-        <section class="panel widget">
-          <div class="head"><h3>Insider / Beat Links</h3></div>
-          <div class="body"><ul class="list" id="insiderList"></ul></div>
-        </section>
-
-        <section class="panel widget" id="nil">
-          <div class="head"><h3>NIL Leaderboard</h3></div>
-          <div class="body"><ol class="nil-list" id="nilList"></ol></div>
-        </section>
-      </aside>
+      <div id="videoGrid" class="video-grid"></div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="wrap">
-      <span>© Team Hub — Purdue Men’s Basketball</span>
-      <span id="sourceCount" class="muted" style="float:right">Updated • 0 sources</span>
+    <div>
+      <span id="updatedFooter">Updated —</span>
+      <span id="sourceCount"></span>
     </div>
   </footer>
 
-  <!-- Video Modal -->
-  <div id="videoModal" class="modal" aria-hidden="true" role="dialog" aria-label="Video player">
-    <div class="modal__backdrop" id="modalBackdrop"></div>
-    <div class="modal__dialog" role="document">
-      <button class="modal__close" id="modalClose" aria-label="Close video">✕</button>
-      <div class="modal__media">
-        <iframe id="modalPlayer" title="Video player" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
-      </div>
+  <!-- Modal for YouTube -->
+  <div id="videoModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-content" role="document">
+      <button class="modal-close" aria-label="Close" data-close>×</button>
+      <div id="modalPlayer" class="modal-player"></div>
     </div>
   </div>
 
-  <script src="static/js/pro.js"></script>
+  <div id="toast" class="toast" hidden>
+    <span>New version ready.</span>
+    <button id="toastReload">Refresh</button>
+  </div>
+
+  <script src="static/js/pro.js?v=20251002" defer></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sports-app-project/sw.js?v=20251002').then(reg=>{
+          // SW update banner
+          navigator.serviceWorker.addEventListener('message', (event) => {
+            if (event.data && event.data.type === 'NEW_VERSION') {
+              const toast = document.getElementById('toast');
+              toast.hidden = false;
+            }
+          });
+          document.getElementById('toastReload').addEventListener('click', () => location.reload());
+        });
+      });
+    }
+  </script>
 </body>
 </html>

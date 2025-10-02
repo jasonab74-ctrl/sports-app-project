@@ -1,83 +1,44 @@
-// sw.js — network-first for app shell & JSON, cache-first for images/icons
-const VERSION = 'v1.0.0';
-const STATIC_CACHE = `static-${VERSION}`;
-const IMG_CACHE = `img-${VERSION}`;
 
-self.addEventListener('install', (event) => {
-  // Take control ASAP
-  self.skipWaiting();
+const VERSION = 'v1.0.2';
+const APP_PREFIX = 'sports-app';
+const PRECACHE = [
+  '/sports-app-project/',
+  '/sports-app-project/index.html',
+  '/sports-app-project/static/css/pro.css',
+  '/sports-app-project/static/js/pro.js',
+];
+self.addEventListener('install', (e) => {
+  e.waitUntil(caches.open(`${APP_PREFIX}-${VERSION}`).then(c=>c.addAll(PRECACHE)).then(()=>self.skipWaiting()));
 });
-
-self.addEventListener('activate', (event) => {
-  event.waitUntil((async () => {
-    // Clear old caches
-    const keys = await caches.keys();
-    await Promise.all(
-      keys
-        .filter(k => ![STATIC_CACHE, IMG_CACHE].includes(k))
-        .map(k => caches.delete(k))
-    );
-    await self.clients.claim();
-  })());
+self.addEventListener('activate', (e) => {
+  e.waitUntil(
+    caches.keys().then(keys => Promise.all(keys.filter(k => k.startsWith(APP_PREFIX) && !k.endsWith(VERSION)).map(k => caches.delete(k))))
+      .then(() => self.clients.claim())
+      .then(async () => {
+        const clients = await self.clients.matchAll();
+        for (const client of clients){
+          client.postMessage({type:'NEW_VERSION'});
+        }
+      })
+  );
 });
-
-// Helpers to classify requests
-const isHTML = (req) =>
-  req.destination === 'document' ||
-  req.headers.get('accept')?.includes('text/html');
-
-const isJS   = (req) => req.destination === 'script';
-const isCSS  = (req) => req.destination === 'style';
-const isJSON = (req) =>
-  req.url.includes('/static/') && req.url.endsWith('.json');
-const isIMG  = (req) =>
-  req.destination === 'image' || /\/(img|icons|logos)\//.test(req.url);
-
-// Routing
-self.addEventListener('fetch', (event) => {
-  const req = event.request;
-  if (req.method !== 'GET') return;
-
-  // Network-first for app shell & data
-  if (isHTML(req) || isJS(req) || isCSS(req) || isJSON(req)) {
-    event.respondWith(networkFirst(req, STATIC_CACHE));
+// Stale-while-revalidate for JSON
+self.addEventListener('fetch', (e) => {
+  const url = new URL(e.request.url);
+  if (url.pathname.startsWith('/sports-app-project/static/') && url.pathname.endsWith('.json')){
+    e.respondWith((async () => {
+      const cacheName = `${APP_PREFIX}-json-${VERSION}`;
+      const cache = await caches.open(cacheName);
+      const cached = await cache.match(e.request);
+      const fetchPromise = fetch(e.request).then(networkResponse => {
+        cache.put(e.request, networkResponse.clone());
+        return networkResponse;
+      }).catch(()=>cached);
+      return cached || fetchPromise;
+    })());
     return;
   }
-
-  // Cache-first for images
-  if (isIMG(req)) {
-    event.respondWith(cacheFirst(req, IMG_CACHE));
-    return;
+  if (PRECACHE.includes(url.pathname)){
+    e.respondWith(caches.match(e.request).then(resp => resp || fetch(e.request)));
   }
-
-  // Otherwise: default (let the browser handle it)
 });
-
-async function networkFirst(request, cacheName) {
-  try {
-    const fresh = await fetch(request);
-    const cache = await caches.open(cacheName);
-    cache.put(request, fresh.clone());
-    return fresh;
-  } catch (err) {
-    const cached = await caches.match(request);
-    if (cached) return cached;
-
-    if (isHTML(request)) {
-      return new Response(
-        '<!doctype html><meta charset="utf-8"><title>Offline</title><h1>Offline</h1>',
-        { headers: { 'Content-Type': 'text/html; charset=utf-8' } }
-      );
-    }
-    return new Response('', { status: 503 });
-  }
-}
-
-async function cacheFirst(request, cacheName) {
-  const cached = await caches.match(request);
-  if (cached) return cached;
-  const fresh = await fetch(request);
-  const cache = await caches.open(cacheName);
-  cache.put(request, fresh.clone());
-  return fresh;
-}
