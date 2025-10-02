@@ -1,5 +1,4 @@
-// Team Hub Pro — Purdue build (drawer + ticker + carousel + filters + video modal)
-// --- Minimal diagnostics (no behavior change) ---
+// Team Hub — Purdue build
 console.log("[boot] pro.js loaded");
 window.addEventListener("error", e => console.error("[js-error]", e.message));
 window.addEventListener("unhandledrejection", e => console.error("[promise-reject]", e.reason));
@@ -20,7 +19,7 @@ const FALLBACK_IMG =
 
 document.addEventListener("DOMContentLoaded", init);
 
-// Probe one JSON to confirm fetch works from the page context
+// Probe to confirm fetch works from the page, not just in a new tab
 fetch(WIDGETS_URL, { cache: "no-store" })
   .then(r => r.json())
   .then(j => console.log("[probe] widgets sources:", (j.sources||[]).length))
@@ -33,7 +32,7 @@ async function init(){
       fetchJSON(ITEMS_URL,    { items: [] }),
       fetchJSON(SCHEDULE_URL, { games: [] }),
       fetchJSON(WIDGETS_URL,  { nil: [], sources: [] }),
-      fetchJSON(INSIDERS_URL, { links: [] }).catch(()=>({links:[]}))
+      fetchJSON(INSIDERS_URL, { links: [] })
     ]);
 
     console.log("[counts]", {
@@ -59,19 +58,15 @@ async function init(){
     renderNewsList(curated);
     renderVideoList(curated);
 
-    // Empty-state guards (prevents "blank page" look)
     ensureNonEmptyStates(curated);
-
     bindFilterBars();
-    bindRefresh();
     bindModalControls();
   }catch(e){
     console.error(e);
-    ensureNonEmptyStates([]); // show empties on hard failure
+    ensureNonEmptyStates([]);
   }
 }
 
-/* ---------- UX SAFETY ---------- */
 function ensureNonEmptyStates(curated){
   if (!Array.isArray(curated) || curated.length === 0) {
     const n = document.getElementById("newsList");
@@ -83,7 +78,6 @@ function ensureNonEmptyStates(curated){
   }
 }
 
-/* ---------- FETCH (resilient, no cache-busting) ---------- */
 async function fetchJSON(url, fallback = null){
   try{
     const r = await fetch(url, { cache: "no-store" });
@@ -95,14 +89,7 @@ async function fetchJSON(url, fallback = null){
   }
 }
 
-/* ---------- UI BINDINGS ---------- */
-function bindRefresh(){
-  if (location.hash === "#refresh") {
-    location.hash = "";
-    location.reload();
-  }
-}
-
+/* UI */
 function bindFilterBars(){
   const bar = document.getElementById("filterBar");
   const vbar = document.getElementById("videoFilterBar");
@@ -149,8 +136,7 @@ function bindModalControls(){
   document.addEventListener("keydown", (e)=>{ if(e.key==="Escape") close(); });
 }
 
-/* ---------- RENDER ---------- */
-
+/* RENDER */
 function renderBrand(team){
   const logo = document.getElementById("logo");
   const word = document.getElementById("wordmark");
@@ -249,8 +235,7 @@ function videoCardHTML(v){
   </article>`;
 }
 
-/* ---------- HELPERS ---------- */
-
+/* Helpers */
 function hydrateStaticLinks(){
   const ap = document.getElementById("apLink");
   const kp = document.getElementById("kpLink");
@@ -289,19 +274,10 @@ function setSourceCount(sources){
   el.textContent = `Updated • ${n} sources`;
 }
 
-async function fetchJSONNoStore(url){
-  const r = await fetch(url, {cache:"no-store"});
-  if(!r.ok) throw new Error(`Failed fetch ${url}`);
-  return r.json();
-}
-
 function escapeHTML(s){
-  return String(s||"")
-    .replaceAll("&","&amp;").replaceAll("<","&lt;")
-    .replaceAll(">","&gt;").replaceAll('"',"&quot;");
+  return String(s||"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;");
 }
 
-/* Time formatting */
 function formatTimeSince(dateStr){
   if(!dateStr) return "";
   const now = new Date();
@@ -321,7 +297,6 @@ function formatDuration(seconds){
   return `${m}:${s.toString().padStart(2,"0")}`;
 }
 
-/* Video helpers */
 function deriveYouTubeId(link){
   try{
     const u = new URL(link);
@@ -337,36 +312,24 @@ function deriveYouTubeId(link){
   return null;
 }
 
-/* Modal player */
+/* Modal */
 function getModal(){
-  return {
-    root: document.getElementById("videoModal"),
-    player: document.getElementById("modalPlayer")
-  };
+  return { root: document.getElementById("videoModal"), player: document.getElementById("modalPlayer") };
 }
 function openVideo(videoId, fallbackLink){
   const {root, player} = getModal();
   if(!root || !player) return;
   let src = "";
-  if (videoId) {
-    src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`;
-  } else if (fallbackLink) {
-    window.open(fallbackLink, "_blank", "noopener");
-    return;
-  }
-  player.src = src;
-  root.classList.add("open");
-  root.setAttribute("aria-hidden","false");
+  if (videoId) src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`;
+  else if (fallbackLink) { window.open(fallbackLink, "_blank", "noopener"); return; }
+  player.src = src; root.classList.add("open"); root.setAttribute("aria-hidden","false");
 }
 function closeModal(){
-  const {root, player} = getModal();
-  if(!root || !player) return;
-  player.src = ""; // stop playback
-  root.classList.remove("open");
-  root.setAttribute("aria-hidden","true");
+  const {root, player} = getModal(); if(!root || !player) return;
+  player.src = ""; root.classList.remove("open"); root.setAttribute("aria-hidden","true");
 }
 
-/* Scoring/curation */
+/* Curation */
 function curateForTeam(items){
   if(!Array.isArray(items)) return [];
   const kw = TEAM_KEYWORDS;
