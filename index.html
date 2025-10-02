@@ -5,8 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Purdue Men's Basketball — Team Hub Pro</title>
   <meta name="description" content="One-stop Purdue Men’s Basketball hub: headlines, videos, insider links, rankings, schedule — auto-updated.">
-  <link rel="stylesheet" href="static/css/pro.css" />
   <link rel="preload" href="static/js/pro.js" as="script" />
+  <link rel="stylesheet" href="static/css/pro.css" />
+  <!-- Perf hints for video thumbs -->
+  <link rel="preconnect" href="https://i.ytimg.com" crossorigin>
+  <link rel="preconnect" href="https://www.youtube-nocookie.com" crossorigin>
 </head>
 <body>
   <!-- ===== Header ===== -->
@@ -42,12 +45,14 @@
 
   <!-- ===== Main ===== -->
   <main class="wrap">
+    <!-- Headline carousel -->
     <section class="panel" id="hero">
       <div class="head"><h2>Top Headlines</h2></div>
-      <div class="carousel" id="headlineCarousel" role="region" aria-label="Headline highlights"></div>
+      <div class="carousel edge-fade" id="headlineCarousel" role="region" aria-label="Headline highlights"></div>
     </section>
 
     <section class="layout">
+      <!-- Content -->
       <div class="content">
         <section class="panel" id="news">
           <div class="head subnav">
@@ -63,11 +68,19 @@
         </section>
 
         <section class="panel" id="videos">
-          <div class="head"><h3>Latest Videos</h3></div>
+          <div class="head subnav">
+            <h3>Latest Videos</h3>
+            <div class="links" id="videoFilterBar">
+              <button class="chip is-active" data-filter="all">All</button>
+              <button class="chip" data-filter="official">Official</button>
+              <button class="chip" data-filter="insider">Insiders</button>
+            </div>
+          </div>
           <div class="cards" id="videoList"></div>
         </section>
       </div>
 
+      <!-- Sidebar -->
       <aside class="sidebar">
         <section class="panel widget" id="rankings">
           <div class="head"><h3>Rankings</h3></div>
@@ -101,6 +114,17 @@
       <span id="sourceCount" class="muted" style="float:right">Updated • 0 sources</span>
     </div>
   </footer>
+
+  <!-- ===== Video Modal ===== -->
+  <div id="videoModal" class="modal" aria-hidden="true" role="dialog" aria-label="Video player">
+    <div class="modal__backdrop" id="modalBackdrop"></div>
+    <div class="modal__dialog" role="document">
+      <button class="modal__close" id="modalClose" aria-label="Close video">✕</button>
+      <div class="modal__media">
+        <iframe id="modalPlayer" title="Video player" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </div>
+    </div>
+  </div>
 
   <script src="static/js/pro.js"></script>
 </body>
