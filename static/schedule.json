@@ -2,8 +2,38 @@
   "purdue-mbb": {
     "games": [
       {
-        "date": "2025-11-05T00:00:00Z",
-        "opponent": "Exhibition Game",
+        "date": "2025-09-20T00:00:00Z",
+        "opponent": "Butler",
+        "home": true,
+        "venue": "Mackey Arena",
+        "tv": "",
+        "result": "W",
+        "score": "82–70",
+        "boxscore_url": ""
+      },
+      {
+        "date": "2025-09-25T00:00:00Z",
+        "opponent": "Notre Dame",
+        "home": false,
+        "venue": "Purcell Pavilion",
+        "tv": "",
+        "result": "L",
+        "score": "68–72",
+        "boxscore_url": ""
+      },
+      {
+        "date": "2025-09-28T00:00:00Z",
+        "opponent": "Indiana State",
+        "home": true,
+        "venue": "Mackey Arena",
+        "tv": "",
+        "result": "W",
+        "score": "88–61",
+        "boxscore_url": ""
+      },
+      {
+        "date": "2025-10-15T00:00:00Z",
+        "opponent": "Exhibition",
         "home": true,
         "venue": "Mackey Arena",
         "tv": "BTN+",
@@ -12,7 +42,7 @@
         "boxscore_url": ""
       },
       {
-        "date": "2025-11-12T00:00:00Z",
+        "date": "2025-11-11T00:00:00Z",
         "opponent": "Marquette",
         "home": false,
         "venue": "Fiserv Forum",
@@ -22,7 +52,7 @@
         "boxscore_url": ""
       },
       {
-        "date": "2025-11-19T00:00:00Z",
+        "date": "2025-11-18T00:00:00Z",
         "opponent": "Indiana State",
         "home": true,
         "venue": "Mackey Arena",
