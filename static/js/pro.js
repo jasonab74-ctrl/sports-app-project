@@ -1,4 +1,4 @@
-/* App JS — nav, ticker, cards, widgets */
+/* App JS — nav, ticker, cards, widgets, zero-states, durations, CTA */
 
 const qs = (s, el=document) => el.querySelector(s);
 const qsa = (s, el=document) => [...el.querySelectorAll(s)];
@@ -43,71 +43,101 @@ function renderTicker(items){
   track.style.animation=`marquee ${dur}s linear infinite`;
 }
 
-const FALLBACK_SVG=encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675"><rect fill="#101726" width="1200" height="675"/><text x="50%" y="52%" text-anchor="middle" fill="#415070" font-family="system-ui,Segoe UI,Roboto" font-size="42">Sports App Project</text></svg>`);
+const FALLBACK_NEWS = 'static/img/fallback-news.svg';
 
-/* Source niceties */
 function prettySource(src){
   if(!src) return '';
-  const s = src.toLowerCase();
-  if(s.includes('youtube.com')) return 'BoilerBall • YouTube';
-  if(s.includes('purduesports.com')) return 'Purdue Athletics';
+  const s = (src || '').toLowerCase();
+  if(s.includes('purduesports')) return 'Purdue Athletics';
   if(s.includes('hammerandrails')) return 'Hammer & Rails';
   if(s.includes('on3.com')) return 'On3';
   if(s.includes('si.com')) return 'Sports Illustrated';
   if(s.includes('goldandblack')) return 'GoldandBlack';
+  if(s.includes('youtube')) return 'YouTube';
   return src.replace(/^www\./,'');
 }
+
+function formatDuration(sec){
+  sec = Number(sec||0);
+  if(!sec) return '';
+  const h = Math.floor(sec/3600);
+  const m = Math.floor((sec%3600)/60);
+  const s = sec%60;
+  if(h) return `${h}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+  return `${m}:${String(s).padStart(2,'0')}`;
+}
+
+function isYouTube(u){ u=(u||'').toLowerCase(); return u.includes('youtube.com')||u.includes('youtu.be'); }
 
 function makeCard(item){
   const a=document.createElement('a'); a.className='card'; a.href=item.url||'#'; a.target='_blank' ; a.rel='noopener';
   const thumb=document.createElement('div'); thumb.className='card__thumb';
   const img=document.createElement('img'); img.loading='lazy'; img.decoding='async';
-  img.src=item.image||item.thumbnail||`data:image/svg+xml,${FALLBACK_SVG}`;
+  img.src=item.image||item.thumbnail||FALLBACK_NEWS;
   img.alt=(item.title||'').replace(/<[^>]+>/g,'');
-  img.onerror=()=>{ img.src=`data:image/svg+xml,${FALLBACK_SVG}`; thumb.classList.add('placeholder'); };
+  img.onerror=()=>{ img.src=FALLBACK_NEWS; thumb.classList.add('placeholder'); };
   if(!(item.image||item.thumbnail)) thumb.classList.add('placeholder');
   thumb.appendChild(img);
 
   const body=document.createElement('div'); body.className='card__body';
-  const kicker=document.createElement('div'); kicker.className='card__kicker'; kicker.textContent=item.tag||(item.is_video?'Video':'News');
-  const title=document.createElement('div'); title.className='card__title'; title.textContent=(item.title||'').replace(/&[#0-9a-z]+;/gi,' ');
+  const kicker=document.createElement('div'); kicker.className='card__kicker';
+  kicker.textContent=item.tag||(item.is_video?'Video':'News');
+
+  const title=document.createElement('div'); title.className='card__title';
+  title.textContent=(item.title||'').replace(/&[#0-9a-z]+;/gi,' ');
+
   const meta=document.createElement('div'); meta.className='card__meta';
+  const srcBadge = document.createElement('span'); srcBadge.className='badge'; srcBadge.textContent = prettySource(item.source || '');
+  const d=item.date?new Date(item.date):null; const when = document.createElement('span'); when.textContent = d ? d.toLocaleDateString(undefined,{month:'short',day:'numeric'}) : '';
 
-  const srcBadge = document.createElement('span');
-  srcBadge.className='badge';
-  srcBadge.textContent = prettySource(item.source || '');
+  // Video duration badge + CTA
+  if(item.is_video && item.duration_seconds){
+    const dur = document.createElement('span'); dur.className='badge'; dur.textContent = formatDuration(item.duration_seconds);
+    meta.append(srcBadge, dur, when);
+  } else {
+    meta.append(srcBadge, when);
+  }
 
-  const d=item.date?new Date(item.date):null;
-  const when = document.createElement('span');
-  when.textContent = d ? d.toLocaleDateString(undefined,{month:'short',day:'numeric'}) : '';
+  body.append(kicker,title,meta);
 
-  meta.append(srcBadge, when);
-  body.append(kicker,title,meta); a.append(thumb,body); return a;
+  // CTA: Watch on YouTube
+  if(item.is_video && isYouTube(item.url)){
+    const cta = document.createElement('span');
+    cta.className = 'badge';
+    cta.textContent = 'Watch on YouTube';
+    body.appendChild(cta);
+  }
+
+  a.append(thumb,body); return a;
 }
 
-/* Grid rendering with Load more */
+/* Grid rendering with Load more + hero videos */
 function renderGridWithMore(items, sel, initialCount=12){
   const grid=qs(sel);
   grid.innerHTML='';
   let shown = 0;
+
+  // mark video grid
+  if (sel === '#video-grid') grid.classList.add('video');
+
   const renderSlice = (n) => {
     items.slice(shown, shown+n).forEach((it, idx) => {
       const card = makeCard(it);
-      // Video hero: mark first two videos in video grid
-      if (sel === '#video-grid' && shown+idx < 2) card.classList.add('hero');
+      if (sel === '#video-grid' && shown+idx < 2) card.classList.add('hero'); // first two videos larger titles
       grid.appendChild(card);
     });
     shown += n;
   };
 
-  // mark video grid
-  if (sel === '#video-grid') grid.classList.add('video');
+  if (!items.length){
+    // Zero-state with last generated timestamp if available (set by caller)
+    const msg = grid.getAttribute('data-zero') || 'No items yet.';
+    grid.innerHTML = `<div class="empty">${msg}</div>`;
+    return;
+  }
 
-  // initial render
-  if (!items.length){ grid.innerHTML='<div class="empty">No items yet.</div>'; return; }
   renderSlice(Math.min(initialCount, items.length));
 
-  // Load more button
   if (shown < items.length){
     const btn = document.createElement('button');
     btn.className = 'load-more';
@@ -204,19 +234,22 @@ function updateChipCounts(items){
 }
 
 async function boot(){
-  initTabs();
-
   // skeletons
   qs('#news-grid').innerHTML='<div class="skel card"></div><div class="skel card"></div>';
   qs('#video-grid').innerHTML='<div class="skel card"></div><div class="skel card"></div>';
 
   try{
     const teamCfg=await safeJSON(paths.team).then(t=>t.teams?.[state.teamSlug]||Object.values(t.teams||{})[0]);
-    document.title=`${teamCfg.name} — Team Hub`;qs('#site-title').textContent=teamCfg.name;if(teamCfg.logo)qs('#team-logo').src=teamCfg.logo;
+    document.title=`${teamCfg.name} — Team Hub`;
+    qs('#site-title').textContent=teamCfg.name;
+    if(teamCfg.logo) qs('#team-logo').src=teamCfg.logo;
+
+    // Theming
     document.documentElement.style.setProperty('--accent',teamCfg.colors.accent);
     document.documentElement.style.setProperty('--bg',teamCfg.colors.bg);
     document.documentElement.style.setProperty('--card',teamCfg.colors.card);
 
+    // Data
     const [itemsJson,widgetsAll,scheduleAll]=await Promise.all([
       safeJSON(paths.items(state.teamSlug)),
       safeJSON(paths.widgets),
@@ -227,10 +260,16 @@ async function boot(){
     const news=raw.filter(i=>!i.is_video);
     const vids=raw.filter(i=> i.is_video);
 
-    // Ticker uses latest across all types
+    // Zero-state info
+    const gen = itemsJson.generated_at ? new Date(itemsJson.generated_at) : null;
+    const lastStr = gen ? `No items yet. Last update ${gen.toLocaleDateString(undefined,{month:'short',day:'numeric'})}.` : 'No items yet.';
+    qs('#news-grid').setAttribute('data-zero', lastStr);
+    qs('#video-grid').setAttribute('data-zero', lastStr);
+
+    // Ticker
     renderTicker(raw);
 
-    // News grid + Videos grid with load more
+    // Grids with load more
     renderGridWithMore(news.length?news:raw, '#news-grid', 12);
     renderGridWithMore(vids, '#video-grid', 8);
 
@@ -247,6 +286,7 @@ async function boot(){
     qs('#news-grid').innerHTML='<div class="empty">Error loading data.</div>';
   }
 
-  qs('#refresh').addEventListener('click',()=>location.reload());
+  initTabs();
+  qs('#refresh')?.addEventListener('click',()=>location.reload());
 }
 document.addEventListener('DOMContentLoaded',boot);
