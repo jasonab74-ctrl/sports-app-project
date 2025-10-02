@@ -13,10 +13,9 @@ const paths = {
 };
 
 function decodeEntities(str){ if(!str) return ''; const t=document.createElement('textarea'); t.innerHTML=str; return t.value; }
-function html(str){ const d=document.createElement('div'); d.innerHTML=str.trim(); return d.firstChild; }
 function safeJSON(url){ return fetch(url,{cache:'no-store'}).then(r=>r.ok?r.json():{}).catch(()=>({})); }
 
-/* a11y + hide-empty helpers */
+/* helpers */
 const none = v => v == null || v === '' || v === '—';
 const show = (el, ok) => (el.closest('.widget').style.display = ok ? '' : 'none');
 
@@ -34,6 +33,7 @@ function initTabs(){
   });
 }
 
+/* Ticker */
 function renderTicker(items){
   const ticker=qs('#ticker'), track=qs('#ticker-track');
   const list=(items||[]).filter(i=>i.url&&i.title).slice(0,16).map(i=>`<a href="${i.url}" target="_blank" rel="noopener">${decodeEntities(i.title)}</a>`);
@@ -48,20 +48,55 @@ const FALLBACK_SVG=encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" w
 function makeCard(item){
   const a=document.createElement('a'); a.className='card'; a.href=item.url||'#'; a.target='_blank' ; a.rel='noopener';
   const thumb=document.createElement('div'); thumb.className='card__thumb';
-  const img=document.createElement('img'); img.loading='lazy'; img.src=item.image||item.thumbnail||`data:image/svg+xml,${FALLBACK_SVG}`;
-  if(!item.image&&!item.thumbnail) thumb.classList.add('placeholder');
-  img.alt=decodeEntities(item.title||''); thumb.appendChild(img);
+  const img=document.createElement('img'); img.loading='lazy'; img.decoding='async';
+  img.src=item.image||item.thumbnail||`data:image/svg+xml,${FALLBACK_SVG}`;
+  img.alt=(item.title||'').replace(/<[^>]+>/g,'');
+  img.onerror=()=>{ img.src=`data:image/svg+xml,${FALLBACK_SVG}`; thumb.classList.add('placeholder'); };
+  if(!(item.image||item.thumbnail)) thumb.classList.add('placeholder');
+  thumb.appendChild(img);
+
   const body=document.createElement('div'); body.className='card__body';
   const kicker=document.createElement('div'); kicker.className='card__kicker'; kicker.textContent=item.tag||(item.is_video?'Video':'News');
-  const title=document.createElement('div'); title.className='card__title'; title.textContent=decodeEntities(item.title||'');
+  const title=document.createElement('div'); title.className='card__title'; title.textContent=(item.title||'').replace(/&[#0-9a-z]+;/gi,' ');
   const meta=document.createElement('div'); meta.className='card__meta';
   const d=item.date?new Date(item.date):null; meta.textContent=[item.source||'',d?d.toLocaleDateString(undefined,{month:'short',day:'numeric'}):''].filter(Boolean).join(' • ');
   body.append(kicker,title,meta); a.append(thumb,body); return a;
 }
 
-function renderCarousel(items){const el=qs('#carousel');el.innerHTML='';items.slice(0,8).forEach(i=>el.appendChild(makeCard(i)));}
+/* Grid rendering with Load more */
+function renderGridWithMore(items, sel, initialCount=12){
+  const grid=qs(sel);
+  grid.innerHTML='';
+  let shown = 0;
+  const renderSlice = (n) => {
+    items.slice(shown, shown+n).forEach((it, idx) => {
+      const card = makeCard(it);
+      // Video hero: mark first two videos in video grid
+      if (sel === '#video-grid' && shown+idx < 2) card.classList.add('hero');
+      grid.appendChild(card);
+    });
+    shown += n;
+  };
 
-function renderGrid(items,sel){const grid=qs(sel);grid.innerHTML='';if(!items.length){grid.innerHTML='<div class="empty">No items yet.</div>';return;}items.slice(0,24).forEach(i=>grid.appendChild(makeCard(i)));}
+  // mark video grid
+  if (sel === '#video-grid') grid.classList.add('video');
+
+  // initial render
+  if (!items.length){ grid.innerHTML='<div class="empty">No items yet.</div>'; return; }
+  renderSlice(Math.min(initialCount, items.length));
+
+  // Load more button
+  if (shown < items.length){
+    const btn = document.createElement('button');
+    btn.className = 'load-more';
+    btn.textContent = 'Load more';
+    btn.addEventListener('click', ()=>{
+      renderSlice(Math.min(12, items.length - shown));
+      if (shown >= items.length) btn.remove();
+    });
+    grid.after(btn);
+  }
+}
 
 function renderRankings(w){
   const el=qs('#rankings-body');el.innerHTML='';
@@ -72,7 +107,7 @@ function renderRankings(w){
   show(el, !(none(w?.ap_rank)&&none(w?.kenpom)&&none(w?.net)));
 }
 
-/* === Schedule: Last 3 Results + Next 3 Games === */
+/* Schedule: Last 3 Results + Next 3 Games */
 function renderSchedule(sch){
   const el=qs('#schedule-body');el.innerHTML='';
   const games=sch?.games||[];
@@ -130,11 +165,27 @@ function renderInsider(w){
   show(el, true);
 }
 
+/* Chip counts for News / Videos */
+function updateChipCounts(items){
+  const news = items.filter(i=>!i.is_video).length;
+  const vids = items.filter(i=> i.is_video).length;
+  const map = { news, videos: vids };
+  qsa('.tabs .chip').forEach(btn=>{
+    const key = btn.dataset.tab;
+    if(map[key] != null){
+      const base = btn.textContent.replace(/\s+\(\d+\)$/, '');
+      btn.textContent = `${base} (${map[key]})`;
+    }
+  });
+}
+
 async function boot(){
   initTabs();
-  qs('#carousel').innerHTML='<div class="skel card"></div>';
+
+  // skeletons
   qs('#news-grid').innerHTML='<div class="skel card"></div><div class="skel card"></div>';
   qs('#video-grid').innerHTML='<div class="skel card"></div><div class="skel card"></div>';
+
   try{
     const teamCfg=await safeJSON(paths.team).then(t=>t.teams?.[state.teamSlug]||Object.values(t.teams||{})[0]);
     document.title=`${teamCfg.name} — Team Hub`;qs('#site-title').textContent=teamCfg.name;if(teamCfg.logo)qs('#team-logo').src=teamCfg.logo;
@@ -148,13 +199,30 @@ async function boot(){
       safeJSON(paths.schedule)
     ]);
 
-    let items=(itemsJson.items||[]).map(i=>({...i,title:decodeEntities(i.title)}));
-    if(!items.length){items=[{title:'Welcome to your Team Hub — connect feeds.',url:'#',image:'',source:'Sports App Project',date:new Date().toISOString(),tag:'News'}];}
-    const widgets=widgetsAll[state.teamSlug]||widgetsAll.default||{};const schedule=scheduleAll[state.teamSlug]||scheduleAll;
-    const news=items.filter(i=>!i.is_video), vids=items.filter(i=>i.is_video);
-    renderTicker(items);renderCarousel(news.length?news:items);renderGrid(news.length?news:items,'#news-grid');renderGrid(vids,'#video-grid');
+    const raw = (itemsJson.items||[]).map(i=>({...i,title:(i.title||'').replace(/<[^>]+>/g,'')}));
+    const news=raw.filter(i=>!i.is_video);
+    const vids=raw.filter(i=> i.is_video);
+
+    // Ticker uses latest across all types
+    renderTicker(raw);
+
+    // News grid + Videos grid with load more
+    renderGridWithMore(news.length?news:raw, '#news-grid', 12);
+    renderGridWithMore(vids, '#video-grid', 8);
+
+    // Widgets
+    const widgets=widgetsAll[state.teamSlug]||widgetsAll.default||{};
+    const schedule=scheduleAll[state.teamSlug]||scheduleAll;
     renderRankings(widgets);renderSchedule(schedule);renderNIL(widgets);renderInsider(widgets);
-  }catch(e){console.error(e);qs('#news-grid').innerHTML='<div class="empty">Error loading data.</div>';}
+
+    // Chip counts
+    updateChipCounts(raw);
+
+  }catch(e){
+    console.error(e);
+    qs('#news-grid').innerHTML='<div class="empty">Error loading data.</div>';
+  }
+
   qs('#refresh').addEventListener('click',()=>location.reload());
 }
 document.addEventListener('DOMContentLoaded',boot);
