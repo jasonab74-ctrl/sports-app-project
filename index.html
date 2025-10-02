@@ -5,20 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Team Hub — Purdue Men's Basketball</title>
   <meta name="theme-color" content="#0c0c0e"/>
-  <link rel="stylesheet" href="static/css/pro.css?v=20251002" />
+  <link rel="stylesheet" href="static/css/pro.css?v=20251002d" />
 </head>
 <body>
   <header class="topbar">
-    <button id="navToggle" aria-label="Menu" class="hamburger" aria-expanded="false">
+    <button id="navToggle" aria-label="Open menu" class="hamburger" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
-    <div class="brand">
-      <div class="brand-logo">🏀</div>
+
+    <a class="brand" href="./">
+      <div class="brand-logo-wrap">
+        <img class="brand-logo" src="static/logo.png" alt="Purdue" onerror="this.style.display='none';this.nextElementSibling.hidden=false;">
+        <div class="brand-fallback" hidden>🏀</div>
+      </div>
       <div>
         <div class="brand-line1">Team Hub</div>
         <div class="brand-line2">Boilermakers</div>
       </div>
-    </div>
+    </a>
+
     <nav id="mainNav" class="nav">
       <a href="#news">News</a>
       <a href="#videos">Videos</a>
@@ -27,6 +32,19 @@
       <a href="#nil">NIL</a>
     </nav>
   </header>
+
+  <!-- Mobile drawer -->
+  <aside id="drawer" class="drawer" aria-hidden="true">
+    <div class="drawer-backdrop" data-close></div>
+    <div class="drawer-sheet">
+      <button class="drawer-close" data-close aria-label="Close">×</button>
+      <a href="#news" data-close>News</a>
+      <a href="#videos" data-close>Videos</a>
+      <a href="#rankings" data-close>Rankings</a>
+      <a href="#schedule" data-close>Schedule</a>
+      <a href="#nil" data-close>NIL</a>
+    </div>
+  </aside>
 
   <section class="ticker" id="ticker" aria-label="Top ticker">
     <div class="ticker-track" id="tickerTrack"></div>
@@ -127,12 +145,11 @@
   <script>
     window.__TEAM_SLUG = "purdue-mbb"; // hard fallback
   </script>
-  <script src="static/js/pro.js?v=20251002b" defer></script>
+  <script src="static/js/pro.js?v=20251002d" defer></script>
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        // Register relative to current path so it works on GH Pages.
-        navigator.serviceWorker.register('./sw.js?v=20251002b').then(reg=>{
+        navigator.serviceWorker.register('./sw.js?v=20251002d').then(reg=>{
           navigator.serviceWorker.addEventListener('message', (event) => {
             if (event.data && event.data.type === 'NEW_VERSION') {
               const toast = document.getElementById('toast');
