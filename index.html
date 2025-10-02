@@ -33,7 +33,6 @@
   </section>
 
   <main class="container">
-    <!-- Hero / Top Headlines -->
     <section id="news" class="panel">
       <div class="panel-hd">
         <h2>Top Headlines</h2>
@@ -52,11 +51,9 @@
           <div class="hero-sub">Please wait</div>
         </div>
       </div>
-
       <div id="headlines" class="card-grid"></div>
     </section>
 
-    <!-- Right rail -->
     <aside class="rail">
       <section id="rankings" class="panel">
         <div class="panel-hd"><h3>Rankings</h3></div>
@@ -93,7 +90,6 @@
       </section>
     </aside>
 
-    <!-- Videos -->
     <section id="videos" class="panel">
       <div class="panel-hd">
         <h2>Latest Videos</h2>
@@ -111,10 +107,10 @@
     <div>
       <span id="updatedFooter">Updated —</span>
       <span id="sourceCount"></span>
+      <span id="debugMsg" style="margin-left:.5rem"></span>
     </div>
   </footer>
 
-  <!-- Modal for YouTube -->
   <div id="videoModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
     <div class="modal-backdrop" data-close></div>
     <div class="modal-content" role="document">
@@ -128,12 +124,15 @@
     <button id="toastReload">Refresh</button>
   </div>
 
-  <script src="static/js/pro.js?v=20251002" defer></script>
+  <script>
+    window.__TEAM_SLUG = "purdue-mbb"; // hard fallback
+  </script>
+  <script src="static/js/pro.js?v=20251002b" defer></script>
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sports-app-project/sw.js?v=20251002').then(reg=>{
-          // SW update banner
+        // Register relative to current path so it works on GH Pages.
+        navigator.serviceWorker.register('./sw.js?v=20251002b').then(reg=>{
           navigator.serviceWorker.addEventListener('message', (event) => {
             if (event.data && event.data.type === 'NEW_VERSION') {
               const toast = document.getElementById('toast');

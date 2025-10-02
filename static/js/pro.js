@@ -1,32 +1,29 @@
 
 (() => {
   const $ = (sel, ctx=document) => ctx.querySelector(sel);
-  const $$ = (sel, ctx=document) => Array.from(ctx.querySelectorAll(sel));
 
-  // Basic state
-  let team = { name: "Purdue Men's Basketball", slug: "purdue-mbb" };
-  // Attempt to load team.json if present
-  fetch('static/team.json').then(r=>r.ok?r.json():null).then(j=>{ if(j){ team = j } init(); }).catch(()=>init());
+  // Compute base path for GH Pages (e.g., /sports-app-project/)
+  const PATH_BASE = (function(){
+    const parts = location.pathname.split('/').filter(Boolean);
+    if (parts.length >= 1) {
+      // assume project page: /<repo>/...
+      return `/${parts[0]}/`;
+    }
+    return '/';
+  })();
 
-  function init(){
-    bindNav();
-    loadTicker();
-    loadItems();
-    loadRankings();
-    loadSchedule();
-    loadInsiders();
-    loadVideos();
-    setupModal();
-  }
+  const url = (p) => `${PATH_BASE}${p.replace(/^\//,'')}`;
 
-  function bindNav(){
-    const navToggle = $('#navToggle');
-    const nav = $('#mainNav');
-    navToggle.addEventListener('click', () => {
-      const open = navToggle.getAttribute('aria-expanded') === 'true';
-      navToggle.setAttribute('aria-expanded', String(!open));
-      nav.classList.toggle('open');
-    });
+  // Team slug: team.json -> window.__TEAM_SLUG -> default
+  async function getTeam(){
+    try{
+      const r = await fetch(url('static/team.json'), {cache:'no-cache'});
+      if (r.ok){
+        const j = await r.json();
+        return j.slug || j.team?.slug || j.id || window.__TEAM_SLUG || 'purdue-mbb';
+      }
+    }catch(_){}
+    return window.__TEAM_SLUG || 'purdue-mbb';
   }
 
   function ftimeAgo(date){
@@ -34,63 +31,13 @@
       const d = new Date(date);
       const diff = (Date.now()-d.getTime())/1000;
       if (diff < 90) return 'just now';
-      const units = [
-        ['y', 31536000], ['mo', 2592000], ['d', 86400], ['h', 3600], ['m', 60]
-      ];
+      const units = [['y',31536000],['mo',2592000],['d',86400],['h',3600],['m',60]];
       for (const [label, secs] of units){
         const v = Math.floor(diff/secs);
         if (v >= 1) return `${v}${label} ago`;
       }
       return 'just now';
     }catch(e){ return ''}
-  }
-
-  function loadTicker(){
-    // Build ticker from latest 8 headlines after items load
-  }
-
-  async function loadItems(){
-    try{
-      const url = `static/teams/${team.slug}/items.json`;
-      const res = await fetch(url, {cache:'no-cache'});
-      const data = await res.json();
-      const items = (data.items || data || []).slice(0, 18);
-
-      // Ticker
-      const tt = $('#tickerTrack');
-      tt.innerHTML = items.slice(0,12).map(i => `<span style="margin:0 1.25rem">${escapeHTML(i.source||'')} — ${escapeHTML(i.title||'')}</span>`).join('');
-
-      // Hero
-      const hero = $('#hero');
-      if(items.length){
-        const lead = items[0];
-        hero.classList.remove('skeleton');
-        hero.innerHTML = `
-          <a href="${lead.link}" target="_blank" rel="noopener" class="hero-img-wrap">
-            <img class="hero-img" src="${lead.image||''}" alt="" loading="eager" decoding="async"/>
-          </a>
-          <div class="hero-meta">
-            <div class="pills">
-              ${badge(lead.tier || lead.tag || '')}
-              <span class="pill">${escapeHTML(lead.source||'')}</span>
-              <span class="pill">${ftimeAgo(lead.date||lead.published||new Date().toISOString())}</span>
-            </div>
-            <h3 class="hero-title"><a href="${lead.link}" target="_blank" rel="noopener">${escapeHTML(lead.title||'')}</a></h3>
-            <div class="hero-sub">${escapeHTML(lead.summary||'')}</div>
-          </div>
-        `;
-      }
-
-      // Cards
-      const grid = $('#headlines');
-      grid.innerHTML = items.slice(1).map(renderCard).join('');
-
-      // Footer freshness
-      $('#updatedFooter').textContent = `Updated ${new Date().toLocaleString([], {hour:'2-digit', minute:'2-digit'})}`;
-      $('#sourceCount').textContent = data.sources ? `• ${data.sources.length} sources` : '';
-    }catch(e){
-      console.error(e);
-    }
   }
 
   function badge(tag){
@@ -100,8 +47,33 @@
     if (t.includes('national')) return `<span class="pill">national</span>`;
     return t ? `<span class="pill">${escapeHTML(t)}</span>` : '';
   }
+  function escapeHTML(s){ return (s||'').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m])); }
 
-  function renderCard(i){
+  function debug(msg){
+    const el = $('#debugMsg'); if (el) el.textContent = msg;
+    console.log('[DEBUG]', msg);
+  }
+
+  // Render pieces
+  function renderHero(lead){
+    const hero = $('#hero');
+    hero.classList.remove('skeleton');
+    hero.innerHTML = `
+      <a href="${lead.link}" target="_blank" rel="noopener" class="hero-img-wrap">
+        <img class="hero-img" src="${lead.image||''}" alt="" loading="eager" decoding="async"/>
+      </a>
+      <div class="hero-meta">
+        <div class="pills">
+          ${badge(lead.tier || lead.tag || '')}
+          <span class="pill">${escapeHTML(lead.source||'')}</span>
+          <span class="pill">${ftimeAgo(lead.date||lead.published||new Date().toISOString())}</span>
+        </div>
+        <h3 class="hero-title"><a href="${lead.link}" target="_blank" rel="noopener">${escapeHTML(lead.title||'')}</a></h3>
+        <div class="hero-sub">${escapeHTML(lead.summary||'')}</div>
+      </div>
+    `;
+  }
+  const renderCard = (i) => {
     const when = ftimeAgo(i.date||i.published||new Date().toISOString());
     const img = i.image || '';
     return `
@@ -113,14 +85,14 @@
           <div class="card-meta">${badge(i.tier||i.tag)} <span>${escapeHTML(i.source||'')}</span> • <span>${when}</span></div>
           <a class="card-title" href="${i.link}" target="_blank" rel="noopener">${escapeHTML(i.title||'')}</a>
         </div>
-      </article>
-    `;
-  }
+      </article>`;
+  };
 
   async function loadRankings(){
     try{
-      const res = await fetch('static/widgets.json', {cache:'no-cache'});
-      const w = await res.json();
+      const r = await fetch(url('static/widgets.json'), {cache:'no-cache'});
+      if (!r.ok) throw new Error(`widgets.json ${r.status}`);
+      const w = await r.json();
       $('#apRank').textContent = w.ap_rank ? `#${w.ap_rank}` : '—';
       $('#kpRank').textContent = w.kenpom_rank ? `#${w.kenpom_rank}` : '—';
       if (w.ap_url) $('#apLink').href = w.ap_url;
@@ -129,13 +101,16 @@
         const ts = new Date(w.updated_at);
         $('#rankUpdated').textContent = `as of ${ts.toLocaleString([], {month:'short', day:'numeric'})}`;
       }
-    }catch(e){}
+    }catch(e){
+      debug('rankings: ' + e.message);
+    }
   }
 
   async function loadSchedule(){
     try{
-      const res = await fetch('static/schedule.json', {cache:'no-cache'});
-      const sched = await res.json();
+      const r = await fetch(url('static/schedule.json'), {cache:'no-cache'});
+      if (!r.ok) throw new Error(`schedule.json ${r.status}`);
+      const sched = await r.json();
       const list = $('#scheduleList');
       list.innerHTML = sched.slice(0,6).map(g => {
         const dt = new Date(g.utc || g.date);
@@ -149,7 +124,32 @@
           <div class="g-title">${escapeHTML(g.opp||'Opponent')} ${tag}</div>
         </a>`;
       }).join('');
-    }catch(e){}
+    }catch(e){
+      debug('schedule: ' + e.message);
+    }
+  }
+
+  async function loadItems(){
+    try{
+      const slug = await getTeam();
+      const r = await fetch(url(`static/teams/${slug}/items.json`), {cache:'no-cache'});
+      if (!r.ok) throw new Error(`items.json for ${slug} -> ${r.status}`);
+      const data = await r.json();
+      const items = (data.items || data || []).slice(0, 18);
+
+      // Ticker
+      const tt = $('#tickerTrack');
+      tt.innerHTML = items.slice(0,12).map(i => `<span style="margin:0 1.25rem">${escapeHTML(i.source||'')} — ${escapeHTML(i.title||'')}</span>`).join('');
+
+      if(items.length){
+        renderHero(items[0]);
+        $('#headlines').innerHTML = items.slice(1).map(renderCard).join('');
+      }
+      document.getElementById('updatedFooter').textContent = `Updated ${new Date().toLocaleString([], {hour:'2-digit', minute:'2-digit'})}`;
+      document.getElementById('sourceCount').textContent = data.sources ? `• ${data.sources.length} sources` : '';
+    }catch(e){
+      debug('items: ' + e.message);
+    }
   }
 
   function loadInsiders(){
@@ -171,12 +171,54 @@
     }).join('');
   }
 
+  function bindNav(){
+    const navToggle = $('#navToggle');
+    const nav = $('#mainNav');
+    if (navToggle && nav){
+      navToggle.addEventListener('click', () => {
+        const open = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', String(!open));
+        nav.classList.toggle('open');
+      });
+    }
+  }
+
+  function setupModal(){
+    const modal = $('#videoModal');
+    if (!modal) return;
+    modal.addEventListener('click', (e) => {
+      if (e.target.hasAttribute('data-close')) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if(e.key === 'Escape') closeModal();
+    });
+
+    document.addEventListener('click', (e) => {
+      const a = e.target.closest('a[data-yt]');
+      if(!a) return;
+      const id = a.getAttribute('data-yt');
+      if(id){ e.preventDefault(); openModal(id); }
+    });
+  }
+  function openModal(id){
+    const modal = $('#videoModal');
+    $('#modalPlayer').innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${id}?autoplay=1" title="YouTube video" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+    modal.setAttribute('aria-hidden','false');
+  }
+  function closeModal(){
+    const modal = $('#videoModal');
+    $('#modalPlayer').innerHTML = '';
+    modal.setAttribute('aria-hidden','true');
+  }
+
   async function loadVideos(){
     try{
-      const res = await fetch(`static/teams/${team.slug}/items.json`, {cache:'no-cache'});
-      const data = await res.json();
+      const slug = await getTeam();
+      const r = await fetch(url(`static/teams/${slug}/items.json`), {cache:'no-cache'});
+      if (!r.ok) throw new Error(`videos: items.json ${r.status}`);
+      const data = await r.json();
       const videos = (data.items || data || []).filter(i => (i.type||'').includes('video') || /youtube\.com|youtu\.be/.test(i.link||'')).slice(0,8);
-      const grid = $('#videoGrid');
+      const grid = document.getElementById('videoGrid');
       grid.innerHTML = videos.map(v => {
         const id = ytId(v.link||'');
         const thumb = v.image || (id ? `https://i.ytimg.com/vi/${id}/hqdefault.jpg` : '');
@@ -191,22 +233,13 @@
           </div>
         </article>`;
       }).join('');
-
-      // click -> modal
-      grid.addEventListener('click', (e) => {
-        const a = e.target.closest('a[data-yt]');
-        if(!a) return;
-        const id = a.getAttribute('data-yt');
-        if(!id) return;
-        e.preventDefault();
-        openModal(id);
-      });
-    }catch(e){}
+    }catch(e){
+      debug('videos: ' + e.message);
+    }
   }
-
-  function ytId(url){
+  function ytId(urlStr){
     try{
-      const u = new URL(url);
+      const u = new URL(urlStr);
       if (u.hostname.includes('youtu.be')) return u.pathname.slice(1);
       if (u.searchParams.get('v')) return u.searchParams.get('v');
       const m = /\/embed\/([^?]+)/.exec(u.pathname);
@@ -215,26 +248,10 @@
     }catch(_){ return null }
   }
 
-  function setupModal(){
-    const modal = $('#videoModal');
-    modal.addEventListener('click', (e) => {
-      if (e.target.hasAttribute('data-close')) closeModal();
-    });
-    document.addEventListener('keydown', (e) => {
-      if(e.key === 'Escape') closeModal();
-    });
+  async function init(){
+    bindNav();
+    setupModal();
+    await Promise.all([loadRankings(), loadSchedule(), loadItems(), loadVideos()]);
   }
-  function openModal(id){
-    const modal = $('#videoModal');
-    $('#modalPlayer').innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${id}?autoplay=1" title="YouTube video" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
-    modal.setAttribute('aria-hidden','false');
-  }
-  function closeModal(){
-    const modal = $('#videoModal');
-    $('#modalPlayer').innerHTML = '';
-    modal.setAttribute('aria-hidden','true');
-  }
-
-  function escapeHTML(s){ return (s||'').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m])); }
-
+  document.addEventListener('DOMContentLoaded', init);
 })();

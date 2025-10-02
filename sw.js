@@ -1,11 +1,11 @@
 
-const VERSION = 'v1.0.2';
+const VERSION = 'v1.0.3';
 const APP_PREFIX = 'sports-app';
 const PRECACHE = [
-  '/sports-app-project/',
-  '/sports-app-project/index.html',
-  '/sports-app-project/static/css/pro.css',
-  '/sports-app-project/static/js/pro.js',
+  './',
+  './index.html',
+  './static/css/pro.css',
+  './static/js/pro.js',
 ];
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(`${APP_PREFIX}-${VERSION}`).then(c=>c.addAll(PRECACHE)).then(()=>self.skipWaiting()));
@@ -22,10 +22,9 @@ self.addEventListener('activate', (e) => {
       })
   );
 });
-// Stale-while-revalidate for JSON
 self.addEventListener('fetch', (e) => {
   const url = new URL(e.request.url);
-  if (url.pathname.startsWith('/sports-app-project/static/') && url.pathname.endsWith('.json')){
+  if (url.pathname.includes('/static/') && url.pathname.endsWith('.json')){
     e.respondWith((async () => {
       const cacheName = `${APP_PREFIX}-json-${VERSION}`;
       const cache = await caches.open(cacheName);
@@ -38,7 +37,7 @@ self.addEventListener('fetch', (e) => {
     })());
     return;
   }
-  if (PRECACHE.includes(url.pathname)){
+  if (PRECACHE.some(p => url.pathname.endsWith(p.replace('./','/')))){
     e.respondWith(caches.match(e.request).then(resp => resp || fetch(e.request)));
   }
 });
