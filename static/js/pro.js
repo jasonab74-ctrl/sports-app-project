@@ -1,4 +1,4 @@
-/* App JS v1.9 — working tabs, featured carousel, search, quick links, schedule states, footer health */
+/* App JS v2.0 — featured carousel, search, quick links + insider link-cards, schedule states, footer health */
 
 const qs  = (s, el=document) => el.querySelector(s);
 const qsa = (s, el=document) => [...el.querySelectorAll(s)];
@@ -16,12 +16,11 @@ const paths = {
   schedule: 'static/schedule.json'
 };
 
-function decodeEntities(str){ if(!str) return ''; const t=document.createElement('textarea'); t.innerHTML=str; return t.value; }
 function safeJSON(url){ return fetch(url,{cache:'no-store'}).then(r=>r.ok?r.json():{}).catch(()=>({})); }
+function decodeEntities(str){ if(!str) return ''; const t=document.createElement('textarea'); t.innerHTML=str; return t.value; }
 
-/* ---------- helpers ---------- */
+/* ---------- Tabs & Search ---------- */
 function initTabs(){
-  // Ensure default visible
   qsa('.tab').forEach(sec => sec.classList.remove('visible'));
   qs('#news')?.classList.add('visible');
   qsa('.tabs .chip').forEach(b => b.classList.remove('active'));
@@ -33,9 +32,7 @@ function initTabs(){
       qsa('.tabs .chip').forEach(b=>b.classList.remove('active'));
       btn.classList.add('active');
       qsa('.tab').forEach(sec=>sec.classList.remove('visible'));
-      const active = qs('#'+tab);
-      if (active) active.classList.add('visible');
-      // scroll to content top on mobile
+      qs('#'+tab)?.classList.add('visible');
       const y = qs('#content')?.getBoundingClientRect().top + window.scrollY - 8;
       if (Number.isFinite(y)) window.scrollTo({top:y, behavior:'smooth'});
     }, {passive:true});
@@ -51,16 +48,18 @@ function initSearch(){
   box.addEventListener('input',()=>{ state.searchTerm=(box.value||'').toLowerCase(); renderAll(); });
 }
 
+/* ---------- Ticker ---------- */
 function renderTicker(items){
   const ticker=qs('#ticker'), track=qs('#ticker-track');
-  const list=(items||[]).filter(i=>i.url&&i.title).slice(0,18).map(i=>`<a href="${i.url}" target="_blank" rel="noopener">${decodeEntities(i.title)}</a>`);
+  const list=(items||[]).filter(i=>i.url&&i.title).slice(0,18)
+    .map(i=>`<a href="${i.url}" target="_blank" rel="noopener">${decodeEntities(i.title)}</a>`);
   if(list.length<3){ticker.classList.add('hidden');return;}
   ticker.classList.remove('hidden'); track.innerHTML=[...list,...list].join(' • ');
   const dur=Math.max(22,Math.min(55,Math.round(track.scrollWidth/64)));
   track.style.animation=`marquee ${dur}s linear infinite`;
 }
 
-/* ---------- card helpers ---------- */
+/* ---------- Cards ---------- */
 const FALLBACK_NEWS = 'static/img/fallback-news.svg';
 
 function prettySource(src){
@@ -119,16 +118,13 @@ function makeCard(item){
   return a;
 }
 
-/* ---------- grids / carousel ---------- */
+/* ---------- Grids / Carousel ---------- */
 function renderGrid(items, sel, initial=12){
   const grid=qs(sel); if(!grid) return;
   grid.innerHTML='';
   let shown=0;
 
-  if(!items.length){
-    grid.innerHTML='<div class="empty">No items.</div>';
-    return;
-  }
+  if(!items.length){ grid.innerHTML='<div class="empty">No items.</div>'; return; }
   const slice=(n)=>{ items.slice(shown,shown+n).forEach((it,idx)=>{ const c=makeCard(it); if(sel==='#video-grid'&&shown+idx<2)c.classList.add('hero'); grid.appendChild(c); }); shown+=n; };
   slice(Math.min(initial,items.length));
   if(shown<items.length){
@@ -146,7 +142,7 @@ function renderCarousel(items){
   el.style.display='';
 }
 
-/* ---------- widgets ---------- */
+/* ---------- Widgets ---------- */
 function renderRankings(w){
   const el=qs('#rankings-body'); if(!el) return;
   el.innerHTML='';
@@ -169,14 +165,64 @@ function renderSchedule(sch){
   el.innerHTML=html || '<div class="empty">No games found.</div>';
 }
 
+/* --- NEW: smart link-card renderers for Quick Links & Insider --- */
+function faviconFor(url, explicitIcon){
+  if(explicitIcon) return explicitIcon;
+  try{
+    const u = new URL(url);
+    return `https://www.google.com/s2/favicons?sz=64&domain=${u.hostname}`;
+  }catch{ return ''; }
+}
+function makeLinkCard(link){
+  const a = document.createElement('a');
+  a.className = 'link-card';
+  a.href = link.url;
+  a.target = '_blank';
+  a.rel = 'noopener noreferrer';
+
+  const icon = document.createElement('img');
+  icon.className = 'link-card__icon';
+  icon.alt = '';
+  icon.src = faviconFor(link.url, link.icon);
+
+  const text = document.createElement('div');
+  text.className = 'link-card__text';
+  const name = document.createElement('div');
+  name.className = 'link-card__name';
+  name.textContent = link.name || 'Link';
+
+  const note = document.createElement('div');
+  note.className = 'link-card__note';
+  note.textContent = link.note || '';
+
+  text.append(name, note);
+
+  const right = document.createElement('div');
+  right.className = 'link-card__right';
+
+  if(link.badge){
+    const b = document.createElement('span');
+    b.className = 'chip-badge';
+    b.textContent = link.badge;
+    right.appendChild(b);
+  }
+  const arr = document.createElement('span');
+  arr.className = 'link-card__chev';
+  arr.textContent = '↗';
+  right.appendChild(arr);
+
+  a.append(icon, text, right);
+  return a;
+}
+
 function renderQuickLinks(w){
   const el=qs('#quicklinks-body'); if(!el) return;
   el.innerHTML='';
   const links=w?.quick_links||[];
   if(!links.length){ el.innerHTML='<div class="empty">Add quick links in static/widgets.json.</div>'; return; }
-  const ul=document.createElement('ul'); ul.className='list';
-  links.forEach(l=>{ const li=document.createElement('li'); li.innerHTML=`<a href="${l.url}" target="_blank" rel="noopener">${l.name}</a><span>${l.note||''}</span>`; ul.appendChild(li); });
-  el.appendChild(ul);
+  const wrap = document.createElement('div'); wrap.className = 'link-list';
+  links.forEach(l=> wrap.appendChild(makeLinkCard(l)));
+  el.appendChild(wrap);
 }
 
 function renderInsider(w){
@@ -184,12 +230,12 @@ function renderInsider(w){
   el.innerHTML='';
   const links=w?.insider||[];
   if(!links.length){ el.innerHTML='<div class="empty">Add insider links in static/widgets.json.</div>'; return; }
-  const ul=document.createElement('ul'); ul.className='list';
-  links.forEach(l=>{ const li=document.createElement('li'); li.innerHTML=`<a href="${l.url}" target="_blank" rel="noopener">${l.name}</a><span>${l.note||''}</span>`; ul.appendChild(li); });
-  el.appendChild(ul);
+  const wrap = document.createElement('div'); wrap.className = 'link-list';
+  links.forEach(l=> wrap.appendChild(makeLinkCard(l)));
+  el.appendChild(wrap);
 }
 
-/* ---------- counts / render pipeline ---------- */
+/* ---------- Counts / Render pipeline ---------- */
 function updateChipCounts(items){
   const news = items.filter(i=>!i.is_video).length;
   const vids = items.filter(i=> i.is_video).length;
@@ -214,7 +260,7 @@ function renderAll(){
   updateChipCounts(items);
 }
 
-/* ---------- boot ---------- */
+/* ---------- Boot ---------- */
 async function boot(){
   // skeletons so it never looks empty while fetching
   qs('#news-grid').innerHTML  = '<div class="skel card"></div><div class="skel card"></div>';
@@ -236,22 +282,33 @@ async function boot(){
     const raw = (itemsJson.items||[]).map(i=>({...i,title:(i.title||'').replace(/<[^>]+>/g,'')}));
     state.items = raw;
 
-    // Ticker + main grids
     renderTicker(raw);
     renderAll();
 
-    // Widgets
     const widgets = widgetsAll[state.teamSlug] || widgetsAll.default || {};
     renderRankings(widgets);
     renderSchedule(scheduleAll[state.teamSlug] || scheduleAll);
     renderQuickLinks(widgets);
     renderInsider(widgets);
 
-    // Footer health
+    // Footer health: compute sources if not provided
     const foot=qs('.app-footer');
-    if(foot && itemsJson.generated_at){
-      const gen=new Date(itemsJson.generated_at);
-      foot.textContent = `Updated ${gen.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'})} • ${itemsJson.total_sources||'?'} sources`;
+    if(foot){
+      let srcCount = itemsJson.total_sources;
+      if(!srcCount){
+        try{
+          const set = new Set();
+          raw.forEach(i=>{
+            try{
+              const u = new URL(i.url||'');
+              set.add(u.hostname.replace(/^www\./,''));
+            }catch{}
+          });
+          srcCount = set.size || '?';
+        }catch{ srcCount = '?'; }
+      }
+      const gen = itemsJson.generated_at ? new Date(itemsJson.generated_at) : null;
+      foot.textContent = `Updated ${gen?gen.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}):'—'} • ${srcCount} sources`;
     }
   }catch(e){
     console.error(e);
