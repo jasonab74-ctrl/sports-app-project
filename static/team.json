@@ -1,5 +1,4 @@
 {
-  "default_team": "purdue-mbb",
   "teams": {
     "purdue-mbb": {
       "name": "Purdue Men's Basketball",
@@ -8,6 +7,16 @@
         "accent": "#cfb991",
         "bg": "#0b0f14",
         "card": "#121722"
+      }
+    },
+
+    "team-template": {
+      "name": "Your Team • Sport",
+      "logo": "static/logos/your-team.png",
+      "colors": {
+        "accent": "#ffcc00",
+        "bg": "#111111",
+        "card": "#222222"
       }
     }
   }
