@@ -53,11 +53,10 @@ body{
   background:none;
   padding:0;
   flex:0 0 auto;
-  transform: translateY(1px); /* subtle optical alignment */
+  transform: translateY(1px);
 }
 
 #site-title{
-  /* responsive clamp to avoid early truncation */
   font-size: clamp(18px, 3.8vw, 22px);
   font-weight:800;
   letter-spacing:-0.25px;
@@ -126,6 +125,8 @@ body{
 h2{margin:0 0 .6rem 0}
 .tab{display:none}
 .tab.visible{display:block}
+
+/* Grids */
 .grid{display:grid;gap:12px;grid-template-columns:1fr}
 @media(min-width:640px){.grid{grid-template-columns:1fr 1fr}}
 
@@ -158,6 +159,13 @@ a.card{color:inherit;text-decoration:none}
 .carousel .card{min-width:86%;scroll-snap-align:start}
 @media(min-width:980px){.carousel .card{min-width:55%}}
 
+/* VIDEO hero cards (first two) */
+.grid.video .card.hero .card__title{font-size:1.15rem}
+@media(min-width:640px){
+  .grid.video{grid-template-columns:1.4fr 1.4fr}
+  .grid.video .card{min-height:100%}
+}
+
 /* Widgets */
 .sidebar{display:grid;gap:1rem}
 .widget{background:#0e1522;border:1px solid var(--border);border-radius:16px;overflow:hidden}
@@ -173,6 +181,19 @@ a.card{color:inherit;text-decoration:none}
 @keyframes shimmer{0%{background-position:100% 0}100%{background-position:0 0}}
 .skel.card{height:220px;border-radius:16px}
 .empty{color:var(--muted);font-size:.95rem;padding:1rem}
+
+/* Load more */
+.load-more{
+  display:inline-block;
+  margin:.25rem 0 1rem;
+  padding:.6rem 1rem;
+  border-radius:999px;
+  background:#0f1626;
+  color:var(--text);
+  border:1px solid #1d2738;
+  cursor:pointer;
+}
+.load-more:hover{background:#121b2d}
 
 /* Footer */
 .app-footer{padding:2rem 1rem;text-align:center;color:var(--muted)}
