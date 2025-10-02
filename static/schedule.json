@@ -2,64 +2,28 @@
   "purdue-mbb": {
     "games": [
       {
-        "date": "2025-09-20T00:00:00Z",
-        "opponent": "Butler",
+        "date": "2025-01-05T00:00:00Z",
+        "opponent": "Indiana",
         "home": true,
         "venue": "Mackey Arena",
-        "tv": "",
+        "status": "final",
         "result": "W",
-        "score": "82–70",
-        "boxscore_url": ""
+        "score": "84–76"
       },
       {
-        "date": "2025-09-25T00:00:00Z",
-        "opponent": "Notre Dame",
+        "date": "2025-01-10T00:00:00Z",
+        "opponent": "Michigan State",
         "home": false,
-        "venue": "Purcell Pavilion",
-        "tv": "",
-        "result": "L",
-        "score": "68–72",
-        "boxscore_url": ""
+        "venue": "Breslin Center",
+        "status": "live",
+        "live_url": "https://www.espn.com/mens-college-basketball/game/_/id/401687529"
       },
       {
-        "date": "2025-09-28T00:00:00Z",
-        "opponent": "Indiana State",
+        "date": "2025-01-15T00:00:00Z",
+        "opponent": "Illinois",
         "home": true,
         "venue": "Mackey Arena",
-        "tv": "",
-        "result": "W",
-        "score": "88–61",
-        "boxscore_url": ""
-      },
-      {
-        "date": "2025-10-15T00:00:00Z",
-        "opponent": "Exhibition",
-        "home": true,
-        "venue": "Mackey Arena",
-        "tv": "BTN+",
-        "result": "",
-        "score": "",
-        "boxscore_url": ""
-      },
-      {
-        "date": "2025-11-11T00:00:00Z",
-        "opponent": "Marquette",
-        "home": false,
-        "venue": "Fiserv Forum",
-        "tv": "FS1",
-        "result": "",
-        "score": "",
-        "boxscore_url": ""
-      },
-      {
-        "date": "2025-11-18T00:00:00Z",
-        "opponent": "Indiana State",
-        "home": true,
-        "venue": "Mackey Arena",
-        "tv": "BTN",
-        "result": "",
-        "score": "",
-        "boxscore_url": ""
+        "status": "upcoming"
       }
     ]
   }
