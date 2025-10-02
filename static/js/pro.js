@@ -72,30 +72,41 @@ function renderRankings(w){
   show(el, !(none(w?.ap_rank)&&none(w?.kenpom)&&none(w?.net)));
 }
 
-/* === Schedule: show 3 most recent (past) games === */
+/* === Schedule: Last 3 Results + Next 3 Games === */
 function renderSchedule(sch){
   const el=qs('#schedule-body');el.innerHTML='';
   const games=sch?.games||[];
-  if(!games.length){el.innerHTML='<div class="empty">No games yet.</div>'; show(el,false); return;}
+  if(!games.length){el.innerHTML='<div class="empty">No games scheduled.</div>'; show(el,false); return;}
 
   const now = new Date();
-  const past = games
-    .filter(g => new Date(g.date) <= now)
-    .sort((a,b) => new Date(b.date) - new Date(a.date))
-    .slice(0,3);
+  const past = games.filter(g => new Date(g.date) <= now).sort((a,b) => new Date(b.date)-new Date(a.date)).slice(0,3);
+  const upcoming = games.filter(g => new Date(g.date) > now).sort((a,b) => new Date(a.date)-new Date(b.date)).slice(0,3);
 
-  if(!past.length){el.innerHTML='<div class="empty">No completed games yet.</div>'; show(el,false); return;}
+  let html = "";
 
-  const ul=document.createElement('ul'); ul.className='list';
-  past.forEach(g=>{
-    const d=new Date(g.date);
-    const left = `${d.toLocaleDateString(undefined,{month:'short',day:'numeric'})} • ${g.opponent}`;
-    const badge = (g.result && g.score) ? `${g.result} • ${g.score}` : (g.venue || (g.home ? 'Home' : 'Away') || '');
-    const li=document.createElement('li');
-    li.innerHTML=`<span>${left}</span><span>${badge}</span>`;
-    ul.appendChild(li);
-  });
-  el.appendChild(ul);
+  if(past.length){
+    html += "<strong>Last 3 Results</strong><ul class='list'>";
+    past.forEach(g=>{
+      const d=new Date(g.date);
+      const left = `${d.toLocaleDateString(undefined,{month:'short',day:'numeric'})} • ${g.opponent}`;
+      const badge = (g.result && g.score) ? `${g.result} • ${g.score}` : (g.venue||"");
+      html += `<li><span>${left}</span><span>${badge}</span></li>`;
+    });
+    html += "</ul>";
+  }
+
+  if(upcoming.length){
+    html += "<strong>Next 3 Games</strong><ul class='list'>";
+    upcoming.forEach(g=>{
+      const d=new Date(g.date);
+      const left = `${d.toLocaleDateString(undefined,{month:'short',day:'numeric'})} • ${g.opponent}`;
+      const badge = g.venue|| (g.home ? "Home" : "Away") || "";
+      html += `<li><span>${left}</span><span>${badge}</span></li>`;
+    });
+    html += "</ul>";
+  }
+
+  el.innerHTML = html || '<div class="empty">No games found.</div>';
   show(el,true);
 }
 
