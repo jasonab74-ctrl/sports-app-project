@@ -72,14 +72,31 @@ function renderRankings(w){
   show(el, !(none(w?.ap_rank)&&none(w?.kenpom)&&none(w?.net)));
 }
 
+/* === Schedule: show 3 most recent (past) games === */
 function renderSchedule(sch){
   const el=qs('#schedule-body');el.innerHTML='';
   const games=sch?.games||[];
-  if(!games.length){el.innerHTML='<div class="empty">No upcoming games.</div>'; show(el,false); return;}
-  const ul=document.createElement('ul');ul.className='list';
-  games.slice(0,6).forEach(g=>{const d=new Date(g.date);const li=document.createElement('li');li.innerHTML=`<span>${d.toLocaleDateString(undefined,{month:'short',day:'numeric'})} • ${g.opponent}</span><span>${g.venue||''}</span>`;ul.appendChild(li);});
+  if(!games.length){el.innerHTML='<div class="empty">No games yet.</div>'; show(el,false); return;}
+
+  const now = new Date();
+  const past = games
+    .filter(g => new Date(g.date) <= now)
+    .sort((a,b) => new Date(b.date) - new Date(a.date))
+    .slice(0,3);
+
+  if(!past.length){el.innerHTML='<div class="empty">No completed games yet.</div>'; show(el,false); return;}
+
+  const ul=document.createElement('ul'); ul.className='list';
+  past.forEach(g=>{
+    const d=new Date(g.date);
+    const left = `${d.toLocaleDateString(undefined,{month:'short',day:'numeric'})} • ${g.opponent}`;
+    const badge = (g.result && g.score) ? `${g.result} • ${g.score}` : (g.venue || (g.home ? 'Home' : 'Away') || '');
+    const li=document.createElement('li');
+    li.innerHTML=`<span>${left}</span><span>${badge}</span>`;
+    ul.appendChild(li);
+  });
   el.appendChild(ul);
-  show(el, true);
+  show(el,true);
 }
 
 function renderNIL(w){
