@@ -1,8 +1,128 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Purdue Men's Basketball — Team Hub Pro</title>
-<link rel="stylesheet" href="static/css/pro.css">
-<link rel="preload" href="static/js/pro.js" as="script">
-<link rel="preconnect" href="https://i.ytimg.com" crossorigin>
-<link rel="preconnect" href="https://www.youtube-nocookie.com" crossorigin>
-</head><body> ... (full content from previous message) ... <script src="static/js/pro.js"></script></body></html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Purdue Men's Basketball — Team Hub</title>
+  <meta name="description" content="Purdue Men’s Basketball hub: headlines, videos, insider links, rankings, schedule." />
+  <link rel="stylesheet" href="static/css/pro.css" />
+  <link rel="preconnect" href="https://i.ytimg.com" crossorigin />
+  <link rel="preconnect" href="https://www.youtube-nocookie.com" crossorigin />
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="wrap bar">
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu" aria-controls="mobileDrawer" aria-expanded="false">☰</button>
+      <div class="brand">
+        <img id="logo" alt="Team Logo" />
+        <h1 id="wordmark">Team Hub</h1>
+      </div>
+      <nav class="topnav" aria-label="Primary">
+        <a href="#news">News</a>
+        <a href="#videos">Videos</a>
+        <a href="#rankings">Rankings</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#nil">NIL</a>
+      </nav>
+    </div>
+    <div class="ticker" id="ticker" aria-live="polite"></div>
+  </header>
+
+  <!-- Drawer -->
+  <aside id="mobileDrawer" class="drawer" aria-hidden="true">
+    <div class="drawer-head">
+      <button id="drawerClose" aria-label="Close menu">✕</button>
+      <div class="drawer-brand">
+        <img id="drawerLogo" alt="Team Logo" />
+        <strong id="drawerWordmark">Purdue</strong>
+      </div>
+    </div>
+    <nav class="drawer-nav" id="drawerNav" aria-label="Drawer links"></nav>
+  </aside>
+
+  <!-- Main -->
+  <main class="wrap">
+    <!-- Hero -->
+    <section class="panel" id="hero">
+      <div class="head"><h2>Top Headlines</h2></div>
+      <div class="carousel edge-fade" id="headlineCarousel" role="region" aria-label="Headline highlights"></div>
+    </section>
+
+    <section class="layout">
+      <div class="content">
+        <section class="panel" id="news">
+          <div class="head subnav">
+            <h3>Latest Headlines</h3>
+            <div class="links" id="filterBar">
+              <button class="chip is-active" data-filter="all">All</button>
+              <button class="chip" data-filter="official">Official</button>
+              <button class="chip" data-filter="insider">Insiders</button>
+              <button class="chip" data-filter="national">National</button>
+            </div>
+          </div>
+          <div class="cards" id="newsList"></div>
+        </section>
+
+        <section class="panel" id="videos">
+          <div class="head subnav">
+            <h3>Latest Videos</h3>
+            <div class="links" id="videoFilterBar">
+              <button class="chip is-active" data-filter="all">All</button>
+              <button class="chip" data-filter="official">Official</button>
+              <button class="chip" data-filter="insider">Insiders</button>
+            </div>
+          </div>
+          <div class="cards" id="videoList"></div>
+        </section>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <section class="panel widget" id="rankings">
+          <div class="head"><h3>Rankings</h3></div>
+          <div class="body">
+            <div class="rank-row"><strong>AP Top 25:</strong> <a id="apLink" href="https://www.espn.com/mens-college-basketball/rankings" target="_blank" rel="noopener">View</a></div>
+            <div class="rank-row"><strong>KenPom:</strong> <a id="kpLink" href="https://kenpom.com/" target="_blank" rel="noopener">View</a></div>
+          </div>
+        </section>
+
+        <section class="panel widget">
+          <div class="head"><h3>Upcoming Schedule</h3></div>
+          <div class="body"><ul class="list" id="scheduleList"></ul></div>
+        </section>
+
+        <section class="panel widget">
+          <div class="head"><h3>Insider / Beat Links</h3></div>
+          <div class="body"><ul class="list" id="insiderList"></ul></div>
+        </section>
+
+        <section class="panel widget" id="nil">
+          <div class="head"><h3>NIL Leaderboard</h3></div>
+          <div class="body"><ol class="nil-list" id="nilList"></ol></div>
+        </section>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <span>© Team Hub — Purdue Men’s Basketball</span>
+      <span id="sourceCount" class="muted" style="float:right">Updated • 0 sources</span>
+    </div>
+  </footer>
+
+  <!-- Video Modal -->
+  <div id="videoModal" class="modal" aria-hidden="true" role="dialog" aria-label="Video player">
+    <div class="modal__backdrop" id="modalBackdrop"></div>
+    <div class="modal__dialog" role="document">
+      <button class="modal__close" id="modalClose" aria-label="Close video">✕</button>
+      <div class="modal__media">
+        <iframe id="modalPlayer" title="Video player" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script src="static/js/pro.js"></script>
+</body>
+</html>
