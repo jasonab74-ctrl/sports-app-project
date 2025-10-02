@@ -1,8 +1,56 @@
-{
-  "links": [
-    { "label": "Hammer & Rails", "href": "https://www.hammerandrails.com/", "note": "SB Nation — Purdue" },
-    { "label": "Gold and Black", "href": "https://purdue.rivals.com/", "note": "Rivals — subscription" },
-    { "label": "247Sports Purdue", "href": "https://247sports.com/college/purdue/", "note": "Team page" },
-    { "label": "Journal & Courier", "href": "https://www.jconline.com/sports/purdue/", "note": "Local coverage" }
-  ]
-}
+[
+  {
+    "name": "Hammer & Rails",
+    "url": "https://www.hammerandrails.com/",
+    "type": "insiders",
+    "pay": false,
+    "latest_headline": "Scout’s take: What makes Purdue a nightmare matchup",
+    "latest_url": "https://www.hammerandrails.com/...",
+    "updated_at": "2025-10-02T18:00:00Z"
+  },
+  {
+    "name": "Gold and Black",
+    "url": "https://purdue.rivals.com/",
+    "type": "insiders",
+    "pay": true,
+    "latest_headline": "Film Room: PnR counters for 2025–26",
+    "latest_url": "https://purdue.rivals.com/...",
+    "updated_at": "2025-10-02T17:00:00Z"
+  },
+  {
+    "name": "247Sports Purdue",
+    "url": "https://247sports.com/college/purdue/",
+    "type": "insiders",
+    "pay": true,
+    "latest_headline": "Recruiting board resets after fall visits",
+    "latest_url": "https://247sports.com/...",
+    "updated_at": "2025-10-02T16:30:00Z"
+  },
+  {
+    "name": "Journal & Courier",
+    "url": "https://www.jconline.com/sports/purdue/",
+    "type": "insiders",
+    "pay": false,
+    "latest_headline": "Coach Painter on lineup experimentation",
+    "latest_url": "https://www.jconline.com/...",
+    "updated_at": "2025-10-02T15:10:00Z"
+  },
+  {
+    "name": "SB Nation — Purdue",
+    "url": "https://www.sbnation.com/college-basketball/teams/purdue-boilermakers",
+    "type": "insiders",
+    "pay": false,
+    "latest_headline": "Summer highlights & early storylines",
+    "latest_url": "https://www.sbnation.com/...",
+    "updated_at": "2025-10-02T14:50:00Z"
+  },
+  {
+    "name": "Team page",
+    "url": "https://purduesports.com/sports/mens-basketball",
+    "type": "official",
+    "pay": false,
+    "latest_headline": "Purdue Announces 2025–26 Non-Conference Slate",
+    "latest_url": "https://purduesports.com/...",
+    "updated_at": "2025-09-29T20:00:00Z"
+  }
+]
