@@ -1,6 +1,17 @@
 {
   "purdue-mbb": {
-    "feeds": [],
-    "youtube_channels": []
+    "max_items": 60,
+    "max_per_source": 20,
+    "max_age_days": 21,
+    "feeds": [
+      "https://www.hammerandrails.com/rss/index.xml",
+      "https://purduesports.com/rss?path=mbball",
+      "https://www.si.com/college/purdue/.rss",
+      "https://www.on3.com/teams/purdue-boilermakers/news/feed/"
+    ],
+    "youtube_channels": [
+      /* Optional: add channel IDs later if you want video posts via RSS:
+         e.g. "UCxxxx..." (Official Purdue Athletics, Field of 68, etc.) */
+    ]
   }
 }
