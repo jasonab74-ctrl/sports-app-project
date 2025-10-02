@@ -1,1 +1,72 @@
-... full CSS from assistant response ...
+:root{
+  --bg:#0b0b0b; --card:#151516; --ink:#f7f7f7; --muted:#a9acb4;
+  --brand:#CEB888; --brand2:#000000; --chip:#24262a; --chip-on:#CEB888;
+}
+*{box-sizing:border-box} html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans","Apple Color Emoji","Segoe UI Emoji",sans-serif}
+.wrap{max-width:1100px;margin:0 auto;padding:0 14px}
+.muted{color:var(--muted)}
+a{color:var(--brand);text-decoration:none} a:hover{text-decoration:underline}
+
+/* Header */
+.header{position:sticky;top:0;background:#0f1012;border-bottom:1px solid #1e2126;z-index:20}
+.header .bar{display:flex;align-items:center;gap:12px;padding:10px 0}
+.brand{display:flex;align-items:center;gap:10px}
+#logo,#drawerLogo{width:36px;height:36px;object-fit:contain;filter:drop-shadow(0 0 0.25rem #0008)}
+#wordmark{font-size:18px;margin:0;letter-spacing:.5px}
+.topnav{margin-left:auto;display:none;gap:14px}
+.topnav a{padding:6px 8px;border-radius:6px}
+@media(min-width:900px){.topnav{display:flex}}
+.mobile-menu-btn{font-size:20px;background:#131419;border:1px solid #262a31;color:var(--ink);border-radius:8px;padding:6px 10px}
+
+/* Drawer */
+.drawer{position:fixed;inset:0 0 0 auto;width:86%;max-width:360px;background:#0f1012;border-left:1px solid #1e2126;transform:translateX(100%);transition:.25s;z-index:30}
+.drawer.open{transform:translateX(0)}
+.drawer-head{display:flex;align-items:center;justify-content:space-between;padding:12px;border-bottom:1px solid #1e2126}
+.drawer-nav{display:grid;gap:6px;padding:12px}
+.drawer-nav a{display:block;background:#121319;border:1px solid #22252c;padding:10px;border-radius:8px}
+
+/* Ticker */
+.ticker{white-space:nowrap;overflow:auto;scrollbar-width:none;border-top:1px solid #1e2126;border-bottom:1px solid #1e2126;background:#111216}
+.ticker::-webkit-scrollbar{display:none}
+.ticker .tick{display:inline-block;padding:10px 18px;border-right:1px solid #20242a}
+
+/* Layout */
+.layout{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:960px){.layout{grid-template-columns:2fr 1fr}}
+.content{display:grid;gap:16px}
+.sidebar{display:grid;gap:16px}
+.panel{background:var(--card);border:1px solid #1e2126;border-radius:12px;overflow:hidden}
+.panel .head{padding:12px 14px;border-bottom:1px solid #1e2126;background:#121319}
+.panel .head h2,.panel .head h3{margin:0}
+.panel .body{padding:12px 14px}
+
+/* Chips */
+.subnav{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.chip{background:var(--chip);color:var(--ink);border:1px solid #2a2e36;border-radius:999px;padding:6px 10px;cursor:pointer}
+.chip.is-active{background:var(--chip-on);color:#000;border-color:#000}
+
+/* Cards */
+.cards{display:grid;grid-template-columns:1fr;gap:12px;padding:12px}
+@media(min-width:720px){.cards{grid-template-columns:1fr 1fr}}
+.card{display:grid;grid-template-columns:120px 1fr;gap:12px;background:#121319;border:1px solid #23262e;border-radius:10px;overflow:hidden}
+.card img{width:100%;height:100%;object-fit:cover;background:#0f0f10}
+.card .meta{padding:10px 10px 10px 0}
+.card .src{font-size:12px;color:var(--muted)}
+.card h4{margin:4px 0 8px 0;line-height:1.25}
+.tag{display:inline-block;font-size:11px;padding:2px 6px;border-radius:6px;border:1px solid #2a2f37;margin-right:6px}
+.tag.official{border-color:#72ffa0;color:#72ffa0}
+.tag.insider{border-color:#f7d774;color:#f7d774}
+.tag.national{border-color:#8ebdff;color:#8ebdff}
+
+/* Carousel */
+.carousel{display:grid;grid-auto-flow:column;grid-auto-columns:80%;gap:12px;overflow:auto;scroll-snap-type:x mandatory;padding:12px}
+.carousel .hero-card{scroll-snap-align:start;display:grid;grid-template-columns:220px 1fr;gap:12px;min-height:148px;background:#121319;border:1px solid #23262e;border-radius:10px;overflow:hidden}
+.hero-card img{width:100%;height:100%;object-fit:cover}
+.hero-card h3{margin:6px 0}
+
+/* Lists */
+.list{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.list li{display:flex;justify-content:space-between;gap:10px;border:1px solid #23262e;background:#121319;border-radius:8px;padding:8px 10px}
+.nil-list{list-style:decimal;padding-left:20px;margin:0;display:grid;gap:6px}
+.footer{border-top:1px solid #1e2126;margin-top:20px}
+.footer .wrap{display:flex;justify-content:space-between;align-items:center;padding:14px 0}

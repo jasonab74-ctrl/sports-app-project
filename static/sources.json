@@ -1,1 +1,61 @@
-{ "sources": [ { "name": "Purdue Athletics", "type": "news", "url": "https://purduesports.com/rss.aspx?path=mbball", "trust": "official" } ], "keywords": ["Purdue","Boilermakers"] }
+{
+  "sources": [
+    {
+      "name": "Purdue Athletics",
+      "type": "news",
+      "url": "https://purduesports.com/rss.aspx?path=mbball",
+      "trust": "official"
+    },
+    {
+      "name": "ESPN College Basketball",
+      "type": "news",
+      "url": "https://www.espn.com/espn/rss/ncb/news",
+      "trust": "national"
+    },
+    {
+      "name": "CBS Sports CBB",
+      "type": "news",
+      "url": "https://www.cbssports.com/rss/headlines/college-basketball/",
+      "trust": "national"
+    },
+    {
+      "name": "The Athletic CBB",
+      "type": "news",
+      "url": "https://theathletic.com/college-basketball/feed/",
+      "trust": "national"
+    },
+    {
+      "name": "Yahoo CBB",
+      "type": "news",
+      "url": "https://sports.yahoo.com/college-basketball/rss/",
+      "trust": "national"
+    },
+    {
+      "name": "Sports Illustrated CBB",
+      "type": "news",
+      "url": "https://www.si.com/college/rss",
+      "trust": "national"
+    },
+    {
+      "name": "BTN Purdue",
+      "type": "video",
+      "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCc3yq7x8sUB4U1bQlb8vZ7w",
+      "trust": "official"
+    },
+    {
+      "name": "PurdueSports YouTube",
+      "type": "video",
+      "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UC4fM0vJU0zbfztR9vCsq0hA",
+      "trust": "official"
+    }
+  ],
+  "keywords": [
+    "Purdue",
+    "Boilermakers",
+    "Painter",
+    "Mackey",
+    "Edey",
+    "Boilerball",
+    "MBB"
+  ]
+}

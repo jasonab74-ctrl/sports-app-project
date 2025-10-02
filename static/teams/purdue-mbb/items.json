@@ -1,1 +1,124 @@
-{ "items": [ { "type":"news", "source":"Purdue Athletics", "trust":"official", "title":"Purdue Announces 2025–26 Non-Conference Slate", "link":"https://purduesports.com/", "date":"2025-09-28", "summary":"Boilermakers release early dates and key neutral-site games.", "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Mackey_Arena_2016.jpg/640px-Mackey_Arena_2016.jpg" } ] }
+{
+  "items": [
+    {
+      "type": "news",
+      "source": "Purdue Athletics",
+      "trust": "official",
+      "title": "Purdue Announces 2025–26 Non-Conference Slate",
+      "link": "https://purduesports.com/",
+      "date": "2025-09-28",
+      "summary": "Boilermakers release early dates and key neutral-site games.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Mackey_Arena_2016.jpg/640px-Mackey_Arena_2016.jpg"
+    },
+    {
+      "type": "news",
+      "source": "Hammer & Rails",
+      "trust": "insider",
+      "title": "Early Rotation Thoughts for 2025–26",
+      "link": "https://www.hammerandrails.com/",
+      "date": "2025-09-30",
+      "summary": "How the depth chart could shake out this fall.",
+      "image": null
+    },
+    {
+      "type": "news",
+      "source": "ESPN College Basketball",
+      "trust": "national",
+      "title": "Way-Too-Early Top 25: Where Purdue lands entering November",
+      "link": "https://www.espn.com/mens-college-basketball/",
+      "date": "2025-10-01",
+      "summary": "National look at contenders and returning cores.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Mackey_Arena_2016.jpg/640px-Mackey_Arena_2016.jpg"
+    },
+    {
+      "type": "video",
+      "source": "BTN Purdue",
+      "trust": "official",
+      "title": "Practice Highlights — First Week",
+      "link": "https://www.youtube.com/",
+      "date": "2025-09-29",
+      "summary": "Early looks from the gym.",
+      "image": "https://i.ytimg.com/vi/2vjPBrBU-TM/maxresdefault.jpg"
+    },
+    {
+      "type": "news",
+      "source": "CBS Sports CBB",
+      "trust": "national",
+      "title": "Big Ten preview: tiers, X-factors, and POY race",
+      "link": "https://www.cbssports.com/college-basketball/",
+      "date": "2025-09-29",
+      "summary": "How the league stacks up and where Purdue fits.",
+      "image": null
+    },
+    {
+      "type": "news",
+      "source": "The Athletic CBB",
+      "trust": "national",
+      "title": "Scout’s take: What makes Purdue a nightmare matchup",
+      "link": "https://theathletic.com/college-basketball/",
+      "date": "2025-10-01",
+      "summary": "Scheme notes and matchups, subscription.",
+      "image": null
+    },
+    {
+      "type": "news",
+      "source": "Yahoo CBB",
+      "trust": "national",
+      "title": "Big Ten storylines to watch",
+      "link": "https://sports.yahoo.com/college-basketball/",
+      "date": "2025-09-27",
+      "summary": "Non-conference openers and rivalry dates to circle.",
+      "image": null
+    },
+    {
+      "type": "video",
+      "source": "PurdueSports YouTube",
+      "trust": "official",
+      "title": "Mic’d Up: Preseason Workouts",
+      "link": "https://www.youtube.com/",
+      "date": "2025-09-28",
+      "summary": "Behind-the-scenes with the staff.",
+      "image": "https://i.ytimg.com/vi/2vjPBrBU-TM/maxresdefault.jpg"
+    },
+    {
+      "type": "news",
+      "source": "Sports Illustrated CBB",
+      "trust": "national",
+      "title": "AP Poll movers and what it means for Purdue",
+      "link": "https://www.si.com/college/",
+      "date": "2025-09-30",
+      "summary": "Context for early polls and predictive metrics.",
+      "image": null
+    },
+    {
+      "type": "news",
+      "source": "Journal & Courier",
+      "trust": "insider",
+      "title": "Coach Painter on lineup experimentation",
+      "link": "https://www.jconline.com/sports/purdue/",
+      "date": "2025-09-29",
+      "summary": "Local notes from the latest availability.",
+      "image": null
+    },
+    {
+      "type": "news",
+      "source": "247Sports Purdue",
+      "trust": "insider",
+      "title": "Recruiting board resets after fall visits",
+      "link": "https://247sports.com/college/purdue/",
+      "date": "2025-09-30",
+      "summary": "How priorities are changing heading into November.",
+      "image": null
+    },
+    {
+      "type": "news",
+      "source": "Gold and Black",
+      "trust": "insider",
+      "title": "Film Room: PnR counters for 2025–26",
+      "link": "https://purdue.rivals.com/",
+      "date": "2025-10-01",
+      "summary": "Members-only breakdown (headlines only).",
+      "image": null
+    }
+  ]
+}
