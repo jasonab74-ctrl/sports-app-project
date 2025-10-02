@@ -1,0 +1,13 @@
+{
+  "teams": {
+    "your-slug-here": {
+      "name": "Your Team • Sport",
+      "logo": "static/logos/your-team.png",
+      "colors": {
+        "accent": "#cfb991",
+        "bg": "#0b0f14",
+        "card": "#121722"
+      }
+    }
+  }
+}
