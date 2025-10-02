@@ -4,38 +4,51 @@
     "kenpom": 2,
     "net": 4,
 
-    "nil": [],
-
-    "insider": [
+    "quick_links": [
       {
         "name": "Purdue Athletics (MBB)",
         "url": "https://purduesports.com/sports/mens-basketball",
-        "note": "Official team hub"
+        "note": "Official team hub",
+        "badge": "Official"
       },
       {
         "name": "Schedule & Box Scores",
         "url": "https://purduesports.com/sports/mens-basketball/schedule",
-        "note": "Official schedule"
+        "note": "Dates, results, stats",
+        "badge": "Schedule"
       },
       {
         "name": "Roster",
         "url": "https://purduesports.com/sports/mens-basketball/roster",
-        "note": "Players & bios"
+        "note": "Players & bios",
+        "badge": "Roster"
       },
       {
         "name": "Tickets",
         "url": "https://purduesports.com/sports/2020/7/20/tickets-mbb-index.aspx",
-        "note": "Official tickets"
-      },
+        "note": "Official tickets",
+        "badge": "Tickets"
+      }
+    ],
+
+    "insider": [
       {
         "name": "GoldandBlack.com",
         "url": "https://goldandblack.com/",
-        "note": "Premium recruiting + team coverage"
+        "note": "Premium recruiting + coverage",
+        "badge": "Premium"
       },
       {
         "name": "Hammer & Rails",
         "url": "https://www.hammerandrails.com/",
-        "note": "Community & analysis"
+        "note": "Community & analysis",
+        "badge": "Community"
+      },
+      {
+        "name": "Purdue Athletics News",
+        "url": "https://purduesports.com/news",
+        "note": "Official releases",
+        "badge": "Official"
       }
     ]
   },
@@ -44,7 +57,7 @@
     "ap_rank": "—",
     "kenpom": "—",
     "net": "—",
-    "nil": [],
+    "quick_links": [],
     "insider": []
   }
 }
