@@ -1,98 +1,98 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Sports App Project — Team Hub</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Team Hub</title>
 
-  <!-- Theme + PWA -->
-  <meta name="theme-color" content="#0b0f14" />
-  <link rel="manifest" href="manifest.webmanifest" />
-  <link rel="icon" href="static/icons/favicon.svg" type="image/svg+xml"/>
-
-  <!-- Share / SEO -->
-  <meta name="description" content="One-stop Purdue Men's Basketball hub — news, videos, rankings, schedule, NIL and insider links." />
-  <meta property="og:title" content="Purdue Men's Basketball — Team Hub" />
-  <meta property="og:description" content="Everything in one place: news, videos, rankings, schedule, NIL, insider." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://jasonab74-ctrl.github.io/sports-app-project/" />
-  <meta property="og:image" content="https://jasonab74-ctrl.github.io/sports-app-project/static/og/cover.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <link rel="canonical" href="https://jasonab74-ctrl.github.io/sports-app-project/" />
-
-  <!-- Styles -->
+  <link rel="icon" href="static/logos/purdue-mbb.png" />
+  <link rel="preload" href="static/css/pro.css" as="style" />
   <link rel="stylesheet" href="static/css/pro.css" />
+  <meta name="theme-color" content="#0b0f14" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Team Hub" />
+  <meta property="og:image" content="static/img/fallback-news.svg" />
 </head>
 <body>
-  <header class="app-header">
-    <img id="team-logo" class="team-logo" alt="Team Logo" src="" />
+  <!-- Header -->
+  <header class="app-header" role="banner">
+    <img id="team-logo" class="team-logo" alt="Team Logo" src="static/logos/purdue-mbb.png" />
     <h1 id="site-title">Team Hub</h1>
-    <button id="refresh" class="pill-btn" aria-label="Refresh">Refresh</button>
+    <button id="refresh" class="pill-btn" type="button" aria-label="Refresh">Refresh</button>
   </header>
 
+  <!-- Tabs -->
   <nav class="tabs" aria-label="Sections">
     <button class="chip active" data-tab="news">News</button>
     <button class="chip" data-tab="videos">Videos</button>
     <button class="chip" data-tab="rankings">Rankings</button>
     <button class="chip" data-tab="schedule">Schedule</button>
-    <button class="chip" data-tab="nil">NIL</button>
     <button class="chip" data-tab="insider">Insider</button>
   </nav>
 
-  <section id="ticker" class="ticker" aria-label="Top headlines">
-    <div class="ticker__track" id="ticker-track"></div>
-  </section>
+  <!-- Headline ticker -->
+  <div id="ticker" class="ticker hidden" aria-live="polite">
+    <div id="ticker-track" class="ticker__track"></div>
+  </div>
 
+  <!-- Content -->
   <main id="content">
-    <section id="news" class="tab visible">
-      <h2>Latest Headlines</h2>
-      <div id="carousel" class="carousel" aria-label="Headline carousel"></div>
-      <div id="news-grid" class="grid"></div>
+    <!-- LEFT: main feed -->
+    <section id="main-col">
+      <section id="news" class="tab visible" aria-labelledby="news-tab">
+        <h2>Latest Headlines</h2>
+        <div id="carousel" class="carousel" aria-label="Featured"></div>
+        <div id="news-grid" class="grid" aria-live="polite"></div>
+      </section>
+
+      <section id="videos" class="tab" aria-labelledby="videos-tab">
+        <h2>Latest Videos</h2>
+        <div id="video-grid" class="grid" aria-live="polite"></div>
+      </section>
+
+      <!-- Informational tabs (scroll users to sidebar widgets) -->
+      <section id="rankings" class="tab" aria-labelledby="rankings-tab">
+        <h2>Rankings &amp; Analytics</h2>
+        <p class="empty">See rankings in the right sidebar.</p>
+      </section>
+
+      <section id="schedule" class="tab" aria-labelledby="schedule-tab">
+        <h2>Schedule</h2>
+        <p class="empty">See schedule in the right sidebar.</p>
+      </section>
+
+      <section id="insider" class="tab" aria-labelledby="insider-tab">
+        <h2>Insider &amp; Beat Writers</h2>
+        <p class="empty">See insider links in the right sidebar.</p>
+      </section>
     </section>
 
-    <section id="videos" class="tab">
-      <h2>Latest Videos</h2>
-      <div id="video-grid" class="grid"></div>
-    </section>
-
-    <aside class="sidebar">
-      <section id="rankings" class="widget">
-        <h3>Rankings & Analytics</h3>
+    <!-- RIGHT: widgets -->
+    <aside class="sidebar" aria-label="Team widgets">
+      <section class="widget" aria-labelledby="rk-title">
+        <h3 id="rk-title">Rankings &amp; Analytics</h3>
         <div id="rankings-body" class="widget-body"></div>
       </section>
 
-      <section id="schedule" class="widget">
-        <h3>Schedule</h3>
+      <section class="widget" aria-labelledby="sch-title">
+        <h3 id="sch-title">Schedule</h3>
         <div id="schedule-body" class="widget-body"></div>
       </section>
 
-      <section id="nil" class="widget">
-        <h3>NIL Leaderboard</h3>
-        <div id="nil-body" class="widget-body"></div>
+      <section class="widget" aria-labelledby="ql-title">
+        <h3 id="ql-title">Quick Links</h3>
+        <div id="quicklinks-body" class="widget-body"></div>
       </section>
 
-      <section id="insider" class="widget">
-        <h3>Insider & Beat Writers</h3>
+      <section class="widget" aria-labelledby="ins-title">
+        <h3 id="ins-title">Insider &amp; Beat Writers</h3>
         <div id="insider-body" class="widget-body"></div>
       </section>
     </aside>
   </main>
 
-  <footer class="app-footer">
-    <small>Sports App Project • JSON-driven • Auto-updating</small>
-  </footer>
+  <footer class="app-footer" role="contentinfo">Updated • 0 sources</footer>
 
-  <!-- App JS -->
   <script src="static/js/pro.js" defer></script>
-
-  <!-- Service worker -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js').catch(()=>{});
-      });
-    }
-  </script>
 </body>
 </html>
