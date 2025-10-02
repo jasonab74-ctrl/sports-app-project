@@ -2,23 +2,13 @@
   "items": [
     {
       "type": "news",
-      "source": "Yahoo CBB",
-      "trust": "national",
-      "title": "Let’s Predict Purdue Men’s Basketball Big Ten Record – Staff Roundtable",
-      "link": "https://www.hammerandrails.com/mens-basketball/55598/lets-predict-purdue-mens-basketball-big-ten-record-staff-roundtable",
-      "date": "2025-10-01",
-      "summary": "The Big Ten schedule was released in September and we’ve all had time to look at it so I wanted to ask the staff what they thought the end result would be for Purdue. More precisely I wanted to know how many wins they all think Purdue will have. Ledman: First it’s worth noting th",
-      "image": null
-    },
-    {
-      "type": "news",
-      "source": "CBS Sports CBB",
-      "trust": "national",
-      "title": "Candid Coaches: Who is the best X's and O's coach in college basketball right now?",
-      "link": "https://www.cbssports.com/college-basketball/news/candid-coaches-who-is-the-best-xs-and-os-coach-in-college-basketball-right-now/",
-      "date": "2025-09-30",
-      "summary": "Coaches told Gary Parrish and Matt Norlander that Matt Painter and Dan Hurley should top this list",
-      "image": null
+      "source": "Purdue Athletics",
+      "trust": "official",
+      "title": "Purdue Announces 2025–26 Non-Conference Slate",
+      "link": "https://purduesports.com/",
+      "date": "2025-09-28",
+      "summary": "Boilermakers release early dates and key neutral-site games.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Mackey_Arena_2016.jpg/640px-Mackey_Arena_2016.jpg"
     }
   ]
 }

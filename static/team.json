@@ -7,41 +7,12 @@
   "wordmark": "Boilermakers",
   "keywords": [
     "Purdue",
-    "Boilermakers",
-    "Painter",
-    "Mackey",
-    "Purdue MBB",
-    "Boilerball",
-    "Edey"
+    "Boilermakers"
   ],
   "links": [
     {
       "label": "News",
       "href": "#news"
-    },
-    {
-      "label": "Videos",
-      "href": "#videos"
-    },
-    {
-      "label": "Rankings",
-      "href": "#rankings"
-    },
-    {
-      "label": "Schedule",
-      "href": "#schedule"
-    },
-    {
-      "label": "NIL Portal",
-      "href": "#nil"
-    },
-    {
-      "label": "Tickets",
-      "href": "https://purduesports.com/tickets"
-    },
-    {
-      "label": "Shop",
-      "href": "https://shop.purduesports.com/"
     }
   ]
 }

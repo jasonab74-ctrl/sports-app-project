@@ -3,24 +3,9 @@
     {
       "name": "Top Player A",
       "value": "$1.2M est."
-    },
-    {
-      "name": "Top Player B",
-      "value": "$900k est."
-    },
-    {
-      "name": "Top Player C",
-      "value": "$700k est."
     }
   ],
   "sources": [
-    "Purdue Athletics RSS",
-    "ESPN College Basketball",
-    "CBS Sports CBB",
-    "The Athletic CBB",
-    "BTN Purdue YouTube",
-    "PurdueSports YouTube",
-    "Yahoo CBB",
-    "Sports Illustrated CBB"
+    "Purdue Athletics RSS"
   ]
 }
