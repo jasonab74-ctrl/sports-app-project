@@ -1,18 +1,15 @@
 #!/usr/bin/env python3
 """
-Collector: builds static/teams/<slug>/items.json from static/sources.json
+Collector v1.6 — builds static/teams/<slug>/items.json from static/sources.json
 
-Key features
-- Robust YouTube support:
-  * youtube_channels: list of channel IDs
-  * youtube_users:    list of legacy usernames
-  * youtube_urls:     list of channel/handle/video URLs (auto-resolves to channel_id)
-  * youtube_playlists:list of playlist IDs
-- Retries with backoff, sane timeouts & UA
-- Per-source cap + global cap + max age filter
-- Strong de-dup (URL + fuzzy title)
-- Better images: media tags -> inline <img> -> OpenGraph -> YouTube thumbnail fallback
-- Tracking param stripping (utm_*, fbclid, gclid, etc.)
+Adds:
+- Pinned sources (always float to top; see sources.json -> pinned_sources)
+- Source weighting (source_priority) retained
+- Robust YouTube (handles, usernames, playlists, raw URLs -> channel_id)
+- Video duration capture (yt:duration, media:group) -> duration_seconds
+- Solid images (media tags -> <img> -> OpenGraph -> YouTube thumb fallback)
+- Strong de-dup (URL + fuzzy title), age filter, per-source cap, UTM stripping
+- generated_at + total_sources in output
 """
 
 from __future__ import annotations
@@ -29,17 +26,17 @@ SRC_PATH = os.path.join(ROOT, "static", "sources.json")
 OUT_ROOT = os.path.join(ROOT, "static", "teams")
 
 # HTTP
-UA = "SportsAppCollector/1.4 (+https://github.com/)"
+UA = "SportsAppCollector/1.6 (+https://github.com/)"
 TIMEOUT = 18
 RETRIES = 2
 BACKOFF = 1.6
 
 # Regex
-IMG_RE   = re.compile(r'<img[^>]+src=["\']([^"\']+)["\']', re.I)
-WS_RE    = re.compile(r'\s+')
-YT_ID_RE = re.compile(r'(?:v=|youtu\.be/|embed/)([A-Za-z0-9_-]{6,})')   # video id
-YT_CHAN_RE = re.compile(r'channelId["\']\s*:\s*["\']([A-Za-z0-9_-]{24})') # channel id in HTML
-YT_ALT_RSS = re.compile(r'/feeds/videos\.xml\?channel_id=([A-Za-z0-9_-]{24})') # <link rel="alternate" ...>
+IMG_RE        = re.compile(r'<img[^>]+src=["\']([^"\']+)["\']', re.I)
+WS_RE         = re.compile(r'\s+')
+YT_ID_RE      = re.compile(r'(?:v=|youtu\.be/|embed/)([A-Za-z0-9_-]{6,})')             # video id
+YT_CHAN_RE    = re.compile(r'channelId["\']\s*:\s*["\']([A-Za-z0-9_-]{24})')           # channel id in HTML
+YT_ALT_RSS_RE = re.compile(r'/feeds/videos\.xml\?channel_id=([A-Za-z0-9_-]{24})')      # alt link
 
 def clean_url(u: str) -> str:
     """Strip tracking params (utm_*, fbclid, gclid, etc.)."""
@@ -98,6 +95,20 @@ def youtube_thumb(link: str) -> str:
     vid = m.group(1)
     return f"https://i.ytimg.com/vi/{vid}/hqdefault.jpg"
 
+def extract_duration_seconds(entry) -> int:
+    # yt:duration (YouTube RSS)
+    d = entry.get('yt_duration') or entry.get('yt:duration') or entry.get('media_duration')
+    if isinstance(d, (int, float)): return int(d)
+    # Some parsers expose it under media:group.duration or media_content[0]['duration']
+    try:
+        if 'media_content' in entry and isinstance(entry['media_content'], list):
+            dur = entry['media_content'][0].get('duration')
+            if dur: return int(dur)
+    except Exception:
+        pass
+    # Sometimes appears in links as t=123s (not reliable)
+    return 0
+
 def extract_image(entry, base_link: str | None) -> str:
     # media tags first
     for key in ("media_thumbnail", "media_content", "image"):
@@ -141,14 +152,9 @@ def extract_image(entry, base_link: str | None) -> str:
 
     return ""
 
-def is_video(entry, link: str) -> bool:
-    if "yt_videoid" in entry or "media_player" in entry:
-        return True
-    for enc in entry.get("enclosures", []):
-        t = (enc.get("type") or "").lower()
-        if "video" in t:
-            return True
-    return "youtube.com" in link or "youtu.be" in link
+def is_video_link(link: str) -> bool:
+    link = (link or "").lower()
+    return "youtube.com" in link or "youtu.be" in link or "video" in link
 
 def source_name(link: str) -> str:
     try:
@@ -177,7 +183,8 @@ def normalize_entry(e) -> dict | None:
     pub = e.get("published") or e.get("updated") or None
     date_iso = to_iso(pub)
     img = extract_image(e, link)
-    video = is_video(e, link)
+    video = is_video_link(link)
+    duration = extract_duration_seconds(e) if video else 0
     return {
         "title": title,
         "url": link,
@@ -186,7 +193,8 @@ def normalize_entry(e) -> dict | None:
         "source": source_name(link),
         "date": date_iso,
         "tag": "Video" if video else "News",
-        "is_video": video
+        "is_video": video,
+        "duration_seconds": duration
     }
 
 def normalize_feed_items(feed_url: str, max_per_source: int) -> list[dict]:
@@ -222,7 +230,7 @@ def resolve_youtube_channel_id_from_url(url: str) -> str:
         html = fetch(url).decode("utf-8", errors="ignore")
     except Exception:
         return ""
-    m = YT_ALT_RSS.search(html) or YT_CHAN_RE.search(html)
+    m = YT_ALT_RSS_RE.search(html) or YT_CHAN_RE.search(html)
     return (m.group(1) if m else "")
 
 # ---------- Collection per team ----------
@@ -230,12 +238,16 @@ def resolve_youtube_channel_id_from_url(url: str) -> str:
 def collect_for_team(slug: str, cfg: dict) -> dict:
     max_items = int(cfg.get("max_items", 60))
     max_per_source = int(cfg.get("max_per_source", 20))
-    max_age_days = int(cfg.get("max_age_days", 21))
+    max_age_days = int(cfg.get("max_age_days", 30))
+    priority_map = { (k or "").lower(): int(v) for k, v in (cfg.get("source_priority") or {}).items() }
+    pinned_patterns = [s.lower() for s in (cfg.get("pinned_sources") or [])]
 
     items: list[dict] = []
+    source_count = 0
 
     # RSS feeds (news)
     for url in cfg.get("feeds", []):
+        source_count += 1
         try:
             items.extend(normalize_feed_items(url, max_per_source))
         except Exception as ex:
@@ -243,6 +255,7 @@ def collect_for_team(slug: str, cfg: dict) -> dict:
 
     # YouTube by explicit channel IDs
     for cid in cfg.get("youtube_channels", []):
+        source_count += 1
         try:
             items.extend(normalize_feed_items(yt_feed_for_channel_id(cid), max_per_source // 2 or 5))
         except Exception as ex:
@@ -250,6 +263,7 @@ def collect_for_team(slug: str, cfg: dict) -> dict:
 
     # YouTube by legacy usernames
     for user in cfg.get("youtube_users", []):
+        source_count += 1
         try:
             items.extend(normalize_feed_items(yt_feed_for_user(user), max_per_source // 2 or 5))
         except Exception as ex:
@@ -257,6 +271,7 @@ def collect_for_team(slug: str, cfg: dict) -> dict:
 
     # YouTube by playlist IDs
     for pid in cfg.get("youtube_playlists", []):
+        source_count += 1
         try:
             items.extend(normalize_feed_items(yt_feed_for_playlist(pid), max_per_source // 2 or 5))
         except Exception as ex:
@@ -264,6 +279,7 @@ def collect_for_team(slug: str, cfg: dict) -> dict:
 
     # YouTube by arbitrary URLs (handles, channel URLs, even a video URL)
     for yurl in cfg.get("youtube_urls", []):
+        source_count += 1
         try:
             cid = resolve_youtube_channel_id_from_url(yurl)
             if not cid:
@@ -275,14 +291,12 @@ def collect_for_team(slug: str, cfg: dict) -> dict:
 
     # Mark video items & set thumbnails if missing
     for it in items:
-        if is_video({}, it.get("url","")) or ("youtube.com" in (it.get("url","")) or "youtu.be" in (it.get("url",""))):
-            it["is_video"] = True
-            it["tag"] = "Video"
+        if it.get("is_video"):
             if not it.get("image"):
                 it["image"] = youtube_thumb(it["url"])
                 it["thumbnail"] = it["image"]
 
-    # Sort newest first
+    # Sort newest first (initial)
     items.sort(key=lambda x: x.get("date",""), reverse=True)
 
     # Age filter
@@ -300,12 +314,30 @@ def collect_for_team(slug: str, cfg: dict) -> dict:
         seen_urls.add(u); seen_titles.add(tkey)
         dedup.append(it)
 
-    dedup = dedup[:max_items]
+    # ---- Pinned + weighted ordering
+    def weight(it: dict) -> int:
+        src = (it.get("source") or "").lower()
+        return priority_map.get(src, 0)
+
+    def is_pinned(it: dict) -> bool:
+        u = (it.get("url") or "").lower()
+        s = (it.get("source") or "").lower()
+        return any(p in u or p in s for p in pinned_patterns)
+
+    pinned = [it for it in dedup if is_pinned(it)]
+    others = [it for it in dedup if not is_pinned(it)]
+
+    # Sort each bucket by (priority desc, date desc)
+    pinned.sort(key=lambda it: (weight(it), it.get("date","")), reverse=True)
+    others.sort(key=lambda it: (weight(it), it.get("date","")), reverse=True)
+
+    ordered = (pinned + others)[:max_items]
 
     return {
         "generated_at": to_iso(None),
-        "count": len(dedup),
-        "items": dedup
+        "total_sources": source_count,
+        "count": len(ordered),
+        "items": ordered
     }
 
 def main():
