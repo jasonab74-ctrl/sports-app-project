@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Team Hub — Purdue Men's Basketball</title>
   <meta name="theme-color" content="#0c0c0e"/>
-  <link rel="stylesheet" href="static/css/pro.css?v=20251002d" />
+  <link rel="stylesheet" href="static/css/pro.css?v=20251002e" />
 </head>
 <body>
   <header class="topbar">
@@ -145,11 +145,11 @@
   <script>
     window.__TEAM_SLUG = "purdue-mbb"; // hard fallback
   </script>
-  <script src="static/js/pro.js?v=20251002d" defer></script>
+  <script src="static/js/pro.js?v=20251002e" defer></script>
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js?v=20251002d').then(reg=>{
+        navigator.serviceWorker.register('./sw.js?v=20251002e').then(reg=>{
           navigator.serviceWorker.addEventListener('message', (event) => {
             if (event.data && event.data.type === 'NEW_VERSION') {
               const toast = document.getElementById('toast');
