@@ -3,23 +3,41 @@
     "max_items": 60,
     "max_per_source": 20,
     "max_age_days": 30,
+
     "feeds": [
       "https://www.hammerandrails.com/rss/index.xml",
       "https://purduesports.com/rss?path=mbball",
       "https://www.si.com/college/purdue/.rss",
       "https://www.on3.com/teams/purdue-boilermakers/news/feed/"
     ],
+
     "youtube_channels": [],
     "youtube_users": [
-      "purduesports"            /* Official Purdue Athletics username feed */
+      "purduesports"
     ],
     "youtube_urls": [
-      "https://www.youtube.com/@boilerball1",         /* Purdue MBB official */
-      "https://www.youtube.com/@Goldandblackcom",     /* GoldandBlack.com */
-      "https://www.youtube.com/watch?v=PAJJw-fF_1Q"   /* BraggsInTheStands (video URL -> resolve channel) */
+      "https://www.youtube.com/@boilerball1",
+      "https://www.youtube.com/@Goldandblackcom",
+      "https://www.youtube.com/watch?v=PAJJw-fF_1Q"
     ],
     "youtube_playlists": [
-      "PLoeZi9zl25fTbT3cblsEp27hiaoKOCHJX"            /* Boiler Upload playlist */
+      "PLoeZi9zl25fTbT3cblsEp27hiaoKOCHJX"
+    ],
+
+    "source_priority": {
+      "youtube.com": 4,
+      "purduesports.com": 4,
+      "hammerandrails.com": 3,
+      "on3.com": 2,
+      "si.com": 1,
+      "goldandblack.com": 1
+    },
+
+    "pinned_sources": [
+      "youtube.com/@boilerball1",
+      "purduesports.com",
+      "youtube.com/user/purduesports",
+      "youtube.com/@goldandblackcom"
     ]
   }
 }
