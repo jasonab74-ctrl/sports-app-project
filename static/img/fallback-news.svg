@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#101726"/>
+      <stop offset="1" stop-color="#0b111a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#g)"/>
+  <g fill="#2a3b55">
+    <rect x="120" y="160" width="520" height="16" rx="8"/>
+    <rect x="120" y="200" width="780" height="16" rx="8"/>
+    <rect x="120" y="240" width="640" height="16" rx="8"/>
+    <rect x="120" y="320" width="420" height="16" rx="8"/>
+    <rect x="120" y="360" width="520" height="16" rx="8"/>
+  </g>
+  <text x="50%" y="78%" text-anchor="middle" fill="#cfb991" font-size="38" font-family="system-ui, -apple-system, Segoe UI, Roboto">Sports App Project</text>
+</svg>
