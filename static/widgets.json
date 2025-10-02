@@ -1,24 +1,51 @@
 {
+  "purdue-mbb": {
+    "ap_rank": 3,
+    "kenpom": 2,
+    "net": 4,
+
+    "nil": [
+      { "name": "Zach Edey", "value": "$890K" },
+      { "name": "Braden Smith", "value": "$320K" },
+      { "name": "Fletcher Loyer", "value": "$210K" },
+      { "name": "Myles Colvin", "value": "$175K" },
+      { "name": "Trey Kaufman-Renn", "value": "$150K" }
+    ],
+
+    "insider": [
+      {
+        "name": "GoldandBlack.com",
+        "url": "https://goldandblack.com/",
+        "note": "Premium recruiting + team coverage"
+      },
+      {
+        "name": "Journal & Courier",
+        "url": "https://www.jconline.com/sports/purdue/",
+        "note": "Local Lafayette beat coverage"
+      },
+      {
+        "name": "Hammer & Rails",
+        "url": "https://www.hammerandrails.com/",
+        "note": "SB Nation community & analysis"
+      },
+      {
+        "name": "Boilermakers Podcast",
+        "url": "https://open.spotify.com/show/4o0GmFbZ8CkZcKj9X7kN5M",
+        "note": "Purdue hoops podcast"
+      },
+      {
+        "name": "On3 Purdue",
+        "url": "https://www.on3.com/teams/purdue-boilermakers/",
+        "note": "Recruiting + NIL insights"
+      }
+    ]
+  },
+
   "default": {
     "ap_rank": "—",
     "kenpom": "—",
     "net": "—",
     "nil": [],
     "insider": []
-  },
-  "purdue-mbb": {
-    "ap_rank": "5",
-    "kenpom": "2",
-    "net": "—",
-    "nil": [
-      { "name": "Zach Edey", "value": "$750k" },
-      { "name": "Fletcher Loyer", "value": "$325k" },
-      { "name": "Braden Smith", "value": "$300k" }
-    ],
-    "insider": [
-      { "name": "Hammer & Rails", "url": "https://www.hammerandrails.com/", "note": "SB Nation" },
-      { "name": "GoldandBlack", "url": "https://purdue.rivals.com/", "note": "Rivals (premium)" },
-      { "name": "Purdue Athletics", "url": "https://purduesports.com/sports/mens-basketball", "note": "Official" }
-    ]
   }
 }
