@@ -21,13 +21,15 @@
     <button id="refresh" class="pill-btn" type="button" aria-label="Refresh">Refresh</button>
   </header>
 
+  <!-- Search will be injected above tabs by JS -->
+
   <!-- Tabs -->
   <nav class="tabs" aria-label="Sections">
-    <button class="chip active" data-tab="news">News</button>
-    <button class="chip" data-tab="videos">Videos</button>
-    <button class="chip" data-tab="rankings">Rankings</button>
-    <button class="chip" data-tab="schedule">Schedule</button>
-    <button class="chip" data-tab="insider">Insider</button>
+    <button class="chip active" type="button" data-tab="news"     id="tab-news">News</button>
+    <button class="chip"          type="button" data-tab="videos"   id="tab-videos">Videos</button>
+    <button class="chip"          type="button" data-tab="rankings" id="tab-rankings">Rankings</button>
+    <button class="chip"          type="button" data-tab="schedule" id="tab-schedule">Schedule</button>
+    <button class="chip"          type="button" data-tab="insider"  id="tab-insider">Insider</button>
   </nav>
 
   <!-- Headline ticker -->
@@ -39,29 +41,29 @@
   <main id="content">
     <!-- LEFT: main feed -->
     <section id="main-col">
-      <section id="news" class="tab visible" aria-labelledby="news-tab">
+      <section id="news" class="tab visible" aria-labelledby="tab-news">
         <h2>Latest Headlines</h2>
         <div id="carousel" class="carousel" aria-label="Featured"></div>
         <div id="news-grid" class="grid" aria-live="polite"></div>
       </section>
 
-      <section id="videos" class="tab" aria-labelledby="videos-tab">
+      <section id="videos" class="tab" aria-labelledby="tab-videos">
         <h2>Latest Videos</h2>
         <div id="video-grid" class="grid" aria-live="polite"></div>
       </section>
 
-      <!-- Informational tabs (scroll users to sidebar widgets) -->
-      <section id="rankings" class="tab" aria-labelledby="rankings-tab">
+      <!-- Informational tabs (content actually lives in sidebar widgets) -->
+      <section id="rankings" class="tab" aria-labelledby="tab-rankings">
         <h2>Rankings &amp; Analytics</h2>
         <p class="empty">See rankings in the right sidebar.</p>
       </section>
 
-      <section id="schedule" class="tab" aria-labelledby="schedule-tab">
+      <section id="schedule" class="tab" aria-labelledby="tab-schedule">
         <h2>Schedule</h2>
         <p class="empty">See schedule in the right sidebar.</p>
       </section>
 
-      <section id="insider" class="tab" aria-labelledby="insider-tab">
+      <section id="insider" class="tab" aria-labelledby="tab-insider">
         <h2>Insider &amp; Beat Writers</h2>
         <p class="empty">See insider links in the right sidebar.</p>
       </section>
