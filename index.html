@@ -5,14 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Team Hub — Purdue Men's Basketball</title>
   <meta name="theme-color" content="#0c0c0e"/>
-  <link rel="stylesheet" href="static/css/pro.css?v=20251002g" />
+  <link rel="stylesheet" href="static/css/pro.css?v=20251002h" />
 </head>
 <body>
   <header class="topbar">
-    <button id="navToggle" aria-label="Open menu" class="hamburger" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-
     <a class="brand" href="./">
       <div class="brand-logo-wrap">
         <img class="brand-logo" src="static/logo.png" alt="Purdue" onerror="this.style.display='none';this.nextElementSibling.hidden=false;">
@@ -24,6 +20,7 @@
       </div>
     </a>
 
+    <!-- Nav moved to the LEFT and hamburger removed -->
     <nav id="mainNav" class="nav">
       <a href="#news">News</a>
       <a href="#videos">Videos</a>
@@ -33,18 +30,7 @@
     </nav>
   </header>
 
-  <!-- Mobile drawer -->
-  <aside id="drawer" class="drawer" aria-hidden="true">
-    <div class="drawer-backdrop" data-close></div>
-    <div class="drawer-sheet">
-      <button class="drawer-close" data-close aria-label="Close">×</button>
-      <a href="#news" data-close>News</a>
-      <a href="#videos" data-close>Videos</a>
-      <a href="#rankings" data-close>Rankings</a>
-      <a href="#schedule" data-close>Schedule</a>
-      <a href="#nil" data-close>NIL</a>
-    </div>
-  </aside>
+  <!-- No mobile drawer -->
 
   <section class="ticker" id="ticker" aria-label="Top ticker">
     <div class="ticker-track" id="tickerTrack"></div>
@@ -150,11 +136,11 @@
   </div>
 
   <script>window.__TEAM_SLUG = "purdue-mbb";</script>
-  <script src="static/js/pro.js?v=20251002g" defer></script>
+  <script src="static/js/pro.js?v=20251002h" defer></script>
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js?v=20251002g').then(reg=>{
+        navigator.serviceWorker.register('./sw.js?v=20251002h').then(reg=>{
           navigator.serviceWorker.addEventListener('message', (e) => {
             if (e.data && e.data.type === 'NEW_VERSION') {
               document.getElementById('toast').hidden = false;
