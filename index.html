@@ -6,7 +6,17 @@
   <title>Team Hub — Purdue Men's Basketball</title>
   <meta name="theme-color" content="#0c0c0e"/>
   <!-- NOTE: this build is for https://jasonab74-ctrl.github.io/sports-app-project/ -->
-  <link rel="stylesheet" href="static/css/pro.css?v=20251002j" />
+
+  <!-- Preconnects to common image/video CDNs -->
+  <link rel="preconnect" href="https://i.ytimg.com">
+  <link rel="preconnect" href="https://vox-cdn.com">
+  <link rel="preconnect" href="https://gannett-cdn.com">
+  <link rel="preconnect" href="https://img.si.com">
+  <link rel="preconnect" href="https://espncdn.com">
+  <link rel="preconnect" href="https://247sports.imgix.net">
+  <link rel="preconnect" href="https://rivalscdn.com">
+
+  <link rel="stylesheet" href="static/css/pro.css?v=20251002k" />
 </head>
 <body>
   <header class="topbar">
@@ -135,11 +145,11 @@
   </div>
 
   <script>window.__TEAM_SLUG = "purdue-mbb";</script>
-  <script src="static/js/pro.js?v=20251002j" defer></script>
+  <script src="static/js/pro.js?v=20251002k" defer></script>
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js?v=20251002j').then(reg=>{
+        navigator.serviceWorker.register('./sw.js?v=20251002k').then(reg=>{
           navigator.serviceWorker.addEventListener('message', (e) => {
             if (e.data && e.data.type === 'NEW_VERSION') {
               document.getElementById('toast').hidden = false;
