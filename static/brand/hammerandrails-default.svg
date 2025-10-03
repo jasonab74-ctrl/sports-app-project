@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#0f0f11"/>
+  <g fill="none" stroke="#2d2d31" stroke-width="4">
+    <rect x="60" y="60" width="1080" height="555" rx="18" ry="18"/>
+    <path d="M200 520 L1000 520"/>
+  </g>
+  <text x="600" y="330" fill="#f2c94c" font-family="Inter, system-ui, Arial, sans-serif" text-anchor="middle" font-size="92" font-weight="900">
+    Hammer &amp; Rails
+  </text>
+  <text x="600" y="410" fill="#a0a0a7" font-family="Inter, system-ui, Arial, sans-serif" text-anchor="middle" font-size="34">
+    SB Nation — Purdue
+  </text>
+</svg>
