@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#0e0e10"/>
+  <rect x="80" y="80" width="1040" height="515" rx="14" ry="14" fill="#17171a"/>
+  <text x="600" y="335" fill="#f2c94c" font-family="Inter, system-ui, Arial, sans-serif" text-anchor="middle" font-size="88" font-weight="800">
+    Journal &amp; Courier
+  </text>
+  <text x="600" y="410" fill="#a7a7ad" font-family="Inter, system-ui, Arial, sans-serif" text-anchor="middle" font-size="34">
+    Lafayette — Purdue beat
+  </text>
+</svg>
