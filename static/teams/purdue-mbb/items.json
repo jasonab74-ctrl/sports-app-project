@@ -1,5 +1,12 @@
 {
-  "sources": ["PurdueSports", "YouTube", "Hammer & Rails", "Journal & Courier", "ESPN", "Sports Illustrated"],
+  "sources": [
+    "PurdueSports",
+    "YouTube",
+    "Hammer & Rails",
+    "Journal & Courier",
+    "ESPN",
+    "Sports Illustrated"
+  ],
   "items": [
     {
       "title": "Purdue Announces 2025–26 Non-Conference Slate",
@@ -53,7 +60,7 @@
       "title": "Way-Too-Early Top 25: Where Purdue lands",
       "link": "https://www.espn.com/mens-college-basketball/story/_/id/12345678/purdue-way-too-early-top-25",
       "source": "ESPN",
-      "image": "https://a.espncdn.com/photo/2024/12/01/purdue-early-top25.jpg",
+      "image": "/static/cache/e8e613c9.jpg",
       "date": "2025-09-15T12:00:00Z",
       "tier": "national"
     },
