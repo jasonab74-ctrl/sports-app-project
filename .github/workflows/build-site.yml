@@ -27,6 +27,7 @@ jobs:
             "private": true,
             "type": "module",
             "scripts": {
+              "lint": "node scripts/lint-data.mjs",
               "cache": "node scripts/cache-images.mjs",
               "build": "node scripts/build-ssr.mjs"
             },
@@ -36,6 +37,9 @@ jobs:
           }
           JSON
           npm ci
+
+      - name: Lint data files
+        run: npm run lint
 
       - name: Cache images
         run: npm run cache
