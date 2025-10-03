@@ -1,124 +1,154 @@
-:root{
-  --bg:#0c0c0e; --card:#141417; --muted:#a9acb2; --text:#e8e9ec; --pill:#1e1f24; --accent:#e6c46a;
-  --ring:#2a2d35; --home:#1e2a1e; --away:#2a1e1e; --neutral:#1e202a;
-}
-*{box-sizing:border-box}
-html,body{height:100%}
-body{margin:0;background:var(--bg);color:var(--text);font:14px/1.4 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
-a{color:#bcd2ff;text-decoration:none}
-a:hover{text-decoration:underline}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Team Hub — Purdue Men's Basketball</title>
+  <meta name="theme-color" content="#0c0c0e"/>
+  <!-- NOTE: this build is for https://jasonab74-ctrl.github.io/sports-app-project/ -->
+  <link rel="stylesheet" href="static/css/pro.css?v=20251002j" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./">
+      <div class="brand-logo-wrap">
+        <img class="brand-logo" src="static/logo.png" alt="Purdue" onerror="this.style.display='none';this.nextElementSibling.hidden=false;">
+        <div class="brand-fallback" hidden>🏀</div>
+      </div>
+      <div>
+        <div class="brand-line1">Team Hub</div>
+        <div class="brand-line2">Boilermakers</div>
+      </div>
+    </a>
 
-/* Header */
-.topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:1rem;background:#0e0f12;border-bottom:1px solid #1b1d22;padding:.5rem .75rem;flex-wrap:wrap}
-.brand{display:flex;align-items:center;gap:.6rem}
-.brand-logo-wrap{width:32px;height:32px;border-radius:8px;background:#1b1d22;display:grid;place-items:center;overflow:hidden}
-.brand-logo{width:100%;height:100%;object-fit:cover}
-.brand-line1{font-size:12px;color:var(--muted)}
-.brand-line2{font-weight:700;letter-spacing:.2px}
+    <!-- Nav LEFT-justified (no hamburger) -->
+    <nav id="mainNav" class="nav">
+      <a href="#news">News</a>
+      <a href="#videos">Videos</a>
+      <a href="#rankings">Rankings</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#nil">NIL</a>
+    </nav>
+  </header>
 
-/* Nav LEFT-justified */
-.nav{display:flex;gap:.5rem;margin-left:.5rem}
-.nav a{padding:.4rem .6rem;border-radius:8px;background:#121317;border:1px solid #1f2127}
+  <section class="ticker" id="ticker" aria-label="Top ticker">
+    <div class="ticker-track" id="tickerTrack"></div>
+  </section>
 
-/* Ticker */
-.ticker{border-bottom:1px solid #1b1d22;background:#0f1013;white-space:nowrap;overflow:hidden}
-.ticker-track{display:inline-block;padding:.5rem 0;animation:ticker 90s linear infinite}
-.ticker:hover .ticker-track{animation-play-state:paused}
-@keyframes ticker{0%{transform:translateX(100%)}100%{transform:translateX(-100%)}}
+  <main class="container">
+    <!-- Headlines -->
+    <section id="news" class="panel">
+      <div class="panel-hd">
+        <h2>Top Headlines</h2>
+        <div class="panel-actions">
+          <button class="pill pill-all" data-filter="all">All</button>
+          <button class="pill" data-filter="official">Official</button>
+          <button class="pill" data-filter="insiders">Insiders</button>
+          <button class="pill" data-filter="national">National</button>
+        </div>
+      </div>
 
-/* Layout */
-.container{display:grid;gap:1rem;grid-template-columns:1fr;max-width:1200px;margin:1rem auto;padding:0 .75rem}
-.rail{display:grid;gap:1rem}
-@media(min-width:980px){.container{grid-template-columns:minmax(0,1fr) 360px}}
+      <div id="hero" class="hero skeleton">
+        <div class="hero-img skeleton-box"></div>
+        <div class="hero-meta">
+          <div class="pills"><span class="pill">loading</span></div>
+          <h3 class="hero-title">Loading…</h3>
+          <div class="hero-sub">Please wait</div>
+        </div>
+      </div>
 
-.panel{background:transparent}
-.panel-hd{display:flex;align-items:center;justify-content:space-between;margin:.25rem 0 .5rem}
-.panel h2,.panel h3{margin:0}
-.panel-actions{display:flex;gap:.5rem}
-.pill{display:inline-flex;align-items:center;height:24px;padding:0 .6rem;border-radius:999px;background:var(--pill);border:1px solid #272a31;color:#d7d9df;font-size:12px}
-.pill-all{background:#20222a;border-color:#2b2f39}
+      <div id="headlines" class="card-grid"></div>
+    </section>
 
-/* Hero */
-.hero{position:relative;display:grid;grid-template-columns:1.2fr 1fr;background:var(--card);border:1px solid #262932;border-radius:16px;overflow:hidden;min-height:340px}
-.hero-img{aspect-ratio:16/9;width:100%;height:100%;object-fit:cover}
-.hero-meta{padding:1rem}
-.hero-title{margin:.25rem 0 .5rem;font-size:20px;line-height:1.2}
-.hero-sub{color:var(--muted);font-size:13px}
+    <!-- Right rail -->
+    <aside class="rail">
+      <section id="rankings" class="panel">
+        <div class="panel-hd"><h3>Rankings</h3></div>
+        <div id="rankingsBody" class="rankings">
+          <div class="rank-line"><span>AP Top 25:</span> <b id="apRank">—</b> <a id="apLink" href="#" target="_blank" rel="noopener">View</a></div>
+          <div class="rank-line"><span>KenPom:</span> <b id="kpRank">—</b> <a id="kpLink" href="#" target="_blank" rel="noopener">View</a></div>
+          <div class="rank-updated" id="rankUpdated"></div>
+        </div>
+      </section>
 
-/* Cards */
-.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.75rem;margin-top:.75rem}
-.card{background:var(--card);border:1px solid #262932;border-radius:14px;overflow:hidden;display:flex;gap:.75rem}
-.card-img-wrap{width:38%;min-width:120px}
-.card-img{display:block;width:100%;height:100%;aspect-ratio:4/3;object-fit:cover}
-.card-body{padding:.75rem;display:flex;flex-direction:column;gap:.35rem}
-.card-title{font-weight:600;line-height:1.25;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.card-meta{display:flex;gap:.5rem;align-items:center;color:var(--muted);font-size:12px}
+      <section id="schedule" class="panel">
+        <div class="panel-hd"><h3>Upcoming Schedule</h3></div>
+        <div id="scheduleList" class="schedule-list"></div>
+      </section>
 
-/* Rankings */
-.rankings{background:var(--card);border:1px solid #262932;border-radius:14px;padding:.75rem}
-.rank-line{display:flex;align-items:center;justify-content:space-between;padding:.25rem 0;border-bottom:1px dashed #2a2d35}
-.rank-line:last-child{border-bottom:0}
-.rank-updated{margin-top:.4rem;color:var(--muted);font-size:12px}
+      <section id="insiders" class="panel">
+        <div class="panel-hd"><h3>Insider / Beat Links</h3>
+          <div class="panel-actions">
+            <button class="pill pill-all" data-insider-filter="all">All</button>
+            <button class="pill" data-insider-filter="official">Official</button>
+            <button class="pill" data-insider-filter="insiders">Insiders</button>
+          </div>
+        </div>
+        <div id="insiderList" class="links-grid"></div>
+      </section>
 
-/* Schedule */
-.schedule-list{display:grid;gap:.5rem}
-.game{background:var(--card);border:1px solid #262932;border-radius:12px;padding:.6rem}
-.g-top{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--muted)}
-.g-title{display:flex;align-items:center;gap:.5rem;font-weight:600;margin-top:.25rem}
-.site-home{background:var(--home)} .site-away{background:var(--away)} .site-neutral{background:var(--neutral)}
-.logo-pill{display:inline-flex;align-items:center;justify-content:center;min-width:24px;height:24px;border-radius:999px;background:#1b1d22;border:1px solid #2b2f39;font-size:11px}
+      <section id="nil" class="panel">
+        <div class="panel-hd"><h3>NIL Leaderboard</h3></div>
+        <ol class="nil">
+          <li><b>Top Player A</b> — $1.2M est.</li>
+          <li><b>Top Player B</b> — $900k est.</li>
+          <li><b>Top Player C</b> — $700k est.</li>
+        </ol>
+      </section>
+    </aside>
 
-/* Insider links */
-.links-grid{display:grid;gap:.5rem}
-.link-card{display:flex;align-items:center;gap:.6rem;background:var(--card);border:1px solid #262932;border-radius:12px;padding:.6rem .7rem}
-.link-logo{width:26px;height:26px;border-radius:6px;background:#1b1d22;display:grid;place-items:center}
-.link-body{display:flex;flex-direction:column;gap:2px;min-width:0}
-.link-title{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.link-sub{color:#a9acb2;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.link-meta{margin-left:auto;color:#a9acb2;font-size:12px;display:flex;align-items:center;gap:.4rem}
-.badge-pay{border:1px solid #3a2b2b;background:#231818;color:#f0caca;border-radius:999px;padding:.05rem .4rem;font-size:11px}
+    <!-- Videos -->
+    <section id="videos" class="panel">
+      <div class="panel-hd">
+        <h2>Latest Videos</h2>
+        <div class="panel-actions">
+          <button class="pill pill-all" data-video-filter="all">All</button>
+          <button class="pill" data-video-filter="official">Official</button>
+          <button class="pill" data-video-filter="insiders">Insiders</button>
+        </div>
+      </div>
+      <div id="videoGrid" class="video-grid"></div>
+    </section>
+  </main>
 
-/* Videos */
-.video-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:.75rem}
-.video{background:var(--card);border:1px solid #262932;border-radius:14px;overflow:hidden}
-.video-thumb{position:relative}
-.video-thumb img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
-.video-duration{position:absolute;bottom:6px;right:6px;background:rgba(0,0,0,.6);padding:.1rem .4rem;border-radius:6px;font-size:12px}
-.video-body{padding:.6rem}
-.video-title{font-weight:600;line-height:1.25;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.video-meta{font-size:12px;color:#a9acb2}
+  <footer class="footer">
+    <div>
+      <span id="updatedFooter">Updated —</span>
+      <span id="sourceCount"></span>
+      <span id="debugMsg" style="margin-left:.5rem"></span>
+    </div>
+  </footer>
 
-/* Footer */
-.footer{display:flex;justify-content:center;padding:1rem;color:var(--muted);border-top:1px solid #1a1b20;margin-top:1rem}
+  <!-- Video modal -->
+  <div id="videoModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-content" role="document">
+      <button class="modal-close" aria-label="Close" data-close>×</button>
+      <div id="modalPlayer" class="modal-player"></div>
+    </div>
+  </div>
 
-/* Modal */
-.modal{position:fixed;inset:0;display:none}
-.modal[aria-hidden="false"]{display:block}
-.modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.7)}
-.modal-content{position:relative;max-width:920px;margin:4vh auto;background:#0f0f13;border:1px solid #272a32;border-radius:14px;overflow:hidden}
-.modal-close{position:absolute;top:6px;right:8px;background:#16171b;border:1px solid #2b2f39;border-radius:8px;color:#fff;padding:.25rem .5rem}
-.modal-player{width:min(92vw,900px);height:min(52vw,506px);background:#000}
+  <!-- Toast is present for desktop; hidden on small screens via CSS -->
+  <div id="toast" class="toast" hidden>
+    <span>New version ready.</span>
+    <button id="toastReload">Refresh</button>
+  </div>
 
-/* Toast – hide on small screens so it doesn't cover cards */
-.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:16px;background:#111217;border:1px solid #2a2d35;border-radius:12px;padding:.5rem .75rem;display:flex;gap:.75rem;align-items:center;box-shadow:0 8px 28px rgba(0,0,0,.3)}
-.toast button{background:#1a1d23;border:1px solid #2b2f39;border-radius:8px;color:#fff;padding:.35rem .6rem}
-@media(max-width:640px){.toast{display:none!important}}
-
-/* Skeleton */
-.skeleton .skeleton-box{background:linear-gradient(90deg,#1a1b21 25%,#20222a 37%,#1a1b21 63%);background-size:400% 100%;animation:shimmer 1.4s ease-in-out infinite}
-@keyframes shimmer{0%{background-position:100% 0}100%{background-position:-100% 0}}
-
-/* Fallback tiles */
-.fallback-16x9,.fallback-4x3{
-  display:grid;place-items:center;color:#d8dbe2;font-weight:700;letter-spacing:.5px;
-  background: radial-gradient(120% 120% at 0% 0%, #1a1b21 0%, #121319 60%, #0e0f13 100%);
-  user-select:none;
-}
-.fallback-16x9{aspect-ratio:16/9}
-.fallback-4x3{aspect-ratio:4/3}
-.fallback-badge{font-size:18px;opacity:.9;text-transform:uppercase}
-
-/* Accessibility */
-:focus{outline:none}
-.card:focus-within,.card:focus{box-shadow:0 0 0 2px var(--ring) inset;border-color:#2e3340}
-a:focus-visible,button:focus-visible{outline:2px solid #4d6fff;outline-offset:2px}
+  <script>window.__TEAM_SLUG = "purdue-mbb";</script>
+  <script src="static/js/pro.js?v=20251002j" defer></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js?v=20251002j').then(reg=>{
+          navigator.serviceWorker.addEventListener('message', (e) => {
+            if (e.data && e.data.type === 'NEW_VERSION') {
+              document.getElementById('toast').hidden = false;
+            }
+          });
+          document.getElementById('toastReload').addEventListener('click', () => location.reload());
+        });
+      });
+    }
+  </script>
+</body>
+</html>
