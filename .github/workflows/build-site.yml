@@ -1,0 +1,52 @@
+name: Build and publish site
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+  schedule:
+    - cron: "0 */6 * * *"   # every 6 hours
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install deps
+        run: |
+          cat > package.json <<'JSON'
+          {
+            "name": "sports-app-builder",
+            "private": true,
+            "type": "module",
+            "scripts": {
+              "cache": "node scripts/cache-images.mjs",
+              "build": "node scripts/build-ssr.mjs"
+            },
+            "dependencies": {
+              "node-fetch": "3.3.2"
+            }
+          }
+          JSON
+          npm ci
+
+      - name: Cache images
+        run: npm run cache
+
+      - name: Build static index.html
+        run: npm run build
+
+      - name: Commit results
+        run: |
+          git config user.name "build-bot"
+          git config user.email "actions@github.com"
+          git add static/cache index.html
+          git commit -m "auto: refresh site [skip ci]" || echo "no changes"
+          git push
