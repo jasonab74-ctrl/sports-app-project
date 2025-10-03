@@ -10,6 +10,7 @@ on:
 jobs:
   build-art:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -22,11 +23,25 @@ jobs:
       - name: Install deps
         run: |
           npm --version
-          echo '{ "type":"module" }' > package.json
-          npm install node-fetch@3 jsdom@24 sharp@0.33
+          cat > package.json <<'JSON'
+          {
+            "name": "sports-app-art-cache",
+            "private": true,
+            "type": "module",
+            "scripts": {
+              "cache:images": "node scripts/cache-images.mjs"
+            },
+            "dependencies": {
+              "jsdom": "24.1.0",
+              "node-fetch": "3.3.2",
+              "sharp": "0.33.4"
+            }
+          }
+          JSON
+          npm ci
 
-      - name: Cache images
-        run: node scripts/cache-images.mjs
+      - name: Cache images (official/friendly sources only)
+        run: npm run cache:images
         env:
           OFFICIAL_ONLY: "1"
 
