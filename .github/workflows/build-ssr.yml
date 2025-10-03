@@ -1,0 +1,49 @@
+name: Build static index.html from JSON
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+  schedule:
+    - cron: "19 8 * * *"  # daily @ 08:19 UTC
+
+jobs:
+  build-ssr:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install builder deps
+        run: |
+          cat > package.json <<'JSON'
+          {
+            "name": "sports-app-ssr",
+            "private": true,
+            "type": "module",
+            "scripts": {
+              "build:ssr": "node scripts/build-ssr.mjs"
+            },
+            "dependencies": {
+              "node-fetch": "3.3.2"
+            }
+          }
+          JSON
+          npm ci
+
+      - name: Build index.html from repo JSON
+        run: npm run build:ssr
+
+      - name: Commit generated index.html
+        run: |
+          git config user.name "ssr-bot"
+          git config user.email "actions@github.com"
+          git add index.html
+          git commit -m "build: generate static index.html from JSON" || echo "No changes"
+          git push
