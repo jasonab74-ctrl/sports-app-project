@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Team Hub — Purdue Men's Basketball</title>
   <meta name="theme-color" content="#0c0c0e"/>
-  <link rel="stylesheet" href="static/css/pro.css?v=20251002h" />
+  <link rel="stylesheet" href="static/css/pro.css?v=20251002i" />
 </head>
 <body>
   <header class="topbar">
@@ -20,7 +20,7 @@
       </div>
     </a>
 
-    <!-- Nav moved to the LEFT and hamburger removed -->
+    <!-- Nav LEFT-justified (hamburger removed) -->
     <nav id="mainNav" class="nav">
       <a href="#news">News</a>
       <a href="#videos">Videos</a>
@@ -29,8 +29,6 @@
       <a href="#nil">NIL</a>
     </nav>
   </header>
-
-  <!-- No mobile drawer -->
 
   <section class="ticker" id="ticker" aria-label="Top ticker">
     <div class="ticker-track" id="tickerTrack"></div>
@@ -129,18 +127,18 @@
     </div>
   </div>
 
-  <!-- SW toast -->
+  <!-- Toast is kept but hidden on mobile by CSS -->
   <div id="toast" class="toast" hidden>
     <span>New version ready.</span>
     <button id="toastReload">Refresh</button>
   </div>
 
   <script>window.__TEAM_SLUG = "purdue-mbb";</script>
-  <script src="static/js/pro.js?v=20251002h" defer></script>
+  <script src="static/js/pro.js?v=20251002i" defer></script>
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js?v=20251002h').then(reg=>{
+        navigator.serviceWorker.register('./sw.js?v=20251002i').then(reg=>{
           navigator.serviceWorker.addEventListener('message', (e) => {
             if (e.data && e.data.type === 'NEW_VERSION') {
               document.getElementById('toast').hidden = false;
