@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jasonab74-ctrl.github.io/sports-app-project/sitemap.xml
