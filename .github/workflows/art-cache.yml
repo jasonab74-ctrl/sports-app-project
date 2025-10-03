@@ -1,0 +1,39 @@
+name: Build & Cache Artwork
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 7 * * *"  # daily 07:17 UTC
+  push:
+    branches: [ main ]
+
+jobs:
+  build-art:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install deps
+        run: |
+          npm --version
+          echo '{ "type":"module" }' > package.json
+          npm install node-fetch@3 jsdom@24 sharp@0.33
+
+      - name: Cache images
+        run: node scripts/cache-images.mjs
+        env:
+          OFFICIAL_ONLY: "1"
+
+      - name: Commit updated assets
+        run: |
+          git config user.name "art-cache-bot"
+          git config user.email "actions@github.com"
+          git add static/cache/ static/teams/**/items.json
+          git commit -m "chore: refresh cached artwork" || echo "No changes"
+          git push
