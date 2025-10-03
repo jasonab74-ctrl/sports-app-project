@@ -2,16 +2,31 @@
   {
     "utc": "2025-11-02T23:00:00Z",
     "opp": "Exhibition (TBA)",
-    "site": "Home"
+    "site": "Home",
+    "espn_url": "https://www.espn.com/mens-college-basketball/team/schedule/_/id/2509"
   },
   {
-    "utc": "2025-11-08T23:30:00Z",
+    "utc": "2025-11-08T21:30:00Z",
     "opp": "Indiana State",
-    "site": "Home"
+    "site": "Home",
+    "espn_url": "https://www.espn.com/mens-college-basketball/team/_/id/282/indiana-state-sycamores"
   },
   {
     "utc": "2025-11-12T02:00:00Z",
     "opp": "@ Marquette",
-    "site": "Away"
+    "site": "Away",
+    "espn_url": "https://www.espn.com/mens-college-basketball/team/_/id/269/marquette-golden-eagles"
+  },
+  {
+    "utc": "2025-11-20T01:00:00Z",
+    "opp": "vs Gonzaga",
+    "site": "Neutral",
+    "espn_url": "https://www.espn.com/mens-college-basketball/team/_/id/2250/gonzaga-bulldogs"
+  },
+  {
+    "utc": "2025-11-26T18:00:00Z",
+    "opp": "PK Invitational (TBD)",
+    "site": "Neutral",
+    "espn_url": "https://www.espn.com/mens-college-basketball/"
   }
 ]
