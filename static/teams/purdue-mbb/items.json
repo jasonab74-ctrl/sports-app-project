@@ -1,12 +1,5 @@
 {
-  "sources": [
-    "PurdueSports",
-    "YouTube",
-    "Hammer & Rails",
-    "Journal & Courier",
-    "ESPN",
-    "Sports Illustrated"
-  ],
+  "sources": ["PurdueSports", "YouTube", "Hammer & Rails", "Journal & Courier", "247Sports", "Sports Illustrated", "ESPN", "Rivals"],
   "items": [
     {
       "title": "Purdue Announces 2025–26 Non-Conference Slate",
@@ -14,15 +7,18 @@
       "source": "PurdueSports.com",
       "image": "",
       "date": "2025-09-29T20:00:00Z",
-      "tier": "official"
+      "tier": "official",
+      "summary": "Boilermakers release early dates and key neutral-site games."
     },
     {
-      "title": "Coach Painter on lineup experimentation",
-      "link": "https://www.jconline.com/story/sports/college/purdue/2025/09/25/purdue-basketball-matt-painter-rotation/",
-      "source": "Journal & Courier",
-      "image": "https://www.gannett-cdn.com/presto/2024/12/12/USAT/xxx-purdue-painter-photo.jpg",
-      "date": "2025-09-25T15:10:00Z",
-      "tier": "insiders"
+      "title": "Practice Highlights — First Week (VIDEO)",
+      "link": "https://www.youtube.com/watch?v=Q1w2e3r4t5Y",
+      "source": "BTN Purdue",
+      "image": "",
+      "date": "2025-09-22T18:00:00Z",
+      "type": "video",
+      "tier": "official",
+      "summary": "Mic’d moments, shooting drills, and early scrimmage clips."
     },
     {
       "title": "Scout’s take: What makes Purdue a nightmare matchup",
@@ -30,63 +26,90 @@
       "source": "Hammer & Rails",
       "image": "",
       "date": "2025-09-24T18:00:00Z",
-      "tier": "insiders"
+      "tier": "insiders",
+      "summary": "Personnel groupings and schematics that create stress for opponents."
+    },
+    {
+      "title": "AP Poll movers and what it means for Purdue",
+      "link": "https://www.si.com/college/purdue/basketball/ap-poll-movers-what-it-means",
+      "source": "Sports Illustrated",
+      "image": "https://img.si.com/images/college-basketball/purdue-feature.jpg",
+      "date": "2025-09-30T15:40:00Z",
+      "tier": "national",
+      "summary": "SI breaks down volatility at the top of the poll."
+    },
+    {
+      "title": "Big Ten preview: tiers, X-factors, and POY race",
+      "link": "https://www.cbssports.com/college-basketball/news/big-ten-preview-tiers-x-factors-and-poy-race/",
+      "source": "CBS Sports CBB",
+      "image": "https://sportshqimages.cbsimg.net/images/cbb/bigten-preview-hero.jpg",
+      "date": "2025-09-28T17:30:00Z",
+      "tier": "national",
+      "summary": "Where Purdue fits and who challenges for the crown."
     },
     {
       "title": "Recruiting board resets after fall visits",
-      "link": "https://247sports.com/college/purdue/Article/purdue-basketball-recruiting-fall-visit-wrap-2025-123456789/",
-      "source": "247Sports",
-      "image": "https://247sports.imgix.net/2024/10/01/purdue-recruiting.jpg",
-      "date": "2025-10-01T16:30:00Z",
-      "tier": "insiders"
+      "link": "https://247sports.com/college/purdue/Article/purdue-basketball-recruiting-fall-visit-wrap-205432100/",
+      "source": "247Sports Purdue",
+      "image": "https://247sports.imgix.net/2025/09/25/purdue-recruiting-wrap.jpg",
+      "date": "2025-09-25T13:10:00Z",
+      "tier": "insiders",
+      "summary": "Targets reshuffled after a busy visit window."
     },
     {
-      "title": "Summer highlights & early storylines",
-      "link": "https://www.sbnation.com/college-basketball/2025/09/20/purdue-early-storylines",
-      "source": "SB Nation",
-      "image": "https://cdn.vox-cdn.com/thumbor/purdue-early.jpg",
-      "date": "2025-09-20T14:50:00Z",
-      "tier": "insiders"
+      "title": "Coach Painter on lineup experimentation",
+      "link": "https://www.jconline.com/story/sports/college/purdue/2025/09/25/purdue-basketball-matt-painter-rotation/",
+      "source": "Journal & Courier",
+      "image": "https://gannett-cdn.com/usatsports/purdue-painter-rotation.jpg",
+      "date": "2025-09-25T15:10:00Z",
+      "tier": "insiders",
+      "summary": "How minutes could shake out in November."
     },
     {
-      "title": "Purdue practice footage: first look at newcomers (VIDEO)",
-      "link": "https://www.youtube.com/watch?v=Q1w2e3r4t5Y",
-      "source": "YouTube",
+      "title": "Mic’d Up: Preseason Workouts (VIDEO)",
+      "link": "https://www.youtube.com/watch?v=AbCdEfGhIjk",
+      "source": "PurdueSports YouTube",
       "image": "",
-      "date": "2025-09-18T21:05:00Z",
-      "type": "video"
+      "date": "2025-09-26T20:55:00Z",
+      "type": "video",
+      "tier": "official",
+      "summary": "Player comms and energy from the practice floor."
     },
     {
       "title": "Way-Too-Early Top 25: Where Purdue lands",
       "link": "https://www.espn.com/mens-college-basketball/story/_/id/12345678/purdue-way-too-early-top-25",
       "source": "ESPN",
-      "image": "/static/cache/e8e613c9.jpg",
-      "date": "2025-09-15T12:00:00Z",
-      "tier": "national"
+      "image": "https://a.espncdn.com/photo/2025/09/20/purdue-way-too-early.jpg",
+      "date": "2025-09-20T12:00:00Z",
+      "tier": "national",
+      "summary": "National context as camps open."
     },
     {
       "title": "Film Room: PnR counters for 2025–26",
       "link": "https://purdue.rivals.com/news/film-room-pnr-counters-2025-26",
       "source": "Rivals",
-      "image": "https://images.rivalscdn.com/purdue/film-room.jpg",
-      "date": "2025-10-02T17:00:00Z",
-      "tier": "insiders"
+      "image": "https://images.rivalscdn.com/purdue/film-room-pnr.jpg",
+      "date": "2025-10-01T19:00:00Z",
+      "tier": "insiders",
+      "summary": "Breakdowns on how Purdue attacks drop and switch."
     },
     {
-      "title": "Zach Edey feature: inside his offseason",
-      "link": "https://www.si.com/college/purdue/basketball/zach-edey-offseason-feature-2025",
-      "source": "Sports Illustrated",
-      "image": "https://img.si.com/si-offseason-edey.jpg",
-      "date": "2025-09-10T13:40:00Z",
-      "tier": "national"
-    },
-    {
-      "title": "Press conference: Media day recap (VIDEO)",
-      "link": "https://youtu.be/AbCdEfGhIjk",
-      "source": "YouTube",
+      "title": "Summer Highlights Mix (VIDEO)",
+      "link": "https://youtu.be/Qz1w2x3c4vM",
+      "source": "BTN Purdue",
       "image": "",
-      "date": "2025-09-08T22:35:00Z",
-      "type": "video"
+      "date": "2025-09-18T21:05:00Z",
+      "type": "video",
+      "summary": "Best clips from offseason runs."
+    },
+    {
+      "title": "Big Ten storylines to watch",
+      "link": "https://sports.yahoo.com/big-ten-storylines-to-watch-2025-123456789.html",
+      "source": "Yahoo CBB",
+      "image": "https://s.yimg.com/ny/api/res/1.2/abc123/purdue-storylines.jpg",
+      "date": "2025-09-23T12:15:00Z",
+      "tier": "national",
+      "summary": "Depth, defense, and who rises behind Purdue."
     }
   ]
 }
