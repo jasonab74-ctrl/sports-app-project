@@ -1,16 +1,16 @@
 {
-  "purduesports.com": "static/brand/purduesports-default.jpg",
-  "www.purduesports.com": "static/brand/purduesports-default.jpg",
+  "purduesports.com": "static/brand/purduesports-default.svg",
+  "www.purduesports.com": "static/brand/purduesports-default.svg",
 
-  "www.hammerandrails.com": "static/brand/hammerandrails-default.jpg",
-  "hammerandrails.com": "static/brand/hammerandrails-default.jpg",
+  "www.hammerandrails.com": "static/brand/hammerandrails-default.svg",
+  "hammerandrails.com": "static/brand/hammerandrails-default.svg",
 
-  "purdue.rivals.com": "static/brand/rivals-default.jpg",
-  "rivals.com": "static/brand/rivals-default.jpg",
+  "purdue.rivals.com": "static/brand/rivals-default.svg",
+  "rivals.com": "static/brand/rivals-default.svg",
 
-  "247sports.com": "static/brand/247sports-default.jpg",
-  "www.247sports.com": "static/brand/247sports-default.jpg",
+  "www.247sports.com": "static/brand/247sports-default.svg",
+  "247sports.com": "static/brand/247sports-default.svg",
 
-  "www.jconline.com": "static/brand/jconline-default.jpg",
-  "jconline.com": "static/brand/jconline-default.jpg"
+  "www.jconline.com": "static/brand/jconline-default.svg",
+  "jconline.com": "static/brand/jconline-default.svg"
 }
