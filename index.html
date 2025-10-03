@@ -139,10 +139,11 @@
 
   <script>window.__TEAM_SLUG = "purdue-mbb";</script>
   <script src="static/js/pro.js?v=20251003b" defer></script>
+  <!-- ONLY CHANGE BELOW: bump SW version to c -->
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js?v=20251003b').then(reg=>{
+        navigator.serviceWorker.register('./sw.js?v=20251003c').then(reg=>{
           navigator.serviceWorker.addEventListener('message', (e) => {
             if (e.data && e.data.type === 'NEW_VERSION') {
               document.getElementById('toast').hidden = false;
