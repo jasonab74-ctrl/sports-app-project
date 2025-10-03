@@ -1,7 +1,7 @@
 (() => {
   const $ = (sel, ctx=document) => ctx.querySelector(sel);
 
-  // Project base (GitHub Pages)
+  // Base path for GH Pages (this repo: /sports-app-project/)
   const PATH_BASE = (function(){
     const parts = location.pathname.split('/').filter(Boolean);
     return parts.length ? `/${parts[0]}/` : '/';
@@ -9,7 +9,7 @@
   const url = (p) => `${PATH_BASE}${p.replace(/^\//,'')}`;
 
   /* === HYBRID SETTINGS === */
-  // Set this to your deployed Cloudflare Worker base URL (no trailing slash)
+  // 👇 Replace with your Worker URL (e.g. https://your-worker.workers.dev)
   const PROXY_BASE = 'https://<your-worker>.workers.dev';
   const PROXY_HOSTS = new Set([
     'img.si.com','si.com',
@@ -42,14 +42,13 @@
     const s = src.toLowerCase();
     if (/(sprite|logo|placeholder|default|blank|spacer)\.(png|svg|gif)$/.test(s)) return true;
     if (!/\.(jpg|jpeg|png|webp)(\?|$)/.test(s)) return true;
-    try{ const u=new URL(src); const name=u.pathname.split('/').pop()||''; if(name.length<=4) return true; }catch(_){}
     return false;
   }
 
   function proxify(src){
     try{
       const h = new URL(src).host.toLowerCase();
-      if (PROXY_BASE && PROXY_HOSTS.has(etld1(h))) {
+      if (PROXY_BASE !== 'https://<your-worker>.workers.dev' && PROXY_HOSTS.has(etld1(h))) {
         const sp = new URLSearchParams({ u: src });
         return `${PROXY_BASE}/?${sp.toString()}`;
       }
