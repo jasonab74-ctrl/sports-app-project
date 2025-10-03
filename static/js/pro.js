@@ -1,72 +1,71 @@
 (() => {
   const $ = (sel, ctx=document) => ctx.querySelector(sel);
 
-  // HARD-CODE the GitHub Pages base for this repo to avoid any ambiguity.
-  // This is the single most common reason for the "Loading..." loop.
+  // 1) Hard-code GitHub Pages base for THIS repo.
   const PATH_BASE = '/sports-app-project/';
   const url = (p) => `${PATH_BASE}${p.replace(/^\//,'')}`;
 
-  /* ===== Optional proxy (leave empty if not using Worker) ===== */
-  const PROXY_BASE = ""; // e.g., "https://your-worker.workers.dev"
+  // 2) Optional image proxy (leave "" if not using Worker).
+  const PROXY_BASE = ""; // e.g., "https://your-proxy.workers.dev"
   const PROXY_HOSTS = new Set([
-    'img.si.com','si.com',
-    'gannett-cdn.com','jconline.com',
-    's.yimg.com','yimg.com','yahoo.com',
-    '247sports.imgix.net','247sports.com',
-    'rivalscdn.com','rivals.com',
-    'sportshqimages.cbsimg.net','cbssports.com',
-    'vox-cdn.com','sbnation.com',
-    'espncdn.com','espn.com',
-    'apnews.com',
-    'nbcsports.com',
-    'i.ytimg.com','ytimg.com','youtube.com',
-    'purduesports.com'
+    'img.si.com','si.com','gannett-cdn.com','jconline.com','s.yimg.com','yimg.com','yahoo.com',
+    '247sports.imgix.net','247sports.com','rivalscdn.com','rivals.com','sportshqimages.cbsimg.net','cbssports.com',
+    'vox-cdn.com','sbnation.com','espncdn.com','espn.com','apnews.com','nbcsports.com','i.ytimg.com','ytimg.com','youtube.com','purduesports.com'
   ]);
 
-  /* ===== Utils ===== */
+  // ------- Utils -------
   const escapeHTML = (s) => (s||'').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
   function ftimeAgo(date){ try{const d=new Date(date);const diff=(Date.now()-d.getTime())/1000;if(diff<90)return'just now';const u=[['y',31536000],['mo',2592000],['d',86400],['h',3600],['m',60]];for(const [l,s] of u){const v=Math.floor(diff/s);if(v>=1)return`${v}${l} ago`;}return'just now';}catch(_){return''} }
-  function setDebug(msg){ const el=$('#debugMsg'); if(el) el.textContent=msg; console.log('[DEBUG]', msg); }
-
   const etld1 = (host) => { if(!host) return ''; const p=host.toLowerCase().split('.').filter(Boolean); return p.length<=2?host.toLowerCase():p.slice(-2).join('.'); };
-  function initialsFrom(str=''){ const parts=(str||'').trim().split(/\s+/); const a=(parts[0]||'')[0]||''; const b=(parts[1]||'')[0]||''; return (a+b).toUpperCase() || '•'; }
-  function fallbackNode(aspect,label){ const div=document.createElement('div'); div.className=aspect==='16x9'?'fallback-16x9':'fallback-4x3'; const inner=document.createElement('div'); inner.className='fallback-badge'; inner.textContent=initialsFrom(label); div.appendChild(inner); return div; }
-  function attachImgFallbacks(ctx=document){ ctx.querySelectorAll('img[data-aspect]').forEach(img=>{ const aspect=img.getAttribute('data-aspect'); const label=img.getAttribute('data-label')||''; img.addEventListener('error',()=>{ img.replaceWith(fallbackNode(aspect,label)); },{once:true}); }); }
-
-  /* ===== Images ===== */
-  function ytId(urlStr){ try{const u=new URL(urlStr); if(u.hostname.includes('youtu.be')) return u.pathname.slice(1); if(u.searchParams.get('v')) return u.searchParams.get('v'); const m=/\/embed\/([^?]+)/.exec(u.pathname); return m?m[1]:null;}catch(_){return null} }
-  const ytThumb = (id) => `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
-  function isLikelyBadImage(src){ if(!src) return true; const s=src.toLowerCase(); if(/(sprite|logo|placeholder|default|blank|spacer)\.(png|svg|gif)$/.test(s)) return true; if(!/\.(jpg|jpeg|png|webp)(\?|$)/.test(s)) return true; return false; }
-  function proxify(src){ if(!PROXY_BASE) return src; try{ const h=etld1(new URL(src).host.toLowerCase()); if(PROXY_HOSTS.has(h)) return `${PROXY_BASE}/?u=${encodeURIComponent(src)}`; return src; }catch{ return src; } }
-  function selectImageForItem(item){ const id=ytId(item.link||''); if(id) return ytThumb(id); const candidate=item.image||''; if(!candidate||isLikelyBadImage(candidate)) return ''; return proxify(candidate); }
-
-  /* ===== UI helpers ===== */
-  function badge(tag){ const t=(tag||'').toLowerCase(); if(t.includes('official'))return`<span class="pill">official</span>`; if(t.includes('insider'))return`<span class="pill">insiders</span>`; if(t.includes('national'))return`<span class="pill">national</span>`; return t?`<span class="pill">${escapeHTML(t)}</span>`:''; }
-
-  /* ===== Fetch helper with visible errors ===== */
-  async function fetchJSON(path){
-    try{
-      const r = await fetch(url(path), { cache:'no-cache' });
-      if (!r.ok) { setDebug(`${path} → ${r.status}`); return null; }
-      return await r.json();
-    }catch(e){
-      setDebug(`${path} → fetch failed`);
-      return null;
+  function setDebug(msg){ const el=$('#debugMsg'); if(el) el.textContent=msg; console.log('[DEBUG]', msg); }
+  function bannerError(text){
+    let b=document.getElementById('fatalBanner');
+    if(!b){ b=document.createElement('div'); b.id='fatalBanner';
+      b.style.cssText='position:fixed;top:0;left:0;right:0;background:#200;color:#fff;padding:8px 12px;z-index:9999;font:600 14px system-ui';
+      document.body.appendChild(b);
     }
+    b.textContent = text;
   }
 
-  /* ===== Panels ===== */
+  // ------- Images -------
+  function ytId(urlStr){ try{const u=new URL(urlStr); if(u.hostname.includes('youtu.be')) return u.pathname.slice(1); if(u.searchParams.get('v')) return u.searchParams.get('v'); const m=/\/embed\/([^?]+)/.exec(u.pathname); return m?m[1]:null;}catch(_){return null} }
+  const ytThumb = (id) => `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
+  function isLikelyBadImage(src){ if(!src) return true; const s=src.toLowerCase();
+    if(/(sprite|logo|placeholder|default|blank|spacer)\.(png|svg|gif)$/.test(s)) return true;
+    if(!/\.(jpg|jpeg|png|webp)(\?|$)/.test(s)) return true; return false; }
+  function proxify(src){ if(!PROXY_BASE) return src; try{ const h=etld1(new URL(src).host.toLowerCase()); if(PROXY_HOSTS.has(h)) return `${PROXY_BASE}/?u=${encodeURIComponent(src)}`; return src; }catch{ return src; } }
+  function selectImageForItem(item){ const id=ytId(item.link||''); if(id) return ytThumb(id); const c=item.image||''; if(!c||isLikelyBadImage(c)) return ''; return proxify(c); }
+
+  // ------- UI helpers -------
+  function initialsFrom(str=''){ const parts=(str||'').trim().split(/\s+/); const a=(parts[0]||'')[0]||''; const b=(parts[1]||'')[0]||''; return (a+b).toUpperCase() || '•'; }
+  function fallbackNode(aspect,label){ const div=document.createElement('div'); div.className=aspect==='16x9'?'fallback-16x9':'fallback-4x3'; const inner=document.createElement('div'); inner.className='fallback-badge'; inner.textContent=initialsFrom(label); div.appendChild(inner); return div; }
+  function attachImgFallbacks(ctx=document){ ctx.querySelectorAll('img[data-aspect]').forEach(img=>{ const a=img.getAttribute('data-aspect'); const l=img.getAttribute('data-label')||''; img.addEventListener('error',()=>{ img.replaceWith(fallbackNode(a,l)); },{once:true}); }); }
+  function badge(tag){ const t=(tag||'').toLowerCase(); if(t.includes('official'))return`<span class="pill">official</span>`; if(t.includes('insider'))return`<span class="pill">insiders</span>`; if(t.includes('national'))return`<span class="pill">national</span>`; return t?`<span class="pill">${escapeHTML(t)}</span>`:''; }
+
+  // ------- Dual-path fetch (with explicit errors) -------
+  async function fetchJSON(relPath){
+    const primary = url(relPath);              // /sports-app-project/static/...
+    const fallback = `/${relPath.replace(/^\//,'')}`; // /static/... (root) if someone moved files
+    const tryFetch = async (href) => {
+      try{ const r=await fetch(href,{cache:'no-cache'}); if(!r.ok) return {ok:false,status:r.status,href}; return {ok:true,json:await r.json(),href}; }
+      catch(e){ return {ok:false,status:'ERR',href}; }
+    };
+    let res = await tryFetch(primary);
+    if(!res.ok){ setDebug(`${relPath} → ${res.status} @ ${primary}`); res = await tryFetch(fallback); }
+    if(!res.ok){ setDebug(`${relPath} → ${res.status} @ ${fallback}`); bannerError(`Data missing: ${relPath} (see footer)`); return null; }
+    return res.json;
+  }
+
+  // ------- Panels -------
   async function loadRankings(){
     const w = await fetchJSON('static/widgets.json');
-    if (!w) return;
+    if(!w) return;
     $('#apRank').textContent = w.ap_rank ? `#${w.ap_rank}` : '—';
     $('#kpRank').textContent = w.kenpom_rank ? `#${w.kenpom_rank}` : '—';
     if (w.ap_url) $('#apLink').href = w.ap_url;
     if (w.kenpom_url) $('#kpLink').href = w.kenpom_url;
-    if (w.updated_at){
-      const ts=new Date(w.updated_at);
-      $('#rankUpdated').textContent = `as of ${ts.toLocaleString([], {month:'short', day:'numeric'})}`;
-    }
+    if (w.updated_at){ const ts=new Date(w.updated_at);
+      $('#rankUpdated').textContent = `as of ${ts.toLocaleString([], {month:'short', day:'numeric'})}`; }
   }
 
   function initials(name='?'){
@@ -78,8 +77,7 @@
   function siteClass(site){ const s=(site||'').toLowerCase(); if(s.startsWith('home'))return'site-home'; if(s.startsWith('away'))return'site-away'; if(s.startsWith('neutral'))return'site-neutral'; return''; }
 
   async function loadSchedule(){
-    const sched = await fetchJSON('static/schedule.json');
-    if (!sched) return;
+    const sched = await fetchJSON('static/schedule.json'); if(!sched) return;
     const list=$('#scheduleList');
     list.innerHTML = sched.slice(0,6).map(g=>{
       const dt=new Date(g.utc||g.date);
@@ -131,11 +129,8 @@
   };
 
   async function loadItems(){
-    const data = await fetchJSON('static/teams/purdue-mbb/items.json');
-    if (!data) return;
-
-    const items = (data.items || data || []);
-    const list = items.slice(0,18);
+    const data = await fetchJSON('static/teams/purdue-mbb/items.json'); if(!data) return;
+    const items = (data.items || data || []); const list = items.slice(0,18);
 
     $('#tickerTrack').innerHTML = list.slice(0,12)
       .map(i => `<span style="margin:0 1.25rem">${escapeHTML(i.source||'')} — ${escapeHTML(i.title||'')}</span>`).join('');
@@ -152,8 +147,7 @@
   }
 
   async function loadInsiders(){
-    const data = await fetchJSON('static/insiders.json');
-    if (!data) return;
+    const data = await fetchJSON('static/insiders.json'); if(!data) return;
     const el=$('#insiderList');
     el.innerHTML=data.map(o=>{
       const pay=o.pay?'<span class="badge-pay">$</span>':'';
