@@ -1,0 +1,23 @@
+name: Cache article images
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 */6 * * *"
+
+jobs:
+  cache-images:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: npm install node-fetch@3.3.2
+      - run: node scripts/cache-images.mjs
+      - run: |
+          git config user.name "cache-bot"
+          git config user.email "actions@github.com"
+          git add static/cache
+          git commit -m "update cached thumbnails" || echo "no changes"
+          git push
