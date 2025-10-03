@@ -6,7 +6,7 @@
   <title>Team Hub — Purdue Men's Basketball</title>
   <meta name="theme-color" content="#0c0c0e"/>
 
-  <!-- Preconnects (safe to keep) -->
+  <!-- Preconnects (fast image loads) -->
   <link rel="preconnect" href="https://i.ytimg.com">
   <link rel="preconnect" href="https://img.si.com">
   <link rel="preconnect" href="https://gannett-cdn.com">
@@ -14,7 +14,8 @@
   <link rel="preconnect" href="https://espncdn.com">
   <link rel="preconnect" href="https://s.yimg.com">
 
-  <link rel="stylesheet" href="static/css/pro.css?v=ssr-1"/>
+  <!-- Your existing stylesheet -->
+  <link rel="stylesheet" href="static/css/pro.css?v=ssr-now"/>
 </head>
 <body>
   <header class="topbar">
@@ -55,14 +56,14 @@
       <div class="panel-hd">
         <h2>Top Headlines</h2>
         <div class="panel-actions">
-          <button class="pill pill-all" data-filter="all">All</button>
-          <button class="pill" data-filter="official">Official</button>
-          <button class="pill" data-filter="insiders">Insiders</button>
-          <button class="pill" data-filter="national">National</button>
+          <button class="pill pill-all">All</button>
+          <button class="pill">Official</button>
+          <button class="pill">Insiders</button>
+          <button class="pill">National</button>
         </div>
       </div>
 
-      <!-- HERO (pre-rendered) -->
+      <!-- HERO -->
       <div id="hero" class="hero">
         <a href="https://purduesports.com/news/2025/09/29/mens-basketball-non-conference-schedule" target="_blank" rel="noopener" class="hero-img-wrap">
           <div class="fallback-16x9"><div class="fallback-badge">PS</div></div>
@@ -78,7 +79,7 @@
         </div>
       </div>
 
-      <!-- GRID (pre-rendered cards) -->
+      <!-- GRID -->
       <div id="headlines" class="card-grid">
         <article class="card">
           <a class="card-img-wrap" href="https://www.hammerandrails.com/2025/09/24/purdue-scouting-report" target="_blank" rel="noopener">
@@ -258,7 +259,7 @@
       </section>
     </aside>
 
-    <!-- VIDEOS (as cards above; this section can be used for a bigger grid later) -->
+    <!-- VIDEOS (optional expanded grid later) -->
     <section id="videos" class="panel">
       <div class="panel-hd">
         <h2>Latest Videos</h2>
@@ -268,9 +269,7 @@
           <button class="pill">Insiders</button>
         </div>
       </div>
-      <div class="video-grid">
-        <!-- You can mirror top video cards here if you want a separate section -->
-      </div>
+      <div class="video-grid"></div>
     </section>
   </main>
 
@@ -280,8 +279,5 @@
       <span>• 8 sources</span>
     </div>
   </footer>
-
-  <!-- Tiny runtime for image fallbacks only -->
-  <script src="static/js/runtime.js?v=ssr-1" defer></script>
 </body>
 </html>
