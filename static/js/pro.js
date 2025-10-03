@@ -1,26 +1,45 @@
 (() => {
   const $ = (sel, ctx=document) => ctx.querySelector(sel);
 
-  // Base path for GH Pages (e.g., /sports-app-project/)
+  // Base path for GH Pages (this project: /sports-app-project/)
   const PATH_BASE = (function(){
     const parts = location.pathname.split('/').filter(Boolean);
     return parts.length ? `/${parts[0]}/` : '/';
   })();
   const url = (p) => `${PATH_BASE}${p.replace(/^\//,'')}`;
 
-  /* ========== Utils ========== */
+  /* ---------- Utils ---------- */
   const escapeHTML = (s) => (s||'').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
   function ftimeAgo(date){ try{const d=new Date(date);const diff=(Date.now()-d.getTime())/1000;if(diff<90)return'just now';const u=[['y',31536000],['mo',2592000],['d',86400],['h',3600],['m',60]];for(const [l,s] of u){const v=Math.floor(diff/s);if(v>=1)return`${v}${l} ago`;}return'just now';}catch(_){return''} }
   const debug = (m) => { const el=$('#debugMsg'); if(el) el.textContent=m; console.log('[DEBUG]', m); };
 
-  /* ========== Image selection & fallback (no inline JS) ========== */
+  /* ---------- Image acceptance & fallbacks (programmatic) ---------- */
+  // Known image CDNs we trust to serve correct article art
   const KNOWN_IMG_HOSTS = [
-    /apnews\.com/i, /gannett-cdn\.com/i, /si\.com|img\.si\.com/i, /yimg\.com/i,
-    /247sports\.com|247sports\.imgix\.net/i, /rivals\.com/i, /cbssports\.com|sportshqimages\.cbsimg\.net/i,
-    /nbcsports/i, /espn\.com|espncdn\.com/i, /purduesports\.com/i, /sbnation\.com|vox-cdn\.com/i,
-    /youtube\.com|ytimg\.com/i
+    /img\.si\.com|si\.com/i,
+    /gannett-cdn\.com|jconline\.com/i,
+    /yimg\.com|yahoo\.com/i,
+    /247sports\.imgix\.net|247sports\.com/i,
+    /rivalscdn\.com|rivals\.com/i,
+    /sportshqimages\.cbsimg\.net|cbssports\.com/i,
+    /vox-cdn\.com|sbnation\.com/i,
+    /espncdn\.com|espn\.com/i,
+    /apnews\.com/i,
+    /nbcsports/i,
+    /purduesports\.com/i,
+    /ytimg\.com|youtube\.com/i
   ];
-  const isKnownImgHost = (h) => KNOWN_IMG_HOSTS.some(rx => rx.test(h||''));
+
+  // Some sites host images on a sibling/alias domain. Map to canonical.
+  const HOST_ALIAS = new Map([
+    ['img.si.com','si.com'],
+    ['gannett-cdn.com','jconline.com'],
+    ['rivalscdn.com','rivals.com'],
+    ['sportshqimages.cbsimg.net','cbssports.com'],
+    ['vox-cdn.com','sbnation.com'],
+    ['espncdn.com','espn.com'],
+    ['ytimg.com','youtube.com'],
+  ]);
 
   function eTLD1(host){
     if(!host) return '';
@@ -28,12 +47,18 @@
     if (parts.length <= 2) return host.toLowerCase();
     return parts.slice(-2).join('.');
   }
-
+  function canonicalHost(host){
+    const base = eTLD1(host);
+    return HOST_ALIAS.get(base) || base;
+  }
+  function isWhitelistedHost(host){
+    return KNOWN_IMG_HOSTS.some(rx => rx.test(host||''));
+  }
   function isLikelyBadImage(src){
     if(!src) return true;
     const s = src.toLowerCase();
     if (/(sprite|logo|placeholder|default|blank|spacer)\.(png|svg|gif)$/.test(s)) return true;
-    if (!/\.(jpg|jpeg|png|webp)(\?|$)/.test(s)) return true;
+    if (!/\.(jpg|jpeg|png|webp)(\?|$)/.test(s)) return true; // must be a real image file
     try{
       const u = new URL(src);
       const name = u.pathname.split('/').pop() || '';
@@ -41,7 +66,6 @@
     }catch(_){}
     return false;
   }
-
   function ytId(urlStr){
     try{
       const u = new URL(urlStr);
@@ -52,13 +76,11 @@
       return null;
     }catch(_){ return null }
   }
-
   function initialsFrom(str=''){
     const parts=(str||'').trim().split(/\s+/);
     const a=(parts[0]||'')[0]||''; const b=(parts[1]||'')[0]||'';
     return (a+b).toUpperCase() || '•';
   }
-
   function fallbackNode(aspect,label){
     const div = document.createElement('div');
     div.className = aspect==='16x9' ? 'fallback-16x9' : 'fallback-4x3';
@@ -68,41 +90,36 @@
     div.appendChild(inner);
     return div;
   }
-
   function attachImgFallbacks(ctx=document){
     ctx.querySelectorAll('img[data-aspect]').forEach(img => {
       const aspect = img.getAttribute('data-aspect');
       const label  = img.getAttribute('data-label') || '';
       img.addEventListener('error', () => {
-        const node = fallbackNode(aspect, label);
-        img.replaceWith(node);
+        img.replaceWith(fallbackNode(aspect, label));
       }, {once:true});
     });
   }
-
   function selectImageForItem(item){
-    // Prefer YouTube thumbnail if link is YT
+    // Prefer YouTube derived thumbnail when applicable
     const id = ytId(item.link||'');
     if (id) return `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
 
     const candidate = item.image || '';
     if (!candidate || isLikelyBadImage(candidate)) return '';
 
-    // Host match/whitelist
     try{
-      const imgHost = new URL(candidate).host;
-      const linkHost= new URL(item.link||'', location.href).host;
-      if (eTLD1(imgHost) === eTLD1(linkHost) || isKnownImgHost(imgHost)) {
+      const imgHost  = canonicalHost(new URL(candidate).host);
+      const linkHost = canonicalHost(new URL(item.link||'', location.href).host);
+      if (imgHost === linkHost || isWhitelistedHost(imgHost)) {
         return candidate;
       }
-      // Reject cross-site mismatches (prevents random logos)
-      return '';
+      return ''; // reject cross-site mismatches
     }catch(_){
       return '';
     }
   }
 
-  /* ========== UI helpers ========== */
+  /* ---------- UI helpers ---------- */
   function badge(tag){
     const t=(tag||'').toLowerCase();
     if (t.includes('official')) return `<span class="pill">official</span>`;
@@ -111,7 +128,7 @@
     return t ? `<span class="pill">${escapeHTML(t)}</span>` : '';
   }
 
-  /* ========== Data loaders ========== */
+  /* ---------- Data loaders ---------- */
   async function getTeam(){
     try{
       const r = await fetch(url('static/team.json'), {cache:'no-cache'});
@@ -172,7 +189,7 @@
     }catch(e){ debug('schedule: '+e.message); }
   }
 
-  /* ========== Headlines ========== */
+  /* ---------- Headlines ---------- */
   function renderHero(lead){
     const hero = $('#hero');
     hero.classList.remove('skeleton');
@@ -182,7 +199,7 @@
 
     const media = src
       ? `<img class="hero-img" data-aspect="16x9" data-label="${escapeHTML(label)}"
-               src="${src}" alt="" loading="eager" decoding="async"
+               src="${src}" alt="" loading="eager" fetchpriority="high" decoding="async"
                referrerpolicy="no-referrer" crossorigin="anonymous">`
       : `<div class="fallback-16x9"><div class="fallback-badge">${initialsFrom(label)}</div></div>`;
 
@@ -248,9 +265,8 @@
     }catch(e){ debug('items: '+e.message); }
   }
 
-  /* ========== Videos ========== */
+  /* ---------- Videos ---------- */
   function ytThumb(id){ return `https://i.ytimg.com/vi/${id}/hqdefault.jpg`; }
-
   function setupModal(){
     const modal = $('#videoModal'); if (!modal) return;
     modal.addEventListener('click', (e) => { if (e.target.hasAttribute('data-close')) closeModal(); });
@@ -269,7 +285,6 @@
     $('#modalPlayer').innerHTML = '';
     $('#videoModal').setAttribute('aria-hidden','true');
   }
-
   async function loadVideos(){
     try{
       const slug = await getTeam();
@@ -301,7 +316,7 @@
     }catch(e){ debug('videos: '+e.message); }
   }
 
-  /* ========== Insiders ========== */
+  /* ---------- Insiders ---------- */
   async function loadInsiders(){
     try{
       const r = await fetch(url('static/insiders.json'), {cache:'no-cache'});
@@ -321,7 +336,7 @@
     }catch(e){ debug('insiders: '+e.message); }
   }
 
-  /* ========== Init ========== */
+  /* ---------- Init ---------- */
   async function init(){
     setupModal();
     await Promise.all([loadRankings(), loadSchedule(), loadItems(), loadVideos(), loadInsiders()]);
