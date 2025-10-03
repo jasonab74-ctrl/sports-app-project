@@ -10,6 +10,7 @@ const ITEMS_PATH  = 'static/teams/purdue-mbb/items.json';
 const WIDGETS_PATH= 'static/widgets.json';
 const SCHED_PATH  = 'static/schedule.json';
 const INS_PATH    = 'static/insiders.json';
+const OVERRIDES_PATH = 'static/image-overrides.json';
 
 fs.mkdirSync(CACHE_DIR, { recursive: true });
 
@@ -24,6 +25,16 @@ function cachedThumbByTitle(title=''){
   const p = path.join(CACHE_DIR, fname);
   return fs.existsSync(p) ? `static/cache/${fname}` : null;
 }
+function overridesMap(){
+  try { return JSON.parse(fs.readFileSync(OVERRIDES_PATH,'utf8')); } catch { return {}; }
+}
+function overrideFor(link=''){
+  try {
+    const host = new URL(link).hostname.toLowerCase();
+    const map = overridesMap();
+    return map[host] || null;
+  } catch { return null; }
+}
 
 function imgTag({src,label='',aspect='4x3',eager=false}){
   const wh = aspect==='16x9' ? {w:1280,h:720} : {w:1200,h:900};
@@ -35,21 +46,24 @@ function imgTag({src,label='',aspect='4x3',eager=false}){
   return `<div class="fallback-${aspect}"><div class="fallback-badge">${escapeHTML(initialsFrom(label))}</div></div>`;
 }
 
+/* ===== Load data ===== */
 const itemsRaw = JSON.parse(fs.readFileSync(ITEMS_PATH, 'utf8'));
 const ITEMS = (itemsRaw.items || itemsRaw || []).filter(Boolean);
 const WIDGETS = JSON.parse(fs.readFileSync(WIDGETS_PATH, 'utf8'));
 const SCHEDULE = JSON.parse(fs.readFileSync(SCHED_PATH, 'utf8'));
 const INSIDERS = JSON.parse(fs.readFileSync(INS_PATH, 'utf8'));
 
+/* ===== Smart video separation ===== */
 const videoItems = ITEMS.filter(i => (i.type||'').toLowerCase()==='video' || looksVideoLink(i.link));
 const newsItems  = ITEMS.filter(i => !((i.type||'').toLowerCase()==='video' || looksVideoLink(i.link)));
 
+/* ===== Hero ===== */
 const lead = newsItems[0];
-const heroThumb = lead ? (cachedThumbByTitle(lead.title) || null) : null;
+const leadThumb = lead ? (cachedThumbByTitle(lead.title) || overrideFor(lead.link)) : null;
 const heroHTML = lead ? `
 <div id="hero" class="hero">
   <a href="${escapeHTML(lead.link)}" target="_blank" rel="noopener" class="hero-img-wrap">
-    ${imgTag({src:heroThumb,label:lead.source||lead.title,aspect:'16x9',eager:true})}
+    ${imgTag({src:leadThumb,label:lead.source||lead.title,aspect:'16x9',eager:true})}
   </a>
   <div class="hero-meta">
     <div class="pills">
@@ -60,8 +74,9 @@ const heroHTML = lead ? `
   </div>
 </div>` : '';
 
+/* ===== News grid ===== */
 const newsGrid = newsItems.slice(1, 12).map(i=>{
-  const src = cachedThumbByTitle(i.title);
+  const src = cachedThumbByTitle(i.title) || overrideFor(i.link);
   return `<article class="card">
     <a class="card-img-wrap" href="${escapeHTML(i.link)}" target="_blank" rel="noopener">
       ${imgTag({src,label:i.source||i.title,aspect:'4x3'})}
@@ -72,8 +87,9 @@ const newsGrid = newsItems.slice(1, 12).map(i=>{
   </article>`;
 }).join('');
 
+/* ===== Videos ===== */
 const videoGrid = videoItems.slice(0, 9).map(v=>{
-  const src = cachedThumbByTitle(v.title);
+  const src = cachedThumbByTitle(v.title) || overrideFor(v.link);
   return `<article class="card video-card">
     <a class="card-img-wrap" href="${escapeHTML(v.link)}" target="_blank" rel="noopener">
       ${imgTag({src,label:v.source||v.title,aspect:'16x9'})}
@@ -84,6 +100,7 @@ const videoGrid = videoItems.slice(0, 9).map(v=>{
   </article>`;
 }).join('');
 
+/* ===== Panels & Meta (unchanged) ===== */
 const rankingsHTML = `
 <div class="rankings">
   <div class="rank-line"><span>AP Top 25:</span> <b>${WIDGETS.ap_rank ? `#${WIDGETS.ap_rank}` : '—'}</b> ${WIDGETS.ap_url?`<a href="${escapeHTML(WIDGETS.ap_url)}" target="_blank" rel="noopener">View</a>`:''}</div>
@@ -115,7 +132,7 @@ const insidersHTML = (INSIDERS||[]).map(o=>`
 
 const ticker = ITEMS.slice(0,12).map(i=>`<span style="margin:0 1.25rem">${escapeHTML(i.source||'')} — ${escapeHTML(i.title||'')}</span>`).join('');
 
-const META_IMG = heroThumb || 'static/logo.png';
+const META_IMG = leadThumb || 'static/logo.png';
 const HEAD_META = `
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -194,11 +211,10 @@ ${HEAD_META}
     <div>Updated ${new Date().toLocaleString()}</div>
   </footer>
 
-  <!-- One-time SW cleanup: registers a self-destructing sw.js and clears caches -->
   <script src="static/js/kill-sw.js" defer></script>
   <script src="static/js/runtime.js" defer></script>
 </body>
 </html>`;
 
 fs.writeFileSync('index.html', HTML);
-console.log('index.html rebuilt with SW cleanup hook');
+console.log('index.html rebuilt with domain overrides');
