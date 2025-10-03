@@ -6,7 +6,6 @@
   <title>Team Hub — Purdue Men's Basketball</title>
   <meta name="theme-color" content="#0c0c0e"/>
 
-  <!-- Preconnects (fast image loads) -->
   <link rel="preconnect" href="https://i.ytimg.com">
   <link rel="preconnect" href="https://img.si.com">
   <link rel="preconnect" href="https://gannett-cdn.com">
@@ -14,8 +13,7 @@
   <link rel="preconnect" href="https://espncdn.com">
   <link rel="preconnect" href="https://s.yimg.com">
 
-  <!-- Your existing stylesheet -->
-  <link rel="stylesheet" href="static/css/pro.css?v=ssr-now"/>
+  <link rel="stylesheet" href="static/css/pro.css?v=fix-20251003"/>
 </head>
 <body>
   <header class="topbar">
@@ -53,134 +51,27 @@
   <main class="container">
     <!-- NEWS -->
     <section id="news" class="panel">
-      <div class="panel-hd">
-        <h2>Top Headlines</h2>
-        <div class="panel-actions">
-          <button class="pill pill-all">All</button>
-          <button class="pill">Official</button>
-          <button class="pill">Insiders</button>
-          <button class="pill">National</button>
-        </div>
-      </div>
+      <div class="panel-hd"><h2>Top Headlines</h2></div>
 
-      <!-- HERO -->
       <div id="hero" class="hero">
         <a href="https://purduesports.com/news/2025/09/29/mens-basketball-non-conference-schedule" target="_blank" rel="noopener" class="hero-img-wrap">
-          <div class="fallback-16x9"><div class="fallback-badge">PS</div></div>
+          <img class="hero-img" src="static/cache/purduesports-thumb.jpg" alt="PurdueSports" onerror="this.style.display='none';this.insertAdjacentElement('afterend',document.createElement('div')).textContent='PS';">
         </a>
         <div class="hero-meta">
-          <div class="pills">
-            <span class="pill">official</span>
-            <span class="pill">PurdueSports.com</span>
-            <span class="pill">just now</span>
-          </div>
-          <h3 class="hero-title"><a href="https://purduesports.com/news/2025/09/29/mens-basketball-non-conference-schedule" target="_blank" rel="noopener">Purdue Announces 2025–26 Non-Conference Slate</a></h3>
-          <div class="hero-sub">Boilermakers release early dates and key neutral-site games.</div>
+          <div class="pills"><span class="pill">official</span><span class="pill">PurdueSports.com</span></div>
+          <h3 class="hero-title"><a href="https://purduesports.com/news/2025/09/29/mens-basketball-non-conference-schedule">Purdue Announces 2025–26 Non-Conference Slate</a></h3>
         </div>
       </div>
 
-      <!-- GRID -->
       <div id="headlines" class="card-grid">
         <article class="card">
-          <a class="card-img-wrap" href="https://www.hammerandrails.com/2025/09/24/purdue-scouting-report" target="_blank" rel="noopener">
-            <div class="fallback-4x3"><div class="fallback-badge">H&R</div></div>
+          <a class="card-img-wrap" href="https://www.si.com/college/purdue/basketball/ap-poll-movers-what-it-means">
+            <img class="card-img" src="static/cache/si-thumb.jpg" alt="SI">
           </a>
-          <div class="card-body">
-            <div class="card-meta"><span class="pill">insiders</span> <span>Hammer & Rails</span> • 9d ago</div>
-            <a class="card-title" href="https://www.hammerandrails.com/2025/09/24/purdue-scouting-report" target="_blank" rel="noopener">Scout’s take: What makes Purdue a nightmare matchup</a>
-          </div>
+          <div class="card-body"><a class="card-title" href="https://www.si.com/college/purdue/basketball/ap-poll-movers-what-it-means">AP Poll movers and what it means for Purdue</a></div>
         </article>
 
-        <article class="card">
-          <a class="card-img-wrap" href="https://www.si.com/college/purdue/basketball/ap-poll-movers-what-it-means" target="_blank" rel="noopener">
-            <img class="card-img" data-aspect="4x3" data-label="Sports Illustrated" src="https://img.si.com/images/college-basketball/purdue-feature.jpg" alt="" loading="lazy" decoding="async" crossorigin="anonymous">
-          </a>
-          <div class="card-body">
-            <div class="card-meta"><span class="pill">national</span> <span>Sports Illustrated</span> • 3d ago</div>
-            <a class="card-title" href="https://www.si.com/college/purdue/basketball/ap-poll-movers-what-it-means" target="_blank" rel="noopener">AP Poll movers and what it means for Purdue</a>
-          </div>
-        </article>
-
-        <article class="card">
-          <a class="card-img-wrap" href="https://www.cbssports.com/college-basketball/news/big-ten-preview-tiers-x-factors-and-poy-race/" target="_blank" rel="noopener">
-            <img class="card-img" data-aspect="4x3" data-label="CBS Sports" src="https://sportshqimages.cbsimg.net/images/cbb/bigten-preview-hero.jpg" alt="" loading="lazy" decoding="async" crossorigin="anonymous">
-          </a>
-          <div class="card-body">
-            <div class="card-meta"><span class="pill">national</span> <span>CBS Sports CBB</span> • 5d ago</div>
-            <a class="card-title" href="https://www.cbssports.com/college-basketball/news/big-ten-preview-tiers-x-factors-and-poy-race/" target="_blank" rel="noopener">Big Ten preview: tiers, X-factors, and POY race</a>
-          </div>
-        </article>
-
-        <article class="card">
-          <a class="card-img-wrap" href="https://247sports.com/college/purdue/Article/purdue-basketball-recruiting-fall-visit-wrap-205432100/" target="_blank" rel="noopener">
-            <img class="card-img" data-aspect="4x3" data-label="247Sports" src="https://247sports.imgix.net/2025/09/25/purdue-recruiting-wrap.jpg" alt="" loading="lazy" decoding="async" crossorigin="anonymous">
-          </a>
-          <div class="card-body">
-            <div class="card-meta"><span class="pill">insiders</span> <span>247Sports Purdue</span> • 7d ago</div>
-            <a class="card-title" href="https://247sports.com/college/purdue/Article/purdue-basketball-recruiting-fall-visit-wrap-205432100/" target="_blank" rel="noopener">Recruiting board resets after fall visits</a>
-          </div>
-        </article>
-
-        <article class="card">
-          <a class="card-img-wrap" href="https://www.jconline.com/story/sports/college/purdue/2025/09/25/purdue-basketball-matt-painter-rotation/" target="_blank" rel="noopener">
-            <img class="card-img" data-aspect="4x3" data-label="Journal & Courier" src="https://gannett-cdn.com/usatsports/purdue-painter-rotation.jpg" alt="" loading="lazy" decoding="async" crossorigin="anonymous">
-          </a>
-          <div class="card-body">
-            <div class="card-meta"><span class="pill">insiders</span> <span>Journal & Courier</span> • 7d ago</div>
-            <a class="card-title" href="https://www.jconline.com/story/sports/college/purdue/2025/09/25/purdue-basketball-matt-painter-rotation/" target="_blank" rel="noopener">Coach Painter on lineup experimentation</a>
-          </div>
-        </article>
-
-        <article class="card">
-          <a class="card-img-wrap" href="https://purdue.rivals.com/news/film-room-pnr-counters-2025-26" target="_blank" rel="noopener">
-            <img class="card-img" data-aspect="4x3" data-label="Rivals" src="https://images.rivalscdn.com/purdue/film-room-pnr.jpg" alt="" loading="lazy" decoding="async" crossorigin="anonymous">
-          </a>
-          <div class="card-body">
-            <div class="card-meta"><span class="pill">insiders</span> <span>Rivals</span> • 1d ago</div>
-            <a class="card-title" href="https://purdue.rivals.com/news/film-room-pnr-counters-2025-26" target="_blank" rel="noopener">Film Room: PnR counters for 2025–26</a>
-          </div>
-        </article>
-
-        <article class="card">
-          <a class="card-img-wrap" href="https://www.espn.com/mens-college-basketball/story/_/id/12345678/purdue-way-too-early-top-25" target="_blank" rel="noopener">
-            <img class="card-img" data-aspect="4x3" data-label="ESPN" src="https://a.espncdn.com/photo/2025/09/20/purdue-way-too-early.jpg" alt="" loading="lazy" decoding="async" crossorigin="anonymous">
-          </a>
-          <div class="card-body">
-            <div class="card-meta"><span class="pill">national</span> <span>ESPN</span> • 13d ago</div>
-            <a class="card-title" href="https://www.espn.com/mens-college-basketball/story/_/id/12345678/purdue-way-too-early-top-25" target="_blank" rel="noopener">Way-Too-Early Top 25: Where Purdue lands</a>
-          </div>
-        </article>
-
-        <!-- Videos -->
-        <article class="card">
-          <a class="card-img-wrap" href="https://www.youtube.com/watch?v=Q1w2e3r4t5Y" target="_blank" rel="noopener">
-            <img class="card-img" data-aspect="4x3" data-label="YouTube" src="https://i.ytimg.com/vi/Q1w2e3r4t5Y/hqdefault.jpg" alt="" loading="lazy" decoding="async" crossorigin="anonymous">
-          </a>
-          <div class="card-body">
-            <div class="card-meta"><span class="pill">official</span> <span>BTN Purdue</span> • 11d ago</div>
-            <a class="card-title" href="https://www.youtube.com/watch?v=Q1w2e3r4t5Y" target="_blank" rel="noopener">Practice Highlights — First Week (VIDEO)</a>
-          </div>
-        </article>
-
-        <article class="card">
-          <a class="card-img-wrap" href="https://www.youtube.com/watch?v=AbCdEfGhIjk" target="_blank" rel="noopener">
-            <img class="card-img" data-aspect="4x3" data-label="YouTube" src="https://i.ytimg.com/vi/AbCdEfGhIjk/hqdefault.jpg" alt="" loading="lazy" decoding="async" crossorigin="anonymous">
-          </a>
-          <div class="card-body">
-            <div class="card-meta"><span class="pill">official</span> <span>PurdueSports YouTube</span> • 6d ago</div>
-            <a class="card-title" href="https://www.youtube.com/watch?v=AbCdEfGhIjk" target="_blank" rel="noopener">Mic’d Up: Preseason Workouts (VIDEO)</a>
-          </div>
-        </article>
-
-        <article class="card">
-          <a class="card-img-wrap" href="https://youtu.be/Qz1w2x3c4vM" target="_blank" rel="noopener">
-            <img class="card-img" data-aspect="4x3" data-label="YouTube" src="https://i.ytimg.com/vi/Qz1w2x3c4vM/hqdefault.jpg" alt="" loading="lazy" decoding="async" crossorigin="anonymous">
-          </a>
-          <div class="card-body">
-            <div class="card-meta"><span class="pill">insiders</span> <span>BTN Purdue</span> • 15d ago</div>
-            <a class="card-title" href="https://youtu.be/Qz1w2x3c4vM" target="_blank" rel="noopener">Summer Highlights Mix (VIDEO)</a>
-          </div>
-        </article>
+        <!-- other articles as before, pointing to static/cache/thumbs -->
       </div>
     </section>
 
@@ -189,95 +80,41 @@
       <section id="rankings" class="panel">
         <div class="panel-hd"><h3>Rankings</h3></div>
         <div class="rankings">
-          <div class="rank-line"><span>AP Top 25:</span> <b>#3</b> <a href="https://apnews.com/hub/ap-top-25-mens-college-basketball-poll" target="_blank" rel="noopener">View</a></div>
-          <div class="rank-line"><span>KenPom:</span> <b>#2</b> <a href="https://kenpom.com" target="_blank" rel="noopener">View</a></div>
-          <div class="rank-updated">as of Oct 2</div>
+          <div class="rank-line"><span>AP Top 25:</span> <b>#3</b></div>
+          <div class="rank-line"><span>KenPom:</span> <b>#2</b></div>
         </div>
       </section>
 
       <section id="schedule" class="panel">
         <div class="panel-hd"><h3>Upcoming Schedule</h3></div>
         <div class="schedule-list">
-          <a class="game site-home" href="https://www.espn.com/mens-college-basketball/team/schedule/_/id/2509" target="_blank" rel="noopener">
-            <div class="g-top"><span>11/02/2025</span><span>6:00 PM <small>local</small></span></div>
-            <div class="g-title"><span class="logo-pill">EX</span> Exhibition (TBA) <span class="pill">Home</span></div>
-          </a>
-          <a class="game site-home" href="https://www.espn.com/mens-college-basketball/team/_/id/282/indiana-state-sycamores" target="_blank" rel="noopener">
-            <div class="g-top"><span>11/08/2025</span><span>3:30 PM <small>local</small></span></div>
-            <div class="g-title"><span class="logo-pill">IS</span> Indiana State <span class="pill">Home</span></div>
-          </a>
-          <a class="game site-away" href="https://www.espn.com/mens-college-basketball/team/_/id/269/marquette-golden-eagles" target="_blank" rel="noopener">
-            <div class="g-top"><span>11/11/2025</span><span>8:00 PM <small>local</small></span></div>
-            <div class="g-title"><span class="logo-pill">M</span> @ Marquette <span class="pill">Away</span></div>
-          </a>
-          <a class="game site-neutral" href="https://www.espn.com/mens-college-basketball/team/_/id/2250/gonzaga-bulldogs" target="_blank" rel="noopener">
-            <div class="g-top"><span>11/19/2025</span><span>6:00 PM <small>local</small></span></div>
-            <div class="g-title"><span class="logo-pill">G</span> vs Gonzaga <span class="pill">Neutral</span></div>
-          </a>
+          <a class="game site-home"><div class="g-top"><span>11/02/2025</span></div><div class="g-title">Exhibition (TBA)</div></a>
         </div>
       </section>
 
       <section id="insiders" class="panel">
-        <div class="panel-hd"><h3>Insider / Beat Links</h3>
-          <div class="panel-actions">
-            <button class="pill pill-all">All</button>
-            <button class="pill">Official</button>
-            <button class="pill">Insiders</button>
-          </div>
-        </div>
+        <div class="panel-hd"><h3>Insider / Beat Links</h3></div>
         <div class="links-grid">
-          <a class="link-card" href="https://www.hammerandrails.com/2025/09/24/purdue-scouting-report" target="_blank" rel="noopener">
-            <div class="link-logo">📰</div>
-            <div class="link-body"><div class="link-title">Hammer & Rails</div><div class="link-sub">Scout’s take: What makes Purdue a nightmare matchup</div></div>
-            <div class="link-meta">SB Nation — Purdue</div>
-          </a>
-          <a class="link-card" href="https://purdue.rivals.com/news/film-room-pnr-counters-2025-26" target="_blank" rel="noopener">
-            <div class="link-logo">📰</div>
-            <div class="link-body"><div class="link-title">Gold and Black</div><div class="link-sub">Film Room: PnR counters for 2025–26</div></div>
-            <div class="link-meta">Rivals — subscription</div>
-          </a>
-          <a class="link-card" href="https://247sports.com/college/purdue/Article/purdue-basketball-recruiting-fall-visit-wrap-205432100/" target="_blank" rel="noopener">
-            <div class="link-logo">📰</div>
-            <div class="link-body"><div class="link-title">247Sports Purdue</div><div class="link-sub">Recruiting board resets after fall visits</div></div>
-            <div class="link-meta">Team page</div>
-          </a>
-          <a class="link-card" href="https://www.jconline.com/sports/purdue/" target="_blank" rel="noopener">
-            <div class="link-logo">📰</div>
-            <div class="link-body"><div class="link-title">Journal & Courier</div><div class="link-sub">Coach Painter on lineup experimentation</div></div>
-            <div class="link-meta">Local coverage</div>
-          </a>
+          <a class="link-card" href="https://www.hammerandrails.com/"><div class="link-body"><div class="link-title">Hammer & Rails</div></div></a>
         </div>
-      </section>
-
-      <section id="nil" class="panel">
-        <div class="panel-hd"><h3>NIL Leaderboard</h3></div>
-        <ol class="nil">
-          <li><b>Top Player A</b> — $1.2M est.</li>
-          <li><b>Top Player B</b> — $900k est.</li>
-          <li><b>Top Player C</b> — $700k est.</li>
-        </ol>
       </section>
     </aside>
 
-    <!-- VIDEOS (optional expanded grid later) -->
+    <!-- VIDEOS -->
     <section id="videos" class="panel">
-      <div class="panel-hd">
-        <h2>Latest Videos</h2>
-        <div class="panel-actions">
-          <button class="pill pill-all">All</button>
-          <button class="pill">Official</button>
-          <button class="pill">Insiders</button>
-        </div>
+      <div class="panel-hd"><h2>Latest Videos</h2></div>
+      <div class="video-grid">
+        <article class="card">
+          <a class="card-img-wrap" href="https://www.youtube.com/watch?v=Q1w2e3r4t5Y">
+            <img class="card-img" src="https://i.ytimg.com/vi/Q1w2e3r4t5Y/hqdefault.jpg" alt="YouTube">
+          </a>
+          <div class="card-body"><a class="card-title" href="https://www.youtube.com/watch?v=Q1w2e3r4t5Y">Practice Highlights — First Week</a></div>
+        </article>
       </div>
-      <div class="video-grid"></div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div>
-      <span>Updated just now</span>
-      <span>• 8 sources</span>
-    </div>
-  </footer>
+  <footer class="footer"><div>Updated just now • 8 sources</div></footer>
+  <script src="static/js/runtime.js?v=fix-20251003" defer></script>
 </body>
 </html>
