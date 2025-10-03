@@ -1,13 +1,13 @@
 (() => {
   const $ = (sel, ctx=document) => ctx.querySelector(sel);
 
-  // HARD-CODE the GitHub Pages base path for this repo to avoid any ambiguity.
+  // HARD-CODE the GitHub Pages base for this repo to avoid any ambiguity.
+  // This is the single most common reason for the "Loading..." loop.
   const PATH_BASE = '/sports-app-project/';
   const url = (p) => `${PATH_BASE}${p.replace(/^\//,'')}`;
 
-  /* ===== Proxy (optional) ===== */
-  // Set this if you've deployed the Worker; leave "" if not.
-  const PROXY_BASE = ""; // e.g., "https://your-proxy.workers.dev"
+  /* ===== Optional proxy (leave empty if not using Worker) ===== */
+  const PROXY_BASE = ""; // e.g., "https://your-worker.workers.dev"
   const PROXY_HOSTS = new Set([
     'img.si.com','si.com',
     'gannett-cdn.com','jconline.com',
@@ -43,7 +43,7 @@
   /* ===== UI helpers ===== */
   function badge(tag){ const t=(tag||'').toLowerCase(); if(t.includes('official'))return`<span class="pill">official</span>`; if(t.includes('insider'))return`<span class="pill">insiders</span>`; if(t.includes('national'))return`<span class="pill">national</span>`; return t?`<span class="pill">${escapeHTML(t)}</span>`:''; }
 
-  /* ===== Data loaders (with visible error output) ===== */
+  /* ===== Fetch helper with visible errors ===== */
   async function fetchJSON(path){
     try{
       const r = await fetch(url(path), { cache:'no-cache' });
@@ -55,6 +55,7 @@
     }
   }
 
+  /* ===== Panels ===== */
   async function loadRankings(){
     const w = await fetchJSON('static/widgets.json');
     if (!w) return;
