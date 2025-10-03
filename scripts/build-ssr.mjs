@@ -1,12 +1,10 @@
 import fs from 'fs';
 import path from 'path';
 
-/** ---------- Site constants (update if your URL changes) ---------- **/
-const SITE_URL = 'https://jasonab74-ctrl.github.io/sports-app-project/'; // canonical
+const SITE_URL = 'https://jasonab74-ctrl.github.io/sports-app-project/';
 const SITE_NAME = 'Purdue MBB Hub';
 const SITE_DESC = 'Fast Purdue Men’s Basketball hub: top headlines, videos, rankings, schedule, insider links.';
 
-/** ---------- Paths ---------- **/
 const CACHE_DIR   = 'static/cache';
 const ITEMS_PATH  = 'static/teams/purdue-mbb/items.json';
 const WIDGETS_PATH= 'static/widgets.json';
@@ -15,7 +13,6 @@ const INS_PATH    = 'static/insiders.json';
 
 fs.mkdirSync(CACHE_DIR, { recursive: true });
 
-/** ---------- Utils ---------- **/
 function escapeHTML(s=''){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));}
 function slugify(s=''){return String(s).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'').slice(0,80) || 'thumb';}
 function initialsFrom(str=''){const p=(str||'').trim().split(/\s+/);return (p[0]?.[0]||'')+(p[1]?.[0]||'')||'•';}
@@ -28,7 +25,6 @@ function cachedThumbByTitle(title=''){
   return fs.existsSync(p) ? `static/cache/${fname}` : null;
 }
 
-// emit image tag with explicit dimensions to prevent CLS
 function imgTag({src,label='',aspect='4x3',eager=false}){
   const wh = aspect==='16x9' ? {w:1280,h:720} : {w:1200,h:900};
   if (src) {
@@ -39,18 +35,15 @@ function imgTag({src,label='',aspect='4x3',eager=false}){
   return `<div class="fallback-${aspect}"><div class="fallback-badge">${escapeHTML(initialsFrom(label))}</div></div>`;
 }
 
-/** ---------- Load data ---------- **/
 const itemsRaw = JSON.parse(fs.readFileSync(ITEMS_PATH, 'utf8'));
 const ITEMS = (itemsRaw.items || itemsRaw || []).filter(Boolean);
 const WIDGETS = JSON.parse(fs.readFileSync(WIDGETS_PATH, 'utf8'));
 const SCHEDULE = JSON.parse(fs.readFileSync(SCHED_PATH, 'utf8'));
 const INSIDERS = JSON.parse(fs.readFileSync(INS_PATH, 'utf8'));
 
-/** ---------- Smart video detection (B) ---------- **/
 const videoItems = ITEMS.filter(i => (i.type||'').toLowerCase()==='video' || looksVideoLink(i.link));
 const newsItems  = ITEMS.filter(i => !((i.type||'').toLowerCase()==='video' || looksVideoLink(i.link)));
 
-/** ---------- Hero ---------- **/
 const lead = newsItems[0];
 const heroThumb = lead ? (cachedThumbByTitle(lead.title) || null) : null;
 const heroHTML = lead ? `
@@ -67,7 +60,6 @@ const heroHTML = lead ? `
   </div>
 </div>` : '';
 
-/** ---------- News grid ---------- **/
 const newsGrid = newsItems.slice(1, 12).map(i=>{
   const src = cachedThumbByTitle(i.title);
   return `<article class="card">
@@ -80,7 +72,6 @@ const newsGrid = newsItems.slice(1, 12).map(i=>{
   </article>`;
 }).join('');
 
-/** ---------- Video grid (16:9) ---------- **/
 const videoGrid = videoItems.slice(0, 9).map(v=>{
   const src = cachedThumbByTitle(v.title);
   return `<article class="card video-card">
@@ -93,7 +84,6 @@ const videoGrid = videoItems.slice(0, 9).map(v=>{
   </article>`;
 }).join('');
 
-/** ---------- Rankings / Schedule / Insiders ---------- **/
 const rankingsHTML = `
 <div class="rankings">
   <div class="rank-line"><span>AP Top 25:</span> <b>${WIDGETS.ap_rank ? `#${WIDGETS.ap_rank}` : '—'}</b> ${WIDGETS.ap_url?`<a href="${escapeHTML(WIDGETS.ap_url)}" target="_blank" rel="noopener">View</a>`:''}</div>
@@ -123,10 +113,8 @@ const insidersHTML = (INSIDERS||[]).map(o=>`
   </a>
 `).join('');
 
-/** ---------- Ticker ---------- **/
 const ticker = ITEMS.slice(0,12).map(i=>`<span style="margin:0 1.25rem">${escapeHTML(i.source||'')} — ${escapeHTML(i.title||'')}</span>`).join('');
 
-/** ---------- SEO / Social (C) ---------- **/
 const META_IMG = heroThumb || 'static/logo.png';
 const HEAD_META = `
 <meta charset="utf-8"/>
@@ -159,7 +147,6 @@ const HEAD_META = `
 <link rel="stylesheet" href="static/css/pro.css?v=ssr-auto"/>
 `;
 
-/** ---------- Compose HTML ---------- **/
 const HTML = `<!doctype html>
 <html lang="en">
 <head>
@@ -171,7 +158,6 @@ ${HEAD_META}
       <div class="brand-line1">Team Hub</div>
       <div class="brand-line2">Boilermakers</div>
     </a>
-    <nav class="nav" role="navigation" aria-label="Primary"></nav>
   </header>
 
   <section class="ticker" aria-label="Top ticker"><div class="ticker-track">${ticker}</div></section>
@@ -207,9 +193,12 @@ ${HEAD_META}
   <footer class="footer" role="contentinfo">
     <div>Updated ${new Date().toLocaleString()}</div>
   </footer>
+
+  <!-- One-time SW cleanup: registers a self-destructing sw.js and clears caches -->
+  <script src="static/js/kill-sw.js" defer></script>
   <script src="static/js/runtime.js" defer></script>
 </body>
 </html>`;
 
 fs.writeFileSync('index.html', HTML);
-console.log('index.html rebuilt with: cached images, video separation, SEO meta');
+console.log('index.html rebuilt with SW cleanup hook');
