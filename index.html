@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Team Hub — Purdue Men's Basketball</title>
   <meta name="theme-color" content="#0c0c0e"/>
-  <!-- NOTE: this build is for https://jasonab74-ctrl.github.io/sports-app-project/ -->
 
   <!-- Preconnects to common image/video CDNs -->
   <link rel="preconnect" href="https://i.ytimg.com">
@@ -16,7 +15,7 @@
   <link rel="preconnect" href="https://247sports.imgix.net">
   <link rel="preconnect" href="https://rivalscdn.com">
 
-  <link rel="stylesheet" href="static/css/pro.css?v=20251002k" />
+  <link rel="stylesheet" href="static/css/pro.css?v=20251003b" />
 </head>
 <body>
   <header class="topbar">
@@ -31,7 +30,6 @@
       </div>
     </a>
 
-    <!-- Nav LEFT-justified (no hamburger) -->
     <nav id="mainNav" class="nav">
       <a href="#news">News</a>
       <a href="#videos">Videos</a>
@@ -46,7 +44,6 @@
   </section>
 
   <main class="container">
-    <!-- Headlines -->
     <section id="news" class="panel">
       <div class="panel-hd">
         <h2>Top Headlines</h2>
@@ -70,7 +67,6 @@
       <div id="headlines" class="card-grid"></div>
     </section>
 
-    <!-- Right rail -->
     <aside class="rail">
       <section id="rankings" class="panel">
         <div class="panel-hd"><h3>Rankings</h3></div>
@@ -107,7 +103,6 @@
       </section>
     </aside>
 
-    <!-- Videos -->
     <section id="videos" class="panel">
       <div class="panel-hd">
         <h2>Latest Videos</h2>
@@ -129,7 +124,6 @@
     </div>
   </footer>
 
-  <!-- Video modal -->
   <div id="videoModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
     <div class="modal-backdrop" data-close></div>
     <div class="modal-content" role="document">
@@ -138,18 +132,17 @@
     </div>
   </div>
 
-  <!-- Toast is present for desktop; hidden on small screens via CSS -->
   <div id="toast" class="toast" hidden>
     <span>New version ready.</span>
     <button id="toastReload">Refresh</button>
   </div>
 
   <script>window.__TEAM_SLUG = "purdue-mbb";</script>
-  <script src="static/js/pro.js?v=20251002k" defer></script>
+  <script src="static/js/pro.js?v=20251003b" defer></script>
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js?v=20251002k').then(reg=>{
+        navigator.serviceWorker.register('./sw.js?v=20251003b').then(reg=>{
           navigator.serviceWorker.addEventListener('message', (e) => {
             if (e.data && e.data.type === 'NEW_VERSION') {
               document.getElementById('toast').hidden = false;
