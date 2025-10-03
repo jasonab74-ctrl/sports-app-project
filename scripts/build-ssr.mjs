@@ -5,11 +5,11 @@ const SITE_URL = 'https://jasonab74-ctrl.github.io/sports-app-project/';
 const SITE_NAME = 'Purdue MBB Hub';
 const SITE_DESC = 'Fast Purdue Men’s Basketball hub: top headlines, videos, rankings, schedule, insider links.';
 
-const CACHE_DIR   = 'static/cache';
-const ITEMS_PATH  = 'static/teams/purdue-mbb/items.json';
-const WIDGETS_PATH= 'static/widgets.json';
-const SCHED_PATH  = 'static/schedule.json';
-const INS_PATH    = 'static/insiders.json';
+const CACHE_DIR      = 'static/cache';
+const ITEMS_PATH     = 'static/teams/purdue-mbb/items.json';
+const WIDGETS_PATH   = 'static/widgets.json';
+const SCHED_PATH     = 'static/schedule.json';
+const INS_PATH       = 'static/insiders.json';
 const OVERRIDES_PATH = 'static/image-overrides.json';
 
 fs.mkdirSync(CACHE_DIR, { recursive: true });
@@ -52,30 +52,40 @@ const ITEMS = (itemsRaw.items || itemsRaw || []).filter(Boolean);
 const WIDGETS = JSON.parse(fs.readFileSync(WIDGETS_PATH, 'utf8'));
 const SCHEDULE = JSON.parse(fs.readFileSync(SCHED_PATH, 'utf8'));
 const INSIDERS = JSON.parse(fs.readFileSync(INS_PATH, 'utf8'));
+const OVERRIDES_JSON = fs.existsSync(OVERRIDES_PATH) ? fs.readFileSync(OVERRIDES_PATH,'utf8') : '{}';
 
 /* ===== Smart video separation ===== */
 const videoItems = ITEMS.filter(i => (i.type||'').toLowerCase()==='video' || looksVideoLink(i.link));
 const newsItems  = ITEMS.filter(i => !((i.type||'').toLowerCase()==='video' || looksVideoLink(i.link)));
 
-/* ===== Hero ===== */
-const lead = newsItems[0];
-const leadThumb = lead ? (cachedThumbByTitle(lead.title) || overrideFor(lead.link)) : null;
+/* ===== Pick a hero that actually has an image ===== */
+function imageFor(item, wantAspect='16x9') {
+  if (!item) return null;
+  // Prefer cached thumb; else domain override; else null
+  return cachedThumbByTitle(item.title) || overrideFor(item.link) || null;
+}
+const lead = (() => {
+  const withImg = newsItems.find(i => imageFor(i,'16x9'));
+  return withImg || newsItems[0] || null;
+})();
+const leadSrc = imageFor(lead,'16x9');
+
 const heroHTML = lead ? `
 <div id="hero" class="hero">
   <a href="${escapeHTML(lead.link)}" target="_blank" rel="noopener" class="hero-img-wrap">
-    ${imgTag({src:leadThumb,label:lead.source||lead.title,aspect:'16x9',eager:true})}
+    ${imgTag({src:leadSrc,label:lead.source||lead.title,aspect:'16x9',eager:true})}
   </a>
   <div class="hero-meta">
     <div class="pills">
-      ${lead.tier?`<span class="pill">${escapeHTML(lead.tier)}</span>`:''}
-      ${lead.source?`<span class="pill">${escapeHTML(lead.source)}</span>`:''}
+      ${lead?.tier?`<span class="pill">${escapeHTML(lead.tier)}</span>`:''}
+      ${lead?.source?`<span class="pill">${escapeHTML(lead.source)}</span>`:''}
     </div>
     <h3 class="hero-title"><a href="${escapeHTML(lead.link)}" target="_blank" rel="noopener">${escapeHTML(lead.title||'')}</a></h3>
   </div>
 </div>` : '';
 
 /* ===== News grid ===== */
-const newsGrid = newsItems.slice(1, 12).map(i=>{
+const newsGrid = newsItems.slice(lead ? 1 : 0, 12).map(i=>{
   const src = cachedThumbByTitle(i.title) || overrideFor(i.link);
   return `<article class="card">
     <a class="card-img-wrap" href="${escapeHTML(i.link)}" target="_blank" rel="noopener">
@@ -100,12 +110,11 @@ const videoGrid = videoItems.slice(0, 9).map(v=>{
   </article>`;
 }).join('');
 
-/* ===== Panels & Meta (unchanged) ===== */
+/* ===== Panels & Meta ===== */
 const rankingsHTML = `
 <div class="rankings">
   <div class="rank-line"><span>AP Top 25:</span> <b>${WIDGETS.ap_rank ? `#${WIDGETS.ap_rank}` : '—'}</b> ${WIDGETS.ap_url?`<a href="${escapeHTML(WIDGETS.ap_url)}" target="_blank" rel="noopener">View</a>`:''}</div>
   <div class="rank-line"><span>KenPom:</span> <b>${WIDGETS.kenpom_rank ? `#${WIDGETS.kenpom_rank}` : '—'}</b> ${WIDGETS.kenpom_url?`<a href="${escapeHTML(WIDGETS.kenpom_url)}" target="_blank" rel="noopener">View</a>`:''}</div>
-  <div class="rank-updated">${WIDGETS.updated_at ? `as of ${escapeHTML(new Date(WIDGETS.updated_at).toLocaleString([], {month:'short', day:'numeric'}) )}` : ''}</div>
 </div>`;
 
 const scheduleHTML = (SCHEDULE||[]).slice(0,6).map(g=>{
@@ -132,7 +141,7 @@ const insidersHTML = (INSIDERS||[]).map(o=>`
 
 const ticker = ITEMS.slice(0,12).map(i=>`<span style="margin:0 1.25rem">${escapeHTML(i.source||'')} — ${escapeHTML(i.title||'')}</span>`).join('');
 
-const META_IMG = leadThumb || 'static/logo.png';
+const META_IMG = leadSrc || 'static/logo.png';
 const HEAD_META = `
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -211,10 +220,12 @@ ${HEAD_META}
     <div>Updated ${new Date().toLocaleString()}</div>
   </footer>
 
+  <!-- overrides JSON so runtime can swap broken images safely -->
+  <script id="image-overrides" type="application/json">${OVERRIDES_JSON}</script>
   <script src="static/js/kill-sw.js" defer></script>
   <script src="static/js/runtime.js" defer></script>
 </body>
 </html>`;
 
 fs.writeFileSync('index.html', HTML);
-console.log('index.html rebuilt with domain overrides');
+console.log('index.html rebuilt (image-first hero, overrides embedded)');
