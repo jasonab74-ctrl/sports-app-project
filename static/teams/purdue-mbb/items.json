@@ -1,5 +1,14 @@
 {
-  "sources": ["PurdueSports", "YouTube", "Hammer & Rails", "Journal & Courier", "247Sports", "Sports Illustrated", "ESPN", "Rivals"],
+  "sources": [
+    "PurdueSports",
+    "YouTube",
+    "Hammer & Rails",
+    "Journal & Courier",
+    "247Sports",
+    "Sports Illustrated",
+    "ESPN",
+    "Rivals"
+  ],
   "items": [
     {
       "title": "Purdue Announces 2025–26 Non-Conference Slate",
@@ -79,7 +88,7 @@
       "title": "Way-Too-Early Top 25: Where Purdue lands",
       "link": "https://www.espn.com/mens-college-basketball/story/_/id/12345678/purdue-way-too-early-top-25",
       "source": "ESPN",
-      "image": "https://a.espncdn.com/photo/2025/09/20/purdue-way-too-early.jpg",
+      "image": "/static/cache/91a2b8d5.jpg",
       "date": "2025-09-20T12:00:00Z",
       "tier": "national",
       "summary": "National context as camps open."
