@@ -35,14 +35,12 @@
     const label = img.getAttribute('data-label') || '';
 
     if (poster) {
-      // swap to local brand poster
-      img.onerror = null; // break loops
+      img.onerror = null;
       img.removeAttribute('srcset');
       img.src = poster;
       return;
     }
 
-    // replace <img> with initials tile
     const wrap = document.createElement('div');
     wrap.className = `fallback-${aspect}`;
     const b = document.createElement('div');
@@ -59,21 +57,40 @@
     });
   }
 
-  /* ---------- Chips: auto-hide if not wired ---------- */
-  function hideDeadChips() {
-    // If filter chips exist but we haven't implemented filtering yet,
-    // hide them to avoid “broken control” vibes.
-    const chipBars = document.querySelectorAll('.panel-hd .chips, .chips');
-    chipBars.forEach((bar) => {
-      // If there’s no data attribute indicating behavior, hide them.
-      if (!bar.hasAttribute('data-filter-ready')) {
-        bar.hidden = true;
-        bar.style.display = 'none';
-      }
+  /* ---------- Filters (chips) ---------- */
+  function initFilters() {
+    const bar = document.querySelector('.panel-hd .chips[data-filter-ready]');
+    const grid = document.getElementById('news-grid');
+    if (!bar || !grid) return;
+
+    const chips = Array.from(bar.querySelectorAll('.chip'));
+    const cards = Array.from(grid.querySelectorAll('.card'));
+
+    function apply(filter) {
+      cards.forEach((card) => {
+        const tier = card.getAttribute('data-tier') || 'all';
+        const show = filter === 'all' ? true : (tier === filter);
+        card.style.display = show ? '' : 'none';
+      });
+      chips.forEach((c) => {
+        const active = c.getAttribute('data-filter') === filter;
+        c.classList.toggle('is-active', active);
+        c.setAttribute('aria-pressed', String(active));
+      });
+    }
+
+    bar.addEventListener('click', (e) => {
+      const btn = e.target.closest('.chip');
+      if (!btn) return;
+      const filter = btn.getAttribute('data-filter') || 'all';
+      apply(filter);
     });
+
+    // default state
+    apply('all');
   }
 
-  /* ---------- Micro CSS polish (safe to inject) ---------- */
+  /* ---------- Micro CSS polish ---------- */
   function injectStyle() {
     const css = `
       /* Hero spacing nudge on small screens */
@@ -95,6 +112,23 @@
         outline: 2px solid #f2c94c;
         outline-offset: 2px;
       }
+
+      /* Chips active state */
+      .chips { display:flex; gap:.5rem; flex-wrap:wrap; }
+      .chip {
+        background: rgba(255,255,255,.06);
+        border: 1px solid rgba(255,255,255,.12);
+        border-radius: 999px;
+        padding: .4rem .8rem;
+        font: inherit;
+        color: inherit;
+        cursor: pointer;
+      }
+      .chip.is-active {
+        background: rgba(242,201,76,.16);
+        border-color: rgba(242,201,76,.7);
+      }
+      .chip:focus-visible { outline:2px solid #f2c94c; outline-offset:2px; }
     `;
     const style = document.createElement('style');
     style.setAttribute('data-injected', 'runtime-polish');
@@ -106,7 +140,7 @@
   function init() {
     injectStyle();
     attachImageGuards();
-    hideDeadChips();
+    initFilters();
   }
 
   if (document.readyState === 'loading') {
