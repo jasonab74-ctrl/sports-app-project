@@ -5,7 +5,7 @@ on:
     branches: [main]
   workflow_dispatch:
   schedule:
-    - cron: "0 * * * *" # hourly is fine
+    - cron: "0 * * * *"  # hourly is fine; bump to every 15m if you want
 
 permissions:
   contents: write
@@ -31,11 +31,12 @@ jobs:
             npm i --no-audit --no-fund
           fi
 
-      # NEW: pull headshots from official site and save locally + update roster.json
-      - name: Sync roster headshots
-        run: npm run heads:sync
+      # Auto-update results for past games (fills outcome/score/links)
+      - name: Sync results
+        run: npm run results:sync
 
-      # Build the site from local JSON + cache
+      # (You already have headshots + image cache steps in your repo;
+      #  leave them in place if present.)
       - name: Build site
         run: npm run build
 
@@ -44,5 +45,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -A
-          git commit -m "chore: sync headshots & rebuild [skip ci]" || echo "No changes to commit"
+          git commit -m "chore: sync results & rebuild [skip ci]" || echo "No changes to commit"
           git push || true
