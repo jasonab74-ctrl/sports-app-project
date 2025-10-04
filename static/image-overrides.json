@@ -12,5 +12,18 @@
   "247sports.com": "static/brand/247sports-default.svg",
 
   "www.jconline.com": "static/brand/jconline-default.svg",
-  "jconline.com": "static/brand/jconline-default.svg"
+  "jconline.com": "static/brand/jconline-default.svg",
+
+  "si.com": "static/brand/si-default.svg",
+  "www.si.com": "static/brand/si-default.svg",
+  "sportsillustrated.com": "static/brand/si-default.svg",
+  "www.sportsillustrated.com": "static/brand/si-default.svg",
+
+  "sports.yahoo.com": "static/brand/yahoosports-default.svg",
+  "www.sports.yahoo.com": "static/brand/yahoosports-default.svg",
+  "yahoo.com": "static/brand/yahoosports-default.svg",
+  "www.yahoo.com": "static/brand/yahoosports-default.svg",
+
+  "cbssports.com": "static/brand/cbssports-default.svg",
+  "www.cbssports.com": "static/brand/cbssports-default.svg"
 }
