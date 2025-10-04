@@ -1,15 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
-  <defs>
-    <radialGradient id="r" cx="50%" cy="40%" r="70%">
-      <stop offset="0" stop-color="#1a1a1d"/>
-      <stop offset="1" stop-color="#0e0e10"/>
-    </radialGradient>
-  </defs>
-  <rect width="1200" height="675" fill="url(#r)"/>
-  <text x="600" y="340" fill="#f2c94c" font-family="Inter, system-ui, Arial, sans-serif" text-anchor="middle" font-size="96" font-weight="800">
+  <rect width="1200" height="675" fill="#101013"/>
+  <circle cx="1080" cy="120" r="58" fill="#1c1d21"/>
+  <circle cx="140" cy="560" r="66" fill="#1c1d21"/>
+  <text x="600" y="340" text-anchor="middle" font-family="Inter, system-ui, Arial, sans-serif" font-size="86" font-weight="800" fill="#f2c94c">
     Rivals
   </text>
-  <text x="600" y="415" fill="#b3b3ba" font-family="Inter, system-ui, Arial, sans-serif" text-anchor="middle" font-size="34">
-    Purdue coverage
+  <text x="600" y="410" text-anchor="middle" font-family="Inter, system-ui, Arial, sans-serif" font-size="30" fill="#a0a0a7">
+    Recruiting & Insiders
   </text>
 </svg>
