@@ -5,6 +5,9 @@ const SITE_URL = 'https://jasonab74-ctrl.github.io/sports-app-project/';
 const SITE_NAME = 'Purdue MBB Hub';
 const SITE_DESC = 'Fast Purdue Men’s Basketball hub: top headlines, videos, rankings, schedule, insider links.';
 
+// bump these to hard-refresh assets in browsers
+const ASSET_VER = '20251004a';
+
 const CACHE_DIR      = 'static/cache';
 const ITEMS_PATH     = 'static/teams/purdue-mbb/items.json';
 const WIDGETS_PATH   = 'static/widgets.json';
@@ -19,7 +22,7 @@ fs.mkdirSync(CACHE_DIR, { recursive: true });
 function escapeHTML(s=''){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));}
 function slugify(s=''){return String(s).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'').slice(0,80) || 'thumb';}
 function initialsFrom(str=''){const p=(str||'').trim().split(/\s+/);return (p[0]?.[0]||'')+(p[1]?.[0]||'')||'•';}
-function fileExists(p){ try{ return fs.existsSync(p); }catch{ return false; }}
+function fileExists(p){ try{ return fs.existsSync(p); }catch{ return false; } }
 
 function looksVideoLink(u=''){ try{const h=new URL(u).hostname;return /youtube\.com$|youtu\.be$/.test(h);}catch{return false;} }
 
@@ -32,9 +35,7 @@ function cachedBaseByTitle(title=''){
   if (fileExists(webp)) out.webp = `static/cache/${base}.webp`;
   return (out.jpg || out.webp) ? out : null;
 }
-function overridesMap(){
-  try { return JSON.parse(fs.readFileSync(OVERRIDES_PATH,'utf8')); } catch { return {}; }
-}
+function overridesMap(){ try { return JSON.parse(fs.readFileSync(OVERRIDES_PATH,'utf8')); } catch { return {}; } }
 function overrideFor(link=''){
   try { const host = new URL(link).hostname.toLowerCase(); const map = overridesMap(); return map[host] || null; }
   catch { return null; }
@@ -113,35 +114,19 @@ const videoGrid = videoItems.slice(0, 9).map(v=>{
   </article>`;
 }).join('');
 
-/* ---------- schedule: Upcoming + Recent Results ---------- */
-function parseDate(g){
-  // prefer g.utc (ISO) else g.date
-  const v = g.utc || g.date;
-  const d = v ? new Date(v) : null;
-  return d && !isNaN(+d) ? d : null;
-}
+/* ---------- schedule: upcoming + recent results ---------- */
+function parseDate(g){ const v = g.utc || g.date; const d = v ? new Date(v) : null; return d && !isNaN(+d) ? d : null; }
 const now = Date.now();
-
 const withDates = (SCHEDULE || []).map(g => ({...g, _dt: parseDate(g)})).filter(g => g._dt);
 
-const upcoming = withDates
-  .filter(g => +g._dt >= now)
-  .sort((a,b) => +a._dt - +b._dt)
-  .slice(0, 6);
-
-const recent = withDates
-  .filter(g => +g._dt < now)
-  .sort((a,b) => +b._dt - +a._dt)
-  .slice(0, 5);
+const upcoming = withDates.filter(g => +g._dt >= now).sort((a,b) => +a._dt - +b._dt).slice(0, 6);
+const recent   = withDates.filter(g => +g._dt <  now).sort((a,b) => +b._dt - +a._dt).slice(0, 5);
 
 function fmtDay(dt){ return dt.toLocaleDateString([], {year:'numeric',month:'2-digit',day:'2-digit'}); }
 function fmtTime(dt){ return dt.toLocaleTimeString([], {hour:'numeric',minute:'2-digit'}); }
 
 const scheduleUpcomingHTML = upcoming.map(g=>{
-  const dt = g._dt;
-  const day = fmtDay(dt);
-  const time= fmtTime(dt);
-  const site= (g.site||'TBD');
+  const dt = g._dt, day = fmtDay(dt), time = fmtTime(dt), site = (g.site||'TBD');
   return `<a class="game" href="${escapeHTML(g.espn_url||g.tickets_url||'#')}" target="_blank" rel="noopener">
     <div class="g-top"><span>${escapeHTML(day)}</span><span>${escapeHTML(time)} <small>local</small></span></div>
     <div class="g-title"><span class="logo-pill">${escapeHTML(initialsFrom(g.opp||''))}</span> ${escapeHTML(g.opp||'Opponent')} <span class="pill">${escapeHTML(site)}</span></div>
@@ -149,15 +134,13 @@ const scheduleUpcomingHTML = upcoming.map(g=>{
 }).join('');
 
 const scheduleRecentHTML = recent.map(g=>{
-  const dt = g._dt;
-  const day = fmtDay(dt);
+  const dt = g._dt, day = fmtDay(dt);
   const opp = escapeHTML(g.opp || 'Opponent');
   const score = escapeHTML(g.final_score || '');
-  const outcome = (g.outcome || '').toUpperCase(); // "W" or "L"
+  const outcome = (g.outcome || '').toUpperCase();
   const wlClass = outcome === 'W' ? 'win' : (outcome === 'L' ? 'loss' : '');
   const recapLink = g.recap_url ? `<a class="res-link" href="${escapeHTML(g.recap_url)}" target="_blank" rel="noopener">Recap</a>` : '';
   const boxLink   = g.box_url   ? `<a class="res-link" href="${escapeHTML(g.box_url)}" target="_blank" rel="noopener">Box</a>`   : '';
-
   return `<div class="result">
     <div class="res-line">
       <span class="res-date">${escapeHTML(day)}</span>
@@ -182,8 +165,7 @@ function rosterImgTag(player){
     <rect x="150" y="360" width="300" height="260" rx="30" fill="#1b1b1f"/>
   </svg>`;
 }
-
-const rosterHTML = (Array.isArray(ROSTER)?ROSTER:[]).map(p=>`
+const rosterCards = (Array.isArray(ROSTER)?ROSTER:[]).map(p=>`
   <article class="player" tabindex="0" aria-label="${escapeHTML(p.name)}">
     ${rosterImgTag(p)}
     <div class="player-body">
@@ -202,17 +184,22 @@ const rosterHTML = (Array.isArray(ROSTER)?ROSTER:[]).map(p=>`
   </article>
 `).join('');
 
-/* ---------- widgets ---------- */
-const rankingsHTML = `
-<div class="rankings">
-  <div class="rank-line"><span>AP Top 25:</span> <b>${WIDGETS.ap_rank ? `#${WIDGETS.ap_rank}` : '—'}</b> ${WIDGETS.ap_url?`<a href="${escapeHTML(WIDGETS.ap_url)}" target="_blank" rel="noopener">View</a>`:''}</div>
-  <div class="rank-line"><span>KenPom:</span> <b>${WIDGETS.kenpom_rank ? `#${WIDGETS.kenpom_rank}` : '—'}</b> ${WIDGETS.kenpom_url?`<a href="${escapeHTML(WIDGETS.kenpom_url)}" target="_blank" rel="noopener">View</a>`:''}</div>
-</div>`;
+/* ---------- insiders ---------- */
+const insidersBlock = (INSIDERS||[]).map(o=>`
+  <a class="link-card" href="${escapeHTML(o.latest_url||o.url)}" target="_blank" rel="noopener">
+    <div class="link-logo">📰</div>
+    <div class="link-body">
+      <div class="link-title">${escapeHTML(o.name)}</div>
+      ${o.latest_headline?`<div class="link-sub">${escapeHTML(o.latest_headline)}</div>`:''}
+    </div>
+    <div class="link-meta">${escapeHTML(o.type||'')}${o.pay?' <span class="badge-pay">$</span>':''}</div>
+  </a>
+`).join('');
 
 /* ---------- ticker ---------- */
 const ticker = ITEMS.slice(0,12).map(i=>`<span style="margin:0 1.25rem">${escapeHTML(i.source||'')} — ${escapeHTML(i.title||'')}</span>`).join('');
 
-/* ---------- meta ---------- */
+/* ---------- meta & assets ---------- */
 const META_IMG = (leadSrcs?.webp || leadSrcs?.jpg || 'static/logo.png');
 const HEAD_META = `
 <meta charset="utf-8"/>
@@ -235,14 +222,8 @@ const HEAD_META = `
 
 <link rel="icon" href="static/logo.png" type="image/png"/>
 <link rel="apple-touch-icon" href="static/logo.png"/>
-<link rel="preconnect" href="https://i.ytimg.com"/>
-<link rel="preconnect" href="https://img.si.com"/>
-<link rel="preconnect" href="https://gannett-cdn.com"/>
-<link rel="preconnect" href="https://247sports.imgix.net"/>
-<link rel="preconnect" href="https://espncdn.com"/>
-<link rel="preconnect" href="https://s.yimg.com"/>
 
-<link rel="stylesheet" href="static/css/pro.css?v=ssr-auto"/>
+<link rel="stylesheet" href="static/css/pro.css?v=${ASSET_VER}"/>
 `;
 
 /* ---------- chips ---------- */
@@ -297,7 +278,10 @@ ${HEAD_META}
     <aside class="rail" aria-label="Sidebar">
       <section id="rankings" class="panel" aria-labelledby="rank-h">
         <div class="panel-hd"><h3 id="rank-h">Rankings</h3></div>
-        ${rankingsHTML}
+        <div class="rankings">
+          <div class="rank-line"><span>AP Top 25:</span> <b>${WIDGETS.ap_rank ? `#${WIDGETS.ap_rank}` : '—'}</b> ${WIDGETS.ap_url?`<a href="${escapeHTML(WIDGETS.ap_url)}" target="_blank" rel="noopener">View</a>`:''}</div>
+          <div class="rank-line"><span>KenPom:</span> <b>${WIDGETS.kenpom_rank ? `#${WIDGETS.kenpom_rank}` : '—'}</b> ${WIDGETS.kenpom_url?`<a href="${escapeHTML(WIDGETS.kenpom_url)}" target="_blank" rel="noopener">View</a>`:''}</div>
+        </div>
       </section>
 
       <section id="schedule" class="panel" aria-labelledby="sched-h">
@@ -310,23 +294,14 @@ ${HEAD_META}
 
       <section id="insiders" class="panel" aria-labelledby="ins-h">
         <div class="panel-hd"><h3 id="ins-h">Insider / Beat Links</h3></div>
-        <div class="links-grid">${(INSIDERS||[]).map(o=>`
-          <a class="link-card" href="${escapeHTML(o.latest_url||o.url)}" target="_blank" rel="noopener">
-            <div class="link-logo">📰</div>
-            <div class="link-body">
-              <div class="link-title">${escapeHTML(o.name)}</div>
-              ${o.latest_headline?`<div class="link-sub">${escapeHTML(o.latest_headline)}</div>`:''}
-            </div>
-            <div class="link-meta">${escapeHTML(o.type||'')}${o.pay?' <span class="badge-pay">$</span>':''}</div>
-          </a>
-        `).join('')}</div>
+        <div class="links-grid">${insidersBlock}</div>
       </section>
     </aside>
 
     <section id="roster" class="panel" aria-labelledby="roster-h">
       <div class="panel-hd"><h2 id="roster-h">Roster</h2></div>
       <div class="roster-grid">
-        ${rosterHTML}
+        ${rosterCards}
       </div>
     </section>
 
@@ -341,10 +316,10 @@ ${HEAD_META}
   </footer>
 
   <script id="image-overrides" type="application/json">${OVERRIDES_JSON}</script>
-  <script src="static/js/kill-sw.js" defer></script>
-  <script src="static/js/runtime.js" defer></script>
+  <script src="static/js/kill-sw.js?v=${ASSET_VER}" defer></script>
+  <script src="static/js/runtime.js?v=${ASSET_VER}" defer></script>
 </body>
 </html>`;
 
 fs.writeFileSync('index.html', HTML);
-console.log('index.html rebuilt (Recent Results + Upcoming Schedule)');
+console.log('index.html rebuilt (force asset refresh + guaranteed roster panel)');
