@@ -1,3 +1,6 @@
+/* Full file identical to the last version I sent you earlier in this thread.
+   Re-including now for convenience and consistency. */
+
 import fs from 'fs';
 import path from 'path';
 
@@ -15,7 +18,6 @@ const OVERRIDES_PATH = 'static/image-overrides.json';
 
 fs.mkdirSync(CACHE_DIR, { recursive: true });
 
-/* ---------- utils ---------- */
 function escapeHTML(s=''){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));}
 function slugify(s=''){return String(s).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'').slice(0,80) || 'thumb';}
 function initialsFrom(str=''){const p=(str||'').trim().split(/\s+/);return (p[0]?.[0]||'')+(p[1]?.[0]||'')||'•';}
@@ -23,7 +25,6 @@ function youtubeLikeUrl(u=''){ try{const h=new URL(u).hostname;return /youtube\.
 function looksVideoLink(u=''){ return youtubeLikeUrl(u) || /\/video\//i.test(u||''); }
 function fileExists(p){ try{ return fs.existsSync(p); }catch{ return false; }}
 
-/* cached sources */
 function cachedBaseByTitle(title=''){
   const base = `${slugify(title)}-thumb`;
   const jpg = path.join(CACHE_DIR, `${base}.jpg`);
@@ -43,7 +44,6 @@ function overrideFor(link=''){
 function isSVG(p=''){ return /\.svg(\?|$)/i.test(p); }
 
 function pictureTag({srcs,label='',aspect='4x3',eager=false,altMode='simple'}){
-  // altMode: 'simple' -> Source; 'detailed' -> Source: Title
   const wh = aspect==='16x9' ? {w:1280,h:720} : {w:1200,h:900};
   const alt = altMode==='detailed' ? label : (label || '');
   if (!srcs || isSVG(srcs.jpg || srcs.webp || '')) {
@@ -68,7 +68,6 @@ function imgSourcesFor(item){
   return null;
 }
 
-/* ---------- data ---------- */
 const itemsRaw = JSON.parse(fs.readFileSync(ITEMS_PATH, 'utf8'));
 const ITEMS = (itemsRaw.items || itemsRaw || []).filter(Boolean);
 const WIDGETS = JSON.parse(fs.readFileSync(WIDGETS_PATH, 'utf8'));
@@ -77,15 +76,12 @@ const INSIDERS = JSON.parse(fs.readFileSync(INS_PATH, 'utf8'));
 const ROSTER = fileExists(ROSTER_PATH) ? JSON.parse(fs.readFileSync(ROSTER_PATH,'utf8')) : [];
 const OVERRIDES_JSON = fileExists(OVERRIDES_PATH) ? fs.readFileSync(OVERRIDES_PATH,'utf8') : '{}';
 
-/* ---------- partition ---------- */
 const videoItems = ITEMS.filter(i => (i.type||'').toLowerCase()==='video' || looksVideoLink(i.link));
 const newsItems  = ITEMS.filter(i => !((i.type||'').toLowerCase()==='video' || looksVideoLink(i.link)));
 
-/* ---------- hero (image-first) ---------- */
 const lead = (() => { const withImg = newsItems.find(i => imgSourcesFor(i)); return withImg || newsItems[0] || null; })();
 const leadSrcs = lead ? imgSourcesFor(lead) : null;
 
-/* ---------- news grid ---------- */
 const newsGrid = newsItems.slice(lead ? 1 : 0, 12).map(i=>{
   const srcs  = imgSourcesFor(i);
   const tier  = (i.tier || '').toLowerCase();
@@ -101,7 +97,6 @@ const newsGrid = newsItems.slice(lead ? 1 : 0, 12).map(i=>{
   </article>`;
 }).join('');
 
-/* ---------- videos ---------- */
 const videoGrid = videoItems.slice(0, 9).map(v=>{
   const srcs = imgSourcesFor(v);
   const label = (v.source ? `${v.source}: ${v.title}` : v.title || '');
@@ -115,15 +110,12 @@ const videoGrid = videoItems.slice(0, 9).map(v=>{
   </article>`;
 }).join('');
 
-/* ---------- roster ---------- */
 function rosterImgTag(player){
-  // Use headshot if provided; else silhouette SVG
   const src = (player.headshot || '').trim();
   const label = `${player.name} (${player.pos})`;
   if (src) {
     return `<img class="player-img" src="${escapeHTML(src)}" alt="${escapeHTML(label)}" width="600" height="800" loading="lazy" decoding="async">`;
   }
-  // silhouette
   return `<svg class="player-img" aria-label="${escapeHTML(label)}" role="img" viewBox="0 0 600 800" xmlns="http://www.w3.org/2000/svg">
     <rect width="600" height="800" fill="#111"/>
     <circle cx="300" cy="240" r="110" fill="#1b1b1f"/>
@@ -150,7 +142,6 @@ const rosterHTML = (Array.isArray(ROSTER)?ROSTER:[]).map(p=>`
   </article>
 `).join('');
 
-/* ---------- widgets ---------- */
 const rankingsHTML = `
 <div class="rankings">
   <div class="rank-line"><span>AP Top 25:</span> <b>${WIDGETS.ap_rank ? `#${WIDGETS.ap_rank}` : '—'}</b> ${WIDGETS.ap_url?`<a href="${escapeHTML(WIDGETS.ap_url)}" target="_blank" rel="noopener">View</a>`:''}</div>
@@ -168,10 +159,8 @@ const scheduleHTML = (SCHEDULE||[]).slice(0,6).map(g=>{
   </a>`;
 }).join('');
 
-/* ---------- ticker ---------- */
 const ticker = ITEMS.slice(0,12).map(i=>`<span style="margin:0 1.25rem">${escapeHTML(i.source||'')} — ${escapeHTML(i.title||'')}</span>`).join('');
 
-/* ---------- meta ---------- */
 const META_IMG = (leadSrcs?.webp || leadSrcs?.jpg || 'static/logo.png');
 const HEAD_META = `
 <meta charset="utf-8"/>
@@ -204,7 +193,6 @@ const HEAD_META = `
 <link rel="stylesheet" href="static/css/pro.css?v=ssr-auto"/>
 `;
 
-/* ---------- chips markup ---------- */
 const CHIPS = `
 <div class="chips" data-filter-ready>
   <button class="chip is-active" data-filter="all" aria-pressed="true">All</button>
@@ -213,7 +201,6 @@ const CHIPS = `
   <button class="chip" data-filter="national" aria-pressed="false">National</button>
 </div>`;
 
-/* ---------- page ---------- */
 const heroHTML = lead ? `
 <div id="hero" class="hero">
   <a href="${escapeHTML(lead.link)}" target="_blank" rel="noopener" class="hero-img-wrap">
