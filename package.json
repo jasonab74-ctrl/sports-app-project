@@ -1,0 +1,19 @@
+{
+  "name": "sports-app-project",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Static SSR build for Purdue MBB Hub (GitHub Pages).",
+  "scripts": {
+    "lint:data": "node scripts/lint-data.mjs",
+    "cache:images": "node scripts/cache-images.mjs",
+    "build:ssr": "node scripts/build-ssr.mjs",
+    "build": "npm run lint:data && npm run cache:images && npm run build:ssr"
+  },
+  "dependencies": {
+    "node-fetch": "3.3.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
