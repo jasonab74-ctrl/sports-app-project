@@ -1,56 +1,50 @@
-name: Build and publish site
+name: Build static index.html from JSON
 
 on:
   push:
     branches: [ main ]
-  workflow_dispatch:
   schedule:
-    - cron: "0 */6 * * *"   # every 6 hours
+    - cron: "*/60 * * * *" # hourly
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
-  build:
+  build-ssr:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
+          cache: "npm"
 
-      - name: Install deps
+      - name: Install builder deps
         run: |
-          cat > package.json <<'JSON'
-          {
-            "name": "sports-app-builder",
-            "private": true,
-            "type": "module",
-            "scripts": {
-              "lint": "node scripts/lint-data.mjs",
-              "cache": "node scripts/cache-images.mjs",
-              "build": "node scripts/build-ssr.mjs"
-            },
-            "dependencies": {
-              "node-fetch": "3.3.2"
-            }
-          }
-          JSON
-          npm ci
+          if [ -f package-lock.json ]; then
+            npm ci --no-audit --no-fund
+          else
+            npm i --no-audit --no-fund
+          fi
 
-      - name: Lint data files
-        run: npm run lint
-
-      - name: Cache images
-        run: npm run cache
-
-      - name: Build static index.html
+      - name: Build index.html from repo JSON
         run: npm run build
 
-      - name: Commit results
+      - name: Commit generated index.html
         run: |
-          git config user.name "build-bot"
-          git config user.email "actions@github.com"
-          git add static/cache index.html
-          git commit -m "auto: refresh site [skip ci]" || echo "no changes"
-          git push
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          CHANGES=0
+          git add -A
+          if ! git diff --cached --quiet; then
+            CHANGES=1
+            git commit -m "chore: rebuild site [skip ci]"
+            git push
+          fi
+          echo "changed=$CHANGES" >> $GITHUB_OUTPUT
