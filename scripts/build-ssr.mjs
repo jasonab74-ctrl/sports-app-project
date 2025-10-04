@@ -1,6 +1,3 @@
-/* Full file identical to the last version I sent you earlier in this thread.
-   Re-including now for convenience and consistency. */
-
 import fs from 'fs';
 import path from 'path';
 
@@ -18,12 +15,13 @@ const OVERRIDES_PATH = 'static/image-overrides.json';
 
 fs.mkdirSync(CACHE_DIR, { recursive: true });
 
+/* ---------- utils ---------- */
 function escapeHTML(s=''){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));}
 function slugify(s=''){return String(s).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'').slice(0,80) || 'thumb';}
 function initialsFrom(str=''){const p=(str||'').trim().split(/\s+/);return (p[0]?.[0]||'')+(p[1]?.[0]||'')||'•';}
-function youtubeLikeUrl(u=''){ try{const h=new URL(u).hostname;return /youtube\.com$|youtu\.be$/.test(h);}catch{return false;} }
-function looksVideoLink(u=''){ return youtubeLikeUrl(u) || /\/video\//i.test(u||''); }
 function fileExists(p){ try{ return fs.existsSync(p); }catch{ return false; }}
+
+function looksVideoLink(u=''){ try{const h=new URL(u).hostname;return /youtube\.com$|youtu\.be$/.test(h);}catch{return false;} }
 
 function cachedBaseByTitle(title=''){
   const base = `${slugify(title)}-thumb`;
@@ -68,6 +66,7 @@ function imgSourcesFor(item){
   return null;
 }
 
+/* ---------- data ---------- */
 const itemsRaw = JSON.parse(fs.readFileSync(ITEMS_PATH, 'utf8'));
 const ITEMS = (itemsRaw.items || itemsRaw || []).filter(Boolean);
 const WIDGETS = JSON.parse(fs.readFileSync(WIDGETS_PATH, 'utf8'));
@@ -76,12 +75,15 @@ const INSIDERS = JSON.parse(fs.readFileSync(INS_PATH, 'utf8'));
 const ROSTER = fileExists(ROSTER_PATH) ? JSON.parse(fs.readFileSync(ROSTER_PATH,'utf8')) : [];
 const OVERRIDES_JSON = fileExists(OVERRIDES_PATH) ? fs.readFileSync(OVERRIDES_PATH,'utf8') : '{}';
 
+/* ---------- partition ---------- */
 const videoItems = ITEMS.filter(i => (i.type||'').toLowerCase()==='video' || looksVideoLink(i.link));
 const newsItems  = ITEMS.filter(i => !((i.type||'').toLowerCase()==='video' || looksVideoLink(i.link)));
 
+/* ---------- hero (image-first) ---------- */
 const lead = (() => { const withImg = newsItems.find(i => imgSourcesFor(i)); return withImg || newsItems[0] || null; })();
 const leadSrcs = lead ? imgSourcesFor(lead) : null;
 
+/* ---------- news grid ---------- */
 const newsGrid = newsItems.slice(lead ? 1 : 0, 12).map(i=>{
   const srcs  = imgSourcesFor(i);
   const tier  = (i.tier || '').toLowerCase();
@@ -97,6 +99,7 @@ const newsGrid = newsItems.slice(lead ? 1 : 0, 12).map(i=>{
   </article>`;
 }).join('');
 
+/* ---------- videos ---------- */
 const videoGrid = videoItems.slice(0, 9).map(v=>{
   const srcs = imgSourcesFor(v);
   const label = (v.source ? `${v.source}: ${v.title}` : v.title || '');
@@ -110,6 +113,63 @@ const videoGrid = videoItems.slice(0, 9).map(v=>{
   </article>`;
 }).join('');
 
+/* ---------- schedule: Upcoming + Recent Results ---------- */
+function parseDate(g){
+  // prefer g.utc (ISO) else g.date
+  const v = g.utc || g.date;
+  const d = v ? new Date(v) : null;
+  return d && !isNaN(+d) ? d : null;
+}
+const now = Date.now();
+
+const withDates = (SCHEDULE || []).map(g => ({...g, _dt: parseDate(g)})).filter(g => g._dt);
+
+const upcoming = withDates
+  .filter(g => +g._dt >= now)
+  .sort((a,b) => +a._dt - +b._dt)
+  .slice(0, 6);
+
+const recent = withDates
+  .filter(g => +g._dt < now)
+  .sort((a,b) => +b._dt - +a._dt)
+  .slice(0, 5);
+
+function fmtDay(dt){ return dt.toLocaleDateString([], {year:'numeric',month:'2-digit',day:'2-digit'}); }
+function fmtTime(dt){ return dt.toLocaleTimeString([], {hour:'numeric',minute:'2-digit'}); }
+
+const scheduleUpcomingHTML = upcoming.map(g=>{
+  const dt = g._dt;
+  const day = fmtDay(dt);
+  const time= fmtTime(dt);
+  const site= (g.site||'TBD');
+  return `<a class="game" href="${escapeHTML(g.espn_url||g.tickets_url||'#')}" target="_blank" rel="noopener">
+    <div class="g-top"><span>${escapeHTML(day)}</span><span>${escapeHTML(time)} <small>local</small></span></div>
+    <div class="g-title"><span class="logo-pill">${escapeHTML(initialsFrom(g.opp||''))}</span> ${escapeHTML(g.opp||'Opponent')} <span class="pill">${escapeHTML(site)}</span></div>
+  </a>`;
+}).join('');
+
+const scheduleRecentHTML = recent.map(g=>{
+  const dt = g._dt;
+  const day = fmtDay(dt);
+  const opp = escapeHTML(g.opp || 'Opponent');
+  const score = escapeHTML(g.final_score || '');
+  const outcome = (g.outcome || '').toUpperCase(); // "W" or "L"
+  const wlClass = outcome === 'W' ? 'win' : (outcome === 'L' ? 'loss' : '');
+  const recapLink = g.recap_url ? `<a class="res-link" href="${escapeHTML(g.recap_url)}" target="_blank" rel="noopener">Recap</a>` : '';
+  const boxLink   = g.box_url   ? `<a class="res-link" href="${escapeHTML(g.box_url)}" target="_blank" rel="noopener">Box</a>`   : '';
+
+  return `<div class="result">
+    <div class="res-line">
+      <span class="res-date">${escapeHTML(day)}</span>
+      ${outcome ? `<span class="wl-pill ${wlClass}">${outcome}</span>` : ''}
+      <span class="res-opp">${opp}</span>
+      ${score ? `<span class="res-score">${score}</span>` : ''}
+    </div>
+    <div class="res-meta">${recapLink}${boxLink}</div>
+  </div>`;
+}).join('');
+
+/* ---------- roster ---------- */
 function rosterImgTag(player){
   const src = (player.headshot || '').trim();
   const label = `${player.name} (${player.pos})`;
@@ -142,25 +202,17 @@ const rosterHTML = (Array.isArray(ROSTER)?ROSTER:[]).map(p=>`
   </article>
 `).join('');
 
+/* ---------- widgets ---------- */
 const rankingsHTML = `
 <div class="rankings">
   <div class="rank-line"><span>AP Top 25:</span> <b>${WIDGETS.ap_rank ? `#${WIDGETS.ap_rank}` : '—'}</b> ${WIDGETS.ap_url?`<a href="${escapeHTML(WIDGETS.ap_url)}" target="_blank" rel="noopener">View</a>`:''}</div>
   <div class="rank-line"><span>KenPom:</span> <b>${WIDGETS.kenpom_rank ? `#${WIDGETS.kenpom_rank}` : '—'}</b> ${WIDGETS.kenpom_url?`<a href="${escapeHTML(WIDGETS.kenpom_url)}" target="_blank" rel="noopener">View</a>`:''}</div>
 </div>`;
 
-const scheduleHTML = (SCHEDULE||[]).slice(0,6).map(g=>{
-  const dt=new Date(g.utc||g.date);
-  const day=dt.toLocaleDateString([], {year:'numeric',month:'2-digit',day:'2-digit'});
-  const time=dt.toLocaleTimeString([], {hour:'numeric',minute:'2-digit'});
-  const site=(g.site||'TBD');
-  return `<a class="game" href="${escapeHTML(g.espn_url||'#')}" target="_blank" rel="noopener">
-    <div class="g-top"><span>${escapeHTML(day)}</span><span>${escapeHTML(time)} <small>local</small></span></div>
-    <div class="g-title"><span class="logo-pill">${escapeHTML(initialsFrom(g.opp||''))}</span> ${escapeHTML(g.opp||'Opponent')} <span class="pill">${escapeHTML(site)}</span></div>
-  </a>`;
-}).join('');
-
+/* ---------- ticker ---------- */
 const ticker = ITEMS.slice(0,12).map(i=>`<span style="margin:0 1.25rem">${escapeHTML(i.source||'')} — ${escapeHTML(i.title||'')}</span>`).join('');
 
+/* ---------- meta ---------- */
 const META_IMG = (leadSrcs?.webp || leadSrcs?.jpg || 'static/logo.png');
 const HEAD_META = `
 <meta charset="utf-8"/>
@@ -193,6 +245,7 @@ const HEAD_META = `
 <link rel="stylesheet" href="static/css/pro.css?v=ssr-auto"/>
 `;
 
+/* ---------- chips ---------- */
 const CHIPS = `
 <div class="chips" data-filter-ready>
   <button class="chip is-active" data-filter="all" aria-pressed="true">All</button>
@@ -201,6 +254,7 @@ const CHIPS = `
   <button class="chip" data-filter="national" aria-pressed="false">National</button>
 </div>`;
 
+/* ---------- page ---------- */
 const heroHTML = lead ? `
 <div id="hero" class="hero">
   <a href="${escapeHTML(lead.link)}" target="_blank" rel="noopener" class="hero-img-wrap">
@@ -245,13 +299,27 @@ ${HEAD_META}
         <div class="panel-hd"><h3 id="rank-h">Rankings</h3></div>
         ${rankingsHTML}
       </section>
+
       <section id="schedule" class="panel" aria-labelledby="sched-h">
         <div class="panel-hd"><h3 id="sched-h">Upcoming Schedule</h3></div>
-        <div class="schedule-list">${scheduleHTML}</div>
+        <div class="schedule-list">${scheduleUpcomingHTML || '<div class="muted">No upcoming games</div>'}</div>
+
+        <div class="panel-hd" style="margin-top:.75rem"><h3 id="results-h">Recent Results</h3></div>
+        <div class="results-list">${scheduleRecentHTML || '<div class="muted">No recent games</div>'}</div>
       </section>
+
       <section id="insiders" class="panel" aria-labelledby="ins-h">
         <div class="panel-hd"><h3 id="ins-h">Insider / Beat Links</h3></div>
-        <div class="links-grid">${insidersHTML}</div>
+        <div class="links-grid">${(INSIDERS||[]).map(o=>`
+          <a class="link-card" href="${escapeHTML(o.latest_url||o.url)}" target="_blank" rel="noopener">
+            <div class="link-logo">📰</div>
+            <div class="link-body">
+              <div class="link-title">${escapeHTML(o.name)}</div>
+              ${o.latest_headline?`<div class="link-sub">${escapeHTML(o.latest_headline)}</div>`:''}
+            </div>
+            <div class="link-meta">${escapeHTML(o.type||'')}${o.pay?' <span class="badge-pay">$</span>':''}</div>
+          </a>
+        `).join('')}</div>
       </section>
     </aside>
 
@@ -279,4 +347,4 @@ ${HEAD_META}
 </html>`;
 
 fs.writeFileSync('index.html', HTML);
-console.log('index.html rebuilt (roster + URL chip + a11y alt & ticker)');
+console.log('index.html rebuilt (Recent Results + Upcoming Schedule)');
