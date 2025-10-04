@@ -10,22 +10,26 @@
       const el = document.getElementById('image-overrides');
       if (!el) return {};
       return JSON.parse(el.textContent || '{}') || {};
-    } catch {
-      return {};
-    }
+    } catch { return {}; }
   }
 
   function hostFromLink(img) {
-    try {
-      const a = img.closest('a');
-      if (!a) return '';
-      return new URL(a.href).hostname.toLowerCase();
-    } catch {
-      return '';
-    }
+    try { const a = img.closest('a'); if (!a) return ''; return new URL(a.href).hostname.toLowerCase(); }
+    catch { return ''; }
   }
 
-  /* ---------- Image fail-safe (no more blue “?”) ---------- */
+  function getParam(name, def) {
+    const u = new URL(location.href);
+    return u.searchParams.get(name) || def;
+  }
+  function setParam(name, value) {
+    const u = new URL(location.href);
+    if (value === null || value === 'all') u.searchParams.delete(name);
+    else u.searchParams.set(name, value);
+    history.replaceState({}, '', u.toString());
+  }
+
+  /* ---------- Image fail-safe ---------- */
   function swapToPosterOrFallback(img) {
     const overrides = getOverrides();
     const host = hostFromLink(img);
@@ -40,7 +44,6 @@
       img.src = poster;
       return;
     }
-
     const wrap = document.createElement('div');
     wrap.className = `fallback-${aspect}`;
     const b = document.createElement('div');
@@ -51,13 +54,12 @@
   }
 
   function attachImageGuards() {
-    const imgs = document.querySelectorAll('img.hero-img, img.card-img');
-    imgs.forEach((img) => {
+    document.querySelectorAll('img.hero-img, img.card-img').forEach((img) => {
       img.addEventListener('error', () => swapToPosterOrFallback(img), { once: true });
     });
   }
 
-  /* ---------- Filters (chips) ---------- */
+  /* ---------- Filters (chips) with URL sync ---------- */
   function initFilters() {
     const bar = document.querySelector('.panel-hd .chips[data-filter-ready]');
     const grid = document.getElementById('news-grid');
@@ -67,71 +69,40 @@
     const cards = Array.from(grid.querySelectorAll('.card'));
 
     function apply(filter) {
+      const f = ['official','insiders','national'].includes(filter) ? filter : 'all';
       cards.forEach((card) => {
         const tier = card.getAttribute('data-tier') || 'all';
-        const show = filter === 'all' ? true : (tier === filter);
-        card.style.display = show ? '' : 'none';
+        card.style.display = (f === 'all' ? true : (tier === f)) ? '' : 'none';
       });
       chips.forEach((c) => {
-        const active = c.getAttribute('data-filter') === filter;
+        const active = (c.getAttribute('data-filter') || 'all') === f;
         c.classList.toggle('is-active', active);
         c.setAttribute('aria-pressed', String(active));
       });
+      setParam('filter', f === 'all' ? null : f);
     }
 
     bar.addEventListener('click', (e) => {
       const btn = e.target.closest('.chip');
       if (!btn) return;
-      const filter = btn.getAttribute('data-filter') || 'all';
-      apply(filter);
+      apply(btn.getAttribute('data-filter') || 'all');
     });
 
-    // default state
-    apply('all');
+    // Apply initial state from URL
+    apply(getParam('filter', 'all'));
   }
 
   /* ---------- Micro CSS polish ---------- */
   function injectStyle() {
     const css = `
-      /* Hero spacing nudge on small screens */
-      .hero .hero-img-wrap { margin-bottom: 8px; }
-
-      /* Schedule row affordance */
-      .schedule-list .game {
-        transition: transform .12s ease, background-color .12s ease, box-shadow .12s ease;
-        border-radius: 10px;
-      }
-      @media (hover:hover) {
-        .schedule-list .game:hover {
-          transform: translateY(-1px);
-          background: rgba(255,255,255,0.03);
-          box-shadow: 0 2px 10px rgba(0,0,0,.25);
-        }
-      }
-      .schedule-list .game:focus-visible {
-        outline: 2px solid #f2c94c;
-        outline-offset: 2px;
-      }
-
-      /* Chips active state */
-      .chips { display:flex; gap:.5rem; flex-wrap:wrap; }
-      .chip {
-        background: rgba(255,255,255,.06);
-        border: 1px solid rgba(255,255,255,.12);
-        border-radius: 999px;
-        padding: .4rem .8rem;
-        font: inherit;
-        color: inherit;
-        cursor: pointer;
-      }
-      .chip.is-active {
-        background: rgba(242,201,76,.16);
-        border-color: rgba(242,201,76,.7);
-      }
       .chip:focus-visible { outline:2px solid #f2c94c; outline-offset:2px; }
+      .hero .hero-img-wrap { margin-bottom: 8px; }
+      .schedule-list .game { transition: transform .12s ease, background-color .12s ease, box-shadow .12s ease; }
+      @media (hover:hover) {
+        .schedule-list .game:hover { transform: translateY(-1px); background: rgba(255,255,255,0.03); box-shadow: 0 2px 10px rgba(0,0,0,.25); }
+      }
     `;
     const style = document.createElement('style');
-    style.setAttribute('data-injected', 'runtime-polish');
     style.textContent = css;
     document.head.appendChild(style);
   }
@@ -143,9 +114,6 @@
     initFilters();
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
 })();
