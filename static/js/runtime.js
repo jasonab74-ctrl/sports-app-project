@@ -25,20 +25,10 @@
     history.replaceState({}, '', u.toString());
   }
 
-  /* ---------------- Image fail-safe ---------------- */
-  function swapToPosterOrFallback(img) {
-    const overrides = getOverrides();
-    const host = hostFromLink(img);
-    const poster = overrides[host] || null;
+  /* ---------------- Image fail-safe (two-stage) ---------------- */
+  function replaceWithTile(img) {
     const aspect = img.getAttribute('data-aspect') || '4x3';
     const label = img.getAttribute('data-label') || '';
-
-    if (poster) {
-      img.onerror = null;
-      img.removeAttribute('srcset');
-      img.src = poster;
-      return;
-    }
     const wrap = document.createElement('div');
     wrap.className = `fallback-${aspect}`;
     const b = document.createElement('div');
@@ -47,9 +37,45 @@
     wrap.appendChild(b);
     img.replaceWith(wrap);
   }
+
+  function tryPoster(img) {
+    const overrides = getOverrides();
+    const host = hostFromLink(img);
+    const poster = overrides[host] || null;
+    if (!poster) { replaceWithTile(img); return; }
+
+    // Attach a one-time handler in case the POSTER 404s too
+    const onPosterError = () => {
+      img.removeEventListener('error', onPosterError);
+      replaceWithTile(img);
+    };
+    img.addEventListener('error', onPosterError, { once: true });
+
+    // Swap to poster
+    img.removeAttribute('srcset');
+    img.src = poster;
+  }
+
+  function onRealImageError(e) {
+    const img = e.currentTarget;
+    img.removeEventListener('error', onRealImageError);
+    tryPoster(img);
+  }
+
   function attachImageGuards() {
     document.querySelectorAll('img.hero-img, img.card-img').forEach(img => {
-      img.addEventListener('error', () => swapToPosterOrFallback(img), { once: true });
+      // stage 1: if real image fails → try poster
+      img.addEventListener('error', onRealImageError, { once: true });
+
+      // performance: bump hero priority
+      if (img.classList.contains('hero-img')) {
+        try { img.fetchPriority = 'high'; } catch {}
+      }
+      // ensure lazy below-the-fold
+      if (!img.classList.contains('hero-img')) {
+        if (!img.hasAttribute('loading')) img.setAttribute('loading', 'lazy');
+        img.setAttribute('decoding', 'async');
+      }
     });
   }
 
@@ -59,14 +85,9 @@
     const grid = document.getElementById('news-grid');
     if (!h || !grid) return;
     const visible = Array.from(grid.children).filter(el => {
-      // Only count actual cards
       if (!el || !el.classList || !el.classList.contains('card')) return false;
-      // Hidden via style.display = 'none' will have empty offsetWidth/Height
-      const style = window.getComputedStyle(el);
-      return style.display !== 'none';
+      return window.getComputedStyle(el).display !== 'none';
     }).length;
-
-    // Ensure we have a (N) badge at the end of the heading
     let badge = h.querySelector('[data-count]');
     if (!badge) {
       badge = document.createElement('span');
@@ -77,6 +98,15 @@
       h.appendChild(badge);
     }
     badge.textContent = `(${visible})`;
+
+    // Optional: reflect in document title when filtered
+    const params = new URL(location.href).searchParams;
+    const f = params.get('filter');
+    if (f && f !== 'all') {
+      document.title = `Top Headlines (${visible}) — ${f[0].toUpperCase()+f.slice(1)} • Purdue MBB Hub`;
+    } else {
+      document.title = 'Purdue MBB Hub';
+    }
   }
 
   /* ---------------- Filters (+ URL sync) ---------------- */
@@ -109,7 +139,6 @@
       apply(btn.getAttribute('data-filter') || 'all');
     });
 
-    // Apply initial state from URL and count
     apply(getParam('filter', 'all'));
   }
 
