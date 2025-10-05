@@ -2,16 +2,18 @@
   "name": "sports-app-project",
   "private": true,
   "type": "module",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Static SSR build for Purdue MBB Hub (GitHub Pages).",
   "scripts": {
-    "results:sync": "node scripts/fetch-results.mjs",
+    "news:sync": "node scripts/fetch-news.mjs",
+    "results:sync": "node scripts/fetch-results.mjs || echo \"no results sync\"",
     "heads:sync": "node scripts/fetch-headshots.mjs || echo \"no headshot sync\"",
     "cache:images": "node scripts/cache-images.mjs || echo \"no image cache\"",
     "build:ssr": "node scripts/build-ssr.mjs",
-    "build": "npm run cache:images && npm run build:ssr"
+    "build": "npm run news:sync && npm run cache:images && npm run build:ssr"
   },
   "dependencies": {
+    "fast-xml-parser": "4.5.0",
     "node-fetch": "3.3.2"
   },
   "engines": {
