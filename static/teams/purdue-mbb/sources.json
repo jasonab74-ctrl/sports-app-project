@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Purdue Athletics",
+    "host": "purduesports.com",
+    "tier": "official",
+    "feed": "https://purduesports.com/rss.aspx?path=mbball"
+  },
+  {
+    "name": "Hammer & Rails",
+    "host": "hammerandrails.com",
+    "tier": "insiders",
+    "feed": "https://www.hammerandrails.com/rss/index.xml"
+  },
+  {
+    "name": "Gold and Black (Rivals)",
+    "host": "purdue.rivals.com",
+    "tier": "insiders",
+    "feed": "https://purdue.rivals.com/rss" 
+  },
+  {
+    "name": "247Sports Purdue",
+    "host": "247sports.com",
+    "tier": "insiders",
+    "feed": "https://247sports.com/college/purdue/Article/Feed/"
+  },
+  {
+    "name": "Journal & Courier",
+    "host": "jconline.com",
+    "tier": "insiders",
+    "feed": "https://rssfeeds.jconline.com/jconline/sports"
+  },
+  {
+    "name": "Yahoo CBB",
+    "host": "sports.yahoo.com",
+    "tier": "national",
+    "feed": "https://sports.yahoo.com/college-basketball/rss/"
+  },
+  {
+    "name": "CBS Sports CBB",
+    "host": "cbssports.com",
+    "tier": "national",
+    "feed": "https://www.cbssports.com/rss/headlines/college-basketball/"
+  },
+  {
+    "name": "Sports Illustrated CBB",
+    "host": "si.com",
+    "tier": "national",
+    "feed": "https://www.si.com/rss/college-basketball"
+  }
+]
