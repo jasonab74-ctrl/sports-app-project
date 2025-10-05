@@ -9,14 +9,16 @@
 <style>
 :root{
   --bg:#0d0f12;--card:#15181e;--muted:#9aa1ab;--text:#e9edf2;--brand:#f2c94c;
-  --pill:#242833;--pillText:#cfd6df;--border:#242833;
+  --pill:#242833;--pillText:#cfd6df;--border:#242833;--divider:linear-gradient(90deg,rgba(242,201,76,.35),rgba(242,201,76,.0) 60%);
 }
 *{box-sizing:border-box}
 html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
 a{color:inherit;text-decoration:none}
 h1,h2,h3{margin:0}
-.container{max-width:1200px;margin:0 auto;padding:16px}
-.topbar{display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--border)}
+
+/* ===== Header ===== */
+.topbar{position:sticky;top:0;z-index:50;backdrop-filter:saturate(140%) blur(6px);
+  background:rgba(13,15,18,.75);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;padding:12px 16px}
 .brand-badge{width:36px;height:36px;border-radius:10px;background:#1a1e26;display:grid;place-items:center}
 .brand-dot{width:14px;height:14px;border-radius:999px;background:var(--brand)}
 .brand{display:flex;flex-direction:column}
@@ -24,20 +26,21 @@ h1,h2,h3{margin:0}
 .brand-line2{font-size:12px;color:var(--muted)}
 .nav{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap}
 .nav a{background:var(--pill);color:var(--pillText);border:1px solid var(--border);padding:6px 10px;border-radius:999px}
+.header-divider{height:8px;background:var(--divider)}
 
-.ticker{overflow:hidden;border-bottom:1px solid var(--border)}
-.ticker-track{white-space:nowrap;display:block;animation:tkr 40s linear infinite;opacity:.9;padding:10px 0}
-@keyframes tkr{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-
+/* ===== Layout ===== */
+.container{max-width:1200px;margin:0 auto;padding:16px}
 .grid{display:grid;grid-template-columns:1fr 360px;gap:16px}
 @media (max-width: 1000px){.grid{grid-template-columns:1fr}}
 
+/* ===== Panels / Chips ===== */
 .panel{background:transparent;margin:16px 0}
 .panel-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
 .chips{display:flex;gap:8px;flex-wrap:wrap}
 .chip{background:var(--pill);color:var(--pillText);border:1px solid var(--border);padding:6px 10px;border-radius:999px}
 .chip.is-active{background:var(--brand);color:#000;border-color:transparent}
 
+/* ===== Hero / Cards ===== */
 .hero{display:grid;gap:10px;margin-bottom:10px}
 .hero-img-wrap,.card-img-wrap{display:block;border-radius:12px;overflow:hidden;background:#121419}
 .hero-art{aspect-ratio:16/9;width:100%;display:grid;place-items:center}
@@ -64,6 +67,7 @@ h1,h2,h3{margin:0}
 .pills{display:flex;gap:8px;flex-wrap:wrap}
 .pill{background:var(--pill);color:var(--pillText);padding:4px 8px;border-radius:999px;font-size:12px}
 
+/* ===== Right rail ===== */
 .rail{display:grid;gap:16px}
 .rankings,.schedule-list,.results-list{display:grid;gap:10px}
 .game,.result{display:block;padding:10px;background:var(--card);border:1px solid var(--border);border-radius:10px}
@@ -78,6 +82,7 @@ h1,h2,h3{margin:0}
 .link-title{font-weight:600}
 .link-sub{color:var(--muted)}
 
+/* ===== Roster ===== */
 .roster-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 @media (max-width: 1024px){.roster-grid{grid-template-columns:repeat(3,1fr)}}
 @media (max-width: 640px){.roster-grid{grid-template-columns:repeat(2,1fr)}}
@@ -88,33 +93,45 @@ h1,h2,h3{margin:0}
 .player-name{font-weight:700}
 .player-num{font-weight:800}
 
-.footer{color:var(--muted);padding:20px;text-align:center}
+/* ===== Footer ===== */
+.footer{color:var(--muted);padding:18px 16px;text-align:center}
 .muted{color:var(--muted)}
+
+/* ===== Mobile tightening ===== */
+@media (max-width:640px){
+  .topbar{padding:10px 12px}
+  .brand-line1{font-size:16px}
+  .nav a{padding:5px 9px;font-size:13px}
+  .container{padding:12px}
+  .panel{margin:12px 0}
+  .panel-hd{margin-bottom:6px}
+  .hero{gap:8px;margin-bottom:8px}
+  .card-grid,.video-grid{gap:10px}
+  .card-body{padding:8px}
+  .pill{padding:3px 7px;font-size:11px}
+  .link-card{padding:8px}
+  .game,.result{padding:8px}
+}
 </style>
 </head>
 <body>
-<header class="topbar">
+<header class="topbar" role="banner">
   <div class="brand-badge"><div class="brand-dot"></div></div>
   <div class="brand"><div class="brand-line1">Team Hub</div><div class="brand-line2">Boilermakers</div></div>
   <nav class="nav" aria-label="Primary">
-    <a href="#news">News</a><a href="#videos">Videos</a><a href="#rankings">Rankings</a><a href="#schedule">Schedule</a><a href="#nil">NIL</a>
+    <a href="#news">News</a>
+    <a href="#videos">Videos</a>
+    <a href="#rankings">Rankings</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#roster">Roster</a><!-- added -->
+    <a href="#nil">NIL</a>
   </nav>
 </header>
-
-<section class="ticker" aria-live="polite">
-  <div class="ticker-track">
-    <span style="margin:0 1.25rem">PurdueSports.com — Purdue Announces 2025–26 Non-Conference Slate</span>
-    <span style="margin:0 1.25rem">Sports Illustrated CBB — AP Poll movers and what it means for Purdue</span>
-    <span style="margin:0 1.25rem">CBS Sports CBB — Big Ten preview: tiers, X-factors, and POY race</span>
-    <span style="margin:0 1.25rem">Yahoo CBB — Big Ten storylines to watch</span>
-    <span style="margin:0 1.25rem">Journal & Courier — Coach Painter on lineup experimentation</span>
-    <span style="margin:0 1.25rem">247Sports Purdue — Recruiting board resets after fall visits</span>
-    <span style="margin:0 1.25rem">Rivals (Gold and Black) — Film Room: PnR counters for 2025–26</span>
-  </div>
-</section>
+<div class="header-divider" aria-hidden="true"></div>
 
 <main class="container">
   <div class="grid">
+    <!-- ===== NEWS LEFT ===== -->
     <section id="news" class="panel" aria-labelledby="news-h">
       <div class="panel-hd">
         <h2 id="news-h">Top Headlines</h2>
@@ -244,7 +261,7 @@ h1,h2,h3{margin:0}
       </div>
     </section>
 
-    <!-- RIGHT RAIL -->
+    <!-- ===== RIGHT RAIL ===== -->
     <aside class="rail">
       <section id="rankings" class="panel" aria-labelledby="rank-h">
         <div class="panel-hd"><h3 id="rank-h">Rankings</h3></div>
@@ -290,7 +307,7 @@ h1,h2,h3{margin:0}
     </aside>
   </div>
 
-  <!-- ROSTER -->
+  <!-- ===== ROSTER ===== -->
   <section id="roster" class="panel" aria-labelledby="roster-h">
     <div class="panel-hd"><h2 id="roster-h">Roster</h2></div>
     <div class="roster-grid">
@@ -304,7 +321,7 @@ h1,h2,h3{margin:0}
     </div>
   </section>
 
-  <!-- VIDEOS -->
+  <!-- ===== VIDEOS ===== -->
   <section id="videos" class="panel" aria-labelledby="vid-h">
     <div class="panel-hd"><h2 id="vid-h">Latest Videos</h2></div>
     <div class="video-grid">
