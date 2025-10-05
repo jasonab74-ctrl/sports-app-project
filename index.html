@@ -7,18 +7,21 @@
 <meta name="description" content="Fast Purdue Men’s Basketball hub: top headlines, videos, rankings, schedule, insiders."/>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230d0f12'/%3E%3Ccircle cx='20' cy='22' r='6' fill='%23f2c94c'/%3E%3Cpath d='M13 38h38v12H13z' fill='%23f2c94c'/%3E%3C/svg%3E"/>
 <style>
+/* ===== Theme ===== */
 :root{
   --bg:#0d0f12;--card:#15181e;--muted:#9aa1ab;--text:#e9edf2;--brand:#f2c94c;
-  --pill:#242833;--pillText:#cfd6df;--border:#242833;--divider:linear-gradient(90deg,rgba(242,201,76,.35),rgba(242,201,76,.0) 60%);
+  --pill:#242833;--pillText:#cfd6df;--border:#242833;--divider:linear-gradient(90deg,rgba(242,201,76,.36),rgba(242,201,76,0) 60%);
 }
 *{box-sizing:border-box}
 html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
 a{color:inherit;text-decoration:none}
 h1,h2,h3{margin:0}
+.muted{color:var(--muted)}
 
-/* ===== Header ===== */
+/* ===== Header (sticky) ===== */
 .topbar{position:sticky;top:0;z-index:50;backdrop-filter:saturate(140%) blur(6px);
-  background:rgba(13,15,18,.75);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;padding:12px 16px}
+  background:rgba(13,15,18,.78);border-bottom:1px solid var(--border);
+  display:flex;align-items:center;gap:12px;padding:12px 16px}
 .brand-badge{width:36px;height:36px;border-radius:10px;background:#1a1e26;display:grid;place-items:center}
 .brand-dot{width:14px;height:14px;border-radius:999px;background:var(--brand)}
 .brand{display:flex;flex-direction:column}
@@ -50,7 +53,6 @@ h1,h2,h3{margin:0}
 .poster text{font-family:Inter,system-ui,Arial}
 .poster .t1{font-weight:800;fill:#f2c94c}
 .poster .t2{fill:#a9a9af}
-.fallback-badge{font-weight:800;font-size:28px;color:#c8ced8}
 
 .card-grid,.video-grid{display:grid;gap:12px}
 .card-grid{grid-template-columns:repeat(3,1fr)}
@@ -95,7 +97,6 @@ h1,h2,h3{margin:0}
 
 /* ===== Footer ===== */
 .footer{color:var(--muted);padding:18px 16px;text-align:center}
-.muted{color:var(--muted)}
 
 /* ===== Mobile tightening ===== */
 @media (max-width:640px){
@@ -123,7 +124,7 @@ h1,h2,h3{margin:0}
     <a href="#videos">Videos</a>
     <a href="#rankings">Rankings</a>
     <a href="#schedule">Schedule</a>
-    <a href="#roster">Roster</a><!-- added -->
+    <a href="#roster">Roster</a> <!-- added -->
     <a href="#nil">NIL</a>
   </nav>
 </header>
@@ -367,6 +368,18 @@ h1,h2,h3{margin:0}
         </a>
         <div class="card-body"><a class="card-title" href="https://www.youtube.com/watch?v=2Z4m4lnjxkY" target="_blank" rel="noopener">Summer Highlights Mix</a></div>
       </article>
+    </div>
+  </section>
+
+  <!-- ===== NIL ===== -->
+  <section id="nil" class="panel" aria-labelledby="nil-h">
+    <div class="panel-hd"><h2 id="nil-h">NIL</h2></div>
+    <div class="links-grid">
+      <a class="link-card" href="https://www.purdue.edu" target="_blank" rel="noopener">
+        <div>🤝</div>
+        <div class="link-body"><div class="link-title">Purdue NIL (placeholder)</div><div class="link-sub">Add your official NIL links here</div></div>
+        <div class="link-meta muted">Info</div>
+      </a>
     </div>
   </section>
 </main>
