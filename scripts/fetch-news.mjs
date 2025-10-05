@@ -1,163 +1,159 @@
-/**
- * Build items.json from configured feeds (static/teams/purdue-mbb/sources.json)
- * Output: static/teams/purdue-mbb/items.json
- * – Keeps site fully static; runs in GitHub Actions pre-build.
- * – Dedupes, sorts by published date desc, caps to 10.
- */
+// scripts/fetch-news.mjs
+// Live RSS fetch -> static/teams/purdue-mbb/items.json
+// Node 20+ only (uses global fetch). No external deps.
 
-import fs from 'fs';
-import fetch from 'node-fetch';
-import { XMLParser } from 'fast-xml-parser';
+import { readFileSync, writeFileSync } from "node:fs";
+import { resolve } from "node:path";
+import { execSync } from "node:child_process";
 
-const SOURCES_FILE = 'static/teams/purdue-mbb/sources.json';
-const OUT_FILE     = 'static/teams/purdue-mbb/items.json';
+const root = process.cwd();
+const cfgPath = resolve(root, "static/teams/purdue-mbb/feeds.json");
+const outPath = resolve(root, "static/teams/purdue-mbb/items.json");
 
-const parser = new XMLParser({
-  ignoreAttributes: false,
-  attributeNamePrefix: '@_',
-  removeNSPrefix: true,
-  textNodeName: '#text'
-});
+function loadJSON(p) { return JSON.parse(readFileSync(p, "utf8")); }
+const cfg = loadJSON(cfgPath);
 
-function readJSON(p, def) { try { return JSON.parse(fs.readFileSync(p, 'utf8')); } catch { return def; } }
-function writeJSON(p, data) {
-  fs.mkdirSync(p.split('/').slice(0, -1).join('/'), { recursive: true });
-  fs.writeFileSync(p, JSON.stringify(data, null, 2));
-}
-function toDateSafe(v) {
-  const d = new Date(v); return isNaN(+d) ? null : d;
-}
-function sanitize(str) {
-  return String(str || '').replace(/\s+/g, ' ').trim();
-}
-function takeFirst(arr) { return Array.isArray(arr) ? arr[0] : arr; }
+const MAX = cfg.max_items ?? 12;
+const MIN = cfg.min_live_threshold ?? 6;
 
-function fromRSS(xml, source) {
-  const out = [];
-  const ch = xml?.rss?.channel || xml?.channel;
-  const items = ch?.item || [];
-  const list = Array.isArray(items) ? items : [items];
-  for (const it of list) {
-    const title = sanitize(it?.title);
-    const link = sanitize(it?.link);
-    const pub = toDateSafe(it?.pubDate || it?.published || it?.updated);
-    if (!title || !link) continue;
-    out.push({
-      title,
-      link,
-      source: source.name,
-      tier: source.tier,
-      ts: pub ? +pub : Date.now(),
-      type: 'article'
-    });
-  }
-  return out;
-}
+// --- tiny helpers ---
+const textBetween = (s, a, b) => {
+  const i = s.indexOf(a);
+  if (i === -1) return null;
+  const j = s.indexOf(b, i + a.length);
+  if (j === -1) return null;
+  return s.slice(i + a.length, j);
+};
+const isoOrNull = (d) => {
+  const t = Date.parse(d);
+  return Number.isFinite(t) ? new Date(t).toISOString() : null;
+};
+const domain = (url) => {
+  try { return new URL(url).hostname.replace(/^www\./, ""); }
+  catch { return ""; }
+};
+const kindFrom = (url, declared) =>
+  /youtube\.com|youtu\.be/.test(url) ? "video" : (declared || "article");
 
-function fromAtom(xml, source) {
-  const out = [];
-  const entries = xml?.feed?.entry || [];
-  const list = Array.isArray(entries) ? entries : [entries];
-  for (const e of list) {
-    const title = sanitize(e?.title?.['#text'] || e?.title);
-    let link = '';
-    if (Array.isArray(e?.link)) {
-      const alt = e.link.find(l => (l['@_rel'] || '') === 'alternate');
-      link = alt?.['@_href'] || e.link[0]?.['@_href'] || '';
-    } else {
-      link = e?.link?.['@_href'] || e?.link || '';
+// Simple RSS/Atom parser (best-effort, no external deps)
+function parseFeed(xml, declaredType) {
+  const items = [];
+  const isAtom = xml.includes("<feed");
+  if (!isAtom) {
+    // RSS <item>
+    const parts = xml.split("<item").slice(1);
+    for (const chunk of parts) {
+      const item = chunk.split("</item>")[0] || chunk;
+      const title = (textBetween(item, "<title>", "</title>") || "").replace(/<!\[CDATA\[|\]\]>/g, "").trim();
+      const link  = (textBetween(item, "<link>", "</link>") || textBetween(item, '<link>', '</link>') || "").trim();
+      const pub   = textBetween(item, "<pubDate>", "</pubDate>") || textBetween(item, "<dc:date>", "</dc:date>") || "";
+      items.push({ title, link, published: isoOrNull(pub), type: kindFrom(link, declaredType) });
     }
-    const pub = toDateSafe(e?.updated || e?.published);
-    if (!title || !link) continue;
-    out.push({
-      title,
-      link: sanitize(link),
-      source: source.name,
-      tier: source.tier,
-      ts: pub ? +pub : Date.now(),
-      type: 'article'
-    });
+  } else {
+    // Atom <entry>
+    const parts = xml.split("<entry").slice(1);
+    for (const chunk of parts) {
+      const entry = chunk.split("</entry>")[0] || chunk;
+      const title = (textBetween(entry, "<title>", "</title>") || "").replace(/<!\[CDATA\[|\]\]>/g, "").trim();
+      let link = "";
+      const linkTag = entry.match(/<link[^>]+href="([^"]+)"/);
+      if (linkTag) link = linkTag[1];
+      const pub = textBetween(entry, "<updated>", "</updated>") || textBetween(entry, "<published>", "</published>") || "";
+      items.push({ title, link, published: isoOrNull(pub), type: kindFrom(link, declaredType) });
+    }
   }
-  return out;
+  // Filter garbage
+  return items.filter(i => i.title && i.link);
 }
 
-function fromJSONFeed(json, source) {
-  const out = [];
-  const items = json?.items || [];
-  for (const it of items) {
-    const title = sanitize(it?.title);
-    const link  = sanitize(it?.url || it?.external_url);
-    const pub   = toDateSafe(it?.date_published || it?.date_modified);
-    if (!title || !link) continue;
-    out.push({
-      title,
-      link,
-      source: source.name,
-      tier: source.tier,
-      ts: pub ? +pub : Date.now(),
-      type: 'article'
-    });
-  }
-  return out;
+const SOURCE_BY_DOMAIN = {
+  "purduesports.com": "PurdueSports.com",
+  "si.com": "Sports Illustrated CBB",
+  "cbssports.com": "CBS Sports CBB",
+  "sports.yahoo.com": "Yahoo CBB",
+  "jconline.com": "Journal & Courier",
+  "247sports.com": "247Sports Purdue",
+  "purdue.rivals.com": "Gold and Black (Rivals)",
+  "youtube.com": "YouTube"
+};
+
+function normalizeItem(raw, declaredName, declaredTier) {
+  const d = domain(raw.link);
+  const source = SOURCE_BY_DOMAIN[d] || declaredName || d || "Unknown";
+  const ts = raw.published ? Date.parse(raw.published) : Date.now();
+  return {
+    title: raw.title,
+    link: raw.link,
+    source,
+    tier: declaredTier || "national",
+    type: raw.type || "article",
+    ts
+  };
 }
 
-async function fetchFeed(source) {
-  try {
-    const r = await fetch(source.feed, { headers: { 'user-agent': 'Mozilla/5.0 (News Sync)' }, redirect: 'follow' });
-    const text = await r.text();
-    // Try JSON Feed first
-    try {
-      const data = JSON.parse(text);
-      if (data && (Array.isArray(data.items) || data.version?.includes('jsonfeed'))) {
-        return fromJSONFeed(data, source);
-      }
-    } catch {}
-    // Then XML (RSS/Atom)
-    const xml = parser.parse(text);
-    if (xml?.rss || xml?.channel) return fromRSS(xml, source);
-    if (xml?.feed) return fromAtom(xml, source);
-  } catch (e) {
-    console.log(`feed: ${source.name} failed (${e?.message || e})`);
-  }
-  return [];
-}
-
-function dedupeSortCap(all) {
+function dedupe(items) {
   const seen = new Set();
   const out = [];
-  for (const i of all) {
-    const key = (i.link || '').toLowerCase() + '|' + (i.title || '').toLowerCase();
+  for (const it of items) {
+    const key = `${it.title}__${it.link}`;
     if (seen.has(key)) continue;
     seen.add(key);
-    out.push(i);
+    out.push(it);
   }
-  out.sort((a,b) => b.ts - a.ts);
-  return out.slice(0, 10);
+  return out;
 }
 
-(async function run() {
-  const sources = readJSON(SOURCES_FILE, []);
-  if (!Array.isArray(sources) || sources.length === 0) {
-    console.log('news: no sources configured.');
-    return;
+async function fetchAll() {
+  const all = [];
+  for (const src of (cfg.sources || [])) {
+    try {
+      const res = await fetch(src.url, { headers: { "user-agent": "gh-actions (+team-hub)" } });
+      if (!res.ok) throw new Error(`${src.name} HTTP ${res.status}`);
+      const xml = await res.text();
+      const parsed = parseFeed(xml, src.type).map(item => normalizeItem(item, src.name, src.tier));
+      // keep most recent 5 per source to avoid floods
+      parsed.sort((a,b)=>b.ts-a.ts);
+      all.push(...parsed.slice(0, 5));
+    } catch (e) {
+      console.warn(`WARN feed ${src.name}: ${e.message}`);
+    }
+  }
+  let items = dedupe(all).sort((a,b)=>b.ts-a.ts).slice(0, MAX);
+
+  // fallback to seed if live is too thin
+  if (items.length < MIN && cfg.fallback_seed) {
+    try {
+      const seed = loadJSON(resolve(root, cfg.fallback_seed));
+      const now = Date.now();
+      const seeded = (seed.items || []).map((s, i) => ({ ...s, ts: now - i * 3600_000 }));
+      items = dedupe([...seeded, ...items]).sort((a,b)=>b.ts-a.ts).slice(0, MAX);
+      console.log(`Fallback used: live ${all.length} → final ${items.length}`);
+    } catch (e) {
+      console.warn(`WARN fallback failed: ${e.message}`);
+    }
   }
 
-  const batches = await Promise.all(sources.map(fetchFeed));
-  const combined = dedupeSortCap(batches.flat());
+  // write
+  const payload = { items };
+  const prev = (() => {
+    try { return readFileSync(outPath, "utf8"); } catch { return ""; }
+  })();
+  const next = JSON.stringify(payload, null, 2);
 
-  // Preserve structure you already use: { items: [...] }
-  const payload = { items: combined.map(i => ({
-    title: i.title,
-    link: i.link,
-    source: i.source,
-    tier: i.tier,
-    type: i.type,
-    ts: i.ts
-  }))};
+  if (prev.trim() !== next.trim()) {
+    writeFileSync(outPath, next, "utf8");
+    console.log(`WROTE ${items.length} items → ${outPath}`);
+  } else {
+    console.log(`No change in items.json`);
+  }
+}
 
-  writeJSON(OUT_FILE, payload);
-  console.log(`news: wrote ${payload.items.length} items`);
-})().catch(err => {
-  console.error('news: fatal', err?.message || err);
-  process.exitCode = 0; // do not fail the build if feeds glitch
+// Ensure path exists in commits (optional tidy)
+try {
+  execSync('git status', { stdio: 'ignore' });
+} catch {}
+
+fetchAll().catch(e => {
+  console.error(e);
+  process.exitCode = 1;
 });
