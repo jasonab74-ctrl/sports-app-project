@@ -6,30 +6,24 @@
   "hammerandrails.com": "static/brand/hammerandrails-default.svg",
 
   "purdue.rivals.com": "static/brand/rivals-default.svg",
-  "rivals.com": "static/brand/rivals-default.svg",
-  "purdue.rivals.rivals.com": "static/brand/rivals-default.svg",
+  "www.purdue.rivals.com": "static/brand/rivals-default.svg",
 
-  "www.247sports.com": "static/brand/247sports-default.svg",
   "247sports.com": "static/brand/247sports-default.svg",
+  "www.247sports.com": "static/brand/247sports-default.svg",
 
-  "www.jconline.com": "static/brand/jconline-default.svg",
   "jconline.com": "static/brand/jconline-default.svg",
-  "www.usatoday.com": "static/brand/jconline-default.svg",
-  "usatoday.com": "static/brand/jconline-default.svg",
+  "www.jconline.com": "static/brand/jconline-default.svg",
 
   "si.com": "static/brand/si-default.svg",
   "www.si.com": "static/brand/si-default.svg",
-  "sportsillustrated.com": "static/brand/si-default.svg",
-  "www.sportsillustrated.com": "static/brand/si-default.svg",
 
   "sports.yahoo.com": "static/brand/yahoosports-default.svg",
   "www.sports.yahoo.com": "static/brand/yahoosports-default.svg",
-  "yahoo.com": "static/brand/yahoosports-default.svg",
-  "www.yahoo.com": "static/brand/yahoosports-default.svg",
 
   "cbssports.com": "static/brand/cbssports-default.svg",
   "www.cbssports.com": "static/brand/cbssports-default.svg",
 
-  "www.espn.com": "static/brand/cbssports-default.svg",
-  "espn.com": "static/brand/cbssports-default.svg"
+  "youtube.com": "static/brand/youtube-default.svg",
+  "www.youtube.com": "static/brand/youtube-default.svg",
+  "youtu.be": "static/brand/youtube-default.svg"
 }
