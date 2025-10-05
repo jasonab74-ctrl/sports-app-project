@@ -1,0 +1,55 @@
+{
+  "sources": [
+    {
+      "name": "PurdueSports.com",
+      "tier": "official",
+      "type": "article",
+      "url": "https://purduesports.com/rss.aspx?path=mbball"
+    },
+    {
+      "name": "Sports Illustrated CBB",
+      "tier": "national",
+      "type": "article",
+      "url": "https://www.si.com/rss.xml"
+    },
+    {
+      "name": "CBS Sports CBB",
+      "tier": "national",
+      "type": "article",
+      "url": "https://www.cbssports.com/partner/rhapsody/college-basketball/rss/headlines/"
+    },
+    {
+      "name": "Yahoo CBB",
+      "tier": "national",
+      "type": "article",
+      "url": "https://sports.yahoo.com/college-basketball/rss/"
+    },
+    {
+      "name": "Journal & Courier",
+      "tier": "insiders",
+      "type": "article",
+      "url": "https://rssfeeds.jconline.com/jconline/sports"
+    },
+    {
+      "name": "247Sports Purdue",
+      "tier": "insiders",
+      "type": "article",
+      "url": "https://247sports.com/college/purdue/Feed.rss"
+    },
+    {
+      "name": "Rivals Gold and Black",
+      "tier": "insiders",
+      "type": "article",
+      "url": "https://purdue.rivals.com/rss" 
+    },
+    {
+      "name": "PurdueSports YouTube",
+      "tier": "official",
+      "type": "video",
+      "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCS5Kk9E2r8vH4s4qZs6k9lw"
+    }
+  ],
+  "fallback_seed": "static/teams/purdue-mbb/items.seed.json",
+  "max_items": 12,
+  "min_live_threshold": 6
+}
