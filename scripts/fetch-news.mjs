@@ -16,6 +16,17 @@ const cfg = loadJSON(cfgPath);
 const MAX = cfg.max_items ?? 12;
 const MIN = cfg.min_live_threshold ?? 6;
 
+// --- Purdue keyword filter (apply to non-official sources) ---
+const KEYWORDS = [
+  "Purdue", "Boilermaker", "Boilermakers",
+  "Matt Painter", "Mackey Arena", "West Lafayette",
+  "Braden Smith", "Trey Kaufman-Renn", "Fletcher Loyer"
+];
+const hasPurdueSignal = (t="") => {
+  const s = t.toLowerCase();
+  return KEYWORDS.some(k => s.includes(k.toLowerCase()));
+};
+
 // --- tiny helpers ---
 const textBetween = (s, a, b) => {
   const i = s.indexOf(a);
@@ -35,12 +46,11 @@ const domain = (url) => {
 const kindFrom = (url, declared) =>
   /youtube\.com|youtu\.be/.test(url) ? "video" : (declared || "article");
 
-// Simple RSS/Atom parser (best-effort, no external deps)
+// Simple RSS/Atom parser (no deps)
 function parseFeed(xml, declaredType) {
   const items = [];
   const isAtom = xml.includes("<feed");
   if (!isAtom) {
-    // RSS <item>
     const parts = xml.split("<item").slice(1);
     for (const chunk of parts) {
       const item = chunk.split("</item>")[0] || chunk;
@@ -50,7 +60,6 @@ function parseFeed(xml, declaredType) {
       items.push({ title, link, published: isoOrNull(pub), type: kindFrom(link, declaredType) });
     }
   } else {
-    // Atom <entry>
     const parts = xml.split("<entry").slice(1);
     for (const chunk of parts) {
       const entry = chunk.split("</entry>")[0] || chunk;
@@ -62,7 +71,6 @@ function parseFeed(xml, declaredType) {
       items.push({ title, link, published: isoOrNull(pub), type: kindFrom(link, declaredType) });
     }
   }
-  // Filter garbage
   return items.filter(i => i.title && i.link);
 }
 
@@ -110,14 +118,24 @@ async function fetchAll() {
       const res = await fetch(src.url, { headers: { "user-agent": "gh-actions (+team-hub)" } });
       if (!res.ok) throw new Error(`${src.name} HTTP ${res.status}`);
       const xml = await res.text();
-      const parsed = parseFeed(xml, src.type).map(item => normalizeItem(item, src.name, src.tier));
-      // keep most recent 5 per source to avoid floods
+      let parsed = parseFeed(xml, src.type).map(item => normalizeItem(item, src.name, src.tier));
+
+      // keep most recent 5 per source initially
       parsed.sort((a,b)=>b.ts-a.ts);
-      all.push(...parsed.slice(0, 5));
+      parsed = parsed.slice(0, 5);
+
+      // Apply Purdue filter to non-official sources
+      const isOfficial = (src.tier === "official") || /purduesports\.com|youtube\.com/.test(src.url);
+      if (!isOfficial) {
+        parsed = parsed.filter(it => hasPurdueSignal(`${it.title} ${it.link}`));
+      }
+
+      all.push(...parsed);
     } catch (e) {
       console.warn(`WARN feed ${src.name}: ${e.message}`);
     }
   }
+
   let items = dedupe(all).sort((a,b)=>b.ts-a.ts).slice(0, MAX);
 
   // fallback to seed if live is too thin
@@ -133,12 +151,9 @@ async function fetchAll() {
     }
   }
 
-  // write
-  const payload = { items };
-  const prev = (() => {
-    try { return readFileSync(outPath, "utf8"); } catch { return ""; }
-  })();
-  const next = JSON.stringify(payload, null, 2);
+  // write if changed
+  const next = JSON.stringify({ items }, null, 2);
+  const prev = (() => { try { return readFileSync(outPath, "utf8"); } catch { return ""; } })();
 
   if (prev.trim() !== next.trim()) {
     writeFileSync(outPath, next, "utf8");
@@ -149,9 +164,7 @@ async function fetchAll() {
 }
 
 // Ensure path exists in commits (optional tidy)
-try {
-  execSync('git status', { stdio: 'ignore' });
-} catch {}
+try { execSync('git status', { stdio: 'ignore' }); } catch {}
 
 fetchAll().catch(e => {
   console.error(e);
