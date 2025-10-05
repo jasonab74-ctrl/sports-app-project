@@ -1,0 +1,84 @@
+{
+  "items": [
+    {
+      "title": "Purdue Announces 2025–26 Non-Conference Slate",
+      "link": "https://purduesports.com/",
+      "source": "PurdueSports.com",
+      "tier": "official",
+      "type": "article",
+      "ts": 1761955200000
+    },
+    {
+      "title": "AP Poll movers and what it means for Purdue",
+      "link": "https://www.si.com/college-basketball",
+      "source": "Sports Illustrated CBB",
+      "tier": "national",
+      "type": "article",
+      "ts": 1761782400000
+    },
+    {
+      "title": "Big Ten preview: tiers, X-factors, and POY race",
+      "link": "https://www.cbssports.com/college-basketball/",
+      "source": "CBS Sports CBB",
+      "tier": "national",
+      "type": "article",
+      "ts": 1761696000000
+    },
+    {
+      "title": "Big Ten storylines to watch",
+      "link": "https://sports.yahoo.com/college-basketball/",
+      "source": "Yahoo CBB",
+      "tier": "national",
+      "type": "article",
+      "ts": 1761523200000
+    },
+    {
+      "title": "Coach Painter on lineup experimentation",
+      "link": "https://www.jconline.com/sports/",
+      "source": "Journal & Courier",
+      "tier": "insiders",
+      "type": "article",
+      "ts": 1761436800000
+    },
+    {
+      "title": "Recruiting board resets after fall visits",
+      "link": "https://247sports.com/college/purdue/",
+      "source": "247Sports Purdue",
+      "tier": "insiders",
+      "type": "article",
+      "ts": 1761350400000
+    },
+    {
+      "title": "Film Room: PnR counters for 2025–26",
+      "link": "https://purdue.rivals.com/",
+      "source": "Gold and Black (Rivals)",
+      "tier": "insiders",
+      "type": "article",
+      "ts": 1761264000000
+    },
+    {
+      "title": "Mic’d Up: Preseason Workouts",
+      "link": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "source": "PurdueSports YouTube",
+      "tier": "official",
+      "type": "video",
+      "ts": 1761177600000
+    },
+    {
+      "title": "Practice Highlights — First Week",
+      "link": "https://www.youtube.com/watch?v=oHg5SJYRHA0",
+      "source": "BTN Purdue",
+      "tier": "official",
+      "type": "video",
+      "ts": 1761091200000
+    },
+    {
+      "title": "Summer Highlights Mix",
+      "link": "https://www.youtube.com/watch?v=2Z4m4lnjxkY",
+      "source": "BTN Purdue",
+      "tier": "official",
+      "type": "video",
+      "ts": 1761004800000
+    }
+  ]
+}
