@@ -1,0 +1,6 @@
+{
+  "team_name": "Purdue Boilermakers",
+  "sport_key": "basketball_ncaab",
+  "ics_url": "https://purduesports.com/services/download_file.ashx?filename=calendar.ics&type=ical&sport_id=15",
+  "books": ["draftkings","fanduel","betmgm","caesars"]
+}
