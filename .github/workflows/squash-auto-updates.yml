@@ -1,0 +1,48 @@
+name: Weekly Repo Cleanup
+
+on:
+  schedule:
+    - cron: "0 12 * * 0"  # every Sunday at 12:00 UTC (5 AM Phoenix)
+  workflow_dispatch:
+
+jobs:
+  squash:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # need full history for rebase/squash
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+
+      - name: Squash older 'Auto-update' commits
+        run: |
+          echo "🧹 Squashing older Auto-update commits..."
+          # keep the most recent 20 commits intact
+          total=$(git rev-list --count HEAD)
+          keep=20
+          if [ "$total" -le "$keep" ]; then
+            echo "Nothing to squash (only $total commits)."
+            exit 0
+          fi
+
+          # create a new branch for squashed history
+          git checkout --orphan temp-branch
+          git commit --allow-empty -m "Repo cleanup: preserve latest $keep commits"
+
+          # cherry-pick last $keep commits
+          recent=$(git rev-list --reverse HEAD | tail -n "$keep")
+          for c in $recent; do
+            git cherry-pick "$c"
+          done
+
+          git branch -M main
+          git push -f origin main
+          echo "✅ Cleanup complete: kept latest $keep commits."
+
+      - name: Done
+        run: echo "Repository successfully cleaned."
