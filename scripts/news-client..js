@@ -1,6 +1,5 @@
 // scripts/news-client.js
-// Client-side renderer for Top Headlines from static/teams/purdue-mbb/items.json
-
+// Live headlines renderer from static/teams/purdue-mbb/items.json
 (async function () {
   const grid = document.getElementById('news-grid');
   const heroWrap = document.getElementById('news-hero');
@@ -30,7 +29,8 @@
     };
     return map[source] || [source, ""];
   }
-  const pill = (t)=>`<span class="pill">${t}</span>`;
+
+  const pill = (t) => `<span class="pill">${t}</span>`;
 
   function cardHTML(item) {
     const [l1, l2] = sourceLabels(item.source || "Source");
@@ -40,8 +40,8 @@
           <div class="card-art">${posterSVG(l1, l2)}</div>
         </a>
         <div class="card-body">
-          <div class="pills">${item.tier?pill(item.tier):""}${item.source?pill(item.source):""}</div>
-          <a class="card-title" href="${item.link}" target="_blank" rel="noopener" aria-label="${item.title} (opens in new tab)">${item.title}</a>
+          <div class="pills">${item.tier ? pill(item.tier) : ""}${item.source ? pill(item.source) : ""}</div>
+          <a class="card-title" href="${item.link}" target="_blank" rel="noopener">${item.title}</a>
         </div>
       </article>`;
   }
@@ -49,7 +49,7 @@
   function heroHTML(item) {
     const [l1, l2] = sourceLabels(item.source || "Source");
     return `
-      <a class="hero-img-wrap" href="${item.link}" target="_blank" rel="noopener" aria-label="${item.title} (opens in new tab)">
+      <a class="hero-img-wrap" href="${item.link}" target="_blank" rel="noopener">
         <div class="hero-art">${posterSVG(l1, l2)}</div>
       </a>`;
   }
@@ -58,7 +58,7 @@
     const res = await fetch('static/teams/purdue-mbb/items.json', { cache: 'no-store' });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
-    const items = (data.items || []).slice().sort((a,b)=> (b.ts||0)-(a.ts||0));
+    const items = (data.items || []).sort((a,b)=> (b.ts||0)-(a.ts||0));
 
     if (!items.length) {
       statusEl.textContent = "No live headlines right now.";
@@ -66,7 +66,6 @@
       return;
     }
 
-    // Prefer article for hero
     const heroIdx = Math.max(0, items.findIndex(i => (i.type||'article') !== 'video'));
     const heroItem = items[heroIdx] || items[0];
     const gridItems = items.filter((_,i)=> i !== heroIdx);
@@ -76,11 +75,10 @@
       <div class="pills">${heroItem.tier?pill(heroItem.tier):""}${heroItem.source?pill(heroItem.source):""}</div>
       <h3 class="hero-title"><a href="${heroItem.link}" target="_blank" rel="noopener">${heroItem.title}</a></h3>
     `;
-
-    grid.innerHTML = gridItems.slice(0, 9).map(cardHTML).join('');
+    grid.innerHTML = gridItems.slice(0,9).map(cardHTML).join('');
     statusEl.hidden = true;
-  } catch (e) {
-    console.warn(e);
+  } catch (err) {
+    console.warn(err);
     statusEl.textContent = "Unable to load live headlines.";
     statusEl.hidden = false;
   }
