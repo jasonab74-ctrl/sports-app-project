@@ -6,23 +6,14 @@
 <title>Purdue MBB Hub • Live Headlines & Videos</title>
 <meta name="description" content="Purdue Men’s Basketball hub: live headlines, videos, rankings, schedule, insiders."/>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231a1e26'/%3E%3Cpath d='M13 14h38v12H13z' fill='%23f2c94c'/%3E%3Cpath d='M13 26h38v12H13z' fill='%23c0a23a'/%3E%3Cpath d='M13 38h38v12H13z' fill='%23f2c94c'/%3E%3C/svg%3E"/>
-
-<!-- ✅ Use RELATIVE paths so it works at any GitHub Pages subpath -->
-<link rel="stylesheet" href="./static/css/app.css?v=fix1"/>
+<link rel="stylesheet" href="./static/css/app.css?v=fix2"/>
 </head>
 <body>
 
 <header class="topbar">
   <div class="brand-badge"><div class="brand-dot"></div></div>
   <div>Boilermakers</div>
-  <nav class="nav">
-    <a href="#news">News</a>
-    <a href="#videos">Videos</a>
-    <a href="#rankings">Rankings</a>
-    <a href="#schedule">Schedule</a>
-    <a href="#roster">Roster</a>
-    <a href="#nil">NIL</a>
-  </nav>
+  <!-- nav removed on purpose -->
 </header>
 
 <main class="wrap">
@@ -81,13 +72,11 @@
   <section id="nil" class="panel" aria-labelledby="nil-h">
     <div class="panel-hd"><h3 id="nil-h">NIL</h3></div>
     <div class="simple-list">
-      <a class="link-card" href="https://www.purdue.edu" target="_blank" rel="noopener">
-        <div class="link-logo">🛈</div>
+      <a class="link-card clickable" href="https://www.purdue.edu" target="_blank" rel="noopener">
         <div class="link-body">
           <div class="link-title">Purdue NIL (placeholder)</div>
           <div class="link-meta">Add your official NIL links here</div>
         </div>
-        <div class="link-meta">Info</div>
       </a>
     </div>
   </section>
@@ -117,8 +106,8 @@
 ]}
 </script>
 
-<!-- ✅ RELATIVE script paths -->
-<script src="./static/js/app.js?v=fix1" defer></script>
-<script src="./static/js/pro.js?v=fix1" defer></script>
+<!-- JS -->
+<script src="./static/js/app.js?v=fix2" defer></script>
+<script src="./static/js/pro.js?v=fix2" defer></script>
 </body>
 </html>
