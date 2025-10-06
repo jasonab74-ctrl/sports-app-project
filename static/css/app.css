@@ -36,7 +36,7 @@ section{scroll-margin-top:72px}
 .pills{display:flex;gap:6px;flex-wrap:wrap}
 .pill{background:var(--pill);color:var(--pillText);border-radius:999px;padding:4px 8px;font-size:12px}
 
-/* Cards + motion */
+/* Cards */
 .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 @media (max-width:900px){.card-grid{grid-template-columns:1fr 1fr}}
 @media (max-width:620px){.card-grid{grid-template-columns:1fr}}
@@ -60,17 +60,26 @@ section{scroll-margin-top:72px}
 .hero-meta{display:flex;flex-direction:column;gap:6px}
 @media (max-width:820px){.hero{grid-template-columns:1fr}}
 
-/* Lists */
+/* Lists (link-cards) */
 .simple-list{display:flex;flex-direction:column;gap:8px}
-.link-card{display:flex;gap:10px;align-items:flex-start;padding:10px;border:1px solid var(--border);border-radius:10px;background:#0f1319;
-  transition:transform .16s ease, box-shadow .16s ease}
-.link-card:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,0,0,.28)}
-.link-logo{width:28px;height:28px;display:grid;place-items:center;background:#1a1e26;border-radius:6px;flex:0 0 auto}
+
+/* Default non-clickable look (used by schedule) */
+.link-card{
+  display:flex;gap:10px;align-items:flex-start;
+  padding:10px;border:1px solid var(--border);border-radius:10px;background:#0f1319;
+  cursor:default; transition:none; box-shadow:none;
+}
+.link-card:hover{transform:none; box-shadow:none;}
+
+/* Clickable variant (use class="link-card clickable") */
+.link-card.clickable{cursor:pointer; transition:transform .16s ease, box-shadow .16s ease}
+.link-card.clickable:hover{transform:translateY(-1px); box-shadow:0 6px 16px rgba(0,0,0,.28)}
+
+.link-body{line-height:1.35}
 .link-title{font-weight:600;line-height:1.25}
 .link-meta{color:var(--muted);font-size:12px;line-height:1.25}
 
-/* Schedule */
-#scheduleList .link-body{line-height:1.35}
+/* Schedule specific */
 #scheduleList .link-title{font-size:15px;font-weight:600}
 #scheduleList .link-meta{display:block;margin-top:2px}
 
@@ -91,13 +100,9 @@ section{scroll-margin-top:72px}
 }
 body{padding-bottom:46px}
 .footer-note{color:var(--muted);font-size:12px;text-align:center;margin-top:10px}
-/* Venue icon tweaks */
-.link-logo {
-  width: 32px;
-  height: 32px;
-  font-size: 18px;
-  display: grid;
-  place-items: center;
-  background: #1a1e26;
-  border-radius: 6px;
+
+/* --- HIDE floating debug/overlay FABs (if any exist in old builds) --- */
+.ui-fab, .z-fab, .dev-fab, .debug-fab, .gd-fab, .gd-resizer, .gd-expand,
+.z-btn, .ztool, .scroll-tools, .fab, [data-floating-tools], .__debugFab__ {
+  display: none !important;
 }
