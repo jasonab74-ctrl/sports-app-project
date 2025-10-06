@@ -15,26 +15,20 @@
         <text x="600" y="480" text-anchor="middle" class="t2" font-size="28">${label2 || label1}</text>
       </svg>`;
   }
-
-  function pill(text){ return `<span class="pill">${text}</span>`; }
+  const pill=(t)=>`<span class="pill">${t}</span>`;
 
   function cardHTML(item){
     const label2 = item.source?.includes('YouTube') ? 'YouTube' : (item.source || 'Video');
     return `
       <article class="card video-card">
         <a class="card-img-wrap" href="${item.link}" target="_blank" rel="noopener" aria-label="${item.title} (opens in new tab)">
-          <div class="hero-art">
-            ${posterSVG('Video', label2)}
-          </div>
+          <div class="hero-art">${posterSVG('Video', label2)}</div>
         </a>
         <div class="card-body">
-          <div class="pills">
-            ${item.tier ? pill(item.tier) : ""}${item.source ? pill(item.source) : ""}
-          </div>
+          <div class="pills">${item.tier?pill(item.tier):""}${item.source?pill(item.source):""}</div>
           <a class="card-title" href="${item.link}" target="_blank" rel="noopener">${item.title}</a>
         </div>
-      </article>
-    `;
+      </article>`;
   }
 
   try {
