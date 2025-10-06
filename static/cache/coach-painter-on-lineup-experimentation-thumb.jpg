@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#0f0f12"/>
+  <rect x="60" y="60" width="1080" height="555" rx="18" ry="18" fill="none" stroke="#282830" stroke-width="4"/>
+  <text x="600" y="340" text-anchor="middle" font-family="Inter, system-ui, Arial, sans-serif" font-size="84" font-weight="800" fill="#f2c94c">
+    JCOnline
+  </text>
+  <text x="600" y="410" text-anchor="middle" font-family="Inter, system-ui, Arial, sans-serif" font-size="30" fill="#a9a9af">
+    Lafayette Journal & Courier
+  </text>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#0d0d11"/>
+  <rect x="72" y="72" width="1056" height="531" rx="16" ry="16" fill="none" stroke="#26262b" stroke-width="4"/>
+  <text x="600" y="340" text-anchor="middle" font-family="Inter, system-ui, Arial, sans-serif" font-size="86" font-weight="800" fill="#f2c94c">
+    247Sports
+  </text>
+  <text x="600" y="410" text-anchor="middle" font-family="Inter, system-ui, Arial, sans-serif" font-size="30" fill="#b3b3ba">
+    Recruiting & Team News
+  </text>
+</svg>
