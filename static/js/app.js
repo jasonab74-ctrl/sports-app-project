@@ -1,109 +1,189 @@
-const DAILY_LIMIT = 8;          // top items for Daily Brief
-const FEED_LIMIT  = 50;         // top items for Top Feed
-const FALLBACK_IMG = "https://via.placeholder.com/240x180.png?text=Team+Hub";
+// app.js — index logic moved out so index.html stays tiny & stable.
+(() => {
+  const BASE = '/sports-app-project/';
+  const url = (p) => `${BASE}${p.replace(/^\//,'')}`;
+  const byId = (id) => document.getElementById(id);
 
-const els = {
-  team: document.getElementById("team"),
-  refresh: document.getElementById("refresh"),
-  daily: document.getElementById("daily"),
-  dailyEmpty: document.getElementById("dailyEmpty"),
-  dailyCount: document.getElementById("dailyCount"),
-  feed: document.getElementById("feed"),
-  feedEmpty: document.getElementById("feedEmpty"),
-  feedCount: document.getElementById("feedCount"),
-  tmpl: document.getElementById("card-template"),
-};
+  const esc = (s='') => (s+'').replace(/[&<>"']/g, c=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
+  const pill = (t) => t ? `<span class="pill">${esc(t)}</span>` : '';
 
-function trustClass(level) {
-  return `trust-${(level || "blog").replace(/[^a-z_]/gi,"")}`;
-}
+  const posterSVG = (l1='News', l2='') =>
+    `<svg viewBox="0 0 800 450" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#202631"/><stop offset="1" stop-color="#0d1117"/></linearGradient></defs><rect fill="url(#g)" width="100%" height="100%"/><g fill="#f2c94c" opacity="0.9"><rect x="48" y="48" width="120" height="18" rx="9"/><rect x="180" y="48" width="80" height="18" rx="9"/></g><text x="48" y="110" fill="#e9edf2" font-size="28" font-family="system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial">${esc(l1)}</text>${l2?`<text x="48" y="145" fill="#9aa1ab" font-size="18">${esc(l2)}</text>`:''}</svg>`;
 
-function fmtWhen(iso) {
-  if (!iso) return "";
-  const d = new Date(iso);
-  return d.toLocaleString(undefined, { month:"short", day:"numeric", hour:"numeric", minute:"2-digit" });
-}
+  function sourceLabels(s){
+    const map = {
+      'PurdueSports.com':['Official','Purdue'],
+      'BTN Purdue':['BTN','Purdue'],
+      'Purdue Athletics YouTube':['YouTube','Official'],
+      'Sports Illustrated CBB':['SI','CBB'],
+      'CBS Sports CBB':['CBS','CBB'],
+      'Yahoo CBB':['Yahoo','CBB'],
+      'Rivals Purdue':['Rivals','Purdue'],
+      'Gold and Black (Rivals)':['G&B','Purdue'],
+      'Gold and Black':['G&B','Purdue'],
+      'Journal & Courier':['J&C','Local']
+    };
+    return map[s] || ['News',''];
+  }
 
-function renderCard(item) {
-  const frag = els.tmpl.content.cloneNode(true);
-  const aThumb = frag.querySelector(".thumb");
-  const img = frag.querySelector("img");
-  const aTitle = frag.querySelector(".title");
-  const source = frag.querySelector(".source");
-  const when = frag.querySelector(".when");
-  const trust = frag.querySelector(".trust");
-  const summary = frag.querySelector(".summary");
+  function sourceIcon(s=''){
+    s = (s||'').toLowerCase();
+    if (s.includes('btn')) return '🟦';
+    if (s.includes('purdue athletics youtube') || s.includes('youtube')) return '▶️';
+    if (s.includes('purdue')) return '🏅';
+    if (s.includes('sports illustrated') || s === 'si') return '📰';
+    if (s.includes('rivals') || s.includes('gold and black')) return '💬';
+    if (s.includes('cbs')) return '📺';
+    if (s.includes('yahoo')) return '🟣';
+    return '🗞️';
+  }
 
-  const url = item.url || "#";
-  aThumb.href = url;
-  aTitle.href = url;
+  function timeAgo(ts){
+    try{
+      const ms = typeof ts === 'number' ? ts : Number(ts);
+      if (!ms) return '';
+      const mins = (Date.now() - ms)/60000;
+      if (mins < 1) return 'just now';
+      if (mins < 60) return `${Math.round(mins)}m ago`;
+      if (mins < 1440) return `${Math.round(mins/60)}h ago`;
+      const dt = new Date(ms);
+      return dt.toLocaleString([], {month:'short', day:'numeric'});
+    }catch{return '';}
+  }
 
-  img.src = item.image_url || FALLBACK_IMG;
-  img.alt = item.title || "";
+  function metaLine(item){
+    const bits = [];
+    if (item.tier) bits.push(esc(item.tier));
+    if (item.source) bits.push(esc(item.source));
+    const when = timeAgo(item.ts);
+    if (when) bits.push(when);
+    return bits.join(' • ');
+  }
 
-  aTitle.textContent = item.title || "Untitled";
-  source.textContent = item.source || "Source";
-  when.textContent = fmtWhen(item.published_at);
+  function render(items){
+    const grid = byId('news-grid');
+    const heroWrap = byId('news-hero');
+    const heroMeta = byId('news-hero-meta');
+    const newsStatus = byId('news-status');
+    const vidsGrid = byId('videos-grid');
+    const vidsStatus = byId('videos-status');
 
-  const level = (item.trust_level || "blog");
-  trust.textContent = level.replace("_"," ");
-  trust.classList.add(trustClass(level));
+    if (!items || !items.length) {
+      newsStatus.textContent = "No headlines.";
+      newsStatus.hidden = false;
+      vidsStatus.textContent = "No new videos.";
+      vidsStatus.hidden = false;
+      return;
+    }
 
-  summary.textContent = item.summary || "";
+    items = items.slice().sort((a,b)=> (b.ts||0)-(a.ts||0));
 
-  return frag;
-}
+    // HERO
+    const heroIdx = Math.max(0, items.findIndex(i => (i.type||'article') !== 'video'));
+    const hero = items[heroIdx] || items[0];
+    const [l1,l2] = sourceLabels(hero.source||"Source");
+    const heroBadge = sourceIcon(hero.source||'');
+    heroWrap.innerHTML = `
+      <a class="hero-img-wrap" href="${hero.link}" target="_blank" rel="noopener">
+        <div class="hero-art">${posterSVG(l1,l2,true)}</div>
+      </a>`;
+    heroMeta.innerHTML = `
+      <div class="pills">${hero.tier?pill(hero.tier):""}${hero.source?pill(hero.source):""}</div>
+      <h3 class="card-title"><a href="${hero.link}" target="_blank" rel="noopener">${esc(hero.title||'Untitled')}</a></h3>
+      <div class="meta-line">${esc(metaLine(hero))}</div>
+    `;
+    // badge overlay
+    const hw = heroWrap;
+    if (hw) {
+      const b = document.createElement('div');
+      b.className = 'card-badge';
+      b.textContent = heroBadge;
+      hw.style.position = 'relative';
+      hw.appendChild(b);
+    }
 
-async function loadTeam(team) {
-  // Items JSON is expected at /static/teams/<team>/items.json (same repo)
-  const url = `./static/teams/${encodeURIComponent(team)}/items.json?ts=${Date.now()}`;
+    // GRID
+    const rest = items.filter((_,i)=>i!==heroIdx);
+    grid.innerHTML = rest.slice(0,15).map(i => {
+      const [a,b] = sourceLabels(i.source||"");
+      const isVid = (i.type||'article') === 'video';
+      const badge = sourceIcon(i.source||'');
+      return `
+        <article class="card">
+          <a class="card-img-wrap" href="${i.link}" target="_blank" rel="noopener" aria-label="${esc(i.title||'Open')}">
+            <div class="card-badge" aria-hidden="true">${badge}</div>
+            <div class="hero-art">${posterSVG(isVid?'Video':(a||'News'), b||'')}</div>
+          </a>
+          <div class="card-body">
+            <div class="pills">${i.tier?pill(i.tier):""}${i.source?pill(i.source):""}</div>
+            <a class="card-title" href="${i.link}" target="_blank" rel="noopener">${esc(i.title||'Untitled')}</a>
+            <div class="meta-line">${esc(metaLine(i))}</div>
+          </div>
+        </article>`;
+    }).join('');
 
-  // Show loading skeletons (simple)
-  els.daily.innerHTML = "";
-  els.feed.innerHTML = "";
-  els.dailyEmpty.classList.add("hidden");
-  els.feedEmpty.classList.add("hidden");
-  els.dailyCount.textContent = "";
-  els.feedCount.textContent = "";
+    // VIDEOS
+    const vids = items.filter(i => (i.type||'article') === 'video').slice(0,12);
+    if (vids.length){
+      vidsGrid.innerHTML = vids.map(v => {
+        const [l1,l2] = sourceLabels(v.source||"");
+        const badge = sourceIcon(v.source||'');
+        return `
+          <article class="card video-card">
+            <a class="card-img-wrap" href="${v.link}" target="_blank" rel="noopener">
+              <div class="card-badge" aria-hidden="true">${badge}</div>
+              <div class="hero-art">${posterSVG('Video',l1||l2||'')}</div>
+            </a>
+            <div class="card-body">
+              <div class="pills">${v.tier?pill(v.tier):""}${v.source?pill(v.source):""}</div>
+              <a class="card-title" href="${v.link}" target="_blank" rel="noopener">${esc(v.title)}</a>
+              <div class="meta-line">${esc(metaLine(v))}</div>
+            </div>
+          </article>`;
+      }).join('');
+      vidsStatus.hidden = true;
+    } else {
+      vidsStatus.textContent = "No new videos yet.";
+      vidsStatus.hidden = false;
+    }
 
-  let data = [];
+    byId('updatedFooter').textContent = `Updated ${new Date().toLocaleString([], {hour:'2-digit', minute:'2-digit'})}`;
+    byId('sourceCount').textContent = '';
+  }
+
+  // 1) Seed-first render (instant paint)
+  let seedItems = [];
   try {
-    const r = await fetch(url, { cache: "no-store" });
-    if (!r.ok) throw new Error(`HTTP ${r.status}`);
-    data = await r.json();
-  } catch (err) {
-    console.error(err);
-    els.feedEmpty.classList.remove("hidden");
-    els.feedEmpty.textContent = "Couldn’t load the feed. Check that static/teams/" + team + "/items.json exists.";
-    return;
+    const seedTag = byId('seed-items');
+    if (seedTag && seedTag.textContent.trim()) {
+      const parsed = JSON.parse(seedTag.textContent);
+      if (Array.isArray(parsed?.items)) seedItems = parsed.items;
+    }
+  } catch {}
+
+  if (!seedItems.length) {
+    // tiny fallback just in case seed tag goes missing
+    seedItems = [
+      {"title":"Purdue Announces 2025–26 Non-Conference Slate","link":"https://purduesports.com/","source":"PurdueSports.com","tier":"official","type":"article","ts":1762300800000},
+      {"title":"AP Poll movers and what it means for Purdue","link":"https://www.si.com/college-basketball","source":"Sports Illustrated CBB","tier":"national","type":"article","ts":1762297200000}
+    ];
   }
+  render(seedItems);
 
-  // Sort newest first by published_at (if present)
-  data.sort((a,b) => new Date(b.published_at||0) - new Date(a.published_at||0));
+  // 2) Upgrade from items.json if present
+  (async function upgrade(){
+    try{
+      const res = await fetch(url('static/teams/purdue-mbb/items.json'), { cache: 'no-store' });
+      if (!res.ok) return;
+      const data = await res.json();
+      if (data && Array.isArray(data.items) && data.items.length) render(data.items);
+    }catch(e){/* silent */}
+  })();
 
-  const dailyItems = data.slice(0, DAILY_LIMIT);
-  const feedItems  = data.slice(0, FEED_LIMIT);
-
-  if (dailyItems.length) {
-    const df = document.createDocumentFragment();
-    dailyItems.forEach(it => df.appendChild(renderCard(it)));
-    els.daily.appendChild(df);
-    els.dailyCount.textContent = `${dailyItems.length}`;
-  } else {
-    els.dailyEmpty.classList.remove("hidden");
-  }
-
-  if (feedItems.length) {
-    const df2 = document.createDocumentFragment();
-    feedItems.forEach(it => df2.appendChild(renderCard(it)));
-    els.feed.appendChild(df2);
-    els.feedCount.textContent = `${feedItems.length}`;
-  } else {
-    els.feedEmpty.classList.remove("hidden");
-  }
-}
-
-// Wire up
-els.refresh.addEventListener("click", () => loadTeam(els.team.value));
-els.team.addEventListener("change", () => loadTeam(els.team.value));
-loadTeam(els.team.value);
+  // 3) Hydrate external panels (rankings/insiders/roster/schedule)
+  document.addEventListener('DOMContentLoaded', () => {
+    if (window.PRO && typeof window.PRO.hydratePanels === 'function') {
+      window.PRO.hydratePanels('/sports-app-project/');
+    }
+  });
+})();
