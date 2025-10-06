@@ -22,14 +22,15 @@ jobs:
         with:
           python-version: "3.11"
 
+      # ✅ Step 5: install BeautifulSoup in CI (plus other deps)
       - name: Install deps
         run: |
-          pip install feedparser requests
+          pip install feedparser requests beautifulsoup4
 
       - name: Run collector
         run: python tools/collect.py
 
-      # ✅ NEW STEP: build official schedule + odds
+      # Build official schedule + odds (uses BeautifulSoup + optional Odds API)
       - name: Build schedule (ICS + odds)
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
