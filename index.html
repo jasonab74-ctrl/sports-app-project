@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Purdue MBB Hub • Team Hub • Live Headlines & Videos</title>
 <meta name="description" content="Fast Purdue Men’s Basketball hub: live headlines, videos, rankings, schedule, insiders."/>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230d0f12'/%3E%3Ccircle cx='20' cy='22' r='6' fill='%23f2c94c'/%3E%3Cpath d='M13 38h38v12H13z' fill='%23f2c94c'/%3E%3C/svg%3E"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231a1e26'/%3E%3Cpath d='M13 14h38v12H13z' fill='%23f2c94c'/%3E%3Cpath d='M13 26h38v12H13z' fill='%23c0a23a'/%3E%3Cpath d='M13 38h38v12H13z' fill='%23f2c94c'/%3E%3C/svg%3E"/>
 <style>
 :root{
   --bg:#0d0f12;--card:#15181e;--muted:#9aa1ab;--text:#e9edf2;--brand:#f2c94c;
@@ -14,7 +14,7 @@
   --divider:linear-gradient(90deg,rgba(242,201,76,.50),rgba(242,201,76,0) 60%);
 }
 *{box-sizing:border-box}
-html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:15px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
 a{color:inherit;text-decoration:none}
 h1,h2,h3{margin:0}
 .muted{color:var(--muted)}
@@ -26,91 +26,61 @@ section{scroll-margin-top:72px}
   background:rgba(13,15,18,.78);border-bottom:1px solid var(--border);
   display:flex;align-items:center;gap:12px;padding:12px 16px}
 .brand-badge{width:36px;height:36px;border-radius:10px;background:#1a1e26;display:grid;place-items:center}
-.brand-dot{width:14px;height:14px;border-radius:999px;background:var(--brand)}
-.brand{display:flex;flex-direction:column}
-.brand-line1{font-weight:800;font-size:18px}
-.brand-line2{font-size:12px;color:var(--muted)}
-.nav{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap}
-.nav a{background:var(--pill);color:var(--pillText);border:1px solid var(--border);padding:6px 10px;border-radius:999px}
-.header-divider{height:8px;background:var(--divider)}
+.brand-dot{width:14px;height:14px;border-radius:4px;background:var(--brand)}
+.nav{display:flex;gap:12px;margin-left:auto}
+.nav a{padding:8px 10px;border-radius:8px}
+.nav a:hover{background:#1a1e26}
 
 /* Layout */
-.container{max-width:1200px;margin:0 auto;padding:16px}
-.grid{display:grid;grid-template-columns:1fr 360px;gap:16px}
-@media (max-width:1000px){.grid{grid-template-columns:1fr}}
+.wrap{max-width:1100px;margin:0 auto;padding:14px}
+.grid{display:grid;grid-template-columns:1.6fr .8fr;gap:16px}
+@media (max-width:900px){.grid{grid-template-columns:1fr}}
+.panel{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px 14px}
+.panel-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.hr{height:1px;background:var(--divider);margin:10px 0}
 
-/* Panels / chips */
-.panel{background:transparent;margin:16px 0}
-.panel-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
-.chips{display:flex;gap:8px;flex-wrap:wrap}
-.chip{background:var(--pill);color:var(--pillText);border:1px solid var(--border);padding:6px 10px;border-radius:999px}
-.chip.is-active{background:var(--brand);color:#000;border-color:transparent}
-
-/* Hero / Cards */
-.hero{display:grid;gap:10px;margin-bottom:10px}
-.hero-img-wrap,.card-img-wrap{display:block;border-radius:12px;overflow:hidden;background:#121419}
-.hero-art{aspect-ratio:16/9;width:100%;display:grid;place-items:center}
-.card-art{aspect-ratio:4/3;width:100%;display:grid;place-items:center}
-.poster{width:100%;height:100%}
-.poster rect.frame{fill:none;stroke:#262a33;stroke-width:4}
-.poster text{font-family:Inter,system-ui,Arial}
-.poster .t1{font-weight:800;fill:#f2c94c}
-.poster .t2{fill:#a9a9af}
-
-.card-grid,.video-grid{display:grid;gap:12px}
-.card-grid{grid-template-columns:repeat(3,1fr)}
-.video-grid{grid-template-columns:repeat(3,1fr)}
-@media (max-width:1024px){.card-grid,.video-grid{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:640px){.card-grid,.video-grid{grid-template-columns:1fr}}
-@media (max-width:440px){
-  .container{padding:10px}
-  .card-grid,.video-grid{gap:8px}
-  .panel{margin:12px 0}
-  .topbar{padding:10px 12px}
-}
+/* Pills & badges */
+.pills{display:flex;gap:6px;flex-wrap:wrap}
+.pill{background:var(--pill);color:var(--pillText);border-radius:999px;padding:4px 8px;font-size:12px}
 
 /* Cards */
-.card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media (max-width:900px){.card-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.card-grid{grid-template-columns:1fr}}
+.card{background:#11151b;border:1px solid var(--border);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;min-height:220px}
+.card-img-wrap{display:block;aspect-ratio:16/9;background:#0e1218;border-bottom:1px solid var(--border)}
 .card-body{padding:10px}
-.card-title{display:block;font-weight:600}
-.pills{display:flex;gap:8px;flex-wrap:wrap}
-.pill{background:var(--pill);color:var(--pillText);padding:4px 8px;border-radius:999px;font-size:12px}
+.card-title{font-weight:600;line-height:1.2}
+.card-title:hover{text-decoration:underline}
 
-/* Right rail */
-.rail{display:grid;gap:16px}
-.rankings,.schedule-list,.results-list{display:grid;gap:10px}
-.game,.result{display:block;padding:10px;background:var(--card);border:1px solid var(--border);border-radius:10px}
-.logo-pill{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:999px;background:#1a1e26;margin-right:6px}
-.wl-pill{display:inline-block;margin-left:8px;padding:2px 6px;border-radius:6px;font-weight:700}
-.wl-pill.win{background:#0f5132;color:#d1f7e7}
-.wl-pill.loss{background:#5a1d1d;color:#ffd7d7}
-.res-link{margin-right:10px;color:var(--brand)}
+/* Hero */
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:12px;margin:8px 0 12px}
+.hero-img-wrap{display:block;aspect-ratio:16/9;background:#0e1218;border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.hero-meta{display:flex;flex-direction:column;gap:6px}
+@media (max-width:820px){.hero{grid-template-columns:1fr}}
 
-.links-grid{display:grid;gap:10px}
-.link-card{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;padding:10px;background:var(--card);border:1px solid var(--border);border-radius:10px}
+/* Lists */
+.simple-list{display:flex;flex-direction:column;gap:8px}
+.link-card{display:flex;gap:10px;align-items:center;padding:10px;border:1px solid var(--border);border-radius:10px;background:#0f1319}
+.link-logo{width:28px;height:28px;display:grid;place-items:center;background:#1a1e26;border-radius:6px}
 .link-title{font-weight:600}
-.link-sub{color:var(--muted)}
+.link-meta{color:var(--muted);font-size:12px}
+.badge-pay{margin-left:6px}
 
 /* Roster */
-.roster-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-@media (max-width:1024px){.roster-grid{grid-template-columns:repeat(3,1fr)}}
-@media (max-width:640px){.roster-grid{grid-template-columns:repeat(2,1fr)}}
-.player{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden}
-.player-img{display:block;width:100%;height:auto}
-.player-body{padding:10px}
-.player-top{display:flex;justify-content:space-between;align-items:center}
-.player-name{font-weight:700}
-.player-num{font-weight:800}
-
-/* Footer */
-.footer{color:var(--muted);padding:18px 16px;text-align:center}
+.roster{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media (max-width:700px){.roster{grid-template-columns:1fr}}
+.roster-card{padding:10px;border:1px solid var(--border);border-radius:10px;background:#0f1319}
+.roster-num{font-weight:700;margin-bottom:4px}
+.roster-meta{color:var(--muted);font-size:12px}
+.footer-note{color:var(--muted);font-size:12px;text-align:center;margin-top:10px}
 </style>
 </head>
 <body>
-<header class="topbar" role="banner">
+<header class="topbar">
   <div class="brand-badge"><div class="brand-dot"></div></div>
-  <div class="brand"><div class="brand-line1">Team Hub</div><div class="brand-line2">Boilermakers</div></div>
-  <nav class="nav" aria-label="Primary">
+  <div>Boilermakers</div>
+  <nav class="nav">
     <a href="#news">News</a>
     <a href="#videos">Videos</a>
     <a href="#rankings">Rankings</a>
@@ -119,22 +89,21 @@ section{scroll-margin-top:72px}
     <a href="#nil">NIL</a>
   </nav>
 </header>
-<div class="header-divider" aria-hidden="true"></div>
 
-<main class="container">
+<main class="wrap">
   <div class="grid">
-    <!-- ===== NEWS ===== -->
+    <!-- ===== MAIN ===== -->
     <section id="news" class="panel" aria-labelledby="news-h">
       <div class="panel-hd">
         <h2 id="news-h">Top Headlines</h2>
-        <div class="chips" aria-label="Filters">
-          <span class="chip is-active">All</span><span class="chip">Official</span><span class="chip">Insiders</span><span class="chip">National</span>
-        </div>
+        <div class="pills"><span class="pill">All</span><span class="pill">Official</span><span class="pill">Insiders</span><span class="pill">National</span></div>
       </div>
+
       <div class="hero">
         <div id="news-hero" class="hero-img-wrap" aria-live="polite"></div>
         <div id="news-hero-meta" class="hero-meta"></div>
       </div>
+
       <div class="card-grid" id="news-grid" aria-live="polite"></div>
       <p id="news-status" class="muted" hidden>Loading headlines…</p>
     </section>
@@ -142,88 +111,256 @@ section{scroll-margin-top:72px}
     <!-- ===== RIGHT RAIL ===== -->
     <aside class="rail">
       <section id="rankings" class="panel" aria-labelledby="rank-h">
-        <div class="panel-hd"><h3 id="rank-h">Rankings</h3></div>
-        <div class="rankings">
-          <div class="game"><b>AP Top 25:</b> #3</div>
-          <div class="game"><b>KenPom:</b> #2</div>
+        <div class="panel-hd">
+          <h3 id="rank-h">Rankings</h3>
+        </div>
+        <div class="simple-list">
+          <div>AP Top 25: <strong id="apRank">—</strong> <a id="apLink" class="muted" href="#" target="_blank" rel="noopener">source</a></div>
+          <div>KenPom: <strong id="kpRank">—</strong> <a id="kpLink" class="muted" href="#" target="_blank" rel="noopener">source</a></div>
+          <div class="footer-note" id="rankUpdated"></div>
         </div>
       </section>
 
-      <section id="schedule" class="panel" aria-labelledby="sched-h">
-        <div class="panel-hd"><h3 id="sched-h">Upcoming Schedule</h3></div>
-        <div class="schedule-list">
-          <a class="game" href="#" onclick="return false;">
-            <div class="g-top"><span>11/02/2025</span><span>7:00 PM <small>local</small></span></div>
-            <div class="g-title"><span class="logo-pill">E</span> Exhibition <span class="pill">Home</span></div>
-          </a>
-          <a class="game" href="#" onclick="return false;">
-            <div class="g-top"><span>11/08/2025</span><span>4:30 PM <small>local</small></span></div>
-            <div class="g-title"><span class="logo-pill">IS</span> Indiana State <span class="pill">Home</span></div>
-          </a>
-          <a class="game" href="#" onclick="return false;">
-            <div class="g-top"><span>11/11/2025</span><span>7:00 PM <small>local</small></span></div>
-            <div class="g-title"><span class="logo-pill">@M</span> @ Marquette <span class="pill">Away</span></div>
-          </a>
-        </div>
+      <section id="schedule" class="panel" aria-labelledby="sch-h">
+        <div class="panel-hd"><h3 id="sch-h">Upcoming Schedule</h3></div>
+        <div id="scheduleList" class="simple-list"></div>
       </section>
 
-      <section id="insiders" class="panel" aria-labelledby="ins-h">
-        <div class="panel-hd"><h3 id="ins-h">Insider / Beat Links</h3></div>
-        <div class="links-grid">
-          <a class="link-card" href="https://www.hammerandrails.com" target="_blank" rel="noopener">
-            <div>📰</div>
-            <div class="link-body"><div class="link-title">Hammer & Rails</div><div class="link-sub">SB Nation — Purdue</div></div>
-            <div class="link-meta muted">Blog</div>
-          </a>
-          <a class="link-card" href="https://purdue.rivals.com" target="_blank" rel="noopener">
-            <div>📰</div>
-            <div class="link-body"><div class="link-title">Gold and Black</div><div class="link-sub">Rivals (subscription)</div></div>
-            <div class="link-meta muted">$</div>
-          </a>
-        </div>
+      <section class="panel" aria-labelledby="insider-h">
+        <div class="panel-hd"><h3 id="insider-h">Insider / Beat Links</h3></div>
+        <div id="insiderList" class="simple-list"></div>
       </section>
     </aside>
   </div>
 
-  <!-- ===== ROSTER ===== -->
   <section id="roster" class="panel" aria-labelledby="roster-h">
-    <div class="panel-hd"><h2 id="roster-h">Roster</h2></div>
-    <div class="roster-grid">
-      <!-- simple placeholders (static) -->
-      <article class="player"><svg class="player-img" viewBox="0 0 600 800" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Guard One (G)"><rect width="600" height="800" fill="#111"/><circle cx="300" cy="240" r="110" fill="#1b1b1f"/><rect x="150" y="360" width="300" height="260" rx="30" fill="#1b1b1f"/></svg><div class="player-body"><div class="player-top"><div class="player-name">Guard One</div><div class="player-num">#0</div></div><div class="player-meta"><span>G</span> • <span>6-4 • 195</span> • <span>Sr.</span></div></div></article>
-      <article class="player"><svg class="player-img" viewBox="0 0 600 800" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Guard Two (G)"><rect width="600" height="800" fill="#111"/><circle cx="300" cy="240" r="110" fill="#1b1b1f"/><rect x="150" y="360" width="300" height="260" rx="30" fill="#1b1b1f"/></svg><div class="player-body"><div class="player-top"><div class="player-name">Guard Two</div><div class="player-num">#2</div></div><div class="player-meta"><span>G</span> • <span>6-3 • 190</span> • <span>Jr.</span></div></div></article>
-      <article class="player"><svg class="player-img" viewBox="0 0 600 800" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Wing One (G/F)"><rect width="600" height="800" fill="#111"/><circle cx="300" cy="240" r="110" fill="#1b1b1f"/><rect x="150" y="360" width="300" height="260" rx="30" fill="#1b1b1f"/></svg><div class="player-body"><div class="player-top"><div class="player-name">Wing One</div><div class="player-num">#3</div></div><div class="player-meta"><span>G/F</span> • <span>6-7 • 215</span> • <span>So.</span></div></div></article>
-      <article class="player"><svg class="player-img" viewBox="0 0 600 800" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Forward One (F)"><rect width="600" height="800" fill="#111"/><circle cx="300" cy="240" r="110" fill="#1b1b1f"/><rect x="150" y="360" width="300" height="260" rx="30" fill="#1b1b1f"/></svg><div class="player-body"><div class="player-top"><div class="player-name">Forward One</div><div class="player-num">#5</div></div><div class="player-meta"><span>F</span> • <span>6-9 • 230</span> • <span>Jr.</span></div></div></article>
-      <article class="player"><svg class="player-img" viewBox="0 0 600 800" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Forward Two (F)"><rect width="600" height="800" fill="#111"/><circle cx="300" cy="240" r="110" fill="#1b1b1f"/><rect x="150" y="360" width="300" height="260" rx="30" fill="#1b1b1f"/></svg><div class="player-body"><div class="player-top"><div class="player-name">Forward Two</div><div class="player-num">#11</div></div><div class="player-meta"><span>F</span> • <span>6-8 • 225</span> • <span>Fr.</span></div></div></article>
-      <article class="player"><svg class="player-img" viewBox="0 0 600 800" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Center One (C)"><rect width="600" height="800" fill="#111"/><circle cx="300" cy="240" r="110" fill="#1b1b1f"/><rect x="150" y="360" width="300" height="260" rx="30" fill="#1b1b1f"/></svg><div class="player-body"><div class="player-top"><div class="player-name">Center One</div><div class="player-num">#12</div></div><div class="player-meta"><span>C</span> • <span>7-1 • 255</span> • <span>Sr.</span></div></div></article>
-    </div>
+    <div class="panel-hd"><h3 id="roster-h">Roster</h3></div>
+    <div id="rosterGrid" class="roster"></div>
   </section>
 
-  <!-- ===== VIDEOS ===== -->
-  <section id="videos" class="panel" aria-labelledby="vid-h">
-    <div class="panel-hd"><h2 id="vid-h">Latest Videos</h2></div>
-    <div class="video-grid" id="videos-grid" aria-live="polite"></div>
+  <section id="videos" class="panel" aria-labelledby="videos-h">
+    <div class="panel-hd"><h3 id="videos-h">Latest Videos</h3></div>
+    <div class="card-grid" id="videos-grid" aria-live="polite"></div>
     <p id="videos-status" class="muted" hidden>Loading videos…</p>
   </section>
 
-  <!-- ===== NIL ===== -->
   <section id="nil" class="panel" aria-labelledby="nil-h">
-    <div class="panel-hd"><h2 id="nil-h">NIL</h2></div>
-    <div class="links-grid">
+    <div class="panel-hd"><h3 id="nil-h">NIL</h3></div>
+    <div class="simple-list">
       <a class="link-card" href="https://www.purdue.edu" target="_blank" rel="noopener">
-        <div>🤝</div>
-        <div class="link-body"><div class="link-title">Purdue NIL (placeholder)</div><div class="link-sub">Add your official NIL links here</div></div>
-        <div class="link-meta muted">Info</div>
+        <div class="link-logo">🛈</div>
+        <div class="link-body">
+          <div class="link-title">Purdue NIL (placeholder)</div>
+          <div class="link-meta">Add your official NIL links here</div>
+        </div>
+        <div class="link-meta">Info</div>
       </a>
     </div>
   </section>
+
+  <p class="footer-note" id="updatedFooter">Updated live • Headlines & Videos with inline seed → optional JSON upgrade</p>
+  <p class="footer-note" id="sourceCount"></p>
 </main>
 
-<footer class="footer" role="contentinfo">
-  Updated live • Headlines & Videos with inline seed → optional JSON upgrade
-</footer>
+<script>
+const BASE = '/sports-app-project/';
+const url = (p) => `${BASE}${p.replace(/^\//,'')}`;
 
-<!-- ================== INLINE SEED DATA ================== -->
+function esc(s=''){return (s+'').replace(/[&<>"']/g, c=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));}
+function pill(t){return t?`<span class="pill">${esc(t)}</span>`:'';}
+function posterSVG(l1='News', l2=''){return `<svg viewBox="0 0 800 450" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#202631"/><stop offset="1" stop-color="#0d1117"/></linearGradient></defs><rect fill="url(#g)" width="100%" height="100%"/><g fill="#f2c94c" opacity="0.9"><rect x="48" y="48" width="120" height="18" rx="9"/><rect x="180" y="48" width="80" height="18" rx="9"/></g><text x="48" y="110" fill="#e9edf2" font-size="28" font-family="system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial">${esc(l1)}</text>${l2?`<text x="48" y="145" fill="#9aa1ab" font-size="18">${esc(l2)}</text>`:''}</svg>`;}
+
+function sourceLabels(s){
+  const map = {
+    'PurdueSports.com':['Official','Purdue'],
+    'BTN Purdue':['BTN','Purdue'],
+    'Sports Illustrated CBB':['SI','CBB'],
+    'CBS Sports CBB':['CBS','CBB'],
+    'Yahoo CBB':['Yahoo','CBB'],
+    'Rivals Purdue':['Rivals','Purdue'],
+    'Gold and Black':['G&B','Purdue'],
+  };
+  return map[s] || ['News',''];
+}
+
+function render(items){
+  const grid = document.getElementById('news-grid');
+  const heroWrap = document.getElementById('news-hero');
+  const heroMeta = document.getElementById('news-hero-meta');
+  const newsStatus = document.getElementById('news-status');
+  const vidsGrid = document.getElementById('videos-grid');
+  const vidsStatus = document.getElementById('videos-status');
+
+  if (!items || !items.length) {
+    newsStatus.textContent = "No headlines.";
+    newsStatus.hidden = false;
+    vidsStatus.textContent = "No new videos.";
+    vidsStatus.hidden = false;
+    return;
+  }
+
+  // sort new→old
+  items = items.slice().sort((a,b)=> (b.ts||0)-(a.ts||0));
+
+  // HERO (prefer article)
+  const heroIdx = Math.max(0, items.findIndex(i => (i.type||'article') !== 'video'));
+  const hero = items[heroIdx] || items[0];
+  const [l1,l2] = sourceLabels(hero.source||"Source");
+  heroWrap.innerHTML = `<a class="hero-img-wrap" href="${hero.link}" target="_blank" rel="noopener"><div class="hero-art">${posterSVG(l1,l2,true)}</div></a>`;
+  heroMeta.innerHTML = `<div class="pills">${hero.tier?pill(hero.tier):""}${hero.source?pill(hero.source):""}</div><h3 class="card-title"><a href="${hero.link}" target="_blank" rel="noopener">${esc(hero.title||'Untitled')}</a></h3>`;
+
+  // GRID cards (skip the hero item)
+  const rest = items.filter((_,i)=>i!==heroIdx);
+  grid.innerHTML = rest.slice(0,15).map(i => {
+    const [a,b] = sourceLabels(i.source||"");
+    const isVid = (i.type||'article') === 'video';
+    return `
+      <article class="card">
+        <a class="card-img-wrap" href="${i.link}" target="_blank" rel="noopener" aria-label="${esc(i.title||'Open')}">
+          <div class="hero-art">${posterSVG(isVid?'Video':(a||'News'), b||'')}</div>
+        </a>
+        <div class="card-body">
+          <div class="pills">${i.tier?pill(i.tier):""}${i.source?pill(i.source):""}</div>
+          <a class="card-title" href="${i.link}" target="_blank" rel="noopener">${esc(i.title||'Untitled')}</a>
+        </div>
+      </article>`;
+  }).join('');
+
+  // VIDEOS (from items tagged type: "video")
+  const vids = items.filter(i => (i.type||'article') === 'video').slice(0,12);
+  if (vids.length){
+    vidsGrid.innerHTML = vids.map(v => {
+      const [l1,l2] = sourceLabels(v.source||"");
+      return `
+        <article class="card video-card">
+          <a class="card-img-wrap" href="${v.link}" target="_blank" rel="noopener"><div class="hero-art">${posterSVG('Video',l1||l2||'')}</div></a>
+          <div class="card-body"><div class="pills">${v.tier?pill(v.tier):""}${v.source?pill(v.source):""}</div>
+          <a class="card-title" href="${v.link}" target="_blank" rel="noopener">${esc(v.title)}</a></div>
+        </article>`;
+    }).join('');
+    vidsStatus.hidden = true;
+  } else {
+    vidsStatus.textContent = "No new videos yet.";
+    vidsStatus.hidden = false;
+  }
+
+  document.getElementById('updatedFooter').textContent = `Updated ${new Date().toLocaleString([], {hour:'2-digit', minute:'2-digit'})}`;
+  document.getElementById('sourceCount').textContent = '';
+}
+
+// Rankings
+function renderRankings(w){
+  if(!w) return;
+  const ap = document.getElementById('apRank');
+  const kp = document.getElementById('kpRank');
+  const apL = document.getElementById('apLink');
+  const kpL = document.getElementById('kpLink');
+  const upd = document.getElementById('rankUpdated');
+  ap.textContent = w.ap_rank ? `#${w.ap_rank}` : '—';
+  kp.textContent = w.kenpom_rank ? `#${w.kenpom_rank}` : '—';
+  if (w.ap_url) apL.href = w.ap_url;
+  if (w.kenpom_url) kpL.href = w.kenpom_url;
+  if (w.updated_at) try {
+    const dt = new Date(w.updated_at);
+    upd.textContent = `as of ${dt.toLocaleString([], {month:'short', day:'numeric'})}`;
+  } catch {}
+}
+
+// Schedule
+function initials(name='?'){
+  const clean = name.replace(/^[@vs]\s*/,'').replace(/\(.*?\)/g,'').trim();
+  const parts = clean.split(/\s+/);
+  return (parts[0]?.[0]||'').toUpperCase() + (parts[1]?.[0]||'').toUpperCase();
+}
+function siteClass(site){ const s=(site||'').toLowerCase(); if(s.startsWith('home'))return'site-home'; if(s.startsWith('away')||s.startsWith('@'))return'site-away'; if(s.startsWith('neutral'))return'site-neutral'; return''; }
+function renderSchedule(sched=[]){
+  const el=document.getElementById('scheduleList');
+  el.innerHTML = (sched||[]).slice(0,6).map(g=>{
+    const dt=new Date(g.utc||g.date);
+    const when = dt.toLocaleString([], {month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit'});
+    return `<div class="link-card">
+      <div class="link-logo">${esc(g.opponent?initials(g.opponent):'•')}</div>
+      <div class="link-body">
+        <div class="link-title">${esc(g.opponent||'TBD')}</div>
+        <div class="link-meta">${esc(g.comp||'')} • ${esc(g.site||'')} • ${when} local</div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// Insiders
+function timeAgo(s){try{const d=(Date.now()-new Date(s).getTime())/60000; if(d<60)return `${Math.round(d)}m ago`; if(d<1440)return `${Math.round(d/60)}h ago`; return `${Math.round(d/1440)}d ago`}catch{return''}}
+function renderInsiders(list){
+  const el=document.getElementById('insiderList');
+  el.innerHTML=(list||[]).map(o=>{
+    const pay=o.pay?'<span class="badge-pay">$</span>':'';
+    const sub=o.latest_headline?`<div class="link-meta">${esc(o.latest_headline)}</div>`:'';
+    const meta=o.updated_at?`<span>${timeAgo(o.updated_at)}</span>`:'';
+    return `<a class="link-card" href="${o.latest_url||o.url}" target="_blank" rel="noopener">
+      <div class="link-logo">📰</div>
+      <div class="link-body"><div class="link-title">${esc(o.name)}</div>${sub}</div>
+      <div class="link-meta">${esc(o.type||'')}${pay}${meta?` • ${meta}`:''}</div>
+    </a>`;
+  }).join('');
+}
+
+// Roster
+function renderRoster(r){
+  const el=document.getElementById('rosterGrid');
+  el.innerHTML=(r||[]).map(p=>`
+    <div class="roster-card">
+      <div class="roster-num">#${esc(p.num||'?')} — ${esc(p.name||'Player')}</div>
+      <div class="roster-meta">${esc(p.pos||'')}${p.ht?` • ${esc(p.ht)}`:''}${p.wt?` • ${esc(p.wt)} lbs`:''}${p.class?` • ${esc(p.class)}`:''}</div>
+      ${p.hometown?`<div class="roster-meta">${esc(p.hometown)}</div>`:''}
+    </div>
+  `).join('');
+}
+
+// 1) Render immediately from inline seed (always present) for news/videos
+try {
+  const seed = JSON.parse(document.getElementById('seed-items').textContent);
+  const items = Array.isArray(seed?.items) ? seed.items : [];
+  if (items.length) render(items);
+  else document.getElementById('news-status').hidden = false;
+} catch(e){ console.warn('Seed parse error', e); }
+
+// 2) Upgrade news/videos from items.json if present
+(async function upgrade(){
+  try{
+    const res = await fetch(url('static/teams/purdue-mbb/items.json'), { cache: 'no-store' });
+    if (!res.ok) return;
+    const data = await res.json();
+    if (data && Array.isArray(data.items) && data.items.length) render(data.items);
+  }catch(e){/* silent */}
+})();
+
+// 3) Fetch rankings/schedule/insiders/roster (all optional; show nothing if missing)
+(async function hydratePanels(){
+  try{
+    const [widgetsRes, schedRes, insRes, rosRes] = await Promise.allSettled([
+      fetch(url('static/widgets.json')),
+      fetch(url('static/schedule.json')),
+      fetch(url('static/insiders.json')),
+      fetch(url('static/teams/purdue-mbb/roster.json'))
+    ]);
+
+    if (widgetsRes.status==='fulfilled' && widgetsRes.value.ok){
+      renderRankings(await widgetsRes.value.json());
+    }
+    if (schedRes.status==='fulfilled' && schedRes.value.ok){
+      renderSchedule(await schedRes.value.json());
+    }
+    if (insRes.status==='fulfilled' && insRes.value.ok){
+      renderInsiders(await insRes.value.json());
+    }
+    if (rosRes.status==='fulfilled' && rosRes.value.ok){
+      renderRoster(await rosRes.value.json());
+    }
+  }catch(e){ /* soft-fail */ }
+})();
+</script>
+
+<!-- Inline seed so page never looks empty on cold loads -->
 <script id="seed-items" type="application/json">
 {
   "items": [
@@ -231,124 +368,14 @@ section{scroll-margin-top:72px}
     {"title":"AP Poll movers and what it means for Purdue","link":"https://www.si.com/college-basketball","source":"Sports Illustrated CBB","tier":"national","type":"article","ts":1762297200000},
     {"title":"Big Ten preview: tiers, X-factors, and POY race","link":"https://www.cbssports.com/college-basketball/","source":"CBS Sports CBB","tier":"national","type":"article","ts":1762293600000},
     {"title":"Big Ten storylines to watch","link":"https://sports.yahoo.com/college-basketball/","source":"Yahoo CBB","tier":"national","type":"article","ts":1762290000000},
-    {"title":"Coach Painter on lineup experimentation","link":"https://www.jconline.com/sports/","source":"Journal & Courier","tier":"insiders","type":"article","ts":1762286400000},
-    {"title":"Recruiting board resets after fall visits","link":"https://247sports.com/college/purdue/","source":"247Sports Purdue","tier":"insiders","type":"article","ts":1762282800000},
+    {"title":"Coach Painter on lineup experimentation","link":"https://www.jconline.com/","source":"Lafayette Journal & Courier","tier":"insiders","type":"article","ts":1762286400000},
+    {"title":"Recruiting board resets after fall visits","link":"https://purdue.rivals.com/","source":"Rivals Purdue","tier":"insiders","type":"article","ts":1762282800000},
     {"title":"Film Room: PnR counters for 2025–26","link":"https://purdue.rivals.com/","source":"Gold and Black (Rivals)","tier":"insiders","type":"article","ts":1762279200000},
-    {"title":"Mic’d Up: Preseason Workouts","link":"https://www.youtube.com/watch?v=dQw4w9WgXcQ","source":"PurdueSports YouTube","tier":"official","type":"video","ts":1762275600000},
+    {"title":"Mic’d Up: Preseason Workouts","link":"https://www.youtube.com/watch?v=dQw4w9WgXcQ","source":"Purdue Athletics YouTube","tier":"official","type":"video","ts":1762275600000},
     {"title":"Practice Highlights — First Week","link":"https://www.youtube.com/watch?v=oHg5SJYRHA0","source":"BTN Purdue","tier":"official","type":"video","ts":1762272000000},
-    {"title":"Summer Highlights Mix","link":"https://www.youtube.com/watch?v=2Z4m4lnjxkY","source":"BTN Purdue","tier":"official","type":"video","ts":1762268400000}
+    {"title":"Summer Highlights Mix","link":"https://www.youtube.com/watch?v=3GwjfUFyY6M","source":"BTN Purdue","tier":"official","type":"video","ts":1762268400000}
   ]
 }
-</script>
-
-<!-- ================== RENDERER + OPTIONAL UPGRADE ================== -->
-<script>
-  // Base for subfolder hosting (e.g., /sports-app-project/)
-  const BASE = (function(){
-    const p = location.pathname.endsWith('/') ? location.pathname : location.pathname.replace(/[^/]+$/, '');
-    return p;
-  })();
-  const ITEMS_URL = BASE + 'static/teams/purdue-mbb/items.json';
-
-  function posterSVG(label1, label2 = "", wide=false) {
-    const view = wide ? '0 0 1200 675' : '0 0 1200 900';
-    const extra = wide ? `<rect x="500" y="238" width="200" height="200" rx="24" fill="#1a1e26"/><polygon points="560,270 560,406 660,338" fill="#f2c94c"/>` : '';
-    return `<svg class="poster" viewBox="${view}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${label1}">
-      <rect width="1200" height="${wide?675:900}" fill="#0d0f12"/>
-      <rect x="64" y="64" width="1072" height="${wide?547:772}" rx="18" class="frame"/>
-      ${extra}
-      <text x="600" y="${label2 ? (wide?460:430) : (wide?480:460)}" text-anchor="middle" class="t1" font-size="${label2 ? 110 : 120}">${label1}</text>
-      ${label2 ? `<text x="600" y="${wide?520:500}" text-anchor="middle" class="t2" font-size="34">${label2}</text>` : ""}
-    </svg>`;
-  }
-  function sourceLabels(source) {
-    const map = {
-      "PurdueSports.com":["PurdueSports.com","Official"],
-      "Sports Illustrated CBB":["Sports Illustrated","CBB"],
-      "CBS Sports CBB":["CBS Sports","CBB"],
-      "Yahoo CBB":["Yahoo Sports","CBB"],
-      "Journal & Courier":["Journal & Courier","Local"],
-      "247Sports Purdue":["247Sports","Purdue"],
-      "Gold and Black (Rivals)":["Rivals","Gold & Black"],
-      "YouTube":["YouTube",""]
-    };
-    return map[source] || [source||"Source",""];
-  }
-  const pill = (t)=>`<span class="pill">${t}</span>`;
-
-  function render(items) {
-    const grid = document.getElementById('news-grid');
-    const heroWrap = document.getElementById('news-hero');
-    const heroMeta = document.getElementById('news-hero-meta');
-    const newsStatus = document.getElementById('news-status');
-    const vidsGrid = document.getElementById('videos-grid');
-    const vidsStatus = document.getElementById('videos-status');
-
-    if (!items || !items.length) {
-      newsStatus.textContent = "No headlines.";
-      newsStatus.hidden = false;
-      vidsStatus.textContent = "No new videos.";
-      vidsStatus.hidden = false;
-      return;
-    }
-
-    // sort new→old
-    items = items.slice().sort((a,b)=> (b.ts||0)-(a.ts||0));
-
-    // HERO (prefer article)
-    const heroIdx = Math.max(0, items.findIndex(i => (i.type||'article') !== 'video'));
-    const hero = items[heroIdx] || items[0];
-    const [l1,l2] = sourceLabels(hero.source||"Source");
-    heroWrap.innerHTML = `<a class="hero-img-wrap" href="${hero.link}" target="_blank" rel="noopener"><div class="hero-art">${posterSVG(l1,l2,true)}</div></a>`;
-    heroMeta.innerHTML = `<div class="pills">${hero.tier?pill(hero.tier):""}${hero.source?pill(hero.source):""}</div><h3 class="hero-title"><a href="${hero.link}" target="_blank" rel="noopener">${hero.title}</a></h3>`;
-
-    // NEWS grid
-    const newsCards = items.filter((_,i)=> i!==heroIdx).slice(0,9).map(it=>{
-      const [a,b] = sourceLabels(it.source||"Source");
-      return `<article class="card" data-tier="${it.tier||'national'}">
-        <a class="card-img-wrap" href="${it.link}" target="_blank" rel="noopener"><div class="card-art">${posterSVG(a,b,false)}</div></a>
-        <div class="card-body"><div class="pills">${it.tier?pill(it.tier):""}${it.source?pill(it.source):""}</div>
-        <a class="card-title" href="${it.link}" target="_blank" rel="noopener">${it.title}</a></div>
-      </article>`;
-    }).join('');
-    grid.innerHTML = newsCards;
-    newsStatus.hidden = true;
-
-    // VIDEOS
-    const vids = items.filter(i=> (i.type||'').toLowerCase()==='video').slice(0,6);
-    if (vids.length){
-      vidsGrid.innerHTML = vids.map(v=>{
-        const lbl = v.source?.includes('YouTube') ? 'YouTube' : (v.source||'Video');
-        return `<article class="card video-card">
-          <a class="card-img-wrap" href="${v.link}" target="_blank" rel="noopener"><div class="hero-art">${posterSVG('Video',lbl,true)}</div></a>
-          <div class="card-body"><div class="pills">${v.tier?pill(v.tier):""}${v.source?pill(v.source):""}</div>
-          <a class="card-title" href="${v.link}" target="_blank" rel="noopener">${v.title}</a></div>
-        </article>`;
-      }).join('');
-      vidsStatus.hidden = true;
-    } else {
-      vidsStatus.textContent = "No new videos yet.";
-      vidsStatus.hidden = false;
-    }
-  }
-
-  // 1) Render immediately from inline seed (always present)
-  try {
-    const seed = JSON.parse(document.getElementById('seed-items').textContent);
-    render(seed.items||[]);
-  } catch(e) {
-    console.warn('Seed parse error', e);
-  }
-
-  // 2) Try to upgrade from items.json (if present). If it fails, keep seed; no error to user.
-  (async function upgrade(){
-    try{
-      const res = await fetch(ITEMS_URL, { cache: 'no-store' });
-      if (!res.ok) return;
-      const data = await res.json();
-      if (data && Array.isArray(data.items) && data.items.length) render(data.items);
-    }catch(e){/* silent */}
-  })();
 </script>
 </body>
 </html>
