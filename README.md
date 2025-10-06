@@ -2,28 +2,23 @@
 
 Mobile-first, GitHub Pages–hosted hub that **always loads instantly**:
 - Renders **inline seed** headlines & videos immediately.
-- Then **optionally upgrades** from `static/teams/purdue-mbb/items.json`.
-- Panels hydrate from JSON (`static/widgets.json`, `static/schedule.json`, `static/insiders.json`, `static/teams/purdue-mbb/roster.json`) with graceful fallbacks.
+- **Upgrades** from `static/teams/purdue-mbb/items.json` when available.
+- **Panels moved to JS** for stability: Rankings, Roster, Insiders are hydrated by `static/js/pro.js` with graceful fallbacks (empty UI is fine if JSON missing).
 
 ## Auto-update (GitHub Actions)
-- Workflow: `.github/workflows/collect.yml`
-- Runs every 30 min (and on manual dispatch).
+- `.github/workflows/collect.yml` runs every 30 minutes and on manual dispatch.
 - Installs `feedparser`, `beautifulsoup4`, `pyyaml`, `rapidfuzz`.
-- Executes `python src/collect.py`
-- Commits changes to `static/teams/purdue-mbb/items.json`.
-
-## Collector
-- Real collector: `src/collect.py` (uses `src/feeds.yaml`).
-- Legacy path `tools/collect.py` is a **shim** that calls `src/collect.py` for compatibility.
+- Executes `python src/collect.py`.
+- Commits updates to `static/teams/purdue-mbb/items.json`.
 
 ## Data files
 - `static/teams/purdue-mbb/items.json` — news+videos (auto).
-- `static/widgets.json` — rankings with optional URLs.
-- `static/schedule.json` — upcoming games.
-- `static/insiders.json` — insider links.
-- `static/teams/purdue-mbb/roster.json` — roster cards.
+- `static/widgets.json` — rankings: `{ ap_rank, kenpom_rank, ap_url, kenpom_url, updated_at }`.
+- `static/insiders.json` — insider links: array of `{ name, url, latest_headline, latest_url, type, pay, updated_at }`.
+- `static/teams/purdue-mbb/roster.json` — roster array with `{ num, name, pos, ht, wt, class, hometown }`.
+- `static/schedule.json` — upcoming games (still hydrated inline for determinism).
 
-## Dev notes
-- No persistent caching: `sw.js` is a self-destruct worker to avoid stale assets.
-- Path base is `/sports-app-project/` for GitHub Pages.
-- If you fork for another team, copy the `purdue-mbb` folder and adjust `feeds.yaml`.
+## Notes
+- Path base is `/sports-app-project/`. If you fork to another repo, update the base passed to `PRO.hydratePanels()` or keep the same path.
+- `sw.js` remains a self-destruct worker to avoid cache issues.
+- `tools/collect.py` is a shim delegating to `src/collect.py`.
