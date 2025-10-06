@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- BUILD: INLINE NEWS/VIDEOS (seed + safe fallback) • PANELS IN JS • L1–L2 POLISH • 2025-10-06 -->
+<!-- BUILD: INLINE NEWS/VIDEOS (seed + safe fallback) • PANELS IN JS • L1–L3 POLISH • 2025-10-06 -->
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -28,9 +28,11 @@ section{scroll-margin-top:72px}
   display:flex;align-items:center;gap:12px;padding:12px 16px}
 .brand-badge{width:36px;height:36px;border-radius:10px;background:#1a1e26;display:grid;place-items:center}
 .brand-dot{width:14px;height:14px;border-radius:4px;background:var(--brand)}
-.nav{display:flex;gap:12px;margin-left:auto}
-.nav a{padding:8px 10px;border-radius:8px}
-.nav a:hover{background:#1a1e26}
+.nav{display:flex;gap:10px;margin-left:auto}
+.nav a{display:flex;gap:6px;align-items:center;padding:8px 10px;border-radius:10px;opacity:.95;transition:background .12s ease, opacity .12s ease, transform .12s ease}
+.nav a .ico{font-size:14px;opacity:.9}
+.nav a:hover{background:#1a1e26;opacity:1}
+.nav a:active{transform:scale(.98)}
 
 /* Layout (L1: tighter rhythm) */
 .wrap{max-width:1100px;margin:0 auto;padding:10px}
@@ -45,27 +47,33 @@ section{scroll-margin-top:72px}
 .pills{display:flex;gap:6px;flex-wrap:wrap}
 .pill{background:var(--pill);color:var(--pillText);border-radius:999px;padding:4px 8px;font-size:12px}
 
-/* Cards */
+/* Cards + Level 3 micro-motion */
 .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 @media (max-width:900px){.card-grid{grid-template-columns:1fr 1fr}}
 @media (max-width:620px){.card-grid{grid-template-columns:1fr}}
-.card{background:#11151b;border:1px solid var(--border);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;min-height:220px;transition:transform .15s ease, box-shadow .15s ease}
+.card{background:#11151b;border:1px solid var(--border);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;min-height:220px;
+  transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease, filter .18s ease}
+.card:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 8px 22px rgba(0,0,0,.35), 0 0 0 1px rgba(242,201,76,.15)}
 .card-img-wrap{display:block;aspect-ratio:16/9;background:#0e1218;border-bottom:1px solid var(--border)}
 .card-body{padding:10px}
 .card-title{font-weight:600;line-height:1.2}
 .card-title:hover{text-decoration:underline}
 
-/* Hero emphasis (L1) */
+/* Hero emphasis (L1 + L3 glow) */
 .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:12px;margin:6px 0 10px}
-.hero-img-wrap{display:block;aspect-ratio:16/9;background:#0e1218;border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.hero-img-wrap{display:block;aspect-ratio:16/9;background:#0e1218;border:1px solid var(--border);border-radius:12px;overflow:hidden;
+  transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease}
 .hero .hero-img-wrap{border-color:rgba(242,201,76,.45);box-shadow:0 0 0 1px rgba(242,201,76,.25), 0 10px 22px rgba(0,0,0,.35)}
+.hero .hero-img-wrap:hover{transform:translateY(-2px) scale(1.012);box-shadow:0 14px 28px rgba(0,0,0,.45), 0 0 0 1px rgba(242,201,76,.35)}
 .hero .card-title{font-size:1.15em;color:var(--brand)}
 .hero-meta{display:flex;flex-direction:column;gap:6px}
 @media (max-width:820px){.hero{grid-template-columns:1fr}}
 
 /* Lists */
 .simple-list{display:flex;flex-direction:column;gap:8px}
-.link-card{display:flex;gap:10px;align-items:flex-start;padding:10px;border:1px solid var(--border);border-radius:10px;background:#0f1319}
+.link-card{display:flex;gap:10px;align-items:flex-start;padding:10px;border:1px solid var(--border);border-radius:10px;background:#0f1319;
+  transition:transform .16s ease, box-shadow .16s ease}
+.link-card:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,0,0,.28)}
 .link-logo{width:28px;height:28px;display:grid;place-items:center;background:#1a1e26;border-radius:6px;flex:0 0 auto}
 .link-title{font-weight:600;line-height:1.25}
 .link-meta{color:var(--muted);font-size:12px;line-height:1.25}
@@ -78,7 +86,8 @@ section{scroll-margin-top:72px}
 /* Roster */
 .roster{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
 @media (max-width:700px){.roster{grid-template-columns:1fr}}
-.roster-card{padding:10px;border:1px solid var(--border);border-radius:10px;background:#0f1319}
+.roster-card{padding:10px;border:1px solid var(--border);border-radius:10px;background:#0f1319;transition:transform .16s ease, box-shadow .16s ease}
+.roster-card:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,0,0,.28)}
 .roster-num{font-weight:700;margin-bottom:4px}
 .roster-meta{color:var(--muted);font-size:12px}
 .footer-note{color:var(--muted);font-size:12px;text-align:center;margin-top:10px}
@@ -92,12 +101,12 @@ section{scroll-margin-top:72px}
   <div class="brand-badge"><div class="brand-dot"></div></div>
   <div>Boilermakers</div>
   <nav class="nav">
-    <a href="#news">News</a>
-    <a href="#videos">Videos</a>
-    <a href="#rankings">Rankings</a>
-    <a href="#schedule">Schedule</a>
-    <a href="#roster">Roster</a>
-    <a href="#nil">NIL</a>
+    <a href="#news" aria-label="News"><span class="ico">🏀</span><span>News</span></a>
+    <a href="#videos" aria-label="Videos"><span class="ico">🎥</span><span>Videos</span></a>
+    <a href="#rankings" aria-label="Rankings"><span class="ico">📊</span><span>Rankings</span></a>
+    <a href="#schedule" aria-label="Schedule"><span class="ico">📅</span><span>Schedule</span></a>
+    <a href="#roster" aria-label="Roster"><span class="ico">👥</span><span>Roster</span></a>
+    <a href="#nil" aria-label="NIL"><span class="ico">💰</span><span>NIL</span></a>
   </nav>
 </header>
 
@@ -110,7 +119,7 @@ section{scroll-margin-top:72px}
         <div class="pills"><span class="pill">All</span><span class="pill">Official</span><span class="pill">Insiders</span><span class="pill">National</span></div>
       </div>
 
-      <!-- L2: global refresh note -->
+      <!-- Global refresh note -->
       <div class="panel-subnote muted small">Refreshed every 30 min • Auto-updated via GitHub Actions</div>
 
       <div class="hero">
