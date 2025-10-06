@@ -1,19 +1,14 @@
 <!doctype html>
-<!-- FIXED: correct asset paths for GitHub Pages subpath deployment -->
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Purdue MBB Hub • Live Headlines & Videos</title>
 <meta name="description" content="Purdue Men’s Basketball hub: live headlines, videos, rankings, schedule, insiders."/>
-
-<!-- ✅ base path ensures all assets resolve correctly on GitHub Pages -->
-<base href="/sports-app-project/">
-
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231a1e26'/%3E%3Cpath d='M13 14h38v12H13z' fill='%23f2c94c'/%3E%3Cpath d='M13 26h38v12H13z' fill='%23c0a23a'/%3E%3Cpath d='M13 38h38v12H13z' fill='%23f2c94c'/%3E%3C/svg%3E"/>
 
-<!-- ✅ fixed paths -->
-<link rel="stylesheet" href="/sports-app-project/static/css/app.css?v=2025-10-06"/>
+<!-- ✅ Use RELATIVE paths so it works at any GitHub Pages subpath -->
+<link rel="stylesheet" href="./static/css/app.css?v=fix1"/>
 </head>
 <body>
 
@@ -32,6 +27,7 @@
 
 <main class="wrap">
   <div class="grid">
+    <!-- MAIN -->
     <section id="news" class="panel" aria-labelledby="news-h">
       <div class="panel-hd">
         <h2 id="news-h">Top Headlines</h2>
@@ -48,6 +44,7 @@
       <p id="news-status" class="muted" hidden>Loading headlines…</p>
     </section>
 
+    <!-- RIGHT RAIL -->
     <aside class="rail">
       <section id="rankings" class="panel" aria-labelledby="rank-h">
         <div class="panel-hd"><h3 id="rank-h">Rankings</h3></div>
@@ -99,30 +96,29 @@
   <p class="footer-note" id="sourceCount"></p>
 </main>
 
+<!-- Fixed footer -->
 <div class="footer-fixed">
   <span>© 2025 Boilermakers Hub</span><span>•</span><span>Auto-updated every 30 min</span>
 </div>
 
-<!-- ✅ fixed paths -->
-<script src="/sports-app-project/static/js/app.js?v=2025-10-06" defer></script>
-<script src="/sports-app-project/static/js/pro.js?v=2025-10-06" defer></script>
-
-<!-- Inline seed (safe fallback) -->
+<!-- Seed (keeps first paint non-empty) -->
 <script id="seed-items" type="application/json">
-{
-  "items": [
-    {"title":"Purdue Announces 2025–26 Non-Conference Slate","link":"https://purduesports.com/","source":"PurdueSports.com","tier":"official","type":"article","ts":1762300800000},
-    {"title":"AP Poll movers and what it means for Purdue","link":"https://www.si.com/college-basketball","source":"Sports Illustrated CBB","tier":"national","type":"article","ts":1762297200000},
-    {"title":"Big Ten preview: tiers, X-factors, and POY race","link":"https://www.cbssports.com/college-basketball/","source":"CBS Sports CBB","tier":"national","type":"article","ts":1762293600000},
-    {"title":"Big Ten storylines to watch","link":"https://sports.yahoo.com/college-basketball/","source":"Yahoo CBB","tier":"national","type":"article","ts":1762290000000},
-    {"title":"Coach Painter on lineup experimentation","link":"https://www.jconline.com/","source":"Journal & Courier","tier":"insiders","type":"article","ts":1762286400000},
-    {"title":"Recruiting board resets after fall visits","link":"https://purdue.rivals.com/","source":"Rivals Purdue","tier":"insiders","type":"article","ts":1762282800000},
-    {"title":"Film Room: PnR counters for 2025–26","link":"https://purdue.rivals.com/","source":"Gold and Black","tier":"insiders","type":"article","ts":1762279200000},
-    {"title":"Mic’d Up: Preseason Workouts","link":"https://www.youtube.com/watch?v=dQw4w9WgXcQ","source":"Purdue Athletics YouTube","tier":"official","type":"video","ts":1762275600000},
-    {"title":"Practice Highlights — First Week","link":"https://www.youtube.com/watch?v=oHg5SJYRHA0","source":"BTN Purdue","tier":"official","type":"video","ts":1762272000000},
-    {"title":"Summer Highlights Mix","link":"https://www.youtube.com/watch?v=3GwjfUFyY6M","source":"BTN Purdue","tier":"official","type":"video","ts":1762268400000}
-  ]
-}
+{ "items": [
+  {"title":"Purdue Announces 2025–26 Non-Conference Slate","link":"https://purduesports.com/","source":"PurdueSports.com","tier":"official","type":"article","ts":1762300800000},
+  {"title":"AP Poll movers and what it means for Purdue","link":"https://www.si.com/college-basketball","source":"Sports Illustrated CBB","tier":"national","type":"article","ts":1762297200000},
+  {"title":"Big Ten preview: tiers, X-factors, and POY race","link":"https://www.cbssports.com/college-basketball/","source":"CBS Sports CBB","tier":"national","type":"article","ts":1762293600000},
+  {"title":"Big Ten storylines to watch","link":"https://sports.yahoo.com/college-basketball/","source":"Yahoo CBB","tier":"national","type":"article","ts":1762290000000},
+  {"title":"Coach Painter on lineup experimentation","link":"https://www.jconline.com/","source":"Journal & Courier","tier":"insiders","type":"article","ts":1762286400000},
+  {"title":"Recruiting board resets after fall visits","link":"https://purdue.rivals.com/","source":"Rivals Purdue","tier":"insiders","type":"article","ts":1762282800000},
+  {"title":"Film Room: PnR counters for 2025–26","link":"https://purdue.rivals.com/","source":"Gold and Black","tier":"insiders","type":"article","ts":1762279200000},
+  {"title":"Mic’d Up: Preseason Workouts","link":"https://www.youtube.com/watch?v=dQw4w9WgXcQ","source":"Purdue Athletics YouTube","tier":"official","type":"video","ts":1762275600000},
+  {"title":"Practice Highlights — First Week","link":"https://www.youtube.com/watch?v=oHg5SJYRHA0","source":"BTN Purdue","tier":"official","type":"video","ts":1762272000000},
+  {"title":"Summer Highlights Mix","link":"https://www.youtube.com/watch?v=3GwjfUFyY6M","source":"BTN Purdue","tier":"official","type":"video","ts":1762268400000}
+]}
 </script>
+
+<!-- ✅ RELATIVE script paths -->
+<script src="./static/js/app.js?v=fix1" defer></script>
+<script src="./static/js/pro.js?v=fix1" defer></script>
 </body>
 </html>
