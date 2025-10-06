@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- BUILD: LIVE-NEWS+VIDEOS • INLINE-SEED+OPTIONAL-FETCH • 2025-10-06 -->
+<!-- BUILD: LIVE-NEWS+VIDEOS • INLINE-SEED+OPTIONAL-FETCH • PANELS IN JS • 2025-10-06 -->
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -75,6 +75,9 @@ section{scroll-margin-top:72px}
 .roster-meta{color:var(--muted);font-size:12px}
 .footer-note{color:var(--muted);font-size:12px;text-align:center;margin-top:10px}
 </style>
+
+<!-- Panels JS (rankings/roster/insiders) -->
+<script src="static/js/pro.js" defer></script>
 </head>
 <body>
 <header class="topbar">
@@ -199,17 +202,14 @@ function render(items){
     return;
   }
 
-  // sort new→old
   items = items.slice().sort((a,b)=> (b.ts||0)-(a.ts||0));
 
-  // HERO (prefer article)
   const heroIdx = Math.max(0, items.findIndex(i => (i.type||'article') !== 'video'));
   const hero = items[heroIdx] || items[0];
   const [l1,l2] = sourceLabels(hero.source||"Source");
   heroWrap.innerHTML = `<a class="hero-img-wrap" href="${hero.link}" target="_blank" rel="noopener"><div class="hero-art">${posterSVG(l1,l2,true)}</div></a>`;
   heroMeta.innerHTML = `<div class="pills">${hero.tier?pill(hero.tier):""}${hero.source?pill(hero.source):""}</div><h3 class="card-title"><a href="${hero.link}" target="_blank" rel="noopener">${esc(hero.title||'Untitled')}</a></h3>`;
 
-  // GRID cards (skip the hero item)
   const rest = items.filter((_,i)=>i!==heroIdx);
   grid.innerHTML = rest.slice(0,15).map(i => {
     const [a,b] = sourceLabels(i.source||"");
@@ -226,7 +226,6 @@ function render(items){
       </article>`;
   }).join('');
 
-  // VIDEOS (from items tagged type: "video")
   const vids = items.filter(i => (i.type||'article') === 'video').slice(0,12);
   if (vids.length){
     vidsGrid.innerHTML = vids.map(v => {
@@ -248,36 +247,17 @@ function render(items){
   document.getElementById('sourceCount').textContent = '';
 }
 
-// Rankings
-function renderRankings(w){
-  if(!w) return;
-  const ap = document.getElementById('apRank');
-  const kp = document.getElementById('kpRank');
-  const apL = document.getElementById('apLink');
-  const kpL = document.getElementById('kpLink');
-  const upd = document.getElementById('rankUpdated');
-  ap.textContent = w.ap_rank ? `#${w.ap_rank}` : '—';
-  kp.textContent = w.kenpom_rank ? `#${w.kenpom_rank}` : '—';
-  if (w.ap_url) apL.href = w.ap_url;
-  if (w.kenpom_url) kpL.href = w.kenpom_url;
-  if (w.updated_at) try {
-    const dt = new Date(w.updated_at);
-    upd.textContent = `as of ${dt.toLocaleString([], {month:'short', day:'numeric'})}`;
-  } catch {}
-}
-
-// Schedule
+// Schedule helpers (remain inline for stability)
 function initials(name='?'){
   const clean = name.replace(/^[@vs]\s*/,'').replace(/\(.*?\)/g,'').trim();
   const parts = clean.split(/\s+/);
   return (parts[0]?.[0]||'').toUpperCase() + (parts[1]?.[0]||'').toUpperCase();
 }
-function siteClass(site){ const s=(site||'').toLowerCase(); if(s.startsWith('home'))return'site-home'; if(s.startsWith('away')||s.startsWith('@'))return'site-away'; if(s.startsWith('neutral'))return'site-neutral'; return''; }
 function renderSchedule(sched=[]){
   const el=document.getElementById('scheduleList');
   el.innerHTML = (sched||[]).slice(0,6).map(g=>{
     const dt=new Date(g.utc||g.date);
-    const when = dt.toLocaleString([], {month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit'});
+    const when = isNaN(dt.getTime()) ? (g.date||'') : dt.toLocaleString([], {month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit'});
     return `<div class="link-card">
       <div class="link-logo">${esc(g.opponent?initials(g.opponent):'•')}</div>
       <div class="link-body">
@@ -288,35 +268,7 @@ function renderSchedule(sched=[]){
   }).join('');
 }
 
-// Insiders
-function timeAgo(s){try{const d=(Date.now()-new Date(s).getTime())/60000; if(d<60)return `${Math.round(d)}m ago`; if(d<1440)return `${Math.round(d/60)}h ago`; return `${Math.round(d/1440)}d ago`}catch{return''}}
-function renderInsiders(list){
-  const el=document.getElementById('insiderList');
-  el.innerHTML=(list||[]).map(o=>{
-    const pay=o.pay?'<span class="badge-pay">$</span>':'';
-    const sub=o.latest_headline?`<div class="link-meta">${esc(o.latest_headline)}</div>`:'';
-    const meta=o.updated_at?`<span>${timeAgo(o.updated_at)}</span>`:'';
-    return `<a class="link-card" href="${o.latest_url||o.url}" target="_blank" rel="noopener">
-      <div class="link-logo">📰</div>
-      <div class="link-body"><div class="link-title">${esc(o.name)}</div>${sub}</div>
-      <div class="link-meta">${esc(o.type||'')}${pay}${meta?` • ${meta}`:''}</div>
-    </a>`;
-  }).join('');
-}
-
-// Roster
-function renderRoster(r){
-  const el=document.getElementById('rosterGrid');
-  el.innerHTML=(r||[]).map(p=>`
-    <div class="roster-card">
-      <div class="roster-num">#${esc(p.num||'?')} — ${esc(p.name||'Player')}</div>
-      <div class="roster-meta">${esc(p.pos||'')}${p.ht?` • ${esc(p.ht)}`:''}${p.wt?` • ${esc(p.wt)} lbs`:''}${p.class?` • ${esc(p.class)}`:''}</div>
-      ${p.hometown?`<div class="roster-meta">${esc(p.hometown)}</div>`:''}
-    </div>
-  `).join('');
-}
-
-// 1) Render immediately from inline seed (always present) for news/videos
+// 1) Render immediately from inline seed for news/videos
 try {
   const seed = JSON.parse(document.getElementById('seed-items').textContent);
   const items = Array.isArray(seed?.items) ? seed.items : [];
@@ -334,30 +286,20 @@ try {
   }catch(e){/* silent */}
 })();
 
-// 3) Fetch rankings/schedule/insiders/roster (all optional; show nothing if missing)
-(async function hydratePanels(){
+// 3) Schedule remains hydrated inline (unchanged, stable)
+(async function hydrateSchedule(){
   try{
-    const [widgetsRes, schedRes, insRes, rosRes] = await Promise.allSettled([
-      fetch(url('static/widgets.json')),
-      fetch(url('static/schedule.json')),
-      fetch(url('static/insiders.json')),
-      fetch(url('static/teams/purdue-mbb/roster.json'))
-    ]);
-
-    if (widgetsRes.status==='fulfilled' && widgetsRes.value.ok){
-      renderRankings(await widgetsRes.value.json());
-    }
-    if (schedRes.status==='fulfilled' && schedRes.value.ok){
-      renderSchedule(await schedRes.value.json());
-    }
-    if (insRes.status==='fulfilled' && insRes.value.ok){
-      renderInsiders(await insRes.value.json());
-    }
-    if (rosRes.status==='fulfilled' && rosRes.value.ok){
-      renderRoster(await rosRes.value.json());
-    }
-  }catch(e){ /* soft-fail */ }
+    const r = await fetch(url('static/schedule.json'));
+    if (r.ok) renderSchedule(await r.json());
+  }catch(e){}
 })();
+
+// 4) Kick external panels (rankings/insiders/roster) now that pro.js has loaded
+document.addEventListener('DOMContentLoaded', () => {
+  if (window.PRO && typeof window.PRO.hydratePanels === 'function') {
+    window.PRO.hydratePanels('/sports-app-project/');
+  }
+});
 </script>
 
 <!-- Inline seed so page never looks empty on cold loads -->
