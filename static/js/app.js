@@ -1,7 +1,7 @@
-// app.js — index logic moved out so index.html stays tiny & stable.
+// app.js — stable, subpath-safe (RELATIVE paths only)
 (() => {
-  const BASE = '/sports-app-project/';
-  const url = (p) => `${BASE}${p.replace(/^\//,'')}`;
+  const BASE = "./"; // ✅ works at any project subpath
+  const url = (p) => BASE + p.replace(/^\//, "");
   const byId = (id) => document.getElementById(id);
 
   const esc = (s='') => (s+'').replace(/[&<>"']/g, c=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
@@ -93,14 +93,11 @@
       <div class="meta-line">${esc(metaLine(hero))}</div>
     `;
     // badge overlay
-    const hw = heroWrap;
-    if (hw) {
-      const b = document.createElement('div');
-      b.className = 'card-badge';
-      b.textContent = heroBadge;
-      hw.style.position = 'relative';
-      hw.appendChild(b);
-    }
+    const b = document.createElement('div');
+    b.className = 'card-badge';
+    b.textContent = heroBadge;
+    heroWrap.style.position = 'relative';
+    heroWrap.appendChild(b);
 
     // GRID
     const rest = items.filter((_,i)=>i!==heroIdx);
@@ -151,26 +148,23 @@
     byId('sourceCount').textContent = '';
   }
 
-  // 1) Seed-first render (instant paint)
+  // Seed-first render
   let seedItems = [];
   try {
-    const seedTag = byId('seed-items');
-    if (seedTag && seedTag.textContent.trim()) {
-      const parsed = JSON.parse(seedTag.textContent);
+    const tag = byId('seed-items');
+    if (tag && tag.textContent.trim()) {
+      const parsed = JSON.parse(tag.textContent);
       if (Array.isArray(parsed?.items)) seedItems = parsed.items;
     }
   } catch {}
-
   if (!seedItems.length) {
-    // tiny fallback just in case seed tag goes missing
     seedItems = [
-      {"title":"Purdue Announces 2025–26 Non-Conference Slate","link":"https://purduesports.com/","source":"PurdueSports.com","tier":"official","type":"article","ts":1762300800000},
-      {"title":"AP Poll movers and what it means for Purdue","link":"https://www.si.com/college-basketball","source":"Sports Illustrated CBB","tier":"national","type":"article","ts":1762297200000}
+      {"title":"Purdue Announces 2025–26 Non-Conference Slate","link":"https://purduesports.com/","source":"PurdueSports.com","tier":"official","type":"article","ts":1762300800000}
     ];
   }
   render(seedItems);
 
-  // 2) Upgrade from items.json if present
+  // Upgrade from items.json (RELATIVE path)
   (async function upgrade(){
     try{
       const res = await fetch(url('static/teams/purdue-mbb/items.json'), { cache: 'no-store' });
@@ -180,10 +174,10 @@
     }catch(e){/* silent */}
   })();
 
-  // 3) Hydrate external panels (rankings/insiders/roster/schedule)
+  // Hydrate external panels if present
   document.addEventListener('DOMContentLoaded', () => {
     if (window.PRO && typeof window.PRO.hydratePanels === 'function') {
-      window.PRO.hydratePanels('/sports-app-project/');
+      window.PRO.hydratePanels('./');
     }
   });
 })();
