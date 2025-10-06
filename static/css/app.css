@@ -91,3 +91,13 @@ section{scroll-margin-top:72px}
 }
 body{padding-bottom:46px}
 .footer-note{color:var(--muted);font-size:12px;text-align:center;margin-top:10px}
+/* Venue icon tweaks */
+.link-logo {
+  width: 32px;
+  height: 32px;
+  font-size: 18px;
+  display: grid;
+  place-items: center;
+  background: #1a1e26;
+  border-radius: 6px;
+}
