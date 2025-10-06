@@ -12,20 +12,21 @@ jobs:
 
     steps:
       - name: 📥 Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: 🐍 Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: "3.10"
+          python-version: "3.11"
 
-      - name: 📦 Install dependencies
+      - name: 📦 Install deps
         run: |
           python -m pip install --upgrade pip
-          pip install feedparser beautifulsoup4
+          pip install feedparser beautifulsoup4 pyyaml rapidfuzz
 
-      - name: 🔄 Run collector script
-        run: python tools/collect.py
+      # You can switch this to tools/collect.py (shim) if you prefer.
+      - name: 🔄 Run collector
+        run: python src/collect.py
 
       - name: 📤 Commit and push updates
         run: |
