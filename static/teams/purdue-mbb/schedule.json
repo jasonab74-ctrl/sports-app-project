@@ -1,0 +1,40 @@
+{
+  "updated": "2025-10-06T00:00:00Z",
+  "games": [
+    {
+      "opponent": "TBD",
+      "utc": "2025-11-02T23:00:00Z",
+      "venue": "Home",
+      "location": "Mackey Arena, West Lafayette, IN",
+      "note": ""
+    },
+    {
+      "opponent": "TBD",
+      "utc": "2025-11-08T19:30:00Z",
+      "venue": "Home",
+      "location": "Mackey Arena, West Lafayette, IN",
+      "note": ""
+    },
+    {
+      "opponent": "TBD",
+      "utc": "2025-11-12T01:00:00Z",
+      "venue": "Away",
+      "location": "",
+      "note": ""
+    },
+    {
+      "opponent": "TBD",
+      "utc": "2025-11-19T01:00:00Z",
+      "venue": "Neutral",
+      "location": "",
+      "note": ""
+    },
+    {
+      "opponent": "TBD",
+      "utc": "2025-11-26T17:00:00Z",
+      "venue": "Neutral",
+      "location": "",
+      "note": ""
+    }
+  ]
+}
