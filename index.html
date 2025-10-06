@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- BUILD: INLINE NEWS/VIDEOS (seed + safe fallback) • PANELS IN JS • L1–L3 POLISH • 2025-10-06 -->
+<!-- BUILD: INLINE NEWS/VIDEOS (seed + safe fallback) • PANELS IN JS • FOOTER+LOGOS+TIMESTAMPS • 2025-10-06 -->
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -34,7 +34,7 @@ section{scroll-margin-top:72px}
 .nav a:hover{background:#1a1e26;opacity:1}
 .nav a:active{transform:scale(.98)}
 
-/* Layout (L1: tighter rhythm) */
+/* Layout */
 .wrap{max-width:1100px;margin:0 auto;padding:10px}
 .grid{display:grid;grid-template-columns:1.6fr .8fr;gap:14px}
 @media (max-width:900px){.grid{grid-template-columns:1fr}}
@@ -47,19 +47,21 @@ section{scroll-margin-top:72px}
 .pills{display:flex;gap:6px;flex-wrap:wrap}
 .pill{background:var(--pill);color:var(--pillText);border-radius:999px;padding:4px 8px;font-size:12px}
 
-/* Cards + Level 3 micro-motion */
+/* Cards + motion */
 .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 @media (max-width:900px){.card-grid{grid-template-columns:1fr 1fr}}
 @media (max-width:620px){.card-grid{grid-template-columns:1fr}}
 .card{background:#11151b;border:1px solid var(--border);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;min-height:220px;
   transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease, filter .18s ease}
 .card:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 8px 22px rgba(0,0,0,.35), 0 0 0 1px rgba(242,201,76,.15)}
-.card-img-wrap{display:block;aspect-ratio:16/9;background:#0e1218;border-bottom:1px solid var(--border)}
+.card-img-wrap{position:relative;display:block;aspect-ratio:16/9;background:#0e1218;border-bottom:1px solid var(--border)}
+.card-badge{position:absolute;top:6px;right:6px;background:rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:2px 6px;font-size:12px}
 .card-body{padding:10px}
 .card-title{font-weight:600;line-height:1.2}
 .card-title:hover{text-decoration:underline}
+.meta-line{margin-top:6px;font-size:12px;color:var(--muted)}
 
-/* Hero emphasis (L1 + L3 glow) */
+/* Hero emphasis */
 .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:12px;margin:6px 0 10px}
 .hero-img-wrap{display:block;aspect-ratio:16/9;background:#0e1218;border:1px solid var(--border);border-radius:12px;overflow:hidden;
   transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease}
@@ -78,7 +80,7 @@ section{scroll-margin-top:72px}
 .link-title{font-weight:600;line-height:1.25}
 .link-meta{color:var(--muted);font-size:12px;line-height:1.25}
 
-/* Schedule readability (L2) */
+/* Schedule readability */
 #scheduleList .link-body{line-height:1.35}
 #scheduleList .link-title{font-size:15px;font-weight:600}
 #scheduleList .link-meta{display:block;margin-top:2px}
@@ -90,6 +92,16 @@ section{scroll-margin-top:72px}
 .roster-card:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,0,0,.28)}
 .roster-num{font-weight:700;margin-bottom:4px}
 .roster-meta{color:var(--muted);font-size:12px}
+
+/* Footer (fixed) */
+.footer-fixed{
+  position:fixed;left:0;right:0;bottom:0;z-index:40;
+  background:rgba(13,15,18,.92);border-top:1px solid var(--border);
+  display:flex;justify-content:center;align-items:center;gap:8px;
+  padding:8px 12px;font-size:12px;color:var(--muted);
+}
+body{padding-bottom:46px} /* Prevent content from hiding under footer */
+
 .footer-note{color:var(--muted);font-size:12px;text-align:center;margin-top:10px}
 </style>
 
@@ -119,7 +131,6 @@ section{scroll-margin-top:72px}
         <div class="pills"><span class="pill">All</span><span class="pill">Official</span><span class="pill">Insiders</span><span class="pill">National</span></div>
       </div>
 
-      <!-- Global refresh note -->
       <div class="panel-subnote muted small">Refreshed every 30 min • Auto-updated via GitHub Actions</div>
 
       <div class="hero">
@@ -185,6 +196,11 @@ section{scroll-margin-top:72px}
   <p class="footer-note" id="sourceCount"></p>
 </main>
 
+<!-- Fixed footer -->
+<div class="footer-fixed">
+  <span>© 2025 Boilermakers Hub</span><span>•</span><span>Auto-updated every 30 min</span>
+</div>
+
 <script>
 const BASE = '/sports-app-project/';
 const url = (p) => `${BASE}${p.replace(/^\//,'')}`;
@@ -197,13 +213,52 @@ function sourceLabels(s){
   const map = {
     'PurdueSports.com':['Official','Purdue'],
     'BTN Purdue':['BTN','Purdue'],
+    'Purdue Athletics YouTube':['YouTube','Official'],
     'Sports Illustrated CBB':['SI','CBB'],
     'CBS Sports CBB':['CBS','CBB'],
     'Yahoo CBB':['Yahoo','CBB'],
     'Rivals Purdue':['Rivals','Purdue'],
+    'Gold and Black (Rivals)':['G&B','Purdue'],
     'Gold and Black':['G&B','Purdue'],
+    'Journal & Courier':['J&C','Local']
   };
   return map[s] || ['News',''];
+}
+
+// NEW: tiny source logo badges (emoji for light weight)
+function sourceIcon(s=''){
+  s = s.toLowerCase();
+  if (s.includes('btn')) return '🟦';
+  if (s.includes('purdue athletics youtube') || s.includes('youtube')) return '▶️';
+  if (s.includes('purdue')) return '🏅';
+  if (s.includes('sports illustrated') || s === 'si') return '📰';
+  if (s.includes('rivals') || s.includes('gold and black')) return '💬';
+  if (s.includes('cbs')) return '📺';
+  if (s.includes('yahoo')) return '🟣';
+  return '🗞️';
+}
+
+// NEW: human time display from epoch ms
+function timeAgo(ts){
+  try{
+    const ms = typeof ts === 'number' ? ts : Number(ts);
+    if (!ms) return '';
+    const d = (Date.now() - ms)/60000; // minutes
+    if (d < 1) return 'just now';
+    if (d < 60) return `${Math.round(d)}m ago`;
+    if (d < 1440) return `${Math.round(d/60)}h ago`;
+    const dt = new Date(ms);
+    return dt.toLocaleString([], {month:'short', day:'numeric'});
+  }catch{return '';}
+}
+
+function metaLine(item){
+  const bits = [];
+  if (item.tier) bits.push(esc(item.tier));
+  if (item.source) bits.push(esc(item.source));
+  const when = timeAgo(item.ts);
+  if (when) bits.push(when);
+  return bits.join(' • ');
 }
 
 function render(items){
@@ -224,37 +279,67 @@ function render(items){
 
   items = items.slice().sort((a,b)=> (b.ts||0)-(a.ts||0));
 
+  // HERO (prefer article)
   const heroIdx = Math.max(0, items.findIndex(i => (i.type||'article') !== 'video'));
   const hero = items[heroIdx] || items[0];
   const [l1,l2] = sourceLabels(hero.source||"Source");
-  heroWrap.innerHTML = `<a class="hero-img-wrap" href="${hero.link}" target="_blank" rel="noopener"><div class="hero-art">${posterSVG(l1,l2,true)}</div></a>`;
-  heroMeta.innerHTML = `<div class="pills">${hero.tier?pill(hero.tier):""}${hero.source?pill(hero.source):""}</div><h3 class="card-title"><a href="${hero.link}" target="_blank" rel="noopener">${esc(hero.title||'Untitled')}</a></h3>`;
+  const heroBadge = sourceIcon(hero.source||'');
+  heroWrap.innerHTML = `
+    <a class="hero-img-wrap" href="${hero.link}" target="_blank" rel="noopener">
+      <div class="hero-art">${posterSVG(l1,l2,true)}</div>
+    </a>`;
+  heroMeta.innerHTML = `
+    <div class="pills">${hero.tier?pill(hero.tier):""}${hero.source?pill(hero.source):""}</div>
+    <h3 class="card-title"><a href="${hero.link}" target="_blank" rel="noopener">${esc(hero.title||'Untitled')}</a></h3>
+    <div class="meta-line">${esc(metaLine(hero))}</div>
+  `;
+  // add badge overlay to hero
+  const hw = document.getElementById('news-hero');
+  if (hw) {
+    const b = document.createElement('div');
+    b.className = 'card-badge';
+    b.textContent = heroBadge;
+    hw.style.position = 'relative';
+    hw.appendChild(b);
+  }
 
+  // GRID (skip hero)
   const rest = items.filter((_,i)=>i!==heroIdx);
   grid.innerHTML = rest.slice(0,15).map(i => {
     const [a,b] = sourceLabels(i.source||"");
     const isVid = (i.type||'article') === 'video';
+    const badge = sourceIcon(i.source||'');
     return `
       <article class="card">
         <a class="card-img-wrap" href="${i.link}" target="_blank" rel="noopener" aria-label="${esc(i.title||'Open')}">
+          <div class="card-badge" aria-hidden="true">${badge}</div>
           <div class="hero-art">${posterSVG(isVid?'Video':(a||'News'), b||'')}</div>
         </a>
         <div class="card-body">
           <div class="pills">${i.tier?pill(i.tier):""}${i.source?pill(i.source):""}</div>
           <a class="card-title" href="${i.link}" target="_blank" rel="noopener">${esc(i.title||'Untitled')}</a>
+          <div class="meta-line">${esc(metaLine(i))}</div>
         </div>
       </article>`;
   }).join('');
 
+  // VIDEOS
   const vids = items.filter(i => (i.type||'article') === 'video').slice(0,12);
   if (vids.length){
     vidsGrid.innerHTML = vids.map(v => {
       const [l1,l2] = sourceLabels(v.source||"");
+      const badge = sourceIcon(v.source||'');
       return `
         <article class="card video-card">
-          <a class="card-img-wrap" href="${v.link}" target="_blank" rel="noopener"><div class="hero-art">${posterSVG('Video',l1||l2||'')}</div></a>
-          <div class="card-body"><div class="pills">${v.tier?pill(v.tier):""}${v.source?pill(v.source):""}</div>
-          <a class="card-title" href="${v.link}" target="_blank" rel="noopener">${esc(v.title)}</a></div>
+          <a class="card-img-wrap" href="${v.link}" target="_blank" rel="noopener">
+            <div class="card-badge" aria-hidden="true">${badge}</div>
+            <div class="hero-art">${posterSVG('Video',l1||l2||'')}</div>
+          </a>
+          <div class="card-body">
+            <div class="pills">${v.tier?pill(v.tier):""}${v.source?pill(v.source):""}</div>
+            <a class="card-title" href="${v.link}" target="_blank" rel="noopener">${esc(v.title)}</a>
+            <div class="meta-line">${esc(metaLine(v))}</div>
+          </div>
         </article>`;
     }).join('');
     vidsStatus.hidden = true;
@@ -278,15 +363,14 @@ try {
 } catch(e){ /* ignore, fall back below */ }
 
 if (!seedItems.length) {
-  // Safe fallback so the page never looks empty
   seedItems = [
     {"title":"Purdue Announces 2025–26 Non-Conference Slate","link":"https://purduesports.com/","source":"PurdueSports.com","tier":"official","type":"article","ts":1762300800000},
     {"title":"AP Poll movers and what it means for Purdue","link":"https://www.si.com/college-basketball","source":"Sports Illustrated CBB","tier":"national","type":"article","ts":1762297200000},
     {"title":"Big Ten preview: tiers, X-factors, and POY race","link":"https://www.cbssports.com/college-basketball/","source":"CBS Sports CBB","tier":"national","type":"article","ts":1762293600000},
     {"title":"Big Ten storylines to watch","link":"https://sports.yahoo.com/college-basketball/","source":"Yahoo CBB","tier":"national","type":"article","ts":1762290000000},
-    {"title":"Coach Painter on lineup experimentation","link":"https://www.jconline.com/","source":"Lafayette Journal & Courier","tier":"insiders","type":"article","ts":1762286400000},
+    {"title":"Coach Painter on lineup experimentation","link":"https://www.jconline.com/","source":"Journal & Courier","tier":"insiders","type":"article","ts":1762286400000},
     {"title":"Recruiting board resets after fall visits","link":"https://purdue.rivals.com/","source":"Rivals Purdue","tier":"insiders","type":"article","ts":1762282800000},
-    {"title":"Film Room: PnR counters for 2025–26","link":"https://purdue.rivals.com/","source":"Gold and Black (Rivals)","tier":"insiders","type":"article","ts":1762279200000},
+    {"title":"Film Room: PnR counters for 2025–26","link":"https://purdue.rivals.com/","source":"Gold and Black","tier":"insiders","type":"article","ts":1762279200000},
     {"title":"Mic’d Up: Preseason Workouts","link":"https://www.youtube.com/watch?v=dQw4w9WgXcQ","source":"Purdue Athletics YouTube","tier":"official","type":"video","ts":1762275600000},
     {"title":"Practice Highlights — First Week","link":"https://www.youtube.com/watch?v=oHg5SJYRHA0","source":"BTN Purdue","tier":"official","type":"video","ts":1762272000000},
     {"title":"Summer Highlights Mix","link":"https://www.youtube.com/watch?v=3GwjfUFyY6M","source":"BTN Purdue","tier":"official","type":"video","ts":1762268400000}
@@ -304,7 +388,7 @@ render(seedItems);
   }catch(e){/* silent */}
 })();
 
-// 3) Kick external panels (rankings/insiders/roster/schedule) via pro.js
+// 3) Panels via pro.js
 document.addEventListener('DOMContentLoaded', () => {
   if (window.PRO && typeof window.PRO.hydratePanels === 'function') {
     window.PRO.hydratePanels('/sports-app-project/');
@@ -312,7 +396,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
-<!-- Inline seed so page never looks empty on cold loads (kept; safe if removed thanks to fallback) -->
+<!-- Inline seed (safe even if removed; we have a JS fallback) -->
 <script id="seed-items" type="application/json">
 {
   "items": [
@@ -320,9 +404,9 @@ document.addEventListener('DOMContentLoaded', () => {
     {"title":"AP Poll movers and what it means for Purdue","link":"https://www.si.com/college-basketball","source":"Sports Illustrated CBB","tier":"national","type":"article","ts":1762297200000},
     {"title":"Big Ten preview: tiers, X-factors, and POY race","link":"https://www.cbssports.com/college-basketball/","source":"CBS Sports CBB","tier":"national","type":"article","ts":1762293600000},
     {"title":"Big Ten storylines to watch","link":"https://sports.yahoo.com/college-basketball/","source":"Yahoo CBB","tier":"national","type":"article","ts":1762290000000},
-    {"title":"Coach Painter on lineup experimentation","link":"https://www.jconline.com/","source":"Lafayette Journal & Courier","tier":"insiders","type":"article","ts":1762286400000},
+    {"title":"Coach Painter on lineup experimentation","link":"https://www.jconline.com/","source":"Journal & Courier","tier":"insiders","type":"article","ts":1762286400000},
     {"title":"Recruiting board resets after fall visits","link":"https://purdue.rivals.com/","source":"Rivals Purdue","tier":"insiders","type":"article","ts":1762282800000},
-    {"title":"Film Room: PnR counters for 2025–26","link":"https://purdue.rivals.com/","source":"Gold and Black (Rivals)","tier":"insiders","type":"article","ts":1762279200000},
+    {"title":"Film Room: PnR counters for 2025–26","link":"https://purdue.rivals.com/","source":"Gold and Black","tier":"insiders","type":"article","ts":1762279200000},
     {"title":"Mic’d Up: Preseason Workouts","link":"https://www.youtube.com/watch?v=dQw4w9WgXcQ","source":"Purdue Athletics YouTube","tier":"official","type":"video","ts":1762275600000},
     {"title":"Practice Highlights — First Week","link":"https://www.youtube.com/watch?v=oHg5SJYRHA0","source":"BTN Purdue","tier":"official","type":"video","ts":1762272000000},
     {"title":"Summer Highlights Mix","link":"https://www.youtube.com/watch?v=3GwjfUFyY6M","source":"BTN Purdue","tier":"official","type":"video","ts":1762268400000}
