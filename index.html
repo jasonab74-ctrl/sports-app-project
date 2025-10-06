@@ -8,7 +8,11 @@
 <meta name="description" content="Fast Purdue Men’s Basketball hub: live headlines, videos, rankings, schedule, insiders."/>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230d0f12'/%3E%3Ccircle cx='20' cy='22' r='6' fill='%23f2c94c'/%3E%3Cpath d='M13 38h38v12H13z' fill='%23f2c94c'/%3E%3C/svg%3E"/>
 <style>
-:root{--bg:#0d0f12;--card:#15181e;--muted:#9aa1ab;--text:#e9edf2;--brand:#f2c94c;--pill:#242833;--pillText:#cfd6df;--border:#242833;--divider:linear-gradient(90deg,rgba(242,201,76,.50),rgba(242,201,76,0) 60%);}
+:root{
+  --bg:#0d0f12;--card:#15181e;--muted:#9aa1ab;--text:#e9edf2;--brand:#f2c94c;
+  --pill:#242833;--pillText:#cfd6df;--border:#242833;
+  --divider:linear-gradient(90deg,rgba(242,201,76,.50),rgba(242,201,76,0) 60%);
+}
 *{box-sizing:border-box}
 html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
 a{color:inherit;text-decoration:none}
@@ -16,8 +20,11 @@ h1,h2,h3{margin:0}
 .muted{color:var(--muted)}
 html{scroll-behavior:smooth}
 section{scroll-margin-top:72px}
+
 /* Header */
-.topbar{position:sticky;top:0;z-index:50;backdrop-filter:saturate(140%) blur(6px);background:rgba(13,15,18,.78);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;padding:12px 16px}
+.topbar{position:sticky;top:0;z-index:50;backdrop-filter:saturate(140%) blur(6px);
+  background:rgba(13,15,18,.78);border-bottom:1px solid var(--border);
+  display:flex;align-items:center;gap:12px;padding:12px 16px}
 .brand-badge{width:36px;height:36px;border-radius:10px;background:#1a1e26;display:grid;place-items:center}
 .brand-dot{width:14px;height:14px;border-radius:999px;background:var(--brand)}
 .brand{display:flex;flex-direction:column}
@@ -26,16 +33,19 @@ section{scroll-margin-top:72px}
 .nav{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap}
 .nav a{background:var(--pill);color:var(--pillText);border:1px solid var(--border);padding:6px 10px;border-radius:999px}
 .header-divider{height:8px;background:var(--divider)}
+
 /* Layout */
 .container{max-width:1200px;margin:0 auto;padding:16px}
 .grid{display:grid;grid-template-columns:1fr 360px;gap:16px}
-@media (max-width: 1000px){.grid{grid-template-columns:1fr}}
+@media (max-width:1000px){.grid{grid-template-columns:1fr}}
+
 /* Panels / chips */
 .panel{background:transparent;margin:16px 0}
 .panel-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
 .chips{display:flex;gap:8px;flex-wrap:wrap}
 .chip{background:var(--pill);color:var(--pillText);border:1px solid var(--border);padding:6px 10px;border-radius:999px}
 .chip.is-active{background:var(--brand);color:#000;border-color:transparent}
+
 /* Hero / Cards */
 .hero{display:grid;gap:10px;margin-bottom:10px}
 .hero-img-wrap,.card-img-wrap{display:block;border-radius:12px;overflow:hidden;background:#121419}
@@ -46,17 +56,26 @@ section{scroll-margin-top:72px}
 .poster text{font-family:Inter,system-ui,Arial}
 .poster .t1{font-weight:800;fill:#f2c94c}
 .poster .t2{fill:#a9a9af}
+
 .card-grid,.video-grid{display:grid;gap:12px}
 .card-grid{grid-template-columns:repeat(3,1fr)}
 .video-grid{grid-template-columns:repeat(3,1fr)}
 @media (max-width:1024px){.card-grid,.video-grid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:640px){.card-grid,.video-grid{grid-template-columns:1fr}}
-@media (max-width:440px){.container{padding:10px}.card-grid,.video-grid{gap:8px}}
+@media (max-width:440px){
+  .container{padding:10px}
+  .card-grid,.video-grid{gap:8px}
+  .panel{margin:12px 0}
+  .topbar{padding:10px 12px}
+}
+
+/* Cards */
 .card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
 .card-body{padding:10px}
 .card-title{display:block;font-weight:600}
 .pills{display:flex;gap:8px;flex-wrap:wrap}
 .pill{background:var(--pill);color:var(--pillText);padding:4px 8px;border-radius:999px;font-size:12px}
+
 /* Right rail */
 .rail{display:grid;gap:16px}
 .rankings,.schedule-list,.results-list{display:grid;gap:10px}
@@ -66,10 +85,12 @@ section{scroll-margin-top:72px}
 .wl-pill.win{background:#0f5132;color:#d1f7e7}
 .wl-pill.loss{background:#5a1d1d;color:#ffd7d7}
 .res-link{margin-right:10px;color:var(--brand)}
+
 .links-grid{display:grid;gap:10px}
 .link-card{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;padding:10px;background:var(--card);border:1px solid var(--border);border-radius:10px}
 .link-title{font-weight:600}
 .link-sub{color:var(--muted)}
+
 /* Roster */
 .roster-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 @media (max-width:1024px){.roster-grid{grid-template-columns:repeat(3,1fr)}}
@@ -80,6 +101,7 @@ section{scroll-margin-top:72px}
 .player-top{display:flex;justify-content:space-between;align-items:center}
 .player-name{font-weight:700}
 .player-num{font-weight:800}
+
 /* Footer */
 .footer{color:var(--muted);padding:18px 16px;text-align:center}
 </style>
@@ -89,7 +111,12 @@ section{scroll-margin-top:72px}
   <div class="brand-badge"><div class="brand-dot"></div></div>
   <div class="brand"><div class="brand-line1">Team Hub</div><div class="brand-line2">Boilermakers</div></div>
   <nav class="nav" aria-label="Primary">
-    <a href="#news">News</a><a href="#videos">Videos</a><a href="#rankings">Rankings</a><a href="#schedule">Schedule</a><a href="#roster">Roster</a><a href="#nil">NIL</a>
+    <a href="#news">News</a>
+    <a href="#videos">Videos</a>
+    <a href="#rankings">Rankings</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#roster">Roster</a>
+    <a href="#nil">NIL</a>
   </nav>
 </header>
 <div class="header-divider" aria-hidden="true"></div>
@@ -100,7 +127,9 @@ section{scroll-margin-top:72px}
     <section id="news" class="panel" aria-labelledby="news-h">
       <div class="panel-hd">
         <h2 id="news-h">Top Headlines</h2>
-        <div class="chips" aria-label="Filters"><span class="chip is-active">All</span><span class="chip">Official</span><span class="chip">Insiders</span><span class="chip">National</span></div>
+        <div class="chips" aria-label="Filters">
+          <span class="chip is-active">All</span><span class="chip">Official</span><span class="chip">Insiders</span><span class="chip">National</span>
+        </div>
       </div>
       <div class="hero">
         <div id="news-hero" class="hero-img-wrap" aria-live="polite"></div>
@@ -114,21 +143,43 @@ section{scroll-margin-top:72px}
     <aside class="rail">
       <section id="rankings" class="panel" aria-labelledby="rank-h">
         <div class="panel-hd"><h3 id="rank-h">Rankings</h3></div>
-        <div class="rankings"><div class="game"><b>AP Top 25:</b> #3</div><div class="game"><b>KenPom:</b> #2</div></div>
+        <div class="rankings">
+          <div class="game"><b>AP Top 25:</b> #3</div>
+          <div class="game"><b>KenPom:</b> #2</div>
+        </div>
       </section>
+
       <section id="schedule" class="panel" aria-labelledby="sched-h">
         <div class="panel-hd"><h3 id="sched-h">Upcoming Schedule</h3></div>
         <div class="schedule-list">
-          <a class="game" href="#" onclick="return false;"><div class="g-top"><span>11/02/2025</span><span>7:00 PM <small>local</small></span></div><div class="g-title"><span class="logo-pill">E</span> Exhibition <span class="pill">Home</span></div></a>
-          <a class="game" href="#" onclick="return false;"><div class="g-top"><span>11/08/2025</span><span>4:30 PM <small>local</small></span></div><div class="g-title"><span class="logo-pill">IS</span> Indiana State <span class="pill">Home</span></div></a>
-          <a class="game" href="#" onclick="return false;"><div class="g-top"><span>11/11/2025</span><span>7:00 PM <small>local</small></span></div><div class="g-title"><span class="logo-pill">@M</span> @ Marquette <span class="pill">Away</span></div></a>
+          <a class="game" href="#" onclick="return false;">
+            <div class="g-top"><span>11/02/2025</span><span>7:00 PM <small>local</small></span></div>
+            <div class="g-title"><span class="logo-pill">E</span> Exhibition <span class="pill">Home</span></div>
+          </a>
+          <a class="game" href="#" onclick="return false;">
+            <div class="g-top"><span>11/08/2025</span><span>4:30 PM <small>local</small></span></div>
+            <div class="g-title"><span class="logo-pill">IS</span> Indiana State <span class="pill">Home</span></div>
+          </a>
+          <a class="game" href="#" onclick="return false;">
+            <div class="g-top"><span>11/11/2025</span><span>7:00 PM <small>local</small></span></div>
+            <div class="g-title"><span class="logo-pill">@M</span> @ Marquette <span class="pill">Away</span></div>
+          </a>
         </div>
       </section>
+
       <section id="insiders" class="panel" aria-labelledby="ins-h">
         <div class="panel-hd"><h3 id="ins-h">Insider / Beat Links</h3></div>
         <div class="links-grid">
-          <a class="link-card" href="https://www.hammerandrails.com" target="_blank" rel="noopener"><div>📰</div><div class="link-body"><div class="link-title">Hammer & Rails</div><div class="link-sub">SB Nation — Purdue</div></div><div class="link-meta muted">Blog</div></a>
-          <a class="link-card" href="https://purdue.rivals.com" target="_blank" rel="noopener"><div>📰</div><div class="link-body"><div class="link-title">Gold and Black</div><div class="link-sub">Rivals (subscription)</div></div><div class="link-meta muted">$</div></a>
+          <a class="link-card" href="https://www.hammerandrails.com" target="_blank" rel="noopener">
+            <div>📰</div>
+            <div class="link-body"><div class="link-title">Hammer & Rails</div><div class="link-sub">SB Nation — Purdue</div></div>
+            <div class="link-meta muted">Blog</div>
+          </a>
+          <a class="link-card" href="https://purdue.rivals.com" target="_blank" rel="noopener">
+            <div>📰</div>
+            <div class="link-body"><div class="link-title">Gold and Black</div><div class="link-sub">Rivals (subscription)</div></div>
+            <div class="link-meta muted">$</div>
+          </a>
         </div>
       </section>
     </aside>
@@ -138,6 +189,7 @@ section{scroll-margin-top:72px}
   <section id="roster" class="panel" aria-labelledby="roster-h">
     <div class="panel-hd"><h2 id="roster-h">Roster</h2></div>
     <div class="roster-grid">
+      <!-- simple placeholders (static) -->
       <article class="player"><svg class="player-img" viewBox="0 0 600 800" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Guard One (G)"><rect width="600" height="800" fill="#111"/><circle cx="300" cy="240" r="110" fill="#1b1b1f"/><rect x="150" y="360" width="300" height="260" rx="30" fill="#1b1b1f"/></svg><div class="player-body"><div class="player-top"><div class="player-name">Guard One</div><div class="player-num">#0</div></div><div class="player-meta"><span>G</span> • <span>6-4 • 195</span> • <span>Sr.</span></div></div></article>
       <article class="player"><svg class="player-img" viewBox="0 0 600 800" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Guard Two (G)"><rect width="600" height="800" fill="#111"/><circle cx="300" cy="240" r="110" fill="#1b1b1f"/><rect x="150" y="360" width="300" height="260" rx="30" fill="#1b1b1f"/></svg><div class="player-body"><div class="player-top"><div class="player-name">Guard Two</div><div class="player-num">#2</div></div><div class="player-meta"><span>G</span> • <span>6-3 • 190</span> • <span>Jr.</span></div></div></article>
       <article class="player"><svg class="player-img" viewBox="0 0 600 800" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Wing One (G/F)"><rect width="600" height="800" fill="#111"/><circle cx="300" cy="240" r="110" fill="#1b1b1f"/><rect x="150" y="360" width="300" height="260" rx="30" fill="#1b1b1f"/></svg><div class="player-body"><div class="player-top"><div class="player-name">Wing One</div><div class="player-num">#3</div></div><div class="player-meta"><span>G/F</span> • <span>6-7 • 215</span> • <span>So.</span></div></div></article>
@@ -259,7 +311,7 @@ section{scroll-margin-top:72px}
         <a class="card-title" href="${it.link}" target="_blank" rel="noopener">${it.title}</a></div>
       </article>`;
     }).join('');
-    document.getElementById('news-grid').innerHTML = newsCards;
+    grid.innerHTML = newsCards;
     newsStatus.hidden = true;
 
     // VIDEOS
