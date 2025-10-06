@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- BUILD: LIVE-NEWS+VIDEOS • INLINE-CLIENTS • 2025-10-06 -->
+<!-- BUILD: LIVE-NEWS+VIDEOS • INLINE-SEED+OPTIONAL-FETCH • 2025-10-06 -->
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -168,144 +168,134 @@ section{scroll-margin-top:72px}
 </main>
 
 <footer class="footer" role="contentinfo">
-  Updated live • Headlines & Videos from feeds.json → items.json
+  Updated live • Headlines & Videos with inline seed → optional JSON upgrade
 </footer>
 
-<!-- ===== INLINE CLIENTS (no external paths to break) ===== -->
+<!-- ================== INLINE SEED DATA ================== -->
+<script id="seed-items" type="application/json">
+{
+  "items": [
+    {"title":"Purdue Announces 2025–26 Non-Conference Slate","link":"https://purduesports.com/","source":"PurdueSports.com","tier":"official","type":"article","ts":1762300800000},
+    {"title":"AP Poll movers and what it means for Purdue","link":"https://www.si.com/college-basketball","source":"Sports Illustrated CBB","tier":"national","type":"article","ts":1762297200000},
+    {"title":"Big Ten preview: tiers, X-factors, and POY race","link":"https://www.cbssports.com/college-basketball/","source":"CBS Sports CBB","tier":"national","type":"article","ts":1762293600000},
+    {"title":"Big Ten storylines to watch","link":"https://sports.yahoo.com/college-basketball/","source":"Yahoo CBB","tier":"national","type":"article","ts":1762290000000},
+    {"title":"Coach Painter on lineup experimentation","link":"https://www.jconline.com/sports/","source":"Journal & Courier","tier":"insiders","type":"article","ts":1762286400000},
+    {"title":"Recruiting board resets after fall visits","link":"https://247sports.com/college/purdue/","source":"247Sports Purdue","tier":"insiders","type":"article","ts":1762282800000},
+    {"title":"Film Room: PnR counters for 2025–26","link":"https://purdue.rivals.com/","source":"Gold and Black (Rivals)","tier":"insiders","type":"article","ts":1762279200000},
+    {"title":"Mic’d Up: Preseason Workouts","link":"https://www.youtube.com/watch?v=dQw4w9WgXcQ","source":"PurdueSports YouTube","tier":"official","type":"video","ts":1762275600000},
+    {"title":"Practice Highlights — First Week","link":"https://www.youtube.com/watch?v=oHg5SJYRHA0","source":"BTN Purdue","tier":"official","type":"video","ts":1762272000000},
+    {"title":"Summer Highlights Mix","link":"https://www.youtube.com/watch?v=2Z4m4lnjxkY","source":"BTN Purdue","tier":"official","type":"video","ts":1762268400000}
+  ]
+}
+</script>
+
+<!-- ================== RENDERER + OPTIONAL UPGRADE ================== -->
 <script>
-  // Resolve base path for subfolder hosting (e.g., /sports-app-project/)
+  // Base for subfolder hosting (e.g., /sports-app-project/)
   const BASE = (function(){
     const p = location.pathname.endsWith('/') ? location.pathname : location.pathname.replace(/[^/]+$/, '');
-    return p; // e.g., "/sports-app-project/"
+    return p;
   })();
   const ITEMS_URL = BASE + 'static/teams/purdue-mbb/items.json';
 
-  // Shared SVG & helpers
   function posterSVG(label1, label2 = "", wide=false) {
     const view = wide ? '0 0 1200 675' : '0 0 1200 900';
-    const extra = wide ? `
-      <rect x="500" y="238" width="200" height="200" rx="24" fill="#1a1e26"/>
-      <polygon points="560,270 560,406 660,338" fill="#f2c94c"/>` : '';
-    return `
-      <svg class="poster" viewBox="${view}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${label1}">
-        <rect width="1200" height="${wide?675:900}" fill="#0d0f12"/>
-        <rect x="64" y="64" width="1072" height="${wide?547:772}" rx="18" class="frame"/>
-        ${extra}
-        <text x="600" y="${label2 ? (wide?460:430) : (wide?480:460)}" text-anchor="middle" class="t1" font-size="${label2 ? 110 : 120}">${label1}</text>
-        ${label2 ? `<text x="600" y="${wide?520:500}" text-anchor="middle" class="t2" font-size="34">${label2}</text>` : ""}
-      </svg>`;
+    const extra = wide ? `<rect x="500" y="238" width="200" height="200" rx="24" fill="#1a1e26"/><polygon points="560,270 560,406 660,338" fill="#f2c94c"/>` : '';
+    return `<svg class="poster" viewBox="${view}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${label1}">
+      <rect width="1200" height="${wide?675:900}" fill="#0d0f12"/>
+      <rect x="64" y="64" width="1072" height="${wide?547:772}" rx="18" class="frame"/>
+      ${extra}
+      <text x="600" y="${label2 ? (wide?460:430) : (wide?480:460)}" text-anchor="middle" class="t1" font-size="${label2 ? 110 : 120}">${label1}</text>
+      ${label2 ? `<text x="600" y="${wide?520:500}" text-anchor="middle" class="t2" font-size="34">${label2}</text>` : ""}
+    </svg>`;
   }
   function sourceLabels(source) {
     const map = {
-      "PurdueSports.com": ["PurdueSports.com","Official"],
-      "Sports Illustrated CBB": ["Sports Illustrated","CBB"],
-      "CBS Sports CBB": ["CBS Sports","CBB"],
-      "Yahoo CBB": ["Yahoo Sports","CBB"],
-      "Journal & Courier": ["Journal & Courier","Local"],
-      "247Sports Purdue": ["247Sports","Purdue"],
-      "Gold and Black (Rivals)": ["Rivals","Gold & Black"],
-      "YouTube": ["YouTube",""]
+      "PurdueSports.com":["PurdueSports.com","Official"],
+      "Sports Illustrated CBB":["Sports Illustrated","CBB"],
+      "CBS Sports CBB":["CBS Sports","CBB"],
+      "Yahoo CBB":["Yahoo Sports","CBB"],
+      "Journal & Courier":["Journal & Courier","Local"],
+      "247Sports Purdue":["247Sports","Purdue"],
+      "Gold and Black (Rivals)":["Rivals","Gold & Black"],
+      "YouTube":["YouTube",""]
     };
     return map[source] || [source||"Source",""];
   }
   const pill = (t)=>`<span class="pill">${t}</span>`;
-</script>
 
-<script>
-  // NEWS CLIENT (inline)
-  (async function () {
+  function render(items) {
     const grid = document.getElementById('news-grid');
     const heroWrap = document.getElementById('news-hero');
     const heroMeta = document.getElementById('news-hero-meta');
-    const statusEl = document.getElementById('news-status');
+    const newsStatus = document.getElementById('news-status');
+    const vidsGrid = document.getElementById('videos-grid');
+    const vidsStatus = document.getElementById('videos-status');
 
-    function cardHTML(item) {
-      const [l1, l2] = sourceLabels(item.source);
-      return `
-        <article class="card" data-tier="${item.tier || 'national'}">
-          <a class="card-img-wrap" href="${item.link}" target="_blank" rel="noopener">
-            <div class="card-art">${posterSVG(l1, l2, false)}</div>
-          </a>
-          <div class="card-body">
-            <div class="pills">${item.tier?pill(item.tier):""}${item.source?pill(item.source):""}</div>
-            <a class="card-title" href="${item.link}" target="_blank" rel="noopener">${item.title}</a>
-          </div>
+    if (!items || !items.length) {
+      newsStatus.textContent = "No headlines.";
+      newsStatus.hidden = false;
+      vidsStatus.textContent = "No new videos.";
+      vidsStatus.hidden = false;
+      return;
+    }
+
+    // sort new→old
+    items = items.slice().sort((a,b)=> (b.ts||0)-(a.ts||0));
+
+    // HERO (prefer article)
+    const heroIdx = Math.max(0, items.findIndex(i => (i.type||'article') !== 'video'));
+    const hero = items[heroIdx] || items[0];
+    const [l1,l2] = sourceLabels(hero.source||"Source");
+    heroWrap.innerHTML = `<a class="hero-img-wrap" href="${hero.link}" target="_blank" rel="noopener"><div class="hero-art">${posterSVG(l1,l2,true)}</div></a>`;
+    heroMeta.innerHTML = `<div class="pills">${hero.tier?pill(hero.tier):""}${hero.source?pill(hero.source):""}</div><h3 class="hero-title"><a href="${hero.link}" target="_blank" rel="noopener">${hero.title}</a></h3>`;
+
+    // NEWS grid
+    const newsCards = items.filter((_,i)=> i!==heroIdx).slice(0,9).map(it=>{
+      const [a,b] = sourceLabels(it.source||"Source");
+      return `<article class="card" data-tier="${it.tier||'national'}">
+        <a class="card-img-wrap" href="${it.link}" target="_blank" rel="noopener"><div class="card-art">${posterSVG(a,b,false)}</div></a>
+        <div class="card-body"><div class="pills">${it.tier?pill(it.tier):""}${it.source?pill(it.source):""}</div>
+        <a class="card-title" href="${it.link}" target="_blank" rel="noopener">${it.title}</a></div>
+      </article>`;
+    }).join('');
+    document.getElementById('news-grid').innerHTML = newsCards;
+    newsStatus.hidden = true;
+
+    // VIDEOS
+    const vids = items.filter(i=> (i.type||'').toLowerCase()==='video').slice(0,6);
+    if (vids.length){
+      vidsGrid.innerHTML = vids.map(v=>{
+        const lbl = v.source?.includes('YouTube') ? 'YouTube' : (v.source||'Video');
+        return `<article class="card video-card">
+          <a class="card-img-wrap" href="${v.link}" target="_blank" rel="noopener"><div class="hero-art">${posterSVG('Video',lbl,true)}</div></a>
+          <div class="card-body"><div class="pills">${v.tier?pill(v.tier):""}${v.source?pill(v.source):""}</div>
+          <a class="card-title" href="${v.link}" target="_blank" rel="noopener">${v.title}</a></div>
         </article>`;
+      }).join('');
+      vidsStatus.hidden = true;
+    } else {
+      vidsStatus.textContent = "No new videos yet.";
+      vidsStatus.hidden = false;
     }
-    function heroHTML(item) {
-      const [l1, l2] = sourceLabels(item.source);
-      return `
-        <a class="hero-img-wrap" href="${item.link}" target="_blank" rel="noopener">
-          <div class="hero-art">${posterSVG(l1, l2, true)}</div>
-        </a>`;
-    }
+  }
 
-    try {
+  // 1) Render immediately from inline seed (always present)
+  try {
+    const seed = JSON.parse(document.getElementById('seed-items').textContent);
+    render(seed.items||[]);
+  } catch(e) {
+    console.warn('Seed parse error', e);
+  }
+
+  // 2) Try to upgrade from items.json (if present). If it fails, keep seed; no error to user.
+  (async function upgrade(){
+    try{
       const res = await fetch(ITEMS_URL, { cache: 'no-store' });
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      if (!res.ok) return;
       const data = await res.json();
-      const items = (data.items || []).slice().sort((a,b)=> (b.ts||0)-(a.ts||0));
-      if (!items.length) throw new Error('No items');
-
-      const heroIdx = Math.max(0, items.findIndex(i => (i.type||'article') !== 'video'));
-      const heroItem = items[heroIdx] || items[0];
-      const gridItems = items.filter((_,i)=> i !== heroIdx);
-
-      heroWrap.innerHTML = heroHTML(heroItem);
-      heroMeta.innerHTML = `<div class="pills">${heroItem.tier?pill(heroItem.tier):""}${heroItem.source?pill(heroItem.source):""}</div>
-                            <h3 class="hero-title"><a href="${heroItem.link}" target="_blank" rel="noopener">${heroItem.title}</a></h3>`;
-      grid.innerHTML = gridItems.slice(0, 9).map(cardHTML).join('');
-      statusEl.hidden = true;
-    } catch (e) {
-      console.warn('NEWS:', e);
-      const el = document.getElementById('news-status');
-      el.textContent = "Unable to load live headlines.";
-      el.hidden = false;
-    }
-  })();
-</script>
-
-<script>
-  // VIDEOS CLIENT (inline)
-  (async function () {
-    const grid = document.getElementById('videos-grid');
-    const statusEl = document.getElementById('videos-status');
-
-    function cardHTML(item){
-      const label2 = item.source?.includes('YouTube') ? 'YouTube' : (item.source || 'Video');
-      return `
-        <article class="card video-card">
-          <a class="card-img-wrap" href="${item.link}" target="_blank" rel="noopener">
-            <div class="hero-art">${posterSVG('Video', label2, true)}</div>
-          </a>
-          <div class="card-body">
-            <div class="pills">${item.tier?pill(item.tier):""}${item.source?pill(item.source):""}</div>
-            <a class="card-title" href="${item.link}" target="_blank" rel="noopener">${item.title}</a>
-          </div>
-        </article>`;
-    }
-
-    try {
-      const res = await fetch(ITEMS_URL, { cache: 'no-store' });
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const data = await res.json();
-      const vids = (data.items || [])
-        .filter(i => (i.type||'').toLowerCase()==='video')
-        .sort((a,b)=> (b.ts||0)-(a.ts||0))
-        .slice(0,6);
-
-      if (!vids.length) {
-        statusEl.textContent = "No new videos yet.";
-        statusEl.hidden = false;
-        return;
-      }
-      grid.innerHTML = vids.map(cardHTML).join('');
-      statusEl.hidden = true;
-    } catch (e) {
-      console.warn('VIDEOS:', e);
-      statusEl.textContent = "Unable to load videos.";
-      statusEl.hidden = false;
-    }
+      if (data && Array.isArray(data.items) && data.items.length) render(data.items);
+    }catch(e){/* silent */}
   })();
 </script>
 </body>
