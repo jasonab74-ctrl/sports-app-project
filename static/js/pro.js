@@ -1,6 +1,6 @@
 // static/js/pro.js
 // Hydrates panels for Schedule / Rankings / Insiders / Roster
-// Fully safe for GitHub Pages (relative paths only)
+// Safe for GitHub Pages — relative paths only
 
 (function () {
   const BASE = "./";
@@ -48,6 +48,15 @@
     }
   }
 
+  /* ---------- VENUE ICON ---------- */
+  function venueIcon(venue = "") {
+    const v = venue.toLowerCase();
+    if (v.includes("home")) return "🏠";
+    if (v.includes("away")) return "🚗";
+    if (v.includes("neutral")) return "⚖️";
+    return "•";
+  }
+
   /* ---------- SCHEDULE PANEL ---------- */
   function renderSchedule(data) {
     const mount = $("scheduleList");
@@ -90,14 +99,18 @@
             }</div>`
           : "";
 
+        const icon = venueIcon(g.venue);
+
         return `
           <a class="link-card" href="#" tabindex="0">
-            <div class="link-logo">•</div>
+            <div class="link-logo">${icon}</div>
             <div class="link-body">
               <div class="link-title">${escapeHtml(
                 g.opponent || "TBD"
               )}</div>
-              <div class="link-meta">• ${escapeHtml(g.venue || "Neutral")}</div>
+              <div class="link-meta">${icon} ${escapeHtml(
+          g.venue || "Neutral"
+        )}</div>
               <div class="link-meta">• ${fmtLocal(g.utc)}</div>
               ${oddsLine}
             </div>
@@ -120,21 +133,15 @@
     }
   }
 
-  /* ---------- PLACEHOLDER RANKINGS / INSIDERS / ROSTER (expand later) ---------- */
+  /* ---------- PLACEHOLDERS (Rankings/Insiders/Roster) ---------- */
   function renderRankings() {}
   function renderInsiders() {}
   function renderRoster() {}
 
   /* ---------- MASTER HYDRATOR ---------- */
   async function hydratePanels() {
-    // Schedule
     const sched = await loadJSON("static/teams/purdue-mbb/schedule.json");
     renderSchedule(sched);
-
-    // Stubs for other panels (future use)
-    // const ranks = await loadJSON("static/teams/purdue-mbb/rankings.json"); renderRankings(ranks);
-    // const insiders = await loadJSON("static/teams/purdue-mbb/insiders.json"); renderInsiders(insiders);
-    // const roster = await loadJSON("static/teams/purdue-mbb/roster.json"); renderRoster(roster);
   }
 
   /* ---------- EXPORT ---------- */
