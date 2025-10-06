@@ -106,3 +106,8 @@ body{padding-bottom:46px}
 .z-btn, .ztool, .scroll-tools, .fab, [data-floating-tools], .__debugFab__ {
   display: none !important;
 }
+/* Hide any leftover floating tools/buttons */
+.ui-fab, .z-fab, .dev-fab, .debug-fab, .gd-fab, .gd-resizer, .gd-expand,
+.z-btn, .ztool, .scroll-tools, .fab, [data-floating-tools], .__debugFab__ {
+  display: none !important;
+}
