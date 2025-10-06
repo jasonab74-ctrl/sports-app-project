@@ -1,37 +1,39 @@
-name: Collect Feeds
+name: Auto-update feeds
 
 on:
   schedule:
-    - cron: "*/30 * * * *"   # ⏱️ Auto-run every 30 minutes
-  workflow_dispatch:        # ▶️ Allow manual runs in the Actions tab
+    - cron: "0 */3 * * *" # every 3 hours
+  workflow_dispatch:
 
 jobs:
-  update-feeds:
-    name: Update and Commit Feeds
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: 📥 Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: 🐍 Set up Python
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: 📦 Install deps
-        run: |
-          python -m pip install --upgrade pip
-          pip install feedparser beautifulsoup4 pyyaml rapidfuzz
+      - name: Install deps
+        run: pip install feedparser requests
 
-      # You can switch this to tools/collect.py (shim) if you prefer.
-      - name: 🔄 Run collector
-        run: python src/collect.py
+      - name: Run collector
+        run: python tools/collect.py
 
-      - name: 📤 Commit and push updates
+      - name: Update version tags for cache busting
         run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-          git add static/teams/purdue-mbb/items.json
-          git commit -m "🤖 Auto-update feeds [skip ci]" || echo "✅ No changes to commit"
-          git push
+          ver=$(date +'%Y-%m-%dT%H:%M:%S')
+          sed -i "s#app.css?v=[^\"']*#app.css?v=$ver#g" index.html
+          sed -i "s#app.js?v=[^\"']*#app.js?v=$ver#g" index.html
+          sed -i "s#pro.js?v=[^\"']*#pro.js?v=$ver#g" index.html
+          echo "Cache version updated to $ver"
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add -A
+          git diff --quiet && echo "No changes" || (git commit -m "Auto-update feeds and cache bust ($ver)" && git push)
