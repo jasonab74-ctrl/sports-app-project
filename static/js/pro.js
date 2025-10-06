@@ -1,6 +1,6 @@
 // static/js/pro.js
 // Hydrates panels for Schedule / Rankings / Insiders / Roster
-// Safe for GitHub Pages — relative paths only
+// Clean version — no icons, no footer timestamp
 
 (function () {
   const BASE = "./";
@@ -23,14 +23,8 @@
   function fmtLocal(iso) {
     try {
       const dt = new Date(iso);
-      const d = dt.toLocaleDateString([], {
-        month: "2-digit",
-        day: "2-digit",
-      });
-      const t = dt.toLocaleTimeString([], {
-        hour: "2-digit",
-        minute: "2-digit",
-      });
+      const d = dt.toLocaleDateString([], { month: "2-digit", day: "2-digit" });
+      const t = dt.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
       return `${d}, ${t} local`;
     } catch {
       return iso;
@@ -48,15 +42,6 @@
     }
   }
 
-  /* ---------- VENUE ICON ---------- */
-  function venueIcon(venue = "") {
-    const v = venue.toLowerCase();
-    if (v.includes("home")) return "🏠";
-    if (v.includes("away")) return "🚗";
-    if (v.includes("neutral")) return "⚖️";
-    return "•";
-  }
-
   /* ---------- SCHEDULE PANEL ---------- */
   function renderSchedule(data) {
     const mount = $("scheduleList");
@@ -67,7 +52,6 @@
       return;
     }
 
-    // Filter for upcoming games (now - 3h safety)
     const now = Date.now() - 3 * 60 * 60 * 1000;
     const upcoming = data.games
       .filter((g) => new Date(g.utc).getTime() >= now)
@@ -99,41 +83,20 @@
             }</div>`
           : "";
 
-        const icon = venueIcon(g.venue);
-
         return `
           <a class="link-card" href="#" tabindex="0">
-            <div class="link-logo">${icon}</div>
             <div class="link-body">
-              <div class="link-title">${escapeHtml(
-                g.opponent || "TBD"
-              )}</div>
-              <div class="link-meta">${icon} ${escapeHtml(
-          g.venue || "Neutral"
-        )}</div>
-              <div class="link-meta">• ${fmtLocal(g.utc)}</div>
+              <div class="link-title">${escapeHtml(g.opponent || "TBD")}</div>
+              <div class="link-meta">${escapeHtml(g.venue || "Neutral")}</div>
+              <div class="link-meta">${fmtLocal(g.utc)}</div>
               ${oddsLine}
             </div>
           </a>`;
       })
       .join("");
-
-    // Optional footer “last updated”
-    const updated = data.updated
-      ? new Date(data.updated).toLocaleString([], {
-          hour: "2-digit",
-          minute: "2-digit",
-        })
-      : "";
-    if (updated) {
-      const footer = document.createElement("div");
-      footer.className = "footer-note small";
-      footer.textContent = `Updated ${updated}`;
-      mount.parentNode.appendChild(footer);
-    }
   }
 
-  /* ---------- PLACEHOLDERS (Rankings/Insiders/Roster) ---------- */
+  /* ---------- STUB PANELS ---------- */
   function renderRankings() {}
   function renderInsiders() {}
   function renderRoster() {}
