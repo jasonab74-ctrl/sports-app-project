@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- BUILD: LIVE-NEWS+VIDEOS • INLINE-SEED+OPTIONAL-FETCH • PANELS IN JS • 2025-10-06 -->
+<!-- BUILD: INLINE NEWS/VIDEOS • PANELS IN JS (Rankings/Insiders/Roster/Schedule) • 2025-10-06 -->
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -76,7 +76,7 @@ section{scroll-margin-top:72px}
 .footer-note{color:var(--muted);font-size:12px;text-align:center;margin-top:10px}
 </style>
 
-<!-- Panels JS (rankings/roster/insiders) -->
+<!-- Panels JS (rankings/insiders/roster/schedule) -->
 <script src="static/js/pro.js" defer></script>
 </head>
 <body>
@@ -247,27 +247,6 @@ function render(items){
   document.getElementById('sourceCount').textContent = '';
 }
 
-// Schedule helpers (remain inline for stability)
-function initials(name='?'){
-  const clean = name.replace(/^[@vs]\s*/,'').replace(/\(.*?\)/g,'').trim();
-  const parts = clean.split(/\s+/);
-  return (parts[0]?.[0]||'').toUpperCase() + (parts[1]?.[0]||'').toUpperCase();
-}
-function renderSchedule(sched=[]){
-  const el=document.getElementById('scheduleList');
-  el.innerHTML = (sched||[]).slice(0,6).map(g=>{
-    const dt=new Date(g.utc||g.date);
-    const when = isNaN(dt.getTime()) ? (g.date||'') : dt.toLocaleString([], {month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit'});
-    return `<div class="link-card">
-      <div class="link-logo">${esc(g.opponent?initials(g.opponent):'•')}</div>
-      <div class="link-body">
-        <div class="link-title">${esc(g.opponent||'TBD')}</div>
-        <div class="link-meta">${esc(g.comp||'')} • ${esc(g.site||'')} • ${when} local</div>
-      </div>
-    </div>`;
-  }).join('');
-}
-
 // 1) Render immediately from inline seed for news/videos
 try {
   const seed = JSON.parse(document.getElementById('seed-items').textContent);
@@ -286,15 +265,7 @@ try {
   }catch(e){/* silent */}
 })();
 
-// 3) Schedule remains hydrated inline (unchanged, stable)
-(async function hydrateSchedule(){
-  try{
-    const r = await fetch(url('static/schedule.json'));
-    if (r.ok) renderSchedule(await r.json());
-  }catch(e){}
-})();
-
-// 4) Kick external panels (rankings/insiders/roster) now that pro.js has loaded
+// 3) Kick external panels (rankings/insiders/roster/schedule) via pro.js
 document.addEventListener('DOMContentLoaded', () => {
   if (window.PRO && typeof window.PRO.hydratePanels === 'function') {
     window.PRO.hydratePanels('/sports-app-project/');
