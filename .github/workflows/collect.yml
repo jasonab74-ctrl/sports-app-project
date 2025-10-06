@@ -22,22 +22,29 @@ jobs:
         with:
           python-version: "3.11"
 
-      # ✅ Step 5: install BeautifulSoup in CI (plus other deps)
+      # Install required Python deps (HTML scraping + HTTP)
       - name: Install deps
         run: |
           pip install feedparser requests beautifulsoup4
 
-      - name: Run collector
+      - name: Run collector (news/videos/etc.)
         run: python tools/collect.py
 
-      # Build official schedule + odds (uses BeautifulSoup + optional Odds API)
-      - name: Build schedule (ICS + odds)
+      # Clean, text-only logs (no graphics). Uses ODDS_API_KEY if present.
+      - name: Build schedule (ICS + Odds)
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
         run: |
-          echo "Building Purdue MBB schedule..."
+          echo "----------------------------------------"
+          echo "Building Purdue MBB schedule (ICS + Odds)"
+          if [ -n "${ODDS_API_KEY}" ]; then
+            echo "Odds API active and will be queried."
+          else
+            echo "No ODDS_API_KEY set — skipping odds integration."
+          fi
           python tools/schedule_collect.py
-          echo "Schedule build complete."
+          echo "Schedule build step complete."
+          echo "----------------------------------------"
 
       - name: Update version tags for cache busting
         run: |
