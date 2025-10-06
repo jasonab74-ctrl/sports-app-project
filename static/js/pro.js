@@ -1,4 +1,4 @@
-// static/js/pro.js — schedule panel (richer fields, still non-clickable)
+// static/js/pro.js — schedule panel (clean: odds hidden, still fetched)
 (function () {
   const BASE = "./";
   const url = (p) => BASE + p.replace(/^\//, "");
@@ -44,12 +44,12 @@
     }
 
     el.innerHTML = upcoming.map(g=>{
-      // Pick a highlight book if odds exist
-      const odds = Array.isArray(g?.odds?.consensus) ? g.odds.consensus : [];
-      const head = odds.find(o => o.spread!==null && o.spread!==undefined) || odds[0];
-      const oddsLine = head
-        ? `Odds: ${esc(head.book)}${head.spread!==null&&head.spread!==undefined?` • Spread: ${head.spread}`:""}${head.total?` • Total: ${head.total}`:""}${head.moneyline?` • ML: ${head.moneyline}`:""}`
-        : "";
+      // Odds line intentionally hidden — data still available if needed
+      // const odds = Array.isArray(g?.odds?.consensus) ? g.odds.consensus : [];
+      // const head = odds.find(o => o.spread!==null && o.spread!==undefined) || odds[0];
+      // const oddsLine = head
+      //   ? `Odds: ${esc(head.book)}${head.spread!==null&&head.spread!==undefined?` • Spread: ${head.spread}`:""}${head.total?` • Total: ${head.total}`:""}${head.moneyline?` • ML: ${head.moneyline}`:""}`
+      //   : "";
 
       return `
         <div class="link-card schedule-card">
@@ -60,7 +60,6 @@
             ${line("Event", g.event)}
             ${line("TV", g.tv)}
             ${line("Location", g.location)}
-            ${oddsLine ? `<div class="link-meta">${oddsLine}</div>` : ""}
             ${g.url ? `<div class="link-meta"><a class="muted" href="${esc(g.url)}" target="_blank" rel="noopener">Game details ↗</a></div>` : ""}
           </div>
         </div>`;
