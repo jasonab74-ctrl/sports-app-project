@@ -5,9 +5,7 @@
   "ics_url": "https://purduesports.com/services/download_file.ashx?filename=calendar.ics&type=ical&sport_id=15",
   "schedule_url": "https://purduesports.com/sports/mens-basketball/schedule",
 
-  /* NEW: ESPN team + seasons to query (ESPN MBB team id for Purdue) */
   "espn_team_id": "2509",
-  /* ESPN tends to use the starting calendar year of the season; try both just in case */
   "espn_seasons": ["2025", "2026"],
 
   "books": ["draftkings", "fanduel", "betmgm", "caesars"]
