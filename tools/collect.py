@@ -2,21 +2,16 @@
 """
 tools/collect.py
 
-Builds a single, deduped news feed at:
+Aggregates all news sources and outputs:
   static/data/news.json
 
-What’s new:
-- Canonical URL + smart de-dupe across syndications
-- OpenGraph thumbnail extraction (lazy-friendly)
+Features:
+- Canonical URL + title hashing to remove duplicates
+- OpenGraph thumbnail scraping for visuals
 - Paywall tagging by source
-- Tier support: official | insiders | national | local | video
-- Stable ordering + “pin official first”
-- Compact logs (no emoji)
-
-This script reads:
-  static/data/sources.json
-and writes:
-  static/data/news.json
+- Sorts newest → oldest
+- Pins official sources first
+- Clean minimal logs
 """
 
 import os, re, json, time, hashlib
@@ -35,12 +30,15 @@ HEADERS = {
 }
 TIMEOUT = 20
 
+
 def load_sources():
     with open(SRC_PATH, "r", encoding="utf-8") as f:
         return json.load(f)["sources"]
 
+
 def now_ms():
     return int(time.time() * 1000)
+
 
 def strip_tracking(u: str) -> str:
     try:
@@ -51,44 +49,36 @@ def strip_tracking(u: str) -> str:
     except Exception:
         return u
 
+
 def canonical_key(url: str, title: str) -> str:
-    """
-    Build a de-duplication key from domain + slug-ish path + simplified title.
-    This collapses AP-syndicated or wire copies across sites.
-    """
+    """Unique hash combining domain + slug + title for de-duping."""
     try:
         u = strip_tracking(url)
         p = urlparse(u)
-        host = p.netloc.lower()
+        host = p.netloc.lower().replace("www.", "")
         path = re.sub(r"/+", "/", p.path.lower()).strip("/")
         path = re.sub(r"\.html?$", "", path)
-        path = path.split("/")[-3:]  # last 3 segments often carry the slug
-        path_key = "-".join(path)
-
-        # Simplify title
+        path_key = "-".join(path.split("/")[-3:])
         t = re.sub(r"[^a-z0-9]+", "-", (title or "").lower()).strip("-")
-        t = re.sub(r"-+", "-", t)
-
-        # Keep just a few host chars to avoid overly long keys
-        host_key = host.replace("www.", "")
-        base = f"{host_key}:{path_key}:{t}"
+        base = f"{host}:{path_key}:{t}"
         return hashlib.sha1(base.encode("utf-8")).hexdigest()[:20]
     except Exception:
         return hashlib.sha1((url + title).encode("utf-8")).hexdigest()[:20]
 
+
 def fetch_html(url: str) -> str | None:
     try:
         r = requests.get(url, headers=HEADERS, timeout=TIMEOUT)
-        if r.ok and "text/html" in r.headers.get("Content-Type",""):
+        if r.ok and "text/html" in r.headers.get("Content-Type", ""):
             return r.text
     except Exception:
         pass
     return None
 
+
 def extract_og_image(html: str) -> str | None:
     try:
         soup = BeautifulSoup(html, "html.parser")
-        # Check common meta tags
         for sel in [
             "meta[property='og:image']",
             "meta[name='og:image']",
@@ -102,12 +92,12 @@ def extract_og_image(html: str) -> str | None:
         pass
     return None
 
+
 def as_item(entry, src_cfg):
     title = (entry.get("title") or "").strip()
     link = (entry.get("link") or "").strip()
     if not title or not link:
         return None
-
     link = strip_tracking(link)
     ts = None
     for k in ("published_parsed", "updated_parsed"):
@@ -117,10 +107,8 @@ def as_item(entry, src_cfg):
     if not ts:
         ts = now_ms()
 
-    # Video hint if enclosure or YouTube domain
     etype = "video" if ("enclosures" in entry and entry["enclosures"]) or "youtube.com" in link else "article"
-
-    item = {
+    return {
         "title": title,
         "link": link,
         "source": src_cfg["name"],
@@ -130,7 +118,7 @@ def as_item(entry, src_cfg):
         "image": None,
         "paywall": src_cfg.get("paywall", False),
     }
-    return item
+
 
 def collect():
     sources = load_sources()
@@ -143,8 +131,7 @@ def collect():
             continue
         try:
             feed = feedparser.parse(url)
-            take = s.get("limit", 12)
-            for e in (feed.entries or [])[:take]:
+            for e in (feed.entries or [])[: s.get("limit", 10)]:
                 it = as_item(e, s)
                 if it:
                     items.append(it)
@@ -152,10 +139,10 @@ def collect():
         except Exception as e:
             print(f"  {s['name']}: feed error: {e}")
 
-    # Optional OG image fetch for the first N recent items per domain (keep it light)
+    # Sort and get thumbnails for first 60
     items.sort(key=lambda x: x["ts"], reverse=True)
     seen_host = {}
-    for it in items[:60]:  # cap work
+    for it in items[:60]:
         host = urlparse(it["link"]).netloc
         seen_host.setdefault(host, 0)
         if seen_host[host] >= 3:
@@ -167,18 +154,15 @@ def collect():
                 it["image"] = og
         seen_host[host] += 1
 
-    # De-dupe across syndications
-    deduped = []
-    seen = set()
+    # De-duplicate by canonical key
+    deduped, seen = [], set()
     for it in items:
         key = canonical_key(it["link"], it["title"])
-        # de-dupe strict by key; if collision keep the "better" one: official > insiders > national > local
-        if key in seen:
-            continue
-        seen.add(key)
-        deduped.append(it)
+        if key not in seen:
+            seen.add(key)
+            deduped.append(it)
 
-    # Pin official first (within sort by ts desc)
+    # Pin official sources to top
     official = [x for x in deduped if x["tier"] == "official"]
     rest = [x for x in deduped if x["tier"] != "official"]
     official.sort(key=lambda x: x["ts"], reverse=True)
@@ -188,8 +172,8 @@ def collect():
     os.makedirs(DATA_DIR, exist_ok=True)
     with open(OUT_PATH, "w", encoding="utf-8") as f:
         json.dump({"items": out, "updated": now_ms()}, f, ensure_ascii=False, indent=2)
+    print(f"Wrote {OUT_PATH} ({len(out)} items).")
 
-    print(f"Wrote {OUT_PATH} with {len(out)} items.")
 
 if __name__ == "__main__":
     collect()
