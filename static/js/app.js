@@ -1,183 +1,190 @@
-// app.js — stable, subpath-safe (RELATIVE paths only)
-(() => {
-  const BASE = "./"; // ✅ works at any project subpath
-  const url = (p) => BASE + p.replace(/^\//, "");
-  const byId = (id) => document.getElementById(id);
+// static/js/app.js
+// Top Headlines UX: filters, de-dupe display, thumbnails, paywall lock, save/copy, timeago.
 
-  const esc = (s='') => (s+'').replace(/[&<>"']/g, c=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
-  const pill = (t) => t ? `<span class="pill">${esc(t)}</span>` : '';
+(function () {
+  const $ = (q, root = document) => root.querySelector(q);
+  const $$ = (q, root = document) => Array.from(root.querySelectorAll(q));
+  const store = {
+    get(k, d) { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } },
+    set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} }
+  };
 
-  const posterSVG = (l1='News', l2='') =>
-    `<svg viewBox="0 0 800 450" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#202631"/><stop offset="1" stop-color="#0d1117"/></linearGradient></defs><rect fill="url(#g)" width="100%" height="100%"/><g fill="#f2c94c" opacity="0.9"><rect x="48" y="48" width="120" height="18" rx="9"/><rect x="180" y="48" width="80" height="18" rx="9"/></g><text x="48" y="110" fill="#e9edf2" font-size="28" font-family="system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial">${esc(l1)}</text>${l2?`<text x="48" y="145" fill="#9aa1ab" font-size="18">${esc(l2)}</text>`:''}</svg>`;
+  const FILTER_KEY = "newsFilter";      // all | official | insiders | national
+  const SAVED_KEY  = "savedArticles";   // array of link hashes
 
-  function sourceLabels(s){
-    const map = {
-      'PurdueSports.com':['Official','Purdue'],
-      'BTN Purdue':['BTN','Purdue'],
-      'Purdue Athletics YouTube':['YouTube','Official'],
-      'Sports Illustrated CBB':['SI','CBB'],
-      'CBS Sports CBB':['CBS','CBB'],
-      'Yahoo CBB':['Yahoo','CBB'],
-      'Rivals Purdue':['Rivals','Purdue'],
-      'Gold and Black (Rivals)':['G&B','Purdue'],
-      'Gold and Black':['G&B','Purdue'],
-      'Journal & Courier':['J&C','Local']
-    };
-    return map[s] || ['News',''];
-  }
+  const timeAgo = (ts) => {
+    const diff = Date.now() - ts;
+    const m = Math.max(0, Math.floor(diff / 60000));
+    if (m < 60) return `${m}m ago`;
+    const h = Math.floor(m/60);
+    if (h < 24) return `${h}h ago`;
+    const d = Math.floor(h/24);
+    return `${d}d ago`;
+  };
 
-  function sourceIcon(s=''){
-    s = (s||'').toLowerCase();
-    if (s.includes('btn')) return '🟦';
-    if (s.includes('purdue athletics youtube') || s.includes('youtube')) return '▶️';
-    if (s.includes('purdue')) return '🏅';
-    if (s.includes('sports illustrated') || s === 'si') return '📰';
-    if (s.includes('rivals') || s.includes('gold and black')) return '💬';
-    if (s.includes('cbs')) return '📺';
-    if (s.includes('yahoo')) return '🟣';
-    return '🗞️';
-  }
-
-  function timeAgo(ts){
-    try{
-      const ms = typeof ts === 'number' ? ts : Number(ts);
-      if (!ms) return '';
-      const mins = (Date.now() - ms)/60000;
-      if (mins < 1) return 'just now';
-      if (mins < 60) return `${Math.round(mins)}m ago`;
-      if (mins < 1440) return `${Math.round(mins/60)}h ago`;
-      const dt = new Date(ms);
-      return dt.toLocaleString([], {month:'short', day:'numeric'});
-    }catch{return '';}
-  }
-
-  function metaLine(item){
-    const bits = [];
-    if (item.tier) bits.push(esc(item.tier));
-    if (item.source) bits.push(esc(item.source));
-    const when = timeAgo(item.ts);
-    if (when) bits.push(when);
-    return bits.join(' • ');
-  }
-
-  function render(items){
-    const grid = byId('news-grid');
-    const heroWrap = byId('news-hero');
-    const heroMeta = byId('news-hero-meta');
-    const newsStatus = byId('news-status');
-    const vidsGrid = byId('videos-grid');
-    const vidsStatus = byId('videos-status');
-
-    if (!items || !items.length) {
-      newsStatus.textContent = "No headlines.";
-      newsStatus.hidden = false;
-      vidsStatus.textContent = "No new videos.";
-      vidsStatus.hidden = false;
-      return;
+  const hash = (s) => {
+    let h = 0, i, chr;
+    for (i = 0; i < s.length; i++) {
+      chr = s.charCodeAt(i);
+      h = ((h << 5) - h) + chr;
+      h |= 0;
     }
+    return "h" + Math.abs(h);
+  };
 
-    items = items.slice().sort((a,b)=> (b.ts||0)-(a.ts||0));
+  function getSeedItems() {
+    const tag = $("#seed-items");
+    if (!tag) return [];
+    try { return JSON.parse(tag.textContent).items || []; } catch { return []; }
+  }
 
-    // HERO
-    const heroIdx = Math.max(0, items.findIndex(i => (i.type||'article') !== 'video'));
-    const hero = items[heroIdx] || items[0];
-    const [l1,l2] = sourceLabels(hero.source||"Source");
-    const heroBadge = sourceIcon(hero.source||'');
-    heroWrap.innerHTML = `
-      <a class="hero-img-wrap" href="${hero.link}" target="_blank" rel="noopener">
-        <div class="hero-art">${posterSVG(l1,l2,true)}</div>
-      </a>`;
-    heroMeta.innerHTML = `
-      <div class="pills">${hero.tier?pill(hero.tier):""}${hero.source?pill(hero.source):""}</div>
-      <h3 class="card-title"><a href="${hero.link}" target="_blank" rel="noopener">${esc(hero.title||'Untitled')}</a></h3>
-      <div class="meta-line">${esc(metaLine(hero))}</div>
-    `;
-    // badge overlay
-    const b = document.createElement('div');
-    b.className = 'card-badge';
-    b.textContent = heroBadge;
-    heroWrap.style.position = 'relative';
-    heroWrap.appendChild(b);
+  async function fetchNews() {
+    try {
+      const r = await fetch("./static/data/news.json?v=" + Date.now(), { cache: "no-store" });
+      if (!r.ok) throw new Error("news.json not found");
+      return await r.json();
+    } catch {
+      // Fallback to seed only
+      return { items: getSeedItems(), updated: Date.now() };
+    }
+  }
 
-    // GRID
-    const rest = items.filter((_,i)=>i!==heroIdx);
-    grid.innerHTML = rest.slice(0,15).map(i => {
-      const [a,b] = sourceLabels(i.source||"");
-      const isVid = (i.type||'article') === 'video';
-      const badge = sourceIcon(i.source||'');
-      return `
-        <article class="card">
-          <a class="card-img-wrap" href="${i.link}" target="_blank" rel="noopener" aria-label="${esc(i.title||'Open')}">
-            <div class="card-badge" aria-hidden="true">${badge}</div>
-            <div class="hero-art">${posterSVG(isVid?'Video':(a||'News'), b||'')}</div>
-          </a>
-          <div class="card-body">
-            <div class="pills">${i.tier?pill(i.tier):""}${i.source?pill(i.source):""}</div>
-            <a class="card-title" href="${i.link}" target="_blank" rel="noopener">${esc(i.title||'Untitled')}</a>
-            <div class="meta-line">${esc(metaLine(i))}</div>
+  function pillsInit() {
+    const last = store.get(FILTER_KEY, "all");
+    $$(".pills .pill").forEach(p => {
+      const val = p.textContent.trim().toLowerCase();
+      if (val === (last === "all" ? "all" : (last.endsWith("s") ? last : last + "s"))) {
+        p.classList.add("active");
+      }
+      p.addEventListener("click", () => {
+        $$(".pills .pill").forEach(x=>x.classList.remove("active"));
+        p.classList.add("active");
+        const key = p.textContent.trim().toLowerCase();
+        const filter = key === "all" ? "all" :
+          (key === "official" || key === "insiders" || key === "national") ? key.replace(/s$/,'') : "all";
+        store.set(FILTER_KEY, filter);
+        render(); // re-render with new filter
+      });
+    });
+  }
+
+  function cardHTML(it, savedSet) {
+    const locked = it.paywall ? `<span class="lock" title="Likely paywalled">🔒</span>` : "";
+    const img = it.image ? `<div class="card-thumb"><img loading="lazy" src="${it.image}" alt=""></div>` : "";
+    const linkHash = hash(it.link);
+    const isSaved = savedSet.has(linkHash);
+    const saveTitle = isSaved ? "Remove from Saved" : "Save";
+    const saveIcon  = isSaved ? "★" : "☆";
+
+    return `
+      <article class="card ${it.tier}">
+        ${img}
+        <div class="card-body">
+          <div class="card-kickers">
+            <span class="kicker">${it.tier}</span>
+            <span class="kicker src">${it.source}${locked}</span>
           </div>
-        </article>`;
-    }).join('');
-
-    // VIDEOS
-    const vids = items.filter(i => (i.type||'article') === 'video').slice(0,12);
-    if (vids.length){
-      vidsGrid.innerHTML = vids.map(v => {
-        const [l1,l2] = sourceLabels(v.source||"");
-        const badge = sourceIcon(v.source||'');
-        return `
-          <article class="card video-card">
-            <a class="card-img-wrap" href="${v.link}" target="_blank" rel="noopener">
-              <div class="card-badge" aria-hidden="true">${badge}</div>
-              <div class="hero-art">${posterSVG('Video',l1||l2||'')}</div>
-            </a>
-            <div class="card-body">
-              <div class="pills">${v.tier?pill(v.tier):""}${v.source?pill(v.source):""}</div>
-              <a class="card-title" href="${v.link}" target="_blank" rel="noopener">${esc(v.title)}</a>
-              <div class="meta-line">${esc(metaLine(v))}</div>
-            </div>
-          </article>`;
-      }).join('');
-      vidsStatus.hidden = true;
-    } else {
-      vidsStatus.textContent = "No new videos yet.";
-      vidsStatus.hidden = false;
-    }
-
-    byId('updatedFooter').textContent = `Updated ${new Date().toLocaleString([], {hour:'2-digit', minute:'2-digit'})}`;
-    byId('sourceCount').textContent = '';
+          <a class="card-title" href="${it.link}" target="_blank" rel="noopener">${it.title}</a>
+          <div class="card-meta" data-ts="${it.ts}">
+            <span class="ago">${timeAgo(it.ts)}</span> • ${it.source}
+          </div>
+          <div class="card-actions">
+            <button class="btn-icon copy" data-url="${it.link}" title="Copy link">⎘</button>
+            <button class="btn-icon save" data-id="${linkHash}" data-url="${it.link}" data-title="${it.title}" title="${saveTitle}">${saveIcon}</button>
+          </div>
+        </div>
+      </article>`;
   }
 
-  // Seed-first render
-  let seedItems = [];
-  try {
-    const tag = byId('seed-items');
-    if (tag && tag.textContent.trim()) {
-      const parsed = JSON.parse(tag.textContent);
-      if (Array.isArray(parsed?.items)) seedItems = parsed.items;
-    }
-  } catch {}
-  if (!seedItems.length) {
-    seedItems = [
-      {"title":"Purdue Announces 2025–26 Non-Conference Slate","link":"https://purduesports.com/","source":"PurdueSports.com","tier":"official","type":"article","ts":1762300800000}
-    ];
+  function attachCardEvents(root) {
+    // copy link
+    root.querySelectorAll(".btn-icon.copy").forEach(btn => {
+      btn.addEventListener("click", async () => {
+        const url = btn.getAttribute("data-url");
+        try { await navigator.clipboard.writeText(url); btn.textContent = "✓"; setTimeout(()=>btn.textContent="⎘", 800); } catch {}
+      });
+    });
+    // save/unsave
+    root.querySelectorAll(".btn-icon.save").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const id = btn.getAttribute("data-id");
+        const saved = new Set(store.get(SAVED_KEY, []));
+        if (saved.has(id)) { saved.delete(id); btn.textContent = "☆"; btn.title = "Save"; }
+        else { saved.add(id); btn.textContent = "★"; btn.title = "Remove from Saved"; }
+        store.set(SAVED_KEY, Array.from(saved));
+      });
+    });
   }
-  render(seedItems);
 
-  // Upgrade from items.json (RELATIVE path)
-  (async function upgrade(){
-    try{
-      const res = await fetch(url('static/teams/purdue-mbb/items.json'), { cache: 'no-store' });
-      if (!res.ok) return;
-      const data = await res.json();
-      if (data && Array.isArray(data.items) && data.items.length) render(data.items);
-    }catch(e){/* silent */}
-  })();
+  let newsCache = null;
+  async function render() {
+    const grid = $("#news-grid");
+    const heroWrap = $("#news-hero");
+    const heroMeta = $("#news-hero-meta");
+    if (!grid || !heroWrap) return;
 
-  // Hydrate external panels if present
-  document.addEventListener('DOMContentLoaded', () => {
-    if (window.PRO && typeof window.PRO.hydratePanels === 'function') {
-      window.PRO.hydratePanels('./');
+    if (!newsCache) {
+      $("#news-status")?.removeAttribute("hidden");
+      newsCache = await fetchNews();
+      $("#news-status")?.setAttribute("hidden", "");
     }
+
+    const filter = store.get(FILTER_KEY, "all"); // 'all' | 'official' | 'insider' | 'national'
+    const savedSet = new Set(store.get(SAVED_KEY, []));
+
+    // choose list with pinned official at top already (collector does this),
+    // but we still filter on the client when user taps pills
+    let list = newsCache.items || [];
+    if (filter !== "all") {
+      const map = { insider: "insiders", official: "official", national: "national" };
+      const expect = filter === "insider" ? "insiders" : map[filter] || filter;
+      list = list.filter(it => it.tier === expect || it.tier === filter);
+    }
+
+    // HERO = first item with image, else top item
+    let hero = list.find(x => x.image) || list[0];
+    if (hero) {
+      heroWrap.innerHTML = `<a class="hero-img" href="${hero.link}" target="_blank" rel="noopener" aria-label="${hero.title}">
+        <img src="${hero.image || ""}" alt="">
+      </a>`;
+      heroMeta.innerHTML = `
+        <div class="meta-row">
+          <span class="pill small">${hero.tier}</span>
+          <span class="pill small">${hero.source}</span>
+        </div>
+        <a class="hero-title" href="${hero.link}" target="_blank" rel="noopener">${hero.title}</a>
+        <div class="muted small">${timeAgo(hero.ts)}</div>`;
+    }
+
+    // CARDS (skip the hero if it appears in filtered list)
+    const rest = list.filter(x => !hero || x.link !== hero.link);
+    const html = rest.slice(0, 21).map(it => cardHTML(it, savedSet)).join("");
+    grid.innerHTML = html;
+    attachCardEvents(grid);
+  }
+
+  // timeago auto-tick
+  setInterval(() => {
+    $$(".card-meta").forEach(el => {
+      const ts = Number(el.getAttribute("data-ts"));
+      if (ts) { $(".ago", el).textContent = timeAgo(ts); }
+    });
+  }, 60 * 1000);
+
+  // Keyboard navigation: j/k or arrows
+  document.addEventListener("keydown", (e) => {
+    if (!["ArrowLeft","ArrowRight","ArrowUp","ArrowDown","j","k"].includes(e.key)) return;
+    const cards = $$(".card-title");
+    if (!cards.length) return;
+    const active = document.activeElement;
+    let idx = cards.indexOf(active);
+    if (e.key === "ArrowRight" || e.key === "ArrowDown" || e.key === "j") idx++;
+    if (e.key === "ArrowLeft"  || e.key === "ArrowUp"   || e.key === "k") idx--;
+    idx = Math.max(0, Math.min(cards.length-1, idx));
+    cards[idx].focus();
   });
+
+  // bootstrap
+  pillsInit();
+  render();
 })();
