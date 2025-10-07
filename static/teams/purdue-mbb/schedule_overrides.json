@@ -1,0 +1,22 @@
+{
+  "games": [
+    {
+      "date": "2025-11-04",
+      "opponent": "Evansville",
+      "venue": "Home",
+      "location": "Mackey Arena — West Lafayette, IN",
+      "event": "",
+      "tv": ""
+    }
+  ],
+  "add": [
+    {
+      "opponent": "Kentucky (Exhibition)",
+      "utc": "2025-10-24T22:00:00Z",
+      "venue": "Away",
+      "location": "Rupp Arena — Lexington, KY",
+      "event": "Exhibition",
+      "tv": ""
+    }
+  ]
+}
