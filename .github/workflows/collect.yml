@@ -1,14 +1,9 @@
 name: Auto-update feeds
 
 on:
-  # Default: run every 3 hours (keeps the site fresh in-season)
   schedule:
     - cron: "0 */3 * * *"
-  # Manual trigger anytime from the GitHub UI
   workflow_dispatch:
-  # Optional: also run when pushing to main (uncomment if you want this)
-  # push:
-  #   branches: [ "main" ]
 
 jobs:
   build:
@@ -22,7 +17,6 @@ jobs:
         with:
           python-version: "3.11"
 
-      # Install required Python deps (HTML scraping + HTTP)
       - name: Install deps
         run: |
           pip install feedparser requests beautifulsoup4
@@ -30,7 +24,6 @@ jobs:
       - name: Run collector (news/videos/etc.)
         run: python tools/collect.py
 
-      # Clean, text-only logs (no graphics). Uses ODDS_API_KEY if present.
       - name: Build schedule (ICS + Odds)
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
@@ -52,7 +45,6 @@ jobs:
           sed -i "s#app.css?v=[^\"']*#app.css?v=$ver#g" index.html || true
           sed -i "s#app.js?v=[^\"']*#app.js?v=$ver#g" index.html || true
           sed -i "s#pro.js?v=[^\"']*#pro.js?v=$ver#g" index.html || true
-          echo "Cache version updated to $ver"
 
       - name: Commit and push if changed
         run: |
@@ -62,10 +54,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "Auto-update feeds + schedule + cache bust ($(date -u +'%Y-%m-%d %H:%M:%SZ'))"
+            git commit -m "Auto-update feeds + schedule ($(date -u +'%Y-%m-%d %H:%M:%SZ'))"
             git push
           fi
-
-# To switch to a single daily update at 6 AM America/Phoenix (UTC-7), replace the cron above with:
-#   schedule:
-#     - cron: "0 13 * * *"   # 13:00 UTC == 06:00 Phoenix (no DST)
