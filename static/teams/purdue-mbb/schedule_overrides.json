@@ -1,13 +1,17 @@
 {
+  "ensure": [
+    { "date": "2025-11-04", "opponent": "Evansville", "venue": "Home", "time": "19:00", "tz": "America/New_York", "location": "Mackey Arena — West Lafayette, IN", "event": "Regular Season Opener" },
+    { "date": "2025-11-07", "opponent": "Oakland", "venue": "Home", "time": "19:00", "tz": "America/New_York", "location": "Mackey Arena — West Lafayette, IN" },
+    { "date": "2025-11-13", "opponent": "Alabama", "venue": "Neutral", "time": "19:00", "tz": "America/New_York", "location": "", "event": "" },
+    { "date": "2025-11-16", "opponent": "Akron", "venue": "Home", "time": "19:00", "tz": "America/New_York", "location": "Mackey Arena — West Lafayette, IN" },
+    { "date": "2025-11-20", "opponent": "Memphis", "venue": "Neutral", "time": "16:00", "tz": "America/New_York", "location": "", "event": "" }
+  ],
   "games": [
-    {
-      "date": "2025-11-04",
-      "opponent": "Evansville",
-      "venue": "Home",
-      "location": "Mackey Arena — West Lafayette, IN",
-      "event": "",
-      "tv": ""
-    }
+    { "date": "2025-11-04", "opponent": "Evansville", "venue": "Home", "location": "Mackey Arena — West Lafayette, IN", "event": "Regular Season Opener" },
+    { "date": "2025-11-07", "opponent": "Oakland", "venue": "Home", "location": "Mackey Arena — West Lafayette, IN" },
+    { "date": "2025-11-13", "opponent": "Alabama", "venue": "Neutral" },
+    { "date": "2025-11-16", "opponent": "Akron", "venue": "Home", "location": "Mackey Arena — West Lafayette, IN" },
+    { "date": "2025-11-20", "opponent": "Memphis", "venue": "Neutral" }
   ],
   "add": [
     {
