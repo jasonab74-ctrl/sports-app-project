@@ -4,16 +4,13 @@
 # Output: static/teams/purdue-mbb/schedule.json
 #
 # Merge priority:
-#  1) ESPN schedule JSON (complete, often earliest)
-#  2) Purdue schedule page (Sidearm) for richer labels
-#  3) Official ICS (authoritative times when present)
-#  4) Manual overrides (update + add)
-#  5) Odds (if ODDS_API_KEY set)
+#  1) ESPN schedule JSON (broad coverage, opponent/TV often earliest)
+#  2) Purdue schedule page (Sidearm) for event/location/TV
+#  3) Official ICS (authoritative tip times when present)
+#  4) Overrides (update-by-date, and ENSURE: add missing games by date)
+#  5) Odds (The Odds API, optional via ODDS_API_KEY)
 #
-# Notes:
-# - We key games primarily by tipoff date (UTC day) + opponent fuzzy name.
-# - All times emitted as UTC ISO; UI renders local time.
-# - Plain, minimal logs so your Actions don’t spam.
+# Logs are plain text.
 
 import os, json, re, datetime
 from datetime import timezone
@@ -40,7 +37,7 @@ OUT_PATH = os.path.join(TEAM_DIR, "schedule.json")
 HOME_TZ = "America/Indiana/Indianapolis"
 FALLBACK_TZ = "America/New_York"
 
-# ---------------- utils ----------------
+# --------------- utils ---------------
 def load_json(path, default=None):
     if not os.path.exists(path): return default
     with open(path, "r", encoding="utf-8") as f:
@@ -65,12 +62,11 @@ def to_utc_iso(local_dt: datetime.datetime, tz_name: str) -> str:
         tz = zoneinfo.ZoneInfo(FALLBACK_TZ)
     return local_dt.replace(tzinfo=tz).astimezone(timezone.utc).isoformat().replace("+00:00","Z")
 
-def norm(s): return re.sub(r"[^a-z0-9]+", "", (s or "").lower())
-
+def norm(s): return re.sub(r"[^a-z0-9]+","", (s or "").lower())
 def pick(a, b):  # prefer a unless empty, else b
     return a if (a is not None and str(a).strip() != "") else b
 
-# ---------------- ICS ----------------
+# --------------- ICS ---------------
 def parse_ics(ics_text):
     events, block = [], []
     for line in ics_text.splitlines():
@@ -125,9 +121,8 @@ def clean_opponent(summary):
     opp = re.sub(r"\s*\(.*?\)$", "", opp).strip("-–—: ").strip()
     return opp or "TBD"
 
-# ---------------- Purdue page (Sidearm) ----------------
+# --------------- Purdue page (Sidearm) ---------------
 TIME_RX = re.compile(r'(?P<h>\d{1,2})(?::(?P<m>\d{2}))?\s*(?P<ampm>AM|PM)\s*(?P<tz>[A-Z]{2,4})?', re.I)
-
 def parse_local_time(text):
     m = TIME_RX.search(text or "")
     if not m: return None, None, None
@@ -189,7 +184,7 @@ def scrape_sidearm(url):
         })
     return games
 
-# ---------------- ESPN JSON ----------------
+# --------------- ESPN JSON ---------------
 def fetch_espn(team_id, seasons):
     all_games = []
     base = "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/{tid}/schedule"
@@ -202,30 +197,27 @@ def fetch_espn(team_id, seasons):
             try:
                 date_iso = item.get("date")  # UTC ISO
                 comp = (item.get("competitions") or [])[0]
-                venue = "Home" if comp.get("venue",{}).get("address",{}).get("city","") and comp.get("competitors") else None
-                # figure home/away via competitors
-                home_team = None; away_team = None; opp_name = None; home_away = None
-                for c in comp.get("competitors", []):
-                    if c.get("homeAway") == "home": home_team = c
-                    if c.get("homeAway") == "away": away_team = c
-                # Purdue team id
+                # find if Purdue is home/away and opponent name
                 purdue_id = str(team_id)
+                home_away = None
+                opp_name = None
                 for c in comp.get("competitors", []):
                     if c.get("team",{}).get("id") == purdue_id:
                         home_away = c.get("homeAway")
-                # opponent name
                 for c in comp.get("competitors", []):
                     if c.get("team",{}).get("id") != purdue_id:
                         opp_name = c.get("team",{}).get("displayName")
+
                 vtype = "Home" if home_away == "home" else ("Away" if home_away == "away" else "Neutral")
                 city = comp.get("venue",{}).get("address",{}).get("city","")
                 state = comp.get("venue",{}).get("address",{}).get("state","")
-                loc = " — ".join([x for x in [comp.get("venue",{}).get("fullName",""), f"{city}, {state}".strip(", ")] if x])
+                locname = comp.get("venue",{}).get("fullName","")
+                loc = " — ".join([x for x in [locname, f"{city}, {state}".strip(", ")] if x])
 
                 tv = ""
                 tvc = comp.get("broadcasts") or []
                 if tvc:
-                    tv = ", ".join(sorted({b.get("names",[None])[0] for b in tvc if b.get("names")}))
+                    tv = ", ".join(sorted({(b.get("names") or [None])[0] for b in tvc if b.get("names")}))
 
                 url = item.get("links",[{}])[0].get("href","")
 
@@ -243,10 +235,37 @@ def fetch_espn(team_id, seasons):
                 continue
     return all_games
 
-# ---------------- Overrides ----------------
+# --------------- overrides ---------------
 def infer_local_date_str(iso_utc):
     dt = datetime.datetime.fromisoformat(iso_utc.replace("Z","+00:00"))
     return dt.astimezone().strftime("%Y-%m-%d")
+
+def ensure_games_by_date(games, ensure_list):
+    """If an override provides a date with opponent/time/venue, create the game when missing."""
+    if not ensure_list: return games
+    # Build index by local date
+    have = {infer_local_date_str(g["utc"]) for g in games}
+    for e in ensure_list:
+        date = e.get("date")
+        if not date or date in have:  # already have that calendar day
+            continue
+        # time support: "HH:MM" and optional tz name
+        t = (e.get("time") or "19:00")
+        hh, mm = map(int, t.split(":"))
+        tz_name = e.get("tz") or HOME_TZ
+        y, m, d = map(int, date.split("-"))
+        utc = to_utc_iso(datetime.datetime(y, m, d, hh, mm, 0), tz_name)
+        games.append({
+            "opponent": e.get("opponent","TBD"),
+            "utc": utc,
+            "venue": e.get("venue","Neutral"),
+            "location": e.get("location",""),
+            "event": e.get("event",""),
+            "tv": e.get("tv",""),
+            "url": e.get("url","")
+        })
+        have.add(date)
+    return games
 
 def apply_overrides_update(games, overrides):
     if not overrides or not overrides.get("games"): return games
@@ -259,7 +278,8 @@ def apply_overrides_update(games, overrides):
         if date in by_date:
             for g in by_date[date]:
                 for k in ("opponent","venue","location","event","tv","url"):
-                    g[k] = pick(o.get(k), g.get(k))
+                    if o.get(k) not in (None, ""):
+                        g[k] = o[k]
     return games
 
 def apply_overrides_add(games, overrides):
@@ -281,7 +301,7 @@ def apply_overrides_add(games, overrides):
         })
     return games
 
-# ---------------- Odds ----------------
+# --------------- odds ---------------
 def add_odds(cfg, games):
     api_key = os.getenv("ODDS_API_KEY")
     if not api_key:
@@ -342,41 +362,44 @@ def add_odds(cfg, games):
             continue
     return games, updated
 
-# ---------------- main ----------------
+# --------------- main ---------------
 def main():
     cfg = load_json(CFG_PATH, {})
     if not cfg: raise SystemExit("Missing team config.json")
 
+    # ESPN
     espn_games = []
     if cfg.get("espn_team_id"):
-        print("Fetching ESPN schedule…")
+        print("Fetching ESPN schedule...")
         espn_games = fetch_espn(cfg["espn_team_id"], cfg.get("espn_seasons", []))
     print(f"ESPN games: {len(espn_games)}")
 
+    # Sidearm
     sidearm_games = []
     try:
-        print("Scraping Purdue schedule page…")
+        print("Scraping Purdue schedule page...")
         sidearm_games = scrape_sidearm(cfg["schedule_url"])
     except Exception as e:
         print(f"Sidearm scrape failed: {e}")
     print(f"Sidearm rows: {len(sidearm_games)}")
 
+    # ICS
     ics_items = []
     try:
-        print("Fetching ICS…")
+        print("Fetching ICS...")
         ics_text = fetch(cfg["ics_url"])
         ics_items = parse_ics(ics_text)
     except Exception as e:
         print(f"ICS failed: {e}")
     print(f"ICS events: {len(ics_items)}")
 
-    # Indexers
+    # Index + merge
     def key_from(opponent, utc):
-        return (utc.split("T")[0], norm(opponent))  # day + normalized opp
+        return (utc.split("T")[0], norm(opponent))  # day + opponent
 
     merged = {}
 
-    # 1) seed with ESPN (best coverage)
+    # seed with ESPN
     for g in espn_games:
         k = key_from(g["opponent"], g["utc"])
         merged[k] = {
@@ -389,9 +412,8 @@ def main():
             "url": g.get("url","")
         }
 
-    # 2) enrich with Sidearm (labels, event, tv, location; may lack UTC)
+    # enrich/add with Sidearm
     for pg in sidearm_games:
-        # attempt to build a UTC from page when it doesn't match ESPN
         utc_guess = None
         src = pg.get("local_date","")
         if re.match(r"^\d{4}-\d{2}-\d{2}", src):
@@ -401,8 +423,6 @@ def main():
             tz_name = pg.get("tz") or HOME_TZ
             utc_guess = to_utc_iso(datetime.datetime(y,m,d,hh,mm,0), tz_name)
 
-        # find best match by same day
-        k = None
         if utc_guess:
             k = key_from(pg["opponent"], utc_guess)
             if k in merged:
@@ -423,17 +443,16 @@ def main():
                     "url": pg.get("url","")
                 }
 
-    # 3) use ICS to confirm/override exact UTC time (authoritative tip)
+    # confirm/override tip with ICS
     for it in ics_items:
         summary = it.get("summary",""); loc_raw = it.get("location",""); desc = it.get("description","")
         opp = clean_opponent(summary)
         k = key_from(opp, it["utc"])
         if k in merged:
             mg = merged[k]
-            # prefer ICS utc if same day/opp but utc differs slightly
-            mg["utc"] = it["utc"]
+            mg["utc"] = it["utc"]  # ICS time wins
             mg["venue"] = pick(classify_venue(summary, loc_raw, desc), mg.get("venue"))
-            mg["location"] = pick(mg.get("location"), loc_raw)  # keep nicer if we already have it
+            mg["location"] = pick(mg.get("location"), loc_raw)
         else:
             merged[k] = {
                 "opponent": opp,
@@ -445,13 +464,18 @@ def main():
                 "url": ""
             }
 
-    # 4) flatten + overrides
     out_games = list(merged.values())
+
+    # overrides
     overrides = load_json(OVR_PATH, {})
+    # ensure specific dates exist (creates games if missing)
+    out_games = ensure_games_by_date(out_games, overrides.get("ensure"))
+    # update fields on those dates
     out_games = apply_overrides_update(out_games, overrides)
+    # add any explicit UTC games
     out_games = apply_overrides_add(out_games, overrides)
 
-    # 5) odds
+    # odds
     out_games.sort(key=lambda x: x["utc"])
     out_games, n_with_odds = add_odds(cfg, out_games)
 
@@ -463,5 +487,6 @@ def main():
     print(f"Wrote {OUT_PATH} with {len(out_games)} games.")
     print(f"Odds updated for {n_with_odds} games.")
     print("Done.")
+
 if __name__ == "__main__":
     main()
