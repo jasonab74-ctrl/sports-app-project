@@ -3,26 +3,29 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Purdue MBB Hub • Live Headlines & Videos</title>
-<meta name="description" content="Purdue Men’s Basketball hub: live headlines, videos, rankings, schedule, insiders."/>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231a1e26'/%3E%3Cpath d='M13 14h38v12H13z' fill='%23f2c94c'/%3E%3Cpath d='M13 26h38v12H13z' fill='%23c0a23a'/%3E%3Cpath d='M13 38h38v12H13z' fill='%23f2c94c'/%3E%3C/svg%3E"/>
-<link rel="stylesheet" href="./static/css/app.css?v=2025-10-07T21:15:37Z"/>
+<title>Purdue MBB Hub</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231a1e26'/%3E%3Ccircle cx='20' cy='20' r='8' fill='%23f2c94c'/%3E%3C/svg%3E"/>
+<link rel="stylesheet" href="./static/css/app.css?v=fix-headlines-hydrate"/>
 </head>
 <body>
 
 <header class="topbar">
   <div class="brand-badge"><div class="brand-dot"></div></div>
   <div>Boilermakers</div>
-  <!-- nav removed on purpose -->
 </header>
 
 <main class="wrap">
   <div class="grid">
-    <!-- MAIN -->
+    <!-- MAIN: Headlines -->
     <section id="news" class="panel" aria-labelledby="news-h">
       <div class="panel-hd">
         <h2 id="news-h">Top Headlines</h2>
-        <div class="pills"><span class="pill">All</span><span class="pill">Official</span><span class="pill">Insiders</span><span class="pill">National</span></div>
+        <div class="pills">
+          <span class="pill active">all</span>
+          <span class="pill">official</span>
+          <span class="pill">insiders</span>
+          <span class="pill">national</span>
+        </div>
       </div>
       <div class="panel-subnote muted small">Refreshed every 30 min • Auto-updated via GitHub Actions</div>
 
@@ -46,8 +49,8 @@
         </div>
       </section>
 
-      <section id="schedule" class="panel" aria-labelledby="sch-h">
-        <div class="panel-hd"><h3 id="sch-h">Upcoming Schedule</h3></div>
+      <section id="schedule" class="panel" aria-labelledby="schedule-h">
+        <div class="panel-hd"><h3 id="schedule-h">Upcoming Schedule</h3></div>
         <div id="scheduleList" class="simple-list"></div>
       </section>
 
@@ -69,45 +72,18 @@
     <p id="videos-status" class="muted" hidden>Loading videos…</p>
   </section>
 
-  <section id="nil" class="panel" aria-labelledby="nil-h">
-    <div class="panel-hd"><h3 id="nil-h">NIL</h3></div>
-    <div class="simple-list">
-      <a class="link-card clickable" href="https://www.purdue.edu" target="_blank" rel="noopener">
-        <div class="link-body">
-          <div class="link-title">Purdue NIL (placeholder)</div>
-          <div class="link-meta">Add your official NIL links here</div>
-        </div>
-      </a>
-    </div>
-  </section>
-
-  <p class="footer-note" id="updatedFooter">Updated live • Inline seed → optional JSON upgrade</p>
-  <p class="footer-note" id="sourceCount"></p>
+  <p class="footer-note">© 2025 Boilermakers Hub • Auto-updated every 30 min</p>
 </main>
 
-<!-- Fixed footer -->
-<div class="footer-fixed">
-  <span>© 2025 Boilermakers Hub</span><span>•</span><span>Auto-updated every 30 min</span>
-</div>
-
-<!-- Seed (keeps first paint non-empty) -->
+<!-- Seed fallback so the page never looks empty -->
 <script id="seed-items" type="application/json">
 { "items": [
-  {"title":"Purdue Announces 2025–26 Non-Conference Slate","link":"https://purduesports.com/","source":"PurdueSports.com","tier":"official","type":"article","ts":1762300800000},
-  {"title":"AP Poll movers and what it means for Purdue","link":"https://www.si.com/college-basketball","source":"Sports Illustrated CBB","tier":"national","type":"article","ts":1762297200000},
-  {"title":"Big Ten preview: tiers, X-factors, and POY race","link":"https://www.cbssports.com/college-basketball/","source":"CBS Sports CBB","tier":"national","type":"article","ts":1762293600000},
-  {"title":"Big Ten storylines to watch","link":"https://sports.yahoo.com/college-basketball/","source":"Yahoo CBB","tier":"national","type":"article","ts":1762290000000},
-  {"title":"Coach Painter on lineup experimentation","link":"https://www.jconline.com/","source":"Journal & Courier","tier":"insiders","type":"article","ts":1762286400000},
-  {"title":"Recruiting board resets after fall visits","link":"https://purdue.rivals.com/","source":"Rivals Purdue","tier":"insiders","type":"article","ts":1762282800000},
-  {"title":"Film Room: PnR counters for 2025–26","link":"https://purdue.rivals.com/","source":"Gold and Black","tier":"insiders","type":"article","ts":1762279200000},
-  {"title":"Mic’d Up: Preseason Workouts","link":"https://www.youtube.com/watch?v=dQw4w9WgXcQ","source":"Purdue Athletics YouTube","tier":"official","type":"video","ts":1762275600000},
-  {"title":"Practice Highlights — First Week","link":"https://www.youtube.com/watch?v=oHg5SJYRHA0","source":"BTN Purdue","tier":"official","type":"video","ts":1762272000000},
-  {"title":"Summer Highlights Mix","link":"https://www.youtube.com/watch?v=3GwjfUFyY6M","source":"BTN Purdue","tier":"official","type":"video","ts":1762268400000}
+  {"title":"Purdue Announces 2025–26 Non-Conference Slate","link":"https://purduesports.com/","source":"PurdueSports.com","tier":"official","type":"article","ts":1762300800000}
 ]}
 </script>
 
 <!-- JS -->
-<script src="./static/js/app.js?v=2025-10-07T21:15:37Z" defer></script>
-<script src="./static/js/pro.js?v=2025-10-07T21:15:37Z" defer></script>
+<script src="./static/js/app.js?v=fix-headlines-hydrate" defer></script>
+<script src="./static/js/pro.js?v=fix-headlines-hydrate" defer></script>
 </body>
 </html>
