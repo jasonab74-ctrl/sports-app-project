@@ -1,40 +1,68 @@
 {
-  "updated": "2025-10-06T00:00:00Z",
+  "updated": "2025-10-06T22:00:00Z",
   "games": [
     {
-      "opponent": "TBD",
-      "utc": "2025-11-02T23:00:00Z",
-      "venue": "Home",
-      "location": "Mackey Arena, West Lafayette, IN",
-      "note": ""
+      "opponent": "Kentucky (Exhibition)",
+      "utc": "2025-10-24T22:00:00Z",
+      "venue": "Away",
+      "location": "Rupp Arena — Lexington, KY",
+      "event": "Exhibition",
+      "tv": "",
+      "url": "https://purduesports.com/sports/mens-basketball/schedule"
     },
     {
       "opponent": "TBD",
-      "utc": "2025-11-08T19:30:00Z",
+      "utc": "2025-11-02T21:00:00Z",
       "venue": "Home",
-      "location": "Mackey Arena, West Lafayette, IN",
-      "note": ""
+      "location": "Mackey Arena — West Lafayette, IN",
+      "event": "",
+      "tv": "",
+      "url": "https://purduesports.com/sports/mens-basketball/schedule"
+    },
+    {
+      "opponent": "Evansville",
+      "utc": "2025-11-05T00:00:00Z",
+      "venue": "Home",
+      "location": "Mackey Arena — West Lafayette, IN",
+      "event": "Regular Season Opener",
+      "tv": "",
+      "url": "https://purduesports.com/sports/mens-basketball/schedule"
     },
     {
       "opponent": "TBD",
-      "utc": "2025-11-12T01:00:00Z",
+      "utc": "2025-11-08T17:30:00Z",
+      "venue": "Home",
+      "location": "Mackey Arena — West Lafayette, IN",
+      "event": "",
+      "tv": "",
+      "url": "https://purduesports.com/sports/mens-basketball/schedule"
+    },
+    {
+      "opponent": "TBD",
+      "utc": "2025-11-12T00:00:00Z",
       "venue": "Away",
       "location": "",
-      "note": ""
+      "event": "",
+      "tv": "",
+      "url": "https://purduesports.com/sports/mens-basketball/schedule"
     },
     {
       "opponent": "TBD",
-      "utc": "2025-11-19T01:00:00Z",
+      "utc": "2025-11-19T00:00:00Z",
       "venue": "Neutral",
       "location": "",
-      "note": ""
+      "event": "",
+      "tv": "",
+      "url": "https://purduesports.com/sports/mens-basketball/schedule"
     },
     {
       "opponent": "TBD",
-      "utc": "2025-11-26T17:00:00Z",
+      "utc": "2025-11-26T15:00:00Z",
       "venue": "Neutral",
       "location": "",
-      "note": ""
+      "event": "",
+      "tv": "",
+      "url": "https://purduesports.com/sports/mens-basketball/schedule"
     }
   ]
 }
