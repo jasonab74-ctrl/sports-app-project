@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
 # tools/collect.py
 #
-# Build a Purdue *Men's Basketball only* news file from mixed feeds.
-# Keeps all OFFICIAL + INSIDERS if they look like MBB, and for NATIONAL/LOCAL
-# keeps only items that clearly reference Purdue MBB (title/summary/link).
+# Build a Purdue *Men's Basketball only* news file.
+# - Keeps OFFICIAL/INSIDERS/NATIONAL/LOCAL only if it looks like Purdue MBB.
+# - Extracts images from feed media OR first <img> in content/summary;
+#   if missing, falls back to article's OpenGraph image (og:image) with a short request.
 #
 # Output -> static/data/news.json
 
 import os, re, json, time, hashlib, html
 from urllib.parse import urlparse
-import feedparser
+import feedparser, requests
 
 ROOT = os.path.dirname(os.path.dirname(__file__))
 DATA_DIR = os.path.join(ROOT, "static", "data")
@@ -18,45 +19,28 @@ OUT_PATH = os.path.join(DATA_DIR, "news.json")
 
 # ---- Purdue MBB keyword model ---------------------------------------------
 MBB_POSITIVE = [
-    # general
     r"\bmen'?s?\s+basketball\b", r"\bmbb\b", r"\bbasketball\b", r"\bhoops?\b",
     r"\bpaint crew\b", r"\bmackey\s+arena\b",
-    # coaches
     r"\bmatt\s+painter\b",
-    # players (keep a few high-signal current/recent names; extend as needed)
-    r"\bzach\s+edey\b", r"\bbraden\s+smith\b", r"\bfletcher\s+loyer\b",
-    r"\bcaleb\s+furst\b", r"\bcarsen\s+edwards\b", r"\bjaden\s+ivey\b",
-    # opponents often seen in MBB context
-    r"\bbig\s+ten\b", r"\bncaa\b", r"\bmarch\s+madness\b",
-    r"\bexhibition\b", r"\bregular\s+season\b", r"\btournament\b",
+    r"\bzach\s+edey\b", r"\bbraden\s+smith\b", r"\bfletcher\s+loyer\b", r"\bcaleb\s+furst\b",
+    r"\bbig\s+ten\b", r"\bncaa\b", r"\bmarch\s+madness\b", r"\bexhibition\b", r"\bregular\s+season\b", r"\btournament\b",
 ]
-
-# Terms that strongly indicate *football* (to suppress)
 FOOTBALL_NEG = [
     r"\bfootball\b", r"\bfball\b", r"\bqb\b", r"\bquarterback\b", r"\brunning\s*back\b",
     r"\bwide\s*receiver\b", r"\boffensive\s*line\b", r"\bdefensive\s*line\b",
-    r"\bcoach\s+ryan\s+walters\b", r"\bwalters\b",
-    r"\bhudson\s+card\b", r"\bgridiron\b",
-    r"\bkinnick\b", r"\bross-ade\b",
+    r"\bcoach\s+ryan\s+walters\b", r"\bwalters\b", r"\bhudson\s+card\b", r"\bgridiron\b", r"\bross-ade\b",
 ]
-
-# Purdue identity (must be present somewhere)
 PURDUE_CORE = [r"\bpurdue\b", r"\bboilermakers?\b", r"\bwest\s+lafayette\b"]
 
-def compile_list(rx_list):
-    return [re.compile(rx, re.I) for rx in rx_list]
-
+def compile_list(rx_list): return [re.compile(rx, re.I) for rx in rx_list]
 RX_MBB = compile_list(MBB_POSITIVE)
 RX_FB  = compile_list(FOOTBALL_NEG)
 RX_PU  = compile_list(PURDUE_CORE)
 
-# Path hints that usually mean basketball
 PATH_HINTS = [
     "/mbb", "/m-basketball", "/mens-basketball", "/men-basketball",
     "/basketball/", "/college-basketball/", "/ncaa-basketball/"
 ]
-
-# ---------------------------------------------------------------------------
 
 def load_json(p, d=None):
     if not os.path.exists(p): return d
@@ -69,7 +53,7 @@ def save_json(p, obj):
         json.dump(obj, f, ensure_ascii=False, indent=2)
 
 def domain(u):
-    try: return urlparse(u).hostname or ""
+    try: return (urlparse(u).hostname or "").replace("www.","")
     except: return ""
 
 def clean_text(s):
@@ -79,8 +63,7 @@ def clean_text(s):
     s = re.sub(r"\s+", " ", s).strip()
     return s
 
-def hash_id(s):
-    return hashlib.sha256(s.encode("utf-8")).hexdigest()[:16]
+def hash_id(s): return hashlib.sha256((s or "").encode("utf-8")).hexdigest()[:16]
 
 def when_ts(entry):
     for k in ("published_parsed", "updated_parsed", "created_parsed"):
@@ -88,17 +71,49 @@ def when_ts(entry):
             return int(time.mktime(entry[k])) * 1000
     return int(time.time() * 1000)
 
+IMG_RX = re.compile(r'<img[^>]+src=["\']([^"\']+)["\']', re.I)
+def image_from_html(html_str):
+    if not isinstance(html_str, str): return None
+    m = IMG_RX.search(html_str)
+    return m.group(1) if m else None
+
 def first_image(entry):
+    # 1) media:content / media:thumbnail
     media = entry.get("media_content") or entry.get("media_thumbnail") or []
     for m in media:
-        if m.get("url"): return m["url"]
-    val = entry.get("summary")
-    if isinstance(val, list) and val:
-        val = val[0].get("value")
-    if isinstance(val, str):
-        m = re.search(r'<img [^>]*src=["\']([^"\']+)["\']', val, flags=re.I)
-        if m: return m.group(1)
+        url = m.get("url")
+        if url: return url
+
+    # 2) content HTML
+    if entry.get("content"):
+        for c in entry["content"]:
+            url = image_from_html(c.get("value") or "")
+            if url: return url
+
+    # 3) summary as HTML
+    url = image_from_html(entry.get("summary") or "")
+    if url: return url
+
+    # 4) summary_detail if html
+    sd = entry.get("summary_detail") or {}
+    if sd.get("type") and "html" in sd.get("type"):
+        url = image_from_html(sd.get("value") or "")
+        if url: return url
+
     return None
+
+def og_image(link):
+    # Lightweight OG fetch (timeout 6s). Only plain GET and tiny parse to avoid heavy work.
+    try:
+        r = requests.get(link, timeout=6, headers={"User-Agent":"Mozilla/5.0"})
+        if r.status_code != 200: return None
+        # search og:image quickly
+        m = re.search(r'<meta[^>]+property=["\']og:image["\'][^>]*content=["\']([^"\']+)["\']', r.text, re.I)
+        if m: return m.group(1)
+        m = re.search(r'<meta[^>]+content=["\']([^"\']+)["\'][^>]*property=["\']og:image["\']', r.text, re.I)
+        return m.group(1) if m else None
+    except Exception:
+        return None
 
 def fetch_feed(url, tier):
     try:
@@ -109,16 +124,22 @@ def fetch_feed(url, tier):
     for e in fp.entries:
         link = e.get("link") or ""
         title = clean_text(e.get("title"))
-        summary = clean_text(
+        # RAW summary for text; keep HTML for image extraction already handled in first_image
+        summary_txt = clean_text(
             e.get("summary") or (e.get("content",[{}])[0].get("value") if e.get("content") else "")
         )
-        src = domain(link).replace("www.","") or domain(fp.href or url)
+        src = domain(link) or domain(fp.href or url)
         ts = when_ts(e)
+
         img = first_image(e)
+        # If feed lacks image, small OG probe
+        if not img and link:
+            img = og_image(link)
+
         items.append({
             "id": hash_id(link or title),
             "title": title,
-            "summary": summary,
+            "summary": summary_txt,
             "link": link,
             "source": src,
             "tier": tier,
@@ -137,31 +158,22 @@ def uniq(items):
         seen.add(key); out.append(it)
     return out
 
-# ---- filtering -------------------------------------------------------------
-def has_any(regexes, text):
-    return any(r.search(text) for r in regexes)
+def has_any(rx_list, text): return any(rx.search(text) for rx in rx_list)
 
 def looks_basketball(item):
     blob = " ".join([item.get("title",""), item.get("summary",""), item.get("link",""), item.get("source","")]).lower()
-    # strong path hints
     path = urlparse(item.get("link","")).path.lower()
-    if any(h in path for h in PATH_HINTS):
-        return True
-    # must look like Purdue, then MBB, and not football
-    if not has_any(RX_PU, blob):
-        # allow official domains (purduesports.com) to pass Purdue check
-        if "purduesports.com" not in (item.get("source","") or ""):
+    if any(h in path for h in PATH_HINTS):  # strong URL hint
+        pass
+    else:
+        # must look like Purdue; official domain passes this check
+        if not has_any(RX_PU, blob) and "purduesports.com" not in (item.get("source") or ""):
             return False
-    if has_any(RX_FB, blob):
-        # allow if it *also* clearly says basketball/mbb (rare mixed posts)
-        return has_any(RX_MBB, blob)
-    return has_any(RX_MBB, blob)
-
-def is_relevant(item, tier):
-    # For all tiers, we require MBB-ness
-    return looks_basketball(item)
-
-# ---------------------------------------------------------------------------
+        if has_any(RX_FB, blob) and not has_any(RX_MBB, blob):  # football? reject unless it also clearly says basketball
+            return False
+        if not has_any(RX_MBB, blob):
+            return False
+    return True
 
 def main():
     cfg = load_json(SRC_PATH, {})
@@ -180,15 +192,15 @@ def main():
         for u in urls:
             raw.extend(fetch_feed(u, tier))
 
-    # MBB-only filter
-    filtered = [it for it in raw if is_relevant(it, it["tier"])]
+    # filter to MBB only
+    filtered = [it for it in raw if looks_basketball(it)]
 
     # dedupe + cap
     limit = max(20, int(cfg.get("min_items", 24)))
     items = uniq(filtered)[:limit]
 
     save_json(OUT_PATH, {"updated": int(time.time()*1000), "items": items})
-    print(f"[collect] wrote {OUT_PATH} with {len(items)} MBB items")
+    print(f"[collect] wrote {OUT_PATH} with {len(items)} MBB items (images present: {sum(1 for i in items if i.get('image'))})")
 
 if __name__ == "__main__":
     main()
