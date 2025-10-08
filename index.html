@@ -46,6 +46,7 @@
             <div>AP Top 25: —</div>
             <div>KenPom: —</div>
           </div>
+          <div id="rankingsStamp" class="footer-note" style="margin-top:6px;"></div>
         </section>
 
         <section id="schedule" class="panel">
@@ -83,8 +84,8 @@
   <script>
   const $ = (sel, r=document)=>r.querySelector(sel);
   const $$ = (sel, r=document)=>Array.from(r.querySelectorAll(sel));
-  const esc = (s="") => (s+"").replace(/[&<>"']/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
-  const timeAgo = (ts)=>{ if(ts<1e12) ts*=1000; const d=Date.now()-ts; const m=Math.floor(d/60000); if(m<60)return m+"m ago"; const h=Math.floor(m/60); if(h<24)return h+"h ago"; return Math.floor(h/24)+"d ago"; };
+  const esc = (s="") => (s+"").replace(/[&<>"']/g, c=>({"&":"&amp;","<":"&lt;","&gt;":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
+  const timeAgo = (ts)=>{ if(!ts) return ""; if(ts<1e12) ts*=1000; const d=Date.now()-ts; const m=Math.floor(d/60000); if(m<60)return m+"m ago"; const h=Math.floor(m/60); if(h<24)return h+"h ago"; return Math.floor(h/24)+"d ago"; };
   async function loadJson(p){ try{ const r=await fetch(p+"?v="+Date.now(),{cache:"no-store"}); if(!r.ok) throw 0; return await r.json(); } catch { return null; } }
 
   /* client MBB filter (backstop) */
@@ -104,11 +105,9 @@
 
   let NEWS_CACHE=null, CURRENT_TIER="all";
   function drawNews(){
-    const full = byTier(NEWS_CACHE, CURRENT_TIER).slice(0,10); // hard cap 10 on UI
+    const full = byTier(NEWS_CACHE, CURRENT_TIER).slice(0,10); // exactly 10
     const hero = $("#hero"), cards = $("#cards"), insiderList = $("#insiderList");
-
     if (!full.length){ hero.innerHTML = `<div class="muted small">No Purdue MBB headlines yet.</div>`; cards.innerHTML=""; insiderList.textContent="No insider items (yet)."; return; }
-
     const h = full[0];
     hero.innerHTML = `
       <a class="hero-img" href="${esc(h.link)}" target="_blank" rel="noopener">
@@ -119,7 +118,6 @@
         <a href="${esc(h.link)}" target="_blank" class="hero-title">${esc(h.title)}</a><br/>
         <span class="small muted">${timeAgo(h.ts)}</span>
       </div>`;
-
     cards.innerHTML = full.slice(1, 10).map(it=>`
       <div class="card">
         ${it.image?`<div class="card-thumb"><img src="${esc(it.image)}" alt=""></div>`:""}
@@ -133,7 +131,6 @@
         </div>
       </div>
     `).join("");
-
     const insiderItems = NEWS_CACHE.filter(i=>i.tier==="insiders");
     $("#insiderList").innerHTML = insiderItems.length
       ? insiderItems.slice(0,6).map(i=>`<a class="link-card" href="${esc(i.link)}" target="_blank" rel="noopener">${esc(i.title)}</a>`).join("")
@@ -155,6 +152,38 @@
       });
     });
   }
+
+  /* ---------- Rankings (NEW: clickable + updated time) ---------- */
+  function fmtUpdated(ts){
+    if(!ts) return "";
+    const d = new Date(ts < 1e12 ? ts*1000 : ts);
+    const opts = { month:"short", day:"numeric", hour:"numeric", minute:"2-digit" };
+    return d.toLocaleString(undefined, opts);
+  }
+
+  async function initRankings(){
+    const el = $("#rankingsList");
+    const stamp = $("#rankingsStamp");
+    const data = await loadJson("static/data/rankings.json");
+
+    // Fallbacks if JSON missing
+    const apRank = data?.ap?.rank ?? data?.ap_rank ?? "—";
+    const apUrl  = data?.ap?.url  || "https://apnews.com/hub/ap-top-25-mens-college-basketball-poll";
+    const apNote = data?.ap?.note || "";
+
+    const kpRank = data?.kenpom?.rank ?? data?.kenpom_rank ?? "—";
+    const kpUrl  = data?.kenpom?.url || "https://kenpom.com/team.php?team=Purdue";
+    const kpNote = data?.kenpom?.note || "";
+
+    const updatedTs = data?.updated ?? data?.ap?.updated ?? data?.kenpom?.updated ?? null;
+
+    el.innerHTML = `
+      <div>AP Top 25: <a href="${esc(apUrl)}" target="_blank" rel="noopener">${esc(apRank.toString())}</a>${apNote ? ` <span class="muted small">(${esc(apNote)})</span>` : ""}</div>
+      <div>KenPom: <a href="${esc(kpUrl)}" target="_blank" rel="noopener">${esc(kpRank.toString())}</a>${kpNote ? ` <span class="muted small">(${esc(kpNote)})</span>` : ""}</div>
+    `;
+    stamp.textContent = updatedTs ? `Last updated ${fmtUpdated(updatedTs)}` : "";
+  }
+  /* ---------------------------------------------------------------- */
 
   async function initRoster(){
     const r = await loadJson("static/teams/purdue-mbb/roster.json");
@@ -190,6 +219,7 @@
 
   async function boot(){
     await initNews();
+    await initRankings();   // <-- new call
     if (window.PRO && typeof PRO.hydratePanels === "function") { PRO.hydratePanels(); }
     await initRoster();
     await initVideos();
