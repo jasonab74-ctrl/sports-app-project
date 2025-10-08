@@ -5,10 +5,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Purdue MBB Hub</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231a1e26'/%3E%3Ccircle cx='20' cy='20' r='8' fill='%23f2c94c'/%3E%3C/svg%3E"/>
-<link rel="stylesheet" href="./static/css/app.css?v=fix-headlines-hydrate"/>
+<link rel="stylesheet" href="./static/css/app.css?v=rev2"/>
 </head>
 <body>
-
 <header class="topbar">
   <div class="brand-badge"><div class="brand-dot"></div></div>
   <div>Boilermakers</div>
@@ -16,15 +15,15 @@
 
 <main class="wrap">
   <div class="grid">
-    <!-- MAIN: Headlines -->
+    <!-- Headlines -->
     <section id="news" class="panel" aria-labelledby="news-h">
       <div class="panel-hd">
         <h2 id="news-h">Top Headlines</h2>
-        <div class="pills">
-          <span class="pill active">all</span>
-          <span class="pill">official</span>
-          <span class="pill">insiders</span>
-          <span class="pill">national</span>
+        <div class="pills" id="filterPills">
+          <span class="pill active" data-filter="all">all</span>
+          <span class="pill" data-filter="official">official</span>
+          <span class="pill" data-filter="insiders">insiders</span>
+          <span class="pill" data-filter="national">national</span>
         </div>
       </div>
       <div class="panel-subnote muted small">Refreshed every 30 min • Auto-updated via GitHub Actions</div>
@@ -38,13 +37,13 @@
       <p id="news-status" class="muted" hidden>Loading headlines…</p>
     </section>
 
-    <!-- RIGHT RAIL -->
+    <!-- Rail -->
     <aside class="rail">
       <section id="rankings" class="panel" aria-labelledby="rank-h">
         <div class="panel-hd"><h3 id="rank-h">Rankings</h3></div>
         <div class="simple-list">
-          <div>AP Top 25: <strong id="apRank">—</strong> <a id="apLink" class="muted" href="#" target="_blank" rel="noopener" hidden>source</a></div>
-          <div>KenPom: <strong id="kpRank">—</strong> <a id="kpLink" class="muted" href="#" target="_blank" rel="noopener" hidden>source</a></div>
+          <div>AP Top 25: <strong id="apRank">—</strong></div>
+          <div>KenPom: <strong id="kpRank">—</strong></div>
           <div class="footer-note" id="rankUpdated"></div>
         </div>
       </section>
@@ -52,6 +51,7 @@
       <section id="schedule" class="panel" aria-labelledby="schedule-h">
         <div class="panel-hd"><h3 id="schedule-h">Upcoming Schedule</h3></div>
         <div id="scheduleList" class="simple-list"></div>
+        <div class="footer-note" id="schedStamp"></div>
       </section>
 
       <section class="panel" aria-labelledby="insider-h">
@@ -64,6 +64,7 @@
   <section id="roster" class="panel" aria-labelledby="roster-h">
     <div class="panel-hd"><h3 id="roster-h">Roster</h3></div>
     <div id="rosterGrid" class="roster"></div>
+    <div class="footer-note" id="rosterStamp"></div>
   </section>
 
   <section id="videos" class="panel" aria-labelledby="videos-h">
@@ -75,15 +76,14 @@
   <p class="footer-note">© 2025 Boilermakers Hub • Auto-updated every 30 min</p>
 </main>
 
-<!-- Seed fallback so the page never looks empty -->
+<!-- Seed fallback -->
 <script id="seed-items" type="application/json">
 { "items": [
   {"title":"Purdue Announces 2025–26 Non-Conference Slate","link":"https://purduesports.com/","source":"PurdueSports.com","tier":"official","type":"article","ts":1762300800000}
 ]}
 </script>
 
-<!-- JS -->
-<script src="./static/js/app.js?v=fix-headlines-hydrate" defer></script>
-<script src="./static/js/pro.js?v=fix-headlines-hydrate" defer></script>
+<script src="./static/js/app.js?v=rev2" defer></script>
+<script src="./static/js/pro.js?v=rev2" defer></script>
 </body>
 </html>
