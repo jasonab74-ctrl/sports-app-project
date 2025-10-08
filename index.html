@@ -6,17 +6,14 @@
   <meta name="theme-color" content="#0b1017" />
   <title>Purdue Boilermakers Hub</title>
 
-  <!-- Primary CSS -->
-  <link rel="stylesheet" href="./static/css/app.css?v=1" />
-  <link rel="stylesheet" href="./static/css/mobile-tweaks.css?v=1" />
+  <link rel="stylesheet" href="./static/css/app.css?v=3" />
+  <link rel="stylesheet" href="./static/css/mobile-tweaks.css?v=3" />
 
-  <!-- Metadata -->
-  <meta name="description" content="Purdue Boilermakers Men's Basketball Hub — live headlines, schedule, roster, rankings, and insider content auto-updated via GitHub Actions.">
+  <meta name="description" content="Purdue Boilermakers Men's Basketball Hub — live Purdue headlines, schedule, roster, rankings, and insider links auto-updated via GitHub Actions.">
   <link rel="icon" href="./static/img/favicon.png">
 </head>
 
 <body>
-  <!-- Top Navigation -->
   <header class="topbar">
     <div class="brand-badge"><div class="brand-dot"></div></div>
     <div class="brand-title">Boilermakers</div>
@@ -31,31 +28,25 @@
 
   <main class="wrap">
     <div class="grid">
-      <!-- Left Column -->
+      <!-- NEWS -->
       <section id="news" class="panel">
         <div class="panel-hd">
           <h2>Top Headlines</h2>
         </div>
-        <div class="panel-subnote">
-          Refreshed every 30 min • Auto-updated via GitHub Actions
+        <div class="panel-subnote">Refreshed every 30 min • Auto-updated via GitHub Actions</div>
+
+        <div class="pills" id="newsPills" style="margin-top:10px;">
+          <button class="pill active" data-tier="all">all</button>
+          <button class="pill" data-tier="official">official</button>
+          <button class="pill" data-tier="insiders">insiders</button>
+          <button class="pill" data-tier="national">national</button>
         </div>
 
-        <!-- Filter Pills -->
-        <div class="pills" style="margin-top:10px;">
-          <div class="pill active" data-tier="all">all</div>
-          <div class="pill" data-tier="official">official</div>
-          <div class="pill" data-tier="insiders">insiders</div>
-          <div class="pill" data-tier="national">national</div>
-        </div>
-
-        <!-- Hero story -->
         <div id="hero" class="hero"></div>
-
-        <!-- Headlines grid -->
         <div id="cards" class="card-grid" style="margin-top:12px;"></div>
       </section>
 
-      <!-- Right Column -->
+      <!-- RAIL -->
       <aside class="rail">
         <section id="rankings" class="panel">
           <h3>Rankings</h3>
@@ -78,7 +69,7 @@
       </aside>
     </div>
 
-    <!-- Roster -->
+    <!-- ROSTER -->
     <section id="roster" class="panel" style="margin-top:18px;">
       <h3>Roster</h3>
       <div id="rosterGrid" class="roster">
@@ -86,43 +77,55 @@
       </div>
     </section>
 
-    <!-- Videos -->
+    <!-- VIDEOS -->
     <section id="videos" class="panel" style="margin-top:18px;">
       <h3>Latest Videos</h3>
       <div id="videoGrid" class="card-grid"></div>
     </section>
   </main>
 
-  <!-- Footer -->
   <footer class="footer-fixed">
     © 2025 Boilermakers Hub • Auto-updated every 30 min
   </footer>
 
-  <!-- JS -->
   <script>
-  const $ = (id)=>document.getElementById(id);
-  const esc=(s="")=>s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
-  const timeAgo=(ts)=>{const diff=Math.floor((Date.now()-ts)/1000);if(diff<60)return diff+"s ago";if(diff<3600)return Math.floor(diff/60)+" m ago";if(diff<86400)return Math.floor(diff/3600)+" h ago";return Math.floor(diff/86400)+" d ago";};
+  // ---------- tiny helpers ----------
+  const $ = (sel, r=document)=>r.querySelector(sel);
+  const $$ = (sel, r=document)=>Array.from(r.querySelectorAll(sel));
+  const esc = (s="") => (s+"").replace(/[&<>"']/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
+  const timeAgo = (ts)=>{ if(ts<1e12) ts*=1000; const d=Date.now()-ts; const m=Math.floor(d/60000); if(m<60)return m+"m ago"; const h=Math.floor(m/60); if(h<24)return h+"h ago"; return Math.floor(h/24)+"d ago"; };
+  async function loadJson(p){ try{ const r=await fetch(p+"?v="+Date.now(),{cache:"no-store"}); if(!r.ok) throw 0; return await r.json(); } catch { return null; } }
 
-  async function load(path){try{const r=await fetch(path+"?v="+Date.now(),{cache:"no-store"});if(!r.ok)throw 0;return await r.json();}catch{return null;}}
+  // ---------- Purdue-only client filter ----------
+  const PURDUE_KWS = ["purdue","boilermakers","matt painter","mackey arena","west lafayette","boiler up","zach edey","paint crew"];
+  function isPurdueRelated(item){
+    // Always keep official/insiders
+    if (item.tier === "official" || item.tier === "insiders") return true;
+    const blob = (item.title+" "+(item.summary||"")+" "+item.link+" "+(item.source||"")).toLowerCase();
+    return PURDUE_KWS.some(k=>blob.includes(k));
+  }
+  function byTier(items,t){ return t==="all" ? items : items.filter(i=>i.tier===t); }
 
-  function renderNews(data){
-    const hero=$("#hero"), cards=$("#cards"), insiders=$("#insiderList");
-    if(!data||!data.items){hero.innerHTML="<div class='muted small'>No news data.</div>";return;}
-    const items=data.items||[];
-    const heroItem=items[0];
-    if(heroItem){
-      hero.innerHTML=`
-        <a class="hero-img" href="${esc(heroItem.link)}" target="_blank" rel="noopener">
-          ${heroItem.image?`<img src="${esc(heroItem.image)}" alt="">`:``}
-        </a>
-        <div class="hero-meta">
-          <span class="small muted">${esc(heroItem.tier)} • ${esc(heroItem.source)}</span><br/>
-          <a href="${esc(heroItem.link)}" target="_blank" class="hero-title">${esc(heroItem.title)}</a><br/>
-          <span class="small muted">${timeAgo(heroItem.ts)}</span>
-        </div>`;
-    }
-    cards.innerHTML = items.slice(1,18).map(it=>`
+  // ---------- News render ----------
+  let NEWS_CACHE=null, CURRENT_TIER="all";
+  function drawNews(){
+    const items = byTier(NEWS_CACHE, CURRENT_TIER);
+    const hero = $("#hero"), cards = $("#cards"), insiderList = $("#insiderList");
+
+    if (!items.length){ hero.innerHTML = `<div class="muted small">No Purdue headlines yet.</div>`; cards.innerHTML=""; insiderList.textContent="No insider items (yet)."; return; }
+
+    const heroItem = items[0];
+    hero.innerHTML = `
+      <a class="hero-img" href="${esc(heroItem.link)}" target="_blank" rel="noopener">
+        ${heroItem.image?`<img src="${esc(heroItem.image)}" alt="">`:``}
+      </a>
+      <div class="hero-meta">
+        <span class="small muted">${esc(heroItem.tier)} • ${esc(heroItem.source)}</span><br/>
+        <a href="${esc(heroItem.link)}" target="_blank" class="hero-title">${esc(heroItem.title)}</a><br/>
+        <span class="small muted">${timeAgo(heroItem.ts)}</span>
+      </div>`;
+
+    cards.innerHTML = items.slice(1, 18).map(it=>`
       <div class="card">
         ${it.image?`<div class="card-thumb"><img src="${esc(it.image)}" alt=""></div>`:""}
         <div class="card-body">
@@ -136,50 +139,76 @@
       </div>
     `).join("");
 
-    const insiderItems = items.filter(i=>i.tier==="insiders");
-    insiders.innerHTML = insiderItems.length
-      ? insiderItems.slice(0,6).map(i=>`<a class="link-card" href="${esc(i.link)}" target="_blank">${esc(i.title)}</a>`).join("")
+    const insiderItems = NEWS_CACHE.filter(i=>i.tier==="insiders");
+    $("#insiderList").innerHTML = insiderItems.length
+      ? insiderItems.slice(0,6).map(i=>`<a class="link-card" href="${esc(i.link)}" target="_blank" rel="noopener">${esc(i.title)}</a>`).join("")
       : "No insider items (yet).";
   }
 
-  function renderRoster(data){
-    const el=$("#rosterGrid");
-    if(!data||!data.players){el.innerHTML="<div class='muted small'>No roster data.</div>";return;}
-    el.innerHTML=data.players.map(p=>`
+  async function initNews(){
+    const news = await loadJson("static/data/news.json");
+    const items = (news?.items || []).filter(isPurdueRelated)
+      .sort((a,b)=> (b.ts < 1e12 ? b.ts*1000 : b.ts) - (a.ts < 1e12 ? a.ts*1000 : a.ts));
+    NEWS_CACHE = items;
+    drawNews();
+
+    // filter pills
+    $$("#newsPills .pill").forEach(p=>{
+      p.addEventListener("click", ()=>{
+        $$("#newsPills .pill").forEach(x=>x.classList.remove("active"));
+        p.classList.add("active");
+        CURRENT_TIER = p.dataset.tier;
+        drawNews();
+      });
+    });
+  }
+
+  // ---------- Roster ----------
+  async function initRoster(){
+    const r = await loadJson("static/teams/purdue-mbb/roster.json");
+    const el = $("#rosterGrid");
+    if (!r || !Array.isArray(r.players) || !r.players.length){
+      el.innerHTML = `<div class="muted small">No roster data.</div>`;
+      return;
+    }
+    el.innerHTML = r.players.map(p=>`
       <div class="player">
         <div class="num">#${esc(p.num||"")}</div>
         <div class="name">${esc(p.name||"")}</div>
-        <div class="meta">${esc(p.pos||"")} • ${esc(p.height||"")} • ${esc(p.weight?`${p.weight} lbs`:"")} • ${esc(p.year||"")}</div>
+        <div class="meta">${[p.pos, p.height, p.weight?`${p.weight} lbs`:"", p.year].filter(Boolean).join(" • ")}</div>
       </div>
     `).join("");
   }
 
-  function renderVideos(news){
-    const vids=(news.items||[]).filter(i=>/youtube\.com|youtu\.be/i.test(i.link));
-    const el=$("#videoGrid");
-    if(!vids.length){el.innerHTML="<div class='muted small'>No videos found.</div>";return;}
-    el.innerHTML=vids.slice(0,6).map(v=>`
+  // ---------- Videos (from news items that are YouTube links) ----------
+  async function initVideos(){
+    const news = await loadJson("static/data/news.json");
+    const vids = (news?.items || []).filter(i=>/youtube\.com|youtu\.be/i.test(i.link) && isPurdueRelated(i));
+    const el = $("#videoGrid");
+    if(!vids.length){ el.innerHTML = `<div class="muted small">No videos found.</div>`; return; }
+    el.innerHTML = vids.slice(0,6).map(v=>`
       <div class="card">
         ${v.image?`<div class="card-thumb"><img src="${esc(v.image)}" alt=""></div>`:""}
         <div class="card-body">
-          <div class="card-title"><a href="${esc(v.link)}" target="_blank">${esc(v.title)}</a></div>
+          <a class="card-title" href="${esc(v.link)}" target="_blank" rel="noopener">${esc(v.title)}</a>
           <div class="card-meta">${esc(v.source)}</div>
         </div>
       </div>
     `).join("");
   }
 
-  async function init(){
-    const news=await load("static/data/news.json");
-    renderNews(news);
-    const sched=await load("static/teams/purdue-mbb/schedule.json");
-    if(window.PRO&&PRO.hydratePanels)PRO.hydratePanels(sched);
-    const roster=await load("static/teams/purdue-mbb/roster.json");
-    renderRoster(roster);
-    renderVideos(news);
+  // ---------- Boot ----------
+  async function boot(){
+    await initNews();
+    if (window.PRO && typeof PRO.hydratePanels === "function") {
+      PRO.hydratePanels(); // schedule panel
+    }
+    await initRoster();
+    await initVideos();
   }
-  document.addEventListener("DOMContentLoaded",init);
+  (document.readyState === "loading") ? document.addEventListener("DOMContentLoaded", boot, {once:true}) : boot();
   </script>
-  <script src="./static/js/pro.js?v=1"></script>
+
+  <script src="./static/js/pro.js?v=3"></script>
 </body>
 </html>
