@@ -1,5 +1,5 @@
 {
-  "updated": 1759927765865,
+  "updated": 1759928115624,
   "items": [
     {
       "id": "50c298bf260bc832",
@@ -10,7 +10,7 @@
       "tier": "insiders",
       "type": "article",
       "ts": 1759886418000,
-      "image": "https://platform.hammerandrails.com/wp-content/uploads/sites/91/2025/09/imagn-26546044.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
+      "image": null,
       "paywall": false
     },
     {
@@ -22,19 +22,7 @@
       "tier": "insiders",
       "type": "article",
       "ts": 1759854009000,
-      "image": "https://platform.hammerandrails.com/wp-content/uploads/sites/91/2025/10/imagn-25798411.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
-      "paywall": false
-    },
-    {
-      "id": "59161dc8956c7272",
-      "title": "Boilers in the NFL: Week 5",
-      "summary": "Another week of Boilermaker action for you: Gus Hartwig – Jets – ReserveVs CowboysDNP Marcus Mbow – Giants – Active RosterAt SaintsDNP Tyrone Tracy Jr – Giants – Active RosterAt SaintsDNP Sanoussi Kane – Ravens – Active RosterVs Texans26 snaps (0 defense, 26 special teams), no stats Charlie Jones – Bengals – Active RosterVs Lions11 […]",
-      "link": "https://www.hammerandrails.com/football/55750/boilers-in-the-nfl-week-5",
-      "source": "hammerandrails.com",
-      "tier": "insiders",
-      "type": "article",
-      "ts": 1759845600000,
-      "image": "https://platform.hammerandrails.com/wp-content/uploads/sites/91/2025/10/gettyimages-2239565721.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
+      "image": null,
       "paywall": false
     },
     {
@@ -46,19 +34,7 @@
       "tier": "insiders",
       "type": "article",
       "ts": 1759798002000,
-      "image": "https://platform.hammerandrails.com/wp-content/uploads/sites/91/2025/10/imagn-24919858.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
-      "paywall": false
-    },
-    {
-      "id": "23412f942543fabb",
-      "title": "Xs and Ohs! – Illinois Edition",
-      "summary": "You may have heard that the website formerly known as Twitter has been purchased and is now X, a simply horrendous name in my opinion but then again I am not a billionaire so take my suggestions with a grain of salt. You may also know that we have historically shared our favorite tweets from […]",
-      "link": "https://www.hammerandrails.com/football/55724/xs-and-ohs-illinois-edition",
-      "source": "hammerandrails.com",
-      "tier": "insiders",
-      "type": "article",
-      "ts": 1759797427000,
-      "image": "https://platform.hammerandrails.com/wp-content/uploads/sites/91/2025/10/imagn-27245511.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
+      "image": null,
       "paywall": false
     },
     {
@@ -70,19 +46,7 @@
       "tier": "insiders",
       "type": "article",
       "ts": 1759761369000,
-      "image": "https://platform.hammerandrails.com/wp-content/uploads/sites/91/2025/10/imagn-27245383.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
-      "paywall": false
-    },
-    {
-      "id": "3ce7b8845cf2ac7b",
-      "title": "Boiler Alert – Don’t be Like Dan – Purdue Football Loses",
-      "summary": "With Ryan unavailable to help me record this episode it gave me some space to go on a bit of a rant that maybe I wouldn’t have otherwise done if I had my cohost with me. You might have seen that former NFL QB Mark Sanchez was stabbed over the weekend while in Indianapolis. You […]",
-      "link": "https://www.hammerandrails.com/football/55712/boiler-alert-dont-be-like-dan-purdue-football-loses",
-      "source": "hammerandrails.com",
-      "tier": "insiders",
-      "type": "article",
-      "ts": 1759752093000,
-      "image": "https://platform.hammerandrails.com/wp-content/uploads/sites/91/2025/10/imagn-8357165.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
+      "image": null,
       "paywall": false
     },
     {
@@ -94,31 +58,7 @@
       "tier": "insiders",
       "type": "article",
       "ts": 1759677892000,
-      "image": "https://platform.hammerandrails.com/wp-content/uploads/sites/91/chorus/uploads/chorus_asset/file/24981224/usa_today_21131961.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
-      "paywall": false
-    },
-    {
-      "id": "e4b7085ceaaad77b",
-      "title": "Post Game Presser: Purdue 27 Illinois 43",
-      "summary": "Following a disappointing loss to the Illinois Fighting Illini, Head Coach Barry Odom, Ryane Browne, Charles Correra, Antonio Harris, and CJ Nunnally offered their thoughts as the Boilers fall to 2-3 on the season and 0-2 in the B1G. Head Coach Barry Odom A few key points by Coach Odom: Purdue Players Ryane Browne, Charles […]",
-      "link": "https://www.hammerandrails.com/football/55704/post-game-presser-purdue-27-illinois-43",
-      "source": "hammerandrails.com",
-      "tier": "insiders",
-      "type": "article",
-      "ts": 1759609942000,
-      "image": "https://platform.hammerandrails.com/wp-content/uploads/sites/91/2025/10/gettyimages-2239200695.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
-      "paywall": false
-    },
-    {
-      "id": "c6b50102047909c5",
-      "title": "Quick Wrap: Purdue 27 Illinois 43",
-      "summary": "The story of the game, and the season for that matter up to this point, was Purdue’s inability to stop opposing teams from big plays. Against the Illini, the Boilers gave up big play after big play in both offensive phases of the game. The Boilers looked strong on offense most of the game and […]",
-      "link": "https://www.hammerandrails.com/football/55701/quick-wrap-purdue-27-illinois-43",
-      "source": "hammerandrails.com",
-      "tier": "insiders",
-      "type": "article",
-      "ts": 1759606493000,
-      "image": "https://platform.hammerandrails.com/wp-content/uploads/sites/91/2025/10/gettyimages-2239200656.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
+      "image": null,
       "paywall": false
     }
   ]
