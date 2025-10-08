@@ -1,59 +1,51 @@
-name: Auto-update feeds
+name: Build data (news, schedule, roster)
 
 on:
   schedule:
-    - cron: "0 */3 * * *"
-  workflow_dispatch:
+    - cron: "*/30 * * * *"   # every 30 minutes
+  workflow_dispatch: {}
+  push:
+    paths:
+      - "tools/**"
+      - "static/data/sources.json"
+      - "static/teams/purdue-mbb/**"
+
+permissions:
+  contents: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
       - name: Install deps
         run: |
-          pip install feedparser requests beautifulsoup4
+          python -m pip install --upgrade pip
+          pip install requests feedparser beautifulsoup4
 
-      - name: Run collector (news/videos/etc.)
+      - name: Collect Headlines
         run: python tools/collect.py
 
-      - name: Build schedule (ICS + Odds)
+      - name: Collect Schedule
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
-        run: |
-          echo "----------------------------------------"
-          echo "Building Purdue MBB schedule (ICS + Odds)"
-          if [ -n "${ODDS_API_KEY}" ]; then
-            echo "Odds API active and will be queried."
-          else
-            echo "No ODDS_API_KEY set — skipping odds integration."
-          fi
-          python tools/schedule_collect.py
-          echo "Schedule build step complete."
-          echo "----------------------------------------"
+        run: python tools/schedule_collect.py
 
-      - name: Update version tags for cache busting
-        run: |
-          ver=$(date -u +'%Y-%m-%dT%H:%M:%SZ')
-          sed -i "s#app.css?v=[^\"']*#app.css?v=$ver#g" index.html || true
-          sed -i "s#app.js?v=[^\"']*#app.js?v=$ver#g" index.html || true
-          sed -i "s#pro.js?v=[^\"']*#pro.js?v=$ver#g" index.html || true
+      - name: Collect Roster
+        run: python tools/roster_collect.py
 
-      - name: Commit and push if changed
-        run: |
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
-          git add -A
-          if git diff --cached --quiet; then
-            echo "No changes to commit."
-          else
-            git commit -m "Auto-update feeds + schedule ($(date -u +'%Y-%m-%d %H:%M:%SZ'))"
-            git push
-          fi
+      - name: Commit artifacts
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: auto-build news/schedule/roster"
+          file_pattern: |
+            static/data/news.json
+            static/teams/purdue-mbb/schedule.json
+            static/teams/purdue-mbb/roster.json
