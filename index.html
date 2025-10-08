@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#0b1017" />
   <title>Purdue Boilermakers Hub</title>
 
-  <link rel="stylesheet" href="./static/css/app.css?v=9" />
-  <link rel="stylesheet" href="./static/css/mobile-tweaks.css?v=9" />
+  <link rel="stylesheet" href="./static/css/app.css?v=10" />
+  <link rel="stylesheet" href="./static/css/mobile-tweaks.css?v=10" />
 
   <meta name="description" content="Purdue Boilermakers Men's Basketball Hub — live Purdue MBB headlines, schedule, roster, rankings, and insider links auto-updated via GitHub Actions.">
   <link rel="icon" href="./static/img/favicon.png">
@@ -16,6 +16,7 @@
     .pill.active{ box-shadow: inset 0 0 0 2px rgba(242,201,76,.25); border-color: rgba(242,201,76,.35); background:#172233; }
     .pill[disabled]{ opacity:.45; cursor:not-allowed!important; pointer-events:none; }
     .pill .count{ color:var(--muted); margin-left:.35rem; font-size: var(--fs-0); }
+    .empty-note{ padding:12px; border-radius:10px; background:#0e1623; color:var(--muted); }
   </style>
 </head>
 
@@ -27,6 +28,7 @@
 
   <main class="wrap">
     <div class="grid">
+      <!-- NEWS -->
       <section id="news" class="panel" aria-labelledby="news-title">
         <div class="panel-hd"><h2 id="news-title">Top Headlines</h2></div>
         <div class="panel-subnote">Refreshed every 30 min • Auto-updated via GitHub Actions</div>
@@ -42,6 +44,7 @@
         <div id="cards" class="card-grid" style="margin-top:12px;"></div>
       </section>
 
+      <!-- RAIL -->
       <aside class="rail">
         <section id="rankings" class="panel">
           <h3>Rankings</h3>
@@ -62,11 +65,13 @@
       </aside>
     </div>
 
+    <!-- ROSTER -->
     <section id="roster" class="panel" style="margin-top:18px;">
       <h3>Roster</h3>
       <div id="rosterGrid" class="roster"><div class="muted small">Loading roster…</div></div>
     </section>
 
+    <!-- VIDEOS -->
     <section id="videos" class="panel" style="margin-top:18px;">
       <h3>Latest Videos</h3>
       <div id="videoGrid" class="card-grid"></div>
@@ -81,27 +86,76 @@
   const timeAgo=(ts)=>{ if(!ts)return""; if(ts<1e12)ts*=1000; const d=Date.now()-ts,m=Math.floor(d/6e4); if(m<60)return m+"m ago"; const h=Math.floor(m/60); if(h<24)return h+"h ago"; return Math.floor(h/24)+"d ago"; };
   async function loadJson(p){ try{const r=await fetch(p+"?v="+Date.now(),{cache:"no-store"}); if(!r.ok) throw 0; return await r.json();}catch{return null;} }
 
-  // Client backstop filters to keep football out even if a feed slips through.
-  const MBB_POS=["men's basketball","mens basketball","mbb","basketball","hoops","matt painter","mackey","paint crew","zach edey","braden smith","fletcher loyer","caleb furst","ncaa","big ten","march madness","exhibition","tournament"];
-  const FB_NEG=["football","fball","nfl","qb","quarterback","running back","wide receiver","offensive line","defensive line","touchdown","ross-ade","ryan walters","hudson card"];
-  const PU_CORE=["purdue","boilermaker","west lafayette","purduesports.com"];
-  function isMBB(item){
-    const t=(item.title+" "+(item.summary||"")+" "+item.link+" "+(item.source||"")).toLowerCase();
-    const p=PU_CORE.some(k=>t.includes(k));
-    const fb=FB_NEG.some(k=>t.includes(k));
-    const bb=MBB_POS.some(k=>t.includes(k)) || /\/(mbb|mens?-basketball|men-basketball|basketball|college-basketball)\//.test((item.link||"").toLowerCase());
-    if(!p) return false;
-    if(fb && !bb) return false;
-    return bb;
+  // ----------- Robust Purdue MBB filter with fallback (client side) -----------
+  const POS_MBB=["men's basketball","mens basketball","mbb","basketball","hoops","matt painter","mackey","paint crew","zach edey","braden smith","fletcher loyer","caleb furst","ncaa","big ten","march madness","exhibition","tournament"];
+  const HINT_PATH=/\/(mbb|m-basketball|mens?-basketball|men-basketball|basketball|college-basketball|ncaa-basketball)\//i;
+  const NEG_FB=["football","fball","nfl","qb","quarterback","running back","wide receiver","offensive line","defensive line","touchdown","ross-ade","ryan walters","hudson card"];
+  const PU_CORE=["purdue","boilermaker","west lafayette","purduesports.com","hammerandrails.com","goldandblack","247sports","rivals"];
+
+  // score each item; higher is more likely Purdue MBB; football penalizes hard
+  function scoreItem(it){
+    const t=(it.title+" "+(it.summary||"")+" "+(it.source||"")+" "+(it.link||"")).toLowerCase();
+    let s=0;
+    if (PU_CORE.some(k=>t.includes(k))) s+=2;
+    if (HINT_PATH.test((it.link||""))) s+=3;
+    POS_MBB.forEach(k=>{ if(t.includes(k)) s+=2; });
+    NEG_FB.forEach(k=>{ if(t.includes(k)) s-=5; });
+    // tiny boost for official & insiders
+    if (it.tier==="official") s+=1;
+    if (it.tier==="insiders") s+=1;
+    return s;
   }
+
+  function pickTopMBB(items){
+    if(!items || !items.length) return [];
+    // Sort newest first to keep recency in tie-breakers
+    const withScore = items.map(it=>({it, s:scoreItem(it)}))
+      .sort((a,b)=> (b.it.ts - a.it.ts));
+
+    // Tier A: strong basketball (score >= 4)
+    const A = withScore.filter(x=>x.s>=4).map(x=>x.it);
+    if (A.length>=10) return A.slice(0,10);
+
+    // Tier B: decent basketball, non-football (score >= 2)
+    const B = withScore.filter(x=>x.s>=2 && !NEG_FB.some(k=>(x.it.title+" "+(x.it.summary||"")).toLowerCase().includes(k))).map(x=>x.it);
+    const mergedAB = uniqBy([...A, ...B], k=>k.link).slice(0,10);
+    if (mergedAB.length>=10) return mergedAB;
+
+    // Tier C: Purdue-anchored, explicitly not football
+    const C = withScore
+      .filter(x=> PU_CORE.some(k=>(x.it.title+" "+(x.it.summary||"")).toLowerCase().includes(k))
+                   && !NEG_FB.some(k=>(x.it.title+" "+(x.it.summary||"")).toLowerCase().includes(k)))
+      .map(x=>x.it);
+
+    const mergedABC = uniqBy([...mergedAB, ...C], k=>k.link).slice(0,10);
+    if (mergedABC.length>=10) return mergedABC;
+
+    // Last resort: newest non-football items (still Purdue-leaning by feed mix)
+    const D = withScore.filter(x=>!NEG_FB.some(k=>(x.it.title+" "+(x.it.summary||"")).toLowerCase().includes(k))).map(x=>x.it);
+    return uniqBy([...mergedABC, ...D], k=>k.link).slice(0, Math.min(10, items.length));
+  }
+
+  function uniqBy(arr, keyFn){
+    const seen=new Set(); const out=[];
+    for(const a of arr){ const k=keyFn(a); if(seen.has(k)) continue; seen.add(k); out.push(a); }
+    return out;
+  }
+  // ---------------------------------------------------------------------------
+
   function byTier(items,t){ return t==="all" ? items : items.filter(i=>i.tier===t); }
 
   let NEWS_CACHE=null, CURRENT_TIER="all";
 
   function drawNews(){
-    const full=byTier(NEWS_CACHE,CURRENT_TIER).slice(0,10);
+    const full = byTier(NEWS_CACHE, CURRENT_TIER).slice(0,10);
     const hero=$("#hero"), cards=$("#cards"), insiderList=$("#insiderList");
-    if(!full.length){ hero.innerHTML=`<div class="muted small">No Purdue MBB headlines yet.</div>`; cards.innerHTML=""; insiderList.textContent="No insider items (yet)."; return; }
+
+    if (!full.length){
+      hero.innerHTML = `<div class="empty-note">No Purdue Men's Basketball headlines found right now. They’ll appear here as soon as new stories publish.</div>`;
+      cards.innerHTML="";
+      insiderList.textContent="No insider items (yet).";
+      return;
+    }
 
     const h=full[0];
     hero.innerHTML=`
@@ -127,7 +181,7 @@
         </div>
       </div>`).join("");
 
-    const insiderItems=NEWS_CACHE.filter(i=>i.tier==="insiders");
+    const insiderItems = NEWS_CACHE.filter(i=>i.tier==="insiders");
     $("#insiderList").innerHTML = insiderItems.length
       ? insiderItems.slice(0,6).map(i=>`<a class="link-card" href="${esc(i.link)}" target="_blank" rel="noopener">${esc(i.title)}</a>`).join("")
       : "No insider items (yet).";
@@ -144,4 +198,67 @@
       const t=b.dataset.tier, n=counts[t]??0;
       b.querySelector(".count").textContent=` (${n})`;
       b.disabled=(t!=="all" && n===0);
-      b
+      b.classList.toggle("active", t===CURRENT_TIER);
+      b.setAttribute("aria-selected", t===CURRENT_TIER ? "true" : "false");
+      b.title = t==="all" ? "Show all" : (n ? `Show ${t} only` : `No ${t} items`);
+    });
+  }
+
+  async function initNews(){
+    const data=await loadJson("static/data/news.json");
+    const raw=(data?.items||[]).slice().sort((a,b)=> (b.ts < 1e12 ? b.ts*1000 : b.ts) - (a.ts < 1e12 ? a.ts*1000 : a.ts));
+    // resilient selection: always aim for 10, kill football
+    const picked = pickTopMBB(raw);
+    NEWS_CACHE=picked;
+    drawNews();
+    updatePills();
+
+    $("#newsPills").addEventListener("click", (e)=>{
+      const btn=e.target.closest(".pill"); if(!btn||btn.disabled) return;
+      const tier=btn.dataset.tier; if(tier===CURRENT_TIER) return;
+      CURRENT_TIER=tier;
+      drawNews(); updatePills();
+      $("#news").scrollIntoView({behavior:"smooth", block:"start"});
+    });
+  }
+
+  // ----- Rankings (unchanged) -----
+  function fmtUpdated(ts){ if(!ts) return ""; const d=new Date(ts<1e12?ts*1000:ts); return d.toLocaleString(undefined,{month:"short",day:"numeric",hour:"numeric",minute:"2-digit"});}
+  async function initRankings(){
+    const el=$("#rankingsList"), stamp=$("#rankingsStamp"), data=await loadJson("static/data/rankings.json");
+    const apRank=data?.ap?.rank??data?.ap_rank??"—", apUrl=data?.ap?.url||"https://apnews.com/hub/ap-top-25-mens-college-basketball-poll", apNote=data?.ap?.note||"";
+    const kpRank=data?.kenpom?.rank??data?.kenpom_rank??"—", kpMain="https://kenpom.com/", kpTeam="https://kenpom.com/team.php?team=Purdue", kpNote=data?.kenpom?.note||"";
+    const updatedTs=data?.updated??data?.ap?.updated??data?.kenpom?.updated??null;
+    el.innerHTML=`<div>AP Top 25: <a href="${esc(apUrl)}" target="_blank" rel="noopener">${esc(apRank.toString())}</a>${apNote?` <span class="muted small">(${esc(apNote)})</span>`:""}</div>
+                  <div>KenPom: <a href="${esc(kpMain)}" target="_blank" rel="noopener">${esc(kpRank.toString())}</a> <a href="${esc(kpTeam)}" target="_blank" rel="noopener" class="muted small">(team)</a>${kpNote?` <span class="muted small">(${esc(kpNote)})</span>`:""}</div>`;
+    stamp.textContent=updatedTs?`Last updated ${fmtUpdated(updatedTs)}`:"";
+  }
+
+  async function initRoster(){
+    const r=await loadJson("static/teams/purdue-mbb/roster.json"), el=$("#rosterGrid");
+    if(!r || !Array.isArray(r.players) || !r.players.length){ el.innerHTML=`<div class="muted small">No roster data.</div>`; return; }
+    el.innerHTML=r.players.map(p=>`<div class="player"><div class="num">#${esc(p.num||"")}</div><div class="name">${esc(p.name||"")}</div><div class="meta">${[p.pos,p.height,p.weight?`${p.weight} lbs`:"",p.year].filter(Boolean).join(" • ")}</div></div>`).join("");
+  }
+
+  async function initVideos(){
+    const news=await loadJson("static/data/news.json");
+    const vids=(news?.items||[]).filter(i=>/youtube\.com|youtu\.be/i.test(i.link));
+    const el=$("#videoGrid");
+    if(!vids.length){ el.innerHTML=`<div class="muted small">No videos found.</div>`; return; }
+    el.innerHTML=vids.slice(0,6).map(v=>`
+      <div class="card">
+        ${v.image?`<div class="card-thumb"><img src="${esc(v.image)}" alt=""></div>`:""}
+        <div class="card-body">
+          <a class="card-title" href="${esc(v.link)}" target="_blank" rel="noopener">${esc(v.title)}</a>
+          <div class="card-meta">${esc(v.source)}</div>
+        </div>
+      </div>`).join("");
+  }
+
+  async function boot(){ await initNews(); await initRankings(); await initRoster(); await initVideos(); }
+  (document.readyState==="loading") ? document.addEventListener("DOMContentLoaded", boot, {once:true}) : boot();
+  </script>
+
+  <script src="./static/js/pro.js?v=10"></script>
+</body>
+</html>
