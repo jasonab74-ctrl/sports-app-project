@@ -1,4 +1,4 @@
-// static/js/pro.js — schedule panel + cache-bust + odds snapshot + footer stamp
+// static/js/pro.js — schedule panel + odds + stamps (exhibitions & tourneys included)
 (function () {
   const BASE = "./";
   const url = (p) => BASE + p.replace(/^\//, "");
@@ -43,7 +43,7 @@
       try{ stamp.textContent = "Updated " + new Date(data.updated).toLocaleString(); }catch{}
     }
 
-    const now = Date.now() - 3*60*60*1000;
+    const now = Date.now() - 3*60*60*1000; // show near-past start too
     const upcoming = (data.games||[]).filter(g=> new Date(g.utc).getTime() >= now).slice(0, 12);
     if (!upcoming.length){
       el.innerHTML = `<div class="muted small">No upcoming games.</div>`;
@@ -55,6 +55,7 @@
       const oddsLine = head
         ? `Odds: ${esc(head.book)}${head.spread!==null&&head.spread!==undefined?` • Spread: ${head.spread}`:""}${head.total?` • Total: ${head.total}`:""}${head.moneyline?` • ML: ${head.moneyline}`:""}`
         : "";
+
       return `
         <div class="link-card schedule-card">
           <div class="link-body">
