@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#0b1017" />
   <title>Purdue Boilermakers Hub</title>
 
-  <link rel="stylesheet" href="./static/css/app.css?v=6" />
-  <link rel="stylesheet" href="./static/css/mobile-tweaks.css?v=6" />
+  <link rel="stylesheet" href="./static/css/app.css?v=7" />
+  <link rel="stylesheet" href="./static/css/mobile-tweaks.css?v=7" />
 
   <meta name="description" content="Purdue Boilermakers Men's Basketball Hub — live Purdue MBB headlines, schedule, roster, rankings, and insider links auto-updated via GitHub Actions.">
   <link rel="icon" href="./static/img/favicon.png">
@@ -88,7 +88,7 @@
   const timeAgo = (ts)=>{ if(!ts) return ""; if(ts<1e12) ts*=1000; const d=Date.now()-ts; const m=Math.floor(d/60000); if(m<60)return m+"m ago"; const h=Math.floor(m/60); if(h<24)return h+"h ago"; return Math.floor(h/24)+"d ago"; };
   async function loadJson(p){ try{ const r=await fetch(p+"?v="+Date.now(),{cache:"no-store"}); if(!r.ok) throw 0; return await r.json(); } catch { return null; } }
 
-  /* client MBB filter (backstop) */
+  /* client MBB filter */
   const MBB_POS = ["men's basketball","mens basketball","mbb","basketball","hoops","matt painter","mackey","paint crew","zach edey","braden smith","fletcher loyer","caleb furst","ncaa","big ten","march madness","exhibition","tournament"];
   const FB_NEG  = ["football","qb","quarterback","running back","wide receiver","offensive line","defensive line","ryan walters","hudson card","gridiron","ross-ade"];
   const PU_CORE = ["purdue","boilermaker","west lafayette","purduesports.com"];
@@ -105,7 +105,7 @@
 
   let NEWS_CACHE=null, CURRENT_TIER="all";
   function drawNews(){
-    const full = byTier(NEWS_CACHE, CURRENT_TIER).slice(0,10); // exactly 10
+    const full = byTier(NEWS_CACHE, CURRENT_TIER).slice(0,10);
     const hero = $("#hero"), cards = $("#cards"), insiderList = $("#insiderList");
     if (!full.length){ hero.innerHTML = `<div class="muted small">No Purdue MBB headlines yet.</div>`; cards.innerHTML=""; insiderList.textContent="No insider items (yet)."; return; }
     const h = full[0];
@@ -153,7 +153,7 @@
     });
   }
 
-  /* ---------- Rankings (NEW: clickable + updated time) ---------- */
+  /* ---------- Rankings (KenPom fix) ---------- */
   function fmtUpdated(ts){
     if(!ts) return "";
     const d = new Date(ts < 1e12 ? ts*1000 : ts);
@@ -166,24 +166,24 @@
     const stamp = $("#rankingsStamp");
     const data = await loadJson("static/data/rankings.json");
 
-    // Fallbacks if JSON missing
     const apRank = data?.ap?.rank ?? data?.ap_rank ?? "—";
     const apUrl  = data?.ap?.url  || "https://apnews.com/hub/ap-top-25-mens-college-basketball-poll";
     const apNote = data?.ap?.note || "";
 
     const kpRank = data?.kenpom?.rank ?? data?.kenpom_rank ?? "—";
-    const kpUrl  = data?.kenpom?.url || "https://kenpom.com/team.php?team=Purdue";
+    const kpMainUrl  = "https://kenpom.com/";
+    const kpTeamUrl  = "https://kenpom.com/team.php?team=Purdue";
     const kpNote = data?.kenpom?.note || "";
 
     const updatedTs = data?.updated ?? data?.ap?.updated ?? data?.kenpom?.updated ?? null;
 
     el.innerHTML = `
       <div>AP Top 25: <a href="${esc(apUrl)}" target="_blank" rel="noopener">${esc(apRank.toString())}</a>${apNote ? ` <span class="muted small">(${esc(apNote)})</span>` : ""}</div>
-      <div>KenPom: <a href="${esc(kpUrl)}" target="_blank" rel="noopener">${esc(kpRank.toString())}</a>${kpNote ? ` <span class="muted small">(${esc(kpNote)})</span>` : ""}</div>
+      <div>KenPom: <a href="${esc(kpMainUrl)}" target="_blank" rel="noopener">${esc(kpRank.toString())}</a> <a href="${esc(kpTeamUrl)}" target="_blank" rel="noopener" class="muted small">(team)</a>${kpNote ? ` <span class="muted small">(${esc(kpNote)})</span>` : ""}</div>
     `;
     stamp.textContent = updatedTs ? `Last updated ${fmtUpdated(updatedTs)}` : "";
   }
-  /* ---------------------------------------------------------------- */
+  /* ------------------------------------------- */
 
   async function initRoster(){
     const r = await loadJson("static/teams/purdue-mbb/roster.json");
@@ -219,14 +219,13 @@
 
   async function boot(){
     await initNews();
-    await initRankings();   // <-- new call
-    if (window.PRO && typeof PRO.hydratePanels === "function") { PRO.hydratePanels(); }
+    await initRankings();   
     await initRoster();
     await initVideos();
   }
   (document.readyState === "loading") ? document.addEventListener("DOMContentLoaded", boot, {once:true}) : boot();
   </script>
 
-  <script src="./static/js/pro.js?v=6"></script>
+  <script src="./static/js/pro.js?v=7"></script>
 </body>
 </html>
