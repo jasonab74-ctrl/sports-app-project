@@ -6,7 +6,7 @@
       "source": "PurdueSports.com",
       "tier": "official",
       "type": "article",
-      "ts": 1759901485694
+      "ts": 1759905775954
     },
     {
       "title": "AP Poll movers and what it means for Purdue",
@@ -14,7 +14,7 @@
       "source": "Sports Illustrated CBB",
       "tier": "national",
       "type": "article",
-      "ts": 1759897885694
+      "ts": 1759902175954
     },
     {
       "title": "Big Ten preview: tiers, X-factors, and POY race",
@@ -22,7 +22,7 @@
       "source": "CBS Sports CBB",
       "tier": "national",
       "type": "article",
-      "ts": 1759894285694
+      "ts": 1759898575954
     },
     {
       "title": "Big Ten storylines to watch",
@@ -30,7 +30,7 @@
       "source": "Yahoo CBB",
       "tier": "national",
       "type": "article",
-      "ts": 1759890685694
+      "ts": 1759894975954
     },
     {
       "title": "Coach Painter on lineup experimentation",
@@ -38,7 +38,7 @@
       "source": "Journal & Courier",
       "tier": "insiders",
       "type": "article",
-      "ts": 1759887085694
+      "ts": 1759891375954
     },
     {
       "title": "Recruiting board resets after fall visits",
@@ -46,7 +46,7 @@
       "source": "247Sports Purdue",
       "tier": "insiders",
       "type": "article",
-      "ts": 1759883485694
+      "ts": 1759887775954
     },
     {
       "title": "Film Room: PnR counters for 2025–26",
@@ -54,7 +54,15 @@
       "source": "Gold and Black (Rivals)",
       "tier": "insiders",
       "type": "article",
-      "ts": 1759879885694
+      "ts": 1759884175954
+    },
+    {
+      "title": "Mic’d Up: Preseason Workouts",
+      "link": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "source": "PurdueSports YouTube",
+      "tier": "official",
+      "type": "video",
+      "ts": 1759880575954
     },
     {
       "title": "Purdue basketball coach Matt Painter and a former Indiana coach picked to win first national championship",
@@ -65,20 +73,12 @@
       "ts": 1759879667000
     },
     {
-      "title": "Mic’d Up: Preseason Workouts",
-      "link": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-      "source": "PurdueSports YouTube",
-      "tier": "official",
-      "type": "video",
-      "ts": 1759876285694
-    },
-    {
       "title": "Practice Highlights — First Week",
       "link": "https://www.youtube.com/watch?v=oHg5SJYRHA0",
       "source": "BTN Purdue",
       "tier": "official",
       "type": "video",
-      "ts": 1759872685694
+      "ts": 1759876975954
     },
     {
       "title": "Summer Highlights Mix",
@@ -86,7 +86,7 @@
       "source": "BTN Purdue",
       "tier": "official",
       "type": "video",
-      "ts": 1759869085694
+      "ts": 1759873375954
     }
   ]
 }
