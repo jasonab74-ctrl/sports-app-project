@@ -6,11 +6,30 @@
   <meta name="theme-color" content="#0b1017" />
   <title>Purdue Boilermakers Hub</title>
 
-  <link rel="stylesheet" href="./static/css/app.css?v=7" />
-  <link rel="stylesheet" href="./static/css/mobile-tweaks.css?v=7" />
+  <link rel="stylesheet" href="./static/css/app.css?v=8" />
+  <link rel="stylesheet" href="./static/css/mobile-tweaks.css?v=8" />
 
   <meta name="description" content="Purdue Boilermakers Men's Basketball Hub — live Purdue MBB headlines, schedule, roster, rankings, and insider links auto-updated via GitHub Actions.">
   <link rel="icon" href="./static/img/favicon.png">
+
+  <!-- Small, local style touch just for pill clarity -->
+  <style>
+    .pill.active{
+      box-shadow: inset 0 0 0 2px rgba(242,201,76,.25);
+      border-color: rgba(242,201,76,.35);
+      background:#172233;
+    }
+    .pill[disabled]{
+      opacity:.45;
+      cursor:not-allowed !important;
+      pointer-events: none;
+    }
+    .pill .count{
+      color:var(--muted);
+      margin-left:.35rem;
+      font-size: var(--fs-0);
+    }
+  </style>
 </head>
 
 <body>
@@ -23,15 +42,16 @@
   <main class="wrap">
     <div class="grid">
       <!-- NEWS -->
-      <section id="news" class="panel">
-        <div class="panel-hd"><h2>Top Headlines</h2></div>
+      <section id="news" class="panel" aria-labelledby="news-title">
+        <div class="panel-hd"><h2 id="news-title">Top Headlines</h2></div>
         <div class="panel-subnote">Refreshed every 30 min • Auto-updated via GitHub Actions</div>
 
-        <div class="pills" id="newsPills" style="margin-top:10px;">
-          <button class="pill active" data-tier="all">all</button>
-          <button class="pill" data-tier="official">official</button>
-          <button class="pill" data-tier="insiders">insiders</button>
-          <button class="pill" data-tier="national">national</button>
+        <!-- Filter pills (now with counts + disabled when 0) -->
+        <div class="pills" id="newsPills" role="tablist" aria-label="Filter headlines" style="margin-top:10px;">
+          <button class="pill active" data-tier="all" role="tab" aria-selected="true" aria-controls="cards">all<span class="count"></span></button>
+          <button class="pill" data-tier="official" role="tab" aria-selected="false" aria-controls="cards">official<span class="count"></span></button>
+          <button class="pill" data-tier="insiders" role="tab" aria-selected="false" aria-controls="cards">insiders<span class="count"></span></button>
+          <button class="pill" data-tier="national" role="tab" aria-selected="false" aria-controls="cards">national<span class="count"></span></button>
         </div>
 
         <div id="hero" class="hero"></div>
@@ -88,7 +108,7 @@
   const timeAgo = (ts)=>{ if(!ts) return ""; if(ts<1e12) ts*=1000; const d=Date.now()-ts; const m=Math.floor(d/60000); if(m<60)return m+"m ago"; const h=Math.floor(m/60); if(h<24)return h+"h ago"; return Math.floor(h/24)+"d ago"; };
   async function loadJson(p){ try{ const r=await fetch(p+"?v="+Date.now(),{cache:"no-store"}); if(!r.ok) throw 0; return await r.json(); } catch { return null; } }
 
-  /* client MBB filter */
+  /* client MBB filter (backstop) */
   const MBB_POS = ["men's basketball","mens basketball","mbb","basketball","hoops","matt painter","mackey","paint crew","zach edey","braden smith","fletcher loyer","caleb furst","ncaa","big ten","march madness","exhibition","tournament"];
   const FB_NEG  = ["football","qb","quarterback","running back","wide receiver","offensive line","defensive line","ryan walters","hudson card","gridiron","ross-ade"];
   const PU_CORE = ["purdue","boilermaker","west lafayette","purduesports.com"];
@@ -104,10 +124,18 @@
   function byTier(items,t){ return t==="all" ? items : items.filter(i=>i.tier===t); }
 
   let NEWS_CACHE=null, CURRENT_TIER="all";
+
   function drawNews(){
-    const full = byTier(NEWS_CACHE, CURRENT_TIER).slice(0,10);
+    const full = byTier(NEWS_CACHE, CURRENT_TIER).slice(0,10); // exactly 10
     const hero = $("#hero"), cards = $("#cards"), insiderList = $("#insiderList");
-    if (!full.length){ hero.innerHTML = `<div class="muted small">No Purdue MBB headlines yet.</div>`; cards.innerHTML=""; insiderList.textContent="No insider items (yet)."; return; }
+
+    if (!full.length){
+      hero.innerHTML = `<div class="muted small">No Purdue MBB headlines yet.</div>`;
+      cards.innerHTML="";
+      insiderList.textContent="No insider items (yet).";
+      return;
+    }
+
     const h = full[0];
     hero.innerHTML = `
       <a class="hero-img" href="${esc(h.link)}" target="_blank" rel="noopener">
@@ -118,6 +146,7 @@
         <a href="${esc(h.link)}" target="_blank" class="hero-title">${esc(h.title)}</a><br/>
         <span class="small muted">${timeAgo(h.ts)}</span>
       </div>`;
+
     cards.innerHTML = full.slice(1, 10).map(it=>`
       <div class="card">
         ${it.image?`<div class="card-thumb"><img src="${esc(it.image)}" alt=""></div>`:""}
@@ -131,10 +160,29 @@
         </div>
       </div>
     `).join("");
+
     const insiderItems = NEWS_CACHE.filter(i=>i.tier==="insiders");
     $("#insiderList").innerHTML = insiderItems.length
       ? insiderItems.slice(0,6).map(i=>`<a class="link-card" href="${esc(i.link)}" target="_blank" rel="noopener">${esc(i.title)}</a>`).join("")
       : "No insider items (yet).";
+  }
+
+  function updatePills(){
+    const counts = {
+      all: NEWS_CACHE.length,
+      official: NEWS_CACHE.filter(i=>i.tier==="official").length,
+      insiders: NEWS_CACHE.filter(i=>i.tier==="insiders").length,
+      national: NEWS_CACHE.filter(i=>i.tier==="national").length
+    };
+    $$("#newsPills .pill").forEach(b=>{
+      const t = b.dataset.tier;
+      const n = counts[t] ?? 0;
+      b.querySelector(".count").textContent = ` (${n})`;
+      b.disabled = (t !== "all" && n === 0);
+      b.classList.toggle("active", t === CURRENT_TIER);
+      b.setAttribute("aria-selected", t === CURRENT_TIER ? "true" : "false");
+      b.title = t === "all" ? "Show all" : (n ? `Show ${t} only` : `No ${t} items`);
+    });
   }
 
   async function initNews(){
@@ -142,25 +190,31 @@
     const items = (news?.items || []).filter(isMBB)
       .sort((a,b)=> (b.ts < 1e12 ? b.ts*1000 : b.ts) - (a.ts < 1e12 ? a.ts*1000 : a.ts));
     NEWS_CACHE = items;
+
     drawNews();
-    $$("#newsPills .pill").forEach(p=>{
-      p.addEventListener("click", ()=>{
-        $$("#newsPills .pill").forEach(x=>x.classList.remove("active"));
-        p.classList.add("active");
-        CURRENT_TIER = p.dataset.tier;
-        drawNews();
-      });
+    updatePills();
+
+    // Delegate pill clicks
+    $("#newsPills").addEventListener("click", (e)=>{
+      const btn = e.target.closest(".pill");
+      if(!btn || btn.disabled) return;
+      const tier = btn.dataset.tier;
+      if(tier === CURRENT_TIER) return;
+      CURRENT_TIER = tier;
+      drawNews();
+      updatePills();
+      // make the change very obvious on mobile
+      $("#news").scrollIntoView({behavior:"smooth", block:"start"});
     });
   }
 
-  /* ---------- Rankings (KenPom fix) ---------- */
+  /* ---------- Rankings (clickable + updated) ---------- */
   function fmtUpdated(ts){
     if(!ts) return "";
     const d = new Date(ts < 1e12 ? ts*1000 : ts);
     const opts = { month:"short", day:"numeric", hour:"numeric", minute:"2-digit" };
     return d.toLocaleString(undefined, opts);
   }
-
   async function initRankings(){
     const el = $("#rankingsList");
     const stamp = $("#rankingsStamp");
@@ -219,13 +273,13 @@
 
   async function boot(){
     await initNews();
-    await initRankings();   
+    await initRankings();
     await initRoster();
     await initVideos();
   }
   (document.readyState === "loading") ? document.addEventListener("DOMContentLoaded", boot, {once:true}) : boot();
   </script>
 
-  <script src="./static/js/pro.js?v=7"></script>
+  <script src="./static/js/pro.js?v=8"></script>
 </body>
 </html>
