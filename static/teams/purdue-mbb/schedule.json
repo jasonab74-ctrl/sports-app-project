@@ -1,303 +1,6 @@
 {
-  "updated": "2025-10-08T01:19:50.948909Z",
+  "updated": "2025-10-07T15:45:00Z",
   "games": [
-    {
-      "opponent": "Texas A&M-Corpus Christi Islanders",
-      "utc": "2024-11-04T23:00Z",
-      "venue": "Home",
-      "location": "Mackey Arena — West Lafayette, IN",
-      "event": "",
-      "tv": "",
-      "url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401707976/texas-am-cc-purdue"
-    },
-    {
-      "opponent": "Northern Kentucky Norse",
-      "utc": "2024-11-09T00:00Z",
-      "venue": "Home",
-      "location": "Mackey Arena — West Lafayette, IN",
-      "event": "",
-      "tv": "",
-      "url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401707977/n-kentucky-purdue"
-    },
-    {
-      "opponent": "Yale Bulldogs",
-      "utc": "2024-11-12T01:00Z",
-      "venue": "Home",
-      "location": "Mackey Arena — West Lafayette, IN",
-      "event": "",
-      "tv": "",
-      "url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401707978/yale-purdue"
-    },
-    {
-      "opponent": "Alabama Crimson Tide",
-      "utc": "2024-11-16T00:00Z",
-      "venue": "Home",
-      "location": "Mackey Arena — West Lafayette, IN",
-      "event": "",
-      "tv": "",
-      "url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401707979/alabama-purdue"
-    },
-    {
-      "opponent": "Marquette Golden Eagles",
-      "utc": "2024-11-20T02:00Z",
-      "venue": "Away",
-      "location": "Fiserv Forum — Milwaukee, WI",
-      "event": "",
-      "tv": "",
-      "url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401707980/purdue-marquette"
-    },
-    {
-      "opponent": "Marshall Thundering Herd",
-      "utc": "2024-11-23T17:00Z",
-      "venue": "Home",
-      "location": "Mackey Arena — West Lafayette, IN",
-      "event": "",
-      "tv": "",
-      "url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401707981/marshall-purdue"
-    },
-    {
-      "opponent": "NC State Wolfpack",
-      "utc": "2024-11-28T20:00Z",
-      "venue": "Home",
-      "location": "LionTree Arena — San Diego, CA",
-      "event": "",
-      "tv": "",
-      "url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401716065/nc-state-purdue"
-    },
-    {
-      "opponent": "Ole Miss Rebels",
-      "utc": "2024-11-29T23:00Z",
-      "venue": "Home",
-      "location": "LionTree Arena — San Diego, CA",
-      "event": "",
-      "tv": "",
-      "url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401731040/ole-miss-purdue"
-    },
-    {
-      "opponent": "Penn State Nittany Lions",
-      "utc": "2024-12-05T23:30Z",
-      "venue": "Away",
-      "location": "Bryce Jordan Center — University Park, PA",
-      "event": "",
-      "tv": "",
-      "url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401721310/purdue-penn-state"
-    },
-    {
-      "opponent": "Maryland Terrapins",
-      "utc": "2024-12-08T17:00Z",
-      "venue": "Home",
-      "location": "Mackey Arena — West Lafayette, IN",
-      "event": "",
-      "tv": "",
-      "url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401721316/maryland-purdue"
-    },
-    {
-      "opponent": "Texas A&M Aggies",
-      "utc": "2024-12-14T17:00Z",
-      "venue": "Home",
-      "location": "Gainbridge Fieldhouse — Indianapolis, IN",
-      "event": "",
-      "tv": "",
-      "url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401707975/texas-am-purdue"
-    },
-    {
-      "opponent": "Auburn Tigers",
-      "utc": "2024-12-21T21:30Z",
-      "venue": "Away",
-      "location": "Legacy Arena at BJCC — Birmingham, AL",
-      "event": "",
-      "tv": "",
-      "url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401707982/purdue-auburn"
-    },
-    {
-      "opponent": "Toledo Rockets",
-      "utc": "2024-12-29T23:00Z",
-      "venue": "Home",
-      "location": "Mackey Arena — West Lafayette, IN",
-      "event": "",
-      "tv": "",
-      "url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401707983/toledo-purdue"
-    },
-    {
-      "opponent": "Minnesota Golden Gophers",
-      "utc": "2025-01-03T01:00Z",
-      "venue": "Away",
-      "location": "Williams Arena — Minneapolis, MN",
-      "event": "",
-      "tv": "",
-      "url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401721323/purdue-minnesota"
-    },
-    {
-      "opponent": "Northwestern Wildcats",
-      "utc": "2025-01-05T19:00Z",
-      "venue": "Home",
-      "location": "Mackey Arena — West Lafayette, IN",
-      "event": "",
-      "tv": "",
-      "url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401721333/northwestern-purdue"
-    },
-    {
-      "opponent": "Rutgers Scarlet Knights",
-      "utc": "2025-01-09T23:00Z",
-      "venue": "Away",
-      "location": "Jersey Mike’s Arena — Piscataway, NJ",
-      "event": "",
-      "tv": "",
-      "url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401721343/purdue-rutgers"
-    },
-    {
-      "opponent": "Nebraska Cornhuskers",
-      "utc": "2025-01-12T17:00Z",
-      "venue": "Home",
-      "location": "Mackey Arena — West Lafayette, IN",
-      "event": "",
-      "tv": "",
-      "url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401721351/nebraska-purdue"
-    },
-    {
-      "opponent": "Washington Huskies",
-      "utc": "2025-01-16T02:30Z",
-      "venue": "Away",
-      "location": "Alaska Airlines Arena — Seattle, WA",
-      "event": "",
-      "tv": "",
-      "url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401721358/purdue-washington"
-    },
-    {
-      "opponent": "Oregon Ducks",
-      "utc": "2025-01-18T20:00Z",
-      "venue": "Away",
-      "location": "Matthew Knight Arena — Eugene, OR",
-      "event": "",
-      "tv": "",
-      "url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401721364/purdue-oregon"
-    },
-    {
-      "opponent": "Ohio State Buckeyes",
-      "utc": "2025-01-22T00:30Z",
-      "venue": "Home",
-      "location": "Mackey Arena — West Lafayette, IN",
-      "event": "",
-      "tv": "",
-      "url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401721372/ohio-state-purdue"
-    },
-    {
-      "opponent": "Michigan Wolverines",
-      "utc": "2025-01-25T01:00Z",
-      "venue": "Home",
-      "location": "Mackey Arena — West Lafayette, IN",
-      "event": "",
-      "tv": "",
-      "url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401721378/michigan-purdue"
-    },
-    {
-      "opponent": "Indiana Hoosiers",
-      "utc": "2025-02-01T01:00Z",
-      "venue": "Home",
-      "location": "Mackey Arena — West Lafayette, IN",
-      "event": "",
-      "tv": "",
-      "url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401721394/indiana-purdue"
-    },
-    {
-      "opponent": "Iowa Hawkeyes",
-      "utc": "2025-02-05T00:00Z",
-      "venue": "Away",
-      "location": "Carver-Hawkeye Arena — Iowa City, IA",
-      "event": "",
-      "tv": "",
-      "url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401721401/purdue-iowa"
-    },
-    {
-      "opponent": "USC Trojans",
-      "utc": "2025-02-08T00:00Z",
-      "venue": "Home",
-      "location": "Mackey Arena — West Lafayette, IN",
-      "event": "",
-      "tv": "",
-      "url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401721410/usc-purdue"
-    },
-    {
-      "opponent": "Michigan Wolverines",
-      "utc": "2025-02-12T00:00Z",
-      "venue": "Away",
-      "location": "Crisler Center — Ann Arbor, MI",
-      "event": "",
-      "tv": "",
-      "url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401721420/purdue-michigan"
-    },
-    {
-      "opponent": "Wisconsin Badgers",
-      "utc": "2025-02-15T18:00Z",
-      "venue": "Home",
-      "location": "Mackey Arena — West Lafayette, IN",
-      "event": "",
-      "tv": "",
-      "url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401721430/wisconsin-purdue"
-    },
-    {
-      "opponent": "Michigan State Spartans",
-      "utc": "2025-02-19T00:00Z",
-      "venue": "Away",
-      "location": "Breslin Center — East Lansing, MI",
-      "event": "",
-      "tv": "",
-      "url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401721436/purdue-michigan-st"
-    },
-    {
-      "opponent": "Indiana Hoosiers",
-      "utc": "2025-02-23T18:30Z",
-      "venue": "Away",
-      "location": "Simon Skjodt Assembly Hall — Bloomington, IN",
-      "event": "",
-      "tv": "",
-      "url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401721448/purdue-indiana"
-    },
-    {
-      "opponent": "UCLA Bruins",
-      "utc": "2025-03-01T01:00Z",
-      "venue": "Home",
-      "location": "Mackey Arena — West Lafayette, IN",
-      "event": "",
-      "tv": "",
-      "url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401721460/ucla-purdue"
-    },
-    {
-      "opponent": "Rutgers Scarlet Knights",
-      "utc": "2025-03-05T00:00Z",
-      "venue": "Home",
-      "location": "Mackey Arena — West Lafayette, IN",
-      "event": "",
-      "tv": "",
-      "url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401721470/rutgers-purdue"
-    },
-    {
-      "opponent": "Illinois Fighting Illini",
-      "utc": "2025-03-08T01:00Z",
-      "venue": "Away",
-      "location": "State Farm Center — Champaign, IL",
-      "event": "",
-      "tv": "",
-      "url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401721475/purdue-illinois"
-    },
-    {
-      "opponent": "USC Trojans",
-      "utc": "2025-03-14T01:00Z",
-      "venue": "Home",
-      "location": "Gainbridge Fieldhouse — Indianapolis, IN",
-      "event": "",
-      "tv": "",
-      "url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401743919/usc-purdue"
-    },
-    {
-      "opponent": "Michigan Wolverines",
-      "utc": "2025-03-15T01:00Z",
-      "venue": "Away",
-      "location": "Gainbridge Fieldhouse — Indianapolis, IN",
-      "event": "",
-      "tv": "",
-      "url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401743939/purdue-michigan"
-    },
     {
       "opponent": "Kentucky (Exhibition)",
       "utc": "2025-10-24T22:00:00Z",
@@ -312,45 +15,45 @@
       "utc": "2025-11-05T00:00:00Z",
       "venue": "Home",
       "location": "Mackey Arena — West Lafayette, IN",
-      "event": "Regular Season Opener",
+      "event": "Regular Season",
       "tv": "",
-      "url": ""
+      "url": "https://purduesports.com/sports/mens-basketball/schedule"
     },
     {
       "opponent": "Oakland",
       "utc": "2025-11-08T00:00:00Z",
       "venue": "Home",
       "location": "Mackey Arena — West Lafayette, IN",
-      "event": "",
+      "event": "Regular Season",
       "tv": "",
-      "url": ""
+      "url": "https://purduesports.com/sports/mens-basketball/schedule"
     },
     {
       "opponent": "Alabama",
       "utc": "2025-11-14T00:00:00Z",
       "venue": "Neutral",
       "location": "",
-      "event": "",
+      "event": "Non-conference",
       "tv": "",
-      "url": ""
+      "url": "https://purduesports.com/sports/mens-basketball/schedule"
     },
     {
       "opponent": "Akron",
       "utc": "2025-11-17T00:00:00Z",
       "venue": "Home",
       "location": "Mackey Arena — West Lafayette, IN",
-      "event": "",
+      "event": "Non-conference",
       "tv": "",
-      "url": ""
+      "url": "https://purduesports.com/sports/mens-basketball/schedule"
     },
     {
       "opponent": "Memphis",
       "utc": "2025-11-20T21:00:00Z",
       "venue": "Neutral",
       "location": "",
-      "event": "",
+      "event": "Tournament",
       "tv": "",
-      "url": ""
+      "url": "https://purduesports.com/sports/mens-basketball/schedule"
     }
   ]
 }
