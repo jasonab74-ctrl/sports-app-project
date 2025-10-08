@@ -5,10 +5,12 @@ on:
     - cron: "*/30 * * * *"   # every 30 minutes
   workflow_dispatch: {}
   push:
-    paths:
-      - "tools/**"
-      - "static/data/sources.json"
-      - "static/teams/purdue-mbb/**"
+    # Rebuild on ANY push to keep data fresh when you edit HTML/CSS/JS.
+    paths-ignore:
+      # Avoid action loops when the job itself commits fresh JSON.
+      - "static/data/news.json"
+      - "static/teams/purdue-mbb/schedule.json"
+      - "static/teams/purdue-mbb/roster.json"
 
 permissions:
   contents: write
@@ -30,21 +32,21 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests feedparser beautifulsoup4
 
-      - name: Collect Headlines
+      - name: Collect Headlines (Purdue-focused)
         run: python tools/collect.py
 
-      - name: Collect Schedule
+      - name: Collect Schedule (incl. exhibitions & tourneys)
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
         run: python tools/schedule_collect.py
 
-      - name: Collect Roster
+      - name: Collect Roster (official page)
         run: python tools/roster_collect.py
 
       - name: Commit artifacts
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore: auto-build news/schedule/roster"
+          commit_message: "chore: auto-build news/schedule/roster [skip ci]"
           file_pattern: |
             static/data/news.json
             static/teams/purdue-mbb/schedule.json
