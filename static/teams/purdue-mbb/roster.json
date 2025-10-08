@@ -1,8 +1,4 @@
-[
-  { "num": "0", "name": "Guard One", "pos": "G", "ht": "6-4", "wt": "195", "class": "Sr.", "hometown": "TBD", "bio": "" },
-  { "num": "2", "name": "Guard Two", "pos": "G", "ht": "6-3", "wt": "190", "class": "Jr.", "hometown": "TBD", "bio": "" },
-  { "num": "3", "name": "Wing One", "pos": "G/F", "ht": "6-7", "wt": "215", "class": "So.", "hometown": "TBD", "bio": "" },
-  { "num": "5", "name": "Forward One", "pos": "F", "ht": "6-9", "wt": "230", "class": "Jr.", "hometown": "TBD", "bio": "" },
-  { "num": "11", "name": "Forward Two", "pos": "F", "ht": "6-8", "wt": "225", "class": "Fr.", "hometown": "TBD", "bio": "" },
-  { "num": "12", "name": "Center One", "pos": "C", "ht": "7-1", "wt": "255", "class": "Sr.", "hometown": "TBD", "bio": "" }
-]
+{
+  "updated": "2025-10-07T15:45:00Z",
+  "players": []
+}
