@@ -1,12 +1,10 @@
 {
   "team_name": "Purdue Boilermakers",
   "sport_key": "basketball_ncaab",
-
-  "ics_url": "https://purduesports.com/services/download_file.ashx?filename=calendar.ics&type=ical&sport_id=15",
   "schedule_url": "https://purduesports.com/sports/mens-basketball/schedule",
-
+  "ics_url": "https://purduesports.com/services/download_file.ashx?filename=calendar.ics&type=ical&sport_id=15",
+  "roster_url": "https://purduesports.com/sports/mens-basketball/roster",
   "espn_team_id": "2509",
   "espn_seasons": ["2025", "2026"],
-
   "books": ["draftkings", "fanduel", "betmgm", "caesars"]
 }
