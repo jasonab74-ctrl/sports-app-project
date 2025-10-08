@@ -1,60 +1,33 @@
 {
-  "sources": [
-    {
-      "name": "PurdueSports.com",
-      "rss": "https://purduesports.com/feeds/news?selected=mens-basketball",
-      "tier": "official",
-      "paywall": false,
-      "limit": 12
-    },
-    {
-      "name": "Journal & Courier",
-      "rss": "https://rssfeeds.jconline.com/jconline/sports",
-      "tier": "insiders",
-      "paywall": true,
-      "limit": 10
-    },
-    {
-      "name": "Gold and Black (Rivals)",
-      "rss": "https://purdue.rivals.com/rss",
-      "tier": "insiders",
-      "paywall": true,
-      "limit": 10
-    },
-    {
-      "name": "247Sports Purdue",
-      "rss": "https://247sports.com/college/purdue/ContentFeed/",
-      "tier": "insiders",
-      "paywall": true,
-      "limit": 10
-    },
-    {
-      "name": "CBS Sports CBB",
-      "rss": "https://www.cbssports.com/college-basketball/rss/headlines/",
-      "tier": "national",
-      "paywall": false,
-      "limit": 12
-    },
-    {
-      "name": "Yahoo CBB",
-      "rss": "https://sports.yahoo.com/college-basketball/rss/",
-      "tier": "national",
-      "paywall": false,
-      "limit": 12
-    },
-    {
-      "name": "Sports Illustrated CBB",
-      "rss": "https://www.si.com/rss/college-basketball",
-      "tier": "national",
-      "paywall": false,
-      "limit": 12
-    },
-    {
-      "name": "BTN Purdue (YouTube)",
-      "rss": "https://www.youtube.com/feeds/videos.xml?channel_id=UCWhWZs4WQb9fr2E1VlzDqIA",
-      "tier": "official",
-      "paywall": false,
-      "limit": 8
-    }
-  ]
+  "official": [
+    "https://purduesports.com/rss.aspx?path=mbball"
+  ],
+  "insiders": [
+    "https://www.hammerandrails.com/rss/index.xml",
+    "https://247sports.com/college/purdue/Article/feed/",
+    "https://purdue.rivals.com/rss"
+  ],
+  "national": [
+    "https://sports.yahoo.com/college-basketball/team/purdue-boilermakers/news?format=rss",
+    "https://www.cbssports.com/college-basketball/atom/",
+    "https://www.si.com/college/rss"
+  ],
+  "local": [
+    "https://www.jconline.com/search/?q=Purdue%20basketball&output=rss"
+  ],
+  "allow_domains": [
+    "purduesports.com",
+    "hammerandrails.com",
+    "247sports.com",
+    "purdue.rivals.com",
+    "jconline.com"
+  ],
+  "team_keywords": [
+    "purdue",
+    "boilermakers",
+    "coach matt painter",
+    "mackey arena",
+    "west lafayette"
+  ],
+  "min_items": 24
 }
