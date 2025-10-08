@@ -1,15 +1,56 @@
-/* loaded AFTER app.css; only adjusts small screens */
-@media (max-width: 768px) {
-  .hero { margin-bottom: 10px; }
-  .hero-img img { max-height: 280px; object-fit: cover; width: 100%; }
-  .hero-title { font-size: 1.25rem; line-height: 1.25; }
-  .panel-hd { align-items: center; }
-  .panel-hd h2, .panel-hd h3 { margin-bottom: 6px; }
-  .pills { gap: 8px; flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; }
-  .card-grid { grid-template-columns: 1fr !important; gap: 10px; }
-  .card .card-body { padding: 10px 12px; }
-  .card .card-title { font-size: 1rem; line-height: 1.25; }
-  .card .card-meta { font-size: 0.85rem; }
-  .link-card .link-body { padding: 12px; }
-  .schedule-card .link-title { font-size: 1rem; }
+/* Loads after app.css. Focuses on phones + large text users. */
+
+@media (max-width: 640px){
+
+  /* tighten hero and spacing */
+  .panel{ padding: 14px; }
+  .panel-hd h2, .panel h3{ margin-bottom: 8px; }
+  .panel-subnote{ margin-bottom: 6px; }
+
+  .hero{ margin-top: 10px; }
+  .hero-img img{ height: clamp(200px, 48vw, 320px); }
+  .hero-title{ line-height: 1.15; }
+
+  /* pill row: single-line with horizontal scroll */
+  .pills{
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* cards/links spacing a touch tighter on mobile */
+  .card-body{ padding: 12px; gap: 6px; }
+  .link-card{ padding: 12px; }
+  .link-meta{ font-size: 0.95em; }
+
+  /* schedule items: avoid wrapping label bullets awkwardly */
+  .simple-list .link-card .link-body{ padding: 2px; }
+
+  /* roster tiles */
+  .player{ padding: 12px; }
+  .player .meta{ line-height: 1.35; }
+
+  /* nav tap comfort */
+  .nav-links a{ padding: 0 10px; }
+
+  /* footer safe-area */
+  .footer-fixed{ padding-bottom: calc(10px + env(safe-area-inset-bottom)); }
+}
+
+/* Support very large text sizes gracefully */
+@media (max-width: 640px) and (min-resolution: 2dppx){
+  .card-title{ line-height: 1.25; }
+  .hero-title{ line-height: 1.2; }
+}
+
+/* High contrast users still get a visible focus ring */
+@media (prefers-contrast: more){
+  :focus-visible{ outline-color: #7cb5ff; }
+}
+
+/* If the browser supports container queries in the future,
+   cards will reflow more intelligently (progressive enhancement). */
+@container (max-width: 520px){
+  .card-thumb img{ height: 160px; }
 }
