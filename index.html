@@ -1,89 +1,185 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Purdue MBB Hub</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231a1e26'/%3E%3Ccircle cx='20' cy='20' r='8' fill='%23f2c94c'/%3E%3C/svg%3E"/>
-<link rel="stylesheet" href="./static/css/app.css?v=2025-10-08T01:19:50Z"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b1017" />
+  <title>Purdue Boilermakers Hub</title>
+
+  <!-- Primary CSS -->
+  <link rel="stylesheet" href="./static/css/app.css?v=1" />
+  <link rel="stylesheet" href="./static/css/mobile-tweaks.css?v=1" />
+
+  <!-- Metadata -->
+  <meta name="description" content="Purdue Boilermakers Men's Basketball Hub — live headlines, schedule, roster, rankings, and insider content auto-updated via GitHub Actions.">
+  <link rel="icon" href="./static/img/favicon.png">
 </head>
+
 <body>
-<header class="topbar">
-  <div class="brand-badge"><div class="brand-dot"></div></div>
-  <div>Boilermakers</div>
-</header>
+  <!-- Top Navigation -->
+  <header class="topbar">
+    <div class="brand-badge"><div class="brand-dot"></div></div>
+    <div class="brand-title">Boilermakers</div>
+    <nav class="nav-links" style="margin-left:auto; display:flex; gap:18px;">
+      <a href="#news" class="muted">News</a>
+      <a href="#rankings" class="muted">Rankings</a>
+      <a href="#schedule" class="muted">Schedule</a>
+      <a href="#roster" class="muted">Roster</a>
+      <a href="#videos" class="muted">Videos</a>
+    </nav>
+  </header>
 
-<main class="wrap">
-  <div class="grid">
-    <!-- Headlines -->
-    <section id="news" class="panel" aria-labelledby="news-h">
-      <div class="panel-hd">
-        <h2 id="news-h">Top Headlines</h2>
-        <div class="pills" id="filterPills">
-          <span class="pill active" data-filter="all">all</span>
-          <span class="pill" data-filter="official">official</span>
-          <span class="pill" data-filter="insiders">insiders</span>
-          <span class="pill" data-filter="national">national</span>
+  <main class="wrap">
+    <div class="grid">
+      <!-- Left Column -->
+      <section id="news" class="panel">
+        <div class="panel-hd">
+          <h2>Top Headlines</h2>
         </div>
-      </div>
-      <div class="panel-subnote muted small">Refreshed every 30 min • Auto-updated via GitHub Actions</div>
+        <div class="panel-subnote">
+          Refreshed every 30 min • Auto-updated via GitHub Actions
+        </div>
 
-      <div class="hero">
-        <div id="news-hero" class="hero-img-wrap" aria-live="polite"></div>
-        <div id="news-hero-meta" class="hero-meta"></div>
-      </div>
+        <!-- Filter Pills -->
+        <div class="pills" style="margin-top:10px;">
+          <div class="pill active" data-tier="all">all</div>
+          <div class="pill" data-tier="official">official</div>
+          <div class="pill" data-tier="insiders">insiders</div>
+          <div class="pill" data-tier="national">national</div>
+        </div>
 
-      <div class="card-grid" id="news-grid" aria-live="polite"></div>
-      <p id="news-status" class="muted" hidden>Loading headlines…</p>
+        <!-- Hero story -->
+        <div id="hero" class="hero"></div>
+
+        <!-- Headlines grid -->
+        <div id="cards" class="card-grid" style="margin-top:12px;"></div>
+      </section>
+
+      <!-- Right Column -->
+      <aside class="rail">
+        <section id="rankings" class="panel">
+          <h3>Rankings</h3>
+          <div class="simple-list" id="rankingsList">
+            <div>AP Top 25: —</div>
+            <div>KenPom: —</div>
+          </div>
+        </section>
+
+        <section id="schedule" class="panel">
+          <h3>Upcoming Schedule</h3>
+          <div id="scheduleList" class="simple-list"></div>
+          <div id="schedStamp" class="footer-note" style="margin-top:6px;"></div>
+        </section>
+
+        <section id="insiders" class="panel">
+          <h3>Insider / Beat Links</h3>
+          <div id="insiderList" class="simple-list">No insider items (yet).</div>
+        </section>
+      </aside>
+    </div>
+
+    <!-- Roster -->
+    <section id="roster" class="panel" style="margin-top:18px;">
+      <h3>Roster</h3>
+      <div id="rosterGrid" class="roster">
+        <div class="muted small">Loading roster…</div>
+      </div>
     </section>
 
-    <!-- Rail -->
-    <aside class="rail">
-      <section id="rankings" class="panel" aria-labelledby="rank-h">
-        <div class="panel-hd"><h3 id="rank-h">Rankings</h3></div>
-        <div class="simple-list">
-          <div>AP Top 25: <strong id="apRank">—</strong></div>
-          <div>KenPom: <strong id="kpRank">—</strong></div>
-          <div class="footer-note" id="rankUpdated"></div>
+    <!-- Videos -->
+    <section id="videos" class="panel" style="margin-top:18px;">
+      <h3>Latest Videos</h3>
+      <div id="videoGrid" class="card-grid"></div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer-fixed">
+    © 2025 Boilermakers Hub • Auto-updated every 30 min
+  </footer>
+
+  <!-- JS -->
+  <script>
+  const $ = (id)=>document.getElementById(id);
+  const esc=(s="")=>s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
+  const timeAgo=(ts)=>{const diff=Math.floor((Date.now()-ts)/1000);if(diff<60)return diff+"s ago";if(diff<3600)return Math.floor(diff/60)+" m ago";if(diff<86400)return Math.floor(diff/3600)+" h ago";return Math.floor(diff/86400)+" d ago";};
+
+  async function load(path){try{const r=await fetch(path+"?v="+Date.now(),{cache:"no-store"});if(!r.ok)throw 0;return await r.json();}catch{return null;}}
+
+  function renderNews(data){
+    const hero=$("#hero"), cards=$("#cards"), insiders=$("#insiderList");
+    if(!data||!data.items){hero.innerHTML="<div class='muted small'>No news data.</div>";return;}
+    const items=data.items||[];
+    const heroItem=items[0];
+    if(heroItem){
+      hero.innerHTML=`
+        <a class="hero-img" href="${esc(heroItem.link)}" target="_blank" rel="noopener">
+          ${heroItem.image?`<img src="${esc(heroItem.image)}" alt="">`:``}
+        </a>
+        <div class="hero-meta">
+          <span class="small muted">${esc(heroItem.tier)} • ${esc(heroItem.source)}</span><br/>
+          <a href="${esc(heroItem.link)}" target="_blank" class="hero-title">${esc(heroItem.title)}</a><br/>
+          <span class="small muted">${timeAgo(heroItem.ts)}</span>
+        </div>`;
+    }
+    cards.innerHTML = items.slice(1,18).map(it=>`
+      <div class="card">
+        ${it.image?`<div class="card-thumb"><img src="${esc(it.image)}" alt=""></div>`:""}
+        <div class="card-body">
+          <div class="card-kickers">
+            <span class="kicker">${esc(it.tier)}</span>
+            <span class="kicker src">${esc(it.source)}</span>
+          </div>
+          <a href="${esc(it.link)}" target="_blank" class="card-title">${esc(it.title)}</a>
+          <div class="card-meta">${timeAgo(it.ts)} • ${esc(it.source)}</div>
         </div>
-      </section>
+      </div>
+    `).join("");
 
-      <section id="schedule" class="panel" aria-labelledby="schedule-h">
-        <div class="panel-hd"><h3 id="schedule-h">Upcoming Schedule</h3></div>
-        <div id="scheduleList" class="simple-list"></div>
-        <div class="footer-note" id="schedStamp"></div>
-      </section>
+    const insiderItems = items.filter(i=>i.tier==="insiders");
+    insiders.innerHTML = insiderItems.length
+      ? insiderItems.slice(0,6).map(i=>`<a class="link-card" href="${esc(i.link)}" target="_blank">${esc(i.title)}</a>`).join("")
+      : "No insider items (yet).";
+  }
 
-      <section class="panel" aria-labelledby="insider-h">
-        <div class="panel-hd"><h3 id="insider-h">Insider / Beat Links</h3></div>
-        <div id="insiderList" class="simple-list"></div>
-      </section>
-    </aside>
-  </div>
+  function renderRoster(data){
+    const el=$("#rosterGrid");
+    if(!data||!data.players){el.innerHTML="<div class='muted small'>No roster data.</div>";return;}
+    el.innerHTML=data.players.map(p=>`
+      <div class="player">
+        <div class="num">#${esc(p.num||"")}</div>
+        <div class="name">${esc(p.name||"")}</div>
+        <div class="meta">${esc(p.pos||"")} • ${esc(p.height||"")} • ${esc(p.weight?`${p.weight} lbs`:"")} • ${esc(p.year||"")}</div>
+      </div>
+    `).join("");
+  }
 
-  <section id="roster" class="panel" aria-labelledby="roster-h">
-    <div class="panel-hd"><h3 id="roster-h">Roster</h3></div>
-    <div id="rosterGrid" class="roster"></div>
-    <div class="footer-note" id="rosterStamp"></div>
-  </section>
+  function renderVideos(news){
+    const vids=(news.items||[]).filter(i=>/youtube\.com|youtu\.be/i.test(i.link));
+    const el=$("#videoGrid");
+    if(!vids.length){el.innerHTML="<div class='muted small'>No videos found.</div>";return;}
+    el.innerHTML=vids.slice(0,6).map(v=>`
+      <div class="card">
+        ${v.image?`<div class="card-thumb"><img src="${esc(v.image)}" alt=""></div>`:""}
+        <div class="card-body">
+          <div class="card-title"><a href="${esc(v.link)}" target="_blank">${esc(v.title)}</a></div>
+          <div class="card-meta">${esc(v.source)}</div>
+        </div>
+      </div>
+    `).join("");
+  }
 
-  <section id="videos" class="panel" aria-labelledby="videos-h">
-    <div class="panel-hd"><h3 id="videos-h">Latest Videos</h3></div>
-    <div class="card-grid" id="videos-grid" aria-live="polite"></div>
-    <p id="videos-status" class="muted" hidden>Loading videos…</p>
-  </section>
-
-  <p class="footer-note">© 2025 Boilermakers Hub • Auto-updated every 30 min</p>
-</main>
-
-<!-- Seed fallback -->
-<script id="seed-items" type="application/json">
-{ "items": [
-  {"title":"Purdue Announces 2025–26 Non-Conference Slate","link":"https://purduesports.com/","source":"PurdueSports.com","tier":"official","type":"article","ts":1762300800000}
-]}
-</script>
-
-<script src="./static/js/app.js?v=2025-10-08T01:19:50Z" defer></script>
-<script src="./static/js/pro.js?v=2025-10-08T01:19:50Z" defer></script>
+  async function init(){
+    const news=await load("static/data/news.json");
+    renderNews(news);
+    const sched=await load("static/teams/purdue-mbb/schedule.json");
+    if(window.PRO&&PRO.hydratePanels)PRO.hydratePanels(sched);
+    const roster=await load("static/teams/purdue-mbb/roster.json");
+    renderRoster(roster);
+    renderVideos(news);
+  }
+  document.addEventListener("DOMContentLoaded",init);
+  </script>
+  <script src="./static/js/pro.js?v=1"></script>
 </body>
 </html>
