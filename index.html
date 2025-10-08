@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#0b1017" />
   <title>Purdue Boilermakers Hub</title>
 
-  <link rel="stylesheet" href="./static/css/app.css?v=10" />
-  <link rel="stylesheet" href="./static/css/mobile-tweaks.css?v=10" />
+  <link rel="stylesheet" href="./static/css/app.css?v=11" />
+  <link rel="stylesheet" href="./static/css/mobile-tweaks.css?v=11" />
 
   <meta name="description" content="Purdue Boilermakers Men's Basketball Hub — live Purdue MBB headlines, schedule, roster, rankings, and insider links auto-updated via GitHub Actions.">
   <link rel="icon" href="./static/img/favicon.png">
@@ -17,6 +17,14 @@
     .pill[disabled]{ opacity:.45; cursor:not-allowed!important; pointer-events:none; }
     .pill .count{ color:var(--muted); margin-left:.35rem; font-size: var(--fs-0); }
     .empty-note{ padding:12px; border-radius:10px; background:#0e1623; color:var(--muted); }
+    .load-more-row{ display:flex; justify-content:center; margin:16px 0 4px; }
+    .btn{
+      appearance:none; border:1px solid rgba(255,255,255,.12); background:#101a28; color:#e8eef9;
+      border-radius:12px; padding:10px 14px; font-weight:600; cursor:pointer;
+    }
+    .btn:hover{ background:#132033; }
+    .btn:disabled{ opacity:.5; cursor:not-allowed; }
+    .btn-secondary{ background:#0f1622; }
   </style>
 </head>
 
@@ -42,6 +50,11 @@
 
         <div id="hero" class="hero"></div>
         <div id="cards" class="card-grid" style="margin-top:12px;"></div>
+
+        <!-- Load more -->
+        <div class="load-more-row">
+          <button id="loadMoreBtn" class="btn btn-secondary" aria-live="polite" hidden>Load more</button>
+        </div>
       </section>
 
       <!-- RAIL -->
@@ -86,13 +99,12 @@
   const timeAgo=(ts)=>{ if(!ts)return""; if(ts<1e12)ts*=1000; const d=Date.now()-ts,m=Math.floor(d/6e4); if(m<60)return m+"m ago"; const h=Math.floor(m/60); if(h<24)return h+"h ago"; return Math.floor(h/24)+"d ago"; };
   async function loadJson(p){ try{const r=await fetch(p+"?v="+Date.now(),{cache:"no-store"}); if(!r.ok) throw 0; return await r.json();}catch{return null;} }
 
-  // ----------- Robust Purdue MBB filter with fallback (client side) -----------
+  // -------- Purdue MBB scoring (keeps football out, prefers hoops) --------
   const POS_MBB=["men's basketball","mens basketball","mbb","basketball","hoops","matt painter","mackey","paint crew","zach edey","braden smith","fletcher loyer","caleb furst","ncaa","big ten","march madness","exhibition","tournament"];
   const HINT_PATH=/\/(mbb|m-basketball|mens?-basketball|men-basketball|basketball|college-basketball|ncaa-basketball)\//i;
   const NEG_FB=["football","fball","nfl","qb","quarterback","running back","wide receiver","offensive line","defensive line","touchdown","ross-ade","ryan walters","hudson card"];
   const PU_CORE=["purdue","boilermaker","west lafayette","purduesports.com","hammerandrails.com","goldandblack","247sports","rivals"];
 
-  // score each item; higher is more likely Purdue MBB; football penalizes hard
   function scoreItem(it){
     const t=(it.title+" "+(it.summary||"")+" "+(it.source||"")+" "+(it.link||"")).toLowerCase();
     let s=0;
@@ -100,64 +112,51 @@
     if (HINT_PATH.test((it.link||""))) s+=3;
     POS_MBB.forEach(k=>{ if(t.includes(k)) s+=2; });
     NEG_FB.forEach(k=>{ if(t.includes(k)) s-=5; });
-    // tiny boost for official & insiders
     if (it.tier==="official") s+=1;
     if (it.tier==="insiders") s+=1;
     return s;
   }
+  function uniqBy(arr, keyFn){ const seen=new Set(); const out=[]; for(const a of arr){ const k=keyFn(a); if(seen.has(k)) continue; seen.add(k); out.push(a);} return out; }
 
   function pickTopMBB(items){
-    if(!items || !items.length) return [];
-    // Sort newest first to keep recency in tie-breakers
-    const withScore = items.map(it=>({it, s:scoreItem(it)}))
-      .sort((a,b)=> (b.it.ts - a.it.ts));
+    if(!items?.length) return [];
+    const sorted = items.slice().sort((a,b)=> (b.ts - a.ts));
+    const withScore = sorted.map(it=>({it, s:scoreItem(it)}));
 
-    // Tier A: strong basketball (score >= 4)
     const A = withScore.filter(x=>x.s>=4).map(x=>x.it);
-    if (A.length>=10) return A.slice(0,10);
-
-    // Tier B: decent basketball, non-football (score >= 2)
     const B = withScore.filter(x=>x.s>=2 && !NEG_FB.some(k=>(x.it.title+" "+(x.it.summary||"")).toLowerCase().includes(k))).map(x=>x.it);
-    const mergedAB = uniqBy([...A, ...B], k=>k.link).slice(0,10);
-    if (mergedAB.length>=10) return mergedAB;
+    const C = withScore.filter(x=> PU_CORE.some(k=>(x.it.title+" "+(x.it.summary||"")).toLowerCase().includes(k))
+                                   && !NEG_FB.some(k=>(x.it.title+" "+(x.it.summary||"")).toLowerCase().includes(k))).map(x=>x.it);
+    const D = withScore.filter(x=> !NEG_FB.some(k=>(x.it.title+" "+(x.it.summary||"")).toLowerCase().includes(k))).map(x=>x.it);
 
-    // Tier C: Purdue-anchored, explicitly not football
-    const C = withScore
-      .filter(x=> PU_CORE.some(k=>(x.it.title+" "+(x.it.summary||"")).toLowerCase().includes(k))
-                   && !NEG_FB.some(k=>(x.it.title+" "+(x.it.summary||"")).toLowerCase().includes(k)))
-      .map(x=>x.it);
-
-    const mergedABC = uniqBy([...mergedAB, ...C], k=>k.link).slice(0,10);
-    if (mergedABC.length>=10) return mergedABC;
-
-    // Last resort: newest non-football items (still Purdue-leaning by feed mix)
-    const D = withScore.filter(x=>!NEG_FB.some(k=>(x.it.title+" "+(x.it.summary||"")).toLowerCase().includes(k))).map(x=>x.it);
-    return uniqBy([...mergedABC, ...D], k=>k.link).slice(0, Math.min(10, items.length));
+    return uniqBy([...A, ...B, ...C, ...D], k=>k.link);
   }
-
-  function uniqBy(arr, keyFn){
-    const seen=new Set(); const out=[];
-    for(const a of arr){ const k=keyFn(a); if(seen.has(k)) continue; seen.add(k); out.push(a); }
-    return out;
-  }
-  // ---------------------------------------------------------------------------
+  // ------------------------------------------------------------------------
 
   function byTier(items,t){ return t==="all" ? items : items.filter(i=>i.tier===t); }
 
-  let NEWS_CACHE=null, CURRENT_TIER="all";
+  // Global caches
+  let NEWS_ALL=null;        // all picked stories (ranked & de-duped)
+  let CURRENT_TIER="all";
+  let VISIBLE_COUNT=10;     // how many cards we currently show (hero + this many-1)
+  const STEP=10;
 
   function drawNews(){
-    const full = byTier(NEWS_CACHE, CURRENT_TIER).slice(0,10);
-    const hero=$("#hero"), cards=$("#cards"), insiderList=$("#insiderList");
+    const hero=$("#hero"), cards=$("#cards"), insiderList=$("#insiderList"), loadBtn=$("#loadMoreBtn");
 
-    if (!full.length){
+    const filtered = byTier(NEWS_ALL, CURRENT_TIER);
+    if (!filtered.length){
       hero.innerHTML = `<div class="empty-note">No Purdue Men's Basketball headlines found right now. They’ll appear here as soon as new stories publish.</div>`;
-      cards.innerHTML="";
+      cards.innerHTML=""; loadBtn.hidden=true;
       insiderList.textContent="No insider items (yet).";
       return;
     }
 
-    const h=full[0];
+    // always (re)render from the beginning to keep ordering correct
+    const sliceCount = Math.min(VISIBLE_COUNT, filtered.length);
+    const view = filtered.slice(0, sliceCount);
+    const h = view[0];
+
     hero.innerHTML=`
       <a class="hero-img" href="${esc(h.link)}" target="_blank" rel="noopener">
         ${h.image?`<img src="${esc(h.image)}" alt="">`:""}
@@ -168,7 +167,7 @@
         <span class="small muted">${timeAgo(h.ts)}</span>
       </div>`;
 
-    cards.innerHTML=full.slice(1,10).map(it=>`
+    cards.innerHTML = view.slice(1).map(it=>`
       <div class="card">
         ${it.image?`<div class="card-thumb"><img src="${esc(it.image)}" alt=""></div>`:""}
         <div class="card-body">
@@ -179,20 +178,26 @@
           <a href="${esc(it.link)}" target="_blank" class="card-title">${esc(it.title)}</a>
           <div class="card-meta">${timeAgo(it.ts)} • ${esc(it.source)}</div>
         </div>
-      </div>`).join("");
+      </div>
+    `).join("");
 
-    const insiderItems = NEWS_CACHE.filter(i=>i.tier==="insiders");
+    // insiders list (static: first 6 insiders overall)
+    const insiderItems = NEWS_ALL.filter(i=>i.tier==="insiders");
     $("#insiderList").innerHTML = insiderItems.length
       ? insiderItems.slice(0,6).map(i=>`<a class="link-card" href="${esc(i.link)}" target="_blank" rel="noopener">${esc(i.title)}</a>`).join("")
       : "No insider items (yet).";
+
+    // load more visibility
+    loadBtn.hidden = sliceCount >= filtered.length;
+    loadBtn.textContent = loadBtn.hidden ? "No more stories" : "Load more";
   }
 
   function updatePills(){
     const counts={
-      all: NEWS_CACHE.length,
-      official: NEWS_CACHE.filter(i=>i.tier==="official").length,
-      insiders: NEWS_CACHE.filter(i=>i.tier==="insiders").length,
-      national: NEWS_CACHE.filter(i=>i.tier==="national").length
+      all: NEWS_ALL.length,
+      official: NEWS_ALL.filter(i=>i.tier==="official").length,
+      insiders: NEWS_ALL.filter(i=>i.tier==="insiders").length,
+      national: NEWS_ALL.filter(i=>i.tier==="national").length
     };
     $$("#newsPills .pill").forEach(b=>{
       const t=b.dataset.tier, n=counts[t]??0;
@@ -207,18 +212,27 @@
   async function initNews(){
     const data=await loadJson("static/data/news.json");
     const raw=(data?.items||[]).slice().sort((a,b)=> (b.ts < 1e12 ? b.ts*1000 : b.ts) - (a.ts < 1e12 ? a.ts*1000 : a.ts));
-    // resilient selection: always aim for 10, kill football
-    const picked = pickTopMBB(raw);
-    NEWS_CACHE=picked;
+    // ranked, de-duped, football-free list (can be > 10 now)
+    NEWS_ALL = pickTopMBB(raw);
+    // start with 10 visible
+    VISIBLE_COUNT = 10;
     drawNews();
     updatePills();
 
+    // pill clicks
     $("#newsPills").addEventListener("click", (e)=>{
       const btn=e.target.closest(".pill"); if(!btn||btn.disabled) return;
       const tier=btn.dataset.tier; if(tier===CURRENT_TIER) return;
       CURRENT_TIER=tier;
+      VISIBLE_COUNT=10; // reset list length on filter change
       drawNews(); updatePills();
       $("#news").scrollIntoView({behavior:"smooth", block:"start"});
+    });
+
+    // load more
+    $("#loadMoreBtn").addEventListener("click", ()=>{
+      VISIBLE_COUNT += STEP;
+      drawNews();
     });
   }
 
@@ -259,6 +273,6 @@
   (document.readyState==="loading") ? document.addEventListener("DOMContentLoaded", boot, {once:true}) : boot();
   </script>
 
-  <script src="./static/js/pro.js?v=10"></script>
+  <script src="./static/js/pro.js?v=11"></script>
 </body>
 </html>
