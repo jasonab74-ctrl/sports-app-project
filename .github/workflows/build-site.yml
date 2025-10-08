@@ -1,11 +1,14 @@
 name: Build static index.html from JSON
 
 on:
-  push:
-    branches: [main]
-  workflow_dispatch:
   schedule:
-    - cron: "0 * * * *" # hourly
+    - cron: "*/30 * * * *"
+  workflow_dispatch: {}
+  push:
+    paths:
+      - "tools/**"
+      - "static/data/sources.json"
+      - "static/teams/purdue-mbb/**"
 
 permissions:
   contents: write
@@ -17,33 +20,28 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
-          node-version: '20'
-          cache: 'npm'
+          python-version: "3.11"
 
       - name: Install deps
         run: |
-          if [ -f package-lock.json ]; then
-            npm ci --no-audit --no-fund
-          else
-            npm i --no-audit --no-fund
-          fi
+          python -m pip install --upgrade pip
+          pip install requests feedparser beautifulsoup4
 
-      - name: Sync news (10 most-recent across 8 sources)
-        run: npm run news:sync
+      - name: Collect News
+        run: python tools/collect.py
 
-      - name: Sync results (optional)
-        run: npm run results:sync
+      - name: Collect Schedule
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+        run: python tools/schedule_collect.py
 
-      - name: Build site
-        run: npm run build
-
-      - name: Commit generated files
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A
-          git commit -m "chore: news sync + build [skip ci]" || echo "No changes"
-          git push || true
+      - name: Commit files
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: auto-build news/schedule"
+          file_pattern: |
+            static/data/news.json
+            static/teams/purdue-mbb/schedule.json
