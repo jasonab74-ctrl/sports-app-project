@@ -6,15 +6,15 @@
   <meta name="theme-color" content="#0b1017" />
   <title>Purdue Boilermakers Hub</title>
 
-  <link rel="stylesheet" href="./static/css/app.css?v=5" />
-  <link rel="stylesheet" href="./static/css/mobile-tweaks.css?v=5" />
+  <link rel="stylesheet" href="./static/css/app.css?v=6" />
+  <link rel="stylesheet" href="./static/css/mobile-tweaks.css?v=6" />
 
   <meta name="description" content="Purdue Boilermakers Men's Basketball Hub — live Purdue MBB headlines, schedule, roster, rankings, and insider links auto-updated via GitHub Actions.">
   <link rel="icon" href="./static/img/favicon.png">
 </head>
 
 <body>
-  <!-- Header: brand only (removed static nav buttons) -->
+  <!-- Header: brand only -->
   <header class="topbar">
     <div class="brand-badge"><div class="brand-dot"></div></div>
     <div class="brand-title">Boilermakers</div>
@@ -24,9 +24,7 @@
     <div class="grid">
       <!-- NEWS -->
       <section id="news" class="panel">
-        <div class="panel-hd">
-          <h2>Top Headlines</h2>
-        </div>
+        <div class="panel-hd"><h2>Top Headlines</h2></div>
         <div class="panel-subnote">Refreshed every 30 min • Auto-updated via GitHub Actions</div>
 
         <div class="pills" id="newsPills" style="margin-top:10px;">
@@ -36,10 +34,7 @@
           <button class="pill" data-tier="national">national</button>
         </div>
 
-        <!-- Hero includes image when present -->
         <div id="hero" class="hero"></div>
-
-        <!-- Cards keep thumbnails when available -->
         <div id="cards" class="card-grid" style="margin-top:12px;"></div>
       </section>
 
@@ -109,12 +104,12 @@
 
   let NEWS_CACHE=null, CURRENT_TIER="all";
   function drawNews(){
-    const items = byTier(NEWS_CACHE, CURRENT_TIER);
+    const full = byTier(NEWS_CACHE, CURRENT_TIER).slice(0,10); // hard cap 10 on UI
     const hero = $("#hero"), cards = $("#cards"), insiderList = $("#insiderList");
 
-    if (!items.length){ hero.innerHTML = `<div class="muted small">No Purdue MBB headlines yet.</div>`; cards.innerHTML=""; insiderList.textContent="No insider items (yet)."; return; }
+    if (!full.length){ hero.innerHTML = `<div class="muted small">No Purdue MBB headlines yet.</div>`; cards.innerHTML=""; insiderList.textContent="No insider items (yet)."; return; }
 
-    const h = items[0];
+    const h = full[0];
     hero.innerHTML = `
       <a class="hero-img" href="${esc(h.link)}" target="_blank" rel="noopener">
         ${h.image?`<img src="${esc(h.image)}" alt="">`:``}
@@ -125,7 +120,7 @@
         <span class="small muted">${timeAgo(h.ts)}</span>
       </div>`;
 
-    cards.innerHTML = items.slice(1, 18).map(it=>`
+    cards.innerHTML = full.slice(1, 10).map(it=>`
       <div class="card">
         ${it.image?`<div class="card-thumb"><img src="${esc(it.image)}" alt=""></div>`:""}
         <div class="card-body">
@@ -202,6 +197,6 @@
   (document.readyState === "loading") ? document.addEventListener("DOMContentLoaded", boot, {once:true}) : boot();
   </script>
 
-  <script src="./static/js/pro.js?v=5"></script>
+  <script src="./static/js/pro.js?v=6"></script>
 </body>
 </html>
