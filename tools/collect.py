@@ -1,11 +1,7 @@
 #!/usr/bin/env python3
 # tools/collect.py
 #
-# Build a Purdue *Men's Basketball only* news file.
-# - Keeps OFFICIAL/INSIDERS/NATIONAL/LOCAL only if it looks like Purdue MBB.
-# - Extracts images from feed media OR first <img> in content/summary;
-#   if missing, falls back to article's OpenGraph image (og:image) with a short request.
-#
+# Purdue *Men's Basketball only* news builder with image fallback.
 # Output -> static/data/news.json
 
 import os, re, json, time, hashlib, html
@@ -78,36 +74,26 @@ def image_from_html(html_str):
     return m.group(1) if m else None
 
 def first_image(entry):
-    # 1) media:content / media:thumbnail
     media = entry.get("media_content") or entry.get("media_thumbnail") or []
     for m in media:
         url = m.get("url")
         if url: return url
-
-    # 2) content HTML
     if entry.get("content"):
         for c in entry["content"]:
             url = image_from_html(c.get("value") or "")
             if url: return url
-
-    # 3) summary as HTML
     url = image_from_html(entry.get("summary") or "")
     if url: return url
-
-    # 4) summary_detail if html
     sd = entry.get("summary_detail") or {}
     if sd.get("type") and "html" in sd.get("type"):
         url = image_from_html(sd.get("value") or "")
         if url: return url
-
     return None
 
 def og_image(link):
-    # Lightweight OG fetch (timeout 6s). Only plain GET and tiny parse to avoid heavy work.
     try:
         r = requests.get(link, timeout=6, headers={"User-Agent":"Mozilla/5.0"})
         if r.status_code != 200: return None
-        # search og:image quickly
         m = re.search(r'<meta[^>]+property=["\']og:image["\'][^>]*content=["\']([^"\']+)["\']', r.text, re.I)
         if m: return m.group(1)
         m = re.search(r'<meta[^>]+content=["\']([^"\']+)["\'][^>]*property=["\']og:image["\']', r.text, re.I)
@@ -124,18 +110,12 @@ def fetch_feed(url, tier):
     for e in fp.entries:
         link = e.get("link") or ""
         title = clean_text(e.get("title"))
-        # RAW summary for text; keep HTML for image extraction already handled in first_image
         summary_txt = clean_text(
             e.get("summary") or (e.get("content",[{}])[0].get("value") if e.get("content") else "")
         )
         src = domain(link) or domain(fp.href or url)
         ts = when_ts(e)
-
-        img = first_image(e)
-        # If feed lacks image, small OG probe
-        if not img and link:
-            img = og_image(link)
-
+        img = first_image(e) or (og_image(link) if link else None)
         items.append({
             "id": hash_id(link or title),
             "title": title,
@@ -163,13 +143,12 @@ def has_any(rx_list, text): return any(rx.search(text) for rx in rx_list)
 def looks_basketball(item):
     blob = " ".join([item.get("title",""), item.get("summary",""), item.get("link",""), item.get("source","")]).lower()
     path = urlparse(item.get("link","")).path.lower()
-    if any(h in path for h in PATH_HINTS):  # strong URL hint
+    if any(h in path for h in PATH_HINTS):
         pass
     else:
-        # must look like Purdue; official domain passes this check
         if not has_any(RX_PU, blob) and "purduesports.com" not in (item.get("source") or ""):
             return False
-        if has_any(RX_FB, blob) and not has_any(RX_MBB, blob):  # football? reject unless it also clearly says basketball
+        if has_any(RX_FB, blob) and not has_any(RX_MBB, blob):
             return False
         if not has_any(RX_MBB, blob):
             return False
@@ -188,19 +167,14 @@ def main():
     ]
 
     raw=[]
-    for tier, urls in buckets:
+    for _, urls in buckets:
         for u in urls:
-            raw.extend(fetch_feed(u, tier))
+            raw.extend(fetch_feed(u, _))
 
-    # filter to MBB only
     filtered = [it for it in raw if looks_basketball(it)]
-
-    # dedupe + cap
-    limit = max(20, int(cfg.get("min_items", 24)))
-    items = uniq(filtered)[:limit]
+    items = uniq(filtered)[:10]  # <<<<<< cap to 10
 
     save_json(OUT_PATH, {"updated": int(time.time()*1000), "items": items})
-    print(f"[collect] wrote {OUT_PATH} with {len(items)} MBB items (images present: {sum(1 for i in items if i.get('image'))})")
-
+    print(f"[collect] wrote {OUT_PATH} with {len(items)} MBB items (<=10)")
 if __name__ == "__main__":
     main()
