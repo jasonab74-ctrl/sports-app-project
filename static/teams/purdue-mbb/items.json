@@ -6,7 +6,23 @@
       "source": "PurdueSports.com",
       "tier": "official",
       "type": "article",
-      "ts": 1759934101537
+      "ts": 1759937540497
+    },
+    {
+      "title": "2 Purdue basketball players picked among Big Ten&#39;s best in USA TODAY Network preseason predictions",
+      "link": "https://www.indystar.com/story/sports/college/purdue/2025/10/08/purdue-big-ten-basketball-picks-predictions-rankings-braden-smith-trey-kaufman-renn/86582089007/",
+      "source": "Yahoo CBB",
+      "tier": "national",
+      "type": "article",
+      "ts": 1759935691000
+    },
+    {
+      "title": "USA TODAY Network Big Ten basketball predictions, preseason awards, all-conference teams",
+      "link": "https://www.usatoday.com/story/sports/ncaab/bigten/2025/10/08/big-10-basketball-rankings-preseason-poll-awards-all-conference-team-big-ten-purdue-michigan-indiana/86535433007/",
+      "source": "Yahoo CBB",
+      "tier": "national",
+      "type": "article",
+      "ts": 1759935639000
     },
     {
       "title": "AP Poll movers and what it means for Purdue",
@@ -14,7 +30,7 @@
       "source": "Sports Illustrated CBB",
       "tier": "national",
       "type": "article",
-      "ts": 1759930501537
+      "ts": 1759933940497
     },
     {
       "title": "Big Ten preview: tiers, X-factors, and POY race",
@@ -22,7 +38,7 @@
       "source": "CBS Sports CBB",
       "tier": "national",
       "type": "article",
-      "ts": 1759926901537
+      "ts": 1759930340497
     },
     {
       "title": "Big Ten storylines to watch",
@@ -30,7 +46,7 @@
       "source": "Yahoo CBB",
       "tier": "national",
       "type": "article",
-      "ts": 1759923301537
+      "ts": 1759926740497
     },
     {
       "title": "Coach Painter on lineup experimentation",
@@ -38,7 +54,7 @@
       "source": "Journal & Courier",
       "tier": "insiders",
       "type": "article",
-      "ts": 1759919701537
+      "ts": 1759923140497
     },
     {
       "title": "Recruiting board resets after fall visits",
@@ -46,7 +62,7 @@
       "source": "247Sports Purdue",
       "tier": "insiders",
       "type": "article",
-      "ts": 1759916101537
+      "ts": 1759919540497
     },
     {
       "title": "Film Room: PnR counters for 2025–26",
@@ -54,7 +70,7 @@
       "source": "Gold and Black (Rivals)",
       "tier": "insiders",
       "type": "article",
-      "ts": 1759912501537
+      "ts": 1759915940497
     },
     {
       "title": "Mic’d Up: Preseason Workouts",
@@ -62,7 +78,7 @@
       "source": "PurdueSports YouTube",
       "tier": "official",
       "type": "video",
-      "ts": 1759908901537
+      "ts": 1759912340497
     },
     {
       "title": "Practice Highlights — First Week",
@@ -70,7 +86,7 @@
       "source": "BTN Purdue",
       "tier": "official",
       "type": "video",
-      "ts": 1759905301537
+      "ts": 1759908740497
     },
     {
       "title": "Summer Highlights Mix",
@@ -78,7 +94,7 @@
       "source": "BTN Purdue",
       "tier": "official",
       "type": "video",
-      "ts": 1759901701537
+      "ts": 1759905140497
     }
   ]
 }
