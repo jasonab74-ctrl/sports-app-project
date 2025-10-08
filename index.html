@@ -6,10 +6,10 @@
   <meta name="theme-color" content="#0b1017" />
   <title>Purdue Boilermakers Hub</title>
 
-  <link rel="stylesheet" href="./static/css/app.css?v=3" />
-  <link rel="stylesheet" href="./static/css/mobile-tweaks.css?v=3" />
+  <link rel="stylesheet" href="./static/css/app.css?v=4" />
+  <link rel="stylesheet" href="./static/css/mobile-tweaks.css?v=4" />
 
-  <meta name="description" content="Purdue Boilermakers Men's Basketball Hub — live Purdue headlines, schedule, roster, rankings, and insider links auto-updated via GitHub Actions.">
+  <meta name="description" content="Purdue Boilermakers Men's Basketball Hub — live Purdue MBB headlines, schedule, roster, rankings, and insider links auto-updated via GitHub Actions.">
   <link rel="icon" href="./static/img/favicon.png">
 </head>
 
@@ -89,20 +89,26 @@
   </footer>
 
   <script>
-  // ---------- tiny helpers ----------
+  // ---------- helpers ----------
   const $ = (sel, r=document)=>r.querySelector(sel);
   const $$ = (sel, r=document)=>Array.from(r.querySelectorAll(sel));
   const esc = (s="") => (s+"").replace(/[&<>"']/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
   const timeAgo = (ts)=>{ if(ts<1e12) ts*=1000; const d=Date.now()-ts; const m=Math.floor(d/60000); if(m<60)return m+"m ago"; const h=Math.floor(m/60); if(h<24)return h+"h ago"; return Math.floor(h/24)+"d ago"; };
   async function loadJson(p){ try{ const r=await fetch(p+"?v="+Date.now(),{cache:"no-store"}); if(!r.ok) throw 0; return await r.json(); } catch { return null; } }
 
-  // ---------- Purdue-only client filter ----------
-  const PURDUE_KWS = ["purdue","boilermakers","matt painter","mackey arena","west lafayette","boiler up","zach edey","paint crew"];
-  function isPurdueRelated(item){
-    // Always keep official/insiders
-    if (item.tier === "official" || item.tier === "insiders") return true;
-    const blob = (item.title+" "+(item.summary||"")+" "+item.link+" "+(item.source||"")).toLowerCase();
-    return PURDUE_KWS.some(k=>blob.includes(k));
+  // ---------- client-side MBB filter (backstop) ----------
+  const MBB_POS = ["men's basketball","mens basketball","mbb","basketball","hoops","matt painter","mackey","paint crew","zach edey","braden smith","fletcher loyer","caleb furst","ncaa","big ten","march madness","exhibition","tournament"];
+  const FB_NEG  = ["football","qb","quarterback","running back","wide receiver","offensive line","defensive line","ryan walters","hudson card","gridiron","ross-ade"];
+  const PU_CORE = ["purdue","boilermaker","west lafayette","purduesports.com"];
+
+  function isMBB(item){
+    const text = (item.title+" "+(item.summary||"")+" "+item.link+" "+(item.source||"")).toLowerCase();
+    const isPurdue = PU_CORE.some(k=>text.includes(k));
+    const looksFB  = FB_NEG.some(k=>text.includes(k));
+    const looksBB  = MBB_POS.some(k=>text.includes(k)) || /\/(mbb|mens?-basketball|basketball)\//.test(item.link.toLowerCase());
+    if (!isPurdue && item.tier!=="official") return false;
+    if (looksFB && !looksBB) return false;
+    return looksBB;
   }
   function byTier(items,t){ return t==="all" ? items : items.filter(i=>i.tier===t); }
 
@@ -112,7 +118,7 @@
     const items = byTier(NEWS_CACHE, CURRENT_TIER);
     const hero = $("#hero"), cards = $("#cards"), insiderList = $("#insiderList");
 
-    if (!items.length){ hero.innerHTML = `<div class="muted small">No Purdue headlines yet.</div>`; cards.innerHTML=""; insiderList.textContent="No insider items (yet)."; return; }
+    if (!items.length){ hero.innerHTML = `<div class="muted small">No Purdue MBB headlines yet.</div>`; cards.innerHTML=""; insiderList.textContent="No insider items (yet)."; return; }
 
     const heroItem = items[0];
     hero.innerHTML = `
@@ -147,11 +153,10 @@
 
   async function initNews(){
     const news = await loadJson("static/data/news.json");
-    const items = (news?.items || []).filter(isPurdueRelated)
+    const items = (news?.items || []).filter(isMBB)
       .sort((a,b)=> (b.ts < 1e12 ? b.ts*1000 : b.ts) - (a.ts < 1e12 ? a.ts*1000 : a.ts));
     NEWS_CACHE = items;
     drawNews();
-
     // filter pills
     $$("#newsPills .pill").forEach(p=>{
       p.addEventListener("click", ()=>{
@@ -180,10 +185,10 @@
     `).join("");
   }
 
-  // ---------- Videos (from news items that are YouTube links) ----------
+  // ---------- Videos (YouTube links in MBB items) ----------
   async function initVideos(){
     const news = await loadJson("static/data/news.json");
-    const vids = (news?.items || []).filter(i=>/youtube\.com|youtu\.be/i.test(i.link) && isPurdueRelated(i));
+    const vids = (news?.items || []).filter(i=>/youtube\.com|youtu\.be/i.test(i.link) && isMBB(i));
     const el = $("#videoGrid");
     if(!vids.length){ el.innerHTML = `<div class="muted small">No videos found.</div>`; return; }
     el.innerHTML = vids.slice(0,6).map(v=>`
@@ -201,7 +206,7 @@
   async function boot(){
     await initNews();
     if (window.PRO && typeof PRO.hydratePanels === "function") {
-      PRO.hydratePanels(); // schedule panel
+      PRO.hydratePanels(); // schedule panel (already MBB-only)
     }
     await initRoster();
     await initVideos();
@@ -209,6 +214,6 @@
   (document.readyState === "loading") ? document.addEventListener("DOMContentLoaded", boot, {once:true}) : boot();
   </script>
 
-  <script src="./static/js/pro.js?v=3"></script>
+  <script src="./static/js/pro.js?v=4"></script>
 </body>
 </html>
