@@ -6,7 +6,15 @@
       "source": "PurdueSports.com",
       "tier": "official",
       "type": "article",
-      "ts": 1760049023660
+      "ts": 1760052407900
+    },
+    {
+      "title": "Should NCAA Tournament include more teams? Big Ten coaches think it&#39;s time to expand",
+      "link": "https://www.jconline.com/story/sports/college/purdue/basketball/2025/10/09/ncaa-tournament-expansion-big-ten/86512440007/",
+      "source": "Journal & Courier",
+      "tier": "national",
+      "type": "article",
+      "ts": 1760049920000
     },
     {
       "title": "AP Poll movers and what it means for Purdue",
@@ -14,7 +22,15 @@
       "source": "Sports Illustrated CBB",
       "tier": "national",
       "type": "article",
-      "ts": 1760045423660
+      "ts": 1760048807900
+    },
+    {
+      "title": "Big Ten preview: tiers, X-factors, and POY race",
+      "link": "https://www.cbssports.com/college-basketball/",
+      "source": "CBS Sports CBB",
+      "tier": "national",
+      "type": "article",
+      "ts": 1760045207900
     },
     {
       "title": "Darian DeVries walks into Purdue-Indiana basketball rivalry &#39;everybody has a passion for&#39;",
@@ -25,20 +41,12 @@
       "ts": 1760043616000
     },
     {
-      "title": "Big Ten preview: tiers, X-factors, and POY race",
-      "link": "https://www.cbssports.com/college-basketball/",
-      "source": "CBS Sports CBB",
-      "tier": "national",
-      "type": "article",
-      "ts": 1760041823660
-    },
-    {
       "title": "Big Ten storylines to watch",
       "link": "https://sports.yahoo.com/college-basketball/",
       "source": "Yahoo CBB",
       "tier": "national",
       "type": "article",
-      "ts": 1760038223660
+      "ts": 1760041607900
     },
     {
       "title": "Coach Painter on lineup experimentation",
@@ -46,7 +54,7 @@
       "source": "Journal & Courier",
       "tier": "insiders",
       "type": "article",
-      "ts": 1760034623660
+      "ts": 1760038007900
     },
     {
       "title": "Recruiting board resets after fall visits",
@@ -54,7 +62,7 @@
       "source": "247Sports Purdue",
       "tier": "insiders",
       "type": "article",
-      "ts": 1760031023660
+      "ts": 1760034407900
     },
     {
       "title": "Film Room: PnR counters for 2025–26",
@@ -62,7 +70,7 @@
       "source": "Gold and Black (Rivals)",
       "tier": "insiders",
       "type": "article",
-      "ts": 1760027423660
+      "ts": 1760030807900
     },
     {
       "title": "Mic’d Up: Preseason Workouts",
@@ -70,7 +78,7 @@
       "source": "PurdueSports YouTube",
       "tier": "official",
       "type": "video",
-      "ts": 1760023823660
+      "ts": 1760027207900
     },
     {
       "title": "Practice Highlights — First Week",
@@ -78,7 +86,7 @@
       "source": "BTN Purdue",
       "tier": "official",
       "type": "video",
-      "ts": 1760020223660
+      "ts": 1760023607900
     },
     {
       "title": "Summer Highlights Mix",
@@ -86,7 +94,7 @@
       "source": "BTN Purdue",
       "tier": "official",
       "type": "video",
-      "ts": 1760016623660
+      "ts": 1760020007900
     }
   ]
 }
