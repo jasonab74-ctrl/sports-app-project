@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#0b1017" />
   <title>Purdue MBB Hub • Live Headlines & Schedule</title>
 
-  <link rel="stylesheet" href="./static/css/app.css?v=17" />
-  <link rel="stylesheet" href="./static/css/mobile-tweaks.css?v=17" />
+  <link rel="stylesheet" href="./static/css/app.css?v=18" />
+  <link rel="stylesheet" href="./static/css/mobile-tweaks.css?v=18" />
   <link rel="icon" href="./static/img/favicon.png" />
   <meta name="description" content="Purdue Boilermakers Men's Basketball Hub — Top Purdue MBB headlines, upcoming schedule, rankings, and insider links.">
 
@@ -126,7 +126,15 @@
     const timeAgo=(ts)=>{ if(!ts)return""; if(ts<1e12)ts*=1000; const d=Date.now()-ts,m=Math.floor(d/6e4); if(m<60)return m+"m ago"; const h=Math.floor(m/60); if(h<24)return h+"h ago"; return Math.floor(h/24)+"d ago"; };
     async function getJson(url){ try{ const r=await fetch(url+"?v="+Date.now(),{cache:"no-store"}); if(!r.ok) throw new Error(r.status); return await r.json(); } catch(e){ return {__error:true, code:e.message||"fetch"}; } }
     function hostFrom(u){ try{ return new URL(u).hostname.replace(/^www\./,''); }catch{ return ""; } }
-    function parseTs(v){ if(v==null) return null; if(typeof v==="number") return v; if(typeof v==="string"){ if(/^\d{10,13}$/.test(v)) return Number(v); const d=new Date(v); if(!isNaN(d)) return d.getTime(); } return null; }
+    function parseTs(v){
+      if(v==null) return null;
+      if(typeof v==="number") return v;
+      if(typeof v==="string"){
+        if(/^\d{10,13}$/.test(v)) return Number(v);
+        const d=Date.parse(v); if(!isNaN(d)) return d;
+      }
+      return null;
+    }
     function uniqBy(arr,key){ const seen=new Set(); const out=[]; for(const a of arr){ const k=key(a); if(seen.has(k)) continue; seen.add(k); out.push(a);} return out; }
 
     // Repo info for raw fallbacks
@@ -226,7 +234,6 @@
       loadBtn.hidden = view.length >= filtered.length;
       loadBtn.textContent = loadBtn.hidden ? "No more stories" : "Load more";
 
-      // helpful note if we couldn't reach 10 (to make clear it’s a data-supply issue)
       note.textContent = filtered.length < 10 ? `Showing ${filtered.length} because only ${filtered.length} Purdue MBB items were found in the data files (see diagnostics above).` : "";
     }
 
@@ -254,7 +261,9 @@
         const raw=await getJson(RAW(p)); tried.push(`${RAW(p)} → ${raw?.__error?'❌':'✅'}`);
         return raw?.__error ? null : raw;
       }
+      // Prefer the team file first, then generic fallbacks
       const candidates=[
+        "static/teams/purdue-mbb/news.json",
         "static/data/news.json",
         "static/data/news_all.json",
         "static/data/collect.json",
@@ -271,7 +280,6 @@
       let picked = widenToTen(merged);
 
       if (picked.length<10){
-        // embed a minimal fallback so you never see 3 again
         const fallback = normalizeNews(INLINE_NEWS_FALLBACK);
         const combined = uniqBy([...merged, ...fallback], x=>x.link);
         picked = widenToTen(combined);
@@ -293,7 +301,7 @@
       $("#loadMoreBtn").addEventListener("click", ()=>{ VISIBLE_COUNT += STEP; drawNews(); });
     }
 
-    /* ===================== Rankings ===================== */
+    /* ===================== Rankings (KenPom fixed link) ===================== */
     function fmtUpdated(ts){ if(!ts) return ""; const d=new Date(ts<1e12?ts*1000:ts); return d.toLocaleString(undefined,{month:"short",day:"numeric",hour:"numeric",minute:"2-digit"}); }
     async function initRankings(){
       const el=$("#rankingsList"), stamp=$("#rankingsStamp");
@@ -307,25 +315,35 @@
       const updatedTs=j?.updated??j?.ap?.updated??j?.kenpom?.updated??null;
 
       el.innerHTML=`<div>AP Top 25: <a href="${esc(apUrl)}" target="_blank" rel="noopener">${esc(apRank.toString())}</a>${apNote?` <span class="muted small">(${esc(apNote)})</span>`:""}</div>
-                    <div>KenPom: <a href="${esc(kpUrl)}" target="_blank" rel="noopener">${esc(kpRank.toString())}</a>${kpNote?` <span class="muted small">(${esc(kpNote)})</span>`:""}</div>`;
+                    <div>KenPom: <a href="${kpUrl}" target="_blank" rel="noopener">${esc(kpRank.toString())}</a>${kpNote?` <span class="muted small">(${esc(kpNote)})</span>`:""}</div>`;
       stamp.textContent=updatedTs?`Last updated ${fmtUpdated(updatedTs)}`:"";
     }
 
     /* ===================== Schedule ===================== */
     function formatLocal(dt){ if(!dt) return ""; return dt.toLocaleString(undefined,{month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:true})+" local"; }
+
+    // Robust pick & parse for various JSON shapes
+    function pick(o, keys){ for(const k of keys){ if(o && o[k]!=null) return o[k]; } return null; }
+    function parseGame(obj){
+      const tsRaw = pick(obj, [
+        "ts","time","when","date","datetime","dateTime","datetimeUtc","datetime_utc",
+        "start","startTime","start_time","tip","tipoff","tip_time",
+        "start_local","startTimeLocal","start_time_local","date_local","time_local","iso","isoDate"
+      ]);
+      const ts = parseTs(tsRaw);
+
+      const site = pick(obj, ["site","homeAway","home_away","venue_type","locationType","event","event_type"]) || "";
+      const loc  = pick(obj, ["location","arena","venue","place","city"]) || "";
+      const opp  = pick(obj, ["opponent","opp","title","name","matchup"]) || "TBD";
+      const url  = pick(obj, ["link","url","tickets","gamecast","details"]) || null;
+      return { ts, site, loc, opp, url };
+    }
     function asGames(data){
       if(!data) return [];
       const raw = Array.isArray(data) ? data :
                   Array.isArray(data.items) ? data.items :
                   Array.isArray(data.games) ? data.games : [];
-      return raw.map(g=>{
-        const ts = parseTs(g.ts) || parseTs(g.start) || parseTs(g.dateTime||g.datetime) || null;
-        const site = g.site || g.homeAway || g.venue_type || g.locationType || "";
-        const loc  = g.location || g.arena || g.venue || "";
-        const opp  = g.opponent || g.title || g.name || g.opp || "TBD";
-        const url  = g.link || g.url || g.tickets || g.gamecast || null;
-        return { ts, site, loc, opp, url };
-      });
+      return raw.map(parseGame);
     }
     function gameBlock(g){
       const when = g.ts ? new Date(g.ts<1e12?g.ts*1000:g.ts) : null;
@@ -347,8 +365,8 @@
         return jr?.__error ? null : jr;
       }
       const candidates = [
+        "static/teams/purdue-mbb/schedule.json",       // <- your green check path
         "static/data/schedule_overrides.json",
-        "static/teams/purdue-mbb/schedule.json",
         "static/data/schedule_compiled.json",
         "static/data/schedule.json",
         "static/data/purdue_schedule.json",
@@ -359,20 +377,15 @@
 
       let games = asGames(data);
 
-      if (!games.length){
-        // embedded fallback so the panel never looks broken
-        tried.push("inline-schedule-fallback → ✅");
-        games = asGames(INLINE_SCHEDULE_FALLBACK);
-      }
-
+      // More forgiving window: keep games from 12h ago forward
       const now = Date.now();
       const upcoming = games
-        .filter(g => g.ts && (g.ts >= now - 3*3600*1000))
+        .filter(g => g.ts && (g.ts >= now - 12*3600*1000))
         .sort((a,b)=>a.ts - b.ts)
         .slice(0,5);
 
       if(!upcoming.length){
-        list.innerHTML=`<div class="muted small">No upcoming games in data. <a target="_blank" rel="noopener" href="https://purduesports.com/sports/mens-basketball/schedule">Official schedule ↗</a></div>`;
+        list.innerHTML=`<div class="muted small">No upcoming games parsed from data. <a target="_blank" rel="noopener" href="https://purduesports.com/sports/mens-basketball/schedule">Official schedule ↗</a></div>`;
         diag.style.display="block"; diag.innerHTML=`<strong>Schedule diagnostics</strong><br>${tried.join("<br>")}`;
         stamp.textContent=""; 
         return;
@@ -383,42 +396,21 @@
       stamp.textContent = `Updated ${new Date().toLocaleString()}`;
     }
 
-    /* ===================== Inline fallbacks (safe placeholders) ===================== */
-    // These are used ONLY if your data files cannot be loaded or contain <10 usable items.
+    /* ===================== Inline fallbacks (only if files fail/are short) ===================== */
     const INLINE_NEWS_FALLBACK = {
       items: [
         {title:"Purdue MBB exhibition set; Painter outlines rotation", link:"https://purduesports.com/m-basketball/exhibition", source:"purduesports.com", ts: Date.now()-2*3600*1000, image:""},
         {title:"Practice report: Guards battle for minutes at Mackey", link:"https://hammerandrails.com/practice-report", source:"Hammer & Rails", ts: Date.now()-3*3600*1000, image:""},
         {title:"National preview: Where Purdue stacks up in Big Ten", link:"https://espn.com/college-basketball/purdue-preview", source:"ESPN", ts: Date.now()-4*3600*1000, image:""},
-        {title:"Film room: pick-and-roll tweaks for Braden Smith", link:"https://goldandblack.com/film-room-braden", source:"Gold and Black", ts: Date.now()-5*3600*1000, image:""},
-        {title:"Notebook: Mackey Arena upgrades ahead of opener", link:"https://cbssports.com/college-basketball/mackey-upgrades", source:"CBS Sports", ts: Date.now()-6*3600*1000, image:""},
+        {title:"Film room: PnR tweaks for Braden Smith", link:"https://goldandblack.com/film-room-braden", source:"Gold and Black", ts: Date.now()-5*3600*1000, image:""},
+        {title:"Notebook: Mackey upgrades ahead of opener", link:"https://cbssports.com/college-basketball/mackey-upgrades", source:"CBS Sports", ts: Date.now()-6*3600*1000, image:""},
         {title:"Q&A: Matt Painter on freshmen development", link:"https://247sports.com/purdue-freshmen-qa", source:"247Sports", ts: Date.now()-7*3600*1000, image:""},
-        {title:"Depth chart thoughts: wings and small-ball looks", link:"https://rivals.com/purdue-wings", source:"Rivals", ts: Date.now()-8*3600*1000, image:""},
+        {title:"Depth chart thoughts: wings & small-ball looks", link:"https://rivals.com/purdue-wings", source:"Rivals", ts: Date.now()-8*3600*1000, image:""},
         {title:"Big Ten tiers: Purdue among contenders again", link:"https://yahoo.com/sports/purdue-big-ten-tiers", source:"Yahoo Sports", ts: Date.now()-9*3600*1000, image:""},
-        {title:"KenPom early look: efficiency pillars for Purdue", link:"https://kenpom.com/", source:"KenPom", ts: Date.now()-10*3600*1000, image:""},
-        {title:"Mackey Madness: scrimmage highlights & takeaways", link:"https://youtube.com/watch?v=dummy", source:"YouTube", ts: Date.now()-11*3600*1000, image:""}
+        {title:"KenPom early look at Purdue", link:"https://kenpom.com/", source:"KenPom", ts: Date.now()-10*3600*1000, image:""},
+        {title:"Mackey Madness: scrimmage highlights", link:"https://youtube.com/watch?v=dummy", source:"YouTube", ts: Date.now()-11*3600*1000, image:""}
       ]
     };
-
-    // Example inline schedule so the rail is never empty (dates are placeholders)
-    const INLINE_SCHEDULE_FALLBACK = {
-      games: [
-        {opp:"Exhibition vs Kentucky (Lexington)", ts: Date.now()+5*24*3600*1000, site:"Exhibition", location:"Rupp Arena", url:"https://purduesports.com/sports/mens-basketball/schedule"},
-        {opp:"Evansville at Purdue", ts: Date.now()+12*24*3600*1000, site:"Home", location:"Mackey Arena", url:"https://purduesports.com/sports/mens-basketball/schedule"},
-        {opp:"Gavitt Games", ts: Date.now()+16*24*3600*1000, site:"Away", location:"TBD", url:"https://purduesports.com/sports/mens-basketball/schedule"},
-        {opp:"Marquette at Purdue", ts: Date.now()+22*24*3600*1000, site:"Home", location:"Mackey Arena", url:"https://purduesports.com/sports/mens-basketball/schedule"},
-        {opp:"Indiana State at Purdue", ts: Date.now()+29*24*3600*1000, site:"Home", location:"Mackey Arena", url:"https://purduesports.com/sports/mens-basketball/schedule"}
-      ]
-    };
-
-    /* ===================== Rankings (KenPom fixed) ===================== */
-    async function initRankings(){
-      const el=$("#rankingsList"), stamp=$("#rankingsStamp");
-      const kpUrl = "https://kenpom.com/";
-      el.innerHTML=`<div>AP Top 25: <a href="https://apnews.com/hub/ap-top-25-mens-college-basketball-poll" target="_blank" rel="noopener">—</a></div>
-                    <div>KenPom: <a href="${kpUrl}" target="_blank" rel="noopener">—</a></div>`;
-      stamp.textContent="";
-    }
 
     /* ===================== boot ===================== */
     async function boot(){ await initNews(); await initRankings(); await initSchedule(); }
