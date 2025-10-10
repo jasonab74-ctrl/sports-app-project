@@ -7,12 +7,10 @@
 <meta name="theme-color" content="#0b1017" />
 <meta name="description" content="Purdue Boilermakers Men's Basketball Hub — Top Purdue MBB headlines, upcoming schedule, rankings, and insider links.">
 <style>
-/* ====== Minimal, responsive CSS (self-contained) ====== */
 :root{
   --bg:#0b1017; --panel:#101826; --ink:#e9eef7; --muted:#9fb0c9;
   --line:rgba(255,255,255,.08); --pill:#162238; --accent:#f2c94c;
-  --danger:#ff7676; --ok:#9ae6b4; --link:#9dc1ff;
-  --fs-0:.86rem;
+  --link:#9dc1ff; --fs-0:.86rem;
 }
 *{box-sizing:border-box}
 html,body{height:100%}
@@ -64,7 +62,6 @@ a:hover{text-decoration:underline}
 <header class="header">
   <div class="header__inner">
     <div class="brand">Boilermakers Hub</div>
-    <!-- no redundant static nav; one clean header only -->
   </div>
 </header>
 
@@ -92,7 +89,7 @@ a:hover{text-decoration:underline}
     <aside class="panel" id="rankings">
       <h3>Rankings</h3>
       <div class="simple-list">
-        <div class="item">AP Top 25: <a id="ap-link" target="_blank" rel="noopener">—</a></div>
+        <div class="item">AP Top 25: <a id="ap-link" href="https://apnews.com/hub/ap-top-25-college-basketball-poll" target="_blank" rel="noopener">—</a></div>
         <div class="item">KenPom: <a id="kp-link" href="https://kenpom.com/" target="_blank" rel="noopener">—</a></div>
       </div>
       <div id="rank-stamp" class="small muted" style="margin-top:6px;"></div>
@@ -121,15 +118,7 @@ const esc = s => (s??"").toString().replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt
 const host = u => { try { return new URL(u).hostname.replace(/^www\./,''); } catch { return ""; } };
 const now = Date.now();
 const timeAgo = (ts) => { if(!ts) return ""; if(ts<1e12) ts*=1000; const d=Date.now()-ts, m=Math.floor(d/60000); if(m<60)return `${m}m ago`; const h=Math.floor(m/60); if(h<24)return `${h}h ago`; return `${Math.floor(h/24)}d ago`; };
-const parseTs = (v) => {
-  if(v==null) return null;
-  if(typeof v==="number") return v;
-  if(typeof v==="string"){
-    if(/^\d{10,13}$/.test(v)) return Number(v);
-    const d = Date.parse(v); if(!isNaN(d)) return d;
-  }
-  return null;
-};
+const parseTs = (v) => { if(v==null) return null; if(typeof v==="number") return v; if(typeof v==="string"){ if(/^\d{10,13}$/.test(v)) return Number(v); const d=Date.parse(v); if(!isNaN(d)) return d; } return null; };
 const RAW = (p) => `https://raw.githubusercontent.com/jasonab74-ctrl/sports-app-project/main/${p.replace(/^\//,'')}`;
 async function getJson(path){
   try{ const r=await fetch(path,{cache:"no-store"}); if(!r.ok) throw new Error(r.status); return await r.json(); }
@@ -243,14 +232,12 @@ async function loadNews(){
 async function loadRankings(){
   const j = await getJson("static/data/rankings.json");
   const apRank = j?.ap?.rank ?? j?.ap_rank ?? "—";
-  const apUrl  = j?.ap?.url  ?? "https://apnews.com/hub/ap-top-25-college-basketball-poll";
   const kpRank = j?.kenpom?.rank ?? j?.kenpom_rank ?? "—";
   const updated = j?.updated ?? j?.ap?.updated ?? j?.kenpom?.updated ?? null;
   const tsText = updated ? new Date(updated < 1e12 ? updated*1000 : updated).toLocaleString() : "";
-  const apLink=$("#ap-link"), kpLink=$("#kp-link"), stamp=$("#rank-stamp");
-  apLink.href = apUrl; apLink.textContent = apRank;
-  kpLink.textContent = kpRank; // href fixed to kenpom.com in markup
-  stamp.textContent = tsText ? `Updated ${tsText}` : "";
+  $("#ap-link").textContent = apRank;
+  $("#rank-stamp").textContent = tsText ? `Updated ${tsText}` : "";
+  $("#kp-link").textContent = kpRank; // href fixed to kenpom.com in markup
 }
 
 /* ===== Schedule ===== */
@@ -301,7 +288,14 @@ async function loadBeatLinks(){
 
 /* ===== Boot ===== */
 async function boot(){
-  wirePills();
+  (document.documentElement||{}).lang="en";
+  $("#news-pills").addEventListener("click", e=>{
+    const b=e.target.closest(".pill"); if(!b) return;
+    $$("#news-pills .pill").forEach(x=>{x.classList.toggle("active", x===b); x.setAttribute("aria-selected", x===b ? "true":"false");});
+    CURRENT_TIER=b.dataset.tier; VISIBLE=10; drawNews();
+  });
+  $("#load-more").addEventListener("click", ()=>{ VISIBLE+=10; drawNews(); });
+
   await Promise.all([loadNews(), loadRankings(), loadSchedule(), loadBeatLinks()]);
 }
 (document.readyState==="loading") ? document.addEventListener("DOMContentLoaded", boot, {once:true}) : boot();
