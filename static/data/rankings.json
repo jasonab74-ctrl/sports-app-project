@@ -1,15 +1,12 @@
 {
-  "updated": 1730842200000,
   "ap": {
-    "rank": 3,
-    "url": "https://apnews.com/hub/ap-top-25-mens-college-basketball-poll",
-    "note": "Week 2",
-    "updated": 1730842200000
+    "rank": "—",
+    "url": "https://apnews.com/hub/ap-top-25-college-basketball-poll",
+    "updated": null
   },
   "kenpom": {
-    "rank": 2,
-    "url": "https://kenpom.com/team.php?team=Purdue",
-    "note": "as of Oct 7",
-    "updated": 1730842200000
-  }
+    "rank": "—",
+    "updated": null
+  },
+  "updated": null
 }
