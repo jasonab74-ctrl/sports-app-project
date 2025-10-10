@@ -6,7 +6,31 @@
       "source": "PurdueSports.com",
       "tier": "official",
       "type": "article",
-      "ts": 1760052407900
+      "ts": 1760061673615
+    },
+    {
+      "title": "AP Poll movers and what it means for Purdue",
+      "link": "https://www.si.com/college-basketball",
+      "source": "Sports Illustrated CBB",
+      "tier": "national",
+      "type": "article",
+      "ts": 1760058073615
+    },
+    {
+      "title": "Big Ten preview: tiers, X-factors, and POY race",
+      "link": "https://www.cbssports.com/college-basketball/",
+      "source": "CBS Sports CBB",
+      "tier": "national",
+      "type": "article",
+      "ts": 1760054473615
+    },
+    {
+      "title": "Big Ten storylines to watch",
+      "link": "https://sports.yahoo.com/college-basketball/",
+      "source": "Yahoo CBB",
+      "tier": "national",
+      "type": "article",
+      "ts": 1760050873615
     },
     {
       "title": "Should NCAA Tournament include more teams? Big Ten coaches think it&#39;s time to expand",
@@ -17,20 +41,20 @@
       "ts": 1760049920000
     },
     {
-      "title": "AP Poll movers and what it means for Purdue",
-      "link": "https://www.si.com/college-basketball",
-      "source": "Sports Illustrated CBB",
-      "tier": "national",
+      "title": "Coach Painter on lineup experimentation",
+      "link": "https://www.jconline.com/sports/",
+      "source": "Journal & Courier",
+      "tier": "insiders",
       "type": "article",
-      "ts": 1760048807900
+      "ts": 1760047273615
     },
     {
-      "title": "Big Ten preview: tiers, X-factors, and POY race",
-      "link": "https://www.cbssports.com/college-basketball/",
-      "source": "CBS Sports CBB",
-      "tier": "national",
+      "title": "Recruiting board resets after fall visits",
+      "link": "https://247sports.com/college/purdue/",
+      "source": "247Sports Purdue",
+      "tier": "insiders",
       "type": "article",
-      "ts": 1760045207900
+      "ts": 1760043673615
     },
     {
       "title": "Darian DeVries walks into Purdue-Indiana basketball rivalry &#39;everybody has a passion for&#39;",
@@ -41,36 +65,12 @@
       "ts": 1760043616000
     },
     {
-      "title": "Big Ten storylines to watch",
-      "link": "https://sports.yahoo.com/college-basketball/",
-      "source": "Yahoo CBB",
-      "tier": "national",
-      "type": "article",
-      "ts": 1760041607900
-    },
-    {
-      "title": "Coach Painter on lineup experimentation",
-      "link": "https://www.jconline.com/sports/",
-      "source": "Journal & Courier",
-      "tier": "insiders",
-      "type": "article",
-      "ts": 1760038007900
-    },
-    {
-      "title": "Recruiting board resets after fall visits",
-      "link": "https://247sports.com/college/purdue/",
-      "source": "247Sports Purdue",
-      "tier": "insiders",
-      "type": "article",
-      "ts": 1760034407900
-    },
-    {
       "title": "Film Room: PnR counters for 2025–26",
       "link": "https://purdue.rivals.com/",
       "source": "Gold and Black (Rivals)",
       "tier": "insiders",
       "type": "article",
-      "ts": 1760030807900
+      "ts": 1760040073615
     },
     {
       "title": "Mic’d Up: Preseason Workouts",
@@ -78,7 +78,7 @@
       "source": "PurdueSports YouTube",
       "tier": "official",
       "type": "video",
-      "ts": 1760027207900
+      "ts": 1760036473615
     },
     {
       "title": "Practice Highlights — First Week",
@@ -86,7 +86,7 @@
       "source": "BTN Purdue",
       "tier": "official",
       "type": "video",
-      "ts": 1760023607900
+      "ts": 1760032873615
     },
     {
       "title": "Summer Highlights Mix",
@@ -94,7 +94,7 @@
       "source": "BTN Purdue",
       "tier": "official",
       "type": "video",
-      "ts": 1760020007900
+      "ts": 1760029273615
     }
   ]
 }
