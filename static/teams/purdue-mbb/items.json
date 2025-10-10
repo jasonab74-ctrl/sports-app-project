@@ -6,7 +6,7 @@
       "source": "PurdueSports.com",
       "tier": "official",
       "type": "article",
-      "ts": 1760070841273
+      "ts": 1760074303755
     },
     {
       "title": "AP Poll movers and what it means for Purdue",
@@ -14,7 +14,7 @@
       "source": "Sports Illustrated CBB",
       "tier": "national",
       "type": "article",
-      "ts": 1760067241273
+      "ts": 1760070703755
     },
     {
       "title": "Big Ten preview: tiers, X-factors, and POY race",
@@ -22,7 +22,7 @@
       "source": "CBS Sports CBB",
       "tier": "national",
       "type": "article",
-      "ts": 1760063641273
+      "ts": 1760067103755
     },
     {
       "title": "Big Ten storylines to watch",
@@ -30,7 +30,7 @@
       "source": "Yahoo CBB",
       "tier": "national",
       "type": "article",
-      "ts": 1760060041273
+      "ts": 1760063503755
     },
     {
       "title": "Coach Painter on lineup experimentation",
@@ -38,7 +38,7 @@
       "source": "Journal & Courier",
       "tier": "insiders",
       "type": "article",
-      "ts": 1760056441273
+      "ts": 1760059903755
     },
     {
       "title": "Recruiting board resets after fall visits",
@@ -46,7 +46,15 @@
       "source": "247Sports Purdue",
       "tier": "insiders",
       "type": "article",
-      "ts": 1760052841273
+      "ts": 1760056303755
+    },
+    {
+      "title": "Film Room: PnR counters for 2025–26",
+      "link": "https://purdue.rivals.com/",
+      "source": "Gold and Black (Rivals)",
+      "tier": "insiders",
+      "type": "article",
+      "ts": 1760052703755
     },
     {
       "title": "Should NCAA Tournament include more teams? Big Ten coaches think it&#39;s time to expand",
@@ -57,20 +65,12 @@
       "ts": 1760049920000
     },
     {
-      "title": "Film Room: PnR counters for 2025–26",
-      "link": "https://purdue.rivals.com/",
-      "source": "Gold and Black (Rivals)",
-      "tier": "insiders",
-      "type": "article",
-      "ts": 1760049241273
-    },
-    {
       "title": "Mic’d Up: Preseason Workouts",
       "link": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
       "source": "PurdueSports YouTube",
       "tier": "official",
       "type": "video",
-      "ts": 1760045641273
+      "ts": 1760049103755
     },
     {
       "title": "Practice Highlights — First Week",
@@ -78,7 +78,7 @@
       "source": "BTN Purdue",
       "tier": "official",
       "type": "video",
-      "ts": 1760042041273
+      "ts": 1760045503755
     },
     {
       "title": "Summer Highlights Mix",
@@ -86,7 +86,7 @@
       "source": "BTN Purdue",
       "tier": "official",
       "type": "video",
-      "ts": 1760038441273
+      "ts": 1760041903755
     }
   ]
 }
