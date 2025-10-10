@@ -1,420 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#0b1017" />
-  <title>Purdue MBB Hub • Live Headlines & Schedule</title>
-
-  <link rel="stylesheet" href="./static/css/app.css?v=18" />
-  <link rel="stylesheet" href="./static/css/mobile-tweaks.css?v=18" />
-  <link rel="icon" href="./static/img/favicon.png" />
-  <meta name="description" content="Purdue Boilermakers Men's Basketball Hub — Top Purdue MBB headlines, upcoming schedule, rankings, and insider links.">
-
-  <style>
-    :root{ --muted:#99a7c0; --ink:#e8eef9; --bg:#0b1017; --fs-0:.85rem; }
-    body{background:#0b1017;color:#e8eef9;margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial;}
-    .topbar{position:sticky;top:0;z-index:10;background:#0d1420;border-bottom:1px solid rgba(255,255,255,.06);padding:10px 14px;display:flex;align-items:center;gap:10px}
-    .brand-title{font-weight:800;letter-spacing:.5px}
-    .wrap{max-width:1100px;margin:0 auto;padding:14px}
-    .grid{display:grid;grid-template-columns:1fr 330px;gap:16px}
-    @media (max-width: 960px){ .grid{grid-template-columns:1fr} }
-    .panel{background:#0e1623;border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:14px}
-    .panel-hd h2{margin:0}
-    .panel-subnote{color:var(--muted);font-size:var(--fs-0);margin-top:4px}
-    .diag{margin-top:6px;font-size:var(--fs-0);color:#eec97b;background:#1b2436;border:1px dashed rgba(255,255,255,.2);border-radius:10px;padding:8px}
-    .pills{display:flex;gap:8px;flex-wrap:wrap}
-    .pill{appearance:none;border:1px solid rgba(255,255,255,.12);background:#0f1827;color:#e8eef9;border-radius:999px;padding:6px 10px;font-weight:600;cursor:pointer}
-    .pill.active{background:#172233;box-shadow:inset 0 0 0 2px rgba(242,201,76,.25);border-color:rgba(242,201,76,.35)}
-    .pill[disabled]{opacity:.5;cursor:not-allowed;pointer-events:none}
-    .pill .count{color:var(--muted);margin-left:.35rem;font-size:var(--fs-0)}
-    .hero{display:grid;grid-template-columns:220px 1fr;gap:12px;margin-top:12px}
-    .hero-img img{width:100%;height:140px;object-fit:cover;border-radius:10px}
-    .hero-title{font-size:1.05rem;font-weight:800;color:#e8eef9;text-decoration:none}
-    .small{font-size:var(--fs-0)}
-    .muted{color:var(--muted)}
-    .card-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-    @media (max-width: 720px){ .card-grid{grid-template-columns:1fr} .hero{grid-template-columns:1fr} .hero-img img{height:180px} }
-    .card{display:grid;grid-template-columns:120px 1fr;gap:10px;background:#0f1626;border:1px solid rgba(255,255,255,.06);border-radius:12px;overflow:hidden}
-    .card-thumb img{width:100%;height:100%;object-fit:cover}
-    .card-body{padding:10px}
-    .card-title{font-weight:700;color:#e8eef9;text-decoration:none}
-    .kicker{font-size:var(--fs-0);background:#121c2e;border:1px solid rgba(255,255,255,.08);padding:2px 6px;border-radius:999px;margin-right:6px}
-    .link-card{display:block;padding:6px 0;color:#e8eef9;text-decoration:none}
-    .footer-fixed{position:sticky;bottom:0;margin-top:24px;background:#0d1420;border-top:1px solid rgba(255,255,255,.06);padding:8px 14px;color:var(--muted);font-size:var(--fs-0)}
-    .empty-note{padding:12px;border-radius:10px;background:#0e1623;color:var(--muted)}
-    .note{margin-top:8px;color:var(--muted);font-size:var(--fs-0)}
-    .load-more-row{display:flex;justify-content:center;margin:14px 0 0}
-    .btn{appearance:none;border:1px solid rgba(255,255,255,.12);background:#101a28;color:#e8eef9;border-radius:12px;padding:10px 14px;font-weight:600;cursor:pointer}
-    .btn:hover{background:#132033}
-    .game{padding:10px 12px;border-radius:12px;background:#0f1622;margin:8px 0}
-    .game-title{font-weight:700}
-    .game-sub{color:var(--muted);font-size:var(--fs-0)}
-  </style>
+  <meta charset="UTF-8">
+  <title>Boilermakers Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="static/css/styles.css">
 </head>
-
 <body>
-  <header class="topbar">
-    <div class="brand-title">Boilermakers</div>
+  <header>
+    <h1>Boilermakers Hub</h1>
+    <nav>
+      <a href="/" aria-label="home">Home</a>
+      <a href="#" class="active" aria-label="news">News</a>
+      <a href="#" aria-label="rankings">Rankings</a>
+      <a href="#" aria-label="schedule">Schedule</a>
+      <a href="#" aria-label="roster">Roster</a>
+      <a href="#" aria-label="videos">Videos</a>
+    </nav>
   </header>
-
-  <main class="wrap">
-    <div class="grid">
-      <!-- LEFT: NEWS -->
-      <section id="news" class="panel" aria-labelledby="news-title">
-        <div class="panel-hd"><h2 id="news-title">Top Headlines</h2></div>
-        <div class="panel-subnote">Refreshed every 30 min • Auto-updated via GitHub Actions</div>
-        <div id="newsDiag" class="diag" style="display:none"></div>
-
-        <div class="pills" id="newsPills" role="tablist" aria-label="Filter headlines" style="margin-top:10px;">
-          <button class="pill active" data-tier="all" role="tab" aria-selected="true" aria-controls="cards">all<span class="count"></span></button>
-          <button class="pill" data-tier="official" role="tab" aria-selected="false" aria-controls="cards">official<span class="count"></span></button>
-          <button class="pill" data-tier="insiders" role="tab" aria-selected="false" aria-controls="cards">insiders<span class="count"></span></button>
-          <button class="pill" data-tier="national" role="tab" aria-selected="false" aria-controls="cards">national<span class="count"></span></button>
-        </div>
-
-        <div id="hero" class="hero" aria-live="polite"><div class="empty-note">Loading headlines…</div></div>
-        <div id="cards" class="card-grid" style="margin-top:12px;"></div>
-        <div id="newsNote" class="note"></div>
-        <div class="load-more-row"><button id="loadMoreBtn" class="btn" hidden>Load more</button></div>
-      </section>
-
-      <!-- RIGHT: RAIL -->
-      <aside class="rail">
-        <section id="rankings" class="panel">
-          <h3>Rankings</h3>
-          <div class="simple-list" id="rankingsList">
-            <div>AP Top 25: —</div>
-            <div>KenPom: —</div>
-          </div>
-          <div id="rankingsStamp" class="small muted" style="margin-top:6px;"></div>
-        </section>
-
-        <section id="schedule" class="panel">
-          <h3>Upcoming Schedule</h3>
-          <div id="scheduleList" class="simple-list"><div class="small muted">Loading…</div></div>
-          <div id="schedDiag" class="diag" style="display:none"></div>
-          <div id="schedStamp" class="small muted" style="margin-top:6px;"></div>
-        </section>
-
-        <section id="insiders" class="panel">
-          <h3>Insider / Beat Links</h3>
-          <div id="insiderList" class="simple-list">No insider items (yet).</div>
-        </section>
-      </aside>
-    </div>
-
-    <!-- ROSTER (placeholder) -->
-    <section id="roster" class="panel" style="margin-top:18px;">
-      <h3>Roster</h3>
-      <div id="rosterGrid" class="roster"><div class="muted small">No roster data.</div></div>
+  <main>
+    <section id="top-headlines">
+      <h2>Top Headlines</h2>
+      <p class="meta">Refreshed every 30 min • Auto‑updated via GitHub Actions</p>
+      <div id="filter-buttons">
+        <button data-filter="all" class="active">all</button>
+        <button data-filter="official">official</button>
+        <button data-filter="insiders">insiders</button>
+        <button data-filter="national">national</button>
+      </div>
+      <ul id="headlines-list"></ul>
     </section>
 
-    <!-- VIDEOS (placeholder) -->
-    <section id="videos" class="panel" style="margin-top:18px;">
-      <h3>Latest Videos</h3>
-      <div id="videoGrid" class="card-grid"><div class="muted small">No videos found.</div></div>
-    </section>
+    <aside id="rankings">
+      <h2>Rankings</h2>
+      <p><a href="https://apnews.com/hub/ap-top-25-college-basketball-poll" target="_blank">AP Top 25:</a> <span id="ap-rank">—</span></p>
+      <p><a href="https://kenpom.com" target="_blank">KenPom:</a> <span id="kenpom-rank">—</span></p>
+    </aside>
+
+    <aside id="schedule">
+      <h2>Upcoming Schedule</h2>
+      <ul id="schedule-list"></ul>
+    </aside>
+
+    <aside id="insider-links">
+      <h2>Insider / Beat Links</h2>
+      <ul id="beat-links"></ul>
+    </aside>
   </main>
-
-  <footer class="footer-fixed">© 2025 Boilermakers Hub • Auto-updated every 30 min</footer>
+  <footer>
+    <p>&copy; 2025 Boilermakers Hub • Auto‑updated every 30 min</p>
+  </footer>
 
   <script>
-    /* ===================== utils ===================== */
-    const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>Array.from(r.querySelectorAll(s));
-    const esc=(s="")=>(s+"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
-    const timeAgo=(ts)=>{ if(!ts)return""; if(ts<1e12)ts*=1000; const d=Date.now()-ts,m=Math.floor(d/6e4); if(m<60)return m+"m ago"; const h=Math.floor(m/60); if(h<24)return h+"h ago"; return Math.floor(h/24)+"d ago"; };
-    async function getJson(url){ try{ const r=await fetch(url+"?v="+Date.now(),{cache:"no-store"}); if(!r.ok) throw new Error(r.status); return await r.json(); } catch(e){ return {__error:true, code:e.message||"fetch"}; } }
-    function hostFrom(u){ try{ return new URL(u).hostname.replace(/^www\./,''); }catch{ return ""; } }
-    function parseTs(v){
-      if(v==null) return null;
-      if(typeof v==="number") return v;
-      if(typeof v==="string"){
-        if(/^\d{10,13}$/.test(v)) return Number(v);
-        const d=Date.parse(v); if(!isNaN(d)) return d;
-      }
-      return null;
-    }
-    function uniqBy(arr,key){ const seen=new Set(); const out=[]; for(const a of arr){ const k=key(a); if(seen.has(k)) continue; seen.add(k); out.push(a);} return out; }
-
-    // Repo info for raw fallbacks
-    const GH_OWNER="jasonab74-ctrl";
-    const GH_REPO="sports-app-project";
-    const RAW=(p)=>`https://raw.githubusercontent.com/${GH_OWNER}/${GH_REPO}/main/${p.replace(/^\//,'')}`;
-
-    /* ===================== Headlines ===================== */
-    const POS_MBB=["men's basketball","mens basketball","mbb","basketball","hoops","matt painter","mackey","paint crew","zach edey","braden smith","fletcher loyer","caleb furst","ncaa","big ten","march madness","exhibition","tournament"];
-    const NEG_FB=["football","fball","nfl","qb","quarterback","running back","wide receiver","offensive line","defensive line","touchdown","ross-ade","ryan walters","hudson card","coach walters"];
-    const HINT_PATH=/\/(mbb|m-basketball|mens?-basketball|men-basketball|basketball|college-basketball|ncaa-basketball)\//i;
-
-    function normalizeNews(data){
-      const arr = Array.isArray(data) ? data :
-                  Array.isArray(data?.items) ? data.items :
-                  Array.isArray(data?.entries) ? data.entries : [];
-      return arr.map(x=>{
-        const link = x.link || x.url || x.permalink || x.guid || "";
-        const title = x.title || x.headline || x.name || "";
-        const summary = x.summary || x.description || x.snippet || "";
-        const image = x.image || x.imageUrl || x.enclosure?.url || x.thumbnail || "";
-        const source = x.source || x.site || hostFrom(link) || "";
-        const tier   = x.tier || ( /purduesports\.com/i.test(source) ? "official" :
-                                   /hammerandrails|goldandblack|247sports|rivals/.test(source) ? "insiders" : "national" );
-        const ts = parseTs(x.ts) || parseTs(x.published_at) || parseTs(x.pubDate) || parseTs(x.date) || parseTs(x.isoDate) || parseTs(x.updated) || Date.now();
-        return {link,title,summary,image,source,tier,ts};
-      }).filter(i=>i.link && i.title);
-    }
-    function notFootball(it){
-      const blob=(it.title+" "+(it.summary||"")+" "+it.link).toLowerCase();
-      if (NEG_FB.some(k=>blob.includes(k))) return false;
-      if ((it.link||"").toLowerCase().includes("/football")) return false;
-      return true;
-    }
-    function isBasketball(it){
-      const t=(it.title+" "+(it.summary||"")).toLowerCase();
-      return HINT_PATH.test(it.link) || POS_MBB.some(k=>t.includes(k)) || /men'?s?\s*basketball/.test(t);
-    }
-    function isPurdueish(it){
-      const t=(it.title+" "+(it.summary||"")+" "+(it.source||"")).toLowerCase();
-      return /purdue|boilermaker|west lafayette|mackey/.test(t) || /purduesports|hammerandrails|goldandblack/.test(t);
-    }
-    function widenToTen(items){
-      const clean = items.filter(notFootball).sort((a,b)=>b.ts-a.ts);
-      const strong = clean.filter(it=>isPurdueish(it) && isBasketball(it));
-      if (strong.length>=10) return strong.slice(0,10);
-      const normal = clean.filter(isBasketball);
-      const AB = uniqBy([...strong, ...normal], x=>x.link);
-      if (AB.length>=10) return AB.slice(0,10);
-      const soft = clean.filter(isPurdueish);
-      const ABC = uniqBy([...AB, ...soft], x=>x.link);
-      if (ABC.length>=10) return ABC.slice(0,10);
-      return clean.slice(0, Math.min(10, clean.length));
-    }
-    function byTier(items,t){ return t==="all" ? items : items.filter(i=>i.tier===t); }
-
-    let NEWS_ALL=[], CURRENT_TIER="all", VISIBLE_COUNT=10, STEP=10;
-
-    function drawNews(){
-      const hero=$("#hero"), cards=$("#cards"), loadBtn=$("#loadMoreBtn"), insiderList=$("#insiderList"), note=$("#newsNote");
-      const filtered = byTier(NEWS_ALL, CURRENT_TIER);
-      if (!filtered.length){
-        hero.innerHTML = `<div class="empty-note">No Purdue Men's Basketball headlines right now. New stories will appear here automatically.</div>`;
-        cards.innerHTML=""; loadBtn.hidden=true; insiderList.textContent="No insider items (yet)."; note.textContent="";
-        return;
-      }
-      const view = filtered.slice(0, Math.min(VISIBLE_COUNT, filtered.length));
-      const h=view[0];
-      hero.innerHTML=`
-        <a class="hero-img" href="${esc(h.link)}" target="_blank" rel="noopener">
-          ${h.image?`<img src="${esc(h.image)}" alt="">`:""}
-        </a>
-        <div class="hero-meta">
-          <span class="small muted">${esc(h.tier)} • ${esc(h.source)}</span><br/>
-          <a href="${esc(h.link)}" target="_blank" class="hero-title">${esc(h.title)}</a><br/>
-          <span class="small muted">${timeAgo(h.ts)}</span>
-        </div>`;
-      cards.innerHTML = view.slice(1).map(it=>`
-        <div class="card">
-          ${it.image?`<div class="card-thumb"><img src="${esc(it.image)}" alt=""></div>`:""}
-          <div class="card-body">
-            <div class="card-kickers">
-              <span class="kicker">${esc(it.tier)}</span>
-              <span class="kicker src">${esc(it.source)}</span>
-            </div>
-            <a href="${esc(it.link)}" target="_blank" class="card-title">${esc(it.title)}</a>
-            <div class="card-meta small muted">${timeAgo(it.ts)} • ${esc(it.source)}</div>
-          </div>
-        </div>
-      `).join("");
-
-      const insiderItems = NEWS_ALL.filter(i=>i.tier==="insiders");
-      $("#insiderList").innerHTML = insiderItems.length
-        ? insiderItems.slice(0,6).map(i=>`<a class="link-card" href="${esc(i.link)}" target="_blank" rel="noopener">${esc(i.title)}</a>`).join("")
-        : "No insider items (yet).";
-
-      loadBtn.hidden = view.length >= filtered.length;
-      loadBtn.textContent = loadBtn.hidden ? "No more stories" : "Load more";
-
-      note.textContent = filtered.length < 10 ? `Showing ${filtered.length} because only ${filtered.length} Purdue MBB items were found in the data files (see diagnostics above).` : "";
-    }
-
-    function updatePills(){
-      const counts={
-        all: NEWS_ALL.length,
-        official: NEWS_ALL.filter(i=>i.tier==="official").length,
-        insiders: NEWS_ALL.filter(i=>i.tier==="insiders").length,
-        national: NEWS_ALL.filter(i=>i.tier==="national").length
+    /* Fetch latest news from static JSON */
+    async function fetchNews() {
+      const categories = {
+        all: 'static/data/news.json',
+        official: 'static/data/news_official.json',
+        insiders: 'static/data/news_insiders.json',
+        national: 'static/data/news_national.json'
       };
-      $$("#newsPills .pill").forEach(b=>{
-        const t=b.dataset.tier, n=counts[t]??0;
-        const span=b.querySelector(".count"); if(span) span.textContent=` (${n})`;
-        b.disabled=(t!=="all" && n===0);
-        b.classList.toggle("active", t===CURRENT_TIER);
-        b.setAttribute("aria-selected", t===CURRENT_TIER ? "true" : "false");
+      const buttons = document.querySelectorAll('#filter-buttons button');
+      buttons.forEach(button => {
+        button.addEventListener('click', async () => {
+          buttons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+          const key = button.getAttribute('data-filter');
+          const url = categories[key];
+          const data = await (await fetch(url)).json();
+          renderNews(data.slice(0, 10));
+        });
+      });
+      // Load default (all) on first load:
+      const defaultData = await (await fetch(categories.all)).json();
+      renderNews(defaultData.slice(0, 10));
+    }
+
+    function renderNews(articles) {
+      const list = document.getElementById('headlines-list');
+      list.innerHTML = '';
+      articles.forEach(item => {
+        const li = document.createElement('li');
+        li.className = 'headline-item';
+        li.innerHTML = `
+          <article>
+            ${item.image ? `<img src="${item.image}" alt="${item.title} image">` : ''}
+            <div class="headline-meta">
+              <span class="tag">${item.tag}</span>
+              <span class="source">${item.source}</span>
+            </div>
+            <h3><a href="${item.url}" target="_blank">${item.title}</a></h3>
+            <p class="time">${item.published} ago</p>
+          </article>
+        `;
+        list.appendChild(li);
       });
     }
 
-    async function initNews(){
-      const diag=$("#newsDiag"); const tried=[];
-      async function tryLoad(p){
-        const local=await getJson(p); tried.push(`${p} → ${local?.__error?'❌':'✅'}`);
-        if(!local?.__error) return local;
-        const raw=await getJson(RAW(p)); tried.push(`${RAW(p)} → ${raw?.__error?'❌':'✅'}`);
-        return raw?.__error ? null : raw;
-      }
-      // Prefer the team file first, then generic fallbacks
-      const candidates=[
-        "static/teams/purdue-mbb/news.json",
-        "static/data/news.json",
-        "static/data/news_all.json",
-        "static/data/collect.json",
-        "static/data/news_official.json",
-        "static/data/news_insiders.json",
-        "static/data/news_national.json"
-      ];
-      let merged=[];
-      for(const p of candidates){
-        const j=await tryLoad(p);
-        if(j){ merged=merged.concat(normalizeNews(j)); }
-      }
-      merged = uniqBy(merged, x=>x.link);
-      let picked = widenToTen(merged);
-
-      if (picked.length<10){
-        const fallback = normalizeNews(INLINE_NEWS_FALLBACK);
-        const combined = uniqBy([...merged, ...fallback], x=>x.link);
-        picked = widenToTen(combined);
-        tried.push("inline-fallback → ✅ (used to fill to 10 if needed)");
-      }
-
-      NEWS_ALL = picked;
-      VISIBLE_COUNT = 10;
-      diag.style.display="block";
-      diag.innerHTML = `<strong>News diagnostics</strong><br>${tried.join("<br>")}`;
-      drawNews(); updatePills();
-
-      $("#newsPills").addEventListener("click", e=>{
-        const btn=e.target.closest(".pill"); if(!btn||btn.disabled) return;
-        const tier=btn.dataset.tier; if(tier===CURRENT_TIER) return;
-        CURRENT_TIER=tier; VISIBLE_COUNT=10; drawNews(); updatePills();
-        $("#news").scrollIntoView({behavior:"smooth", block:"start"});
+    /* Fetch schedule from static JSON and show next 5 games */
+    async function fetchSchedule() {
+      const url = 'static/teams/purdue-mbb/schedule.json';
+      const data = await (await fetch(url)).json();
+      const upcoming = data.filter(game => {
+        const gameDate = new Date(game.date);
+        return gameDate >= new Date();
+      }).sort((a, b) => new Date(a.date) - new Date(b.date)).slice(0, 5);
+      const list = document.getElementById('schedule-list');
+      list.innerHTML = '';
+      upcoming.forEach(game => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+          <strong>${game.opponent}</strong>
+          <span class="site">${game.location}</span>
+          <span class="date">${new Date(game.date).toLocaleDateString()}</span>
+          <span class="time">${game.time} local</span>
+        `;
+        list.appendChild(li);
       });
-      $("#loadMoreBtn").addEventListener("click", ()=>{ VISIBLE_COUNT += STEP; drawNews(); });
     }
 
-    /* ===================== Rankings (KenPom fixed link) ===================== */
-    function fmtUpdated(ts){ if(!ts) return ""; const d=new Date(ts<1e12?ts*1000:ts); return d.toLocaleString(undefined,{month:"short",day:"numeric",hour:"numeric",minute:"2-digit"}); }
-    async function initRankings(){
-      const el=$("#rankingsList"), stamp=$("#rankingsStamp");
-      const j = await getJson("static/data/rankings.json");
-      const apRank=j?.ap?.rank??j?.ap_rank??"—";
-      const apUrl = j?.ap?.url || "https://apnews.com/hub/ap-top-25-mens-college-basketball-poll";
-      const apNote=j?.ap?.note||"";
-      const kpRank=j?.kenpom?.rank??j?.kenpom_rank??"—";
-      const kpUrl = "https://kenpom.com/"; // fixed
-      const kpNote=j?.kenpom?.note||"";
-      const updatedTs=j?.updated??j?.ap?.updated??j?.kenpom?.updated??null;
-
-      el.innerHTML=`<div>AP Top 25: <a href="${esc(apUrl)}" target="_blank" rel="noopener">${esc(apRank.toString())}</a>${apNote?` <span class="muted small">(${esc(apNote)})</span>`:""}</div>
-                    <div>KenPom: <a href="${kpUrl}" target="_blank" rel="noopener">${esc(kpRank.toString())}</a>${kpNote?` <span class="muted small">(${esc(kpNote)})</span>`:""}</div>`;
-      stamp.textContent=updatedTs?`Last updated ${fmtUpdated(updatedTs)}`:"";
-    }
-
-    /* ===================== Schedule ===================== */
-    function formatLocal(dt){ if(!dt) return ""; return dt.toLocaleString(undefined,{month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:true})+" local"; }
-
-    // Robust pick & parse for various JSON shapes
-    function pick(o, keys){ for(const k of keys){ if(o && o[k]!=null) return o[k]; } return null; }
-    function parseGame(obj){
-      const tsRaw = pick(obj, [
-        "ts","time","when","date","datetime","dateTime","datetimeUtc","datetime_utc",
-        "start","startTime","start_time","tip","tipoff","tip_time",
-        "start_local","startTimeLocal","start_time_local","date_local","time_local","iso","isoDate"
-      ]);
-      const ts = parseTs(tsRaw);
-
-      const site = pick(obj, ["site","homeAway","home_away","venue_type","locationType","event","event_type"]) || "";
-      const loc  = pick(obj, ["location","arena","venue","place","city"]) || "";
-      const opp  = pick(obj, ["opponent","opp","title","name","matchup"]) || "TBD";
-      const url  = pick(obj, ["link","url","tickets","gamecast","details"]) || null;
-      return { ts, site, loc, opp, url };
-    }
-    function asGames(data){
-      if(!data) return [];
-      const raw = Array.isArray(data) ? data :
-                  Array.isArray(data.items) ? data.items :
-                  Array.isArray(data.games) ? data.games : [];
-      return raw.map(parseGame);
-    }
-    function gameBlock(g){
-      const when = g.ts ? new Date(g.ts<1e12?g.ts*1000:g.ts) : null;
-      return `<div class="game">
-        <div class="game-title">${esc(g.opp)}</div>
-        ${g.site?`<div class="game-sub">${esc(g.site)}</div>`:""}
-        ${when?`<div class="game-sub">${formatLocal(when)}</div>`:""}
-        ${g.loc?`<div class="game-sub">Location: ${esc(g.loc)}</div>`:""}
-        ${g.url?`<div class="game-sub"><a target="_blank" rel="noopener" href="${esc(g.url)}">Game details ↗</a></div>`:""}
-      </div>`;
-    }
-    async function initSchedule(){
-      const list=$("#scheduleList"), stamp=$("#schedStamp"), diag=$("#schedDiag");
-      const tried=[];
-      async function tryLoad(p){
-        const j = await getJson(p); tried.push(`${p} → ${j?.__error?'❌':'✅'}`);
-        if(!j?.__error) return j;
-        const jr = await getJson(RAW(p)); tried.push(`${RAW(p)} → ${jr?.__error?'❌':'✅'}`);
-        return jr?.__error ? null : jr;
+    /* Fetch ranking data from static config JSON */
+    async function fetchRankings() {
+      try {
+        const config = await (await fetch('static/data/config.json')).json();
+        const apRank = config.apRank || '—';
+        const kenpomRank = config.kenpomRank || '—';
+        document.getElementById('ap-rank').textContent = apRank;
+        document.getElementById('kenpom-rank').textContent = kenpomRank;
+      } catch {
+        document.getElementById('ap-rank').textContent = '—';
+        document.getElementById('kenpom-rank').textContent = '—';
       }
-      const candidates = [
-        "static/teams/purdue-mbb/schedule.json",       // <- your green check path
-        "static/data/schedule_overrides.json",
-        "static/data/schedule_compiled.json",
-        "static/data/schedule.json",
-        "static/data/purdue_schedule.json",
-        "static/data/purdue-mbb-schedule.json"
-      ];
-      let data=null;
-      for(const p of candidates){ const j=await tryLoad(p); if(j){ data=j; break; } }
-
-      let games = asGames(data);
-
-      // More forgiving window: keep games from 12h ago forward
-      const now = Date.now();
-      const upcoming = games
-        .filter(g => g.ts && (g.ts >= now - 12*3600*1000))
-        .sort((a,b)=>a.ts - b.ts)
-        .slice(0,5);
-
-      if(!upcoming.length){
-        list.innerHTML=`<div class="muted small">No upcoming games parsed from data. <a target="_blank" rel="noopener" href="https://purduesports.com/sports/mens-basketball/schedule">Official schedule ↗</a></div>`;
-        diag.style.display="block"; diag.innerHTML=`<strong>Schedule diagnostics</strong><br>${tried.join("<br>")}`;
-        stamp.textContent=""; 
-        return;
-      }
-
-      list.innerHTML = upcoming.map(gameBlock).join("");
-      diag.style.display="block"; diag.innerHTML=`<strong>Schedule diagnostics</strong><br>${tried.join("<br>")}`;
-      stamp.textContent = `Updated ${new Date().toLocaleString()}`;
     }
 
-    /* ===================== Inline fallbacks (only if files fail/are short) ===================== */
-    const INLINE_NEWS_FALLBACK = {
-      items: [
-        {title:"Purdue MBB exhibition set; Painter outlines rotation", link:"https://purduesports.com/m-basketball/exhibition", source:"purduesports.com", ts: Date.now()-2*3600*1000, image:""},
-        {title:"Practice report: Guards battle for minutes at Mackey", link:"https://hammerandrails.com/practice-report", source:"Hammer & Rails", ts: Date.now()-3*3600*1000, image:""},
-        {title:"National preview: Where Purdue stacks up in Big Ten", link:"https://espn.com/college-basketball/purdue-preview", source:"ESPN", ts: Date.now()-4*3600*1000, image:""},
-        {title:"Film room: PnR tweaks for Braden Smith", link:"https://goldandblack.com/film-room-braden", source:"Gold and Black", ts: Date.now()-5*3600*1000, image:""},
-        {title:"Notebook: Mackey upgrades ahead of opener", link:"https://cbssports.com/college-basketball/mackey-upgrades", source:"CBS Sports", ts: Date.now()-6*3600*1000, image:""},
-        {title:"Q&A: Matt Painter on freshmen development", link:"https://247sports.com/purdue-freshmen-qa", source:"247Sports", ts: Date.now()-7*3600*1000, image:""},
-        {title:"Depth chart thoughts: wings & small-ball looks", link:"https://rivals.com/purdue-wings", source:"Rivals", ts: Date.now()-8*3600*1000, image:""},
-        {title:"Big Ten tiers: Purdue among contenders again", link:"https://yahoo.com/sports/purdue-big-ten-tiers", source:"Yahoo Sports", ts: Date.now()-9*3600*1000, image:""},
-        {title:"KenPom early look at Purdue", link:"https://kenpom.com/", source:"KenPom", ts: Date.now()-10*3600*1000, image:""},
-        {title:"Mackey Madness: scrimmage highlights", link:"https://youtube.com/watch?v=dummy", source:"YouTube", ts: Date.now()-11*3600*1000, image:""}
-      ]
-    };
+    /* Fetch some beat/insider links (manually curated list) */
+    async function fetchBeatLinks() {
+      try {
+        const data = await (await fetch('static/data/beat_links.json')).json();
+        const list = document.getElementById('beat-links');
+        list.innerHTML = '';
+        data.forEach(item => {
+          const li = document.createElement('li');
+          li.innerHTML = `<a href="${item.url}" target="_blank">${item.title}</a>`;
+          list.appendChild(li);
+        });
+      } catch {
+        document.getElementById('beat-links').innerHTML = '<li>No insider items (yet).</li>';
+      }
+    }
 
-    /* ===================== boot ===================== */
-    async function boot(){ await initNews(); await initRankings(); await initSchedule(); }
-    (document.readyState==="loading") ? document.addEventListener("DOMContentLoaded", boot, {once:true}) : boot();
+    // Initialize all fetches on load
+    fetchNews();
+    fetchSchedule();
+    fetchRankings();
+    fetchBeatLinks();
   </script>
 </body>
 </html>
