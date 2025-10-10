@@ -1,5 +1,5 @@
 {
-  "updated": 1760116750360,
+  "updated": 1760116827209,
   "items": [
     {
       "id": "c29c271762288cef",
@@ -23,6 +23,18 @@
       "type": "article",
       "ts": 1759886418000,
       "image": "https://platform.hammerandrails.com/wp-content/uploads/sites/91/2025/09/imagn-26546044.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
+      "paywall": false
+    },
+    {
+      "id": "04b0d30970186519",
+      "title": "Braden Smith Named Preseason Big Ten POY",
+      "summary": "Today the Big Ten announced its preseason all-Big Ten men’s basketball teams and it is absolutely no surprise that Purdue is well reprsented. Braden Smith, the reigning Big Ten Player of the Year, was a unanimous First Team selection and the Preseason Big Ten Player of the Year. That was to be expected, as he […]",
+      "link": "https://www.hammerandrails.com/mens-basketball/55758/braden-smith-named-preseason-big-ten-poy",
+      "source": "hammerandrails.com",
+      "tier": "insiders",
+      "type": "article",
+      "ts": 1759854009000,
+      "image": "https://platform.hammerandrails.com/wp-content/uploads/sites/91/2025/10/imagn-25798411.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
       "paywall": false
     }
   ]
