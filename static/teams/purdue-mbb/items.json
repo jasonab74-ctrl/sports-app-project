@@ -6,7 +6,7 @@
       "source": "PurdueSports.com",
       "tier": "official",
       "type": "article",
-      "ts": 1760078619617
+      "ts": 1760081301898
     },
     {
       "title": "AP Poll movers and what it means for Purdue",
@@ -14,7 +14,7 @@
       "source": "Sports Illustrated CBB",
       "tier": "national",
       "type": "article",
-      "ts": 1760075019617
+      "ts": 1760077701898
     },
     {
       "title": "Big Ten preview: tiers, X-factors, and POY race",
@@ -22,7 +22,7 @@
       "source": "CBS Sports CBB",
       "tier": "national",
       "type": "article",
-      "ts": 1760071419617
+      "ts": 1760074101898
     },
     {
       "title": "Big Ten storylines to watch",
@@ -30,7 +30,7 @@
       "source": "Yahoo CBB",
       "tier": "national",
       "type": "article",
-      "ts": 1760067819617
+      "ts": 1760070501898
     },
     {
       "title": "Coach Painter on lineup experimentation",
@@ -38,7 +38,7 @@
       "source": "Journal & Courier",
       "tier": "insiders",
       "type": "article",
-      "ts": 1760064219617
+      "ts": 1760066901898
     },
     {
       "title": "Recruiting board resets after fall visits",
@@ -46,7 +46,7 @@
       "source": "247Sports Purdue",
       "tier": "insiders",
       "type": "article",
-      "ts": 1760060619617
+      "ts": 1760063301898
     },
     {
       "title": "Film Room: PnR counters for 2025–26",
@@ -54,7 +54,7 @@
       "source": "Gold and Black (Rivals)",
       "tier": "insiders",
       "type": "article",
-      "ts": 1760057019617
+      "ts": 1760059701898
     },
     {
       "title": "Mic’d Up: Preseason Workouts",
@@ -62,7 +62,15 @@
       "source": "PurdueSports YouTube",
       "tier": "official",
       "type": "video",
-      "ts": 1760053419617
+      "ts": 1760056101898
+    },
+    {
+      "title": "Practice Highlights — First Week",
+      "link": "https://www.youtube.com/watch?v=oHg5SJYRHA0",
+      "source": "BTN Purdue",
+      "tier": "official",
+      "type": "video",
+      "ts": 1760052501898
     },
     {
       "title": "Should NCAA Tournament include more teams? Big Ten coaches think it&#39;s time to expand",
@@ -73,20 +81,12 @@
       "ts": 1760049920000
     },
     {
-      "title": "Practice Highlights — First Week",
-      "link": "https://www.youtube.com/watch?v=oHg5SJYRHA0",
-      "source": "BTN Purdue",
-      "tier": "official",
-      "type": "video",
-      "ts": 1760049819617
-    },
-    {
       "title": "Summer Highlights Mix",
       "link": "https://www.youtube.com/watch?v=2Z4m4lnjxkY",
       "source": "BTN Purdue",
       "tier": "official",
       "type": "video",
-      "ts": 1760046219617
+      "ts": 1760048901898
     }
   ]
 }
