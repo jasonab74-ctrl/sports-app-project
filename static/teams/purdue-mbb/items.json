@@ -6,7 +6,7 @@
       "source": "PurdueSports.com",
       "tier": "official",
       "type": "article",
-      "ts": 1760362874446
+      "ts": 1760366058654
     },
     {
       "title": "AP Poll movers and what it means for Purdue",
@@ -14,7 +14,7 @@
       "source": "Sports Illustrated CBB",
       "tier": "national",
       "type": "article",
-      "ts": 1760359274446
+      "ts": 1760362458654
     },
     {
       "title": "Big Ten preview: tiers, X-factors, and POY race",
@@ -22,7 +22,7 @@
       "source": "CBS Sports CBB",
       "tier": "national",
       "type": "article",
-      "ts": 1760355674446
+      "ts": 1760358858654
     },
     {
       "title": "Big Ten storylines to watch",
@@ -30,7 +30,7 @@
       "source": "Yahoo CBB",
       "tier": "national",
       "type": "article",
-      "ts": 1760352074446
+      "ts": 1760355258654
     },
     {
       "title": "Coach Painter on lineup experimentation",
@@ -38,7 +38,15 @@
       "source": "Journal & Courier",
       "tier": "insiders",
       "type": "article",
-      "ts": 1760348474446
+      "ts": 1760351658654
+    },
+    {
+      "title": "Recruiting board resets after fall visits",
+      "link": "https://247sports.com/college/purdue/",
+      "source": "247Sports Purdue",
+      "tier": "insiders",
+      "type": "article",
+      "ts": 1760348058654
     },
     {
       "title": "How has Kentucky basketball fared vs. Purdue, Georgetown? History against exhibition foes",
@@ -49,20 +57,12 @@
       "ts": 1760346670000
     },
     {
-      "title": "Recruiting board resets after fall visits",
-      "link": "https://247sports.com/college/purdue/",
-      "source": "247Sports Purdue",
-      "tier": "insiders",
-      "type": "article",
-      "ts": 1760344874446
-    },
-    {
       "title": "Film Room: PnR counters for 2025–26",
       "link": "https://purdue.rivals.com/",
       "source": "Gold and Black (Rivals)",
       "tier": "insiders",
       "type": "article",
-      "ts": 1760341274446
+      "ts": 1760344458654
     },
     {
       "title": "Mic’d Up: Preseason Workouts",
@@ -70,7 +70,7 @@
       "source": "PurdueSports YouTube",
       "tier": "official",
       "type": "video",
-      "ts": 1760337674446
+      "ts": 1760340858654
     },
     {
       "title": "Practice Highlights — First Week",
@@ -78,7 +78,7 @@
       "source": "BTN Purdue",
       "tier": "official",
       "type": "video",
-      "ts": 1760334074446
+      "ts": 1760337258654
     },
     {
       "title": "Summer Highlights Mix",
@@ -86,7 +86,7 @@
       "source": "BTN Purdue",
       "tier": "official",
       "type": "video",
-      "ts": 1760330474446
+      "ts": 1760333658654
     }
   ]
 }
