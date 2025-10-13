@@ -6,7 +6,23 @@
       "source": "PurdueSports.com",
       "tier": "official",
       "type": "article",
-      "ts": 1760369456165
+      "ts": 1760373433500
+    },
+    {
+      "title": "Men&#39;s basketball AP preseason poll: Purdue takes No. 1 spot as Houston, Florida trail close behind",
+      "link": "https://sports.yahoo.com/mens-college-basketball/breaking-news/article/mens-basketball-ap-preseason-poll-purdue-takes-no-1-spot-as-houston-florida-trail-close-behind-161143102.html",
+      "source": "Yahoo CBB",
+      "tier": "national",
+      "type": "article",
+      "ts": 1760371903000
+    },
+    {
+      "title": "Purdue tops preseason AP Top 25 poll for 1st time, ahead of Houston and reigning NCAA champ Florida",
+      "link": "https://sports.yahoo.com/article/purdue-tops-preseason-ap-top-155928181.html",
+      "source": "Yahoo CBB",
+      "tier": "national",
+      "type": "article",
+      "ts": 1760371168000
     },
     {
       "title": "AP Poll movers and what it means for Purdue",
@@ -14,7 +30,7 @@
       "source": "Sports Illustrated CBB",
       "tier": "national",
       "type": "article",
-      "ts": 1760365856165
+      "ts": 1760369833500
     },
     {
       "title": "Big Ten preview: tiers, X-factors, and POY race",
@@ -22,7 +38,7 @@
       "source": "CBS Sports CBB",
       "tier": "national",
       "type": "article",
-      "ts": 1760362256165
+      "ts": 1760366233500
     },
     {
       "title": "Big Ten storylines to watch",
@@ -30,7 +46,7 @@
       "source": "Yahoo CBB",
       "tier": "national",
       "type": "article",
-      "ts": 1760358656165
+      "ts": 1760362633500
     },
     {
       "title": "Coach Painter on lineup experimentation",
@@ -38,7 +54,7 @@
       "source": "Journal & Courier",
       "tier": "insiders",
       "type": "article",
-      "ts": 1760355056165
+      "ts": 1760359033500
     },
     {
       "title": "Recruiting board resets after fall visits",
@@ -46,7 +62,7 @@
       "source": "247Sports Purdue",
       "tier": "insiders",
       "type": "article",
-      "ts": 1760351456165
+      "ts": 1760355433500
     },
     {
       "title": "Film Room: PnR counters for 2025–26",
@@ -54,15 +70,7 @@
       "source": "Gold and Black (Rivals)",
       "tier": "insiders",
       "type": "article",
-      "ts": 1760347856165
-    },
-    {
-      "title": "How has Kentucky basketball fared vs. Purdue, Georgetown? History against exhibition foes",
-      "link": "https://www.courier-journal.com/story/sports/college/kentucky/2025/10/13/kentucky-wildcats-college-basketball-history-uk-purdue-game-georgetown-exhibition-mark-pope-schedule/86212191007/",
-      "source": "Yahoo CBB",
-      "tier": "national",
-      "type": "article",
-      "ts": 1760346670000
+      "ts": 1760351833500
     },
     {
       "title": "Mic’d Up: Preseason Workouts",
@@ -70,7 +78,7 @@
       "source": "PurdueSports YouTube",
       "tier": "official",
       "type": "video",
-      "ts": 1760344256165
+      "ts": 1760348233500
     },
     {
       "title": "Practice Highlights — First Week",
@@ -78,7 +86,7 @@
       "source": "BTN Purdue",
       "tier": "official",
       "type": "video",
-      "ts": 1760340656165
+      "ts": 1760344633500
     },
     {
       "title": "Summer Highlights Mix",
@@ -86,7 +94,7 @@
       "source": "BTN Purdue",
       "tier": "official",
       "type": "video",
-      "ts": 1760337056165
+      "ts": 1760341033500
     }
   ]
 }
