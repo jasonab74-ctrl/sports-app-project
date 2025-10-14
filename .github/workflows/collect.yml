@@ -3,15 +3,18 @@ name: Build data (news, schedule, roster)
 on:
   schedule:
     - cron: "*/30 * * * *"   # every 30 minutes
+  workflow_dispatch:
   push:
-    branches: [ main ]
-  workflow_dispatch: {}
+    paths:
+      - "tools/collect.py"
+      - "static/schedule_overrides.json"
+      - "static/beat_links.json"
 
 permissions:
   contents: write
 
 jobs:
-  collect:
+  build-data:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -22,28 +25,26 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install deps
+      - name: Install deps (none needed)
         run: |
-          python -m pip install --upgrade pip
-          pip install requests python-dateutil feedparser beautifulsoup4 lxml tldextract
+          python -V
 
-      - name: Ensure folders
+      - name: Build data JSON (rankings, schedule, beat links)
         run: |
-          mkdir -p static/data
-          mkdir -p tools
-          mkdir -p static/config
+          python tools/collect.py
 
-      - name: Run collector
-        run: python tools/collect.py
-
-      - name: Commit data if changed
+      - name: Commit changes
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if [[ -n "$(git status --porcelain static/data)" ]]; then
+          if [ -n "$(git status --porcelain static/data)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add static/data
-            git commit -m "chore: refresh data [skip ci]"
-            git push
-          else
-            echo "No data changes."
+            git commit -m "Build data json via collect.py [skip ci]"
           fi
+
+      - name: Push
+        if: success()
+        uses: ad-m/github-push-action@v0.8.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref_name }}
