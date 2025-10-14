@@ -1,29 +1,18 @@
-{
-  "updated": 1760446184283,
-  "items": [
-    {
-      "id": "4097238de011e0c6",
-      "title": "Purdue Men’s Basketball Ranked #1 in AP Preseason Poll",
-      "summary": "Following a successful season that saw the Boilermakers fall just short of the Elite Eight, Purdue men’s basketball spent the offseason getting better. It started with the main trio, Braden Smith, Trey Kaufman-Renn, and Fletcher Loyer all opting to return to Purdue for their senior season. Next, Matt Painter secured commitments from three additional players, […]",
-      "link": "https://www.hammerandrails.com/mens-basketball/55846/purdue-mens-basketball-ranked-1-in-ap-preseason-poll",
-      "source": "hammerandrails.com",
-      "tier": "insiders",
-      "type": "article",
-      "ts": 1760376822000,
-      "image": "https://platform.hammerandrails.com/wp-content/uploads/sites/91/2025/10/imagn-25663752.jpg?quality=90&#038;strip=all&#038;crop=40.7,0,59.3,55.31815200075",
-      "paywall": false
-    },
-    {
-      "id": "2d0f02d79b69ddf0",
-      "title": "#24 Days to Purdue Basketball | Gicarri Harris",
-      "summary": "On November 4th, Purdue will host Evansville in Mackey Arena to kick off the 2025-26 season. That means we are a Gicarri Harris (#24) number of days away from the season starting in earnest. Harris is one of the most intriguing options for Purdue headed into his sophomore campaign after an up and down true […]",
-      "link": "https://www.hammerandrails.com/mens-basketball/55842/24-days-to-purdue-basketball-gicarri-harris",
-      "source": "hammerandrails.com",
-      "tier": "insiders",
-      "type": "article",
-      "ts": 1760320956000,
-      "image": "https://platform.hammerandrails.com/wp-content/uploads/sites/91/chorus/uploads/chorus_asset/file/25844856/usa_today_25241330.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
-      "paywall": false
-    }
-  ]
-}
+[
+  {
+    "title": "Practice report: Guards battle for minutes at Mackey",
+    "url": "https://www.hammerandrails.com/",
+    "source": "Hammer & Rails",
+    "section": "insiders",
+    "image": null,
+    "ts": "2025-10-14T14:29:29.657499+00:00"
+  },
+  {
+    "title": "Purdue announces exhibition details vs. Kentucky",
+    "url": "https://purduesports.com/",
+    "source": "PurdueSports.com",
+    "section": "official",
+    "image": null,
+    "ts": "2025-10-14T14:29:29.657490+00:00"
+  }
+]
