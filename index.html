@@ -2,13 +2,51 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <title>Boilermakers Hub</title>
   <meta name="theme-color" content="#0b1220" />
+
+  <!-- 🔧 CACHE BUSTER + SW CLEANER -->
+  <script>
+    (function buster(){
+      // 1️⃣ Clear service workers & caches
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations()
+          .then(regs => Promise.all(regs.map(r => r.unregister())))
+          .catch(()=>{});
+      }
+      if (window.caches && caches.keys) {
+        caches.keys()
+          .then(keys => Promise.all(keys.map(k => caches.delete(k))))
+          .catch(()=>{});
+      }
+
+      // 2️⃣ Force fresh JSON every load
+      const BUILD_BUSTER = Date.now().toString(36);
+      const origFetch = window.fetch;
+      window.fetch = function(input, init){
+        try{
+          let url = (typeof input==='string')?input:(input&&input.url)||'';
+          if(url && url.includes('/static/data/') && url.endsWith('.json')){
+            const u = new URL(url, location.href);
+            if(!u.searchParams.has('v')) u.searchParams.set('v', BUILD_BUSTER);
+            input = u.href;
+            init = init||{};
+            init.cache='no-store';
+            const headers = new Headers(init.headers||{});
+            headers.set('Cache-Control','no-cache, no-store, must-revalidate');
+            init.headers=headers;
+          }
+        }catch(e){}
+        return origFetch.call(this,input,init);
+      };
+    })();
+  </script>
+
   <style>
     :root{
-      --bg:#0b1220;--card:#101a2e;--muted:#6b7a90;--text:#eaf2ff;--brand:#ffd166;--chip:#182440;--ok:#25c08a;
-      --ring:#2a3a5c;--link:#7ab0ff;--badge:#253457;
+      --bg:#0b1220;--card:#101a2e;--muted:#6b7a90;--text:#eaf2ff;--brand:#ffd166;
+      --chip:#182440;--ring:#2a3a5c;--link:#7ab0ff;--badge:#253457;
     }
     *{box-sizing:border-box}
     html,body{margin:0;background:var(--bg);color:var(--text);font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial}
@@ -20,7 +58,7 @@
     .grid{display:grid;grid-template-columns:1fr;gap:16px}
     @media (min-width:960px){.grid{grid-template-columns:2fr 1fr}}
     .card{background:var(--card);border-radius:16px;padding:18px;border:1px solid var(--ring)}
-    h2{margin:0 0 8px;font-size:28px;letter-spacing:.2px}
+    h2{margin:0 0 8px;font-size:28px}
     .subtitle{color:var(--muted);font-size:14px;margin-bottom:12px}
     .filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px}
     .chip{background:var(--chip);border:1px solid var(--ring);color:#cfe2ff;padding:8px 12px;border-radius:999px;font-size:14px}
@@ -31,27 +69,22 @@
     .news img{width:120px;height:80px;object-fit:cover;border-radius:10px;background:#0a1224}
     .tags{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 8px}
     .tag{background:var(--badge);color:#cfe2ff;border-radius:999px;padding:4px 9px;font-size:12px;border:1px solid var(--ring)}
-    .title{display:block;font-weight:700;font-size:18px;color:#cfe2ff;margin-bottom:6px}
+    .title{display:block;font-weight:700;font-size:18px;margin-bottom:6px;color:#cfe2ff}
     .meta{color:var(--muted);font-size:13px}
     .kpi{display:flex;justify-content:space-between;align-items:center;background:#0d172b;border:1px solid var(--ring);border-radius:12px;padding:14px 16px;margin-top:10px}
-    .kpi a{font-weight:700}
-    .small{font-size:13px;color:var(--muted);margin-top:8px}
-    .schedule{display:grid;grid-template-columns:1fr;gap:10px}
+    .schedule{display:grid;gap:10px}
     .game{background:#0d172b;border:1px solid var(--ring);border-radius:14px;padding:14px}
     .g-head{font-size:20px;font-weight:800;margin:0 0 6px}
     .g-line{color:#c8d6f5;margin:2px 0}
-    .g-link{display:inline-block;margin-top:8px}
     .empty{border:1px dashed var(--ring);border-radius:12px;padding:18px;color:var(--muted);text-align:center}
-    .beat-list{display:grid;grid-template-columns:1fr;gap:10px}
+    .beat-list{display:grid;gap:10px}
     footer{color:var(--muted);font-size:13px;margin:24px 0 40px;text-align:center}
   </style>
 </head>
+
 <body>
   <div class="wrap">
-    <header>
-      <div class="dot" aria-hidden="true"></div>
-      <h1>Boilermakers Hub</h1>
-    </header>
+    <header><div class="dot"></div><h1>Boilermakers Hub</h1></header>
 
     <div class="grid">
       <section class="card" id="top-headlines">
@@ -63,29 +96,23 @@
           <button class="chip" data-filter="insiders">insiders <span id="count-insiders">(0)</span></button>
           <button class="chip" data-filter="national">national <span id="count-national">(0)</span></button>
         </div>
-        <div class="news-list" id="news-list" aria-live="polite"></div>
+        <div class="news-list" id="news-list"></div>
       </section>
 
-      <aside class="card" id="rankings">
+      <aside class="card">
         <h2>Rankings</h2>
-        <div class="kpi">
-          <div>AP Top 25:</div>
-          <a id="ap-link" href="https://apnews.com/hub/ap-top-25-mens-college-basketball-poll" target="_blank" rel="noopener" aria-label="AP Top 25">—</a>
-        </div>
-        <div class="kpi">
-          <div>KenPom:</div>
-          <a id="kp-link" href="https://kenpom.com/" target="_blank" rel="noopener" aria-label="KenPom">—</a>
-        </div>
-        <div class="small" id="rankings-updated"></div>
+        <div class="kpi"><div>AP Top 25:</div><a id="ap-link" href="https://apnews.com/hub/ap-top-25-mens-college-basketball-poll" target="_blank" rel="noopener">—</a></div>
+        <div class="kpi"><div>KenPom:</div><a id="kp-link" href="https://kenpom.com/" target="_blank" rel="noopener">—</a></div>
+        <div class="meta" id="rank-updated"></div>
       </aside>
     </div>
 
-    <section class="card" id="schedule-card" style="margin-top:16px">
+    <section class="card" style="margin-top:16px">
       <h2>Upcoming Schedule</h2>
       <div class="schedule" id="schedule-list"></div>
     </section>
 
-    <section class="card" id="beats-card" style="margin-top:16px">
+    <section class="card" style="margin-top:16px">
       <h2>Insider / Beat Links</h2>
       <div class="beat-list" id="beat-list"></div>
     </section>
@@ -94,233 +121,91 @@
   </div>
 
   <script>
-    // ---------- helpers ----------
-    const $ = (q,el=document)=>el.querySelector(q);
-    const $$ = (q,el=document)=>[...el.querySelectorAll(q)];
-    const safe = v => (v??"").toString();
-    const fmtAgo = iso => {
-      try{
-        const d = new Date(iso||"");
-        if (isNaN(d)) return ""; // never show NaN
-        const mins = Math.floor((Date.now()-d.getTime())/60000);
-        if (mins < 1) return "just now";
-        if (mins < 60) return `${mins}m ago`;
-        const hrs = Math.floor(mins/60);
-        if (hrs < 24) return `${hrs}h ago`;
-        const days = Math.floor(hrs/24);
-        return `${days}d ago`;
-      }catch{return "";}
-    };
-    async function getJSON(urls){
-      for (const u of urls){
-        try{
-          const r = await fetch(u,{cache:"no-store"});
-          if (r.ok) return {data:await r.json(), src:u};
-        }catch{}
-      }
-      return {data:null, src:null};
-    }
+    const $=(q,e=document)=>e.querySelector(q),$$=(q,e=document)=>[...e.querySelectorAll(q)];
+    const safe=v=>(v??"").toString();
+    const ago=iso=>{try{const d=new Date(iso||"");if(isNaN(d))return"";const m=Math.floor((Date.now()-d)/6e4);if(m<1)return"just now";if(m<60)return m+"m ago";const h=Math.floor(m/60);if(h<24)return h+"h ago";const d2=Math.floor(h/24);return d2+"d ago"}catch{return""}};
 
-    // ---------- paths (read-only) ----------
-    const PATHS = {
-      news: ["static/data/news.json"],
-      rankings: ["static/data/rankings.json"],
-      schedule: ["static/data/schedule.json","static/teams/purdue-mbb/schedule.json"],
-      beats: ["static/data/beat_links.json"]
-    };
+    async function getJSON(u){try{const r=await fetch(u,{cache:"no-store"});if(r.ok)return await r.json();}catch{}return null;}
 
-    // ---------- NEWS ----------
-    function kindOf(item){
-      const tags = (item.tags||[]).map(t=>t.toLowerCase());
-      const host = (item.domain||item.source||"").toLowerCase();
-      if (tags.includes("official") || host.includes("purduesports")) return "official";
-      if (tags.includes("insiders") || tags.includes("insider") || host.includes("hammerandrails") || host.includes("goldandblack") || host.includes("247sports")) return "insiders";
-      return "national";
-    }
-    function renderNews(allRaw){
-      const all = (allRaw||[]).map(it=>({
-        title: safe(it.title),
-        url: it.url,
-        image: it.image || it.image_url || it.thumbnail || "",
-        published_at: it.published_at || it.date || it.isoDate || "",
-        domain: safe(it.domain || it.source || (it.url?new URL(it.url).hostname.replace(/^www\./,""):"")),
-        tags: it.tags||[]
-      }));
+    function kind(i){const t=(i.tags||[]).map(x=>x.toLowerCase());const h=(i.domain||i.source||"").toLowerCase();
+      if(t.includes("official")||h.includes("purduesports"))return"official";
+      if(t.includes("insiders")||h.includes("insider")||h.includes("hammerandrails")||h.includes("goldandblack"))return"insiders";
+      return"national";}
 
-      // counts
-      const counts = {official:0,insiders:0,national:0};
-      for (const it of all){ counts[kindOf(it)]++; }
-      $("#count-all").textContent = `(${Math.min(10, all.length)})`;
-      $("#count-official").textContent = `(${counts.official})`;
-      $("#count-insiders").textContent = `(${counts.insiders})`;
-      $("#count-national").textContent = `(${counts.national})`;
-
-      const list = $("#news-list");
-      let current = "all";
+    async function renderNews(){
+      const d=await getJSON("static/data/news.json");
+      const a=Array.isArray(d)?d:(d?.items||[]);
+      const counts={official:0,insiders:0,national:0};
+      for(const i of a)counts[kind(i)]++;
+      $("#count-all").textContent="("+Math.min(10,a.length)+")";
+      $("#count-official").textContent="("+counts.official+")";
+      $("#count-insiders").textContent="("+counts.insiders+")";
+      $("#count-national").textContent="("+counts.national+")";
+      const list=$("#news-list");let cur="all";
       function paint(){
-        list.innerHTML = "";
-        const items = all.filter(it=> current==="all" ? true : kindOf(it)===current).slice(0,10);
-        if (!items.length){
-          const empty = document.createElement("div");
-          empty.className="empty";
-          empty.textContent="No Purdue Men's Basketball headlines right now. New stories will appear automatically.";
-          list.appendChild(empty);
-          return;
-        }
-        for (const it of items){
-          const a = document.createElement("a");
-          a.className="news";
-          a.href = it.url; a.target="_blank"; a.rel="noopener";
-          const when = fmtAgo(it.published_at);
-          a.innerHTML = `
-            <img alt="" src="${safe(it.image)}" onerror="this.style.opacity=.08" />
+        list.innerHTML="";
+        const items=a.filter(i=>cur==="all"||kind(i)===cur).slice(0,10);
+        if(!items.length){list.innerHTML='<div class="empty">No Purdue Men’s Basketball headlines right now.</div>';return;}
+        for(const i of items){
+          const img=safe(i.image||i.image_url||"");
+          const host=safe(i.domain||i.source||"");
+          list.innerHTML+=`
+          <a class="news" href="${i.url}" target="_blank" rel="noopener">
+            <img src="${img}" onerror="this.style.opacity=.1" alt="">
             <div>
-              <div class="tags">
-                <span class="tag">${kindOf(it)}</span>
-                <span class="tag">${safe(it.domain)}</span>
-              </div>
-              <span class="title">${safe(it.title)}</span>
-              <div class="meta">${when}</div>
-            </div>`;
-          list.appendChild(a);
+              <div class="tags"><span class="tag">${kind(i)}</span><span class="tag">${host}</span></div>
+              <span class="title">${safe(i.title)}</span>
+              <div class="meta">${ago(i.published_at||i.date)}</div>
+            </div>
+          </a>`;
         }
       }
       paint();
-      $$("#filters .chip").forEach(b=>{
-        b.addEventListener("click",()=>{
-          $$("#filters .chip").forEach(x=>x.classList.remove("active"));
-          b.classList.add("active");
-          current = b.dataset.filter;
-          paint();
-        });
-      });
+      $$("#filters .chip").forEach(b=>b.addEventListener("click",()=>{$$("#filters .chip").forEach(x=>x.classList.remove("active"));b.classList.add("active");cur=b.dataset.filter;paint();}));
     }
 
-    // ---------- RANKINGS ----------
-    function pickRank(obj, keys){
-      for (const k of keys){
-        const v = obj?.[k];
-        if (v==null) continue;
-        if (typeof v === "number" || (typeof v==="string" && v.trim()!=="")) return v;
-        if (typeof v==="object"){
-          if (v.rank!=null) return v.rank;
-          if (v.value!=null) return v.value;
-        }
-      }
-      return null;
+    async function renderRankings(){
+      const d=await getJSON("static/data/rankings.json");
+      if(!d)return;
+      const ap=d.ap||d.ap_top25||d.AP||null;
+      const kp=d.kenpom||d.KenPom||d.kp||null;
+      if(ap)$("#ap-link").textContent=ap;
+      if(kp)$("#kp-link").textContent=kp;
+      const up=d.updated_at||d.generated_at||null;
+      if(up)$("#rank-updated").textContent="Updated "+new Date(up).toLocaleString();
     }
-    function renderRankings(json){
-      const ap = pickRank(json, ["ap","ap_top25","AP","apPoll","ap_rank"]);
-      const kp = pickRank(json, ["kenpom","kp","KenPom","kenpom_rank"]);
-      if (ap!=null) $("#ap-link").textContent = String(ap);
-      if (kp!=null) $("#kp-link").textContent = String(kp);
 
-      const stamp = json?.updated_at || json?.updated || json?.generated_at || null;
-      if (stamp){
-        const d = new Date(stamp);
-        $("#rankings-updated").textContent = isNaN(d)? `Updated ${stamp}` : `Updated ${d.toLocaleString()}`;
-      } else {
-        $("#rankings-updated").textContent = "";
+    async function renderSchedule(){
+      const d=await getJSON("static/data/schedule.json");
+      const list=$("#schedule-list");list.innerHTML="";
+      const g=Array.isArray(d)?d:(d?.games||[]);
+      if(!g.length){list.innerHTML='<div class="empty">No upcoming games. <a href="https://purduesports.com/sports/mens-basketball/schedule" target="_blank">Official schedule ↗</a></div>';return;}
+      for(const x of g.slice(0,8)){
+        const n=safe(x.opponent||x.title||"TBD");
+        const loc=safe(x.location||x.venue||"");
+        const dt=x.date||x.datetime||"";
+        const t=dt?new Date(dt).toLocaleString(): "";
+        list.innerHTML+=`
+        <div class="game">
+          <div class="g-head">${n}</div>
+          <div class="g-line">${t}</div>
+          <div class="g-line">${loc}</div>
+          <a href="${x.url||"#"}" target="_blank" rel="noopener">Game details ↗</a>
+        </div>`;
       }
     }
 
-    // ---------- SCHEDULE ----------
-    function cleanTitle(t){
-      // avoid "Exhibition (Exhibition)" duplicates if a feed already labels it
-      return safe(t).replace(/\b\((Exhibition|Preseason)\)\s*\(\1\)/i,"($1)");
-    }
-    function renderSchedule(json){
-      const list = $("#schedule-list");
-      list.innerHTML = "";
-      const arr = Array.isArray(json)? json : (json?.games||[]);
-      const items = arr.slice(0,8);
-      if (!items.length){
-        const empty = document.createElement("div");
-        empty.className="empty";
-        empty.innerHTML = `No upcoming games found. <a href="https://purduesports.com/sports/mens-basketball/schedule" target="_blank" rel="noopener">Check official schedule ↗</a>`;
-        list.appendChild(empty);
-        return;
-      }
-      for (const g of items){
-        const name = cleanTitle(g.opponent || g.name || g.title || "TBD");
-        const venue = safe(g.venue || g.location || "");
-        const city = safe(g.city || g.city_state || "");
-        const whenISO = g.datetime || g.date || g.tip || g.iso || null;
-        let whenTxt = "";
-        if (whenISO){
-          const d = new Date(whenISO);
-          if (!isNaN(d)) whenTxt = d.toLocaleString([], {hour:"numeric", minute:"2-digit", year:"numeric", month:"numeric", day:"numeric"}) + " (local)";
-        }
-        const detail = g.url || g.link || g.tickets || "https://purduesports.com/sports/mens-basketball/schedule";
-        const where = [venue, city].filter(Boolean).join(" — ");
-
-        const el = document.createElement("div");
-        el.className="game";
-        el.innerHTML = `
-          <div class="g-head">${name}</div>
-          <div class="g-line">${whenTxt}</div>
-          <div class="g-line">${where}</div>
-          <a class="g-link" href="${detail}" target="_blank" rel="noopener">Game details ↗</a>
-        `;
-        list.appendChild(el);
+    async function renderBeats(){
+      const b=await getJSON("static/data/beat_links.json");
+      const list=$("#beat-list");list.innerHTML="";
+      const a=Array.isArray(b)?b:(b?.items||[]);
+      if(!a.length){list.innerHTML='<div class="empty">No insider items yet.</div>';return;}
+      for(const i of a.slice(0,8)){
+        list.innerHTML+=`<a class="kpi" href="${i.url}" target="_blank" rel="noopener"><div>${safe(i.title)}</div><div style="opacity:.8">${safe(i.source||"")}</div></a>`;
       }
     }
 
-    // ---------- INSIDER / BEAT ----------
-    function renderBeats(beatsJson, newsAll){
-      const host = $("#beat-list");
-      host.innerHTML = "";
-
-      let items = Array.isArray(beatsJson) ? beatsJson : (beatsJson?.items || []);
-      // Always ensure we show something: pull insider-like items from news if beats file is empty
-      if (!items.length){
-        const inferred = (newsAll||[])
-          .filter(n=>{
-            const t = (n.tags||[]).map(x=>x.toLowerCase());
-            const h = (n.domain||n.source||"").toLowerCase();
-            return t.includes("insiders")||t.includes("insider")||h.includes("hammerandrails")||h.includes("goldandblack")||h.includes("247sports");
-          })
-          .slice(0,6)
-          .map(n=>({title:n.title,url:n.url,source:n.domain||"insider"}));
-        items = inferred;
-      }
-
-      if (!items.length){
-        const empty = document.createElement("div");
-        empty.className="empty";
-        empty.textContent="No insider items (yet).";
-        host.appendChild(empty);
-        return;
-      }
-
-      for (const it of items.slice(0,8)){
-        const a = document.createElement("a");
-        a.className="kpi";
-        a.href = it.url; a.target="_blank"; a.rel="noopener";
-        a.innerHTML = `<div>${safe(it.title)}</div><div style="opacity:.8">${safe(it.source||"↗")}</div>`;
-        host.appendChild(a);
-      }
-    }
-
-    // ---------- boot ----------
-    (async function(){
-      // NEWS
-      const {data:newsData} = await getJSON(PATHS.news);
-      const newsItems = Array.isArray(newsData)?newsData:(newsData?.items||[]);
-      renderNews(newsItems);
-
-      // RANKINGS
-      const {data:rankData} = await getJSON(PATHS.rankings);
-      if (rankData) renderRankings(rankData);
-
-      // SCHEDULE
-      const {data:sched} = await getJSON(PATHS.schedule);
-      if (sched) renderSchedule(sched);
-
-      // BEATS
-      const {data:beats} = await getJSON(PATHS.beats);
-      renderBeats(beats, newsItems);
-    })();
+    (async function(){await renderNews();await renderRankings();await renderSchedule();await renderBeats();})();
   </script>
 </body>
 </html>
