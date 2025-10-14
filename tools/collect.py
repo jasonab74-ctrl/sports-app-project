@@ -1,21 +1,15 @@
-l#!/usr/bin/env python3
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 """
-Boilermakers Hub collector (final tweak):
-- Expands Insider/Beat Links aggregation
-- Keeps robust schedule collection you already approved
+Boilermakers Hub collector (final):
+- Robust schedule: PurdueSports -> ESPN -> last-good fallback
+- Expanded Insider/Beat links aggregation (array of {title,url,source})
+- Never blanks the UI: on any failure, keeps last-good files
 
-Outputs (arrays/objects the site already expects):
-  static/data/beat_links.json   -> list[ {title, url, source} ]  (TOP 12)
-  static/data/schedule.json     -> { team, updated_at, source, games: [...] }
-
-Design goals:
-- Never blank the UI: if fetching fails, keep last-good file.
-- All times ISO-8601 UTC for schedule; human-local string included.
-
-Requires (already in collect.yml):
-  requests, feedparser, beautifulsoup4, lxml, python-dateutil, pytz
+Outputs written under static/data/:
+  schedule.json -> { team, updated_at, source, games: [...] }
+  beat_links.json -> [ { title, url, source }, ... ]  (max 12)
 """
 
 from __future__ import annotations
@@ -32,10 +26,6 @@ try:
 except Exception:
     dateutil_parser = None
 
-# ---------------------------------------------------------------------
-# Paths / constants
-# ---------------------------------------------------------------------
-
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(ROOT, "static", "data")
 CONFIG_DIR = os.path.join(ROOT, "static", "config")
@@ -49,9 +39,7 @@ ESPN_SCHEDULE_URL = "https://site.api.espn.com/apis/site/v2/sports/basketball/me
 OUT_SCHEDULE = os.path.join(DATA_DIR, "schedule.json")
 OUT_BEATS    = os.path.join(DATA_DIR, "beat_links.json")
 
-# ---------------------------------------------------------------------
-# Utilities
-# ---------------------------------------------------------------------
+# -------------------- utils --------------------
 
 def now_utc() -> datetime:
     return datetime.now(timezone.utc)
@@ -79,7 +67,7 @@ def safe_parse_datetime(text: str) -> Optional[datetime]:
         if dateutil_parser:
             dt = dateutil_parser.parse(text)
             if dt.tzinfo is None:
-                # assume US/Eastern if naive, then convert to UTC
+                # assume Eastern if naive; convert to UTC (approx DST)
                 from datetime import timedelta
                 dt = dt.replace(tzinfo=timezone.utc) - timedelta(hours=4)
             return dt.astimezone(timezone.utc)
@@ -96,35 +84,22 @@ def safe_parse_datetime(text: str) -> Optional[datetime]:
     return None
 
 def human_local(dt_utc: datetime) -> str:
-    # readable string; UI already labels "local"
     try:
-        # use platform-appropriate formatting
         return dt_utc.astimezone().strftime("%-m/%-d/%Y, %-I:%M %p local")
     except Exception:
         return dt_utc.astimezone().strftime("%m/%d/%Y, %I:%M %p local")
 
-# ---------------------------------------------------------------------
-# BEAT LINKS (expanded)
-# ---------------------------------------------------------------------
+# -------------------- BEATS (expanded) --------------------
 
-# Default Purdue-focused sources (you can override/extend via static/config/beat_sources.json)
 DEFAULT_BEAT_SOURCES = [
-    # Insiders
     "https://www.hammerandrails.com/rss/index.xml",
     "https://goldandblack.com/feed/",
     "https://247sports.com/college/purdue/rss/",
     "https://purdue.rivals.com/rss",
-    # Official men's basketball news also qualifies as "insider/beat"
     "https://purduesports.com/rss?path=mbball",
 ]
 
-# Titles that clearly indicate MBB; we keep this permissive but Purdue-leaning
-INCLUDE_HINTS = re.compile(
-    r"(purdue|boilermaker|mbb|men['’]?s|basketball|mackey|b1g|big ten)",
-    re.I,
-)
-
-# Avoid football bleed-through
+INCLUDE_HINTS = re.compile(r"(purdue|boilermaker|mbb|men['’]?s|basketball|mackey|b1g|big ten)", re.I)
 EXCLUDE_HINTS = re.compile(r"\b(football|cfb|nfl)\b", re.I)
 
 def load_beat_sources() -> List[str]:
@@ -140,39 +115,22 @@ def normalize_item(title: str, url: str, source: str) -> Optional[Dict[str, str]
     s = (source or "").strip()
     if not t or not u:
         return None
-    text = f"{t} {s}"
-    if EXCLUDE_HINTS.search(text):
+    txt = f"{t} {s}"
+    if EXCLUDE_HINTS.search(txt):
         return None
-    # Prefer to include if any hint, but don't be so strict that we return 0
-    if not INCLUDE_HINTS.search(text) and "purduesports" not in u and "hammerandrails" not in u and "goldandblack" not in u:
-        # low-signal item; allow it but it will sort lower (we don't score here—just filter obvious no's)
-        pass
-    return {"title": t, "url": u, "source": s}
+    return {"title": t, "url": u, "source": s or "—"}
 
 def fetch_feed(url: str) -> List[Dict[str, str]]:
     items: List[Dict[str, str]] = []
     try:
         feed = feedparser.parse(url)
+        feed_title = (feed.feed.get("title") or "").strip() if getattr(feed, "feed", None) else ""
         for e in feed.entries[:30]:
             title = (e.get("title") or "").strip()
             link  = (e.get("link") or "").strip()
             if not title or not link:
                 continue
-            # Try to identify source cleanly
-            src = ""
-            if "goldandblack" in url:
-                src = "Gold and Black"
-            elif "hammerandrails" in url:
-                src = "Hammer & Rails"
-            elif "247sports" in url:
-                src = "247Sports (Purdue)"
-            elif "rivals.com" in url:
-                src = "Rivals (Purdue)"
-            elif "purduesports" in url:
-                src = "PurdueSports.com"
-            else:
-                src = (feed.feed.get("title") or "").strip() or url
-
+            src = feed_title or url
             it = normalize_item(title, link, src)
             if it:
                 items.append(it)
@@ -181,9 +139,6 @@ def fetch_feed(url: str) -> List[Dict[str, str]]:
     return items
 
 def fetch_site_front_page(url: str) -> List[Dict[str, str]]:
-    """
-    Fallback when a site lacks good RSS: scrape a few <a> tags that look like articles.
-    """
     items: List[Dict[str, str]] = []
     try:
         r = requests.get(url, timeout=20, headers={"User-Agent":"Mozilla/5.0 (Actions)"})
@@ -196,10 +151,8 @@ def fetch_site_front_page(url: str) -> List[Dict[str, str]]:
             if not text or not href:
                 continue
             if href.startswith("/"):
-                # resolve relative links
                 from urllib.parse import urljoin
                 href = urljoin(url, href)
-            # crude filter for article-ish links
             if any(x in href for x in ("/news", "/article", "/stories", "/posts", "/mbb", "/basketball")):
                 it = normalize_item(text, href, url)
                 if it:
@@ -217,36 +170,30 @@ def collect_beats() -> List[Dict[str, str]]:
     for u in sources:
         got = fetch_feed(u)
         if not got:
-            # try front page scrape as fallback
             got = fetch_site_front_page(u)
         pool.extend(got)
 
-    # Dedupe by URL, keep first occurrence
-    seen = set()
-    uniq: List[Dict[str, str]] = []
+    # Dedupe by URL
+    seen = set(); uniq: List[Dict[str, str]] = []
     for it in pool:
-        url = it["url"]
-        if url in seen:
+        if it["url"] in seen:
             continue
-        seen.add(url)
+        seen.add(it["url"])
         uniq.append(it)
 
-    # Light sort: prefer Purdue-first sources and keep recent-ish order from feeds
-    def bias(it: Dict[str, str]) -> int:
-        s = (it.get("source") or "").lower()
+    # Light bias toward Purdue-focused sources
+    def bias(s: str) -> int:
+        s = (s or "").lower()
         if "purduesports" in s: return 3
-        if "hammer" in s:       return 2
-        if "gold and black" in s: return 2
+        if "hammer" in s: return 2
+        if "gold" in s and "black" in s: return 2
         if "247" in s or "rivals" in s: return 1
         return 0
-    uniq.sort(key=lambda x: bias(x), reverse=True)
 
-    # Trim
+    uniq.sort(key=lambda x: bias(x.get("source", "")), reverse=True)
     return uniq[:12]
 
-# ---------------------------------------------------------------------
-# SCHEDULE (unchanged robust collector)
-# ---------------------------------------------------------------------
+# -------------------- SCHEDULE (unchanged robust) --------------------
 
 def normalize_game(
     when_utc: Optional[datetime],
@@ -265,7 +212,7 @@ def normalize_game(
         "date_iso": to_iso(when_utc),
         "date_local": human_local(when_utc),
         "opponent": opponent,
-        "site": site,  # Home | Away | Neutral
+        "site": site,
         "venue": venue or "",
         "city_state": city_state or "",
         "event": label or "",
@@ -290,7 +237,6 @@ def fetch_purduesports_schedule() -> List[Dict[str, Any]]:
             if not text:
                 continue
 
-            # opponent
             opp = ""
             m_opp = re.search(r"\b(?:vs\.?|at)\s+([A-Za-z0-9\-\.'& ]+)", text, re.I)
             if m_opp:
@@ -300,14 +246,10 @@ def fetch_purduesports_schedule() -> List[Dict[str, Any]]:
                 if m2:
                     opp = m2.group(1).strip()
 
-            # site
             site = "Home"
-            if re.search(r"\bat\b", text, re.I):
-                site = "Away"
-            if re.search(r"\bneutral\b", text, re.I):
-                site = "Neutral"
+            if re.search(r"\bat\b", text, re.I): site = "Away"
+            if re.search(r"\bneutral\b", text, re.I): site = "Neutral"
 
-            # datetime
             m_dt = re.search(r"([A-Za-z]{3,9},?\s+[A-Za-z]{3,9}\s+\d{1,2},?\s+\d{1,2}:\d{2}\s*[AP]M)", text, re.I)
             when = safe_parse_datetime(m_dt.group(1)) if m_dt else None
             if not when:
@@ -315,9 +257,7 @@ def fetch_purduesports_schedule() -> List[Dict[str, Any]]:
                 if m_d:
                     when = safe_parse_datetime(m_d.group(1))
 
-            # venue & city
-            venue = None
-            city_state = None
+            venue = None; city_state = None
             m_loc = re.search(r"Location:\s*([^|]+?)(?:\s*[-–—]\s*(.*))?$", text, re.I)
             if m_loc:
                 venue = m_loc.group(1).strip()
@@ -338,7 +278,6 @@ def fetch_purduesports_schedule() -> List[Dict[str, Any]]:
         except Exception as e:
             print(f"[schedule] PurdueSports row parse error: {e}", file=sys.stderr)
 
-    # dedupe by (date, opponent)
     seen = set(); uniq: List[Dict[str, Any]] = []
     for g in games:
         key = (g["date_iso"], g["opponent"])
@@ -367,7 +306,7 @@ def fetch_espn_schedule() -> List[Dict[str, Any]]:
                 team = (c.get("team") or {})
                 name = team.get("displayName") or team.get("shortDisplayName") or ""
                 ha = (c.get("homeAway") or "").lower()
-                if "purdue" not in (name.lower()):
+                if "purdue" not in name.lower():
                     opponent = name
                 if ha == "away" and "purdue" in name.lower():
                     site = "Away"
@@ -398,7 +337,6 @@ def fetch_espn_schedule() -> List[Dict[str, Any]]:
         except Exception as e:
             print(f"[schedule] ESPN event parse error: {e}", file=sys.stderr)
 
-    # dedupe
     seen = set(); uniq: List[Dict[str, Any]] = []
     for g in games:
         key = (g["date_iso"], g["opponent"])
@@ -432,40 +370,29 @@ def collect_schedule_payload() -> Dict[str, Any]:
     if not games:
         prev = read_json(OUT_SCHEDULE, None)
         if prev and isinstance(prev.get("games"), list) and prev["games"]:
-            games = prev["games"]
-            source = prev.get("source", "previous")
+            games = prev["games"]; source = prev.get("source", "previous")
         else:
             source = "empty"
     else:
         source = "purduesports+espn" if (ps and es) else ("purduesports" if ps else "espn")
 
-    return {
-        "team": TEAM_NAME,
-        "updated_at": to_iso(now_utc()),
-        "source": source,
-        "games": games,
-    }
+    return { "team": TEAM_NAME, "updated_at": to_iso(now_utc()), "source": source, "games": games }
 
-# ---------------------------------------------------------------------
-# Main
-# ---------------------------------------------------------------------
+# -------------------- main --------------------
 
 def main():
-    # BEAT LINKS (expanded)
+    # BEATS
     beats_last = read_json(OUT_BEATS, [])
     try:
-        beats = collect_beats()
-        if not beats:
-            beats = beats_last
-        # write as ARRAY the UI expects
-        write_json(OUT_BEATS, beats)
+        beats = collect_beats() or beats_last
+        write_json(OUT_BEATS, beats)  # ARRAY
         print(f"[beats] wrote {OUT_BEATS} ({len(beats)} items)")
     except Exception as e:
         print(f"[beats] fatal: {e}", file=sys.stderr)
         if beats_last:
             write_json(OUT_BEATS, beats_last)
 
-    # SCHEDULE (unchanged robust behavior)
+    # SCHEDULE
     sched_last = read_json(OUT_SCHEDULE, None)
     try:
         payload = collect_schedule_payload()
