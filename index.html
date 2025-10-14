@@ -2,295 +2,414 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Boilermakers Hub • Purdue MBB</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Boilermakers Hub</title>
   <meta name="color-scheme" content="dark light" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='44' fill='%23f4d03f'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <style>
     :root{
-      --bg:#0c1014;--panel:#131922;--card:#0f141a;--text:#e8eef5;--muted:#a8b3c0;
-      --gold:#f2c94c;--chip:#1a2230;--ok:#21d07a;--warn:#f2994a;--err:#eb5757;
-      --ring: rgba(242,201,76,.35);
+      --bg:#0c0f13;--panel:#12161c;--panel-2:#0f1318;--muted:#94a3b8;
+      --text:#e6edf3;--brand:#f6d163;--chip:#1b2230;--chip-text:#cbd5e1;
+      --ok:#22c55e;--warn:#f59e0b;--err:#f97316;--link:#74c0fc;--border:#1f2734;
+      --card:#0f141b;--shadow:0 8px 24px rgba(0,0,0,.35);
     }
     *{box-sizing:border-box}
-    html,body{margin:0;background:radial-gradient(1200px 800px at 20% -10%,#111826 0%,#0b1016 55%,#06090d 100%);color:var(--text);font:400 16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial}
-    a{color:#9fc7ff;text-decoration:none}
-    .wrap{max-width:1200px;margin:24px auto;padding:0 16px}
-    header{display:flex;align-items:center;gap:12px;margin-bottom:16px}
-    .dot{width:14px;height:14px;border-radius:6px;background:var(--gold);box-shadow:0 0 0 6px var(--ring)}
-    h1{font-size:28px;margin:0}
-    .grid{display:grid;grid-template-columns:1fr;gap:16px}
-    @media(min-width:980px){.grid{grid-template-columns:2fr 1fr}}
-    .panel{background:var(--panel);border-radius:14px;padding:16px;box-shadow:0 10px 24px rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.04)}
-    h2{margin:0 0 12px;font-size:24px}
-    .sub{color:var(--muted);font-size:14px;margin-bottom:12px}
-    .chips{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 12px}
-    .chip{padding:8px 14px;border-radius:999px;background:var(--chip);border:1px solid rgba(255,255,255,.06);color:var(--text);font-weight:500}
-    .chip.active{outline:2px solid var(--ring);background:rgba(242,201,76,.08)}
-    .news{display:grid;grid-template-columns:1fr;gap:14px}
-    @media(min-width:720px){.news{grid-template-columns:1fr 1fr}}
-    .card{background:var(--card);border:1px solid rgba(255,255,255,.05);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
-    .thumb{position:relative;aspect-ratio:16/9;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02))}
-    .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-    .meta{padding:12px 14px 2px;display:flex;gap:8px;flex-wrap:wrap}
-    .badge{font:600 12px/1 system-ui; padding:6px 10px;border-radius:999px;background:#1b2433;color:#c7d3e4;border:1px solid rgba(255,255,255,.06)}
-    .content{padding:8px 14px 14px}
-    .title{font-weight:700;font-size:18px;margin:0 0 6px}
-    .muted{color:var(--muted);font-size:13px}
-    .rows{display:flex;flex-direction:column;gap:10px}
-    .row{border:1px solid rgba(255,255,255,.06);background:var(--card);border-radius:12px;padding:12px 14px}
-    .row b{display:block;margin-bottom:4px}
-    .row small{color:var(--muted)}
-    .footer{margin-top:10px;color:var(--muted);font-size:13px}
-    .linkish{color:#cfe2ff;text-decoration:underline}
+    html,body{height:100%}
+    body{
+      margin:0; font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
+      background: radial-gradient(1200px 800px at 60% -10%, #141a22 0%, var(--bg) 60%);
+      color:var(--text);
+    }
+    a{color:var(--link); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:1120px; margin:24px auto; padding:0 16px}
+    header .brand{font-weight:700; font-size:28px; letter-spacing:.2px}
+    .grid{display:grid; grid-template-columns:2fr 1fr; gap:16px}
+    @media (max-width: 960px){
+      .grid{grid-template-columns:1fr}
+    }
+    .panel{
+      background:linear-gradient(180deg,var(--panel) 0%,var(--panel-2) 100%);
+      border:1px solid var(--border); border-radius:14px; padding:16px; box-shadow:var(--shadow);
+    }
+    .title{font-weight:800; font-size:28px; margin:2px 0 10px}
+    .sub{color:var(--muted); font-size:14px}
+    .chips{display:flex; flex-wrap:wrap; gap:10px; margin:10px 0}
+    .chip{
+      background:var(--chip); color:var(--chip-text); border:1px solid var(--border);
+      padding:8px 14px; border-radius:999px; font-weight:600; font-size:14px; cursor:pointer;
+      user-select:none;
+    }
+    .chip[data-active="true"]{outline:2px solid var(--brand); box-shadow:0 0 0 4px rgba(246,209,99,.12)}
+    .news-list{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:12px}
+    @media (max-width: 1100px){ .news-list{grid-template-columns:repeat(2,1fr)} }
+    @media (max-width: 720px){ .news-list{grid-template-columns:1fr} }
+    .card{
+      background:var(--card); border:1px solid var(--border); border-radius:14px;
+      overflow:hidden; display:flex; flex-direction:column; min-height:220px;
+    }
+    .thumb{height:160px; background:#0b1117 center/cover no-repeat; display:block}
+    .no-thumb{display:flex; align-items:center; justify-content:center; height:160px; color:var(--muted); font-weight:600; font-size:14px; border-bottom:1px solid var(--border)}
+    .meta{padding:10px 12px 6px; display:flex; gap:6px; flex-wrap:wrap}
+    .badge{background:var(--chip); border:1px solid var(--border); color:var(--chip-text); font-size:12px; padding:4px 8px; border-radius:999px}
+    .card h4{margin:6px 12px 8px; font-size:18px; line-height:1.25}
+    .muted{color:var(--muted); font-size:13px; margin:0 12px 12px}
+    .right .panel{min-height:140px}
+    .row{display:flex; flex-direction:column; gap:10px}
+    .item{
+      background:var(--card); border:1px solid var(--border); border-radius:12px; padding:14px;
+    }
+    .item .headline{font-weight:800; font-size:18px; margin:0 0 6px}
+    .kv{color:var(--muted); font-size:14px}
+    footer{color:var(--muted); font-size:13px; margin:24px 0 10px; text-align:center}
+    .divider{height:1px; background:var(--border); margin:12px 0}
+    .hidden{display:none !important}
   </style>
 </head>
 <body>
   <div class="wrap">
-    <header>
-      <div class="dot"></div>
-      <h1>Boilermakers Hub</h1>
-    </header>
+    <header><div class="brand">Boilermakers</div></header>
 
     <div class="grid">
-      <section class="panel" id="news-panel">
-        <h2>Top Headlines</h2>
+      <section class="panel">
+        <div class="title">Top Headlines</div>
         <div class="sub">Refreshed every 30 min • Auto-updated via GitHub Actions</div>
-        <div class="chips" id="filters">
-          <button class="chip active" data-scope="all">all <span id="count-all" class="muted"></span></button>
-          <button class="chip" data-scope="official">official <span id="count-official" class="muted"></span></button>
-          <button class="chip" data-scope="insiders">insiders <span id="count-insiders" class="muted"></span></button>
-          <button class="chip" data-scope="national">national <span id="count-national" class="muted"></span></button>
+        <div class="chips" id="filterChips">
+          <button class="chip" data-filter="all" data-active="true">all <span id="c_all" class="muted"></span></button>
+          <button class="chip" data-filter="official">official <span id="c_official" class="muted"></span></button>
+          <button class="chip" data-filter="insiders">insiders <span id="c_insiders" class="muted"></span></button>
+          <button class="chip" data-filter="national">national <span id="c_national" class="muted"></span></button>
         </div>
-        <div class="news" id="news"></div>
+        <div id="newsEmpty" class="item hidden">No Purdue Men's Basketball headlines right now. New stories will appear here automatically.</div>
+        <div id="newsList" class="news-list"></div>
       </section>
 
-      <aside class="panel">
-        <h2>Rankings</h2>
-        <div class="rows" id="rankings">
-          <div class="row"><b>AP Top 25:</b><span id="ap-rank">—</span>
-            <small> • <a class="linkish" href="https://apnews.com/hub/ap-top-25-college-basketball-poll" target="_blank" rel="noopener">AP source</a></small>
+      <aside class="right">
+        <section class="panel">
+          <div class="title">Rankings</div>
+          <div class="row">
+            <div class="item" id="apItem">
+              <div class="headline"><a id="apLink" href="#" target="_blank" rel="noopener">AP Top 25: <span id="apRank">—</span></a></div>
+              <div class="kv" id="apUpdated" aria-live="polite"></div>
+            </div>
+            <div class="item" id="kpItem">
+              <div class="headline"><a id="kpLink" href="https://kenpom.com/" target="_blank" rel="noopener">KenPom: <span id="kpRank">—</span></a></div>
+              <div class="kv" id="kpUpdated" aria-live="polite"></div>
+            </div>
           </div>
-          <div class="row"><b>KenPom:</b><span id="kp-rank">—</span>
-            <small> • <a class="linkish" href="https://kenpom.com/" target="_blank" rel="noopener">kenpom.com</a></small>
-          </div>
-          <div class="footer" id="rk-updated"></div>
-        </div>
+        </section>
 
-        <h2 style="margin-top:18px">Upcoming Schedule</h2>
-        <div class="rows" id="schedule"></div>
+        <section class="panel">
+          <div class="title">Upcoming Schedule</div>
+          <div id="schedEmpty" class="item">No upcoming games found. <a id="officialSched" href="https://purduesports.com/sports/mens-basketball/schedule" target="_blank" rel="noopener">Check official schedule ↗</a></div>
+          <div id="schedList" class="row"></div>
+        </section>
 
-        <h2 style="margin-top:18px">Insider / Beat Links</h2>
-        <div class="rows" id="beat"></div>
+        <section class="panel">
+          <div class="title">Insider / Beat Links</div>
+          <div id="beatLinks" class="row"></div>
+          <div id="beatEmpty" class="item">No insider items (yet).</div>
+        </section>
       </aside>
     </div>
 
-    <div class="footer">© 2025 Boilermakers Hub • Auto-updated every 30 min</div>
+    <footer>© 2025 Boilermakers Hub • Auto-updated every 30 min</footer>
   </div>
 
-  <script>
-    // ---------- Utilities ----------
-    const byId = (id)=>document.getElementById(id);
-    const newsEl = byId('news');
-    const counts = {
-      all: byId('count-all'),
-      official: byId('count-official'),
-      insiders: byId('count-insiders'),
-      national: byId('count-national')
+<script>
+/* ========= helpers ========= */
+const TEAM_KEY = 'purdue-mbb';
+const MAX_NEWS = 10;
+const NEWS_PATHS = [
+  'static/data/news_all.json',
+  'static/data/news_insiders.json',
+  'static/data/news_official.json',
+  'static/data/news_national.json'
+];
+const SCHEDULE_PATHS = [
+  'static/teams/purdue-mbb/schedule.json',
+  'static/data/schedule_overrides.json'
+];
+const RANKINGS_PATH = 'static/data/rankings.json';
+const BEAT_PATH = 'static/data/beat_links.json';
+
+/* currency of cache to survive data build hiccups */
+function cacheSet(key, value){ try{ localStorage.setItem(key, JSON.stringify({t:Date.now(), v:value})) }catch(e){} }
+function cacheGet(key, maxAgeMs){
+  try{
+    const raw = localStorage.getItem(key);
+    if(!raw) return null;
+    const {t,v} = JSON.parse(raw);
+    if(maxAgeMs && Date.now()-t>maxAgeMs) return null;
+    return v;
+  }catch(e){ return null }
+}
+
+/* robust date parsing */
+function parseWhen(s){
+  if(!s) return null;
+  if(typeof s === 'number') return new Date(s);
+  const trimmed = String(s).trim();
+  // If string already looks like “2h ago”, don’t parse as date.
+  if(/ago$/.test(trimmed)) return null;
+  // Try ISO / RFC
+  const d = new Date(trimmed);
+  if(!isNaN(d)) return d;
+  return null;
+}
+function timeAgo(dt){
+  if(!dt) return '';
+  const now = Date.now();
+  let diff = Math.max(0, Math.floor((now - dt.getTime())/1000));
+  const units = [
+    ['d', 86400],
+    ['h', 3600],
+    ['m', 60]
+  ];
+  for(const [u,sec] of units){
+    if(diff >= sec){
+      const v = Math.floor(diff/sec);
+      return `${v}${u} ago`;
+    }
+  }
+  return 'just now';
+}
+
+/* Purdue MBB filter (keeps MBB; drops football) */
+function isPurdueMBB(item){
+  const t = (item.title||'').toLowerCase();
+  const d = (item.summary||item.description||'').toLowerCase();
+  const src = (item.source||'').toLowerCase();
+  const text = `${t} ${d} ${src}`;
+  const must = /(purdue|boilermaker)/.test(text) || /matt painter|mackey|big ten/.test(text);
+  const men = /(men|men's|mbb|basketball)/.test(text) || /(purdue sports|gold and black|hammer and rails|247sports|espn|cbs)/.test(text);
+  const football = /(football|gridiron|qb|touchdown)/.test(text);
+  return must && men && !football;
+}
+
+/* safe image */
+function resolveImage(item){
+  if(item.image) return item.image;
+  if(item.enclosure && item.enclosure.url) return item.enclosure.url;
+  // if you keep your CF worker image-proxy, you can re-enable below to try opengraph
+  // return `/cf-worker/image-proxy?url=${encodeURIComponent(item.link||'')}`;
+  return null;
+}
+
+/* ============ NEWS ============ */
+async function loadNews(){
+  const listEl = document.getElementById('newsList');
+  const emptyEl = document.getElementById('newsEmpty');
+
+  // Load all news JSONs (best-effort)
+  let allItems = [];
+  for(const p of NEWS_PATHS){
+    try{
+      const r = await fetch(p, {cache:'no-store'});
+      if(r.ok){
+        const j = await r.json();
+        if(Array.isArray(j)) allItems = allItems.concat(j);
+        else if(Array.isArray(j?.items)) allItems = allItems.concat(j.items);
+      }
+    }catch(e){}
+  }
+  // Fallback to cache if everything failed
+  if(allItems.length===0){
+    const cached = cacheGet('news_cache', 1000*60*120); // 2 hours
+    if(cached){ allItems = cached; }
+  }else{
+    cacheSet('news_cache', allItems);
+  }
+
+  // Filter & normalize
+  const mapped = allItems
+    .filter(isPurdueMBB)
+    .map(x => ({
+      title: x.title || x.headline || '(no title)',
+      link: x.link || x.url || '#',
+      source: x.source || x.site || '',
+      tag: (x.tag || x.category || '').toLowerCase() || (x.sourceTag || ''),
+      when: parseWhen(x.date || x.pubDate || x.publishedAt || x.updatedAt),
+      image: resolveImage(x)
+    }))
+    .sort((a,b)=>{
+      const ta = a.when ? a.when.getTime() : 0;
+      const tb = b.when ? b.when.getTime() : 0;
+      return tb - ta;
+    });
+
+  // Counters
+  const counters = {all:0, official:0, insiders:0, national:0};
+  const tagOf = (t)=>{
+    const s = (t||'').toLowerCase();
+    if(/purdue sports|official|purduesports/.test(s)) return 'official';
+    if(/hammer and rails|gold and black|247sports|rivals/.test(s)) return 'insiders';
+    return 'national';
+  };
+
+  // Build
+  const target = mapped.slice(0, MAX_NEWS).map(item=>{
+    const tag = tagOf(item.source);
+    counters.all++; counters[tag]++;
+    const img = item.image ? `<a href="${item.link}" target="_blank" rel="noopener" class="thumb" style="background-image:url('${item.image.replace(/'/g,"%27")}')"></a>` : `<div class="no-thumb">No image</div>`;
+    const whenTxt = item.when ? timeAgo(item.when) : '';
+    return `
+      <article class="card" data-tag="${tag}">
+        ${img}
+        <div class="meta">
+          <span class="badge">${tag}</span>
+          ${item.source ? `<span class="badge">${item.source}</span>`:''}
+        </div>
+        <h4><a href="${item.link}" target="_blank" rel="noopener">${item.title}</a></h4>
+        <p class="muted">${whenTxt}</p>
+      </article>
+    `;
+  }).join('');
+
+  listEl.innerHTML = target;
+  document.getElementById('c_all').textContent = ` (${counters.all})`;
+  document.getElementById('c_official').textContent = ` (${counters.official})`;
+  document.getElementById('c_insiders').textContent = ` (${counters.insiders})`;
+  document.getElementById('c_national').textContent = ` (${counters.national})`;
+
+  emptyEl.classList.toggle('hidden', counters.all>0);
+
+  // Filter chips wiring
+  document.getElementById('filterChips').addEventListener('click', (e)=>{
+    const btn = e.target.closest('.chip'); if(!btn) return;
+    [...e.currentTarget.querySelectorAll('.chip')].forEach(c=>c.dataset.active='false');
+    btn.dataset.active='true';
+    const f = btn.dataset.filter;
+    [...listEl.children].forEach(card=>{
+      if(f==='all') card.classList.remove('hidden');
+      else card.classList.toggle('hidden', card.getAttribute('data-tag')!==f);
+    });
+  });
+}
+
+/* ============ SCHEDULE ============ */
+async function loadSchedule(){
+  const listEl = document.getElementById('schedList');
+  const emptyEl = document.getElementById('schedEmpty');
+
+  let items = [];
+  for(const p of SCHEDULE_PATHS){
+    try{
+      const r = await fetch(p, {cache:'no-store'});
+      if(r.ok){
+        const j = await r.json();
+        const a = Array.isArray(j) ? j : (Array.isArray(j?.games)? j.games : []);
+        items = items.concat(a);
+      }
+    }catch(e){}
+  }
+  if(items.length===0){
+    const cached = cacheGet('schedule_cache', 1000*60*60*6); // 6 hours
+    if(cached) items = cached;
+  }else{
+    cacheSet('schedule_cache', items);
+  }
+  // Normalize, upcoming only, next 5
+  const now = Date.now();
+  const norm = items.map(g=>{
+    const d = parseWhen(g.date || g.tip || g.tipoff || g.startTime);
+    return {
+      name: g.name || g.opponent || 'TBD',
+      where: g.where || g.venue || g.location || '',
+      homeAway: g.homeAway || g.site || g.type || '',
+      when: d,
+      link: g.link || g.url || g.ticket || ''
     };
+  }).filter(x => x.when && x.when.getTime() >= now - 1000*60*60) // keep just-aired by an hour too
+    .sort((a,b)=> a.when - b.when)
+    .slice(0,5);
 
-    // Robust time-ago (ISO string or epoch; clamps negatives)
-    function timeAgo(input) {
-      let then;
-      if (typeof input === 'number') {
-        then = new Date(input > 1e12 ? input : input * 1000); // sec vs ms
-      } else {
-        then = new Date(input);
-      }
-      const diffMs = Math.max(0, Date.now() - (then.getTime() || 0));
-      const mins = Math.floor(diffMs / 60000);
-      if (mins < 60) return `${mins}m ago`;
-      const hrs = Math.floor(mins / 60);
-      if (hrs < 24) return `${hrs}h ago`;
-      const days = Math.floor(hrs / 24);
-      return `${days}d ago`;
+  if(norm.length===0){
+    emptyEl.classList.remove('hidden');
+    listEl.innerHTML = '';
+    return;
+  }
+  emptyEl.classList.add('hidden');
+  listEl.innerHTML = norm.map(g=>{
+    const when = g.when.toLocaleString([], {year:'numeric', month:'numeric', day:'numeric', hour:'numeric', minute:'2-digit'});
+    const site = g.homeAway ? `<div class="kv">${g.homeAway}</div>` : '';
+    const loc = g.where ? `<div class="kv">Location: ${g.where}</div>` : '';
+    const go = g.link ? ` • <a href="${g.link}" target="_blank" rel="noopener">Game details ↗</a>` : '';
+    return `<div class="item">
+      <div class="headline">${g.name}</div>
+      ${site}
+      <div class="kv">${when} local</div>
+      ${loc}
+      <div class="kv">${go}</div>
+    </div>`;
+  }).join('');
+}
+
+/* ============ RANKINGS ============ */
+async function loadRankings(){
+  const apRankEl = document.getElementById('apRank');
+  const kpRankEl = document.getElementById('kpRank');
+  const apLink = document.getElementById('apLink');
+  const kpLink = document.getElementById('kpLink');
+  const apUpdated = document.getElementById('apUpdated');
+  const kpUpdated = document.getElementById('kpUpdated');
+
+  let data=null;
+  try{
+    const r = await fetch(RANKINGS_PATH, {cache:'no-store'});
+    if(r.ok) data = await r.json();
+  }catch(e){}
+
+  if(!data){
+    const cached = cacheGet('rankings_cache', 1000*60*180); // 3 hours
+    if(cached) data = cached;
+  }else{
+    cacheSet('rankings_cache', data);
+  }
+
+  if(data?.ap){
+    const ap = data.ap;
+    if(ap.rank != null) apRankEl.textContent = ap.rank;
+    if(ap.source) apLink.href = ap.source;
+    if(ap.updated){
+      const d = parseWhen(ap.updated);
+      if(d) apUpdated.textContent = `Updated ${d.toLocaleString()}`;
     }
-
-    // Safe image proxy to avoid hotlink/CORS blocks
-    function prox(url) {
-      if (!url) return null;
-      try {
-        const stripped = String(url).replace(/^https?:\/\//,'');
-        return `https://images.weserv.nl/?url=${encodeURIComponent(stripped)}&w=1200&h=630&fit=cover&we=1`;
-      } catch { return null; }
+  }
+  // Always link KP to kenpom.com; show rank if your JSON provides it
+  kpLink.href = 'https://kenpom.com/';
+  if(data?.kenpom){
+    if(data.kenpom.rank != null) kpRankEl.textContent = data.kenpom.rank;
+    if(data.kenpom.updated){
+      const d = parseWhen(data.kenpom.updated);
+      if(d) kpUpdated.textContent = `Updated ${d.toLocaleString()}`;
     }
+  }
+}
 
-    function fmtLocal(dt) {
-      const d = new Date(dt);
-      if (isNaN(d)) return '';
-      return d.toLocaleString(undefined, { hour:'numeric', minute:'2-digit', month:'numeric', day:'numeric', year:'numeric' }) + ' local';
-    }
+/* ============ Beat links (optional) ============ */
+async function loadBeat(){
+  const box = document.getElementById('beatLinks');
+  const empty = document.getElementById('beatEmpty');
+  let items = [];
+  try{
+    const r = await fetch(BEAT_PATH, {cache:'no-store'});
+    if(r.ok){ const j = await r.json(); if(Array.isArray(j)) items=j }
+  }catch(e){}
+  if(items.length===0){ empty.classList.remove('hidden'); box.innerHTML=''; return; }
+  empty.classList.add('hidden');
+  box.innerHTML = items.slice(0,5).map(x=>`
+    <div class="item">
+      <div class="headline"><a href="${x.url}" target="_blank" rel="noopener">${x.title}</a></div>
+      <div class="kv">${x.source||''}</div>
+    </div>
+  `).join('');
+}
 
-    // ---------- Data paths ----------
-    const PATHS = {
-      news: 'static/teams/purdue-mbb/news.json',
-      schedule: 'static/teams/purdue-mbb/schedule.json',
-      rankings: 'static/data/rankings.json',
-      rankingsOverrides: 'static/data/rankings_overrides.json', // optional
-      beat: 'static/data/beat_links.json'
-    };
-
-    async function getJSON(path) {
-      const res = await fetch(path, { cache:'no-store' });
-      if (!res.ok) throw new Error(`${path}: ${res.status}`);
-      return res.json();
-    }
-
-    // ---------- Render News ----------
-    let NEWS_RAW = [];
-    let FILTER = 'all';
-
-    function tagBadge(t){ return `<span class="badge">${t}</span>` }
-
-    function renderNews() {
-      const data = NEWS_RAW.slice(0, 10);
-      counts.all.textContent = ` (${data.length})`;
-      counts.official.textContent = ` (${data.filter(x=>x.section==='official').length})`;
-      counts.insiders.textContent = ` (${data.filter(x=>x.section==='insiders').length})`;
-      counts.national.textContent = ` (${data.filter(x=>x.section==='national').length})`;
-
-      const list = (FILTER==='all') ? data : data.filter(x => x.section === FILTER);
-      newsEl.innerHTML = list.map(item => {
-        const img = prox(item.image || item.ogImage || item.thumbnail);
-        const source = item.source || '';
-        const when = timeAgo(item.publishedAt || item.date || item.timestamp);
-        const chips = [
-          item.section ? tagBadge(item.section) : '',
-          source ? tagBadge(source) : ''
-        ].join('');
-
-        return `
-        <article class="card">
-          <div class="thumb">${img ? `<img loading="lazy" referrerpolicy="no-referrer" src="${img}" alt="">` : ''}</div>
-          <div class="meta">${chips}</div>
-          <div class="content">
-            <a class="title" href="${item.url}" target="_blank" rel="noopener">${item.title}</a>
-            <div class="muted">${when}${source ? ` • ${source}`:''}</div>
-          </div>
-        </article>`;
-      }).join('') || `<div class="muted">No Purdue Men's Basketball headlines right now. New stories will appear here automatically.</div>`;
-    }
-
-    // ---------- Render Schedule ----------
-    function renderSchedule(items) {
-      const host = byId('schedule');
-      if (!items?.length){
-        host.innerHTML = `<div class="muted">No upcoming games found. <a class="linkish" href="https://purduesports.com/sports/mens-basketball/schedule" target="_blank" rel="noopener">Check official schedule ↗</a></div>`;
-        return;
-      }
-      host.innerHTML = items.slice(0,5).map(g=>{
-        const bits = [
-          g.locationText || g.venue ? `Location: ${g.venue || g.locationText}` : '',
-          g.url ? `<a class="linkish" href="${g.url}" target="_blank" rel="noopener">Game details ↗</a>` : ''
-        ].filter(Boolean).join('<br/>');
-
-        return `<div class="row">
-          <b>${g.opponent || 'TBD'}${g.isExhibition ? ' (Exhibition)':''}</b>
-          <small>${g.site || g.siteText || ''}</small><br/>
-          <small>${fmtLocal(g.start)}</small><br/>
-          <small>${bits}</small>
-        </div>`;
-      }).join('');
-    }
-
-    // ---------- Rankings (with optional overrides precedence) ----------
-    function renderRankings(obj) {
-      const ap = obj?.apTop25 ?? '—';
-      const kp = obj?.kenpom ?? '—';
-      byId('ap-rank').textContent = ap;
-      byId('kp-rank').textContent = kp;
-
-      const updated = obj?.updatedAt ? new Date(obj.updatedAt) : null;
-      byId('rk-updated').textContent = updated && !isNaN(updated) ?
-        `Updated ${updated.toLocaleString()}` : '';
-    }
-
-    async function loadRankingsWithOverride() {
-      let base = {};
-      let override = null;
-
-      try { base = await getJSON(PATHS.rankings); } catch(e){ console.warn('rankings base fetch failed', e); }
-      try { override = await getJSON(PATHS.rankingsOverrides); } catch(e){ /* 404 is fine */ }
-
-      if (override && override.updatedAt) {
-        const tO = new Date(override.updatedAt).getTime();
-        const tB = new Date(base.updatedAt || 0).getTime();
-        if (!isNaN(tO) && (isNaN(tB) || tO > tB)) {
-          renderRankings(override);
-          return;
-        }
-      }
-      renderRankings(base);
-    }
-
-    // ---------- Render Beat ----------
-    function renderBeat(list){
-      const host = byId('beat');
-      if (!list?.length){ host.innerHTML = `<div class="muted">No insider items (yet).</div>`; return; }
-      host.innerHTML = list.slice(0,5).map(x=>`<div class="row"><a href="${x.url}" target="_blank" rel="noopener">${x.title}</a><br/><small>${x.source || ''}</small></div>`).join('');
-    }
-
-    // ---------- Load all ----------
-    (async function init(){
-      // Filters
-      document.querySelectorAll('#filters .chip').forEach(btn=>{
-        btn.addEventListener('click', ()=>{
-          document.querySelectorAll('#filters .chip').forEach(b=>b.classList.remove('active'));
-          btn.classList.add('active');
-          FILTER = btn.dataset.scope;
-          renderNews();
-        });
-      });
-
-      try {
-        const news = await getJSON(PATHS.news);
-        NEWS_RAW = (news || []).map(n=>({
-          title: n.title || n.headline || '',
-          url: n.url || n.link,
-          image: n.image || n.imageUrl || n.ogImage || n.thumbnail,
-          source: n.source || n.publisher,
-          section: n.section || n.tag || 'national',
-          publishedAt: n.publishedAt || n.date || n.timestamp
-        }));
-        renderNews();
-      } catch(e){
-        newsEl.innerHTML = `<div class="muted">Could not load headlines.</div>`;
-        console.error(e);
-      }
-
-      try{
-        const sched = await getJSON(PATHS.schedule);
-        renderSchedule(sched?.games || sched || []);
-      }catch(e){
-        byId('schedule').innerHTML = `<div class="muted">Could not load schedule.</div>`;
-        console.error(e);
-      }
-
-      try{
-        await loadRankingsWithOverride();
-      }catch(e){
-        renderRankings({});
-        console.error(e);
-      }
-
-      try{
-        const b = await getJSON(PATHS.beat);
-        renderBeat(b || []);
-      }catch(e){
-        renderBeat([]);
-        console.error(e);
-      }
-    })();
-  </script>
+/* ============ init ============ */
+(async function init(){
+  await Promise.all([loadNews(), loadSchedule(), loadRankings(), loadBeat()]);
+})();
+</script>
 </body>
 </html>
