@@ -2,7 +2,7 @@ name: Build data (news, schedule, rankings, beat links)
 
 on:
   schedule:
-    - cron: "*/30 * * * *"  # every 30 minutes
+    - cron: "*/30 * * * *"   # every 30 minutes
   workflow_dispatch:
 
 permissions:
@@ -35,7 +35,8 @@ jobs:
         run: |
           python tools/collect.py
 
-      - name: Upload built site artifact
+      # Bundle the repo (including /static/data/*.json built above) as the Pages artifact
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: .
