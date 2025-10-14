@@ -2,15 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, viewport-fit=cover"
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Boilermakers Hub</title>
   <meta name="theme-color" content="#0b1220" />
   <style>
     :root{
-      --bg:#0b1220;--card:#101a2e;--muted:#6b7a90;--text:#eaf2ff;--brand:#ffd166;--chip:#182440;--ok:#25c08a;--warn:#ffb020;
+      --bg:#0b1220;--card:#101a2e;--muted:#6b7a90;--text:#eaf2ff;--brand:#ffd166;--chip:#182440;--ok:#25c08a;
       --ring:#2a3a5c;--link:#7ab0ff;--badge:#253457;
     }
     *{box-sizing:border-box}
@@ -36,7 +33,6 @@
     .tag{background:var(--badge);color:#cfe2ff;border-radius:999px;padding:4px 9px;font-size:12px;border:1px solid var(--ring)}
     .title{display:block;font-weight:700;font-size:18px;color:#cfe2ff;margin-bottom:6px}
     .meta{color:var(--muted);font-size:13px}
-    .row{display:flex;gap:12px;align-items:center}
     .kpi{display:flex;justify-content:space-between;align-items:center;background:#0d172b;border:1px solid var(--ring);border-radius:12px;padding:14px 16px;margin-top:10px}
     .kpi a{font-weight:700}
     .small{font-size:13px;color:var(--muted);margin-top:8px}
@@ -86,7 +82,6 @@
 
     <section class="card" id="schedule-card" style="margin-top:16px">
       <h2>Upcoming Schedule</h2>
-      <div class="small" id="schedule-source"></div>
       <div class="schedule" id="schedule-list"></div>
     </section>
 
@@ -99,13 +94,14 @@
   </div>
 
   <script>
-    // ------- tiny helpers -------
+    // ---------- helpers ----------
     const $ = (q,el=document)=>el.querySelector(q);
     const $$ = (q,el=document)=>[...el.querySelectorAll(q)];
+    const safe = v => (v??"").toString();
     const fmtAgo = iso => {
       try{
-        const d = new Date(iso || "");
-        if (isNaN(d)) return "";
+        const d = new Date(iso||"");
+        if (isNaN(d)) return ""; // never show NaN
         const mins = Math.floor((Date.now()-d.getTime())/60000);
         if (mins < 1) return "just now";
         if (mins < 60) return `${mins}m ago`;
@@ -115,218 +111,215 @@
         return `${days}d ago`;
       }catch{return "";}
     };
-    const safeTxt = s => (s??"").toString();
-
-    // ------- data loaders with gentle fallbacks -------
     async function getJSON(urls){
-      for (const url of urls){
+      for (const u of urls){
         try{
-          const r = await fetch(url, {cache:"no-store"});
-          if (r.ok) return {data: await r.json(), src: url};
+          const r = await fetch(u,{cache:"no-store"});
+          if (r.ok) return {data:await r.json(), src:u};
         }catch{}
       }
       return {data:null, src:null};
     }
 
-    // paths (keep your current structure; we only *read*)
+    // ---------- paths (read-only) ----------
     const PATHS = {
       news: ["static/data/news.json"],
       rankings: ["static/data/rankings.json"],
-      schedule: [
-        "static/data/schedule.json",                // new unified file
-        "static/teams/purdue-mbb/schedule.json"     // legacy fallback
-      ],
+      schedule: ["static/data/schedule.json","static/teams/purdue-mbb/schedule.json"],
       beats: ["static/data/beat_links.json"]
     };
 
-    // ------- render: news -------
-    function deriveKind(item){
-      // normalize tag/kind
-      const tags = (item.tags || []).map(t=>t.toLowerCase());
-      if (tags.includes("official")) return "official";
-      if (tags.includes("insiders") || tags.includes("insider")) return "insiders";
-      if (tags.includes("national")) return "national";
-      // infer from domain as a safe default
-      const host = (item.source || item.domain || "").toLowerCase();
-      if (host.includes("purduesports")) return "official";
-      if (host.includes("hammerandrails") || host.includes("goldandblack") || host.includes("247sports")) return "insiders";
+    // ---------- NEWS ----------
+    function kindOf(item){
+      const tags = (item.tags||[]).map(t=>t.toLowerCase());
+      const host = (item.domain||item.source||"").toLowerCase();
+      if (tags.includes("official") || host.includes("purduesports")) return "official";
+      if (tags.includes("insiders") || tags.includes("insider") || host.includes("hammerandrails") || host.includes("goldandblack") || host.includes("247sports")) return "insiders";
       return "national";
     }
+    function renderNews(allRaw){
+      const all = (allRaw||[]).map(it=>({
+        title: safe(it.title),
+        url: it.url,
+        image: it.image || it.image_url || it.thumbnail || "",
+        published_at: it.published_at || it.date || it.isoDate || "",
+        domain: safe(it.domain || it.source || (it.url?new URL(it.url).hostname.replace(/^www\./,""):"")),
+        tags: it.tags||[]
+      }));
 
-    function renderNews(all){
-      // compute counts by kind
-      const byKind = {official:0, insiders:0, national:0};
-      for (const it of all){ byKind[deriveKind(it)]++; }
-      $("#count-all").textContent = `(${all.length})`;
-      $("#count-official").textContent = `(${byKind.official})`;
-      $("#count-insiders").textContent = `(${byKind.insiders})`;
-      $("#count-national").textContent = `(${byKind.national})`;
+      // counts
+      const counts = {official:0,insiders:0,national:0};
+      for (const it of all){ counts[kindOf(it)]++; }
+      $("#count-all").textContent = `(${Math.min(10, all.length)})`;
+      $("#count-official").textContent = `(${counts.official})`;
+      $("#count-insiders").textContent = `(${counts.insiders})`;
+      $("#count-national").textContent = `(${counts.national})`;
 
-      // filter logic
-      const listEl = $("#news-list");
+      const list = $("#news-list");
       let current = "all";
       function paint(){
-        listEl.innerHTML = "";
-        const items = all
-          .filter(it => current==="all" ? true : deriveKind(it)===current)
-          .slice(0,10);
-
-        for (const it of items){
-          const img = safeTxt(it.image || it.image_url || it.thumbnail || "");
-          const host = safeTxt(it.domain || it.source || (new URL(it.url).hostname.replace(/^www\./,"")));
-          const kind = deriveKind(it);
-          const when = fmtAgo(it.published_at || it.date || it.isoDate);
-
-          const card = document.createElement("a");
-          card.className = "news";
-          card.href = it.url;
-          card.target = "_blank";
-          card.rel = "noopener";
-          card.innerHTML = `
-            <img alt="" src="${img}" onerror="this.style.opacity=.1" />
-            <div>
-              <div class="tags">
-                <span class="tag">${kind}</span>
-                <span class="tag">${host}</span>
-              </div>
-              <span class="title">${safeTxt(it.title)}</span>
-              <div class="meta">${when}</div>
-            </div>
-          `;
-          listEl.appendChild(card);
-        }
-
+        list.innerHTML = "";
+        const items = all.filter(it=> current==="all" ? true : kindOf(it)===current).slice(0,10);
         if (!items.length){
           const empty = document.createElement("div");
-          empty.className = "empty";
-          empty.textContent = "No Purdue Men's Basketball headlines right now. New stories will appear automatically.";
-          listEl.appendChild(empty);
+          empty.className="empty";
+          empty.textContent="No Purdue Men's Basketball headlines right now. New stories will appear automatically.";
+          list.appendChild(empty);
+          return;
+        }
+        for (const it of items){
+          const a = document.createElement("a");
+          a.className="news";
+          a.href = it.url; a.target="_blank"; a.rel="noopener";
+          const when = fmtAgo(it.published_at);
+          a.innerHTML = `
+            <img alt="" src="${safe(it.image)}" onerror="this.style.opacity=.08" />
+            <div>
+              <div class="tags">
+                <span class="tag">${kindOf(it)}</span>
+                <span class="tag">${safe(it.domain)}</span>
+              </div>
+              <span class="title">${safe(it.title)}</span>
+              <div class="meta">${when}</div>
+            </div>`;
+          list.appendChild(a);
         }
       }
       paint();
-
-      // hook up filter chips
-      $$("#filters .chip").forEach(btn=>{
-        btn.addEventListener("click",()=>{
-          $$("#filters .chip").forEach(b=>b.classList.remove("active"));
-          btn.classList.add("active");
-          current = btn.dataset.filter;
+      $$("#filters .chip").forEach(b=>{
+        b.addEventListener("click",()=>{
+          $$("#filters .chip").forEach(x=>x.classList.remove("active"));
+          b.classList.add("active");
+          current = b.dataset.filter;
           paint();
         });
       });
     }
 
-    // ------- render: rankings -------
-    function renderRankings(json, src){
-      const apEl = $("#ap-link");
-      const kpEl = $("#kp-link");
-      const upd = $("#rankings-updated");
-
-      // tolerate various shapes
-      const ap = json?.ap ?? json?.ap_top25 ?? json?.AP ?? null;
-      const kp = json?.kenpom ?? json?.kp ?? null;
-      if (ap != null) apEl.textContent = String(ap);
-      if (kp != null) kpEl.textContent = String(kp);
-
-      const updatedAt = json?.updated_at || json?.updated || json?.generated_at || null;
-      if (updatedAt){
-        try{
-          const d = new Date(updatedAt);
-          upd.textContent = `Updated ${d.toLocaleString()}`;
-        }catch{
-          upd.textContent = `Updated ${updatedAt}`;
+    // ---------- RANKINGS ----------
+    function pickRank(obj, keys){
+      for (const k of keys){
+        const v = obj?.[k];
+        if (v==null) continue;
+        if (typeof v === "number" || (typeof v==="string" && v.trim()!=="")) return v;
+        if (typeof v==="object"){
+          if (v.rank!=null) return v.rank;
+          if (v.value!=null) return v.value;
         }
-      }else{
-        upd.textContent = src ? `Source: ${src}` : "";
+      }
+      return null;
+    }
+    function renderRankings(json){
+      const ap = pickRank(json, ["ap","ap_top25","AP","apPoll","ap_rank"]);
+      const kp = pickRank(json, ["kenpom","kp","KenPom","kenpom_rank"]);
+      if (ap!=null) $("#ap-link").textContent = String(ap);
+      if (kp!=null) $("#kp-link").textContent = String(kp);
+
+      const stamp = json?.updated_at || json?.updated || json?.generated_at || null;
+      if (stamp){
+        const d = new Date(stamp);
+        $("#rankings-updated").textContent = isNaN(d)? `Updated ${stamp}` : `Updated ${d.toLocaleString()}`;
+      } else {
+        $("#rankings-updated").textContent = "";
       }
     }
 
-    // ------- render: schedule -------
-    function renderSchedule(json, src){
-      $("#schedule-source").textContent = src ? src : "";
+    // ---------- SCHEDULE ----------
+    function cleanTitle(t){
+      // avoid "Exhibition (Exhibition)" duplicates if a feed already labels it
+      return safe(t).replace(/\b\((Exhibition|Preseason)\)\s*\(\1\)/i,"($1)");
+    }
+    function renderSchedule(json){
       const list = $("#schedule-list");
       list.innerHTML = "";
-
-      const arr = Array.isArray(json) ? json : (json?.games || []);
+      const arr = Array.isArray(json)? json : (json?.games||[]);
       const items = arr.slice(0,8);
+      if (!items.length){
+        const empty = document.createElement("div");
+        empty.className="empty";
+        empty.innerHTML = `No upcoming games found. <a href="https://purduesports.com/sports/mens-basketball/schedule" target="_blank" rel="noopener">Check official schedule ↗</a>`;
+        list.appendChild(empty);
+        return;
+      }
       for (const g of items){
-        const name = safeTxt(g.opponent || g.name || g.title || "TBD");
-        const venue = safeTxt(g.venue || g.location || "");
-        const city = safeTxt(g.city || g.city_state || "");
+        const name = cleanTitle(g.opponent || g.name || g.title || "TBD");
+        const venue = safe(g.venue || g.location || "");
+        const city = safe(g.city || g.city_state || "");
         const whenISO = g.datetime || g.date || g.tip || g.iso || null;
         let whenTxt = "";
         if (whenISO){
           const d = new Date(whenISO);
-          if (!isNaN(d)) whenTxt = d.toLocaleString([], {hour:"numeric", minute:"2-digit", year:"numeric", month:"numeric", day:"numeric"});
+          if (!isNaN(d)) whenTxt = d.toLocaleString([], {hour:"numeric", minute:"2-digit", year:"numeric", month:"numeric", day:"numeric"}) + " (local)";
         }
-        const detail = g.url || g.link || g.tickets || "#";
+        const detail = g.url || g.link || g.tickets || "https://purduesports.com/sports/mens-basketball/schedule";
         const where = [venue, city].filter(Boolean).join(" — ");
 
         const el = document.createElement("div");
-        el.className = "game";
+        el.className="game";
         el.innerHTML = `
           <div class="g-head">${name}</div>
-          <div class="g-line">${whenTxt ? whenTxt+" (local)" : ""}</div>
+          <div class="g-line">${whenTxt}</div>
           <div class="g-line">${where}</div>
           <a class="g-link" href="${detail}" target="_blank" rel="noopener">Game details ↗</a>
         `;
         list.appendChild(el);
       }
-
-      if (!items.length){
-        const empty = document.createElement("div");
-        empty.className = "empty";
-        empty.innerHTML = `No upcoming games found. <a href="https://purduesports.com/sports/mens-basketball/schedule" target="_blank" rel="noopener">Check official schedule ↗</a>`;
-        list.appendChild(empty);
-      }
     }
 
-    // ------- render: beats (with safe fallback) -------
-    function renderBeats(jsonBeats, newsAll){
-      const hostEl = $("#beat-list");
-      hostEl.innerHTML = "";
-      let items = Array.isArray(jsonBeats) ? jsonBeats : (jsonBeats?.items || []);
-      // fallback: take insider stories from news if beats is empty
+    // ---------- INSIDER / BEAT ----------
+    function renderBeats(beatsJson, newsAll){
+      const host = $("#beat-list");
+      host.innerHTML = "";
+
+      let items = Array.isArray(beatsJson) ? beatsJson : (beatsJson?.items || []);
+      // Always ensure we show something: pull insider-like items from news if beats file is empty
       if (!items.length){
-        items = (newsAll || []).filter(n => (n.tags||[]).map(t=>t.toLowerCase()).includes("insiders")).slice(0,6)
-          .map(n=>({title:n.title,url:n.url,source:n.domain||n.source||"insider"}));
+        const inferred = (newsAll||[])
+          .filter(n=>{
+            const t = (n.tags||[]).map(x=>x.toLowerCase());
+            const h = (n.domain||n.source||"").toLowerCase();
+            return t.includes("insiders")||t.includes("insider")||h.includes("hammerandrails")||h.includes("goldandblack")||h.includes("247sports");
+          })
+          .slice(0,6)
+          .map(n=>({title:n.title,url:n.url,source:n.domain||"insider"}));
+        items = inferred;
       }
+
       if (!items.length){
         const empty = document.createElement("div");
-        empty.className = "empty";
-        empty.textContent = "No insider items (yet).";
-        hostEl.appendChild(empty);
+        empty.className="empty";
+        empty.textContent="No insider items (yet).";
+        host.appendChild(empty);
         return;
       }
+
       for (const it of items.slice(0,8)){
         const a = document.createElement("a");
-        a.className = "kpi";
-        a.href = it.url;
-        a.target = "_blank";
-        a.rel = "noopener";
-        a.innerHTML = `<div>${safeTxt(it.title)}</div><div style="opacity:.8">${safeTxt(it.source||"↗")}</div>`;
-        hostEl.appendChild(a);
+        a.className="kpi";
+        a.href = it.url; a.target="_blank"; a.rel="noopener";
+        a.innerHTML = `<div>${safe(it.title)}</div><div style="opacity:.8">${safe(it.source||"↗")}</div>`;
+        host.appendChild(a);
       }
     }
 
-    // ------- boot -------
-    (async function init(){
-      // load news
+    // ---------- boot ----------
+    (async function(){
+      // NEWS
       const {data:newsData} = await getJSON(PATHS.news);
-      const newsItems = Array.isArray(newsData) ? newsData : (newsData?.items || []);
+      const newsItems = Array.isArray(newsData)?newsData:(newsData?.items||[]);
       renderNews(newsItems);
 
-      // rankings
-      const {data:rankData, src:rankSrc} = await getJSON(PATHS.rankings);
-      if (rankData) renderRankings(rankData, rankSrc);
+      // RANKINGS
+      const {data:rankData} = await getJSON(PATHS.rankings);
+      if (rankData) renderRankings(rankData);
 
-      // schedule (try unified → legacy)
-      const {data:schedData, src:schedSrc} = await getJSON(PATHS.schedule);
-      if (schedData) renderSchedule(schedData, schedSrc);
+      // SCHEDULE
+      const {data:sched} = await getJSON(PATHS.schedule);
+      if (sched) renderSchedule(sched);
 
-      // beats
-      const {data:beatsData} = await getJSON(PATHS.beats);
-      renderBeats(beatsData, newsItems);
+      // BEATS
+      const {data:beats} = await getJSON(PATHS.beats);
+      renderBeats(beats, newsItems);
     })();
   </script>
 </body>
