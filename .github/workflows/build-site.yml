@@ -29,7 +29,6 @@ jobs:
         with:
           node-version: "20"
 
-      # ---- THIS WAS THE FAILING STEP; NOW LOCKFILE-AWARE ----
       - name: Install builder deps (lockfile-aware)
         run: |
           if [ -f package-lock.json ]; then
@@ -48,14 +47,12 @@ jobs:
             npm install --no-audit --no-fund
           fi
 
-      # If you have a build script, keep it. Otherwise this is a no-op.
-      # The name matches your prior step so downstream remains unchanged.
       - name: Build static index.html from JSON
         run: |
           if [ -f scripts/build-index.js ]; then
             node scripts/build-index.js
           else
-            echo "No scripts/build-index.js present; skipping."
+            echo "No build-index.js present; skipping."
           fi
 
       - name: Commit generated index.html
@@ -68,9 +65,3 @@ jobs:
           else
             echo "No changes to index.html"
           fi
-
-      - name: Post Step
-        run: echo "Build complete."
-
-      - name: Post Checkout
-        run: echo "Done."
