@@ -3,26 +3,25 @@ name: Build data (news, schedule, roster)
 on:
   schedule:
     - cron: "*/30 * * * *"   # every 30 minutes
-  workflow_dispatch: {}
-  push:
-    # Rebuild on ANY push to keep data fresh when you edit HTML/CSS/JS.
-    paths-ignore:
-      # Avoid action loops when the job itself commits fresh JSON.
-      - "static/data/news.json"
-      - "static/teams/purdue-mbb/schedule.json"
-      - "static/teams/purdue-mbb/roster.json"
+  workflow_dispatch:
 
 permissions:
   contents: write
 
+concurrency:
+  group: data-build
+  cancel-in-progress: true
+
 jobs:
   build:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Python
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
@@ -32,22 +31,13 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests feedparser beautifulsoup4
 
-      - name: Collect Headlines (Purdue-focused)
-        run: python tools/collect.py
+      - name: Run collector
+        run: python src/collect.py
 
-      - name: Collect Schedule (incl. exhibitions & tourneys)
-        env:
-          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
-        run: python tools/schedule_collect.py
-
-      - name: Collect Roster (official page)
-        run: python tools/roster_collect.py
-
-      - name: Commit artifacts
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "chore: auto-build news/schedule/roster [skip ci]"
-          file_pattern: |
-            static/data/news.json
-            static/teams/purdue-mbb/schedule.json
-            static/teams/purdue-mbb/roster.json
+      - name: Commit updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add static/teams/purdue-mbb/*.json static/data/*.json || true
+          git commit -m "chore: auto-build news/schedule/roster [skip ci]" || echo "No changes"
+          git push
