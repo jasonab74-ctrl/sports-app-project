@@ -1,11 +1,4 @@
-[
-  {
-    "opponent": "TBD",
-    "site": "Neutral",
-    "tip": null,
-    "venue": "",
-    "city": "",
-    "state": "",
-    "url": ""
-  }
-]
+{
+  "games": [],
+  "generated_at": "2025-10-14T16:27:01.606332Z"
+}
