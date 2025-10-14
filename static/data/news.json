@@ -1,82 +1,146 @@
 [
   {
-    "title": "Purdue Men’s Basketball Ranked #1 in AP Preseason Poll",
-    "url": "https://www.hammerandrails.com/mens-basketball/55846/purdue-mens-basketball-ranked-1-in-ap-preseason-poll",
-    "source": "hammerandrails.com",
-    "section": "insiders",
-    "image": "https://platform.hammerandrails.com/wp-content/uploads/sites/91/2025/10/imagn-25663752.jpg?quality=90&strip=all&crop=40.7,0,59.3,55.31815200075",
-    "ts": "2025-10-13T17:33:42+00:00"
+    "title": "Purdue Basketball: #15 Alabama Crimson Tide Preseason Preview",
+    "url": "https://www.hammerandrails.com/mens-basketball/55875/purdue-basketball-15-alabama-crimson-tide-preseason-preview",
+    "publishedAt": "2025-10-14T16:20:40+00:00",
+    "source": "Hammer and Rails",
+    "category": "insiders",
+    "image": null
   },
   {
-    "title": "Purdue Tabbed No. 1 in AP Preseason Poll",
-    "url": "https://purduesports.com/news/2025/10/13/purdue-tabbed-no-1-in-ap-preseason-poll",
-    "source": "purduesports.com",
-    "section": "official",
-    "image": "https://purduesports.com/imgproxy/kqJ4YaSZvpTojgyg2LQfjj9l6ctlWoh6DJnxjMsmgGw/rs:fit:1980:0:0/g:ce/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3B1cmR1ZXNwb3J0cy1jb20tcHJvZC8yMDI1LzEwLzEzL1BJSFNXVkdZSkMyWTlOc2x2ek96MmROajVGRXpRclJyUUxzNmlnYWUuanBn.jpg",
-    "ts": "2025-10-13T16:38:15+00:00"
+    "title": "Boilers in the NFL: Week 6",
+    "url": "https://www.hammerandrails.com/football/55887/boilers-in-the-nfl-week-6",
+    "publishedAt": "2025-10-14T16:09:36+00:00",
+    "source": "Hammer and Rails",
+    "category": "insiders",
+    "image": null
+  },
+  {
+    "title": "14 can't-miss early-season men's hoops games to watch this November",
+    "url": "https://www.espn.com/mens-college-basketball/story/_/id/46585305/mens-college-basketball-early-season-nonconference-games-watch-2025-26",
+    "publishedAt": "2025-10-14T08:21:55+00:00",
+    "source": "www.espn.com - NCB",
+    "category": "national",
+    "image": null
+  },
+  {
+    "title": "Xs and Ohs! Purdue vs. Minnesota",
+    "url": "https://www.hammerandrails.com/football/55858/xs-and-ohs-purdue-vs-minnesota",
+    "publishedAt": "2025-10-13T18:22:57+00:00",
+    "source": "Hammer and Rails",
+    "category": "insiders",
+    "image": null
+  },
+  {
+    "title": "Boiler Alert &#8211; Mistakes Doom Purdue in Minnesota",
+    "url": "https://www.hammerandrails.com/podcast/55839/boiler-alert-mistakes-doom-purdue-in-minnesota",
+    "publishedAt": "2025-10-13T18:03:43+00:00",
+    "source": "Hammer and Rails",
+    "category": "insiders",
+    "image": null
+  },
+  {
+    "title": "Purdue Men’s Basketball Ranked #1 in AP Preseason Poll",
+    "url": "https://www.hammerandrails.com/mens-basketball/55846/purdue-mens-basketball-ranked-1-in-ap-preseason-poll",
+    "publishedAt": "2025-10-13T17:33:42+00:00",
+    "source": "Hammer and Rails",
+    "category": "insiders",
+    "image": null
+  },
+  {
+    "title": "Purdue tops preseason AP Top 25 poll for 1st time, ahead of Houston and reigning NCAA champ Florida",
+    "url": "https://www.nbcsports.com/mens-college-basketball/news/purdue-tops-preseason-ap-top-25-poll-for-1st-time-ahead-of-houston-and-reigning-ncaa-champ-florida",
+    "publishedAt": "2025-10-13T17:14:12+00:00",
+    "source": "NCAAB on Yahoo! Sports - News, Scores, Standings, Rumors, Fantasy Games",
+    "category": "national",
+    "image": null
+  },
+  {
+    "title": "Florida men’s basketball starts behind Purdue, Houston in Preseason AP Top 25",
+    "url": "https://clutchpoints.com/ncaa-basketball/florida-mens-basketball-purdue-houston-preseason-ap-top-25",
+    "publishedAt": "2025-10-13T16:50:26+00:00",
+    "source": "NCAAB on Yahoo! Sports - News, Scores, Standings, Rumors, Fantasy Games",
+    "category": "national",
+    "image": null
+  },
+  {
+    "title": "Men's basketball AP preseason poll: Purdue takes No. 1 spot as Houston, Florida trail close behind",
+    "url": "https://sports.yahoo.com/mens-college-basketball/breaking-news/article/mens-basketball-ap-preseason-poll-purdue-takes-no-1-spot-as-houston-florida-trail-close-behind-161143102.html",
+    "publishedAt": "2025-10-13T16:11:43+00:00",
+    "source": "NCAAB on Yahoo! Sports - News, Scores, Standings, Rumors, Fantasy Games",
+    "category": "national",
+    "image": null
+  },
+  {
+    "title": "Boiler up! Purdue tops preseason AP Top 25 for first time, ahead of Houston, reigning champ Florida",
+    "url": "https://sports.yahoo.com/article/purdue-tops-preseason-ap-top-155928181.html",
+    "publishedAt": "2025-10-13T15:59:28+00:00",
+    "source": "NCAAB on Yahoo! Sports - News, Scores, Standings, Rumors, Fantasy Games",
+    "category": "national",
+    "image": null
+  },
+  {
+    "title": "Purdue tops preseason AP Top 25 poll for 1st time",
+    "url": "https://www.espn.com/mens-college-basketball/story/_/id/46583002/purdue-tops-preseason-ap-top-25-men-hoops-poll-1st",
+    "publishedAt": "2025-10-13T14:23:52+00:00",
+    "source": "www.espn.com - NCB",
+    "category": "national",
+    "image": null
+  },
+  {
+    "title": "AP men's hoops preseason poll: Breaking down all Top 25 teams",
+    "url": "https://www.espn.com/mens-college-basketball/story/_/id/46576442/ap-mens-college-basketball-2025-26-preseason-top-25-poll-reaction-starting-line-biggest-game-teams",
+    "publishedAt": "2025-10-13T13:02:25+00:00",
+    "source": "www.espn.com - NCB",
+    "category": "national",
+    "image": null
+  },
+  {
+    "title": "Preseason Top 25: Final rankings as 2025-26 tipoff looms",
+    "url": "https://www.espn.com/mens-college-basketball/story/_/id/46510936/mens-college-basketball-preseason-top-25-final-rankings-tipoff-2025-2026",
+    "publishedAt": "2025-10-13T13:02:25+00:00",
+    "source": "www.espn.com - NCB",
+    "category": "national",
+    "image": null
+  },
+  {
+    "title": "How has Kentucky basketball fared vs. Purdue, Georgetown? History against exhibition foes",
+    "url": "https://www.courier-journal.com/story/sports/college/kentucky/2025/10/13/kentucky-wildcats-college-basketball-history-uk-purdue-game-georgetown-exhibition-mark-pope-schedule/86212191007/",
+    "publishedAt": "2025-10-13T09:11:10+00:00",
+    "source": "NCAAB on Yahoo! Sports - News, Scores, Standings, Rumors, Fantasy Games",
+    "category": "national",
+    "image": null
   },
   {
     "title": "#24 Days to Purdue Basketball &#124; Gicarri Harris",
     "url": "https://www.hammerandrails.com/mens-basketball/55842/24-days-to-purdue-basketball-gicarri-harris",
-    "source": "hammerandrails.com",
-    "section": "insiders",
-    "image": "https://platform.hammerandrails.com/wp-content/uploads/sites/91/chorus/uploads/chorus_asset/file/25844856/usa_today_25241330.jpg?quality=90&strip=all&crop=0,0,100,100",
-    "ts": "2025-10-13T02:02:36+00:00"
+    "publishedAt": "2025-10-13T02:02:36+00:00",
+    "source": "Hammer and Rails",
+    "category": "insiders",
+    "image": null
   },
   {
-    "title": "Boilers Suffer 1-0 Defeat at Illinois",
-    "url": "https://purduesports.com/news/2025/10/12/boilers-suffer-1-0-defeat-at-illinois",
-    "source": "purduesports.com",
-    "section": "official",
-    "image": "https://purduesports.com/imgproxy/GuBi2TYSmxmgNKC_dP18my4i7mODzG65Fl--ug5FWEU/rs:fit:1980:0:0/g:ce/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3B1cmR1ZXNwb3J0cy1jb20tcHJvZC8yMDI1LzEwLzEyLzlGZ08xMVhQU0JHZnR6Z0RVWVlJeENXUW4yUHZ3Qno5c0lOVk13TmguanBn.jpg",
-    "ts": "2025-10-12T20:16:11+00:00"
+    "title": "Quick Wrap: Boilers Drop Heartbreaker to Gophers 20-27",
+    "url": "https://www.hammerandrails.com/football/55831/quick-wrap-boilers-drop-heartbreaker-to-gophers-20-27",
+    "publishedAt": "2025-10-12T04:17:30+00:00",
+    "source": "Hammer and Rails",
+    "category": "insiders",
+    "image": null
   },
   {
-    "title": "Purdue Basketball at Big Ten Media Day",
-    "url": "https://purduesports.com/news/2025/10/10/purdue-basketball-at-big-ten-media-day",
-    "source": "purduesports.com",
-    "section": "official",
-    "image": "https://purduesports.com/imgproxy/pNTc8j56xbTOLwVKksJIoFmV7nS8LswhBSFBW0oJVAw/rs:fit:1980:0:0/g:ce/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3B1cmR1ZXNwb3J0cy1jb20tcHJvZC8yMDI1LzEwLzEwL1FiNW8yZFZURlVzOWpGYWNscGhyNTcwVzRpbE5qbG1kbjN4YjU3REwuanBn.jpg",
-    "ts": "2025-10-10T13:34:03+00:00"
+    "title": "How to Watch Purdue (2-3, 0-2) at Minnesota (3-2, 1-1) &#038; Open Thread",
+    "url": "https://www.hammerandrails.com/football/55827/how-to-watch-purdue-2-3-0-2-at-minnesota-3-2-1-1-open-thread",
+    "publishedAt": "2025-10-11T20:31:41+00:00",
+    "source": "Hammer and Rails",
+    "category": "insiders",
+    "image": null
   },
   {
-    "title": "Painter at Big Ten Media Day",
-    "url": "https://purduesports.com/news/2025/10/10/painter-at-big-ten-media-day",
-    "source": "purduesports.com",
-    "section": "official",
-    "image": "https://purduesports.com/imgproxy/FkAUjoH4fd_9y222PtHqbqkwBFfQr47MMJcQc7DoUmc/rs:fit:1980:0:0/g:ce/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3B1cmR1ZXNwb3J0cy1jb20tcHJvZC8yMDI1LzEwLzEwLzhyNlZETVZyUjRwT0poUkNsMWRHc2NlVVgzMzFKak40eTVzT25IQnQuanBn.jpg",
-    "ts": "2025-10-10T13:33:08+00:00"
-  },
-  {
-    "title": "Purdue at Big Ten Media Day",
-    "url": "https://purduesports.com/news/2025/10/10/purdue-at-big-ten-media-day",
-    "source": "purduesports.com",
-    "section": "official",
-    "image": "https://purduesports.com/imgproxy/nrA_4bZGiYv3jsBCUmHDVUV1KSnvKmT42PUEu75RG7E/rs:fit:1980:0:0/g:ce/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3B1cmR1ZXNwb3J0cy1jb20tcHJvZC8yMDI1LzEwLzEwL1NQak1GcE40SzZXSXR4dFoxZGUwVURFdlFrMndUMEpGNzJwM0xEVEkuanBn.jpg",
-    "ts": "2025-10-10T13:30:20+00:00"
-  },
-  {
-    "title": "Buckeridge Named B1G Athlete of the Week",
-    "url": "https://purduesports.com/news/2025/10/8/buckeridge-named-b1g-athlete-of-the-week",
-    "source": "purduesports.com",
-    "section": "official",
-    "image": "https://purduesports.com/imgproxy/t5d3Wevl1l1h153aLgDnqBlb8N4S_9sowESlnsJXQoA/rs:fit:1980:0:0/g:ce/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3B1cmR1ZXNwb3J0cy1jb20tcHJvZC8yMDI1LzEwLzA4L3BVU0N4ZUkxOU5RQWJmVEdrdUV3a1JkbEkyTEl3Y2RKV09CUko1SDcuanBn.jpg",
-    "ts": "2025-10-08T19:35:19+00:00"
-  },
-  {
-    "title": "Big Ten Announces Times, Network Designations for Basketball Season",
-    "url": "https://purduesports.com/news/2025/10/7/big-ten-announces-times-network-designations-for-basketball-season",
-    "source": "purduesports.com",
-    "section": "official",
-    "image": "https://purduesports.com/imgproxy/Ijh5x_Tv68dQ3iDPsCOo_bXgSywZAyegrTzTQv3PNc8/rs:fit:1980:0:0/g:ce/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3B1cmR1ZXNwb3J0cy1jb20tcHJvZC8yMDI1LzEwLzA2L3VPQnh1RDlWSGdDMkltVGc2RmtONG1CS2RLWnpnRnNoS25vc1Vsd1MuanBn.jpg",
-    "ts": "2025-10-07T20:00:00+00:00"
-  },
-  {
-    "title": "Smith Named Preseason POY; Kaufman-Renn to First Team",
-    "url": "https://purduesports.com/news/2025/10/7/smith-named-preseason-poy-kaufman-renn-to-first-team",
-    "source": "purduesports.com",
-    "section": "official",
-    "image": "https://purduesports.com/imgproxy/v7xqCdnywOPkPAdrBXQT4yVB9Ay0ACrwL6s9NrueKH0/rs:fit:1980:0:0/g:ce/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3B1cmR1ZXNwb3J0cy1jb20tcHJvZC8yMDI1LzEwLzA2LzhSRzRMY3d2TU5wMjczYk1vblVoN1lQQzNLS0tlSUJ2M2hoN21EMjYuanBn.jpg",
-    "ts": "2025-10-07T16:00:00+00:00"
+    "title": "Purdue vs. Minnesota: Opening Odds with FanDuel",
+    "url": "https://www.hammerandrails.com/football/55821/purdue-vs-minnesota-opening-odds-with-fanduel",
+    "publishedAt": "2025-10-10T21:58:26+00:00",
+    "source": "Hammer and Rails",
+    "category": "insiders",
+    "image": null
   }
 ]
