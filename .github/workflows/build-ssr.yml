@@ -20,30 +20,48 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Install builder deps
+      - name: Prepare minimal builder
         run: |
+          mkdir -p .tmp-ssr && cd .tmp-ssr
           cat > package.json <<'JSON'
           {
             "name": "sports-app-ssr",
             "private": true,
             "type": "module",
             "scripts": {
-              "build:ssr": "node scripts/build-ssr.mjs"
+              "build:ssr": "node ../scripts/build-ssr.mjs"
             },
             "dependencies": {
-              "node-fetch": "3.3.2"
+              "node-fetch": "3.3.2",
+              "fast-xml-parser": "4.5.0"
             }
           }
           JSON
-          npm ci
 
-      - name: Build index.html from repo JSON
-        run: npm run build:ssr
+      - name: Install deps (lockfile-aware)
+        run: |
+          cd .tmp-ssr
+          if [ -f package-lock.json ]; then
+            npm ci --no-audit --no-fund
+          else
+            npm install --no-audit --no-fund
+          fi
+
+      - name: Build SSR (if script exists)
+        run: |
+          if [ -f scripts/build-ssr.mjs ]; then
+            node .tmp-ssr/node_modules/.bin/../../scripts/build-ssr.mjs || node scripts/build-ssr.mjs
+          else
+            echo "No SSR script present; skipping."
+          fi
 
       - name: Commit generated index.html
         run: |
-          git config user.name "ssr-bot"
-          git config user.email "actions@github.com"
-          git add index.html
-          git commit -m "build: generate static index.html from JSON" || echo "No changes"
-          git push
+          if [ -n "$(git status --porcelain index.html)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add index.html
+            git commit -m "Build static index.html from JSON [skip ci]" || true
+          else
+            echo "No changes to index.html"
+          fi
