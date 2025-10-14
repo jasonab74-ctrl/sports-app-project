@@ -5,46 +5,43 @@ on:
     - cron: "*/30 * * * *"   # every 30 minutes
   workflow_dispatch:
   push:
+    branches: [ "main" ]
     paths:
-      - "tools/collect.py"
-      - "static/schedule_overrides.json"
-      - "static/beat_links.json"
+      - "tools/**"
+      - "static/sources.json"
+      - ".github/workflows/collect.yml"
 
 permissions:
   contents: write
 
 jobs:
-  build-data:
+  collect:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Python
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: Install deps (none needed)
+      - name: Install Python deps
         run: |
-          python -V
+          python -m pip install --upgrade pip
+          pip install requests feedparser beautifulsoup4 lxml pytz
 
-      - name: Build data JSON (rankings, schedule, beat links)
+      - name: Run collector
         run: |
           python tools/collect.py
 
-      - name: Commit changes
+      - name: Commit collected data
         run: |
           if [ -n "$(git status --porcelain static/data)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add static/data
-            git commit -m "Build data json via collect.py [skip ci]"
+            git commit -m "chore: auto-build news/schedule/roster [skip ci]" || true
+          else
+            echo "No data changes."
           fi
-
-      - name: Push
-        if: success()
-        uses: ad-m/github-push-action@v0.8.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref_name }}
