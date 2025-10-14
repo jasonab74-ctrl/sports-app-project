@@ -7,37 +7,25 @@
 <meta name="theme-color" content="#0b1017" />
 <meta name="description" content="Purdue Boilermakers Men's Basketball Hub — Top Purdue MBB headlines, upcoming schedule, rankings, and insider links.">
 <style>
-:root{
-  --bg:#0b1017; --panel:#101826; --ink:#e9eef7; --muted:#9fb0c9;
-  --line:rgba(255,255,255,.08); --pill:#162238; --accent:#f2c94c;
-  --link:#9dc1ff; --fs-0:.86rem;
-}
-*{box-sizing:border-box}
-html,body{height:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial}
-a{color:var(--link);text-decoration:none}
-a:hover{text-decoration:underline}
+:root{--bg:#0b1017;--panel:#101826;--ink:#e9eef7;--muted:#9fb0c9;--line:rgba(255,255,255,.08);--pill:#162238;--accent:#f2c94c;--link:#9dc1ff;--fs-0:.86rem}
+*{box-sizing:border-box}html,body{height:100%}body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial}
+a{color:var(--link);text-decoration:none}a:hover{text-decoration:underline}
 .header{position:sticky;top:0;z-index:10;background:#0e1522;border-bottom:1px solid var(--line)}
 .header__inner{max-width:1100px;margin:0 auto;padding:10px 16px;display:flex;gap:12px;align-items:center}
 .brand{font-weight:800;letter-spacing:.3px}
-
 .wrap{max-width:1100px;margin:0 auto;padding:16px}
 .grid{display:grid;grid-template-columns:1fr 330px;gap:16px}
 @media (max-width:960px){.grid{grid-template-columns:1fr}}
-
 .panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px}
 .panel h2,.panel h3{margin:0 0 6px}
 .subnote{color:var(--muted);font-size:var(--fs-0)}
-
 .pills{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 0}
 .pill{appearance:none;background:var(--pill);border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:6px 12px;font-weight:700;cursor:pointer}
 .pill.active{box-shadow:inset 0 0 0 2px rgba(242,201,76,.25);border-color:rgba(242,201,76,.35)}
-
 .hero{display:grid;grid-template-columns:220px 1fr;gap:12px;margin-top:10px}
 .hero img{width:100%;height:140px;object-fit:cover;border-radius:10px;border:1px solid var(--line)}
 .hero .title{font-weight:800;color:var(--ink)}
 @media (max-width:720px){.hero{grid-template-columns:1fr}.hero img{height:180px}}
-
 .cards{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
 @media (max-width:720px){.cards{grid-template-columns:1fr}}
 .card{display:grid;grid-template-columns:120px 1fr;gap:10px;background:#0f1726;border:1px solid var(--line);border-radius:12px;overflow:hidden}
@@ -45,42 +33,31 @@ a:hover{text-decoration:underline}
 .card-body{padding:10px}
 .kicker{font-size:var(--fs-0);background:#121c2e;border:1px solid var(--line);padding:2px 6px;border-radius:999px;margin-right:6px;color:var(--muted)}
 .meta{color:var(--muted);font-size:var(--fs-0)}
-
 .simple-list .item{padding:8px 10px;border-radius:12px;background:#0f1622;margin:8px 0;border:1px solid var(--line)}
-.small{font-size:var(--fs-0)}
-.muted{color:var(--muted)}
-
+.small{font-size:var(--fs-0)}.muted{color:var(--muted)}
 .footer{position:sticky;bottom:0;background:#0e1522;border-top:1px solid var(--line);padding:8px 14px;color:var(--muted);font-size:var(--fs-0)}
-.hidden{display:none}
-.center{display:flex;justify-content:center;align-items:center}
+.hidden{display:none}.center{display:flex;justify-content:center;align-items:center}
 .btn{appearance:none;border:1px solid var(--line);background:#101a28;color:var(--ink);border-radius:12px;padding:10px 14px;font-weight:700;cursor:pointer}
 .btn:hover{background:#132033}
 .notice{background:#0e1623;color:var(--muted);border:1px dashed var(--line);border-radius:10px;padding:10px}
+.count{opacity:.7;margin-left:6px}
 </style>
 </head>
 <body>
-<header class="header">
-  <div class="header__inner">
-    <div class="brand">Boilermakers Hub</div>
-  </div>
-</header>
+<header class="header"><div class="header__inner"><div class="brand">Boilermakers Hub</div></div></header>
 
 <main class="wrap">
   <div class="grid">
     <section class="panel" id="news">
       <h2>Top Headlines</h2>
       <div class="subnote">Refreshed every 30 min • Auto-updated via GitHub Actions</div>
-
       <div class="pills" id="news-pills" role="tablist" aria-label="filter">
-        <button class="pill active" data-tier="all" role="tab" aria-selected="true">all</button>
-        <button class="pill" data-tier="official" role="tab" aria-selected="false">official</button>
-        <button class="pill" data-tier="insiders" role="tab" aria-selected="false">insiders</button>
-        <button class="pill" data-tier="national" role="tab" aria-selected="false">national</button>
+        <button class="pill active" data-tier="all" role="tab" aria-selected="true">all <span id="c-all" class="count"></span></button>
+        <button class="pill" data-tier="official" role="tab" aria-selected="false">official <span id="c-official" class="count"></span></button>
+        <button class="pill" data-tier="insiders" role="tab" aria-selected="false">insiders <span id="c-insiders" class="count"></span></button>
+        <button class="pill" data-tier="national" role="tab" aria-selected="false">national <span id="c-national" class="count"></span></button>
       </div>
-
-      <div id="hero" class="hero" aria-live="polite" style="margin-top:8px;">
-        <div class="notice">Loading headlines…</div>
-      </div>
+      <div id="hero" class="hero" aria-live="polite" style="margin-top:8px;"><div class="notice">Loading headlines…</div></div>
       <div id="cards" class="cards"></div>
       <div id="news-note" class="small muted" style="margin-top:6px;"></div>
       <div class="center" style="margin-top:10px;"><button id="load-more" class="btn hidden">Load more</button></div>
@@ -112,105 +89,72 @@ a:hover{text-decoration:underline}
 
 <script>
 /* ===== Utilities ===== */
-const $ = (s, r=document) => r.querySelector(s);
-const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
-const esc = s => (s??"").toString().replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
-const host = u => { try { return new URL(u).hostname.replace(/^www\./,''); } catch { return ""; } };
-const now = Date.now();
-const timeAgo = (ts) => { if(!ts) return ""; if(ts<1e12) ts*=1000; const d=Date.now()-ts, m=Math.floor(d/60000); if(m<60)return `${m}m ago`; const h=Math.floor(m/60); if(h<24)return `${h}h ago`; return `${Math.floor(h/24)}d ago`; };
-const parseTs = (v) => { if(v==null) return null; if(typeof v==="number") return v; if(typeof v==="string"){ if(/^\d{10,13}$/.test(v)) return Number(v); const d=Date.parse(v); if(!isNaN(d)) return d; } return null; };
-const RAW = (p) => `https://raw.githubusercontent.com/jasonab74-ctrl/sports-app-project/main/${p.replace(/^\//,'')}`;
-async function getJson(path){
-  try{ const r=await fetch(path,{cache:"no-store"}); if(!r.ok) throw new Error(r.status); return await r.json(); }
-  catch{ const rr=await fetch(RAW(path),{cache:"no-store"}); if(rr.ok) return rr.json(); return null; }
-}
+const $=(s,r=document)=>r.querySelector(s);const $$=(s,r=document)=>Array.from(r.querySelectorAll(s));
+const esc=s=>(s??"").toString().replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
+const host=u=>{try{return new URL(u).hostname.replace(/^www\./,'')}catch{return""}};
+const now=Date.now();
+const timeAgo=(ts)=>{if(!ts)return"";if(ts<1e12)ts*=1000;const d=Date.now()-ts,m=Math.floor(d/6e4);if(m<60)return`${m}m ago`;const h=Math.floor(m/60);if(h<24)return`${h}h ago`;return`${Math.floor(h/24)}d ago`};
+const parseTs=v=>{if(v==null)return null;if(typeof v==="number")return v;if(typeof v==="string"){if(/^\d{10,13}$/.test(v))return Number(v);const d=Date.parse(v);if(!isNaN(d))return d}return null};
+const RAW=(p)=>`https://raw.githubusercontent.com/jasonab74-ctrl/sports-app-project/main/${p.replace(/^\//,'')}`;
+async function getJson(path){try{const r=await fetch(path,{cache:"no-store"});if(!r.ok)throw new Error(r.status);return await r.json()}catch{const rr=await fetch(RAW(path),{cache:"no-store"});if(rr.ok)return rr.json();return null}}
 
-/* ====== Headlines ====== */
-const POS_MBB = ["men's basketball","mens basketball","mbb","basketball","hoops","matt painter","mackey","paint crew","zach edey","braden smith","fletcher loyer","ncaa","big ten","exhibition","tournament"];
-const NEG_FB  = ["football","qb","quarterback","running back","touchdown","ross-ade","ryan walters","nfl"];
-const PATH_MBB = /(mbb|m-basketball|mens?-basketball|men-basketball|college-basketball|ncaa-basketball)/i;
+/* ===== MBB filters ===== */
+const POS_MBB=["men's basketball","mens basketball","mbb","basketball","hoops","matt painter","mackey","paint crew","ncaa","big ten","exhibition","tournament"];
+const NEG_FB=["football","qb","quarterback","touchdown","ross-ade","ryan walters","nfl"];
+const PATH_MBB=/(mbb|m-basketball|mens?-basketball|men-basketball|college-basketball|ncaa-basketball)/i;
 
 function normalizeNews(data){
-  const arr = Array.isArray(data) ? data :
-              Array.isArray(data?.items) ? data.items :
-              Array.isArray(data?.entries) ? data.entries : [];
+  const arr=Array.isArray(data)?data:Array.isArray(data?.items)?data.items:Array.isArray(data?.entries)?data.entries:[];
   return arr.map(x=>{
-    const link = x.link || x.url || x.permalink || x.guid || "";
-    const title = x.title || x.headline || x.name || "";
-    const image = x.image || x.imageUrl || x.enclosure?.url || x.thumbnail || "";
-    const ts = parseTs(x.ts) || parseTs(x.published_at) || parseTs(x.pubDate) || parseTs(x.date) || parseTs(x.isoDate) || parseTs(x.updated) || now;
-    const source = x.source || x.site || host(link) || "";
-    const tier = x.tier || (/purduesports\.com/i.test(source) ? "official"
-                 : /(hammerandrails|goldandblack|247sports|rivals)/i.test(source) ? "insiders"
-                 : "national");
+    const link=x.link||x.url||x.permalink||x.guid||"";
+    const title=x.title||x.headline||x.name||"";
+    const image=x.image||x.imageUrl||x.enclosure?.url||x.thumbnail||"";
+    const ts=parseTs(x.ts)||parseTs(x.published_at)||parseTs(x.pubDate)||parseTs(x.date)||parseTs(x.isoDate)||parseTs(x.updated)||now;
+    const source=x.source||x.site||host(link)||"";
+    const tier=x.tier||(/purduesports\.com/i.test(source)?"official":/(hammerandrails|goldandblack|247sports|rivals)/i.test(source)?"insiders":"national");
     return {link,title,image,ts,source,tier};
-  }).filter(i=>i.link && i.title);
+  }).filter(i=>i.link&&i.title);
 }
-function notFootball(it){
-  const blob = (it.title+" "+it.link).toLowerCase();
-  if (NEG_FB.some(k=>blob.includes(k))) return false;
-  if ((it.link||"").toLowerCase().includes("/football")) return false;
-  return true;
-}
-function isBasketball(it){
-  const t = (it.title||"").toLowerCase();
-  return PATH_MBB.test(it.link) || POS_MBB.some(k=>t.includes(k)) || /men'?s?\s*basketball/.test(t);
-}
-function isPurdueish(it){
-  const t=(it.title+" "+(it.source||"")).toLowerCase();
-  return /purdue|boilermaker|mackey|west lafayette/.test(t) || /(purduesports|hammerandrails|goldandblack)/i.test(t);
-}
-function uniqBy(arr,key){ const s=new Set(), out=[]; for(const a of arr){ const k=key(a); if(s.has(k)) continue; s.add(k); out.push(a);} return out; }
+function notFootball(it){const blob=(it.title+" "+it.link).toLowerCase();if(NEG_FB.some(k=>blob.includes(k)))return false;return !((it.link||"").toLowerCase().includes("/football"))}
+function isBasketball(it){const t=(it.title||"").toLowerCase();return PATH_MBB.test(it.link)||POS_MBB.some(k=>t.includes(k))||/men'?s?\s*basketball/.test(t)}
+function isPurdueish(it){const t=(it.title+" "+(it.source||"")).toLowerCase();return /purdue|boilermaker|mackey|west lafayette/.test(t)||/(purduesports|hammerandrails|goldandblack)/i.test(t)}
+function uniqBy(arr,key){const s=new Set(),out=[];for(const a of arr){const k=key(a);if(s.has(k))continue;s.add(k);out.push(a)}return out}
 function widenToTen(items){
-  const clean = items.filter(notFootball).sort((a,b)=>b.ts-a.ts);
-  const strong = clean.filter(it=>isPurdueish(it) && isBasketball(it));
-  if (strong.length>=10) return strong.slice(0,10);
-  const normal = clean.filter(isBasketball);
-  const AB = uniqBy([...strong, ...normal], x=>x.link);
-  if (AB.length>=10) return AB.slice(0,10);
-  const soft = clean.filter(isPurdueish);
-  const ABC = uniqBy([...AB, ...soft], x=>x.link);
-  if (ABC.length>=10) return ABC.slice(0,10);
-  return clean.slice(0, Math.min(10, clean.length));
+  const clean=items.filter(notFootball).sort((a,b)=>b.ts-a.ts);
+  const strong=clean.filter(it=>isPurdueish(it)&&isBasketball(it));
+  if(strong.length>=10)return strong.slice(0,10);
+  const normal=clean.filter(isBasketball);
+  const AB=uniqBy([...strong,...normal],x=>x.link);
+  if(AB.length>=10)return AB.slice(0,10);
+  const soft=clean.filter(isPurdueish);
+  const ABC=uniqBy([...AB,...soft],x=>x.link);
+  if(ABC.length>=10)return ABC.slice(0,10);
+  return clean.slice(0,Math.min(10,clean.length));
 }
-function byTier(items,t){ return t==="all" ? items : items.filter(i=>i.tier===t); }
+function byTier(items,t){return t==="all"?items:items.filter(i=>i.tier===t)}
 
-let NEWS_ALL=[], CURRENT_TIER="all", VISIBLE=10;
+let NEWS_ALL=[],CURRENT_TIER="all",VISIBLE=10;
+function drawCounts(set){const tiers={all:set.length,official:set.filter(x=>x.tier==="official").length,insiders:set.filter(x=>x.tier==="insiders").length,national:set.filter(x=>x.tier==="national").length};for(const k in tiers){const el=document.getElementById(`c-${k}`);if(el)el.textContent=`(${tiers[k]})`}}
 function drawNews(){
-  const hero=$("#hero"), cards=$("#cards"), note=$("#news-note"), btn=$("#load-more");
-  const set = byTier(NEWS_ALL, CURRENT_TIER);
-  if(!set.length){ hero.innerHTML=`<div class="notice">No Purdue Men's Basketball headlines found right now.</div>`; cards.innerHTML=""; btn.classList.add("hidden"); note.textContent=""; return; }
-  const view = set.slice(0, Math.min(VISIBLE, set.length));
-  const h = view[0];
-  hero.innerHTML = `
-    ${h.image?`<img src="${esc(h.image)}" alt="">`: `<div class="notice">No image</div>`}
-    <div>
-      <div class="small muted">${esc(h.tier)} • ${esc(h.source)}</div>
-      <div class="title"><a href="${esc(h.link)}" target="_blank">${esc(h.title)}</a></div>
-      <div class="small muted">${timeAgo(h.ts)}</div>
-    </div>`;
-  cards.innerHTML = view.slice(1).map(it=>`
-    <div class="card">
-      ${it.image?`<img src="${esc(it.image)}" alt="">`:"<div></div>"}
-      <div class="card-body">
-        <div><span class="kicker">${esc(it.tier)}</span><span class="kicker">${esc(it.source)}</span></div>
-        <div><a href="${esc(it.link)}" class="title" target="_blank">${esc(it.title)}</a></div>
-        <div class="meta">${timeAgo(it.ts)} • ${esc(it.source)}</div>
-      </div>
-    </div>`).join("");
-  btn.classList.toggle("hidden", view.length>=set.length);
-  note.textContent = set.length<10 ? `Showing ${set.length} because only ${set.length} Purdue MBB items were available.` : "";
-}
-function wirePills(){
-  $("#news-pills").addEventListener("click", e=>{
-    const b=e.target.closest(".pill"); if(!b) return;
-    $$("#news-pills .pill").forEach(x=>{x.classList.toggle("active", x===b); x.setAttribute("aria-selected", x===b ? "true":"false");});
-    CURRENT_TIER=b.dataset.tier; VISIBLE=10; drawNews();
-  });
-  $("#load-more").addEventListener("click", ()=>{ VISIBLE+=10; drawNews(); });
+  const hero=$("#hero"),cards=$("#cards"),note=$("#news-note"),btn=$("#load-more");const set=byTier(NEWS_ALL,CURRENT_TIER);
+  drawCounts(NEWS_ALL);
+  if(!set.length){hero.innerHTML=`<div class="notice">No Purdue Men's Basketball headlines right now. New stories will appear automatically.</div>`;cards.innerHTML="";btn.classList.add("hidden");note.textContent="";return}
+  const view=set.slice(0,Math.min(VISIBLE,set.length));const h=view[0];
+  hero.innerHTML=`${h.image?`<img src="${esc(h.image)}" alt="">`:`<div class="notice">No image</div>`}
+    <div><div class="small muted">${esc(h.tier)} • ${esc(h.source)}</div>
+    <div class="title"><a href="${esc(h.link)}" target="_blank" rel="noopener">${esc(h.title)}</a></div>
+    <div class="small muted">${timeAgo(h.ts)}</div></div>`;
+  cards.innerHTML=view.slice(1).map(it=>`<div class="card">
+    ${it.image?`<img src="${esc(it.image)}" alt="">`:"<div></div>"}
+    <div class="card-body">
+      <div><span class="kicker">${esc(it.tier)}</span><span class="kicker">${esc(it.source)}</span></div>
+      <div><a href="${esc(it.link)}" class="title" target="_blank" rel="noopener">${esc(it.title)}</a></div>
+      <div class="meta">${timeAgo(it.ts)} • ${esc(it.source)}</div>
+    </div></div>`).join("");
+  btn.classList.toggle("hidden",view.length>=set.length);note.textContent=set.length<10?`Showing ${set.length} because only ${set.length} MBB items were available.`:""
 }
 async function loadNews(){
-  const candidates = [
+  const sources=[
     "static/teams/purdue-mbb/news.json",
     "static/data/news.json",
     "static/data/news_all.json",
@@ -218,87 +162,34 @@ async function loadNews(){
     "static/data/news_insiders.json",
     "static/data/news_national.json"
   ];
-  let merged=[];
-  for(const p of candidates){
-    const j = await getJson(p);
-    if(j){ merged = merged.concat(normalizeNews(j)); }
-  }
-  merged = uniqBy(merged, x=>x.link);
-  NEWS_ALL = widenToTen(merged);
-  drawNews();
+  let merged=[];for(const p of sources){const j=await getJson(p);if(j)merged=merged.concat(normalizeNews(j))}
+  merged=uniqBy(merged,x=>x.link);NEWS_ALL=widenToTen(merged);drawNews()
 }
 
-/* ===== Rankings ===== */
+/* Rankings */
 async function loadRankings(){
-  const j = await getJson("static/data/rankings.json");
-  const apRank = j?.ap?.rank ?? j?.ap_rank ?? "—";
-  const kpRank = j?.kenpom?.rank ?? j?.kenpom_rank ?? "—";
-  const updated = j?.updated ?? j?.ap?.updated ?? j?.kenpom?.updated ?? null;
-  const tsText = updated ? new Date(updated < 1e12 ? updated*1000 : updated).toLocaleString() : "";
-  $("#ap-link").textContent = apRank;
-  $("#rank-stamp").textContent = tsText ? `Updated ${tsText}` : "";
-  $("#kp-link").textContent = kpRank; // href fixed to kenpom.com in markup
+  const j=await getJson("static/data/rankings.json");const ap=j?.ap?.rank??"—";const kp=j?.kenpom?.rank??"—";const updated=j?.updated||j?.ap?.updated||j?.kenpom?.updated||null;
+  $("#ap-link").textContent=ap;$("#kp-link").textContent=kp;$("#rank-stamp").textContent=updated?`Updated ${new Date(updated<1e12?updated*1000:updated).toLocaleString()}`:""
 }
 
-/* ===== Schedule ===== */
-function parseGame(obj){
-  const pick = (...keys)=>keys.find(k=>obj[k]!=null)&&obj[keys.find(k=>obj[k]!=null)];
-  const tsRaw = pick("ts","time","when","date","datetime","dateTime","datetimeUtc","datetime_utc","start","start_time","tip","tipoff","start_local","start_time_local","date_local","iso","isoDate");
-  const ts = parseTs(tsRaw);
-  const site = pick("site","homeAway","home_away","venue_type","locationType","status") || obj.homeAway || "";
-  const loc  = pick("location","arena","venue","place","city") || "";
-  const opp  = pick("opponent","opp","title","name","matchup") || "TBD";
-  const url  = pick("link","url","tickets","gamecast","details");
-  return {ts, site, loc, opp, url};
-}
+/* Schedule */
+function parseGame(o){const pick=(...k)=>k.find(x=>o[x]!=null)&&o[k.find(x=>o[x]!=null)];const tsRaw=pick("ts","time","date","datetime","dateTime","start","tipoff","start_local");const ts=parseTs(tsRaw);return {ts,site:o.site||o.homeAway||"",loc:o.location||o.venue||"",opp:o.opponent||o.title||"TBD",url:o.link||o.url}}
 async function loadSchedule(){
-  const data = await getJson("static/teams/purdue-mbb/schedule.json");
-  const arr = Array.isArray(data) ? data : (Array.isArray(data?.items)?data.items:(Array.isArray(data?.games)?data.games:[]));
-  const games = arr.map(parseGame).filter(g=>g.ts).sort((a,b)=>a.ts-b.ts);
-  const nowCut = Date.now()-12*3600*1000; // keep within last 12h, then forward
-  const upcoming = games.filter(g=>g.ts>=nowCut).slice(0,5);
-  const list=$("#sched-list");
-  if(!upcoming.length){
-    list.innerHTML = `<div class="item small muted">
-      No upcoming games parsed. <a href="https://purduesports.com/sports/mens-basketball/schedule" target="_blank" rel="noopener">Official schedule ↗</a>
-    </div>`;
-    $("#sched-stamp").textContent="";
-    return;
-  }
-  list.innerHTML = upcoming.map(g=>{
-    const dt=new Date(g.ts<1e12?g.ts*1000:g.ts);
-    return `<div class="item">
-      <div class="title" style="font-weight:800">${esc(g.opp)}</div>
-      ${g.site?`<div class="small muted">${esc(g.site)}</div>`:""}
-      <div class="small muted">${dt.toLocaleString()} local</div>
-      ${g.loc?`<div class="small muted">Location: ${esc(g.loc)}</div>`:""}
-      ${g.url?`<div class="small"><a href="${esc(g.url)}" target="_blank" rel="noopener">Game details ↗</a></div>`:""}
-    </div>`;
-  }).join("");
-  $("#sched-stamp").textContent = `Updated ${new Date().toLocaleString()}`;
+  const data=await getJson("static/teams/purdue-mbb/schedule.json");const arr=Array.isArray(data)?data:Array.isArray(data?.items)?data.items:(Array.isArray(data?.games)?data.games:[]);
+  const games=arr.map(parseGame).filter(g=>g.ts).sort((a,b)=>a.ts-b.ts);
+  const nowCut=Date.now()-12*3600*1000;const upcoming=games.filter(g=>g.ts>=nowCut).slice(0,5);const list=$("#sched-list");
+  if(!upcoming.length){list.innerHTML=`<div class="item small muted">No upcoming games found. <a href="https://purduesports.com/sports/mens-basketball/schedule" target="_blank" rel="noopener">Check official schedule ↗</a></div>`;$("#sched-stamp").textContent="";return}
+  list.innerHTML=upcoming.map(g=>{const dt=new Date(g.ts<1e12?g.ts*1000:g.ts);return `<div class="item"><div class="title" style="font-weight:800">${esc(g.opp)}</div>${g.site?`<div class="small muted">${esc(g.site)}</div>`:""}<div class="small muted">${dt.toLocaleString()} local</div>${g.loc?`<div class="small muted">Location: ${esc(g.loc)}</div>`:""}${g.url?`<div class="small"><a href="${esc(g.url)}" target="_blank" rel="noopener">Game details ↗</a></div>`:""}</div>`}).join("");
+  $("#sched-stamp").textContent=`Updated ${new Date().toLocaleString()}`
 }
 
-/* ===== Beat links ===== */
-async function loadBeatLinks(){
-  const j=await getJson("static/data/beat_links.json");
-  const list=$("#beat-list");
-  if(!Array.isArray(j)||!j.length){ list.innerHTML=`<div class="item small muted">No insider items (yet).</div>`; return; }
-  list.innerHTML = j.slice(0,5).map(it=>`<div class="item"><a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a></div>`).join("");
-}
+/* Beat links */
+async function loadBeat(){const j=await getJson("static/data/beat_links.json");const list=$("#beat-list");if(!Array.isArray(j)||!j.length){list.innerHTML=`<div class="item small muted">No insider items (yet).</div>`;return}list.innerHTML=j.slice(0,5).map(it=>`<div class="item"><a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a></div>`).join("")}
 
-/* ===== Boot ===== */
-async function boot(){
-  (document.documentElement||{}).lang="en";
-  $("#news-pills").addEventListener("click", e=>{
-    const b=e.target.closest(".pill"); if(!b) return;
-    $$("#news-pills .pill").forEach(x=>{x.classList.toggle("active", x===b); x.setAttribute("aria-selected", x===b ? "true":"false");});
-    CURRENT_TIER=b.dataset.tier; VISIBLE=10; drawNews();
-  });
-  $("#load-more").addEventListener("click", ()=>{ VISIBLE+=10; drawNews(); });
-
-  await Promise.all([loadNews(), loadRankings(), loadSchedule(), loadBeatLinks()]);
-}
-(document.readyState==="loading") ? document.addEventListener("DOMContentLoaded", boot, {once:true}) : boot();
+/* Wire */
+function wire(){ $("#news-pills").addEventListener("click",e=>{const b=e.target.closest(".pill");if(!b)return;$$("#news-pills .pill").forEach(x=>{x.classList.toggle("active",x===b);x.setAttribute("aria-selected",x===b?"true":"false")});CURRENT_TIER=b.dataset.tier;VISIBLE=10;drawNews()});$("#load-more").addEventListener("click",()=>{VISIBLE+=10;drawNews()});}
+async function boot(){wire();await Promise.all([loadNews(),loadRankings(),loadSchedule(),loadBeat()])}
+(document.readyState==="loading")?document.addEventListener("DOMContentLoaded",boot,{once:true}):boot();
 </script>
 </body>
 </html>
