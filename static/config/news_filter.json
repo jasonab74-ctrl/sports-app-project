@@ -1,0 +1,16 @@
+{
+  "purdue_terms": ["purdue", "boilermaker", "boilermakers", "mackey", "west lafayette", "painter"],
+  "mbb_terms": ["basketball", "men's", "mens", "mbb", "cbb", "ncaa tournament", "big ten", "b1g", "guard", "forward", "center"],
+  "block_terms": ["football", "cfb", "nfl"],
+  "domain_boosts": {
+    "purduesports.com": 4,
+    "hammerandrails.com": 3,
+    "goldandblack.com": 3,
+    "247sports.com": 2,
+    "yahoo.com": 1,
+    "espn.com": 1,
+    "cbssports.com": 1
+  },
+  "min_main_score": 5,
+  "min_relaxed_score": 3
+}
