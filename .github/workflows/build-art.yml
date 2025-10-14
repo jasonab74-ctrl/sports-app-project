@@ -29,7 +29,6 @@ jobs:
         with:
           node-version: "20"
 
-      # ---- Lockfile-aware install ----
       - name: Install deps (lockfile-aware)
         run: |
           if [ -f package-lock.json ]; then
@@ -48,8 +47,6 @@ jobs:
             npm install --no-audit --no-fund
           fi
 
-      # If you have an artwork build script, run it here.
-      # It's safe if the file doesn't exist—this step no-ops.
       - name: Build artwork (if present)
         run: |
           if [ -f scripts/build-art.js ]; then
@@ -58,7 +55,6 @@ jobs:
             echo "No scripts/build-art.js present; skipping."
           fi
 
-      # Commit any generated cached assets (optional).
       - name: Commit cached artwork (if changed)
         run: |
           if [ -n "$(git status --porcelain static | grep -v '^??')" ]; then
