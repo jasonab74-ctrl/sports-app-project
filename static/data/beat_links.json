@@ -1,6 +1,18 @@
 [
-  {"title": "Hammer & Rails — Purdue Hoops", "url": "https://www.hammerandrails.com/purdue-basketball"},
-  {"title": "Gold and Black — MBB", "url": "https://goldandblack.com"},
-  {"title": "247Sports — Purdue Basketball", "url": "https://247sports.com/college/purdue/"},
-  {"title": "PurdueSports.com — MBB", "url": "https://purduesports.com/sports/mens-basketball"}
+  {
+    "title": "Hammer & Rails \u2014 Purdue Hoops",
+    "url": "https://www.hammerandrails.com/purdue-basketball"
+  },
+  {
+    "title": "Gold and Black \u2014 MBB",
+    "url": "https://goldandblack.com"
+  },
+  {
+    "title": "247Sports \u2014 Purdue Basketball",
+    "url": "https://247sports.com/college/purdue/"
+  },
+  {
+    "title": "PurdueSports.com \u2014 MBB",
+    "url": "https://purduesports.com/sports/mens-basketball"
+  }
 ]

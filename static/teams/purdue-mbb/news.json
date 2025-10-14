@@ -1,12 +1,82 @@
 [
-  {"title":"Purdue announces exhibition details vs. Kentucky","link":"https://purduesports.com/","image":"","ts":1761247200000,"source":"PurdueSports.com","tier":"official"},
-  {"title":"Practice report: Guards battle for minutes at Mackey","link":"https://www.hammerandrails.com/purdue-basketball","image":"","ts":1761214800000,"source":"Hammer & Rails","tier":"insiders"},
-  {"title":"Notebook: Mackey upgrades ahead of opener","link":"https://www.cbssports.com/college-basketball/","image":"","ts":1761207600000,"source":"CBS Sports","tier":"national"},
-  {"title":"National preview: Where Purdue stacks up in Big Ten","link":"https://www.espn.com/mens-college-basketball/","image":"","ts":1761200400000,"source":"ESPN","tier":"national"},
-  {"title":"Film Room: PnR counters for 2025–26","link":"https://goldandblack.com/","image":"","ts":1761193200000,"source":"Gold and Black","tier":"insiders"},
-  {"title":"Braden Smith named preseason All–Big Ten","link":"https://www.yahoosports.com/college-basketball/","image":"","ts":1761186000000,"source":"Yahoo CBB","tier":"national"},
-  {"title":"Roster reset: wings & rotation","link":"https://www.hammerandrails.com/purdue-basketball","image":"","ts":1761178800000,"source":"Hammer & Rails","tier":"insiders"},
-  {"title":"KenPom projection hints for Purdue","link":"https://kenpom.com/","image":"","ts":1761171600000,"source":"KenPom","tier":"national"},
-  {"title":"Painter on exhibitions, rotations","link":"https://purduesports.com/","image":"","ts":1761164400000,"source":"PurdueSports.com","tier":"official"},
-  {"title":"Freshman spotlight: backcourt","link":"https://247sports.com/college/purdue/","image":"","ts":1761157200000,"source":"247Sports","tier":"insiders"}
+  {
+    "title": "Purdue announces exhibition details vs. Kentucky",
+    "link": "https://purduesports.com/",
+    "image": "",
+    "ts": 1760440136135,
+    "source": "PurdueSports.com",
+    "tier": "official"
+  },
+  {
+    "title": "Practice report: Guards battle for minutes at Mackey",
+    "link": "https://www.hammerandrails.com/purdue-basketball",
+    "image": "",
+    "ts": 1760437136135,
+    "source": "Hammer & Rails",
+    "tier": "insiders"
+  },
+  {
+    "title": "Notebook: Mackey upgrades ahead of opener",
+    "link": "https://www.cbssports.com/college-basketball/",
+    "image": "",
+    "ts": 1760433536135,
+    "source": "CBS Sports",
+    "tier": "national"
+  },
+  {
+    "title": "National preview: Where Purdue stacks up in Big Ten",
+    "link": "https://www.espn.com/mens-college-basketball/",
+    "image": "",
+    "ts": 1760429936135,
+    "source": "ESPN",
+    "tier": "national"
+  },
+  {
+    "title": "Film Room: PnR counters for 2025\u201326",
+    "link": "https://goldandblack.com/",
+    "image": "",
+    "ts": 1760426336135,
+    "source": "Gold and Black",
+    "tier": "insiders"
+  },
+  {
+    "title": "Braden Smith named preseason All\u2013Big Ten",
+    "link": "https://www.yahoosports.com/college-basketball/",
+    "image": "",
+    "ts": 1760422736135,
+    "source": "Yahoo CBB",
+    "tier": "national"
+  },
+  {
+    "title": "Roster reset: wings & rotation",
+    "link": "https://www.hammerandrails.com/purdue-basketball",
+    "image": "",
+    "ts": 1760419136135,
+    "source": "Hammer & Rails",
+    "tier": "insiders"
+  },
+  {
+    "title": "KenPom projection hints for Purdue",
+    "link": "https://kenpom.com/",
+    "image": "",
+    "ts": 1760415536135,
+    "source": "KenPom",
+    "tier": "national"
+  },
+  {
+    "title": "Painter on exhibitions, rotations",
+    "link": "https://purduesports.com/",
+    "image": "",
+    "ts": 1760411936135,
+    "source": "PurdueSports.com",
+    "tier": "official"
+  },
+  {
+    "title": "Freshman spotlight: backcourt",
+    "link": "https://247sports.com/college/purdue/",
+    "image": "",
+    "ts": 1760408336135,
+    "source": "247Sports",
+    "tier": "insiders"
+  }
 ]
