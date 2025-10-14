@@ -93,7 +93,6 @@
   </div>
 
   <script>
-    // ---- Config: relative-only so GH Pages always allows it ----
     const PATHS = {
       news:      'static/data/news.json',
       schedule:  'static/data/schedule.json',
@@ -101,20 +100,15 @@
       beats:     'static/data/beat_links.json'
     };
 
-    // ---- Utils ----
     const sel = (q, el=document)=>el.querySelector(q);
     const fmtAgo = iso => {
       if (!iso) return '';
       const t = new Date(iso);
       if (isNaN(t)) return '';
       const now = new Date();
-      let diff = Math.floor((now - t) / 1000); // seconds
+      let diff = Math.floor((now - t) / 1000);
       if (diff < 0) diff = 0;
-      const units = [
-        ['day', 86400],
-        ['h', 3600],
-        ['m', 60],
-      ];
+      const units = [['day',86400],['h',3600],['m',60]];
       for (const [label, sec] of units) {
         const v = Math.floor(diff / sec);
         if (v >= 1) return label==='day' ? `${v}d ago` : `${v}${label} ago`;
@@ -123,7 +117,6 @@
     };
     const safeText = s => (s??'').toString();
 
-    // ---- Diagnostics helper ----
     const showDiag = (id, ok, msg) => {
       const el = sel(id);
       if (!el) return;
@@ -132,7 +125,7 @@
       el.textContent = msg;
     };
 
-    // ---- News rendering ----
+    // ----- NEWS -----
     let newsAll = [];
     const counts = { all: 0, official: 0, insiders: 0, national: 0 };
 
@@ -152,10 +145,9 @@
         const tagA = (n.section ? `<span class="tag">${safeText(n.section)}</span>`:'');
         const tagB = (src ? `<span class="tag">${src}</span>`:'');
         const img = n.image ? `<img src="${n.image}" loading="lazy" alt="">` : '';
-        const thumb = img || `<div class="thumb"></div>`;
         list.insertAdjacentHTML('beforeend', `
           <article class="item">
-            <div class="thumb">${img}</div>
+            <div class="thumb">${img || `<div class="thumb"></div>`}</div>
             <div class="meta">
               <div class="kicker">${tagA}${tagB}</div>
               <a class="titlelink" href="${url}" target="_blank" rel="noopener">${title}</a>
@@ -164,7 +156,6 @@
           </article>
         `);
       });
-      // counts
       sel('#count-all').textContent = `(${counts.all})`;
       sel('#count-official').textContent = `(${counts.official})`;
       sel('#count-insiders').textContent = `(${counts.insiders})`;
@@ -177,7 +168,6 @@
         if (!r.ok) throw new Error(`${r.status} ${r.statusText}`);
         const data = await r.json();
         if (!Array.isArray(data)) throw new Error('news.json is not an array');
-        // Normalize
         newsAll = data
           .filter(it => (it && it.title && it.url))
           .map(it => ({
@@ -188,14 +178,11 @@
             image: it.image || null,
             ts: it.ts || it.date || it.published_at || null
           }))
-          // sort newest first
           .sort((a,b)=> new Date(b.ts||0) - new Date(a.ts||0));
-        // counts
         counts.all = newsAll.length;
         counts.official = newsAll.filter(n=>n.section==='official').length;
         counts.insiders = newsAll.filter(n=>n.section==='insiders').length;
         counts.national = newsAll.filter(n=>n.section==='national').length;
-
         showDiag('#news-diag', true, `${PATHS.news} ✓ (${newsAll.length} items)`);
         renderNews('all');
       } catch (e) {
@@ -205,7 +192,7 @@
       }
     };
 
-    // ---- Rankings ----
+    // ----- RANKINGS -----
     const loadRankings = async () => {
       try {
         const r = await fetch(PATHS.rankings, { cache:'no-store' });
@@ -231,41 +218,47 @@
       }
     };
 
-    // ---- Schedule ----
+    // ----- SCHEDULE (tolerant to both shapes) -----
     const loadSchedule = async () => {
-      const hostTZ = Intl.DateTimeFormat().resolvedOptions().timeZone || 'local';
       const box = sel('#schedule');
       box.innerHTML = '';
       try {
         const r = await fetch(PATHS.schedule, { cache:'no-store' });
         if (!r.ok) throw new Error(`${r.status} ${r.statusText}`);
-        const arr = await r.json();
-        if (!Array.isArray(arr)) throw new Error('schedule.json is not an array');
+        const raw = await r.json();
+
+        // Accept array OR { games: [...] }
+        const arr = Array.isArray(raw) ? raw : (Array.isArray(raw?.games) ? raw.games : []);
+        // Normalize fields from either schema:
         const upcoming = arr
-            .map(g=>({
-              opponent: g.opponent || 'TBD',
-              site: g.site || 'Neutral',
-              tip: g.tip || g.ts || null,
+          .map(g => {
+            const tip =
+              g.tip || g.ts || g.date_iso || g.iso_local || null;
+            const dt = tip ? new Date(tip) : null;
+            return {
+              opponent: g.opponent || g.name || 'TBD',
+              site: g.site || (g.homeAway ? (g.homeAway.toLowerCase()==='home'?'Home':(g.homeAway.toLowerCase()==='away'?'Away':'Neutral')) : 'Neutral'),
+              when: dt,
+              whenText: g.date_local || (dt ? dt.toLocaleString() + ' (local)' : 'TBD'),
               venue: g.venue || '',
-              city: g.city || '',
-              state: g.state || '',
-              url: g.url || ''
-            }))
-            .filter(g=> g.tip && new Date(g.tip) >= new Date())
-            .sort((a,b)=> new Date(a.tip)-new Date(b.tip))
-            .slice(0,5);
+              city_state: g.city_state || [g.city, g.state].filter(Boolean).join(', '),
+              url: g.url || g.link || ''
+            };
+          })
+          .filter(g => g.when && (new Date(g.when) >= new Date()))
+          .sort((a,b)=> a.when - b.when)
+          .slice(0,5);
 
         if (!upcoming.length) {
           box.innerHTML = `<div class="sub">No upcoming games found. <a href="https://purduesports.com/sports/mens-basketball/schedule" target="_blank" rel="noopener">Check official schedule ↗</a></div>`;
         } else {
           upcoming.forEach(g=>{
-            const dt = new Date(g.tip);
             box.insertAdjacentHTML('beforeend', `
               <div class="game">
                 <div style="font-weight:700">${safeText(g.opponent)}</div>
                 <div class="where">${safeText(g.site)}</div>
-                <div class="where">${dt.toLocaleString()} (local)</div>
-                <div class="where">${[g.venue, g.city, g.state].filter(Boolean).join(' — ')}</div>
+                <div class="where">${safeText(g.whenText)}</div>
+                <div class="where">${[g.venue, g.city_state].filter(Boolean).join(' — ')}</div>
                 <div class="btns">
                   ${g.url ? `<a class="btn" target="_blank" rel="noopener" href="${g.url}">Game details ↗</a>` : ``}
                 </div>
@@ -280,21 +273,24 @@
       }
     };
 
-    // ---- Beats ----
+    // ----- BEATS (tolerant to array OR {links:[]}) -----
     const loadBeats = async () => {
       const box = sel('#beats');
       box.innerHTML = '';
       try {
         const r = await fetch(PATHS.beats, { cache:'no-store' });
         if (!r.ok) throw new Error(`${r.status} ${r.statusText}`);
-        const arr = await r.json();
-        if (!Array.isArray(arr) || !arr.length) {
+        const j = await r.json();
+        const arr = Array.isArray(j) ? j : (Array.isArray(j?.links) ? j.links : []);
+        if (!arr.length) {
           box.innerHTML = `<div class="sub">No insider items (yet).</div>`;
         } else {
           arr.slice(0,6).forEach(b=>{
+            const title = b.title || b.name || b.text || 'Link';
+            const url = b.url || b.href || '#';
             box.insertAdjacentHTML('beforeend', `
               <div class="game">
-                <a href="${b.url}" target="_blank" rel="noopener">${safeText(b.title)}</a>
+                <a href="${url}" target="_blank" rel="noopener">${safeText(title)}</a>
               </div>
             `);
           });
@@ -306,8 +302,8 @@
       }
     };
 
-    // ---- Filter buttons ----
-    sel('#filters').addEventListener('click', e=>{
+    // Filters
+    document.getElementById('filters').addEventListener('click', e=>{
       const btn = e.target.closest('button[data-scope]');
       if (!btn) return;
       document.querySelectorAll('#filters .chip').forEach(c=>c.classList.remove('active'));
@@ -315,7 +311,7 @@
       renderNews(btn.dataset.scope);
     });
 
-    // ---- Kickoff ----
+    // Kickoff
     loadNews();
     loadRankings();
     loadSchedule();
