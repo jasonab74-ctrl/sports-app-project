@@ -1,4 +1,4 @@
-l<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -99,11 +99,11 @@ l<!doctype html>
       national: byId('count-national')
     };
 
-    // Robust time-ago (handles ISO strings or numeric epochs; clamps negatives)
+    // Robust time-ago (ISO string or epoch; clamps negatives)
     function timeAgo(input) {
       let then;
-      if (typeof input === 'number') { // epoch sec or ms
-        then = new Date(input > 1e12 ? input : input * 1000);
+      if (typeof input === 'number') {
+        then = new Date(input > 1e12 ? input : input * 1000); // sec vs ms
       } else {
         then = new Date(input);
       }
@@ -116,28 +116,27 @@ l<!doctype html>
       return `${days}d ago`;
     }
 
-    // Safe image proxy (fixes sites that block hotlinking)
+    // Safe image proxy to avoid hotlink/CORS blocks
     function prox(url) {
       if (!url) return null;
       try {
-        // weserv expects domain without schema
         const stripped = String(url).replace(/^https?:\/\//,'');
         return `https://images.weserv.nl/?url=${encodeURIComponent(stripped)}&w=1200&h=630&fit=cover&we=1`;
       } catch { return null; }
     }
 
-    // Format local times safely
     function fmtLocal(dt) {
       const d = new Date(dt);
       if (isNaN(d)) return '';
       return d.toLocaleString(undefined, { hour:'numeric', minute:'2-digit', month:'numeric', day:'numeric', year:'numeric' }) + ' local';
     }
 
-    // ---------- Data paths (leave these as-is) ----------
+    // ---------- Data paths ----------
     const PATHS = {
       news: 'static/teams/purdue-mbb/news.json',
       schedule: 'static/teams/purdue-mbb/schedule.json',
       rankings: 'static/data/rankings.json',
+      rankingsOverrides: 'static/data/rankings_overrides.json', // optional
       beat: 'static/data/beat_links.json'
     };
 
@@ -154,8 +153,7 @@ l<!doctype html>
     function tagBadge(t){ return `<span class="badge">${t}</span>` }
 
     function renderNews() {
-      const data = NEWS_RAW.slice(0, 10); // already filtered to MBB by your collector
-      // counts
+      const data = NEWS_RAW.slice(0, 10);
       counts.all.textContent = ` (${data.length})`;
       counts.official.textContent = ` (${data.filter(x=>x.section==='official').length})`;
       counts.insiders.textContent = ` (${data.filter(x=>x.section==='insiders').length})`;
@@ -205,7 +203,7 @@ l<!doctype html>
       }).join('');
     }
 
-    // ---------- Render Rankings ----------
+    // ---------- Rankings (with optional overrides precedence) ----------
     function renderRankings(obj) {
       const ap = obj?.apTop25 ?? '—';
       const kp = obj?.kenpom ?? '—';
@@ -215,6 +213,24 @@ l<!doctype html>
       const updated = obj?.updatedAt ? new Date(obj.updatedAt) : null;
       byId('rk-updated').textContent = updated && !isNaN(updated) ?
         `Updated ${updated.toLocaleString()}` : '';
+    }
+
+    async function loadRankingsWithOverride() {
+      let base = {};
+      let override = null;
+
+      try { base = await getJSON(PATHS.rankings); } catch(e){ console.warn('rankings base fetch failed', e); }
+      try { override = await getJSON(PATHS.rankingsOverrides); } catch(e){ /* 404 is fine */ }
+
+      if (override && override.updatedAt) {
+        const tO = new Date(override.updatedAt).getTime();
+        const tB = new Date(base.updatedAt || 0).getTime();
+        if (!isNaN(tO) && (isNaN(tB) || tO > tB)) {
+          renderRankings(override);
+          return;
+        }
+      }
+      renderRankings(base);
     }
 
     // ---------- Render Beat ----------
@@ -237,9 +253,7 @@ l<!doctype html>
       });
 
       try {
-        // NEWS
         const news = await getJSON(PATHS.news);
-        // Defensive: normalize fields once
         NEWS_RAW = (news || []).map(n=>({
           title: n.title || n.headline || '',
           url: n.url || n.link,
@@ -254,7 +268,6 @@ l<!doctype html>
         console.error(e);
       }
 
-      // SCHEDULE
       try{
         const sched = await getJSON(PATHS.schedule);
         renderSchedule(sched?.games || sched || []);
@@ -263,16 +276,13 @@ l<!doctype html>
         console.error(e);
       }
 
-      // RANKINGS
       try{
-        const r = await getJSON(PATHS.rankings);
-        renderRankings(r || {});
+        await loadRankingsWithOverride();
       }catch(e){
         renderRankings({});
         console.error(e);
       }
 
-      // BEAT
       try{
         const b = await getJSON(PATHS.beat);
         renderBeat(b || []);
