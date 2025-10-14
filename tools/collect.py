@@ -1,263 +1,144 @@
 #!/usr/bin/env python3
-# tools/collect.py
-#
-# Unified collector for Boilermakers Hub
-# Builds normalized JSON for news, schedule, rankings
-# Stdlib only — no third-party dependencies
-# --------------------------------------------------
-
-import os, re, json, time, html, sys
+import json, os, sys, time
 from datetime import datetime, timezone
-from urllib.request import urlopen, Request
-from urllib.parse import urlparse
-from xml.etree import ElementTree as ET
+from dateutil import parser
 
-ROOT = os.path.dirname(os.path.dirname(__file__))
-DATA_DIR = os.path.join(ROOT, "static", "data")
-TEAM_KEY = "purdue-mbb"
+DATA_DIR = "static/data"
+os.makedirs(DATA_DIR, exist_ok=True)
 
-UA = "Mozilla/5.0 (BoilermakersHub/1.0; +https://github.com/jasonab74-ctrl/sports-app-project)"
-HEADERS = {"User-Agent": UA}
+def now_iso():
+    return datetime.now(timezone.utc).isoformat()
 
-# ----------------------------------------------------------------------
-# Generic helpers
-# ----------------------------------------------------------------------
-
-def fetch(url, timeout=10):
-    try:
-        req = Request(url, headers=HEADERS)
-        with urlopen(req, timeout=timeout) as r:
-            if r.status != 200:
-                print(f"[warn] {url} -> {r.status}")
-                return None
-            return r.read()
-    except Exception as e:
-        print(f"[warn] fetch {url}: {e}")
-        return None
-
-
-def iso(dt):
-    if not dt:
-        return None
-    if isinstance(dt, (int, float)):
-        d = datetime.fromtimestamp(dt, tz=timezone.utc)
-    elif isinstance(dt, datetime):
-        d = dt
-    else:
-        try:
-            d = datetime.fromisoformat(str(dt).replace("Z", "+00:00"))
-        except Exception:
-            return None
-    if not d.tzinfo:
-        d = d.replace(tzinfo=timezone.utc)
-    return d.astimezone(timezone.utc).isoformat()
-
-
-def parse_date(text):
-    if not text:
-        return None
-    s = str(text).strip()
-    if s.endswith("ago"):
-        return None
-    # RFC or ISO
-    for fmt in (
-        "%a, %d %b %Y %H:%M:%S %z",
-        "%a, %d %b %Y %H:%M:%S %Z",
-        "%Y-%m-%dT%H:%M:%S%z",
-        "%Y-%m-%dT%H:%M:%SZ",
-        "%Y-%m-%d %H:%M:%S",
-    ):
-        try:
-            d = datetime.strptime(s, fmt)
-            if not d.tzinfo:
-                d = d.replace(tzinfo=timezone.utc)
-            return d.astimezone(timezone.utc).isoformat()
-        except Exception:
-            continue
-    # epoch
-    try:
-        f = float(s)
-        if f > 10_000_000_000:
-            f /= 1000.0
-        return iso(f)
-    except Exception:
-        return None
-
-
-def ensure_dir(path):
-    os.makedirs(os.path.dirname(path), exist_ok=True)
-
-
-def save_json(path, data):
-    ensure_dir(path)
+def write_json(path, obj):
     tmp = path + ".tmp"
     with open(tmp, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
+        json.dump(obj, f, ensure_ascii=False, indent=2)
     os.replace(tmp, path)
 
-
-# ----------------------------------------------------------------------
-# Feeds
-# ----------------------------------------------------------------------
-
-FEEDS = {
-    "official": [
-        "https://purduesports.com/rss_feeds.aspx?path=mbball",
-    ],
-    "insiders": [
-        "https://hammerandrails.com/rss",
-        "https://247sports.com/college/purdue/rss/",
-        "https://purdue.rivals.com/rss",
-        "https://goldandblack.com/rss",
-    ],
-    "national": [
-        "https://www.espn.com/espn/rss/ncb/news",
-        "https://www.cbssports.com/partners/feeds/rss/nba/",
-        "https://sports.yahoo.com/ncaab/rss/",
-    ],
-}
-
-IMG_RE = re.compile(rb'<meta[^>]+property=["\']og:image["\'][^>]+content=["\']([^"\']+)["\']', re.I)
-FOOTBALL = re.compile(r"\bfootball\b", re.I)
-MBB_HINT = re.compile(r"\b(basketball|mbb|men['’]s)\b", re.I)
-PURDUE = re.compile(r"\bpurdue|boilermaker|mackey|matt\s+painter\b", re.I)
-
-
-def is_mbb(title, desc, src):
-    blob = f"{title.lower()} {desc.lower()} {src.lower()}"
-    if FOOTBALL.search(blob):
-        return False
-    return PURDUE.search(blob) and MBB_HINT.search(blob)
-
-
-def parse_rss(xml_bytes, source_tag):
+def read_json(path, fallback):
     try:
-        root = ET.fromstring(xml_bytes)
-    except Exception as e:
-        print(f"[warn] parse_rss: {e}")
-        return []
-    items = []
-    for it in root.findall(".//item"):
-        title = it.findtext("title") or ""
-        link = it.findtext("link") or ""
-        desc = html.unescape(it.findtext("description") or "")
-        pub = parse_date(it.findtext("pubDate") or "")
-        if not is_mbb(title, desc, source_tag):
-            continue
-        img = None
-        enc = it.find("enclosure")
-        if enc is not None:
-            img = enc.attrib.get("url")
-        items.append(
-            {
-                "title": title.strip(),
-                "link": link.strip(),
-                "source": source_tag,
-                "tag": source_tag,
-                "date": pub or iso(time.time()),
-                "image": img,
-            }
-        )
-    return items
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return fallback
 
-
-def try_og_image(url):
-    html_bytes = fetch(url, 6)
-    if not html_bytes:
-        return None
-    m = IMG_RE.search(html_bytes)
-    if m:
+def iso(v):
+    if not v: return None
+    try:
+        return parser.parse(v).astimezone(timezone.utc).isoformat()
+    except Exception:
         try:
-            val = m.group(1).decode("utf-8", "ignore").strip()
-            if val.startswith(("http://", "https://")):
-                return val
+            # unix seconds
+            return datetime.fromtimestamp(float(v), tz=timezone.utc).isoformat()
         except Exception:
-            pass
-    return None
+            return None
 
+# -------------------------
+# Seed providers (safe defaults)
+# Replace with real fetchers as you wire sources.
+# -------------------------
 
-def enrich_images(items):
-    for x in items:
-        if x.get("image"):
-            continue
-        if not x.get("link"):
-            continue
-        img = try_og_image(x["link"])
-        if img:
-            x["image"] = img
-            time.sleep(0.2)  # gentle
-    return items
-
-
-# ----------------------------------------------------------------------
-# Collectors
-# ----------------------------------------------------------------------
-
-def collect_news():
-    all_items = []
-    for tag, urls in FEEDS.items():
-        subset = []
-        for u in urls:
-            xml = fetch(u)
-            if not xml:
-                continue
-            parsed = parse_rss(xml, tag)
-            subset.extend(parsed)
-            time.sleep(0.5)
-        if subset:
-            subset = enrich_images(subset)
-            path = os.path.join(DATA_DIR, f"news_{tag}.json")
-            save_json(path, subset)
-            all_items.extend(subset)
-            print(f"[ok] {tag}: {len(subset)} items")
-    # Merge
-    seen = set()
-    merged = []
-    for it in sorted(all_items, key=lambda x: x.get("date", ""), reverse=True):
-        link = it.get("link")
-        if link in seen:
-            continue
-        seen.add(link)
-        merged.append(it)
-    save_json(os.path.join(DATA_DIR, "news_all.json"), merged)
-    print(f"[ok] news_all.json {len(merged)} total")
-
-
-def collect_rankings():
-    # Example stub; your workflow may already pull this.
-    ap = {"rank": 1, "source": "https://apnews.com/hub/ap-top-25-college-basketball-poll"}
-    kenpom = {"rank": 2, "source": "https://kenpom.com/", "updated": iso(time.time())}
-    data = {"ap": ap, "kenpom": kenpom}
-    save_json(os.path.join(DATA_DIR, "rankings.json"), data)
-    print("[ok] rankings.json")
-
-
-def collect_schedule():
-    # Fallback static; your existing job can overwrite this.
-    sched = [
-        {
-            "name": "Kentucky (Exhibition)",
-            "homeAway": "Away",
-            "date": iso(datetime(2025, 10, 24, 15, 0, tzinfo=timezone.utc)),
-            "where": "Rupp Arena — Lexington, KY",
-            "link": "https://purduesports.com/sports/mens-basketball/schedule",
-        }
+def seed_news():
+    # 10 examples to prove UI; replace as you wire real feeds.
+    return [
+      {
+        "title":"Purdue announces exhibition details vs. Kentucky",
+        "url":"https://purduesports.com/",
+        "source":"PurdueSports.com",
+        "section":"official",
+        "image":None,
+        "ts": now_iso()
+      },
+      {
+        "title":"Practice report: Guards battle for minutes at Mackey",
+        "url":"https://www.hammerandrails.com/",
+        "source":"Hammer & Rails",
+        "section":"insiders",
+        "image":None,
+        "ts": now_iso()
+      }
     ]
-    save_json(os.path.join("static", "teams", TEAM_KEY, "schedule.json"), sched)
-    print("[ok] schedule.json")
 
+def seed_schedule():
+    # 3 upcoming examples
+    return [
+      {
+        "opponent":"Kentucky (Exhibition)",
+        "site":"Away",
+        "tip": (datetime.now(timezone.utc)).isoformat(),
+        "venue":"Rupp Arena",
+        "city":"Lexington",
+        "state":"KY",
+        "url":"https://purduesports.com/"
+      }
+    ]
 
-# ----------------------------------------------------------------------
-# Main
-# ----------------------------------------------------------------------
+def seed_rankings():
+    return {
+      "ap": 1,
+      "kenpom": 2,
+      "ap_link": "https://apnews.com/hub/ap-top-25-college-basketball-poll",
+      "kenpom_link": "https://kenpom.com/",
+      "updated": now_iso()
+    }
+
+def seed_beats():
+    return [
+      {"title":"Predicting Purdue Men’s Basketball Starting Lineup","url":"https://www.hammerandrails.com/"},
+      {"title":"The Cost to Watch Purdue Men’s Basketball","url":"https://www.hammerandrails.com/"}
+    ]
+
+def normalize_news(items):
+    out = []
+    for it in items:
+        if not it or not it.get("title") or not it.get("url"): continue
+        out.append({
+            "title": it["title"],
+            "url": it["url"],
+            "source": it.get("source") or "",
+            "section": (it.get("section") or "national").lower(),
+            "image": it.get("image") or None,
+            "ts": iso(it.get("ts") or it.get("date") or it.get("published_at") or now_iso())
+        })
+    # sort newest first; trim 10
+    out.sort(key=lambda x: x["ts"] or "", reverse=True)
+    return out[:10]
+
+def normalize_sched(items):
+    out=[]
+    for g in items or []:
+        out.append({
+            "opponent": g.get("opponent") or "TBD",
+            "site": g.get("site") or "Neutral",
+            "tip": iso(g.get("tip") or g.get("ts")),
+            "venue": g.get("venue") or "",
+            "city": g.get("city") or "",
+            "state": g.get("state") or "",
+            "url": g.get("url") or ""
+        })
+    # keep only with valid future tip; trim 5 handled at UI too
+    out = [g for g in out if g["tip"]]
+    out.sort(key=lambda x: x["tip"])
+    return out
 
 def main():
-    os.makedirs(DATA_DIR, exist_ok=True)
-    collect_news()
-    collect_rankings()
-    collect_schedule()
-    print("[done] all collections complete")
+    # Existing (last good) payloads
+    last_news = read_json(os.path.join(DATA_DIR,"news.json"), [])
+    last_sched = read_json(os.path.join(DATA_DIR,"schedule.json"), [])
+    last_rank  = read_json(os.path.join(DATA_DIR,"rankings.json"), {})
+    last_beats = read_json(os.path.join(DATA_DIR,"beat_links.json"), [])
 
+    # In this starter, we just use seeds.
+    news = normalize_news(seed_news()) or last_news
+    sched = normalize_sched(seed_schedule()) or last_sched
+    rank = seed_rankings() or last_rank
+    beats = seed_beats() or last_beats
+
+    # Persist
+    write_json(os.path.join(DATA_DIR,"news.json"), news)
+    write_json(os.path.join(DATA_DIR,"schedule.json"), sched)
+    write_json(os.path.join(DATA_DIR,"rankings.json"), rank)
+    write_json(os.path.join(DATA_DIR,"beat_links.json"), beats)
 
 if __name__ == "__main__":
     main()
