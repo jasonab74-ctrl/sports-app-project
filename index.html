@@ -2,320 +2,278 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Boilermakers Hub</title>
-  <meta name="color-scheme" content="dark light" />
+  <meta name="theme-color" content="#0b0f16" />
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="static/favicon.png">
   <style>
-    :root { --bg:#0c0f13; --card:#131821; --muted:#9aa4b2; --text:#e9eef5; --brand:#f6c445; --chip:#1b2330; --ok:#2fbf71; --bad:#ff5c5c; --link:#9ec1ff; }
+    :root{
+      --bg:#0b0f16;--card:#121827;--muted:#9fb3c8;--text:#e8eef6;--accent:#ffd44d;--chip:#1b2437;--ok:#39d98a;--warn:#fdb022
+    }
     *{box-sizing:border-box}
-    body{margin:0;background:linear-gradient(180deg,#0c0f13,#0a0d10);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif}
-    a{color:var(--link);text-decoration:none}
-    .wrap{max-width:1080px;margin:24px auto;padding:0 16px}
-    header{display:flex;align-items:center;gap:12px;margin-bottom:12px}
-    .dot{width:14px;height:14px;border-radius:4px;background:#f2c84b;box-shadow:0 0 0 4px rgba(242,200,75,.15)}
-    h1{margin:0;font-size:26px}
-    .grid{display:grid;grid-template-columns:1fr;gap:16px}
-    @media(min-width:980px){.grid{grid-template-columns:2.1fr 1fr}}
-    .card{background:var(--card);border-radius:14px;padding:16px}
-    .title{font-size:22px;margin:0 0 8px}
-    .sub{color:var(--muted);font-size:14px}
-    .chips{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 8px}
-    .chip{background:var(--chip);border-radius:999px;padding:6px 12px;font-size:13px;color:#c9d4e1;border:1px solid #273042}
-    .chip.active{border-color:var(--brand);box-shadow:inset 0 0 0 1px rgba(246,196,69,.5)}
-    .articles{display:grid;grid-template-columns:1fr;gap:12px}
-    @media(min-width:700px){.articles{grid-template-columns:1fr 1fr}}
-    .item{display:grid;grid-template-columns:120px 1fr;gap:12px;background:#0f141c;border:1px solid #1e2837;border-radius:12px;overflow:hidden}
-    .thumb{background:#0b0f15;min-height:90px}
-    .thumb img{width:100%;height:100%;object-fit:cover;display:block}
-    .meta{padding:10px 12px 12px}
-    .kicker{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
-    .kicker .tag{font-size:11px;background:#162033;border:1px solid #243147;color:#b8c3d3;border-radius:999px;padding:3px 8px}
-    .item a.titlelink{color:#cfe2ff;font-weight:600;line-height:1.25}
-    .ago{color:#96a2b3;font-size:12px;margin-top:6px}
-    .row{display:flex;flex-direction:column;gap:16px}
-    .stat{background:#0f141c;border:1px solid #1e2837;border-radius:12px;padding:12px}
-    .stat h3{margin:0 0 8px}
-    .pair{display:flex;align-items:center;justify-content:space-between;margin:8px 0}
-    .pair a{font-weight:600}
-    .small{font-size:12px;color:#97a3b5;margin-top:10px}
-    .sched{display:flex;flex-direction:column;gap:10px}
-    .game{background:#0f141c;border:1px solid #1e2837;border-radius:12px;padding:12px}
-    .where{color:#aeb8c6;font-size:13px}
-    .btns{display:flex;gap:8px;margin-top:6px}
-    .btn{font-size:12px;padding:6px 10px;border-radius:8px;background:#162033;border:1px solid #243147;color:#cfe2ff}
-    .diag{margin:6px 0 0;font-size:12px;color:#8ea0b6;display:none}
-    .diag.err{color:#ff8b8b}
-    footer{margin:24px 0;color:#93a1b3;font-size:12px}
+    html,body{margin:0;background:var(--bg);color:var(--text);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Segoe UI Emoji,Segoe UI Symbol}
+    a{color:#9ecbff;text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:1100px;margin:28px auto;padding:0 16px}
+    header{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+    header .dot{width:14px;height:14px;border-radius:4px;background:#ffcd57;box-shadow:0 0 0 3px #2b2b2b44}
+    h1{font-size:28px;margin:0 0 18px}
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:18px}
+    @media (max-width:960px){.grid{grid-template-columns:1fr}}
+    .card{background:var(--card);border-radius:14px;padding:16px;box-shadow:0 1px 0 #0003}
+    .row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+    .spacer{flex:1}
+    h2{font-size:22px;margin:0 0 12px}
+    .small{color:var(--muted);font-size:14px}
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;background:var(--chip);border:1px solid #25314b;color:#cfe2ff;font-weight:600}
+    .pill.active{outline:2px solid #ffd44d55}
+    .list{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+    @media (max-width:720px){.list{grid-template-columns:1fr}}
+    .item{background:#0f1524;border:1px solid #222f52;border-radius:12px;overflow:hidden}
+    .thumb{width:100%;aspect-ratio:16/9;background:#0b0f16;display:block;object-fit:cover}
+    .item-body{padding:12px}
+    .chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+    .chip{background:#1e2a46;color:#b8c5dd;border:1px solid #2a3a61;border-radius:999px;padding:4px 10px;font-size:12px}
+    .title{font-size:18px;line-height:1.25;margin:6px 0 2px}
+    .meta{color:#9db2cc;font-size:13px}
+    .section{display:flex;flex-direction:column;gap:12px}
+    .krow{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:#0f1524;border:1px solid #222f52;border-radius:10px}
+    .krow a{font-weight:700}
+    .updated{margin-top:8px;color:#9db2cc;font-size:12px}
+    .empty{padding:16px;border:1px dashed #2c3a5e;border-radius:10px;color:#9db2cc;background:#0f1524}
+    footer{margin:26px 0;color:#a7b5cc}
+    .badge{font-weight:600;color:#cfe2ff}
+    /* hide debug file path chips by default */
+    .debug-chip{display:none}
   </style>
 </head>
 <body>
   <div class="wrap">
-    <header><div class="dot"></div><h1>Boilermakers Hub</h1></header>
+    <header>
+      <div class="dot"></div>
+      <h1>Boilermakers Hub</h1>
+    </header>
 
     <div class="grid">
       <section class="card">
-        <h2 class="title">Top Headlines</h2>
-        <div class="sub">Refreshed every 30 min • Auto-updated via GitHub Actions</div>
-        <div class="chips" id="filters">
-          <button class="chip active" data-scope="all">all <span id="count-all" class="sub"></span></button>
-          <button class="chip" data-scope="official">official <span id="count-official" class="sub"></span></button>
-          <button class="chip" data-scope="insiders">insiders <span id="count-insiders" class="sub"></span></button>
-          <button class="chip" data-scope="national">national <span id="count-national" class="sub"></span></button>
+        <div class="row">
+          <h2>Top Headlines</h2>
+          <div class="spacer"></div>
+          <span class="small">Refreshed every 30 min • Auto-updated via GitHub Actions</span>
         </div>
-        <div id="news-diag" class="diag"></div>
-        <div id="articles" class="articles" aria-live="polite"></div>
+
+        <div class="row" id="filters">
+          <button class="pill active" data-filter="all">all (<span id="countAll">0</span>)</button>
+          <button class="pill" data-filter="official">official (<span id="countOfficial">0</span>)</button>
+          <button class="pill" data-filter="insiders">insiders (<span id="countInsiders">0</span>)</button>
+          <button class="pill" data-filter="national">national (<span id="countNational">0</span>)</button>
+        </div>
+
+        <div class="small debug-chip" id="newsSourceChip">static/data/news.json ✓</div>
+
+        <div class="list" id="newsList"></div>
       </section>
 
-      <aside class="row">
-        <section class="stat">
-          <h3>Rankings</h3>
-          <div id="rank-diag" class="diag"></div>
-          <div class="pair">AP Top 25: <a id="ap-link" href="#" target="_blank" rel="noopener">—</a></div>
-          <div class="pair">KenPom: <a id="kp-link" href="https://kenpom.com/" target="_blank" rel="noopener">—</a></div>
-          <div id="rank-updated" class="small"></div>
+      <aside class="section">
+        <section class="card">
+          <h2>Rankings</h2>
+          <div class="small debug-chip" id="rankSourceChip">static/data/rankings.json ✓</div>
+          <div class="krow">
+            <span class="small">AP Top 25:</span>
+            <a id="apLink" href="#" target="_blank" rel="noopener">—</a>
+          </div>
+          <div class="krow">
+            <span class="small">KenPom:</span>
+            <a id="kpLink" href="https://kenpom.com/" target="_blank" rel="noopener">—</a>
+          </div>
+          <div class="updated small" id="rankUpdated"></div>
         </section>
 
-        <section class="stat">
-          <h3>Upcoming Schedule</h3>
-          <div id="sched-diag" class="diag"></div>
-          <div id="schedule" class="sched"></div>
+        <section class="card">
+          <h2>Upcoming Schedule</h2>
+          <div class="small debug-chip" id="schedSourceChip">static/data/schedule.json ✓</div>
+          <div id="scheduleList" class="section"></div>
         </section>
 
-        <section class="stat">
-          <h3>Insider / Beat Links</h3>
-          <div id="beat-diag" class="diag"></div>
-          <div id="beats" class="sched"></div>
+        <section class="card">
+          <h2>Insider / Beat Links</h2>
+          <div class="small debug-chip" id="beatSourceChip">static/data/beat_links.json ✓</div>
+          <div id="beatList" class="section"></div>
         </section>
       </aside>
     </div>
 
-    <footer>© 2025 Boilermakers Hub • Auto-updated every 30 min</footer>
+    <footer class="small">© 2025 Boilermakers Hub • <span class="badge">Auto-updated every 30 min</span></footer>
   </div>
 
   <script>
-    const PATHS = {
-      news:      'static/data/news.json',
-      schedule:  'static/data/schedule.json',
-      rankings:  'static/data/rankings.json',
-      beats:     'static/data/beat_links.json'
-    };
+  const DEBUG = new URLSearchParams(location.search).has('debug');
 
-    const sel = (q, el=document)=>el.querySelector(q);
-    const fmtAgo = iso => {
-      if (!iso) return '';
-      const t = new Date(iso);
-      if (isNaN(t)) return '';
-      const now = new Date();
-      let diff = Math.floor((now - t) / 1000);
-      if (diff < 0) diff = 0;
-      const units = [['day',86400],['h',3600],['m',60]];
-      for (const [label, sec] of units) {
-        const v = Math.floor(diff / sec);
-        if (v >= 1) return label==='day' ? `${v}d ago` : `${v}${label} ago`;
-      }
-      return 'just now';
-    };
-    const safeText = s => (s??'').toString();
+  // Helpers
+  const $ = sel => document.querySelector(sel);
+  function esc(s){return (s||'').replace(/[&<>"]/g,c=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+  function timeAgoISO(iso){
+    if(!iso) return '';
+    const t = new Date(iso).getTime();
+    if(isNaN(t)) return '';
+    const mins = Math.round((Date.now()-t)/60000);
+    if(mins<1) return 'just now';
+    if(mins<60) return `${mins}m ago`;
+    const hrs = Math.round(mins/60);
+    if(hrs<24) return `${hrs}h ago`;
+    const days = Math.round(hrs/24);
+    return `${days}d ago`;
+  }
+  function chip(label){return `<span class="chip">${esc(label)}</span>`;}
+  function host(u){try{return new URL(u).host;}catch{return ''}}
 
-    const showDiag = (id, ok, msg) => {
-      const el = sel(id);
-      if (!el) return;
-      el.style.display = 'block';
-      el.classList.toggle('err', !ok);
-      el.textContent = msg;
-    };
+  // Mount debug chips only if ?debug=1
+  for(const el of document.querySelectorAll('.debug-chip')){ el.style.display = DEBUG ? 'inline' : 'none'; }
 
-    // ----- NEWS -----
-    let newsAll = [];
-    const counts = { all: 0, official: 0, insiders: 0, national: 0 };
+  // ----------------- NEWS -----------------
+  const newsURL = 'static/data/news.json';
+  fetch(newsURL).then(r=>r.json()).then(data=>{
+    if(DEBUG) $('#newsSourceChip').textContent = 'static/data/news.json ✓';
+    const items = (data.items||[]).slice(0,10);
+    const list = $('#newsList');
 
-    const renderNews = (scope='all') => {
-      const list = sel('#articles');
-      list.innerHTML = '';
-      if (!newsAll.length) {
-        list.innerHTML = `<div class="sub">No Purdue Men's Basketball headlines right now. New stories will appear here automatically.</div>`;
-        return;
-      }
-      const pick = scope==='all' ? newsAll : newsAll.filter(n => (n.section||'').toLowerCase()===scope);
-      (pick.slice(0,10)).forEach(n => {
-        const src = safeText(n.source);
-        const title = safeText(n.title);
-        const url = safeText(n.url);
-        const when = fmtAgo(n.ts);
-        const tagA = (n.section ? `<span class="tag">${safeText(n.section)}</span>`:'');
-        const tagB = (src ? `<span class="tag">${src}</span>`:'');
-        const img = n.image ? `<img src="${n.image}" loading="lazy" alt="">` : '';
-        list.insertAdjacentHTML('beforeend', `
-          <article class="item">
-            <div class="thumb">${img || `<div class="thumb"></div>`}</div>
-            <div class="meta">
-              <div class="kicker">${tagA}${tagB}</div>
-              <a class="titlelink" href="${url}" target="_blank" rel="noopener">${title}</a>
-              <div class="ago">${when}${src?' • '+src:''}</div>
-            </div>
-          </article>
-        `);
-      });
-      sel('#count-all').textContent = `(${counts.all})`;
-      sel('#count-official').textContent = `(${counts.official})`;
-      sel('#count-insiders').textContent = `(${counts.insiders})`;
-      sel('#count-national').textContent = `(${counts.national})`;
-    };
+    const counts = {official:0, insiders:0, national:0};
+    const cards = items.map(it=>{
+      const cats = it.tags || it.categories || [];
+      const isOfficial = cats.includes('official') || /purduesports\.com/.test(host(it.url||''));
+      const isInsider  = cats.includes('insiders') || /hammerandrails|goldandblack|rivals/.test(host(it.url||''));
+      const isNat      = cats.includes('national') || /espn|cbs|yahoo|theathletic/.test(host(it.url||''));
 
-    const loadNews = async () => {
-      try {
-        const r = await fetch(PATHS.news, { cache:'no-store' });
-        if (!r.ok) throw new Error(`${r.status} ${r.statusText}`);
-        const data = await r.json();
-        if (!Array.isArray(data)) throw new Error('news.json is not an array');
-        newsAll = data
-          .filter(it => (it && it.title && it.url))
-          .map(it => ({
-            title: it.title,
-            url: it.url,
-            source: it.source || '',
-            section: (it.section||'').toLowerCase(),
-            image: it.image || null,
-            ts: it.ts || it.date || it.published_at || null
-          }))
-          .sort((a,b)=> new Date(b.ts||0) - new Date(a.ts||0));
-        counts.all = newsAll.length;
-        counts.official = newsAll.filter(n=>n.section==='official').length;
-        counts.insiders = newsAll.filter(n=>n.section==='insiders').length;
-        counts.national = newsAll.filter(n=>n.section==='national').length;
-        showDiag('#news-diag', true, `${PATHS.news} ✓ (${newsAll.length} items)`);
-        renderNews('all');
-      } catch (e) {
-        showDiag('#news-diag', false, `${PATHS.news} ✗ ${e.message}`);
-        newsAll = [];
-        renderNews('all');
-      }
-    };
+      if(isOfficial) counts.official++;
+      if(isInsider)  counts.insiders++;
+      if(isNat)      counts.national++;
 
-    // ----- RANKINGS -----
-    const loadRankings = async () => {
-      try {
-        const r = await fetch(PATHS.rankings, { cache:'no-store' });
-        if (!r.ok) throw new Error(`${r.status} ${r.statusText}`);
-        const j = await r.json();
-        const ap = (j && j.ap!=null) ? j.ap : '—';
-        const kp = (j && j.kenpom!=null) ? j.kenpom : '—';
-        const updated = j && j.updated ? new Date(j.updated) : null;
+      const labels = [];
+      if(isOfficial) labels.push('official');
+      if(isInsider)  labels.push('insiders');
+      if(isNat)      labels.push('national');
+      const sourceLabel = it.source || host(it.url||'');
 
-        const apLink = j && j.ap_link ? j.ap_link : 'https://apnews.com/hub/ap-top-25-college-basketball-poll';
-        const kpLink = j && j.kenpom_link ? j.kenpom_link : 'https://kenpom.com/';
+      const img = it.image || it.thumbnail || '';
+      const imgTag = img ? `<img class="thumb" loading="lazy" src="${esc(img)}" alt="">` : `<div class="thumb"></div>`;
 
-        sel('#ap-link').textContent = ap;
-        sel('#ap-link').href = apLink;
-
-        sel('#kp-link').textContent = kp;
-        sel('#kp-link').href = kpLink;
-
-        sel('#rank-updated').textContent = updated ? `Updated ${updated.toLocaleString()}` : '';
-        showDiag('#rank-diag', true, `${PATHS.rankings} ✓`);
-      } catch (e) {
-        showDiag('#rank-diag', false, `${PATHS.rankings} ✗ ${e.message}`);
-      }
-    };
-
-    // ----- SCHEDULE (tolerant to both shapes) -----
-    const loadSchedule = async () => {
-      const box = sel('#schedule');
-      box.innerHTML = '';
-      try {
-        const r = await fetch(PATHS.schedule, { cache:'no-store' });
-        if (!r.ok) throw new Error(`${r.status} ${r.statusText}`);
-        const raw = await r.json();
-
-        // Accept array OR { games: [...] }
-        const arr = Array.isArray(raw) ? raw : (Array.isArray(raw?.games) ? raw.games : []);
-        // Normalize fields from either schema:
-        const upcoming = arr
-          .map(g => {
-            const tip =
-              g.tip || g.ts || g.date_iso || g.iso_local || null;
-            const dt = tip ? new Date(tip) : null;
-            return {
-              opponent: g.opponent || g.name || 'TBD',
-              site: g.site || (g.homeAway ? (g.homeAway.toLowerCase()==='home'?'Home':(g.homeAway.toLowerCase()==='away'?'Away':'Neutral')) : 'Neutral'),
-              when: dt,
-              whenText: g.date_local || (dt ? dt.toLocaleString() + ' (local)' : 'TBD'),
-              venue: g.venue || '',
-              city_state: g.city_state || [g.city, g.state].filter(Boolean).join(', '),
-              url: g.url || g.link || ''
-            };
-          })
-          .filter(g => g.when && (new Date(g.when) >= new Date()))
-          .sort((a,b)=> a.when - b.when)
-          .slice(0,5);
-
-        if (!upcoming.length) {
-          box.innerHTML = `<div class="sub">No upcoming games found. <a href="https://purduesports.com/sports/mens-basketball/schedule" target="_blank" rel="noopener">Check official schedule ↗</a></div>`;
-        } else {
-          upcoming.forEach(g=>{
-            box.insertAdjacentHTML('beforeend', `
-              <div class="game">
-                <div style="font-weight:700">${safeText(g.opponent)}</div>
-                <div class="where">${safeText(g.site)}</div>
-                <div class="where">${safeText(g.whenText)}</div>
-                <div class="where">${[g.venue, g.city_state].filter(Boolean).join(' — ')}</div>
-                <div class="btns">
-                  ${g.url ? `<a class="btn" target="_blank" rel="noopener" href="${g.url}">Game details ↗</a>` : ``}
-                </div>
-              </div>
-            `);
-          });
-        }
-        showDiag('#sched-diag', true, `${PATHS.schedule} ✓`);
-      } catch (e) {
-        showDiag('#sched-diag', false, `${PATHS.schedule} ✗ ${e.message}`);
-        box.innerHTML = `<div class="sub">No upcoming games found. <a href="https://purduesports.com/sports/mens-basketball/schedule" target="_blank" rel="noopener">Check official schedule ↗</a></div>`;
-      }
-    };
-
-    // ----- BEATS (tolerant to array OR {links:[]}) -----
-    const loadBeats = async () => {
-      const box = sel('#beats');
-      box.innerHTML = '';
-      try {
-        const r = await fetch(PATHS.beats, { cache:'no-store' });
-        if (!r.ok) throw new Error(`${r.status} ${r.statusText}`);
-        const j = await r.json();
-        const arr = Array.isArray(j) ? j : (Array.isArray(j?.links) ? j.links : []);
-        if (!arr.length) {
-          box.innerHTML = `<div class="sub">No insider items (yet).</div>`;
-        } else {
-          arr.slice(0,6).forEach(b=>{
-            const title = b.title || b.name || b.text || 'Link';
-            const url = b.url || b.href || '#';
-            box.insertAdjacentHTML('beforeend', `
-              <div class="game">
-                <a href="${url}" target="_blank" rel="noopener">${safeText(title)}</a>
-              </div>
-            `);
-          });
-        }
-        showDiag('#beat-diag', true, `${PATHS.beats} ✓`);
-      } catch (e) {
-        showDiag('#beat-diag', false, `${PATHS.beats} ✗ ${e.message}`);
-        box.innerHTML = `<div class="sub">No insider items (yet).</div>`;
-      }
-    };
-
-    // Filters
-    document.getElementById('filters').addEventListener('click', e=>{
-      const btn = e.target.closest('button[data-scope]');
-      if (!btn) return;
-      document.querySelectorAll('#filters .chip').forEach(c=>c.classList.remove('active'));
-      btn.classList.add('active');
-      renderNews(btn.dataset.scope);
+      return {
+        html: `
+        <article class="item" data-flags="${[
+          isOfficial?'official':'',
+          isInsider?'insiders':'',
+          isNat?'national':''
+        ].filter(Boolean).join(' ')}">
+          ${imgTag}
+          <div class="item-body">
+            <div class="chips">${labels.map(chip).join('')} ${sourceLabel?chip(sourceLabel):''}</div>
+            <a class="title" href="${esc(it.url||'#')}" target="_blank" rel="noopener">${esc(it.title||'Untitled')}</a>
+            <div class="meta">${timeAgoISO(it.published_at)} • ${esc(sourceLabel||'')}</div>
+          </div>
+        </article>`,
+        flags: {isOfficial,isInsider,isNat}
+      };
     });
 
-    // Kickoff
-    loadNews();
-    loadRankings();
-    loadSchedule();
-    loadBeats();
+    list.innerHTML = cards.map(c=>c.html).join('');
+
+    // counts
+    $('#countAll').textContent = items.length;
+    $('#countOfficial').textContent = counts.official;
+    $('#countInsiders').textContent = counts.insiders;
+    $('#countNational').textContent = counts.national;
+
+    // filter buttons
+    const pills = [...document.querySelectorAll('#filters .pill')];
+    function applyFilter(kind){
+      pills.forEach(p=>p.classList.toggle('active', p.dataset.filter===kind));
+      const arts = [...document.querySelectorAll('#newsList .item')];
+      arts.forEach(a=>{
+        if(kind==='all') a.style.display='';
+        else a.style.display = (a.dataset.flags||'').includes(kind) ? '' : 'none';
+      });
+    }
+    pills.forEach(p=>p.addEventListener('click',()=>applyFilter(p.dataset.filter)));
+    applyFilter('all');
+  }).catch(()=>{ /* leave empty */ });
+
+  // ----------------- RANKINGS -----------------
+  const rankURL = 'static/data/rankings.json';
+  fetch(rankURL).then(r=>r.json()).then(data=>{
+    if(DEBUG) $('#rankSourceChip').textContent = 'static/data/rankings.json ✓';
+    const ap = data.ap_top25 ?? '—';
+    const kp = data.kenpom ?? '—';
+    const updated = data.updated_at ? new Date(data.updated_at).toLocaleString() : '';
+
+    const apLink = $('#apLink');
+    apLink.textContent = ap;
+    apLink.href = 'https://apnews.com/hub/ap-top-25-mens-college-basketball-poll';
+
+    const kpLink = $('#kpLink');
+    kpLink.textContent = kp; // href already set to kenpom.com
+
+    $('#rankUpdated').textContent = updated ? `Updated ${updated}` : '';
+  }).catch(()=>{ /* keep placeholders */ });
+
+  // ----------------- SCHEDULE -----------------
+  const schedURL = 'static/data/schedule.json';
+  fetch(schedURL).then(r=>r.json()).then(data=>{
+    if(DEBUG) $('#schedSourceChip').textContent = 'static/data/schedule.json ✓';
+    const games = (data.games||[]).slice(0,6);
+    const box = $('#scheduleList');
+    if(!games.length){
+      box.innerHTML = `<div class="empty">No upcoming games found. <a href="https://purduesports.com/sports/mens-basketball/schedule" target="_blank" rel="noopener">Check official schedule ↗</a></div>`;
+      return;
+    }
+    box.innerHTML = games.map(g=>{
+      const when = g.local_datetime || g.datetime || g.tip || '';
+      const title = esc(g.opponent || g.title || 'TBD');
+      const venue = esc(g.venue || '');
+      const where = esc(g.location || '');
+      const url = g.url || g.link || '#';
+      const place = [venue, where].filter(Boolean).join(' — ');
+      return `
+        <article class="item">
+          <div class="item-body">
+            <div class="title">${title}${g.is_exhibition?' (Exhibition)':''}</div>
+            <div class="meta">${esc(g.home_away || '')}</div>
+            <div class="meta" style="margin-top:4px">${when ? new Date(when).toLocaleString()+' (local)' : ''}</div>
+            ${place?`<div class="meta">${place}</div>`:''}
+            <div class="meta" style="margin-top:8px"><a href="${esc(url)}" target="_blank" rel="noopener">Game details ↗</a></div>
+          </div>
+        </article>
+      `;
+    }).join('');
+  }).catch(()=>{ /* leave empty */ });
+
+  // ----------------- BEAT / INSIDERS -----------------
+  const beatURL = 'static/data/beat_links.json';
+  fetch(beatURL).then(r=>r.json()).then(data=>{
+    if(DEBUG) $('#beatSourceChip').textContent = 'static/data/beat_links.json ✓';
+    const items = (data.items||[]).slice(0,12);
+    const box = $('#beatList');
+    if(!items.length){
+      box.innerHTML = `<div class="empty">No insider items (yet).</div>`;
+      return;
+    }
+    box.innerHTML = items.map(it=>{
+      const when = timeAgoISO(it.published_at);
+      const src = esc(it.source || host(it.url||''));
+      const img = it.image ? `<img class="thumb" loading="lazy" src="${esc(it.image)}" alt="">` : '';
+      return `
+        <article class="item">
+          ${img}
+          <div class="item-body">
+            <div class="chips">${chip('insiders')} ${src?chip(src):''}</div>
+            <a class="title" href="${esc(it.url||'#')}" target="_blank" rel="noopener">${esc(it.title||'Untitled')}</a>
+            <div class="meta">${when}${src?' • '+src:''}</div>
+          </div>
+        </article>
+      `;
+    }).join('');
+  }).catch(()=>{ /* leave default */ });
+
   </script>
 </body>
 </html>
