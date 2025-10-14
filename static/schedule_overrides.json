@@ -1,0 +1,59 @@
+{
+  "games": [
+    {
+      "opponent": "Kentucky (Exhibition)",
+      "site": "Away",
+      "event": "Exhibition",
+      "venue": "Rupp Arena",
+      "city": "Lexington, KY",
+      "date": "2025-10-24",
+      "time": "18:00",
+      "tz": "America/New_York",
+      "link": "https://purduesports.com/sports/mens-basketball/schedule"
+    },
+    {
+      "opponent": "TBD",
+      "site": "Home",
+      "event": "Preseason",
+      "venue": "Mackey Arena",
+      "city": "West Lafayette, IN",
+      "date": "2025-11-02",
+      "time": null,
+      "tz": "America/Indiana/Indianapolis",
+      "link": "https://purduesports.com/sports/mens-basketball/schedule"
+    },
+    {
+      "opponent": "Evansville",
+      "site": "Home",
+      "event": "Regular Season Opener",
+      "venue": "Mackey Arena",
+      "city": "West Lafayette, IN",
+      "date": "2025-11-04",
+      "time": "17:00",
+      "tz": "America/Indiana/Indianapolis",
+      "link": "https://purduesports.com/sports/mens-basketball/schedule"
+    },
+    {
+      "opponent": "TBD",
+      "site": "Home",
+      "event": null,
+      "venue": "Mackey Arena",
+      "city": "West Lafayette, IN",
+      "date": "2025-11-08",
+      "time": null,
+      "tz": "America/Indiana/Indianapolis",
+      "link": "https://purduesports.com/sports/mens-basketball/schedule"
+    },
+    {
+      "opponent": "TBD",
+      "site": "Neutral",
+      "event": null,
+      "venue": "TBD",
+      "city": "TBD",
+      "date": "2025-11-18",
+      "time": null,
+      "tz": "America/New_York",
+      "link": "https://purduesports.com/sports/mens-basketball/schedule"
+    }
+  ]
+}
