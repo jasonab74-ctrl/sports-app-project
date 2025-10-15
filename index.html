@@ -7,8 +7,8 @@
   <link rel="icon" href="static/art/boilermaker.png"/>
   <style>
     :root{
-      --bg:#0d1520; --card:#111a27; --muted:#7a8aa0; --text:#e9f0f8; --chip:#172537; --chipText:#cfe1ff;
-      --brand:#7db0ff; --accent:#ffd166; --ok:#55d187; --warn:#ffb86b;
+      --bg:#0d1520;--card:#111a27;--muted:#7a8aa0;--text:#e9f0f8;--chip:#172537;--chipText:#cfe1ff;
+      --brand:#7db0ff;--accent:#ffd166;--ok:#55d187;--warn:#ffb86b;
       --radius:18px;
     }
     *{box-sizing:border-box}
@@ -94,222 +94,108 @@
 
 <script>
 (() => {
-  const v = new URLSearchParams({
-    v: (window.__BUILD_ID__ || Math.random().toString(36).slice(2,8))
-  }).toString();
+  const v = new URLSearchParams({v:Math.random().toString(36).slice(2,8)}).toString();
+  const NEWS_URL  = `static/data/news.json?${v}`;
+  const SCHED_URL = `static/data/schedule.json?${v}`;
+  const RANK_URL  = `static/data/rankings.json?${v}`;
+  const BEATS_URL = `static/data/beat_links.json?${v}`;
 
-  const NEWS_URL     = `static/data/news.json?${v}`;
-  const SCHED_URL    = `static/data/schedule.json?${v}`;
-  const RANK_URL     = `static/data/rankings.json?${v}`;
-  const BEATS_URL    = `static/data/beat_links.json?${v}`;
-
-  const newsGrid = document.getElementById('newsGrid');
-  const newsEmpty = document.getElementById('newsEmpty');
   const counts = {
     all: document.getElementById('cnt-all'),
     official: document.getElementById('cnt-official'),
     insiders: document.getElementById('cnt-insiders'),
     national: document.getElementById('cnt-national')
   };
+  const newsGrid=document.getElementById('newsGrid'),newsEmpty=document.getElementById('newsEmpty');
 
-  // ---- helpers ----
-  const tryParseDate = (s) => {
-    // accept ISO or RFC; never show NaN/huge minutes
-    const d = new Date(s);
-    return isNaN(d.getTime()) ? null : d;
-  };
+  const tryParseDate=s=>{const d=new Date(s);return isNaN(d.getTime())?null:d};
+  const timeAgo=iso=>{const d=tryParseDate(iso);if(!d)return'';const ms=Date.now()-d.getTime(),m=Math.max(0,Math.floor(ms/60000));if(m<60)return`${m}m ago`;const h=Math.floor(m/60);if(h<48)return`${h}h ago`;return`${Math.floor(h/24)}d ago`};
+  const imgTag=u=>!u?`<div class="thumb"></div>`:`<div class="thumb"><img loading="lazy" src="${u}" alt=""></div>`;
+  const isMBB=(t='',s='')=>{const x=`${t} ${s}`.toLowerCase();if(/football|nfl/.test(x))return!1;return/(purdue|boilermakers|mackey|big ten|matt painter|zach edey|men'?s basketball|mbb)/.test(x)};
 
-  const timeAgo = (iso) => {
-    const d = tryParseDate(iso);
-    if (!d) return '';
-    const ms = Date.now() - d.getTime();
-    const m = Math.max(0, Math.floor(ms/60000));
-    if (m < 60) return `${m}m ago`;
-    const h = Math.floor(m/60);
-    if (h < 48) return `${h}h ago`;
-    const days = Math.floor(h/24);
-    return `${days}d ago`;
-  };
-
-  const imgTag = (url) => {
-    if (!url) return `<div class="thumb"></div>`;
-    // allow your Cloudflare proxy or direct images
-    return `<div class="thumb"><img loading="lazy" src="${url}" alt=""></div>`;
-  };
-
-  const isMBB = (title='', summary='') => {
-    // liberal allowlist for MBB, exclude football/NFL
-    const t = `${title} ${summary}`.toLowerCase();
-    if (/(football|nfl|boilers in the nfl)/.test(t)) return false;
-    return /(purdue|boilermakers|boiler makers|mackey|big ten|matt painter|braden smith|lance jones|caleb f|zach edey|gicarri|boiler|men'?s basketball|mbb)/.test(t);
-  };
-
-  // ---- NEWS ----
-  let newsData = [];
-  function renderNews(filter='all'){
-    const items = newsData.filter(x => {
-      if (!isMBB(x.title, x.summary)) return false;
-      if (filter==='all') return true;
-      return x.tag===filter;
-    }).slice(0, 10); // top 10 only
-
-    newsGrid.innerHTML = items.map(x => `
+  let newsData=[];
+  function renderNews(f='all'){
+    const items=newsData.filter(x=>{if(!isMBB(x.title,x.summary))return!1;if(f==='all')return!0;return x.tag===f}).slice(0,10);
+    newsGrid.innerHTML=items.map(x=>`
       <article class="card">
         ${imgTag(x.image)}
         <div class="card-body">
           <div class="meta">
-            ${x.tag ? `<span class="pill">${x.tag}</span>`:''}
-            ${x.source ? `<span class="pill">${x.source}</span>`:''}
+            ${x.tag?`<span class="pill">${x.tag}</span>`:''}
+            ${x.source?`<span class="pill">${x.source}</span>`:''}
           </div>
           <h3 class="title"><a href="${x.url}" target="_blank" rel="noopener">${x.title}</a></h3>
-          <div class="ago">${timeAgo(x.published_at || x.date)}</div>
+          <div class="ago">${timeAgo(x.published_at||x.date)}</div>
         </div>
-      </article>
-    `).join('');
-
-    newsEmpty.style.display = items.length ? 'none' : 'block';
+      </article>`).join('');
+    newsEmpty.style.display=items.length?'none':'block';
   }
 
   async function loadNews(){
     try{
-      const r = await fetch(NEWS_URL, {cache:'no-store'});
-      const json = await r.json();
-      // expected shape: [{title,url,tag,source,image,published_at}]
-      // derive counts before filters
-      const all = json.filter(x => isMBB(x.title, x.summary));
-      const byTag = (t)=> all.filter(x => (x.tag===t));
-      counts.all.textContent = Math.min(all.length, 10);
-      counts.official.textContent = byTag('official').length;
-      counts.insiders.textContent = byTag('insiders').length;
-      counts.national.textContent = byTag('national').length;
-
-      // normalize image and date fields
-      newsData = all.map(x => ({
-        ...x,
-        image: x.image || x.img || x.thumbnail || '',
-        published_at: x.published_at || x.date || x.pubDate || ''
-      })).sort((a,b) => {
-        const da = tryParseDate(a.published_at)?.getTime() || 0;
-        const db = tryParseDate(b.published_at)?.getTime() || 0;
-        return db - da;
-      });
-
+      const r=await fetch(NEWS_URL,{cache:'no-store'}),j=await r.json();
+      const all=j.filter(x=>isMBB(x.title,x.summary));
+      const by=t=>all.filter(x=>x.tag===t);
+      counts.all.textContent=Math.min(all.length,10);
+      counts.official.textContent=by('official').length;
+      counts.insiders.textContent=by('insiders').length;
+      counts.national.textContent=by('national').length;
+      newsData=all.map(x=>({...x,image:x.image||x.img||'',published_at:x.published_at||x.date||''}))
+                  .sort((a,b)=>(tryParseDate(b.published_at)?.getTime()||0)-(tryParseDate(a.published_at)?.getTime()||0));
       renderNews('all');
-    }catch(e){
-      console.error('news load failed', e);
-      newsGrid.innerHTML = '';
-      newsEmpty.style.display = 'block';
-    }
+    }catch(e){console.error(e);newsEmpty.style.display='block';}
   }
 
-  document.getElementById('newsFilters').addEventListener('click', (e)=>{
-    const btn = e.target.closest('.chip'); if(!btn) return;
+  document.getElementById('newsFilters').addEventListener('click',e=>{
+    const b=e.target.closest('.chip');if(!b)return;
     document.querySelectorAll('#newsFilters .chip').forEach(c=>c.classList.remove('active'));
-    btn.classList.add('active');
-    renderNews(btn.dataset.filter);
+    b.classList.add('active');renderNews(b.dataset.filter);
   });
 
-  // ---- RANKINGS ----
   async function loadRankings(){
     try{
-      const r = await fetch(RANK_URL, {cache:'no-store'});
-      const json = await r.json();
-      // expected: { ap_rank: number|string, ap_url, kenpom_rank, kenpom_url, updated_at }
-      const apRank = (json.ap_rank ?? '').toString().trim();
-      const kpRank = (json.kenpom_rank ?? '').toString().trim();
-
-      document.getElementById('apVal').innerHTML =
-        apRank ? `<a href="${json.ap_url || 'https://apnews.com/hub/ap-top-25-college-basketball-poll'}" target="_blank" rel="noopener">${apRank}</a>` : '—';
-
-      document.getElementById('kpVal').innerHTML =
-        kpRank ? `<a href="${json.kenpom_url || 'https://kenpom.com/'}" target="_blank" rel="noopener">${kpRank}</a>` : '—';
-
-      const d = tryParseDate(json.updated_at);
-      document.getElementById('rankUpdated').textContent =
-        d ? `Updated ${d.toLocaleString()}` : '';
-    }catch(e){
-      console.error('rankings load failed', e);
-    }
+      const r=await fetch(RANK_URL,{cache:'no-store'}),j=await r.json();
+      const ap=(j.ap_rank??'').toString().trim(),kp=(j.kenpom_rank??'').toString().trim();
+      document.getElementById('apVal').innerHTML=ap?`<a href="${j.ap_url||'https://apnews.com/hub/ap-top-25-college-basketball-poll'}" target="_blank">${ap}</a>`:'—';
+      document.getElementById('kpVal').innerHTML=kp?`<a href="${j.kenpom_url||'https://kenpom.com/'}" target="_blank">${kp}</a>`:'—';
+      const d=tryParseDate(j.updated_at);
+      document.getElementById('rankUpdated').textContent=d?`Updated ${d.toLocaleString()}`:'';
+    }catch(e){console.error(e);}
   }
 
-  // ---- SCHEDULE ----
   async function loadSchedule(){
     try{
-      const r = await fetch(SCHED_URL, {cache:'no-store'});
-      const json = await r.json(); // array of games
-      const list = document.getElementById('schedList');
-      const empty = document.getElementById('schedEmpty');
-
-      const upcoming = (json || []).map(g => {
-        // normalize fields the page needs
-        const when = tryParseDate(g.datetime_local || g.date_local || g.date);
-        return {
-          opp: g.opponent || g.title || 'TBD',
-          where: g.location || g.venue || '',
-          homeaway: g.home_away || g.site || '',
-          url: g.url || g.game_url || g.link || 'https://purduesports.com/sports/mens-basketball/schedule',
-          when
-        };
-      }).filter(g => g.when ? g.when.getTime() >= Date.now()-86400000 : true)
-        .sort((a,b)=> (a.when?.getTime()||0)-(b.when?.getTime()||0))
-        .slice(0,5);
-
-      if (!upcoming.length){
-        list.innerHTML = '';
-        empty.style.display = 'block';
-        return;
-      }
-
-      list.innerHTML = upcoming.map(g => `
+      const r=await fetch(SCHED_URL,{cache:'no-store'}),j=await r.json(),L=document.getElementById('schedList'),E=document.getElementById('schedEmpty');
+      const up=(j||[]).map(g=>({opp:g.opponent||g.title||'TBD',where:g.location||g.venue||'',ha:g.home_away||g.site||'',url:g.url||'https://purduesports.com/sports/mens-basketball/schedule',when:tryParseDate(g.datetime_local||g.date_local||g.date)}))
+        .filter(g=>g.when?g.when.getTime()>=Date.now()-86400000:!0).sort((a,b)=>(a.when?.getTime()||0)-(b.when?.getTime()||0)).slice(0,5);
+      if(!up.length){L.innerHTML='';E.style.display='block';return;}
+      L.innerHTML=up.map(g=>`
         <div class="game">
           <div class="gtitle">${g.opp}</div>
-          ${g.homeaway ? `<div class="gsub">${g.homeaway}</div>`:''}
-          ${g.when ? `<div class="gsub">${g.when.toLocaleString()} (local)</div>`:''}
-          ${g.where ? `<div class="gsub">${g.where}</div>`:''}
-          <div class="gcta"><a href="${g.url}" target="_blank" rel="noopener">Game details ↗</a></div>
-        </div>
-      `).join('');
-      empty.style.display = 'none';
-    }catch(e){
-      console.error('schedule load failed', e);
-      document.getElementById('schedList').innerHTML = '';
-      document.getElementById('schedEmpty').style.display = 'block';
-    }
+          ${g.ha?`<div class="gsub">${g.ha}</div>`:''}
+          ${g.when?`<div class="gsub">${g.when.toLocaleString()} (local)</div>`:''}
+          ${g.where?`<div class="gsub">${g.where}</div>`:''}
+          <div class="gcta"><a href="${g.url}" target="_blank">Game details ↗</a></div>
+        </div>`).join('');
+      E.style.display='none';
+    }catch(e){console.error(e);}
   }
 
-  // ---- BEAT LINKS ----
   async function loadBeats(){
     try{
-      const r = await fetch(BEATS_URL, {cache:'no-store'});
-      const json = await r.json(); // [{title,url,source}]
-      const list = document.getElementById('beatsList');
-      const empt = document.getElementById('beatsEmpty');
-
-      const items = (json || []).slice(0,8);
-      if (!items.length){
-        list.innerHTML = '';
-        empt.style.display = 'block';
-        return;
-      }
-      list.innerHTML = items.map(x => `
+      const r=await fetch(BEATS_URL,{cache:'no-store'}),j=await r.json(),L=document.getElementById('beatsList'),E=document.getElementById('beatsEmpty');
+      const it=(j||[]).slice(0,8);
+      if(!it.length){L.innerHTML='';E.style.display='block';return;}
+      L.innerHTML=it.map(x=>`
         <div class="game">
-          <div class="gtitle" style="font-size:18px;margin-bottom:6px">
-            <a href="${x.url}" target="_blank" rel="noopener" style="color:#cfe1ff;text-decoration:none">${x.title}</a>
-          </div>
-          ${x.source ? `<div class="gsub">${x.source}</div>`:''}
-        </div>
-      `).join('');
-      empt.style.display = 'none';
-    }catch(e){
-      console.error('beats load failed', e);
-    }
+          <div class="gtitle" style="font-size:18px"><a href="${x.url}" target="_blank" style="color:#cfe1ff;text-decoration:none">${x.title}</a></div>
+          ${x.source?`<div class="gsub">${x.source}</div>`:''}
+        </div>`).join('');
+      E.style.display='none';
+    }catch(e){console.error(e);}
   }
 
-  // kick off
-  loadNews();
-  loadRankings();
-  loadSchedule();
-  loadBeats();
+  loadNews();loadRankings();loadSchedule();loadBeats();
 })();
 </script>
 </body>
