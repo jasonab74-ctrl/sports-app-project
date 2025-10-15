@@ -2,43 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <title>Boilermakers Hub</title>
   <meta name="theme-color" content="#0b1220" />
 
-  <!-- 🔧 CACHE BUSTER + SW CLEANER -->
+  <!-- 🔧 One-time SW/cache cleanup + JSON cache-buster -->
   <script>
     (function buster(){
-      // 1️⃣ Clear service workers & caches
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.getRegistrations()
           .then(regs => Promise.all(regs.map(r => r.unregister())))
           .catch(()=>{});
       }
       if (window.caches && caches.keys) {
-        caches.keys()
-          .then(keys => Promise.all(keys.map(k => caches.delete(k))))
-          .catch(()=>{});
+        caches.keys().then(keys => Promise.all(keys.map(k => caches.delete(k)))).catch(()=>{});
       }
-
-      // 2️⃣ Force fresh JSON every load
       const BUILD_BUSTER = Date.now().toString(36);
       const origFetch = window.fetch;
       window.fetch = function(input, init){
         try{
-          let url = (typeof input==='string')?input:(input&&input.url)||'';
-          if(url && url.includes('/static/data/') && url.endsWith('.json')){
+          let url = (typeof input==='string') ? input : (input && input.url) || '';
+          if (url && url.includes('/static/data/') && url.endsWith('.json')){
             const u = new URL(url, location.href);
-            if(!u.searchParams.has('v')) u.searchParams.set('v', BUILD_BUSTER);
-            input = u.href;
-            init = init||{};
-            init.cache='no-store';
-            const headers = new Headers(init.headers||{});
+            if (!u.searchParams.has('v')) u.searchParams.set('v', BUILD_BUSTER);
+            input = (typeof input==='string') ? u.href : new Request(u.href, input);
+            init = init || {};
+            init.cache = 'no-store';
+            const headers = new Headers(init.headers || {});
             headers.set('Cache-Control','no-cache, no-store, must-revalidate');
-            init.headers=headers;
+            init.headers = headers;
+            init.mode = init.mode || 'cors';
           }
         }catch(e){}
-        return origFetch.call(this,input,init);
+        return origFetch.call(this, input, init);
       };
     })();
   </script>
@@ -46,13 +43,13 @@
   <style>
     :root{
       --bg:#0b1220;--card:#101a2e;--muted:#6b7a90;--text:#eaf2ff;--brand:#ffd166;
-      --chip:#182440;--ring:#2a3a5c;--link:#7ab0ff;--badge:#253457;
+      --chip:#182440;--ring:#2a3a5c;--link:#7ab0ff;--badge:#253457;--ok:#2ecc71;--err:#ff6b6b;
     }
     *{box-sizing:border-box}
     html,body{margin:0;background:var(--bg);color:var(--text);font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial}
     a{color:var(--link);text-decoration:none}
     .wrap{max-width:1100px;margin:32px auto;padding:0 16px}
-    header{display:flex;align-items:center;gap:10px;margin:4px 0 20px}
+    header{display:flex;align-items:center;gap:10px;margin:4px 0 12px}
     .dot{width:14px;height:14px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 3px #0003}
     h1{margin:0;font-weight:800;letter-spacing:.3px}
     .grid{display:grid;grid-template-columns:1fr;gap:16px}
@@ -79,12 +76,25 @@
     .empty{border:1px dashed var(--ring);border-radius:12px;padding:18px;color:var(--muted);text-align:center}
     .beat-list{display:grid;gap:10px}
     footer{color:var(--muted);font-size:13px;margin:24px 0 40px;text-align:center}
+    /* Data Status bar */
+    #diag{background:#0e1730;border:1px solid #223052;border-radius:12px;padding:10px;margin:0 0 12px}
+    #diag h3{margin:0 0 8px;font-size:14px;color:#cfe2ff}
+    .dg{display:flex;flex-wrap:wrap;gap:8px}
+    .dg span{font-size:12px;padding:6px 8px;border-radius:10px;background:#14213a;border:1px solid #24365a;color:#cfe2ff}
+    .ok{background:#153524;border-color:#235a3d;color:#c9f7d8}
+    .bad{background:#331a1a;border-color:#5a2424;color:#ffd6d6}
   </style>
 </head>
 
 <body>
   <div class="wrap">
     <header><div class="dot"></div><h1>Boilermakers Hub</h1></header>
+
+    <!-- 🔍 Data Status (temporary; helps us see exactly what's failing on mobile) -->
+    <section id="diag" class="card">
+      <h3>Data Status</h3>
+      <div class="dg" id="dg"></div>
+    </section>
 
     <div class="grid">
       <section class="card" id="top-headlines">
@@ -121,91 +131,152 @@
   </div>
 
   <script>
-    const $=(q,e=document)=>e.querySelector(q),$$=(q,e=document)=>[...e.querySelectorAll(q)];
+    const $=(q,e=document)=>e.querySelector(q), $$=(q,e=document)=>[...e.querySelectorAll(q)];
     const safe=v=>(v??"").toString();
     const ago=iso=>{try{const d=new Date(iso||"");if(isNaN(d))return"";const m=Math.floor((Date.now()-d)/6e4);if(m<1)return"just now";if(m<60)return m+"m ago";const h=Math.floor(m/60);if(h<24)return h+"h ago";const d2=Math.floor(h/24);return d2+"d ago"}catch{return""}};
 
-    async function getJSON(u){try{const r=await fetch(u,{cache:"no-store"});if(r.ok)return await r.json();}catch{}return null;}
+    const DG = $("#dg");
+    function mark(name, ok, extra){
+      const el = document.createElement("span");
+      el.className = ok ? "ok" : "bad";
+      const msg = ok ? "✓" : "✗";
+      el.innerHTML = `<strong>${name}</strong> ${msg}${extra ? ` — <a href="${extra}" target="_blank" rel="noopener">open</a>` : ""}`;
+      DG.appendChild(el);
+    }
 
-    function kind(i){const t=(i.tags||[]).map(x=>x.toLowerCase());const h=(i.domain||i.source||"").toLowerCase();
-      if(t.includes("official")||h.includes("purduesports"))return"official";
-      if(t.includes("insiders")||h.includes("insider")||h.includes("hammerandrails")||h.includes("goldandblack"))return"insiders";
-      return"national";}
-
-    async function renderNews(){
-      const d=await getJSON("static/data/news.json");
-      const a=Array.isArray(d)?d:(d?.items||[]);
-      const counts={official:0,insiders:0,national:0};
-      for(const i of a)counts[kind(i)]++;
-      $("#count-all").textContent="("+Math.min(10,a.length)+")";
-      $("#count-official").textContent="("+counts.official+")";
-      $("#count-insiders").textContent="("+counts.insiders+")";
-      $("#count-national").textContent="("+counts.national+")";
-      const list=$("#news-list");let cur="all";
-      function paint(){
-        list.innerHTML="";
-        const items=a.filter(i=>cur==="all"||kind(i)===cur).slice(0,10);
-        if(!items.length){list.innerHTML='<div class="empty">No Purdue Men’s Basketball headlines right now.</div>';return;}
-        for(const i of items){
-          const img=safe(i.image||i.image_url||"");
-          const host=safe(i.domain||i.source||"");
-          list.innerHTML+=`
-          <a class="news" href="${i.url}" target="_blank" rel="noopener">
-            <img src="${img}" onerror="this.style.opacity=.1" alt="">
-            <div>
-              <div class="tags"><span class="tag">${kind(i)}</span><span class="tag">${host}</span></div>
-              <span class="title">${safe(i.title)}</span>
-              <div class="meta">${ago(i.published_at||i.date)}</div>
-            </div>
-          </a>`;
+    // fetch with 10s timeout + single retry (helps iOS on spotty cellular)
+    async function fetchJSON(url){
+      const go = async() => {
+        const ctl = new AbortController();
+        const t = setTimeout(()=>ctl.abort(), 10000);
+        try{
+          const r = await fetch(url, {cache:"no-store", signal:ctl.signal});
+          clearTimeout(t);
+          if (!r.ok) throw new Error(r.status + " " + r.statusText);
+          return await r.json();
+        }catch(e){
+          clearTimeout(t);
+          throw e;
         }
-      }
-      paint();
-      $$("#filters .chip").forEach(b=>b.addEventListener("click",()=>{$$("#filters .chip").forEach(x=>x.classList.remove("active"));b.classList.add("active");cur=b.dataset.filter;paint();}));
+      };
+      try{ return await go(); }
+      catch(_){ return await go(); }
     }
 
+    // ---------- NEWS ----------
+    function kind(i){
+      const t=(i.tags||[]).map(x=>x.toLowerCase());
+      const h=(i.domain||i.source||"").toLowerCase();
+      if(t.includes("official")||h.includes("purduesports"))return"official";
+      if(t.includes("insiders")||t.includes("insider")||h.includes("hammerandrails")||h.includes("goldandblack")||h.includes("247sports"))return"insiders";
+      return "national";
+    }
+    async function renderNews(){
+      const url="static/data/news.json";
+      try{
+        const d = await fetchJSON(url);
+        const a = Array.isArray(d)?d:(d?.items||[]);
+        mark("News", true, url);
+        const counts={official:0,insiders:0,national:0};
+        for(const i of a) counts[kind(i)]++;
+        $("#count-all").textContent="("+Math.min(10,a.length)+")";
+        $("#count-official").textContent="("+counts.official+")";
+        $("#count-insiders").textContent="("+counts.insiders+")";
+        $("#count-national").textContent="("+counts.national+")";
+
+        const list=$("#news-list"); let cur="all";
+        function paint(){
+          list.innerHTML="";
+          const items = a.filter(i=> cur==="all" || kind(i)===cur).slice(0,10);
+          if(!items.length){ list.innerHTML='<div class="empty">No Purdue Men’s Basketball headlines right now.</div>'; return; }
+          for(const i of items){
+            const img = safe(i.image||i.image_url||"");
+            const host = safe(i.domain||i.source||"");
+            list.innerHTML += `
+              <a class="news" href="${i.url}" target="_blank" rel="noopener">
+                <img src="${img}" onerror="this.style.opacity=.1" alt="">
+                <div>
+                  <div class="tags"><span class="tag">${kind(i)}</span><span class="tag">${host}</span></div>
+                  <span class="title">${safe(i.title)}</span>
+                  <div class="meta">${ago(i.published_at||i.date)}</div>
+                </div>
+              </a>`;
+          }
+        }
+        paint();
+        $$("#filters .chip").forEach(b=>b.addEventListener("click",()=>{$$("#filters .chip").forEach(x=>x.classList.remove("active"));b.classList.add("active");cur=b.dataset.filter;paint();}));
+      }catch(e){
+        mark("News", false, url);
+        $("#news-list").innerHTML='<div class="empty">Could not load headlines.</div>';
+      }
+    }
+
+    // ---------- RANKINGS ----------
     async function renderRankings(){
-      const d=await getJSON("static/data/rankings.json");
-      if(!d)return;
-      const ap=d.ap||d.ap_top25||d.AP||null;
-      const kp=d.kenpom||d.KenPom||d.kp||null;
-      if(ap)$("#ap-link").textContent=ap;
-      if(kp)$("#kp-link").textContent=kp;
-      const up=d.updated_at||d.generated_at||null;
-      if(up)$("#rank-updated").textContent="Updated "+new Date(up).toLocaleString();
+      const url="static/data/rankings.json";
+      try{
+        const d = await fetchJSON(url);
+        mark("Rankings", true, url);
+        const ap = d.ap||d.ap_top25||d.AP||null;
+        const kp = d.kenpom||d.KenPom||d.kp||null;
+        if(ap!=null) $("#ap-link").textContent = String(ap);
+        if(kp!=null) $("#kp-link").textContent = String(kp);
+        const up = d.updated_at||d.updated||d.generated_at||null;
+        if(up) $("#rank-updated").textContent = "Updated " + new Date(up).toLocaleString();
+      }catch(e){
+        mark("Rankings", false, url);
+      }
     }
 
+    // ---------- SCHEDULE ----------
     async function renderSchedule(){
-      const d=await getJSON("static/data/schedule.json");
-      const list=$("#schedule-list");list.innerHTML="";
-      const g=Array.isArray(d)?d:(d?.games||[]);
-      if(!g.length){list.innerHTML='<div class="empty">No upcoming games. <a href="https://purduesports.com/sports/mens-basketball/schedule" target="_blank">Official schedule ↗</a></div>';return;}
-      for(const x of g.slice(0,8)){
-        const n=safe(x.opponent||x.title||"TBD");
-        const loc=safe(x.location||x.venue||"");
-        const dt=x.date||x.datetime||"";
-        const t=dt?new Date(dt).toLocaleString(): "";
-        list.innerHTML+=`
-        <div class="game">
-          <div class="g-head">${n}</div>
-          <div class="g-line">${t}</div>
-          <div class="g-line">${loc}</div>
-          <a href="${x.url||"#"}" target="_blank" rel="noopener">Game details ↗</a>
-        </div>`;
+      const url="static/data/schedule.json";
+      try{
+        const d = await fetchJSON(url);
+        mark("Schedule", true, url);
+        const list=$("#schedule-list"); list.innerHTML="";
+        const g = Array.isArray(d)?d:(d?.games||[]);
+        if(!g.length){ list.innerHTML = '<div class="empty">No upcoming games. <a href="https://purduesports.com/sports/mens-basketball/schedule" target="_blank" rel="noopener">Official schedule ↗</a></div>'; return; }
+        for(const x of g.slice(0,8)){
+          const n = safe(x.opponent||x.title||"TBD");
+          const loc = safe(x.location||x.venue||"");
+          const dt = x.date||x.datetime||x.tip||"";
+          const t  = dt ? new Date(dt).toLocaleString() : "";
+          list.innerHTML += `
+            <div class="game">
+              <div class="g-head">${n}</div>
+              <div class="g-line">${t}</div>
+              <div class="g-line">${loc}</div>
+              <a href="${x.url||x.link||'#'}" target="_blank" rel="noopener">Game details ↗</a>
+            </div>`;
+        }
+      }catch(e){
+        mark("Schedule", false, url);
+        $("#schedule-list").innerHTML='<div class="empty">Could not load schedule.</div>';
       }
     }
 
+    // ---------- BEATS ----------
     async function renderBeats(){
-      const b=await getJSON("static/data/beat_links.json");
-      const list=$("#beat-list");list.innerHTML="";
-      const a=Array.isArray(b)?b:(b?.items||[]);
-      if(!a.length){list.innerHTML='<div class="empty">No insider items yet.</div>';return;}
-      for(const i of a.slice(0,8)){
-        list.innerHTML+=`<a class="kpi" href="${i.url}" target="_blank" rel="noopener"><div>${safe(i.title)}</div><div style="opacity:.8">${safe(i.source||"")}</div></a>`;
+      const url="static/data/beat_links.json";
+      try{
+        const d = await fetchJSON(url);
+        const list=$("#beat-list"); list.innerHTML="";
+        const a = Array.isArray(d)?d:(d?.items||[]);
+        if(!a.length){ mark("Beats", true, url); list.innerHTML='<div class="empty">No insider items yet.</div>'; return; }
+        mark("Beats", true, url);
+        for(const i of a.slice(0,8)){
+          list.innerHTML += `<a class="kpi" href="${i.url}" target="_blank" rel="noopener"><div>${safe(i.title)}</div><div style="opacity:.8">${safe(i.source||"")}</div></a>`;
+        }
+      }catch(e){
+        mark("Beats", false, url);
+        $("#beat-list").innerHTML='<div class="empty">Could not load insider items.</div>';
       }
     }
 
-    (async function(){await renderNews();await renderRankings();await renderSchedule();await renderBeats();})();
+    (async function(){
+      await Promise.all([renderNews(), renderRankings(), renderSchedule(), renderBeats()]);
+    })();
   </script>
 </body>
 </html>
