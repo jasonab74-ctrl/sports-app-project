@@ -1,4 +1,3 @@
-
 (function(){
   const $ = (sel, el=document) => el.querySelector(sel);
   const $$ = (sel, el=document) => Array.from(el.querySelectorAll(sel));
@@ -10,10 +9,8 @@
     } catch { return '—'; }
   };
 
-  const openNav = () => {
-    const nav = $('#nav');
-    nav.classList.toggle('open');
-  };
+  // Mobile nav
+  const openNav = () => { $('#nav')?.classList.toggle('open'); };
   $('#hamburger')?.addEventListener('click', openNav);
   $('#year').textContent = new Date().getFullYear();
 
@@ -26,6 +23,20 @@
       return null;
     }
   };
+
+  // Show build stamp
+  (async () => {
+    const build = await safeFetch('static/build.json');
+    if (build) {
+      const line = $('#build-line');
+      if (line) {
+        const ts = build.timestamp || '—';
+        const sha = build.commit || '—';
+        const cnt = (build.items_count ?? '—');
+        line.textContent = `Build: ${ts} • commit ${sha} • ${cnt} items`;
+      }
+    }
+  })();
 
   // Load data with graceful fallbacks
   Promise.all([
@@ -70,21 +81,23 @@
     const vrow = $('#video-row');
     const vids = (list || []).filter(i => (i.link||'').includes('youtube.com') || (i.link||'').includes('youtu.be'));
     vids.slice(0, 8).forEach(v => {
-      const url = new URL(v.link);
-      let id = url.searchParams.get('v');
-      if(!id && url.hostname === 'youtu.be'){ id = url.pathname.slice(1); }
-      if(!id) return;
-      const wrap = document.createElement('div');
-      wrap.className = 'card video';
-      wrap.innerHTML = `
-        <iframe width="100%" height="158" src="https://www.youtube.com/embed/${id}" frameborder="0" allowfullscreen loading="lazy"></iframe>
-        <div class="meta"><div class="title">${v.title}</div><div class="date">${fmtDate(v.date)}</div></div>
-      `;
-      vrow.appendChild(wrap);
+      try {
+        const url = new URL(v.link);
+        let id = url.searchParams.get('v');
+        if(!id && url.hostname === 'youtu.be'){ id = url.pathname.slice(1); }
+        if(!id) return;
+        const wrap = document.createElement('div');
+        wrap.className = 'card video';
+        wrap.innerHTML = `
+          <iframe width="100%" height="158" src="https://www.youtube.com/embed/${id}" frameborder="0" allowfullscreen loading="lazy"></iframe>
+          <div class="meta"><div class="title">${v.title}</div><div class="date">${fmtDate(v.date)}</div></div>
+        `;
+        vrow.appendChild(wrap);
+      } catch {}
     });
 
     // Schedule
-    const tbody = $('#schedule-table tbody');
+    const tbody = document.querySelector('#schedule .table tbody');
     (schedule?.games || []).forEach(g => {
       const tr = document.createElement('tr');
       tr.innerHTML = `<td>${g.date}</td><td>${g.opponent}</td><td>${g.result || ''}</td>`;
