@@ -2,7 +2,7 @@ name: Build and Deploy Purdue MBB Hub
 
 on:
   schedule:
-    - cron: "*/30 * * * *"  # every 30 minutes
+    - cron: "*/30 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -31,15 +31,16 @@ jobs:
           python -m pip install --upgrade pip
           pip install feedparser pyyaml rapidfuzz python-dateutil requests
 
-      - name: Run collector
+      - name: Run collector (best-effort)
         env:
           TEAMS: "purdue-mbb"
         run: python tools/collect.py || true
 
-      - name: Write build stamp
+      - name: Build stamp + disable Jekyll
         run: |
+          echo > .nojekyll
           ITEMS_COUNT=$(python - <<'PY'
-import json,sys
+import json
 try:
   j=json.load(open('static/teams/purdue-mbb/items.json'))
   print(len(j.get('items',[])))
@@ -53,6 +54,18 @@ PY
           cat > static/build.json <<EOF
 {"timestamp":"$TS","commit":"$SHA","items_count":$ITEMS_COUNT}
 EOF
+
+      - name: Remove legacy homepage files (safety)
+        run: |
+          rm -f index.md
+          if [ -f docs/index.html ]; then rm -f docs/index.html; fi
+          if [ -f docs/index.md ]; then rm -f docs/index.md; fi
+
+      - name: Assert SPA will be deployed
+        run: |
+          test -f index.html
+          grep -q 'id="build-line"' index.html
+          echo "index.html (SPA) is present and has build-line marker."
 
       - name: Configure Pages
         uses: actions/configure-pages@v4
