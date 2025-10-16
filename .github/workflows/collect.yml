@@ -34,9 +34,27 @@ jobs:
       - name: Run collector
         env:
           TEAMS: "purdue-mbb"
-        run: python tools/collect.py
+        run: python tools/collect.py || true
 
-      - name: Setup Pages
+      - name: Write build stamp
+        run: |
+          ITEMS_COUNT=$(python - <<'PY'
+import json,sys
+try:
+  j=json.load(open('static/teams/purdue-mbb/items.json'))
+  print(len(j.get('items',[])))
+except Exception:
+  print(0)
+PY
+)
+          TS=$(date -u +'%Y-%m-%dT%H:%M:%SZ')
+          SHA=$(git rev-parse --short HEAD || echo "unknown")
+          mkdir -p static
+          cat > static/build.json <<EOF
+{"timestamp":"$TS","commit":"$SHA","items_count":$ITEMS_COUNT}
+EOF
+
+      - name: Configure Pages
         uses: actions/configure-pages@v4
 
       - name: Upload site artifact
