@@ -1,18 +1,9 @@
 {
-  "ap_rank": "\u2014",
-  "kenpom_rank": "\u2014",
+  "ap_rank": "—",
+  "kenpom_rank": "—",
   "nil": [
-    {
-      "name": "Top Purdue Player",
-      "valuation": "$850k est."
-    },
-    {
-      "name": "Key Returner",
-      "valuation": "$620k est."
-    },
-    {
-      "name": "Impact Freshman",
-      "valuation": "$300k est."
-    }
+    { "name": "Top Purdue Player", "valuation": "$850k est." },
+    { "name": "Key Returner", "valuation": "$620k est." },
+    { "name": "Impact Freshman", "valuation": "$300k est." }
   ]
 }
