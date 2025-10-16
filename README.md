@@ -1,74 +1,26 @@
-⚙️ Automation & Maintenance
-🕒 1. Auto-Update Feeds (.github/workflows/collect.yml)
+# Purdue MBB Hub (Modern — Dark Gray / Gold)
 
-This workflow automatically updates all live data and cache-busts your static assets.
+Mobile-first, auto-updating hub for Purdue Men’s Basketball.  
+Built for GitHub Pages + GitHub Actions. Safe fallbacks ensure the site never renders blank.
 
-What it does
+## What's inside
+- `index.html` — Single-page app
+- `static/css/pro.css` — Modern dark-gray/gold theme
+- `static/js/pro.js` — Fetches JSON and renders sections
+- `static/widgets.json` — AP, KenPom, NIL (auto-upgrade later)
+- `static/schedule.json` — Seed schedule
+- `static/sources.json` — Quick links to trusted sources
+- `static/teams/purdue-mbb/items.json` — Headlines (seed + auto-updated)
+- `src/feeds.yaml` — Feeds to collect from
+- `tools/collect.py` — Collector (uses `feeds.yaml`)
+- `.github/workflows/collect.yml` — Runs every 30m (or manually)
 
-Runs tools/collect.py every 3 hours to refresh all JSON feeds (news, videos, schedule, etc.).
+## Deploy
+1. Upload all files to your repo (default branch).
+2. Ensure GitHub Pages is enabled for the repo (Settings ➜ Pages ➜ Source: `main` root).
+3. Go to _Actions ➜ Collect Feeds ➜ Run workflow_ to update immediately.
 
-Automatically bumps the version tags on:
-
-static/css/app.css
-static/js/app.js
-static/js/pro.js
-
-
-so browsers always fetch fresh content.
-
-Commits and pushes updates directly to the main branch.
-
-Manual triggers
-
-You can also run it anytime from the Actions → Auto-update feeds → “Run workflow” button.
-
-Changing frequency
-
-Currently: every 3 hours.
-
-To switch to a single daily update (6 AM Phoenix time), edit:
-
-schedule:
-  - cron: "0 13 * * *"
-
-
-in collect.yml.
-
-🧹 2. Weekly Repo Cleanup (.github/workflows/squash-auto-updates.yml)
-
-This optional workflow keeps your commit history clean and fast.
-
-What it does
-
-Runs every Sunday at 5 AM Phoenix (12 UTC).
-
-Keeps the most recent 20 commits (roughly 2–3 days at 3-hour intervals).
-
-Squashes all older “Auto-update” commits into a single summary commit (Repo cleanup: preserve latest 20 commits).
-
-Benefits
-
-Reduces repo size and cluttered commit logs.
-
-Keeps the main branch easy to review and fork.
-
-Manual trigger
-
-You can also run it on demand under Actions → Weekly Repo Cleanup → “Run workflow.”
-
-🧭 Maintenance Notes
-
-Both workflows are fully autonomous and require no tokens beyond the default GITHUB_TOKEN.
-
-You can safely pause automation anytime by disabling workflows in the Actions tab.
-
-For offseason periods, switch collect.yml to daily and disable the squash job if you prefer full commit history.
-
-✅ Result:
-Your GitHub Pages site (https://jasonab74-ctrl.github.io/sports-app-project/) now stays:
-
-Self-updating every few hours
-
-Cache-busted automatically
-
-Clean and lightweight weekly
+## Customize for another team
+- Duplicate `static/teams/purdue-mbb/` to new slug (e.g., `arizona-mbb`).
+- Add feeds under that slug in `src/feeds.yaml`.
+- Set `TEAMS` env in the workflow (comma-separated for multi-team).

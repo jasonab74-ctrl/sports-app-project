@@ -1,14 +1,36 @@
 {
-  "sources": [
+  "items": [
     {
-      "name": "Purdue Athletics",
-      "type": "news",
-      "url": "https://purduesports.com/rss.aspx?path=mbball",
-      "trust": "official"
+      "name": "Hammer & Rails",
+      "url": "https://www.hammerandrails.com/"
+    },
+    {
+      "name": "Journal & Courier",
+      "url": "https://www.jconline.com/sports/college/purdue/"
+    },
+    {
+      "name": "GoldandBlack",
+      "url": "https://purdue.rivals.com/"
+    },
+    {
+      "name": "On3 Purdue",
+      "url": "https://www.on3.com/teams/purdue-boilermakers/"
+    },
+    {
+      "name": "ESPN Purdue",
+      "url": "https://www.espn.com/mens-college-basketball/team/_/id/2509/purdue-boilermakers"
+    },
+    {
+      "name": "Yahoo Sports Purdue",
+      "url": "https://sports.yahoo.com/ncaab/teams/purdue/"
+    },
+    {
+      "name": "CBS Sports Purdue",
+      "url": "https://www.cbssports.com/college-basketball/teams/PURDUE/purdue-boilermakers/"
+    },
+    {
+      "name": "Field of 68",
+      "url": "https://www.youtube.com/@thefieldof68"
     }
-  ],
-  "keywords": [
-    "Purdue",
-    "Boilermakers"
   ]
 }

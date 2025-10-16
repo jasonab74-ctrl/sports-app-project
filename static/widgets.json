@@ -1,7 +1,18 @@
 {
-  "ap_rank": 3,
-  "ap_url": "https://apnews.com/hub/ap-top-25-mens-college-basketball-poll",
-  "kenpom_rank": 2,
-  "kenpom_url": "https://kenpom.com",
-  "updated_at": "2025-10-02T18:00:00Z"
+  "ap_rank": "\u2014",
+  "kenpom_rank": "\u2014",
+  "nil": [
+    {
+      "name": "Top Purdue Player",
+      "valuation": "$850k est."
+    },
+    {
+      "name": "Key Returner",
+      "valuation": "$620k est."
+    },
+    {
+      "name": "Impact Freshman",
+      "valuation": "$300k est."
+    }
+  ]
 }

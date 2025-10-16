@@ -1,5 +1,104 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Boilermakers Hub</title></head><body><main class="site"><h1>Boilermakers Hub</h1></main></body></html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Purdue Men's Basketball — Boilermakers Hub</title>
+  <meta name="theme-color" content="#1b1c1e">
+  <link rel="preload" href="static/css/pro.css" as="style">
+  <link rel="stylesheet" href="static/css/pro.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell">
+      <div class="brand">
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="brand-logo">
+          <path d="M3 12l3-5h10l-3 5 3 5H6l-3-5z"></path>
+        </svg>
+        <div class="brand-copy">
+          <h1>Purdue Boilermakers</h1>
+          <p class="sub">Men’s Basketball Hub — 2025–26</p>
+        </div>
+      </div>
+      <button class="hamburger" aria-label="Open menu" id="hamburger">☰</button>
+      <nav id="nav" class="nav">
+        <a href="#top-news">News</a>
+        <a href="#videos">Videos</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#rankings">Rankings</a>
+        <a href="#links">Links</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section id="top-news" class="block">
+      <div class="block-head">
+        <h2>Latest Headlines</h2>
+        <span class="accent"></span>
+      </div>
+      <div id="news-grid" class="grid"></div>
+      <div id="news-empty" class="empty hidden">No headlines yet — using cached seed if available.</div>
+    </section>
+
+    <section id="videos" class="block">
+      <div class="block-head">
+        <h2>Video Highlights</h2>
+        <span class="accent"></span>
+      </div>
+      <div id="video-row" class="video-row"></div>
+    </section>
+
+    <section class="columns">
+      <section id="schedule" class="block col">
+        <div class="block-head">
+          <h2>Schedule</h2>
+          <span class="accent"></span>
+        </div>
+        <table class="table" id="schedule-table">
+          <thead><tr><th>Date</th><th>Opponent</th><th>Result</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </section>
+
+      <section id="rankings" class="block col">
+        <div class="block-head">
+          <h2>Rankings & NIL</h2>
+          <span class="accent"></span>
+        </div>
+        <div class="rank-cards">
+          <div class="card kpi">
+            <div class="kpi-label">AP Top 25</div>
+            <div class="kpi-value" id="ap-rank">—</div>
+          </div>
+          <div class="card kpi">
+            <div class="kpi-label">KenPom</div>
+            <div class="kpi-value" id="kenpom-rank">—</div>
+          </div>
+        </div>
+        <div class="nil">
+          <h3>NIL Leaderboard</h3>
+          <ul id="nil-list"></ul>
+        </div>
+      </section>
+    </section>
+
+    <section id="links" class="block">
+      <div class="block-head">
+        <h2>Key Sources</h2>
+        <span class="accent"></span>
+      </div>
+      <ul class="links" id="sources-list"></ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <p>Auto-updating via GitHub Actions • Built for Purdue MBB • © <span id="year"></span></p>
+    </div>
+  </footer>
+
+  <script>window.__APP_BASE__ = (document.querySelector('base')?.getAttribute('href') || '/');</script>
+  <script src="static/js/pro.js" defer></script>
+</body>
+</html>

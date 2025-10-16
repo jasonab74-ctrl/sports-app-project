@@ -1,35 +1,25 @@
 purdue-mbb:
-  - name: Purdue Athletics (Official MBB)
-    url: https://purduesports.com/rss.aspx?path=mbball
-    type: rss
-    trust_level: official
-
-  - name: Journal & Courier Purdue
-    url: https://rssfeeds.jconline.com/purdue/mbb
-    type: rss
-    trust_level: local
-
-  - name: GoldandBlack.com (On3)
-    url: https://www.on3.com/teams/purdue-boilermakers/feed/
-    type: rss
+  - name: Hammer & Rails
     trust_level: beat
-
-  - name: Hammer and Rails (SB Nation)
-    url: https://www.hammerandrails.com/rss/current
-    type: rss
-    trust_level: blog
-
-  - name: r/CollegeBasketball (search Purdue)
-    url: https://www.reddit.com/r/CollegeBasketball/search.rss?q=Purdue&restrict_sr=on&sort=new&t=week
-    type: rss
-    trust_level: fan_forum
-
-  - name: YouTube Highlights (query Purdue Basketball)
-    url: https://www.youtube.com/feeds/videos.xml?search_query=Purdue+Basketball
-    type: rss
+    url: https://www.hammerandrails.com/rss/index.xml
+  - name: Journal & Courier
+    trust_level: local
+    url: https://rssfeeds.jconline.com/jconline/sports/college/purdue
+  - name: GoldandBlack
+    trust_level: beat
+    url: https://purdue.rivals.com/rss
+  - name: On3 Purdue
+    trust_level: beat
+    url: https://www.on3.com/teams/purdue-boilermakers/rss/
+  - name: ESPN Purdue
     trust_level: national
-
+    url: https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/2509/news
+  - name: Yahoo Sports Purdue
+    trust_level: national
+    url: https://sports.yahoo.com/ncaab/teams/purdue/rss/
   - name: CBS Sports Purdue
-    url: https://www.cbssports.com/college-basketball/teams/PUR/purdue-boilermakers/rss/
-    type: rss
     trust_level: national
+    url: https://www.cbssports.com/college-basketball/teams/PURDUE/purdue-boilermakers/rss/
+  - name: Field of 68 (YouTube)
+    trust_level: national
+    url: https://www.youtube.com/feeds/videos.xml?channel_id=UCt7sv-NKh44rHAEb-qCCxvA

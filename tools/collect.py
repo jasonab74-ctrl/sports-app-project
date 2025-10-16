@@ -1,162 +1,125 @@
-#!/usr/bin/env python3
-import json, sys, argparse, time, re
+import os, json, yaml, feedparser
 from datetime import datetime, timezone
-from dateutil import parser as dtp
-import feedparser
-import requests
+from urllib.parse import urlparse, urlunparse
+from rapidfuzz import fuzz
 
-# ---- SOURCES (lightweight + stable) -----------------------------------------
-OFFICIAL_FEEDS = [
-    # Purdue official site – MBB category feed (works as a general athletics feed; we filter by hoops terms)
-    "https://purduesports.com/rss.aspx?path=mbball",
-]
+TRUST_WEIGHTS = {"official":1.0,"beat":0.9,"national":0.8,"local":0.75,"blog":0.6,"fan_forum":0.5}
+RECENCY_HALFLIFE_HOURS = 18.0
+DEDUP_TITLE_SIM_THRESHOLD = 85
+DEFAULT_LIMIT = 200
 
-INSIDER_FEEDS = [
-    "https://www.hammerandrails.com/rss/index.xml",  # SB Nation Purdue
-    # Add Journal & Courier’s Purdue feed if desired (many outlets block; keep to RSS)
-]
+FEED_HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) TeamHubBot/1.0"
+}
 
-NATIONAL_FEEDS = [
-    # National CBB outlets that often mention Purdue (their team tags vary; we filter)
-    "https://www.espn.com/espn/rss/ncb/news",     # ESPN CBB news
-    "https://sports.yahoo.com/college-basketball/rss.xml",  # Yahoo CBB
-    "https://www.cbssports.com/college-basketball/feeds/rss/main",  # CBS CBB
-]
+def recency_weight(dt):
+    now = datetime.now(timezone.utc)
+    hours = max(0, (now - dt).total_seconds()/3600.0)
+    return 0.5 ** (hours / RECENCY_HALFLIFE_HOURS)
 
-# ---- KEYWORD FILTERS ---------------------------------------------------------
-# Keep this broad enough so we don’t starve the feed.
-TEAM_TERMS = [
-    r"\bPurdue\b",
-    r"\bBoilermakers?\b",
-    r"\bPainter\b", r"\bZach\s+Edey\b", r"\bBraden\s+Smith\b",
-    r"\bMackey\s+Arena\b",
-]
+def canonicalize_url(url):
+    if not url:
+        return ""
+    p = urlparse(url)
+    return urlunparse((p.scheme, p.netloc, p.path, "", "", ""))
 
-# Exclude football to avoid bleed-over:
-EXCLUDE_TERMS = [
-    r"\bfootball\b", r"\bgridiron\b",
-]
+def parse_dt(entry):
+    for key in ("published_parsed","updated_parsed","created_parsed"):
+        val = getattr(entry, key, None) or entry.get(key)
+        if val:
+            try:
+                return datetime(*val[:6], tzinfo=timezone.utc)
+            except Exception:
+                pass
+    return datetime.now(timezone.utc)
 
-TEAM_RE = re.compile("|".join(TEAM_TERMS), re.IGNORECASE)
-EXCLUDE_RE = re.compile("|".join(EXCLUDE_TERMS), re.IGNORECASE)
+def normalize_item(feed_name, trust_level, entry):
+    link = entry.get("link") or ""
+    title = (entry.get("title") or "").strip()
+    summary = (entry.get("summary") or entry.get("description") or "").strip()
+    date = parse_dt(entry)
+    image = None
 
-# ---- HELPERS -----------------------------------------------------------------
-def to_iso(ts):
-    """Return strict ISO8601 with Z, falling back to now if missing."""
-    if not ts:
-        return datetime.now(timezone.utc).isoformat()
-    try:
-        dt = dtp.parse(ts)
-        if not dt.tzinfo:
-            dt = dt.replace(tzinfo=timezone.utc)
-        return dt.astimezone(timezone.utc).isoformat()
-    except Exception:
-        return datetime.now(timezone.utc).isoformat()
+    media = entry.get("media_content") or entry.get("media_thumbnail")
+    if isinstance(media, list) and media:
+        image = media[0].get("url")
 
-def classify(url, source_title):
-    host = (url or "").lower()
-    src = (source_title or "").lower()
-    if "purduesports.com" in host or "purduesports" in src:
-        return "official"
-    if "hammerandrails" in host or "journal" in src:
-        return "insiders"
-    # default to national if it got through the Purdue filter
-    return "national"
+    return {
+        "type": "news",
+        "source": feed_name,
+        "trust": trust_level,
+        "title": title,
+        "link": link,
+        "date": date.isoformat(),
+        "summary": summary[:500],
+        "image": image
+    }
 
-def pick_image(entry):
-    # Try common fields across feeds
-    # feedparser puts images in media_content / links / summary with <img>
-    if hasattr(entry, "media_content"):
-        for mc in entry.media_content:
-            if "url" in mc:
-                return mc["url"]
-    if hasattr(entry, "media_thumbnail"):
-        for mt in entry.media_thumbnail:
-            if "url" in mt:
-                return mt["url"]
-    if hasattr(entry, "links"):
-        for ln in entry.links:
-            if ln.get("rel") in ("enclosure", "image") and "href" in ln:
-                return ln["href"]
-    # last resort: scan summary for img src
-    summ = getattr(entry, "summary", "") or ""
-    m = re.search(r'<img[^>]+src="([^"]+)"', summ, re.IGNORECASE)
-    if m:
-        return m.group(1)
-    return None
-
-def acceptable(title, summary):
-    blob = " ".join([title or "", summary or ""])
-    if EXCLUDE_RE.search(blob):
-        return False
-    return bool(TEAM_RE.search(blob))
-
-def harvest(feeds):
-    items = []
-    for url in feeds:
-        try:
-            d = feedparser.parse(url)
-            for e in d.entries:
-                title = getattr(e, "title", "")
-                summary = getattr(e, "summary", "")
-                link = getattr(e, "link", "")
-                if not acceptable(title, summary):
-                    continue
-                published_raw = getattr(e, "published", "") or getattr(e, "updated", "")
-                published = to_iso(published_raw)
-                img = pick_image(e)
-                source_title = getattr(d.feed, "title", "") or ""
-                cat = classify(link, source_title)
-                items.append({
-                    "title": title,
-                    "url": link,
-                    "publishedAt": published,   # strict ISO for UI
-                    "source": source_title,
-                    "category": cat,            # official | insiders | national
-                    "image": img
-                })
-        except Exception:
+def dedup_items(items):
+    out = []
+    seen_urls = set()
+    for it in items:
+        url = canonicalize_url(it.get("link"))
+        title = (it.get("title") or "").strip().lower()
+        if url and url in seen_urls:
             continue
-    # newest first
-    items.sort(key=lambda x: x["publishedAt"], reverse=True)
-    return items
+        duplicate = False
+        for oi in out:
+            if fuzz.token_set_ratio(title, (oi.get("title") or "").strip().lower()) >= DEDUP_TITLE_SIM_THRESHOLD:
+                duplicate = True
+                break
+        if not duplicate:
+            out.append(it)
+            if url:
+                seen_urls.add(url)
+    return out
 
-def write_json(path, data):
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
+def score_item(it):
+    trust = TRUST_WEIGHTS.get(str(it.get("trust") or "").lower(), 0.6)
+    try:
+        dt = datetime.fromisoformat(it["date"].replace("Z","+00:00"))
+    except Exception:
+        dt = datetime.now(timezone.utc)
+    recency = recency_weight(dt)
+    return 0.7*recency + 0.3*trust
+
+def collect_team(team_slug, feeds, out_path, limit=DEFAULT_LIMIT):
+    import ssl
+    try:
+        ssl._create_default_https_context = ssl._create_unverified_context
+    except Exception:
+        pass
+
+    all_items = []
+    for f in feeds:
+        name = f.get("name","Source")
+        url = f.get("url")
+        trust = f.get("trust_level","blog")
+        if not url:
+            continue
+        d = feedparser.parse(url, request_headers=FEED_HEADERS)
+        for e in d.entries[:50]:
+            it = normalize_item(name, trust, e)
+            all_items.append(it)
+
+    all_items = dedup_items(all_items)
+    all_items.sort(key=score_item, reverse=True)
+    all_items = all_items[:limit]
+
+    os.makedirs(os.path.dirname(out_path), exist_ok=True)
+    with open(out_path, "w", encoding="utf-8") as f:
+        json.dump({"items": all_items}, f, indent=2, ensure_ascii=False)
 
 def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--news", action="store_true")
-    ap.add_argument("--beat", action="store_true")
-    args = ap.parse_args()
-
-    if args.news or args.beat:
-        news = harvest(OFFICIAL_FEEDS + INSIDER_FEEDS + NATIONAL_FEEDS)
-        # de-dup by URL
-        seen = set()
-        uniq = []
-        for n in news:
-            if n["url"] in seen:
-                continue
-            seen.add(n["url"])
-            uniq.append(n)
-        # cap for UI headroom (store more than 10 so filters can slice)
-        write_json("static/data/news.json", uniq[:50])
-
-    if args.beat:
-        # Beat = insiders first; if fewer than 6, top up with official items
-        data = []
-        try:
-            with open("static/data/news.json", "r", encoding="utf-8") as f:
-                all_news = json.load(f)
-        except Exception:
-            all_news = []
-
-        insiders = [n for n in all_news if n.get("category") == "insiders"]
-        official  = [n for n in all_news if n.get("category") == "official"]
-        pick = insiders[:8] + official[:4]
-        write_json("static/data/beat_links.json", pick[:10])
+    conf = yaml.safe_load(open("src/feeds.yaml", "r", encoding="utf-8"))
+    teams_env = os.environ.get("TEAMS","").strip()
+    teams = [t.strip() for t in teams_env.split(",") if t.strip()] if teams_env else list(conf.keys())
+    if not teams:
+        raise SystemExit("No teams specified and feeds.yaml is empty.")
+    for team in teams:
+        if team not in conf:
+            continue
+        collect_team(team, conf[team], f"static/teams/{team}/items.json")
 
 if __name__ == "__main__":
     main()

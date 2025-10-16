@@ -1,18 +1,9 @@
 {
-  "name": "Purdue Men's Basketball",
-  "short_name": "Purdue",
-  "primary_color": "#000000",
-  "secondary_color": "#CEB888",
-  "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Purdue_Boilermakers_wordmark.svg/512px-Purdue_Boilermakers_wordmark.svg.png",
-  "wordmark": "Boilermakers",
-  "keywords": ["Purdue", "Boilermakers", "Painter", "Mackey", "Boilerball", "Edey"],
-  "links": [
-    { "label": "News", "href": "#news" },
-    { "label": "Videos", "href": "#videos" },
-    { "label": "Rankings", "href": "#rankings" },
-    { "label": "Schedule", "href": "#schedule" },
-    { "label": "NIL", "href": "#nil" },
-    { "label": "Tickets", "href": "https://purduesports.com/tickets" },
-    { "label": "Shop", "href": "https://shop.purduesports.com/" }
-  ]
+  "team": "Purdue Boilermakers",
+  "slug": "purdue-mbb",
+  "colors": {
+    "primary": "#1b1c1e",
+    "secondary": "#cfb87c",
+    "text": "#e8eaed"
+  }
 }

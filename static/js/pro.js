@@ -1,82 +1,112 @@
-// static/js/pro.js — schedule panel + odds + stamps (exhibitions & tourneys included)
-(function () {
-  const BASE = "./";
-  const url = (p) => BASE + p.replace(/^\//, "");
-  const $  = (id) => document.getElementById(id);
 
-  const esc = (s="") => (s+"").replace(/[&<>"']/g, c=>({ "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;" }[c]));
-  const tzAbbr = (d=new Date()) => {
-    try{ return d.toLocaleTimeString([], { timeZoneName:"short" }).split(" ").pop() || "local"; }catch{ return "local"; }
-  };
-  const fmtLocal = (iso)=>{
-    try{
-      const dt=new Date(iso);
-      const d = dt.toLocaleDateString([], { weekday:"short", month:"2-digit", day:"2-digit" });
-      const t = dt.toLocaleTimeString([], { hour:"numeric", minute:"2-digit" });
-      return `${d}, ${t} ${tzAbbr(dt)}`;
-    }catch{return iso;}
+(function(){
+  const $ = (sel, el=document) => el.querySelector(sel);
+  const $$ = (sel, el=document) => Array.from(el.querySelectorAll(sel));
+  const fmtDate = (iso) => {
+    try {
+      const d = new Date(iso);
+      const opts = {month:'short', day:'numeric'};
+      return d.toLocaleDateString(undefined, opts);
+    } catch { return '—'; }
   };
 
-  async function load(path){
+  const openNav = () => {
+    const nav = $('#nav');
+    nav.classList.toggle('open');
+  };
+  $('#hamburger')?.addEventListener('click', openNav);
+  $('#year').textContent = new Date().getFullYear();
+
+  const safeFetch = async (path) => {
     try{
-      const r = await fetch(url(path)+`?v=${Date.now()}`, { cache:"no-store" });
-      if (!r.ok) throw 0;
-      return await r.json();
-    }catch{return null;}
-  }
-
-  function line(label, value){
-    if (!value) return "";
-    return `<div class="link-meta">${label}: ${esc(value)}</div>`;
-  }
-
-  function renderSchedule(data){
-    const el = $("scheduleList");
-    const stamp = $("schedStamp");
-    if (!el) return;
-
-    if (!data){
-      el.innerHTML = `<div class="muted small">Failed to load schedule.</div>`;
-      return;
+      const res = await fetch(path, {cache:'no-store'});
+      if(!res.ok) throw new Error(res.status);
+      return await res.json();
+    }catch(e){
+      return null;
     }
-    if (data.updated && stamp){
-      try{ stamp.textContent = "Updated " + new Date(data.updated).toLocaleString(); }catch{}
+  };
+
+  // Load data with graceful fallbacks
+  Promise.all([
+    safeFetch('static/teams/purdue-mbb/items.json'),
+    safeFetch('static/schedule.json'),
+    safeFetch('static/widgets.json'),
+    safeFetch('static/sources.json')
+  ]).then(([items, schedule, widgets, sources]) => {
+    // Headlines
+    const list = (items && items.items ? items.items : []);
+    const grid = $('#news-grid');
+    const empty = $('#news-empty');
+    if(list.length){
+      empty.classList.add('hidden');
+      list.slice(0, 10).forEach(it => {
+        const a = document.createElement('a');
+        a.className = 'card';
+        a.href = it.link || '#';
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        const img = document.createElement('img');
+        img.className = 'thumb';
+        img.loading = 'lazy';
+        img.src = it.image || 'static/placeholder-16x9.svg';
+        img.alt = '';
+        const meta = document.createElement('div');
+        meta.className = 'meta';
+        meta.innerHTML = `
+          <div class="source">${(it.source||'').toString()}</div>
+          <div class="title">${(it.title||'').toString()}</div>
+          <div class="date">${fmtDate(it.date)}</div>
+        `;
+        a.appendChild(img);
+        a.appendChild(meta);
+        grid.appendChild(a);
+      });
+    } else {
+      empty.classList.remove('hidden');
     }
 
-    const now = Date.now() - 3*60*60*1000; // show near-past start too
-    const upcoming = (data.games||[]).filter(g=> new Date(g.utc).getTime() >= now).slice(0, 12);
-    if (!upcoming.length){
-      el.innerHTML = `<div class="muted small">No upcoming games.</div>`;
-      return;
+    // Videos (derive from any YouTube links in items)
+    const vrow = $('#video-row');
+    const vids = (list || []).filter(i => (i.link||'').includes('youtube.com') || (i.link||'').includes('youtu.be'));
+    vids.slice(0, 8).forEach(v => {
+      const url = new URL(v.link);
+      let id = url.searchParams.get('v');
+      if(!id && url.hostname === 'youtu.be'){ id = url.pathname.slice(1); }
+      if(!id) return;
+      const wrap = document.createElement('div');
+      wrap.className = 'card video';
+      wrap.innerHTML = `
+        <iframe width="100%" height="158" src="https://www.youtube.com/embed/${id}" frameborder="0" allowfullscreen loading="lazy"></iframe>
+        <div class="meta"><div class="title">${v.title}</div><div class="date">${fmtDate(v.date)}</div></div>
+      `;
+      vrow.appendChild(wrap);
+    });
+
+    // Schedule
+    const tbody = $('#schedule-table tbody');
+    (schedule?.games || []).forEach(g => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `<td>${g.date}</td><td>${g.opponent}</td><td>${g.result || ''}</td>`;
+      tbody.appendChild(tr);
+    });
+
+    // Widgets
+    if(widgets){
+      $('#ap-rank').textContent = widgets.ap_rank ?? '—';
+      $('#kenpom-rank').textContent = widgets.kenpom_rank ?? '—';
+      (widgets.nil || []).forEach(row => {
+        const li = document.createElement('li');
+        li.innerHTML = `<span class="name">${row.name}</span><span class="val">${row.valuation}</span>`;
+        $('#nil-list').appendChild(li);
+      });
     }
-    el.innerHTML = upcoming.map(g=>{
-      const odds = Array.isArray(g?.odds?.consensus) ? g.odds.consensus : [];
-      const head = odds.find(o => o.spread!==null && o.spread!==undefined) || odds[0];
-      const oddsLine = head
-        ? `Odds: ${esc(head.book)}${head.spread!==null&&head.spread!==undefined?` • Spread: ${head.spread}`:""}${head.total?` • Total: ${head.total}`:""}${head.moneyline?` • ML: ${head.moneyline}`:""}`
-        : "";
 
-      return `
-        <div class="link-card schedule-card">
-          <div class="link-body">
-            <div class="link-title">${esc(g.opponent || "TBD")}</div>
-            <div class="link-meta">${esc(g.venue || "Neutral")}</div>
-            <div class="link-meta">${fmtLocal(g.utc)}</div>
-            ${line("Event", g.event)}
-            ${line("TV", g.tv)}
-            ${line("Location", g.location)}
-            ${oddsLine ? `<div class="link-meta">${oddsLine}</div>` : ""}
-            ${g.url ? `<div class="link-meta"><a class="muted" href="${esc(g.url)}" target="_blank" rel="noopener">Game details ↗</a></div>` : ""}
-          </div>
-        </div>`;
-    }).join("");
-  }
-
-  async function hydratePanels(){
-    const schedule = await load("static/teams/purdue-mbb/schedule.json");
-    renderSchedule(schedule);
-  }
-
-  window.PRO = window.PRO || {};
-  window.PRO.hydratePanels = hydratePanels;
+    // Sources
+    (sources?.items || []).forEach(s => {
+      const li = document.createElement('li');
+      li.innerHTML = `<a href="${s.url}" target="_blank" rel="noopener noreferrer">${s.name}</a>`;
+      $('#sources-list').appendChild(li);
+    });
+  });
 })();

@@ -1,84 +1,104 @@
 {
   "items": [
     {
-      "title": "Purdue Announces 2025–26 Non-Conference Slate",
-      "link": "https://purduesports.com/",
-      "source": "PurdueSports.com",
-      "tier": "official",
-      "type": "article",
-      "ts": 1760462879263
+      "type": "news",
+      "source": "Hammer & Rails",
+      "trust": "beat",
+      "title": "Purdue offseason notes: rotation battles and camp standouts",
+      "link": "https://www.hammerandrails.com/",
+      "date": "2025-10-16T14:27:34.718375Z",
+      "summary": "Early look at roles and depth.",
+      "image": ""
     },
     {
-      "title": "AP Poll movers and what it means for Purdue",
-      "link": "https://www.si.com/college-basketball",
-      "source": "Sports Illustrated CBB",
-      "tier": "national",
-      "type": "article",
-      "ts": 1760459279263
-    },
-    {
-      "title": "Big Ten preview: tiers, X-factors, and POY race",
-      "link": "https://www.cbssports.com/college-basketball/",
-      "source": "CBS Sports CBB",
-      "tier": "national",
-      "type": "article",
-      "ts": 1760455679263
-    },
-    {
-      "title": "Big Ten storylines to watch",
-      "link": "https://sports.yahoo.com/college-basketball/",
-      "source": "Yahoo CBB",
-      "tier": "national",
-      "type": "article",
-      "ts": 1760452079263
-    },
-    {
-      "title": "Coach Painter on lineup experimentation",
-      "link": "https://www.jconline.com/sports/",
+      "type": "news",
       "source": "Journal & Courier",
-      "tier": "insiders",
-      "type": "article",
-      "ts": 1760448479263
+      "trust": "local",
+      "title": "Boilermakers non-conference slate shaping up",
+      "link": "https://www.jconline.com/sports/college/purdue/",
+      "date": "2025-10-16T14:27:34.718375Z",
+      "summary": "Dates and venues emerging.",
+      "image": ""
     },
     {
-      "title": "Recruiting board resets after fall visits",
-      "link": "https://247sports.com/college/purdue/",
-      "source": "247Sports Purdue",
-      "tier": "insiders",
-      "type": "article",
-      "ts": 1760444879263
+      "type": "news",
+      "source": "On3 Purdue",
+      "trust": "beat",
+      "title": "2025 recruiting board: guards trending for Purdue",
+      "link": "https://www.on3.com/teams/purdue-boilermakers/",
+      "date": "2025-10-16T14:27:34.718375Z",
+      "summary": "Names to watch on the trail.",
+      "image": ""
     },
     {
-      "title": "Film Room: PnR counters for 2025–26",
+      "type": "news",
+      "source": "GoldandBlack",
+      "trust": "beat",
+      "title": "Inside practice: defensive tweaks and pace",
       "link": "https://purdue.rivals.com/",
-      "source": "Gold and Black (Rivals)",
-      "tier": "insiders",
-      "type": "article",
-      "ts": 1760441279263
+      "date": "2025-10-16T14:27:34.718375Z",
+      "summary": "What\u2019s changing schematically.",
+      "image": ""
     },
     {
-      "title": "Mic’d Up: Preseason Workouts",
+      "type": "news",
+      "source": "ESPN",
+      "trust": "national",
+      "title": "Way-too-early Big Ten tiers",
+      "link": "https://www.espn.com/mens-college-basketball/",
+      "date": "2025-10-16T14:27:34.718375Z",
+      "summary": "Where Purdue stacks up.",
+      "image": ""
+    },
+    {
+      "type": "news",
+      "source": "CBS Sports",
+      "trust": "national",
+      "title": "Purdue outlook: floor/ceiling scenarios",
+      "link": "https://www.cbssports.com/college-basketball/",
+      "date": "2025-10-16T14:27:34.718375Z",
+      "summary": "Ranges of outcomes.",
+      "image": ""
+    },
+    {
+      "type": "news",
+      "source": "Yahoo Sports",
+      "trust": "national",
+      "title": "Big Ten schedule quirks to know",
+      "link": "https://sports.yahoo.com/",
+      "date": "2025-10-16T14:27:34.718375Z",
+      "summary": "Back-to-backs and trap games.",
+      "image": ""
+    },
+    {
+      "type": "news",
+      "source": "Field of 68",
+      "trust": "national",
+      "title": "Video: Offseason check-in with Purdue \u2014 roster & chemistry",
       "link": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-      "source": "PurdueSports YouTube",
-      "tier": "official",
-      "type": "video",
-      "ts": 1760437679263
+      "date": "2025-10-16T14:27:34.718375Z",
+      "summary": "Panel talk on development.",
+      "image": ""
     },
     {
-      "title": "Practice Highlights — First Week",
-      "link": "https://www.youtube.com/watch?v=oHg5SJYRHA0",
-      "source": "BTN Purdue",
-      "tier": "official",
-      "type": "video",
-      "ts": 1760434079263
+      "type": "news",
+      "source": "PurdueSports",
+      "trust": "official",
+      "title": "Q&A with Coach \u2014 priorities heading into camp",
+      "link": "https://purduesports.com/",
+      "date": "2025-10-16T14:27:34.718375Z",
+      "summary": "Coach perspective.",
+      "image": ""
     },
     {
-      "title": "Summer Highlights Mix",
-      "link": "https://www.youtube.com/watch?v=2Z4m4lnjxkY",
-      "source": "BTN Purdue",
-      "tier": "official",
-      "type": "video",
-      "ts": 1760430479263
+      "type": "news",
+      "source": "Hammer & Rails",
+      "trust": "beat",
+      "title": "Mailbag: expectations & breakout candidates",
+      "link": "https://www.hammerandrails.com/",
+      "date": "2025-10-16T14:27:34.718375Z",
+      "summary": "Reader questions answered.",
+      "image": ""
     }
   ]
 }
