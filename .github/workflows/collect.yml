@@ -2,7 +2,7 @@ name: Build and Deploy Purdue MBB Hub
 
 on:
   schedule:
-    - cron: "*/30 * * * *"
+    - cron: "*/30 * * * *"   # every 30 minutes
   workflow_dispatch:
 
 permissions:
@@ -36,7 +36,7 @@ jobs:
           TEAMS: "purdue-mbb"
         run: python tools/collect.py || true
 
-      - name: Build stamp + disable Jekyll
+      - name: Build stamp, health, and disable Jekyll
         run: |
           echo > .nojekyll
           ITEMS_COUNT=$(python - <<'PY'
@@ -54,18 +54,30 @@ PY
           cat > static/build.json <<EOF
 {"timestamp":"$TS","commit":"$SHA","items_count":$ITEMS_COUNT}
 EOF
+          cat > static/health.json <<EOF
+{"ok":true,"timestamp":"$TS","items_count":$ITEMS_COUNT}
+EOF
 
-      - name: Remove legacy homepage files (safety)
+      # HARD GUARDS: make sure we are deploying the real SPA assets, not placeholders
+      - name: Assert SPA artifact integrity
+        run: |
+          test -f index.html
+          grep -q 'id="build-line"' index.html
+          test -f static/js/pro.js
+          test -f static/css/pro.css
+          # Reject tiny placeholders
+          JS_SIZE=$(wc -c < static/js/pro.js); echo "pro.js size: $JS_SIZE"
+          CSS_SIZE=$(wc -c < static/css/pro.css); echo "pro.css size: $CSS_SIZE"
+          if [ "$JS_SIZE" -lt 1000 ] || [ "$CSS_SIZE" -lt 1000 ]; then
+            echo "ERROR: JS/CSS look like placeholders (too small)."; exit 1;
+          fi
+
+      # Safety: remove legacy homepage files inside artifact
+      - name: Remove legacy homepage files (artifact-only)
         run: |
           rm -f index.md
           if [ -f docs/index.html ]; then rm -f docs/index.html; fi
           if [ -f docs/index.md ]; then rm -f docs/index.md; fi
-
-      - name: Assert SPA will be deployed
-        run: |
-          test -f index.html
-          grep -q 'id="build-line"' index.html
-          echo "index.html (SPA) is present and has build-line marker."
 
       - name: Configure Pages
         uses: actions/configure-pages@v4
@@ -78,3 +90,10 @@ EOF
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      # LIVE URL sanity check — FAIL if wrong page is live
+      - name: Verify LIVE site contains SPA marker
+        run: |
+          LIVE_URL="https://jasonab74-ctrl.github.io/purdue-mbb-bot/"
+          echo "Checking $LIVE_URL ..."
+          curl -fsSL "$LIVE_URL" | grep -q 'id="build-line"' && echo "Live check OK" || (echo "ERROR: Live site is not the SPA (build-line marker missing)"; exit 1)
