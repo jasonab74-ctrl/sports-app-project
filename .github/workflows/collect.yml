@@ -39,24 +39,13 @@ jobs:
       - name: Build stamp, health, and disable Jekyll
         run: |
           echo > .nojekyll
-          ITEMS_COUNT=$(python - <<'PY'
-import json
-try:
-  j=json.load(open('static/teams/purdue-mbb/items.json'))
-  print(len(j.get('items',[])))
-except Exception:
-  print(0)
-PY
-)
+          ITEMS_FILE="static/teams/purdue-mbb/items.json"
+          ITEMS_COUNT=$(python -c "import json,os,sys; p=os.environ.get('P'); print(len(json.load(open(p)).get('items',[])) if os.path.exists(p) else 0)" P="$ITEMS_FILE" 2>/dev/null || echo 0)
           TS=$(date -u +'%Y-%m-%dT%H:%M:%SZ')
           SHA=$(git rev-parse --short HEAD || echo "unknown")
           mkdir -p static
-          cat > static/build.json <<EOF
-{"timestamp":"$TS","commit":"$SHA","items_count":$ITEMS_COUNT}
-EOF
-          cat > static/health.json <<EOF
-{"ok":true,"timestamp":"$TS","items_count":$ITEMS_COUNT}
-EOF
+          printf '{"timestamp":"%s","commit":"%s","items_count":%s}\n' "$TS" "$SHA" "$ITEMS_COUNT" > static/build.json
+          printf '{"ok":true,"timestamp":"%s","items_count":%s}\n' "$TS" "$ITEMS_COUNT" > static/health.json
 
       # HARD GUARDS: make sure we are deploying the real SPA assets, not placeholders
       - name: Assert SPA artifact integrity
@@ -65,11 +54,10 @@ EOF
           grep -q 'id="build-line"' index.html
           test -f static/js/pro.js
           test -f static/css/pro.css
-          # Reject tiny placeholders
           JS_SIZE=$(wc -c < static/js/pro.js); echo "pro.js size: $JS_SIZE"
           CSS_SIZE=$(wc -c < static/css/pro.css); echo "pro.css size: $CSS_SIZE"
-          if [ "$JS_SIZE" -lt 1000 ] || [ "$CSS_SIZE" -lt 1000 ]; then
-            echo "ERROR: JS/CSS look like placeholders (too small)."; exit 1;
+          if [ "$JS_SIZE" -lt 3000 ] || [ "$CSS_SIZE" -lt 3000 ]; then
+            echo "ERROR: JS/CSS look too small (placeholders?)."; exit 1;
           fi
 
       # Safety: remove legacy homepage files inside artifact
@@ -91,7 +79,7 @@ EOF
         id: deployment
         uses: actions/deploy-pages@v4
 
-      # LIVE URL sanity check — FAIL if wrong page is live
+      # LIVE URL sanity check — FAIL if the wrong page is live
       - name: Verify LIVE site contains SPA marker
         run: |
           LIVE_URL="https://jasonab74-ctrl.github.io/purdue-mbb-bot/"
