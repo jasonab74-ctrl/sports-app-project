@@ -1,3 +1,4 @@
 purdue-mbb:
   - name: Hammer & Rails
+    trust_level: beat
     url: https://www.hammerandrails.com/rss/index.xml

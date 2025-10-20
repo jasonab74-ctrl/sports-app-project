@@ -39,41 +39,41 @@ def normalize_item(feed_name,trust_level,entry):
             "date":date.isoformat(),"summary":summary[:500],"image":image}
 
 def dedup_items(items):
+    from rapidfuzz import fuzz
     out, seen_urls = [], set()
     for it in items:
-        url = canonicalize_url(it.get("link"))
+        url = (urlparse(it.get("link"))._replace(params='',query='',fragment='').geturl()) if it.get("link") else ""
         title = (it.get("title") or "").strip().lower()
         if url and url in seen_urls: continue
-        dup = any(fuzz.token_set_ratio(title,(oi.get("title") or "").lower())>=DEDUP_TITLE_SIM_THRESHOLD for oi in out)
+        dup = any(fuzz.token_set_ratio(title,(oi.get("title") or "").lower())>=85 for oi in out)
         if not dup:
             out.append(it)
             if url: seen_urls.add(url)
     return out
 
 def score_item(it):
-    trust = TRUST_WEIGHTS.get(str(it.get("trust") or "").lower(),0.6)
+    trust = {"official":1.0,"beat":0.9,"national":0.8,"local":0.75,"blog":0.6,"fan_forum":0.5}.get(str(it.get("trust") or "").lower(),0.6)
     try: dt = datetime.fromisoformat(it["date"].replace("Z","+00:00"))
     except: dt = datetime.now(timezone.utc)
-    rec = recency_weight(dt)
+    hours = max(0,(datetime.now(timezone.utc)-dt).total_seconds()/3600.0)
+    rec = 0.5 ** (hours/18.0)
     return 0.7*rec + 0.3*trust
 
-def collect_team(team_slug,feeds,out_path,limit=DEFAULT_LIMIT):
+def collect_team(team_slug,feeds,out_path,limit=200):
     import ssl
     try: ssl._create_default_https_context = ssl._create_unverified_context
     except: pass
+    import feedparser
     all_items=[]
     for f in feeds:
         name=f.get("name","Source"); url=f.get("url"); trust=f.get("trust_level","blog")
         if not url: continue
-        d=feedparser.parse(url,request_headers=FEED_HEADERS)
+        d=feedparser.parse(url,request_headers={"User-Agent":"Mozilla/5.0 TeamHubBot/1.0"})
         for e in d.entries[:50]:
             all_items.append(normalize_item(name,trust,e))
-    all_items=dedup_items(all_items)
-    all_items.sort(key=score_item,reverse=True)
-    all_items=all_items[:limit]
+    all_items=dedup_items(all_items); all_items.sort(key=score_item,reverse=True); all_items=all_items[:limit]
     os.makedirs(os.path.dirname(out_path),exist_ok=True)
-    with open(out_path,"w",encoding="utf-8") as f:
-        json.dump({"items":all_items},f,indent=2,ensure_ascii=False)
+    with open(out_path,"w",encoding="utf-8") as f: json.dump({"items":all_items},f,indent=2,ensure_ascii=False)
 
 def fetch_ap_rank():
     try:
@@ -90,7 +90,8 @@ def fetch_ap_rank():
 def fetch_kenpom_rank():
     try:
         r=requests.get("https://kenpom.com/",timeout=10)
-        m=re.search(r"Purdue</a></td><td align=\"right\">(\\d+)</td>",r.text)
+        import re
+        m=re.search(r"Purdue</a></td><td align=\\\"right\\\">(\\d+)</td>",r.text)
         if m: return int(m.group(1))
     except Exception as e:
         print("KenPom fetch error:",e)
@@ -106,8 +107,7 @@ def update_widgets():
     if ap: data["ap_rank"]=str(ap)
     if kp: data["kenpom_rank"]=str(kp)
     os.makedirs(os.path.dirname(path),exist_ok=True)
-    with open(path,"w",encoding="utf-8") as f:
-        json.dump(data,f,indent=2)
+    with open(path,"w",encoding="utf-8") as f: json.dump(data,f,indent=2)
     print("Updated widgets.json with AP:",ap,"KenPom:",kp)
 
 def main():
