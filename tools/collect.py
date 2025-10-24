@@ -4,13 +4,13 @@ from urllib.parse import urlparse, urlunparse
 from rapidfuzz import fuzz
 
 # ---------- Tunables ----------
-MAX_RESULTS = 20                   # only surface top 20
-MAX_AGE_DAYS = 10                  # ignore anything older than ~10 days
-DEDUP_TITLE_SIM_THRESHOLD = 85     # merge near-duplicate stories
-RECENCY_HALFLIFE_HOURS = 18.0      # controls how fast recency weight fades
+MAX_RESULTS = 20                    # surface top 20
+MAX_AGE_DAYS = 14                   # keep up to 2 weeks during slow periods
+DEDUP_TITLE_SIM_THRESHOLD = 85      # merge near-duplicate stories
+RECENCY_HALFLIFE_HOURS = 18.0       # recency decay window
 FEED_HEADERS = {"User-Agent": "Mozilla/5.0 PurdueMBBHub/1.0"}
 
-# Source trust weights. Higher -> floats toward the top when recency is similar.
+# Weight by trust. Higher means "more insider / authoritative".
 TRUST_WEIGHTS = {
     "official": 1.00,
     "insiders": 0.95,
@@ -20,6 +20,50 @@ TRUST_WEIGHTS = {
     "blog":     0.60,
     "fan_forum":0.50
 }
+
+# Normalize source display names so we don't show messy duplicates.
+SOURCE_CANON = {
+    "hammer & rails": "Hammer & Rails",
+    "hammerandrials": "Hammer & Rails",
+
+    "journal & courier": "Journal & Courier",
+    "journal and courier": "Journal & Courier",
+    "jconline": "Journal & Courier",
+
+    "goldandblack": "GoldandBlack (Rivals)",
+    "gold and black": "GoldandBlack (Rivals)",
+    "rivals": "GoldandBlack (Rivals)",
+
+    "on3 purdue": "On3 Purdue",
+    "on3.com": "On3 Purdue",
+
+    "espn": "ESPN",
+    "espn.com": "ESPN",
+
+    "yahoo sports": "Yahoo Sports",
+    "sports.yahoo.com": "Yahoo Sports",
+
+    "cbs sports": "CBS Sports",
+    "cbssports.com": "CBS Sports",
+
+    "field of 68": "Field of 68",
+    "the athletic": "The Athletic",
+    "stadium / jeff goodman": "Stadium / Jeff Goodman",
+    "watchstadium.com": "Stadium / Jeff Goodman",
+
+    "associated press (cbb)": "Associated Press (AP)",
+    "ap news": "Associated Press (AP)",
+    "apnews.com": "Associated Press (AP)",
+
+    "big ten network": "Big Ten Network",
+    "btn.com": "Big Ten Network"
+}
+
+def canon_source(raw):
+  if not raw:
+    return "Unknown"
+  key = raw.strip().lower()
+  return SOURCE_CANON.get(key, raw.strip())
 
 def _canonicalize_url(url):
     if not url:
@@ -36,7 +80,7 @@ def _parse_date(entry):
                 return datetime(*val[:6], tzinfo=timezone.utc)
             except Exception:
                 pass
-    # Fallback: now (keeps item alive if feed is missing timestamps)
+    # Fallback: now
     return datetime.now(timezone.utc)
 
 def _normalize_item(source_name, trust_level, entry):
@@ -44,7 +88,7 @@ def _normalize_item(source_name, trust_level, entry):
     title = (entry.get("title") or "").strip()
     summary = (entry.get("summary") or entry.get("description") or "").strip()
 
-    # try to grab a thumbnail
+    # thumbnail attempt
     thumb = None
     media = entry.get("media_content") or entry.get("media_thumbnail")
     if isinstance(media, list) and media:
@@ -53,7 +97,7 @@ def _normalize_item(source_name, trust_level, entry):
     pub_dt = _parse_date(entry)
 
     return {
-        "source": source_name,
+        "source": canon_source(source_name),
         "trust": trust_level,
         "title": title,
         "link": link,
@@ -64,31 +108,31 @@ def _normalize_item(source_name, trust_level, entry):
 
 def _is_mbb_related(item):
     """
-    Attempt to filter out stuff that isn't Purdue men's basketball.
-    We already query feeds w/ "Purdue men's basketball", but Google News can still drift.
-    We'll keep if we see clear hoops language. We'll reject obvious football.
+    Filter for Purdue men's basketball.
+    Keep hoops / recruiting / roster talk.
+    Reject obvious football.
     """
     text = f"{item.get('title','')} {item.get('summary','')}".lower()
 
     keep_terms = [
         "purdue", "boilermaker", "boilermakers", "painter", "matt painter",
         "big ten", "b1g",
-        "guard", "forward", "center", "recruit", "commit",
+        "guard", "forward", "center", "recruit", "commit", "recruiting",
         "ncaa tournament", "exhibition", "tipoff", "preseason",
         "men's basketball", "mens basketball", "basketball team",
-        "backcourt", "frontcourt", "rotation", "lineup"
+        "backcourt", "frontcourt", "rotation", "lineup", "depth chart",
+        "offseason check-in", "camp standouts", "practice notes"
     ]
 
     reject_terms = [
         "football", "qb", "quarterback", "touchdown", "nfl", "walters",
-        "wide receiver", "linebacker"
+        "wide receiver", "linebacker", "defensive coordinator"
     ]
 
     if any(r in text for r in reject_terms):
         return False
     if any(k in text for k in keep_terms):
         return True
-    # default strict: false
     return False
 
 def _dedup(items):
@@ -102,11 +146,11 @@ def _dedup(items):
         url = _canonicalize_url(it.get("link"))
         title = (it.get("title") or "").strip().lower()
 
-        # same URL? skip
+        # same URL => drop
         if url and url in seen_urls:
             continue
 
-        # fuzzy match vs titles we've kept
+        # same headline-ish => drop
         is_dup = False
         for oi in out:
             existing_title = (oi.get("title") or "").strip().lower()
@@ -122,12 +166,9 @@ def _dedup(items):
     return out
 
 def _recency_weight(dt):
-    """
-    Exponential decay so newer posts dominate.
-    """
     now = datetime.now(timezone.utc)
     hours_old = max(0, (now - dt).total_seconds() / 3600.0)
-    # half-life model
+    # exponential half-life
     return 0.5 ** (hours_old / RECENCY_HALFLIFE_HOURS)
 
 def _score(item):
@@ -141,7 +182,7 @@ def _score(item):
 
     rec_val = _recency_weight(dt)
 
-    # 70% recency / 30% trust
+    # 70% recency, 30% trust
     return (0.7 * rec_val) + (0.3 * trust_val)
 
 def _atomic_write(path, obj):
@@ -158,10 +199,8 @@ def _atomic_write(path, obj):
 
 def collect_team(slug, feeds, out_path):
     cutoff = datetime.now(timezone.utc) - timedelta(days=MAX_AGE_DAYS)
-
     pulled_items = []
 
-    # pull from each feed in feeds.yaml
     for feed_conf in feeds:
         source_name = feed_conf.get("name", "Source")
         trust_level = feed_conf.get("trust_level", "national")
@@ -183,16 +222,16 @@ def collect_team(slug, feeds, out_path):
             if dt < cutoff:
                 continue
 
-            # content filter
+            # MBB relevance filter
             if not _is_mbb_related(item):
                 continue
 
             pulled_items.append(item)
 
-    # dedupe across all sources
+    # dedupe
     deduped = _dedup(pulled_items)
 
-    # sort by score (recency + trust), take top N
+    # sort best-first, pick 20
     deduped.sort(key=_score, reverse=True)
     top_items = deduped[:MAX_RESULTS]
 
