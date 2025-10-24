@@ -6,7 +6,6 @@ from rapidfuzz import fuzz
 TRUST_WEIGHTS = {"official":1.0,"beat":0.9,"national":0.8,"local":0.75,"blog":0.6,"fan_forum":0.5}
 RECENCY_HALFLIFE_HOURS = 18.0
 DEDUP_TITLE_SIM_THRESHOLD = 85
-DEFAULT_LIMIT = 200
 FEED_HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) TeamHubBot/1.0"}
 
 def recency_weight(dt):
@@ -35,10 +34,7 @@ def normalize_item(feed_name,trust_level,entry):
     image = None
     media = entry.get("media_content") or entry.get("media_thumbnail")
     if isinstance(media,list) and media: image = media[0].get("url")
-    return {
-        "type":"news","source":feed_name,"trust":trust_level,"title":title,
-        "link":link,"date":date.isoformat(),"summary":summary[:500],"image":image
-    }
+    return {"type":"news","source":feed_name,"trust":trust_level,"title":title,"link":link,"date":date.isoformat(),"summary":summary[:500],"image":image}
 
 def dedup_items(items):
     out, seen_urls = [], set()
@@ -59,7 +55,7 @@ def score_item(it):
     rec = recency_weight(dt)
     return 0.7*rec + 0.3*trust
 
-def collect_team(team_slug,feeds,out_path,limit=DEFAULT_LIMIT):
+def collect_team(team_slug,feeds,out_path,limit=200):
     import ssl
     try: ssl._create_default_https_context = ssl._create_unverified_context
     except: pass
@@ -74,62 +70,44 @@ def collect_team(team_slug,feeds,out_path,limit=DEFAULT_LIMIT):
     all_items.sort(key=score_item,reverse=True)
     all_items=all_items[:limit]
     os.makedirs(os.path.dirname(out_path),exist_ok=True)
-    with open(out_path,"w",encoding="utf-8") as f:
-        json.dump({"items":all_items},f,indent=2,ensure_ascii=False)
-
-# ---- Rankings ---------------------------------------------------------------
+    with open(out_path,"w",encoding="utf-8") as f: json.dump({"items":all_items},f,indent=2,ensure_ascii=False)
 
 def fetch_ap_rank():
     try:
-        r=requests.get(
-            "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/rankings",
-            timeout=10, headers={"User-Agent": FEED_HEADERS["User-Agent"]}
-        )
-        r.raise_for_status()
+        r=requests.get("https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/rankings",timeout=10,headers=FEED_HEADERS)
         data=r.json()
         for poll in data.get("rankings",[]):
             for t in poll.get("ranks",[]):
-                name = t.get("team",{}).get("displayName","") or ""
-                if "Purdue" in name:
-                    val = t.get("current",None)
-                    return int(val) if isinstance(val,int) or (isinstance(val,str) and val.isdigit()) else None
-    except Exception as e:
-        print("AP fetch error:",e)
+                if "Purdue" in t.get("team",{}).get("displayName",""): return int(t.get("current"))
+    except Exception as e: print("AP fetch error:",e)
     return None
 
 def fetch_kenpom_rank():
     try:
-        r=requests.get("https://kenpom.com/",timeout=10, headers={"User-Agent": FEED_HEADERS["User-Agent"]})
-        r.raise_for_status()
+        r=requests.get("https://kenpom.com/",timeout=10,headers=FEED_HEADERS)
         m=re.search(r"Purdue</a></td><td[^>]*>(\d+)</td>",r.text)
         if m: return int(m.group(1))
-    except Exception as e:
-        print("KenPom fetch error:",e)
+    except Exception as e: print("KenPom fetch error:",e)
     return None
 
 def update_widgets():
     path="static/widgets.json"
-    # Keep last-known values if present
     data={"ap_rank":"—","kenpom_rank":"—","nil":[]}
     if os.path.exists(path):
         try: data=json.load(open(path,encoding="utf-8"))
         except: pass
-    ap = fetch_ap_rank()
-    kp = fetch_kenpom_rank()
-    if ap is not None: data["ap_rank"]=str(ap)
-    if kp is not None: data["kenpom_rank"]=str(kp)
+    ap, kp = fetch_ap_rank(), fetch_kenpom_rank()
+    if ap: data["ap_rank"]=str(ap)
+    if kp: data["kenpom_rank"]=str(kp)
     os.makedirs(os.path.dirname(path),exist_ok=True)
-    with open(path,"w",encoding="utf-8") as f:
-        json.dump(data,f,indent=2)
-    print(f"Updated widgets.json → AP:{data['ap_rank']} KenPom:{data['kenpom_rank']}")
-
-# ---- Main -------------------------------------------------------------------
+    with open(path,"w",encoding="utf-8") as f: json.dump(data,f,indent=2)
+    print("Updated widgets.json with AP:",ap,"KenPom:",kp)
 
 def main():
     conf=yaml.safe_load(open("src/feeds.yaml","r",encoding="utf-8"))
     teams_env=os.environ.get("TEAMS","").strip()
     teams=[t.strip() for t in teams_env.split(",") if t.strip()] if teams_env else list(conf.keys())
-    if not teams: raise SystemExit("No teams specified and feeds.yaml is empty.")
+    if not teams: raise SystemExit("No teams specified.")
     for team in teams:
         if team not in conf: continue
         collect_team(team,conf[team],f"static/teams/{team}/items.json")
