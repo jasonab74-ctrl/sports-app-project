@@ -1,36 +1,45 @@
+# src/feeds.yaml  — Off-season profile:
+# broader Purdue queries so headlines keep moving every day.
+# Switch back to the basketball-only profile once MBB coverage ramps up.
+
 purdue-mbb:
+  # --- Beat / Local ---
   - name: Hammer & Rails
     url: https://www.hammerandrails.com/rss/index.xml
     trust_level: beat
 
   - name: Journal & Courier
-    url: https://news.google.com/rss/search?q=site:jconline.com+Purdue&hl=en-US&gl=US&ceid=US:en
+    url: https://news.google.com/rss/search?q=site:jconline.com+Purdue+when:14d&hl=en-US&gl=US&ceid=US:en
     trust_level: local
 
+  # --- Insiders ---
   - name: GoldandBlack (Rivals)
-    url: https://news.google.com/rss/search?q=site:purdue.rivals.com+Purdue&hl=en-US&gl=US&ceid=US:en
+    url: https://news.google.com/rss/search?q=site:purdue.rivals.com+Purdue+when:14d&hl=en-US&gl=US&ceid=US:en
     trust_level: insiders
 
   - name: On3 Purdue
-    url: https://news.google.com/rss/search?q=site:on3.com+Purdue&hl=en-US&gl=US&ceid=US:en
+    url: https://news.google.com/rss/search?q=site:on3.com+Purdue+when:14d&hl=en-US&gl=US&ceid=US:en
     trust_level: insiders
 
-  - name: ESPN Purdue
-    url: https://news.google.com/rss/search?q=site:espn.com+Purdue&hl=en-US&gl=US&ceid=US:en
+  # --- National (Purdue-filtered) ---
+  - name: ESPN (Purdue)
+    url: https://news.google.com/rss/search?q=site:espn.com+Purdue+when:14d&hl=en-US&gl=US&ceid=US:en
     trust_level: national
 
-  - name: Yahoo Sports Purdue
-    url: https://news.google.com/rss/search?q=site:sports.yahoo.com+Purdue&hl=en-US&gl=US&ceid=US:en
+  - name: CBS Sports (Purdue)
+    url: https://news.google.com/rss/search?q=site:cbssports.com+Purdue+when:14d&hl=en-US&gl=US&ceid=US:en
     trust_level: national
 
-  - name: CBS Sports Purdue
-    url: https://news.google.com/rss/search?q=site:cbssports.com+Purdue&hl=en-US&gl=US&ceid=US:en
+  - name: Yahoo Sports (Purdue)
+    url: https://news.google.com/rss/search?q=site:sports.yahoo.com+Purdue+when:14d&hl=en-US&gl=US&ceid=US:en
     trust_level: national
 
+  # --- Official site ---
   - name: PurdueSports (Official)
-    url: https://news.google.com/rss/search?q=site:purduesports.com+Purdue&hl=en-US&gl=US&ceid=US:en
+    url: https://news.google.com/rss/search?q=site:purduesports.com+Purdue+when:14d&hl=en-US&gl=US&ceid=US:en
     trust_level: official
 
+  # --- Video (keeps moving daily) ---
   - name: Field of 68 (YouTube)
-    url: https://news.google.com/rss/search?q=site:youtube.com+Purdue+Field+of+68&hl=en-US&gl=US&ceid=US:en
+    url: https://news.google.com/rss/search?q=site:youtube.com+Purdue+when:14d&hl=en-US&gl=US&ceid=US:en
     trust_level: national
