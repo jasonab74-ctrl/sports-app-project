@@ -9,29 +9,16 @@ from urllib.parse import urlparse, urlunparse
 from rapidfuzz import fuzz
 
 # ----------------------------
-# Tunables / knobs
+# Tunables
 # ----------------------------
-MAX_RESULTS = 20
-MAX_AGE_DAYS = 14  # allow ~2 weeks of content so slow periods don't look empty
-DEDUP_TITLE_SIM_THRESHOLD = 85
-RECENCY_HALFLIFE_HOURS = 18.0
-
+MAX_RESULTS = 20          # we only surface the rolling top 20
+MAX_AGE_DAYS = 14         # look back ~2 weeks
+DEDUP_TITLE_SIM_THRESHOLD = 85  # fuzzy title dedupe
 FEED_HEADERS = {
-    "User-Agent": "Mozilla/5.0 (PurdueMBBHub/1.0; +https://example.local)"
+    "User-Agent": "Mozilla/5.0 (PurdueMBBHub/1.0)"
 }
 
-# Weighting: newer + insider > stale + national fluff
-TRUST_WEIGHTS = {
-    "official":   1.00,
-    "insiders":   0.95,
-    "beat":       0.90,
-    "local":      0.80,
-    "national":   0.75,
-    "blog":       0.60,
-    "fan_forum":  0.50,
-}
-
-# Canonical source names so the UI doesn't show tiny variations
+# Canonical source names so UI doesn't show messy variations
 SOURCE_CANON = {
     "hammer & rails": "Hammer & Rails",
     "hammerandrials": "Hammer & Rails",
@@ -90,7 +77,8 @@ def _canonicalize_url(url):
 
 def _parse_date(entry):
     """
-    Try published_parsed, updated_parsed, etc. Fall back to now.
+    Try published_parsed, updated_parsed, created_parsed.
+    Fall back to now (UTC).
     """
     for key in ("published_parsed", "updated_parsed", "created_parsed"):
         val = getattr(entry, key, None) or entry.get(key)
@@ -103,18 +91,16 @@ def _parse_date(entry):
 
 def _extract_best_image(entry, summary_html):
     """
-    Best-effort image picker:
-    1. RSS media_content / media_thumbnail
+    Thumbnail strategy:
+    1. RSS media_content/media_thumbnail
     2. First <img src="..."> in summary HTML
     """
-    # media_content / media_thumbnail
     media_blocks = entry.get("media_content") or entry.get("media_thumbnail")
     if isinstance(media_blocks, list) and media_blocks:
         candidate = media_blocks[0].get("url")
         if candidate:
             return candidate
 
-    # scan summary HTML for <img src="...">
     if summary_html:
         m = IMG_TAG_RE.search(summary_html)
         if m:
@@ -128,68 +114,60 @@ def _normalize_item(source_name, trust_level, entry):
     summary_html = (entry.get("summary") or entry.get("description") or "").strip()
 
     pub_dt = _parse_date(entry)
-
     thumb = _extract_best_image(entry, summary_html)
 
     return {
         "source": canon_source(source_name),
+        # we still record trust_level but we don't use it for ordering anymore
         "trust": trust_level,
         "title": title,
         "link": link,
-        "date": pub_dt.isoformat(),
+        "date": pub_dt.isoformat(),   # ISO 8601 UTC
         "summary": summary_html[:500],
         "image": thumb
     }
 
 def _is_mbb_related(item):
     """
-    Relaxed Purdue Men's Basketball relevance test.
-
-    Goal:
-    - Keep Purdue hoops, roster, recruiting, preseason camp, B1G hoops talk.
-    - Drop obvious Purdue football-only content.
-
-    We used to require super basketball-specific words.
-    Now we:
-    - require "purdue" OR "boilermaker(s)" somewhere
-    - AND NOT obvious football-only terms.
-    - bonus keep terms that smell like hoops.
+    Purdue Men's Basketball relevance test (relaxed):
+    - Must mention Purdue somehow
+    - Reject obvious "football only"
+    - Allow roster / camp / outlook / Painter / preseason even if 'basketball'
+      isn't literally in the headline
     """
     text = f"{item.get('title','')} {item.get('summary','')}".lower()
 
-    # Must mention Purdue in some form, otherwise it's generic national filler.
+    # must reference Purdue in some way
     if not any(w in text for w in ["purdue", "boilermaker", "boilermakers"]):
         return False
 
-    # Hard reject football-y coverage that hijacks feed.
+    # reject obvious football content so football updates don't drown us
     reject_terms = [
         "football", "qb", "quarterback", "touchdown",
         "wide receiver", "linebacker", "defensive coordinator",
-        "big ten schedule quirks to know",  # mostly football schedule chatter
-        "walters",  # Ryan Walters football head coach
+        "ryan walters", "coach walters", "walters' defense"
     ]
     if any(r in text for r in reject_terms):
         return False
 
-    # If clearly hoopsy terms appear, great, auto-keep.
-    keep_terms = [
+    # If it smells like hoops / roster / Painter / preseason, it's in
+    hoops_terms = [
         "basketball", "guard", "forward", "center",
         "roster", "rotation", "backcourt", "frontcourt",
         "recruit", "recruiting", "commit", "commitment",
         "ncaa tournament", "camp standouts", "practice",
         "offseason check-in", "chemistry", "painter", "matt painter"
     ]
-    if any(k in text for k in keep_terms):
+    if any(k in text for k in hoops_terms):
         return True
 
-    # Fallback: still Purdue mention, not flagged football.
-    # We'll allow it. This is how we surface new-but-not-explicitly-hoops
-    # preseason stuff like "Purdue outlook", which is often basketball.
+    # fallback: if it's Purdue and not obviously football, keep it.
+    # This lets "Purdue outlook / ceiling / preseason expectations" through.
     return True
 
 def _dedup(items):
     """
-    Deduplicate by canonical URL and fuzzy-similar title.
+    Deduplicate by canonical URL OR fuzzy-similar title.
     """
     out = []
     seen_urls = set()
@@ -198,11 +176,11 @@ def _dedup(items):
         url = _canonicalize_url(it.get("link"))
         title = (it.get("title") or "").strip().lower()
 
-        # same URL => drop
+        # exact same URL? skip
         if url and url in seen_urls:
             continue
 
-        # fuzzy same title => drop
+        # fuzzy title check vs what we've already kept
         is_dup = False
         for oi in out:
             existing_title = (oi.get("title") or "").strip().lower()
@@ -217,30 +195,6 @@ def _dedup(items):
 
     return out
 
-def _recency_weight(dt):
-    """
-    Exponential decay. Newer stories get higher score.
-    """
-    now = datetime.now(timezone.utc)
-    hours_old = max(0, (now - dt).total_seconds() / 3600.0)
-    return 0.5 ** (hours_old / RECENCY_HALFLIFE_HOURS)
-
-def _score(item):
-    """
-    Final ranking score = recency + trust.
-    """
-    trust_raw = (item.get("trust") or "").lower()
-    trust_val = TRUST_WEIGHTS.get(trust_raw, 0.6)
-
-    try:
-        dt = datetime.fromisoformat(item["date"].replace("Z", "+00:00"))
-    except Exception:
-        dt = datetime.now(timezone.utc)
-
-    rec_val = _recency_weight(dt)
-
-    return (0.7 * rec_val) + (0.3 * trust_val)
-
 def _atomic_write(path, obj):
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with tempfile.NamedTemporaryFile(
@@ -254,6 +208,11 @@ def _atomic_write(path, obj):
     os.replace(tmp_path, path)
 
 def collect_team(team_slug, feeds, out_path):
+    """
+    Pull feeds for this team, filter to MBB-ish Purdue items,
+    keep last ~14 days, dedupe, sort newest -> oldest,
+    take top 20, write items.json.
+    """
     cutoff = datetime.now(timezone.utc) - timedelta(days=MAX_AGE_DAYS)
     pulled_items = []
 
@@ -269,7 +228,7 @@ def collect_team(team_slug, feeds, out_path):
         for entry in parsed.entries[:50]:
             item = _normalize_item(source_name, trust_level, entry)
 
-            # filter by age
+            # age gate
             try:
                 dt = datetime.fromisoformat(item["date"].replace("Z", "+00:00"))
             except Exception:
@@ -278,17 +237,22 @@ def collect_team(team_slug, feeds, out_path):
             if dt < cutoff:
                 continue
 
-            # filter by "Purdue men's basketball-ish"
+            # Purdue MBB-ish filter
             if not _is_mbb_related(item):
                 continue
 
             pulled_items.append(item)
 
-    # dedupe similar headlines
+    # deduplicate similar stuff
     deduped = _dedup(pulled_items)
 
-    # newest + trusted first
-    deduped.sort(key=_score, reverse=True)
+    # sort newest first by publish datetime
+    def _dt(i):
+        try:
+            return datetime.fromisoformat(i["date"].replace("Z", "+00:00"))
+        except Exception:
+            return datetime.now(timezone.utc)
+    deduped.sort(key=_dt, reverse=True)
 
     top_items = deduped[:MAX_RESULTS]
 
