@@ -1,198 +1,185 @@
-/* static/js/pro.js — Purdue MBB “Top 20 Headlines”
-   - Fetches curated items.json
-   - Renders up to 20 cards
-   - Fills footer with build info
-   - Mobile-first, dark theme
-*/
+(async function () {
+  const GRID = document.getElementById("news-grid");
+  const EMPTY = document.getElementById("news-empty");
+  const BUILD_LINE = document.getElementById("build-line");
+  const YEAR_EL = document.getElementById("year");
 
-(function () {
-  // Basic DOM helpers
-  const $ = (sel, el = document) => el.querySelector(sel);
+  // footer year
+  if (YEAR_EL) {
+    YEAR_EL.textContent = new Date().getFullYear();
+  }
 
-  // Date formatting for cards
-  function fmtDate(iso) {
+  // fetch items.json (built by collect.py)
+  async function fetchItems() {
     try {
-      return new Date(iso).toLocaleDateString(undefined, {
-        month: 'short',
-        day: 'numeric'
+      const res = await fetch("static/teams/purdue-mbb/items.json", {
+        cache: "no-store"
       });
-    } catch {
-      return '—';
-    }
-  }
-
-  // Extract hostname for logo mapping
-  function hostFromUrl(u) {
-    try {
-      return new URL(u).hostname;
-    } catch {
-      return '';
-    }
-  }
-
-  // Map host -> local logo
-  const LOGO_MAP = {
-    "www.hammerandrails.com": "static/logos/hammerandrails.svg",
-    "hammerandrails.com":     "static/logos/hammerandrails.svg",
-
-    "rssfeeds.jconline.com":  "static/logos/jconline.svg",
-    "www.jconline.com":       "static/logos/jconline.svg",
-    "jconline.com":           "static/logos/jconline.svg",
-
-    "purdue.rivals.com":      "static/logos/rivals.svg",
-    "purdue.rivals.com:443":  "static/logos/rivals.svg",
-    "goldandblack.com":       "static/logos/rivals.svg",
-
-    "www.on3.com":            "static/logos/on3.svg",
-    "on3.com":                "static/logos/on3.svg",
-
-    "www.espn.com":           "static/logos/espn.svg",
-    "espn.com":               "static/logos/espn.svg",
-
-    "sports.yahoo.com":       "static/logos/yahoo.svg",
-
-    "www.cbssports.com":      "static/logos/cbssports.svg",
-    "cbssports.com":          "static/logos/cbssports.svg",
-
-    "www.youtube.com":        "static/logos/youtube.svg",
-    "youtube.com":            "static/logos/youtube.svg",
-    "youtu.be":               "static/logos/youtube.svg",
-
-    "watchstadium.com":       "static/logos/cbssports.svg",
-    "theathletic.com":        "static/logos/cbssports.svg",
-    "apnews.com":             "static/logos/cbssports.svg",
-    "btn.com":                "static/logos/cbssports.svg"
-  };
-
-  function chooseThumb(link, image) {
-    // prefer real image if feed provided one
-    if (image && /^https?:\/\//i.test(image)) return image;
-    // fallback to brand logo
-    const h = hostFromUrl(link);
-    if (h && LOGO_MAP[h]) return LOGO_MAP[h];
-    // final fallback
-    return 'static/placeholder-16x9.svg';
-  }
-
-  async function safeFetch(path) {
-    try {
-      const res = await fetch(path, { cache: 'no-store' });
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      if (!res.ok) throw new Error("items.json not ok");
       return await res.json();
-    } catch {
+    } catch (err) {
+      console.error("Failed to load items.json", err);
+      return { items: [] };
+    }
+  }
+
+  // fetch build.json (timestamp/commit/count)
+  async function fetchBuild() {
+    try {
+      const res = await fetch("static/build.json", {
+        cache: "no-store"
+      });
+      if (!res.ok) throw new Error("build.json not ok");
+      return await res.json();
+    } catch (err) {
+      console.error("Failed to load build.json", err);
       return null;
     }
   }
 
-  // year in footer
-  const yearEl = $('#year');
-  if (yearEl) {
-    yearEl.textContent = new Date().getFullYear();
-  }
-
-  // optional drawer/hamburger
-  $('#hamburger')?.addEventListener('click', () => {
-    $('#nav')?.classList.toggle('open');
-  });
-
-  // build footer state
-  let buildData = null;
-
-  function setBuildFooter(itemsCountMaybe) {
-    const line = $('#build-line');
-    if (!line) return;
-
-    const ts  = buildData?.timestamp || '—';
-    const sha = buildData?.commit    || '—';
-    const cnt = (typeof itemsCountMaybe === 'number')
-      ? itemsCountMaybe
-      : (buildData?.items_count ?? '—');
-
-    // "updated X min ago"
-    let freshness = '';
+  function fmtDate(iso) {
+    if (!iso) return "";
     try {
-      const then = new Date(buildData?.timestamp || Date.now());
-      const mins = Math.max(0, Math.round((Date.now() - then.getTime()) / 60000));
-      freshness = ` • updated ${mins} min ago`;
-    } catch {
-      // ignore
+      const d = new Date(iso);
+      // Example: Oct 24
+      return d.toLocaleString("en-US", {
+        month: "short",
+        day: "numeric",
+      });
+    } catch (e) {
+      return "";
     }
-
-    line.textContent = `Build: ${ts} • commit ${sha} • ${cnt} items${freshness}`;
   }
 
-  (async () => {
-    // 1) load build meta
-    buildData = await safeFetch('static/build.json');
-    setBuildFooter();
+  // render a single article card
+  function renderCard(item) {
+    const title = item.title || "";
+    const link = item.link || "#";
+    const source = item.source || "";
+    const dateStr = fmtDate(item.date);
+    const imgUrl = item.image || null;
 
-    // 2) cache-bust param so we don't get stale JSON
-    const ver = encodeURIComponent(buildData?.timestamp || String(Date.now()));
-    const bust = (p) => `${p}?v=${ver}`;
-
-    // 3) load curated items (collector writes this)
-    const data = await safeFetch(bust('static/teams/purdue-mbb/items.json'));
-    const list = Array.isArray(data?.items) ? data.items : [];
-
-    // fix footer count if build.json still says 0
-    if (list.length && (buildData?.items_count === 0 || buildData?.items_count === '0')) {
-      setBuildFooter(list.length);
+    // We allow either an <img> that we lazy load OR a fallback block.
+    // We also attach onerror to hide broken thumbs.
+    let thumbHTML = "";
+    if (imgUrl) {
+      thumbHTML = `
+        <img
+          class="thumb"
+          src="${imgUrl}"
+          alt=""
+          onerror="this.closest('.thumb-wrap').classList.add('no-thumb'); this.remove();"
+        />
+      `;
+    } else {
+      thumbHTML = `
+        <div class="thumb thumb-fallback">
+          <div class="thumb-fallback-inner">No Image</div>
+        </div>
+      `;
     }
 
-    // 4) render cards
-    renderHeadlines(list);
+    return `
+      <a class="card" href="${link}" target="_blank" rel="noopener noreferrer">
+        <div class="thumb-wrap">
+          ${thumbHTML}
+        </div>
+        <div class="meta">
+          <div class="source">${source}</div>
+          <div class="title">${title}</div>
+          <div class="date">${dateStr}</div>
+        </div>
+      </a>
+    `;
+  }
 
-    // small diag info if you ever open diag.html
-    window.__HUB_STATE__ = {
-      build: buildData || null,
-      total: list.length,
-      newest: list[0]?.date || null
-    };
-  })();
+  // render all items
+  function renderItems(items) {
+    if (!GRID || !EMPTY) return;
 
-  function renderHeadlines(items) {
-    const grid  = $('#news-grid');
-    const empty = $('#news-empty');
-    if (!grid) return;
-
-    if (!items.length) {
-      empty?.classList.remove('hidden');
+    if (!items || !items.length) {
+      GRID.innerHTML = "";
+      EMPTY.classList.remove("hidden");
       return;
     }
 
-    empty?.classList.add('hidden');
-
-    // we only ever show up to 20
-    items.slice(0, 20).forEach(it => {
-      const card = document.createElement('a');
-      card.className = 'card';
-      card.href = it.link || '#';
-      card.target = '_blank';
-      card.rel = 'noopener noreferrer';
-
-      // thumbnail/logo
-      const img = document.createElement('img');
-      img.className = 'thumb';
-      img.loading = 'lazy';
-      img.alt = '';
-      img.src = chooseThumb(it.link, it.image);
-      img.onerror = () => {
-        img.onerror = null;
-        img.src = 'static/placeholder-16x9.svg';
-      };
-
-      // text stack
-      const meta = document.createElement('div');
-      meta.className = 'meta';
-      meta.innerHTML = `
-        <div class="source">${(it.source || '').toString()}</div>
-        <div class="title">${(it.title  || '').toString()}</div>
-        <div class="date">${fmtDate(it.date)}</div>
-      `;
-
-      card.appendChild(img);
-      card.appendChild(meta);
-      grid.appendChild(card);
-    });
+    EMPTY.classList.add("hidden");
+    GRID.innerHTML = items.map(renderCard).join("");
   }
+
+  // build line
+  function renderBuildInfo(buildData) {
+    if (!BUILD_LINE || !buildData) return;
+
+    const ts = buildData.timestamp || "";
+    const sha = buildData.commit || buildData.sha || "";
+    const cnt = buildData.items_count != null ? buildData.items_count : "";
+    // For "updated X min ago", compute age:
+    let ageText = "";
+    if (ts) {
+      const builtAt = new Date(ts);
+      const now = new Date();
+      const mins = Math.floor((now - builtAt) / 60000);
+      if (mins <= 1) {
+        ageText = "updated just now";
+      } else if (mins < 60) {
+        ageText = `updated ${mins} min ago`;
+      } else {
+        const hrs = Math.floor(mins / 60);
+        ageText = `updated ${hrs} hr${hrs === 1 ? "" : "s"} ago`;
+      }
+    }
+
+    BUILD_LINE.textContent =
+      `Build: ${ts} • commit ${sha} • ${cnt} items • ${ageText}`;
+  }
+
+  // Kick off
+  const [data, buildData] = await Promise.all([fetchItems(), fetchBuild()]);
+
+  renderItems(data.items || []);
+  renderBuildInfo(buildData);
+
+  // after render, add CSS hooks so broken images collapse nicely
+  injectThumbCSS();
 })();
+
+/**
+ * Add a tiny bit of runtime CSS to make "no-thumb" cards show the fallback block.
+ */
+function injectThumbCSS() {
+  const css = `
+  .thumb-wrap {
+    position: relative;
+    background: #1a1b1e;
+    min-height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .thumb-wrap.no-thumb {
+    background: #1a1b1e;
+  }
+
+  .thumb-fallback {
+    width: 100%;
+    height: 160px;
+    background: #1a1b1e;
+    color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .thumb-fallback-inner {
+    color: rgba(255,255,255,0.4);
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  `;
+  const styleEl = document.createElement("style");
+  styleEl.textContent = css;
+  document.head.appendChild(styleEl);
+}
