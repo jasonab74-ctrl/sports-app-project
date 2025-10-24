@@ -36,32 +36,27 @@ jobs:
           TEAMS: "purdue-mbb"
         run: python tools/collect.py || true
 
-      # ---- TWEAKED STEP (safe wait + count) ---------------------------------
       - name: Build stamp, health, and disable Jekyll
         run: |
           echo > .nojekyll
-
           ITEMS_FILE="static/teams/purdue-mbb/items.json"
-          # Wait briefly for collector to finish writing the file (up to ~3s)
           for i in 1 2 3; do [ -s "$ITEMS_FILE" ] && break || sleep 1; done
-
-          ITEMS_COUNT=$(python -c "import json,os,sys,time; p=os.environ.get('P','static/teams/purdue-mbb/items.json'); 
-from pathlib import Path
-path=Path(p)
+          ITEMS_COUNT=$(python - <<'PY'
+import json,os
+p="static/teams/purdue-mbb/items.json"
 try:
-    j=json.load(open(p,'r',encoding='utf-8')) if path.exists() and path.stat().st_size>0 else {}
-    print(len(j.get('items',[])) or 0)
+    j=json.load(open(p))
+    print(len(j.get("items",[])) or 0)
 except Exception:
-    print(0)" P="$ITEMS_FILE" 2>/dev/null || echo 0)
-
+    print(0)
+PY
+)
           TS=$(date -u +'%Y-%m-%dT%H:%M:%SZ')
           SHA=$(git rev-parse --short HEAD || echo "unknown")
           mkdir -p static
           printf '{"timestamp":"%s","commit":"%s","items_count":%s}\n' "$TS" "$SHA" "$ITEMS_COUNT" > static/build.json
           printf '{"ok":true,"timestamp":"%s","items_count":%s}\n' "$TS" "$ITEMS_COUNT" > static/health.json
-      # -----------------------------------------------------------------------
 
-      # HARD GUARDS: make sure we deploy the real SPA assets, not placeholders
       - name: Assert SPA artifact integrity
         run: |
           test -f index.html
@@ -74,7 +69,6 @@ except Exception:
             echo "ERROR: JS/CSS look too small (placeholders?)."; exit 1;
           fi
 
-      # Safety: remove legacy homepage files inside artifact
       - name: Remove legacy homepage files (artifact-only)
         run: |
           rm -f index.md
@@ -93,7 +87,6 @@ except Exception:
         id: deployment
         uses: actions/deploy-pages@v4
 
-      # LIVE URL sanity check — FAIL if the wrong page is live
       - name: Verify LIVE site contains SPA marker
         run: |
           LIVE_URL="https://jasonab74-ctrl.github.io/sports-app-project/"
