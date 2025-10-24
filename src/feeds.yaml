@@ -1,45 +1,51 @@
-# src/feeds.yaml  — Off-season profile:
-# broader Purdue queries so headlines keep moving every day.
-# Switch back to the basketball-only profile once MBB coverage ramps up.
-
 purdue-mbb:
-  # --- Beat / Local ---
+  # Core / beat / insider
   - name: Hammer & Rails
     url: https://www.hammerandrails.com/rss/index.xml
     trust_level: beat
 
   - name: Journal & Courier
-    url: https://news.google.com/rss/search?q=site:jconline.com+Purdue+when:14d&hl=en-US&gl=US&ceid=US:en
+    url: https://news.google.com/rss/search?q=Purdue+men%27s+basketball+site:jconline.com&hl=en-US&gl=US&ceid=US:en
     trust_level: local
 
-  # --- Insiders ---
   - name: GoldandBlack (Rivals)
-    url: https://news.google.com/rss/search?q=site:purdue.rivals.com+Purdue+when:14d&hl=en-US&gl=US&ceid=US:en
+    url: https://news.google.com/rss/search?q=Purdue+men%27s+basketball+site:purdue.rivals.com&hl=en-US&gl=US&ceid=US:en
     trust_level: insiders
 
   - name: On3 Purdue
-    url: https://news.google.com/rss/search?q=site:on3.com+Purdue+when:14d&hl=en-US&gl=US&ceid=US:en
+    url: https://news.google.com/rss/search?q=Purdue+men%27s+basketball+site:on3.com&hl=en-US&gl=US&ceid=US:en
     trust_level: insiders
 
-  # --- National (Purdue-filtered) ---
-  - name: ESPN (Purdue)
-    url: https://news.google.com/rss/search?q=site:espn.com+Purdue+when:14d&hl=en-US&gl=US&ceid=US:en
+  # National / evaluation / recruiting
+  - name: ESPN College Basketball
+    url: https://news.google.com/rss/search?q=Purdue+Boilermakers+men%27s+basketball+site:espn.com&hl=en-US&gl=US&ceid=US:en
     trust_level: national
 
-  - name: CBS Sports (Purdue)
-    url: https://news.google.com/rss/search?q=site:cbssports.com+Purdue+when:14d&hl=en-US&gl=US&ceid=US:en
+  - name: Yahoo Sports
+    url: https://news.google.com/rss/search?q=Purdue+Boilermakers+men%27s+basketball+site:sports.yahoo.com&hl=en-US&gl=US&ceid=US:en
     trust_level: national
 
-  - name: Yahoo Sports (Purdue)
-    url: https://news.google.com/rss/search?q=site:sports.yahoo.com+Purdue+when:14d&hl=en-US&gl=US&ceid=US:en
+  - name: CBS Sports
+    url: https://news.google.com/rss/search?q=Purdue+Boilermakers+men%27s+basketball+site:cbssports.com&hl=en-US&gl=US&ceid=US:en
     trust_level: national
 
-  # --- Official site ---
-  - name: PurdueSports (Official)
-    url: https://news.google.com/rss/search?q=site:purduesports.com+Purdue+when:14d&hl=en-US&gl=US&ceid=US:en
-    trust_level: official
+  - name: Field of 68
+    url: https://news.google.com/rss/search?q=Purdue+Boilermakers+men%27s+basketball+%22Field+of+68%22+site:youtube.com&hl=en-US&gl=US&ceid=US:en
+    trust_level: national
 
-  # --- Video (keeps moving daily) ---
-  - name: Field of 68 (YouTube)
-    url: https://news.google.com/rss/search?q=site:youtube.com+Purdue+when:14d&hl=en-US&gl=US&ceid=US:en
+  # Add-on national voices (high credibility)
+  - name: The Athletic
+    url: https://news.google.com/rss/search?q=Purdue+Boilermakers+men%27s+basketball+site:theathletic.com&hl=en-US&gl=US&ceid=US:en
+    trust_level: national
+
+  - name: Stadium / Jeff Goodman
+    url: https://news.google.com/rss/search?q=Purdue+Boilermakers+men%27s+basketball+Jeff+Goodman+site:watchstadium.com&hl=en-US&gl=US&ceid=US:en
+    trust_level: national
+
+  - name: Associated Press CBB
+    url: https://news.google.com/rss/search?q=Purdue+Boilermakers+men%27s+basketball+site:apnews.com&hl=en-US&gl=US&ceid=US:en
+    trust_level: national
+
+  - name: Big Ten Network
+    url: https://news.google.com/rss/search?q=Purdue+Boilermakers+men%27s+basketball+site:btn.com&hl=en-US&gl=US&ceid=US:en
     trust_level: national
