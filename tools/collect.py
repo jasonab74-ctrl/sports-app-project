@@ -35,63 +35,73 @@ def normalize_item(feed_name,trust_level,entry):
     image = None
     media = entry.get("media_content") or entry.get("media_thumbnail")
     if isinstance(media,list) and media: image = media[0].get("url")
-    return {"type":"news","source":feed_name,"trust":trust_level,"title":title,"link":link,
-            "date":date.isoformat(),"summary":summary[:500],"image":image}
+    return {
+        "type":"news","source":feed_name,"trust":trust_level,"title":title,
+        "link":link,"date":date.isoformat(),"summary":summary[:500],"image":image
+    }
 
 def dedup_items(items):
-    from rapidfuzz import fuzz
     out, seen_urls = [], set()
     for it in items:
-        url = (urlparse(it.get("link"))._replace(params='',query='',fragment='').geturl()) if it.get("link") else ""
+        url = canonicalize_url(it.get("link"))
         title = (it.get("title") or "").strip().lower()
         if url and url in seen_urls: continue
-        dup = any(fuzz.token_set_ratio(title,(oi.get("title") or "").lower())>=85 for oi in out)
+        dup = any(fuzz.token_set_ratio(title,(oi.get("title") or "").lower())>=DEDUP_TITLE_SIM_THRESHOLD for oi in out)
         if not dup:
             out.append(it)
             if url: seen_urls.add(url)
     return out
 
 def score_item(it):
-    trust = {"official":1.0,"beat":0.9,"national":0.8,"local":0.75,"blog":0.6,"fan_forum":0.5}.get(str(it.get("trust") or "").lower(),0.6)
+    trust = TRUST_WEIGHTS.get(str(it.get("trust") or "").lower(),0.6)
     try: dt = datetime.fromisoformat(it["date"].replace("Z","+00:00"))
     except: dt = datetime.now(timezone.utc)
-    hours = max(0,(datetime.now(timezone.utc)-dt).total_seconds()/3600.0)
-    rec = 0.5 ** (hours/18.0)
+    rec = recency_weight(dt)
     return 0.7*rec + 0.3*trust
 
-def collect_team(team_slug,feeds,out_path,limit=200):
+def collect_team(team_slug,feeds,out_path,limit=DEFAULT_LIMIT):
     import ssl
     try: ssl._create_default_https_context = ssl._create_unverified_context
     except: pass
-    import feedparser
     all_items=[]
     for f in feeds:
         name=f.get("name","Source"); url=f.get("url"); trust=f.get("trust_level","blog")
         if not url: continue
-        d=feedparser.parse(url,request_headers={"User-Agent":"Mozilla/5.0 TeamHubBot/1.0"})
+        d=feedparser.parse(url,request_headers=FEED_HEADERS)
         for e in d.entries[:50]:
             all_items.append(normalize_item(name,trust,e))
-    all_items=dedup_items(all_items); all_items.sort(key=score_item,reverse=True); all_items=all_items[:limit]
+    all_items=dedup_items(all_items)
+    all_items.sort(key=score_item,reverse=True)
+    all_items=all_items[:limit]
     os.makedirs(os.path.dirname(out_path),exist_ok=True)
-    with open(out_path,"w",encoding="utf-8") as f: json.dump({"items":all_items},f,indent=2,ensure_ascii=False)
+    with open(out_path,"w",encoding="utf-8") as f:
+        json.dump({"items":all_items},f,indent=2,ensure_ascii=False)
+
+# ---- Rankings ---------------------------------------------------------------
 
 def fetch_ap_rank():
     try:
-        r=requests.get("https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/rankings",timeout=10)
+        r=requests.get(
+            "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/rankings",
+            timeout=10, headers={"User-Agent": FEED_HEADERS["User-Agent"]}
+        )
+        r.raise_for_status()
         data=r.json()
         for poll in data.get("rankings",[]):
             for t in poll.get("ranks",[]):
-                if "Purdue" in t.get("team",{}).get("displayName",""):
-                    return t.get("current",None)
+                name = t.get("team",{}).get("displayName","") or ""
+                if "Purdue" in name:
+                    val = t.get("current",None)
+                    return int(val) if isinstance(val,int) or (isinstance(val,str) and val.isdigit()) else None
     except Exception as e:
         print("AP fetch error:",e)
     return None
 
 def fetch_kenpom_rank():
     try:
-        r=requests.get("https://kenpom.com/",timeout=10)
-        import re
-        m=re.search(r"Purdue</a></td><td align=\\\"right\\\">(\\d+)</td>",r.text)
+        r=requests.get("https://kenpom.com/",timeout=10, headers={"User-Agent": FEED_HEADERS["User-Agent"]})
+        r.raise_for_status()
+        m=re.search(r"Purdue</a></td><td[^>]*>(\d+)</td>",r.text)
         if m: return int(m.group(1))
     except Exception as e:
         print("KenPom fetch error:",e)
@@ -99,16 +109,21 @@ def fetch_kenpom_rank():
 
 def update_widgets():
     path="static/widgets.json"
+    # Keep last-known values if present
     data={"ap_rank":"—","kenpom_rank":"—","nil":[]}
     if os.path.exists(path):
-        try: data=json.load(open(path))
+        try: data=json.load(open(path,encoding="utf-8"))
         except: pass
-    ap, kp = fetch_ap_rank(), fetch_kenpom_rank()
-    if ap: data["ap_rank"]=str(ap)
-    if kp: data["kenpom_rank"]=str(kp)
+    ap = fetch_ap_rank()
+    kp = fetch_kenpom_rank()
+    if ap is not None: data["ap_rank"]=str(ap)
+    if kp is not None: data["kenpom_rank"]=str(kp)
     os.makedirs(os.path.dirname(path),exist_ok=True)
-    with open(path,"w",encoding="utf-8") as f: json.dump(data,f,indent=2)
-    print("Updated widgets.json with AP:",ap,"KenPom:",kp)
+    with open(path,"w",encoding="utf-8") as f:
+        json.dump(data,f,indent=2)
+    print(f"Updated widgets.json → AP:{data['ap_rank']} KenPom:{data['kenpom_rank']}")
+
+# ---- Main -------------------------------------------------------------------
 
 def main():
     conf=yaml.safe_load(open("src/feeds.yaml","r",encoding="utf-8"))
