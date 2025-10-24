@@ -1,181 +1,218 @@
-import os, json, yaml, feedparser, requests, re, tempfile
+import os, json, yaml, feedparser, tempfile
 from datetime import datetime, timezone, timedelta
 from urllib.parse import urlparse, urlunparse
 from rapidfuzz import fuzz
 
-# ---------------- Tunables ----------------
-RECENCY_HALFLIFE_HOURS = 18.0
-DEDUP_TITLE_SIM_THRESHOLD = 85
-MAX_AGE_DAYS = 10                      # drop items older than this
-FEED_HEADERS = {"User-Agent": "Mozilla/5.0 TeamHubBot/1.0"}
-TRUST_WEIGHTS = {"official":1.0,"beat":0.9,"national":0.8,"local":0.75,"blog":0.6,"fan_forum":0.5}
-TOP_LIMIT = 200                        # internal cap before writing
+# ---------- Tunables ----------
+MAX_RESULTS = 20                   # only surface top 20
+MAX_AGE_DAYS = 10                  # ignore anything older than ~10 days
+DEDUP_TITLE_SIM_THRESHOLD = 85     # merge near-duplicate stories
+RECENCY_HALFLIFE_HOURS = 18.0      # how fast "recency weight" decays
+FEED_HEADERS = {"User-Agent": "Mozilla/5.0 PurdueMBBHub/1.0"}
 
-# --------------- Helpers -----------------
-def canonicalize_url(url):
+# Trust weight: higher = more likely to float toward top
+TRUST_WEIGHTS = {
+    "official": 1.00,
+    "insiders": 0.95,
+    "beat":     0.90,
+    "local":    0.80,
+    "national": 0.75,
+    "blog":     0.60,
+    "fan_forum":0.50
+}
+
+# ---------- Helpers ----------
+def _canonicalize_url(url):
     if not url: return ""
     p = urlparse(url)
-    return urlunparse((p.scheme,p.netloc,p.path,"","",""))
+    return urlunparse((p.scheme, p.netloc, p.path, "", "", ""))
 
-def parse_dt(entry):
+def _parse_date(entry):
+    # try feed timestamps in priority order
     for key in ("published_parsed","updated_parsed","created_parsed"):
-        val = getattr(entry,key,None) or entry.get(key)
+        val = getattr(entry, key, None) or entry.get(key)
         if val:
-            try: return datetime(*val[:6],tzinfo=timezone.utc)
-            except: pass
+            try:
+                return datetime(*val[:6], tzinfo=timezone.utc)
+            except:
+                pass
+    # fallback: now (keeps it from being dropped completely)
     return datetime.now(timezone.utc)
 
-def normalize_item(feed_name,trust_level,entry):
+def _normalize_item(source_name, trust_level, entry):
     link = entry.get("link") or ""
     title = (entry.get("title") or "").strip()
     summary = (entry.get("summary") or entry.get("description") or "").strip()
-    date = parse_dt(entry)
-    image = None
+
+    # Some feeds provide media thumbnails in media_content/media_thumbnail
+    thumb = None
     media = entry.get("media_content") or entry.get("media_thumbnail")
-    if isinstance(media,list) and media: image = media[0].get("url")
+    if isinstance(media, list) and media:
+        thumb = media[0].get("url")
+
+    dt = _parse_date(entry)
+
     return {
-        "type":"news","source":feed_name,"trust":trust_level,
-        "title":title,"link":link,"date":date.isoformat(),
-        "summary":summary[:500],"image":image
+        "source": source_name,
+        "trust": trust_level,
+        "title": title,
+        "link": link,
+        "date": dt.isoformat(),
+        "summary": summary[:500],
+        "image": thumb
     }
 
-def dedup_items(items):
-    out, seen_urls = [], set()
+def _is_mbb_related(item):
+    """
+    Safety filter. We already query for Purdue men’s basketball but Google News
+    can still sneak in junk (campus news, football).
+    We'll keep if the title/summary includes some expected words.
+    Tune this if it hides legit content.
+    """
+    text = f"{item.get('title','')} {item.get('summary','')}".lower()
+
+    keep_terms = [
+        "purdue", "boilermaker", "boilermakers", "painter", "matt painter",
+        "big ten", "b1g", "guard", "forward", "center", "recruit", "commit",
+        "ncaa tournament", "exhibition", "tipoff", "preseason",
+        "men's basketball", "mens basketball", "basketball team"
+    ]
+    reject_terms = [
+        "football", "quarterback", "qb", "touchdown", "nfl", "coach walters"
+    ]
+
+    if any(t in text for t in reject_terms):
+        return False
+    if any(t in text for t in keep_terms):
+        return True
+    # default is False (be strict so we don't bring in non-basketball Purdue)
+    return False
+
+def _dedup(items):
+    """
+    Merge near-duplicates based on URL and fuzzy title similarity.
+    """
+    out = []
+    seen_urls = set()
+
     for it in items:
-        url = canonicalize_url(it.get("link"))
+        url = _canonicalize_url(it.get("link"))
         title = (it.get("title") or "").strip().lower()
-        if url and url in seen_urls: continue
-        dup = any(fuzz.token_set_ratio(title,(oi.get("title") or "").lower())>=DEDUP_TITLE_SIM_THRESHOLD for oi in out)
-        if not dup:
+
+        # Same URL? skip
+        if url and url in seen_urls:
+            continue
+
+        # Fuzzy title match against what's already kept
+        is_dup = False
+        for oi in out:
+            existing_title = (oi.get("title") or "").strip().lower()
+            if fuzz.token_set_ratio(title, existing_title) >= DEDUP_TITLE_SIM_THRESHOLD:
+                is_dup = True
+                break
+
+        if not is_dup:
             out.append(it)
-            if url: seen_urls.add(url)
+            if url:
+                seen_urls.add(url)
+
     return out
 
-def recency_weight(dt):
-    hours = max(0, (datetime.now(timezone.utc) - dt).total_seconds()/3600.0)
-    return 0.5 ** (hours / RECENCY_HALFLIFE_HOURS)
+def _recency_weight(dt):
+    """
+    Newer = higher weight, decays ~exponentially with RECENCY_HALFLIFE_HOURS
+    """
+    now = datetime.now(timezone.utc)
+    hours_old = max(0, (now - dt).total_seconds() / 3600.0)
+    # half-life style decay
+    return 0.5 ** (hours_old / RECENCY_HALFLIFE_HOURS)
 
-def score_item(it):
-    trust = TRUST_WEIGHTS.get(str(it.get("trust") or "").lower(),0.6)
-    try: dt = datetime.fromisoformat(it["date"].replace("Z","+00:00"))
-    except: dt = datetime.now(timezone.utc)
-    return 0.7*recency_weight(dt) + 0.3*trust
+def _score(item):
+    trust_raw = (item.get("trust") or "").lower()
+    trust_val = TRUST_WEIGHTS.get(trust_raw, 0.6)
 
-def atomic_write_json(path, obj):
+    try:
+        dt = datetime.fromisoformat(item["date"].replace("Z", "+00:00"))
+    except Exception:
+        dt = datetime.now(timezone.utc)
+
+    rec_val = _recency_weight(dt)
+
+    # Blend recency + source quality
+    # recency dominates (70%), trust informs tie-break (30%)
+    return (0.7 * rec_val) + (0.3 * trust_val)
+
+def _atomic_write(path, obj):
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with tempfile.NamedTemporaryFile("w", delete=False, dir=os.path.dirname(path), encoding="utf-8") as tmp:
         json.dump(obj, tmp, indent=2, ensure_ascii=False)
         tmp_path = tmp.name
-    os.replace(tmp_path, path)  # atomic on Linux runners
+    os.replace(tmp_path, path)
 
-def read_existing(path):
-    if not os.path.exists(path): return []
-    try:
-        j=json.load(open(path,encoding="utf-8"))
-        return j.get("items",[]) if isinstance(j,dict) else []
-    except: return []
+# ---------- main collection ----------
 
-def newest_dt(items):
-    if not items: return None
-    latest=None
-    for it in items:
-        try:
-            d=datetime.fromisoformat(it["date"].replace("Z","+00:00"))
-            if (latest is None) or (d>latest): latest=d
-        except: pass
-    return latest
-
-# --------------- Collector ----------------
-def collect_team(team_slug, feeds, out_path, limit=TOP_LIMIT):
+def collect_team(slug, feeds, out_path):
     cutoff = datetime.now(timezone.utc) - timedelta(days=MAX_AGE_DAYS)
 
-    # 1) Fetch fresh
-    fresh=[]
-    for f in feeds:
-        name=f.get("name","Source"); url=f.get("url"); trust=f.get("trust_level","blog")
-        if not url: continue
-        d=feedparser.parse(url, request_headers=FEED_HEADERS)
-        for e in d.entries[:50]:
-            it=normalize_item(name,trust,e)
+    raw_items = []
+
+    # 1. pull from each feed
+    for feed_conf in feeds:
+        source_name = feed_conf.get("name","Source")
+        trust_level = feed_conf.get("trust_level","national")
+        url = feed_conf.get("url")
+        if not url:
+            continue
+
+        parsed = feedparser.parse(url, request_headers=FEED_HEADERS)
+
+        for entry in parsed.entries[:50]:
+            it = _normalize_item(source_name, trust_level, entry)
+
+            # discard old stuff
             try:
-                dt=datetime.fromisoformat(it["date"].replace("Z","+00:00"))
-            except:
-                dt=datetime.now(timezone.utc)
-            if dt < cutoff:  # too old
+                dt = datetime.fromisoformat(it["date"].replace("Z","+00:00"))
+            except Exception:
+                dt = datetime.now(timezone.utc)
+            if dt < cutoff:
                 continue
-            fresh.append(it)
 
-    # 2) Read what’s currently live
-    current = read_existing(out_path)
-    newest_current = newest_dt(current)
-    newest_fresh   = newest_dt(fresh)
+            # discard if not clearly Purdue MBB
+            if not _is_mbb_related(it):
+                continue
 
-    # 3) If this run produced nothing or clearly older headlines, DO NOT roll back
-    if not fresh:
-        print(f"[{team_slug}] Fresh=0 → keep existing ({len(current)} items).")
+            raw_items.append(it)
+
+    # 2. dedupe across all sources
+    deduped = _dedup(raw_items)
+
+    # 3. sort by score (recency + trust), take top 20
+    deduped.sort(key=_score, reverse=True)
+    top_items = deduped[:MAX_RESULTS]
+
+    # 4. write to disk (only if at least 1 item)
+    if not top_items:
+        print(f"[{slug}] No qualifying Purdue MBB stories found. Keeping old file.")
         return
-    if newest_current and newest_fresh and (newest_fresh < newest_current):
-        print(f"[{team_slug}] Fresh newest {newest_fresh} < Current newest {newest_current} → keep existing.")
-        return
 
-    # 4) Merge: prefer fresh, then old, dedup, score, limit
-    merged = dedup_items(fresh + current)
-    merged.sort(key=score_item, reverse=True)
-    merged = merged[:limit]
+    _atomic_write(out_path, {"items": top_items})
+    print(f"[{slug}] wrote {len(top_items)} items -> {out_path}")
 
-    atomic_write_json(out_path, {"items": merged})
-    print(f"[{team_slug}] wrote {len(merged)} items (fresh {len(fresh)} + current {len(current)} merged) -> {out_path}")
-
-# --------------- Rankings -----------------
-def fetch_ap_rank():
-    try:
-        r=requests.get(
-            "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/rankings",
-            timeout=10, headers=FEED_HEADERS
-        ); r.raise_for_status()
-        data=r.json()
-        for poll in data.get("rankings",[]):
-            for t in poll.get("ranks",[]):
-                if "Purdue" in t.get("team",{}).get("displayName",""):
-                    val=t.get("current")
-                    return int(val) if isinstance(val,int) or (isinstance(val,str) and val.isdigit()) else None
-    except Exception as e:
-        print("AP fetch error:", e)
-    return None
-
-def fetch_kenpom_rank():
-    try:
-        r=requests.get("https://kenpom.com/", timeout=10, headers=FEED_HEADERS); r.raise_for_status()
-        m=re.search(r"Purdue</a></td><td[^>]*>(\d+)</td>", r.text)
-        if m: return int(m.group(1))
-    except Exception as e:
-        print("KenPom fetch error:", e)
-    return None
-
-def update_widgets():
-    path="static/widgets.json"
-    data={"ap_rank":"—","kenpom_rank":"—","nil":[]}
-    if os.path.exists(path):
-        try: data=json.load(open(path,encoding="utf-8"))
-        except: pass
-    ap=fetch_ap_rank(); kp=fetch_kenpom_rank()
-    if ap is not None: data["ap_rank"]=str(ap)
-    if kp is not None: data["kenpom_rank"]=str(kp)
-    atomic_write_json(path, data)
-    print(f"widgets.json -> AP:{data['ap_rank']} KP:{data['kenpom_rank']}")
-
-# --------------- Main ---------------------
 def main():
-    conf=yaml.safe_load(open("src/feeds.yaml","r",encoding="utf-8"))
-    teams_env=os.environ.get("TEAMS","").strip()
-    teams=[t.strip() for t in teams_env.split(",") if t.strip()] if teams_env else list(conf.keys())
-    if not teams: raise SystemExit("No teams specified and feeds.yaml is empty.")
+    # read feeds.yaml
+    conf = yaml.safe_load(open("src/feeds.yaml","r",encoding="utf-8"))
+
+    teams_env = os.environ.get("TEAMS","").strip()
+    teams = [t.strip() for t in teams_env.split(",") if t.strip()] if teams_env else list(conf.keys())
+    if not teams:
+        raise SystemExit("No teams configured.")
+
     for team in teams:
         if team not in conf:
             print(f"Team {team} not in feeds.yaml; skipping.")
             continue
-        collect_team(team, conf[team], f"static/teams/{team}/items.json")
-    update_widgets()
+        output_path = f"static/teams/{team}/items.json"
+        collect_team(team, conf[team], output_path)
 
-if __name__=="__main__":
+if __name__ == "__main__":
     main()
