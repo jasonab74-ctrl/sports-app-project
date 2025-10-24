@@ -8,13 +8,14 @@
   />
   <title>Purdue Boilermakers • Men's Basketball Hub</title>
 
+  <!-- global site styles -->
   <link rel="stylesheet" href="static/css/pro.css"/>
 
   <meta name="theme-color" content="#1a1b1e"/>
-  <meta name="description" content="Top Purdue Boilermakers Men's Basketball headlines from trusted sources. Updated automatically.">
+  <meta name="description" content="Rolling top 20 Purdue Boilermakers Men's Basketball headlines from trusted sources. Updated automatically.">
 
   <style>
-    /* --- Core shell overrides (keeps the look you already have live) --- */
+    /* Base layout */
     body {
       background-color: #1a1b1e;
       color: #e8eaed;
@@ -23,6 +24,7 @@
       padding: 0;
     }
 
+    /* Header */
     .site-header {
       background: #1f2022;
       border-bottom: 1px solid rgba(255,255,255,0.08);
@@ -31,7 +33,6 @@
       top: 0;
       z-index: 100;
     }
-
     .site-header-inner {
       display: flex;
       align-items: flex-start;
@@ -40,13 +41,11 @@
       margin: 0 auto;
       gap: 12px;
     }
-
     .brand {
       display: flex;
       align-items: flex-start;
       gap: 12px;
     }
-
     .brand-icon .brand-mark {
       width: 20px;
       height: 20px;
@@ -57,27 +56,26 @@
       border-radius: 2px;
       margin-top: 4px;
     }
-
     .brand-text .team-name {
       font-size: 1rem;
       font-weight: 600;
       line-height: 1.3;
       color: #f7f7f2;
     }
-
     .brand-text .team-sub {
       font-size: 0.8rem;
       line-height: 1.2;
       color: rgba(255,255,255,0.6);
     }
 
+    /* Content wrapper */
     .content-wrap {
       max-width: 1280px;
       margin: 16px auto 80px auto;
       padding: 0 16px 64px;
     }
 
-    /* Headlines panel */
+    /* Panel look */
     .panel {
       background: radial-gradient(circle at 0% 0%, rgba(212,194,123,0.08) 0%, rgba(0,0,0,0) 60%), #1f2022;
       border: 1px solid rgba(255,255,255,0.08);
@@ -94,7 +92,6 @@
       flex-wrap: wrap;
       margin-bottom: 12px;
     }
-
     .panel-title {
       font-size: 1.25rem;
       font-weight: 600;
@@ -102,7 +99,6 @@
       margin: 0;
       line-height: 1.3;
     }
-
     .panel-accent {
       flex: 1;
       height: 3px;
@@ -111,6 +107,7 @@
       background: linear-gradient(to right, #d4c27b 0%, rgba(212,194,123,0) 70%);
     }
 
+    /* Empty-state / status message */
     .empty-state {
       background: #2a2b2f;
       border: 1px solid rgba(255,255,255,0.08);
@@ -124,7 +121,7 @@
     }
     .hidden { display: none !important; }
 
-    /* Headlines grid/cards */
+    /* Grid of news cards */
     .news-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -137,6 +134,7 @@
       .news-grid { grid-template-columns: repeat(3, 1fr); }
     }
 
+    /* Individual card */
     .card {
       background: #2a2b2f;
       border: 1px solid rgba(255,255,255,0.08);
@@ -148,26 +146,16 @@
       overflow: hidden;
     }
 
-    .thumb {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-      background: #1a1b1e;
-      color: transparent;
-      display: block;
-    }
-
+    /* Thumbnail wrapper + fallback styling is injected by JS */
     .meta {
       padding: 12px 14px 16px;
     }
-
     .meta .source {
       font-size: 0.8rem;
       font-weight: 500;
       color: #d4c27b;
       margin-bottom: 6px;
     }
-
     .meta .title {
       font-size: 1rem;
       font-weight: 600;
@@ -175,44 +163,43 @@
       color: #ffffff;
       margin-bottom: 6px;
     }
-
     .meta .date {
       font-size: 0.8rem;
       color: rgba(255,255,255,0.55);
     }
 
-    /* Sources list panel */
-    .sources-list ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .sources-list li {
+    /* Sources list section */
+    .sources-list .source-row {
       background: #2a2b2f;
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: 10px;
-      color: #fff;
       padding: 14px;
       font-size: 0.9rem;
       line-height: 1.4;
       display: flex;
-      align-items: center;
-      gap: 10px;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 12px;
       margin-bottom: 10px;
     }
-    .sources-list li::before {
-      content: "•";
+    .dot {
       color: #d4c27b;
       font-weight: 600;
       font-size: 1.1rem;
       line-height: 1;
+      flex-shrink: 0;
     }
-    .sources-list small {
+    .source-main {
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      line-height: 1.3;
+    }
+    .source-desc {
       color: rgba(255,255,255,0.6);
       font-size: 0.8rem;
       font-weight: 400;
-      display: block;
-      line-height: 1.3;
+      line-height: 1.4;
     }
 
     /* Footer */
@@ -223,19 +210,16 @@
       color: rgba(255,255,255,0.6);
       font-size: 0.8rem;
     }
-
     .footer-inner {
       max-width: 1280px;
       margin: 0 auto;
       line-height: 1.4;
     }
-
     .legal {
       color: rgba(255,255,255,0.7);
       margin-bottom: 6px;
       font-size: 0.8rem;
     }
-
     .build-line {
       color: rgba(255,255,255,0.45);
       word-break: break-word;
@@ -245,8 +229,7 @@
 </head>
 
 <body class="app-shell">
-
-  <!-- HEADER (hamburger is removed) -->
+  <!-- HEADER -->
   <header class="site-header">
     <div class="site-header-inner">
       <div class="brand">
@@ -261,13 +244,13 @@
     </div>
   </header>
 
-  <!-- MAIN CONTENT -->
+  <!-- MAIN -->
   <main class="content-wrap">
 
-    <!-- Latest Headlines -->
+    <!-- Headlines block -->
     <section class="panel panel-news">
       <div class="panel-head">
-        <h2 class="panel-title">Latest Headlines</h2>
+        <h2 class="panel-title">Top Headlines</h2>
         <div class="panel-accent"></div>
       </div>
 
@@ -278,65 +261,109 @@
       <div id="news-grid" class="news-grid"></div>
     </section>
 
-    <!-- Sources panel -->
+    <!-- Sources block -->
     <section class="panel sources-list">
       <div class="panel-head">
         <h2 class="panel-title">Sources</h2>
         <div class="panel-accent"></div>
       </div>
 
-      <!-- This list is static text so the user can see exactly who we trust.
-           If you update feeds.yaml, update here too. -->
-      <ul>
-        <li>
-          Hammer & Rails
-          <small>SB Nation Purdue coverage / longtime beat voices</small>
-        </li>
-        <li>
-          Journal & Courier
-          <small>Lafayette/West Lafayette local reporting</small>
-        </li>
-        <li>
-          GoldandBlack (Rivals)
-          <small>Insider / recruiting / practice notes</small>
-        </li>
-        <li>
-          On3 Purdue
-          <small>Insider / recruiting board / trends</small>
-        </li>
-        <li>
-          ESPN
-          <small>National college basketball context</small>
-        </li>
-        <li>
-          Yahoo Sports
-          <small>National schedule / Big Ten angle</small>
-        </li>
-        <li>
-          CBS Sports
-          <small>National analysis, projections, roster outlooks</small>
-        </li>
-        <li>
-          Field of 68
-          <small>Video / interview-driven college hoops talk</small>
-        </li>
-        <li>
-          The Athletic
-          <small>High-cred features / Big Ten coverage</small>
-        </li>
-        <li>
-          Stadium / Jeff Goodman
-          <small>National insider perspective</small>
-        </li>
-        <li>
-          Associated Press (AP)
-          <small>Wire-quality Purdue men’s hoops news</small>
-        </li>
-        <li>
-          Big Ten Network
-          <small>B1G network basketball coverage</small>
-        </li>
-      </ul>
+      <!-- This list is static. Keep in sync with feeds.yaml -->
+      <div class="source-row">
+        <div class="dot">•</div>
+        <div>
+          <div class="source-main">Hammer &amp; Rails</div>
+          <div class="source-desc">SB Nation Purdue coverage / longtime beat voices</div>
+        </div>
+      </div>
+
+      <div class="source-row">
+        <div class="dot">•</div>
+        <div>
+          <div class="source-main">Journal &amp; Courier</div>
+          <div class="source-desc">Local Lafayette / West Lafayette reporting</div>
+        </div>
+      </div>
+
+      <div class="source-row">
+        <div class="dot">•</div>
+        <div>
+          <div class="source-main">GoldandBlack (Rivals)</div>
+          <div class="source-desc">Insider access, recruiting, practice notes</div>
+        </div>
+      </div>
+
+      <div class="source-row">
+        <div class="dot">•</div>
+        <div>
+          <div class="source-main">On3 Purdue</div>
+          <div class="source-desc">Insider / recruiting board / roster trends</div>
+        </div>
+      </div>
+
+      <div class="source-row">
+        <div class="dot">•</div>
+        <div>
+          <div class="source-main">ESPN</div>
+          <div class="source-desc">National college basketball context</div>
+        </div>
+      </div>
+
+      <div class="source-row">
+        <div class="dot">•</div>
+        <div>
+          <div class="source-main">CBS Sports</div>
+          <div class="source-desc">National analysis, projections, roster outlooks</div>
+        </div>
+      </div>
+
+      <div class="source-row">
+        <div class="dot">•</div>
+        <div>
+          <div class="source-main">Yahoo Sports</div>
+          <div class="source-desc">National angle on Big Ten and Purdue storylines</div>
+        </div>
+      </div>
+
+      <div class="source-row">
+        <div class="dot">•</div>
+        <div>
+          <div class="source-main">Field of 68</div>
+          <div class="source-desc">Video / interview-driven college hoops talk</div>
+        </div>
+      </div>
+
+      <div class="source-row">
+        <div class="dot">•</div>
+        <div>
+          <div class="source-main">The Athletic</div>
+          <div class="source-desc">High-cred features / Big Ten coverage</div>
+        </div>
+      </div>
+
+      <div class="source-row">
+        <div class="dot">•</div>
+        <div>
+          <div class="source-main">Stadium / Jeff Goodman</div>
+          <div class="source-desc">National insider perspective</div>
+        </div>
+      </div>
+
+      <div class="source-row">
+        <div class="dot">•</div>
+        <div>
+          <div class="source-main">Associated Press (AP)</div>
+          <div class="source-desc">Wire-quality Purdue men’s hoops news</div>
+        </div>
+      </div>
+
+      <div class="source-row">
+        <div class="dot">•</div>
+        <div>
+          <div class="source-main">Big Ten Network</div>
+          <div class="source-desc">Big Ten basketball coverage and analysis</div>
+        </div>
+      </div>
     </section>
 
   </main>
@@ -348,13 +375,13 @@
         Auto-updating Purdue Hoops Hub • © <span id="year"></span>
       </div>
       <div id="build-line" class="build-line">
-        <!-- JS fills:
+        <!-- JS fills this:
              Build: 2025-10-24T01:23:45Z • commit abc1234 • 20 items • updated 5 min ago -->
       </div>
     </div>
   </footer>
 
-  <!-- JS loader -->
+  <!-- JS app -->
   <script src="static/js/pro.js"></script>
 </body>
 </html>
