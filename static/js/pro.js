@@ -4,9 +4,38 @@
     try { return new Date(iso).toLocaleDateString(undefined,{month:'short',day:'numeric'}); }
     catch { return '—'; }
   };
-  const hostIcon = (url) => {
-    try { return `https://www.google.com/s2/favicons?domain=${new URL(url).hostname}&sz=128`; }
+
+  // Source → logo mapping (we ship these files below)
+  const LOGO_MAP = {
+    "www.hammerandrails.com": "static/logos/hammerandrails.svg",
+    "hammerandrails.com": "static/logos/hammerandrails.svg",
+    "rssfeeds.jconline.com": "static/logos/jconline.svg",
+    "www.jconline.com": "static/logos/jconline.svg",
+    "purdue.rivals.com": "static/logos/rivals.svg",
+    "www.on3.com": "static/logos/on3.svg",
+    "www.espn.com": "static/logos/espn.svg",
+    "sports.yahoo.com": "static/logos/yahoo.svg",
+    "www.cbssports.com": "static/logos/cbssports.svg",
+    "www.youtube.com": "static/logos/youtube.svg",
+    "youtu.be": "static/logos/youtube.svg"
+  };
+
+  const hostFromUrl = (u) => { try { return new URL(u).hostname; } catch { return ""; } };
+  const faviconFor = (u) => {
+    try { return `https://www.google.com/s2/favicons?domain=${new URL(u).hostname}&sz=128`; }
     catch { return 'static/placeholder-16x9.svg'; }
+  };
+
+  const chooseThumb = (link, image) => {
+    // 1) Valid feed image
+    if (image && /^https?:\/\//i.test(image)) return image;
+    const host = hostFromUrl(link);
+    // 2) Our shipped logo for that host
+    if (host && LOGO_MAP[host]) return LOGO_MAP[host];
+    // 3) Favicon service
+    if (host) return faviconFor(link);
+    // 4) Final fallback
+    return 'static/placeholder-16x9.svg';
   };
 
   // Mobile nav + year
@@ -37,7 +66,7 @@
   ]).then(([items, schedule, widgets, sources]) => {
     const list = Array.isArray(items?.items) ? items.items : [];
 
-    // If build.json said 0 but we have data, fix the footer display
+    // Fix footer count if build.json lagged
     if (list.length && buildData && (buildData.items_count === 0 || buildData.items_count === '0')) {
       const line = $('#build-line');
       if (line) line.textContent = `Build: ${buildData.timestamp||'—'} • commit ${buildData.commit||'—'} • ${list.length} items`;
@@ -56,7 +85,7 @@
         const img = document.createElement('img');
         img.className = 'thumb';
         img.loading = 'lazy';
-        img.src = it.image || hostIcon(it.link);
+        img.src = chooseThumb(it.link, it.image);
 
         const meta = document.createElement('div');
         meta.className = 'meta';
@@ -73,7 +102,7 @@
       empty?.classList.remove('hidden');
     }
 
-    // Videos: from YouTube links in list
+    // Videos from list (YouTube)
     const vrow = $('#video-row');
     const vids = list.filter(i => (i.link||'').includes('youtube.com') || (i.link||'').includes('youtu.be'));
     vids.slice(0,8).forEach(v=>{
@@ -98,10 +127,10 @@
       tbody?.appendChild(tr);
     });
 
-    // Rankings + NIL
+    // Rankings (raw numbers) + NIL
     if (widgets) {
-      $('#ap-rank')?.append(document.createTextNode(widgets.ap_rank ?? '—'));
-      $('#kenpom-rank')?.append(document.createTextNode(widgets.kenpom_rank ?? '—'));
+      $('#ap-rank') && ($('#ap-rank').textContent = (widgets.ap_rank ?? '—'));
+      $('#kenpom-rank') && ($('#kenpom-rank').textContent = (widgets.kenpom_rank ?? '—'));
       (widgets.nil||[]).forEach(row=>{
         const li=document.createElement('li');
         li.innerHTML = `<span class="name">${row.name}</span><span class="val">${row.valuation}</span>`;
