@@ -1,16 +1,16 @@
-/* static/js/pro.js — Purdue MBB “Top 20 Headlines” Hub
-   - Fetches items.json from static/teams/purdue-mbb/
-   - Renders top 20 cards in #news-grid
-   - Shows timestamp/commit/items count in footer
-   - Local logos/placeholder for thumbnails
-   - Mobile-first
+/* static/js/pro.js — Purdue MBB “Top 20 Headlines”
+   - Fetches curated items.json
+   - Renders up to 20 cards
+   - Fills footer with build info
+   - Mobile-first, dark theme
 */
 
 (function () {
-  // ---------- Tiny DOM helpers ----------
-  const $  = (sel, el = document) => el.querySelector(sel);
+  // Basic DOM helpers
+  const $ = (sel, el = document) => el.querySelector(sel);
 
-  const fmtDate = (iso) => {
+  // Date formatting for cards
+  function fmtDate(iso) {
     try {
       return new Date(iso).toLocaleDateString(undefined, {
         month: 'short',
@@ -19,17 +19,18 @@
     } catch {
       return '—';
     }
-  };
+  }
 
-  const hostFromUrl = (u) => {
+  // Extract hostname for logo mapping
+  function hostFromUrl(u) {
     try {
       return new URL(u).hostname;
     } catch {
       return '';
     }
-  };
+  }
 
-  // Map domains -> local logos. All of these should exist under /static/logos/
+  // Map host -> local logo
   const LOGO_MAP = {
     "www.hammerandrails.com": "static/logos/hammerandrails.svg",
     "hammerandrails.com":     "static/logos/hammerandrails.svg",
@@ -49,6 +50,7 @@
     "espn.com":               "static/logos/espn.svg",
 
     "sports.yahoo.com":       "static/logos/yahoo.svg",
+
     "www.cbssports.com":      "static/logos/cbssports.svg",
     "cbssports.com":          "static/logos/cbssports.svg",
 
@@ -56,26 +58,22 @@
     "youtube.com":            "static/logos/youtube.svg",
     "youtu.be":               "static/logos/youtube.svg",
 
-    "watchstadium.com":       "static/logos/cbssports.svg", // reuse or add stadium.svg later
-    "theathletic.com":        "static/logos/cbssports.svg", // placeholder
-    "apnews.com":             "static/logos/cbssports.svg", // placeholder
-    "btn.com":                "static/logos/cbssports.svg"  // placeholder
+    "watchstadium.com":       "static/logos/cbssports.svg",
+    "theathletic.com":        "static/logos/cbssports.svg",
+    "apnews.com":             "static/logos/cbssports.svg",
+    "btn.com":                "static/logos/cbssports.svg"
   };
 
-  // pick a thumbnail for an article card
   function chooseThumb(link, image) {
-    // 1) If the feed gave us a real image URL, try it
+    // prefer real image if feed provided one
     if (image && /^https?:\/\//i.test(image)) return image;
-
-    // 2) otherwise, try a brand logo based on domain
+    // fallback to brand logo
     const h = hostFromUrl(link);
     if (h && LOGO_MAP[h]) return LOGO_MAP[h];
-
-    // 3) fallback placeholder
+    // final fallback
     return 'static/placeholder-16x9.svg';
   }
 
-  // fetch JSON with no caching
   async function safeFetch(path) {
     try {
       const res = await fetch(path, { cache: 'no-store' });
@@ -86,18 +84,18 @@
     }
   }
 
-  // footer year
+  // year in footer
   const yearEl = $('#year');
   if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
   }
 
-  // hamburger menu (mobile drawer if you keep it in HTML; safe no-op otherwise)
+  // optional drawer/hamburger
   $('#hamburger')?.addEventListener('click', () => {
     $('#nav')?.classList.toggle('open');
   });
 
-  // ---- Build footer handling ----
+  // build footer state
   let buildData = null;
 
   function setBuildFooter(itemsCountMaybe) {
@@ -106,7 +104,6 @@
 
     const ts  = buildData?.timestamp || '—';
     const sha = buildData?.commit    || '—';
-
     const cnt = (typeof itemsCountMaybe === 'number')
       ? itemsCountMaybe
       : (buildData?.items_count ?? '—');
@@ -124,30 +121,28 @@
     line.textContent = `Build: ${ts} • commit ${sha} • ${cnt} items${freshness}`;
   }
 
-  // ---- Main load pipeline ----
   (async () => {
-    // load build.json first (for footer + cache bust param)
+    // 1) load build meta
     buildData = await safeFetch('static/build.json');
     setBuildFooter();
 
-    // bust cache using build timestamp
+    // 2) cache-bust param so we don't get stale JSON
     const ver = encodeURIComponent(buildData?.timestamp || String(Date.now()));
     const bust = (p) => `${p}?v=${ver}`;
 
-    // load the 20 curated items
-    const itemsJson = await safeFetch(bust('static/teams/purdue-mbb/items.json'));
+    // 3) load curated items (collector writes this)
+    const data = await safeFetch(bust('static/teams/purdue-mbb/items.json'));
+    const list = Array.isArray(data?.items) ? data.items : [];
 
-    const list = Array.isArray(itemsJson?.items) ? itemsJson.items : [];
-
-    // if build.json said "0" but we actually have items, fix footer
+    // fix footer count if build.json still says 0
     if (list.length && (buildData?.items_count === 0 || buildData?.items_count === '0')) {
       setBuildFooter(list.length);
     }
 
-    // render list
+    // 4) render cards
     renderHeadlines(list);
 
-    // expose diag info for /diag.html (optional)
+    // small diag info if you ever open diag.html
     window.__HUB_STATE__ = {
       build: buildData || null,
       total: list.length,
@@ -167,7 +162,7 @@
 
     empty?.classList.add('hidden');
 
-    // top 20 only (collector is already clipped to 20, but guard anyway)
+    // we only ever show up to 20
     items.slice(0, 20).forEach(it => {
       const card = document.createElement('a');
       card.className = 'card';
@@ -175,7 +170,7 @@
       card.target = '_blank';
       card.rel = 'noopener noreferrer';
 
-      // thumb
+      // thumbnail/logo
       const img = document.createElement('img');
       img.className = 'thumb';
       img.loading = 'lazy';
@@ -186,7 +181,7 @@
         img.src = 'static/placeholder-16x9.svg';
       };
 
-      // meta block
+      // text stack
       const meta = document.createElement('div');
       meta.className = 'meta';
       meta.innerHTML = `
