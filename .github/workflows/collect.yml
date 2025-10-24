@@ -36,18 +36,32 @@ jobs:
           TEAMS: "purdue-mbb"
         run: python tools/collect.py || true
 
+      # ---- TWEAKED STEP (safe wait + count) ---------------------------------
       - name: Build stamp, health, and disable Jekyll
         run: |
           echo > .nojekyll
+
           ITEMS_FILE="static/teams/purdue-mbb/items.json"
-          ITEMS_COUNT=$(python -c "import json,os,sys; p=os.environ.get('P'); print(len(json.load(open(p)).get('items',[])) if os.path.exists(p) else 0)" P="$ITEMS_FILE" 2>/dev/null || echo 0)
+          # Wait briefly for collector to finish writing the file (up to ~3s)
+          for i in 1 2 3; do [ -s "$ITEMS_FILE" ] && break || sleep 1; done
+
+          ITEMS_COUNT=$(python -c "import json,os,sys,time; p=os.environ.get('P','static/teams/purdue-mbb/items.json'); 
+from pathlib import Path
+path=Path(p)
+try:
+    j=json.load(open(p,'r',encoding='utf-8')) if path.exists() and path.stat().st_size>0 else {}
+    print(len(j.get('items',[])) or 0)
+except Exception:
+    print(0)" P="$ITEMS_FILE" 2>/dev/null || echo 0)
+
           TS=$(date -u +'%Y-%m-%dT%H:%M:%SZ')
           SHA=$(git rev-parse --short HEAD || echo "unknown")
           mkdir -p static
           printf '{"timestamp":"%s","commit":"%s","items_count":%s}\n' "$TS" "$SHA" "$ITEMS_COUNT" > static/build.json
           printf '{"ok":true,"timestamp":"%s","items_count":%s}\n' "$TS" "$ITEMS_COUNT" > static/health.json
+      # -----------------------------------------------------------------------
 
-      # HARD GUARDS: make sure we are deploying the real SPA assets, not placeholders
+      # HARD GUARDS: make sure we deploy the real SPA assets, not placeholders
       - name: Assert SPA artifact integrity
         run: |
           test -f index.html
@@ -82,6 +96,6 @@ jobs:
       # LIVE URL sanity check — FAIL if the wrong page is live
       - name: Verify LIVE site contains SPA marker
         run: |
-          LIVE_URL="https://jasonab74-ctrl.github.io/purdue-mbb-bot/"
+          LIVE_URL="https://jasonab74-ctrl.github.io/sports-app-project/"
           echo "Checking $LIVE_URL ..."
           curl -fsSL "$LIVE_URL" | grep -q 'id="build-line"' && echo "Live check OK" || (echo "ERROR: Live site is not the SPA (build-line marker missing)"; exit 1)
