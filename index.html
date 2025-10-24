@@ -1,74 +1,90 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Purdue Men's Basketball — 2025-26 Hub</title>
-  <meta name="theme-color" content="#1b1c1e" />
-  <link rel="stylesheet" href="static/css/pro.css" />
+  <meta charset="utf-8"/>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1"
+  />
+  <title>Purdue Boilermakers • Men's Basketball Hub</title>
+
+  <!-- Core styles -->
+  <link rel="stylesheet" href="static/css/pro.css"/>
+
+  <!-- Dark theme basic colors for social/link previews -->
+  <meta name="theme-color" content="#1a1b1e"/>
+
+  <!-- Basic SEO -->
+  <meta name="description" content="Top Purdue Boilermakers Men's Basketball headlines from trusted sources. Updated automatically.">
 </head>
-<body>
+
+<body class="app-shell">
   <header class="site-header">
-    <div class="shell">
+    <div class="site-header-inner">
       <div class="brand">
-        <svg viewBox="0 0 24 24" class="brand-logo"><path d="M3 12l3-5h10l-3 5 3 5H6l-3-5z"></path></svg>
-        <div class="brand-copy">
-          <h1>Purdue Boilermakers</h1>
-          <p class="sub">Men’s Basketball Hub</p>
+        <div class="brand-icon">
+          <!-- little gold chevron / arrow / hammer icon etc;
+               you can style this via CSS or leave it empty -->
+          <span class="brand-mark"></span>
+        </div>
+        <div class="brand-text">
+          <div class="team-name">Purdue Boilermakers</div>
+          <div class="team-sub">Men’s Basketball Hub</div>
         </div>
       </div>
-      <button id="hamburger" class="hamburger">☰</button>
-      <nav id="nav" class="nav">
-        <a href="#news">News</a>
-        <a href="#videos">Videos</a>
-        <a href="#schedule">Schedule</a>
-        <a href="#rankings">Rankings</a>
-        <a href="#links">Links</a>
-      </nav>
+
+      <!-- mobile nav button (optional) -->
+      <button id="hamburger" class="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+
+    <!-- optional slide-out nav (hidden by default, we keep placeholder hooks) -->
+    <nav id="nav" class="main-nav">
+      <ul>
+        <li><a href="./">Home</a></li>
+        <!-- Add external quick links if you want -->
+        <!-- <li><a href="https://hammerandrails.com" target="_blank" rel="noopener noreferrer">Hammer & Rails ↗</a></li> -->
+      </ul>
+    </nav>
   </header>
 
-  <main class="shell">
-    <section id="news" class="block">
-      <div class="block-head"><h2>Latest Headlines</h2><span class="accent"></span></div>
-      <div id="news-grid" class="grid"></div>
-      <div id="news-empty" class="empty hidden">Loading headlines…</div>
-    </section>
+  <main class="content-wrap">
+    <!-- Headlines Section -->
+    <section class="panel panel-news">
+      <div class="panel-head">
+        <h2 class="panel-title">
+          Latest Headlines
+        </h2>
+        <div class="panel-accent"></div>
+      </div>
 
-    <section id="videos" class="block">
-      <div class="block-head"><h2>Video Highlights</h2><span class="accent"></span></div>
-      <div id="video-row" class="video-row"></div>
-    </section>
+      <!-- If no stories -->
+      <div id="news-empty" class="empty-state">
+        <p>No Purdue Men’s Basketball headlines yet. New stories will appear here automatically.</p>
+      </div>
 
-    <section class="columns">
-      <section id="schedule" class="block col">
-        <div class="block-head"><h2>Schedule</h2><span class="accent"></span></div>
-        <table class="table"><thead><tr><th>Date</th><th>Opponent</th><th>Result</th></tr></thead><tbody></tbody></table>
-      </section>
-
-      <section id="rankings" class="block col">
-        <div class="block-head"><h2>Rankings & NIL</h2><span class="accent"></span></div>
-        <div class="rank-cards">
-          <div class="card kpi"><div class="kpi-label">AP Top 25</div><div id="ap-rank" class="kpi-value">—</div></div>
-          <div class="card kpi"><div class="kpi-label">KenPom</div><div id="kenpom-rank" class="kpi-value">—</div></div>
-        </div>
-        <div class="nil"><h3>NIL Leaderboard</h3><ul id="nil-list"></ul></div>
-      </section>
-    </section>
-
-    <section id="links" class="block">
-      <div class="block-head"><h2>Key Sources</h2><span class="accent"></span></div>
-      <ul class="links" id="sources-list"></ul>
+      <!-- Stories injected here by pro.js -->
+      <div id="news-grid" class="news-grid">
+        <!-- JS will append each .card -->
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="shell">
-      <p>Auto-updating Purdue Hub • © <span id="year"></span></p>
-      <p id="build-line" class="muted" style="margin-top:6px;font-size:12px;color:#9aa0a6">Build: —</p>
+    <div class="footer-inner">
+      <div class="legal">
+        Auto-updating Purdue Hoops Hub • © <span id="year"></span>
+      </div>
+      <div id="build-line" class="build-line">
+        <!-- JS fills:
+             "Build: 2025-10-24T01:23:45Z • commit abc1234 • 20 items • updated 5 min ago"
+        -->
+      </div>
     </div>
   </footer>
 
-  <script src="static/js/pro.js" defer></script>
+  <!-- App logic -->
+  <script src="static/js/pro.js"></script>
 </body>
 </html>
