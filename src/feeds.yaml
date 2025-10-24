@@ -1,5 +1,10 @@
+# src/feeds.yaml
+# Purdue Men's Basketball focused feeds.
+# Each feed is scored by trust_level, deduped, and merged.
+# Only the top ~20 most relevant, recent Purdue MBB stories survive.
+
 purdue-mbb:
-  # Core / beat / insider
+  # --- Beat / Local / Insiders ---
   - name: Hammer & Rails
     url: https://www.hammerandrails.com/rss/index.xml
     trust_level: beat
@@ -16,7 +21,7 @@ purdue-mbb:
     url: https://news.google.com/rss/search?q=Purdue+men%27s+basketball+site:on3.com&hl=en-US&gl=US&ceid=US:en
     trust_level: insiders
 
-  # National / evaluation / recruiting
+  # --- National / Recruiting / Evaluation ---
   - name: ESPN College Basketball
     url: https://news.google.com/rss/search?q=Purdue+Boilermakers+men%27s+basketball+site:espn.com&hl=en-US&gl=US&ceid=US:en
     trust_level: national
@@ -29,11 +34,12 @@ purdue-mbb:
     url: https://news.google.com/rss/search?q=Purdue+Boilermakers+men%27s+basketball+site:cbssports.com&hl=en-US&gl=US&ceid=US:en
     trust_level: national
 
+  # --- Video / Analysis ---
   - name: Field of 68
     url: https://news.google.com/rss/search?q=Purdue+Boilermakers+men%27s+basketball+%22Field+of+68%22+site:youtube.com&hl=en-US&gl=US&ceid=US:en
     trust_level: national
 
-  # Add-on national voices (high credibility)
+  # --- High-cred voices that talk Purdue (optional national layer) ---
   - name: The Athletic
     url: https://news.google.com/rss/search?q=Purdue+Boilermakers+men%27s+basketball+site:theathletic.com&hl=en-US&gl=US&ceid=US:en
     trust_level: national
@@ -42,7 +48,7 @@ purdue-mbb:
     url: https://news.google.com/rss/search?q=Purdue+Boilermakers+men%27s+basketball+Jeff+Goodman+site:watchstadium.com&hl=en-US&gl=US&ceid=US:en
     trust_level: national
 
-  - name: Associated Press CBB
+  - name: Associated Press (CBB)
     url: https://news.google.com/rss/search?q=Purdue+Boilermakers+men%27s+basketball+site:apnews.com&hl=en-US&gl=US&ceid=US:en
     trust_level: national
 
