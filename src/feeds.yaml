@@ -1,4 +1,50 @@
+# src/feeds.yaml
+# Feeds driving the auto-updating headlines. You can add/remove sources at any time.
+# Each entry is parsed with feedparser; Google News RSS "site:" filters are used
+# where a publisher doesn't expose a first-party RSS endpoint.
+
 purdue-mbb:
+  # --- Beat / Local ---
   - name: Hammer & Rails
-    trust_level: beat
     url: https://www.hammerandrails.com/rss/index.xml
+    trust_level: beat
+
+  - name: Journal & Courier
+    # Focus J&C Purdue basketball via Google News RSS
+    url: https://news.google.com/rss/search?q=site%3Ajconline.com+Purdue+basketball&hl=en-US&gl=US&ceid=US:en
+    trust_level: local
+
+  # --- Insider / Premium (surface headlines only) ---
+  - name: GoldandBlack (Rivals)
+    # Rivals doesn’t expose a clean RSS; use Google News RSS site filter
+    url: https://news.google.com/rss/search?q=site%3Apurdue.rivals.com+Purdue+basketball&hl=en-US&gl=US&ceid=US:en
+    trust_level: insiders
+
+  - name: On3 Purdue
+    url: https://news.google.com/rss/search?q=site%3Aon3.com+Purdue+basketball&hl=en-US&gl=US&ceid=US:en
+    trust_level: insiders
+
+  # --- National ---
+  - name: ESPN College Basketball
+    url: https://www.espn.com/espn/rss/ncb/news
+    trust_level: national
+
+  - name: CBS Sports College Basketball
+    url: https://www.cbssports.com/rss/headlines/college-basketball/
+    trust_level: national
+
+  - name: Yahoo Sports (Purdue-focused)
+    url: https://news.google.com/rss/search?q=site%3Asports.yahoo.com+Purdue+basketball&hl=en-US&gl=US&ceid=US:en
+    trust_level: national
+
+  # --- Official / Team site ---
+  - name: PurdueSports (Official)
+    # If PurdueSports RSS path ever changes, this site-filter keeps us covered
+    url: https://news.google.com/rss/search?q=site%3Apurduesports.com+mens+basketball+OR+men%27s+basketball&hl=en-US&gl=US&ceid=US:en
+    trust_level: official
+
+  # --- Video ---
+  - name: Field of 68 (YouTube)
+    # YouTube channel feeds require a channel_id; we use a site filter to keep it flexible
+    url: https://news.google.com/rss/search?q=site%3Ayoutube.com+%22Field+of+68%22+Purdue&hl=en-US&gl=US&ceid=US:en
+    trust_level: national
