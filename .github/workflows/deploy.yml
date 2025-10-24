@@ -1,0 +1,77 @@
+name: Build and Deploy Purdue MBB Hub
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"   # every 30 minutes
+  workflow_dispatch:
+
+permissions:
+  contents: write        # we need this to push the artifact to Pages
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout repo
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      # 2. Set up Python (collector is Python)
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # 3. Install deps needed by tools/collect.py
+      - name: Install Python deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install feedparser pyyaml rapidfuzz python-dateutil requests
+
+      # 4. Run collector to build top 20 Purdue MBB stories
+      - name: Run collector
+        env:
+          TEAMS: "purdue-mbb"
+        run: |
+          python tools/collect.py
+
+      # 5. Stamp build info (timestamp, commit, item count) for footer
+      - name: Write build.json
+        run: |
+          set -e
+          TS="$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
+          SHA="$(git rev-parse --short HEAD || echo 'unknown')"
+          COUNT="0"
+          if [ -f static/teams/purdue-mbb/items.json ]; then
+            COUNT=$(python - << 'PYCODE'
+import json
+with open("static/teams/purdue-mbb/items.json","r",encoding="utf-8") as f:
+    data=json.load(f)
+items=data.get("items",[])
+print(len(items))
+PYCODE
+)
+          fi
+          mkdir -p static
+          cat > static/build.json <<EOF
+{
+  "timestamp": "${TS}",
+  "commit": "${SHA}",
+  "items_count": ${COUNT}
+}
+EOF
+
+      # 6. Upload EVERYTHING in the repo root as the Pages artifact
+      #    (index.html, static/, etc.)
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      # 7. Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
