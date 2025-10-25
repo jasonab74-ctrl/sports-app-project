@@ -28,9 +28,7 @@
         <div class="panel-accent"></div>
       </div>
 
-      <div id="news-list" class="news-list">
-        <!-- Populated by JS -->
-      </div>
+      <div id="news-list" class="news-list"></div>
 
       <div id="news-empty" class="empty-state hidden">
         No Purdue Men’s Basketball headlines yet.
@@ -116,56 +114,9 @@
   </main>
 
   <script>
-    /*
-      🔁 DATA SHAPE
-      We'll render from an array like this. You can keep wiring this
-      to your items.json the same way you already had it.
-
-      Each item:
-      {
-        source: "Hammer & Rails",
-        title: "How to Watch #1 Purdue at #9 Kentucky & Open Thread",
-        link: "https://hammerandrails.com/some-article",
-        date: "2025-10-25T13:05:00Z"
-      }
-
-      NOTES:
-      - No image field anymore.
-      - We assume items are already filtered to ONLY men's basketball
-        and ONLY relevant Purdue/Boilers content, newest first.
-    */
-
-    const items = [
-      // EXAMPLE DATA (replace from items.json fetch)
-      // These are just placeholders to prove rendering works.
-      // It's totally fine if this array starts empty when page loads;
-      // you'll see the "No headlines yet" message.
-      /*
-      {
-        source: "Hammer & Rails",
-        title: "How to Watch #1 Purdue at #9 Kentucky & Open Thread",
-        link: "https://hammerandrails.com/example",
-        date: "2025-10-25T13:05:00Z"
-      },
-      {
-        source: "On3 Purdue",
-        title: "Five Things: Purdue's exhibition at Kentucky",
-        link: "https://on3.com/example",
-        date: "2025-10-25T12:22:00Z"
-      },
-      {
-        source: "Journal & Courier",
-        title: "No. 1 Purdue takes lessons from loss at Kentucky: 3 things we learned",
-        link: "https://jconline.com/example",
-        date: "2025-10-25T11:54:00Z"
-      }
-      */
-    ];
-
-    // --- formatting helpers ---
+    // --- formatting helper ---
     function formatDate(isoString) {
       if (!isoString) return "";
-      // Show like "Oct 25"
       const d = new Date(isoString);
       const opts = { month: "short", day: "numeric" };
       return d.toLocaleDateString(undefined, opts);
@@ -191,12 +142,10 @@
         const card = document.createElement("article");
         card.className = "headline-card";
 
-        // top row: source
         const sourceEl = document.createElement("div");
         sourceEl.className = "headline-source";
         sourceEl.textContent = item.source || "Unknown Source";
 
-        // title (clickable)
         const titleLink = document.createElement("a");
         titleLink.className = "headline-title";
         titleLink.href = item.link || "#";
@@ -204,7 +153,6 @@
         titleLink.rel = "noopener noreferrer";
         titleLink.textContent = item.title || "";
 
-        // date
         const dateEl = document.createElement("div");
         dateEl.className = "headline-date";
         dateEl.textContent = formatDate(item.date);
@@ -217,28 +165,30 @@
       });
     }
 
-    // Initial render from the inline `items` array above.
-    renderHeadlines(items);
-
-    /*
-      ⬇️ If you're already doing fetch("static/teams/purdue-mbb/items.json")
-      in your GitHub Pages build, you can drop that in here instead
-      of the inline array above.
-
-      Example:
-
+    // --- auto-fetch from JSON file ---
+    function loadHeadlines() {
       fetch("static/teams/purdue-mbb/items.json", { cache: "no-store" })
-        .then(r => r.json())
+        .then(r => {
+          if (!r.ok) throw new Error(`HTTP ${r.status}`);
+          return r.json();
+        })
         .then(data => {
-          // data.items should be newest-first
-          renderHeadlines(data.items || []);
+          if (data && Array.isArray(data.items)) {
+            renderHeadlines(data.items.slice(0, 20)); // top 20 most recent
+          } else {
+            console.warn("No valid items found in JSON");
+            renderHeadlines([]);
+          }
         })
         .catch(err => {
-          console.error("Failed to load headlines", err);
+          console.error("Failed to load headlines:", err);
+          renderHeadlines([]);
         });
+    }
 
-      That makes the page always show the newest 20 from the repo.
-    */
+    // --- initial load + refresh interval (every 30 min) ---
+    loadHeadlines();
+    setInterval(loadHeadlines, 1800000);
   </script>
 </body>
 </html>
