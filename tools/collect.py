@@ -2,8 +2,8 @@
 import os
 import re
 import json
-import time
 import math
+import time
 import tempfile
 from datetime import datetime, timedelta, timezone
 from urllib.parse import urlparse, urlunparse
@@ -12,99 +12,70 @@ import requests
 import feedparser
 import yaml
 
-# ============================
-# CONFIG
-# ============================
+# -------------------------------------------------------------------
+# CONFIG / CONSTANTS
+# -------------------------------------------------------------------
 
-# how far back we're willing to consider (hours)
-MAX_AGE_HOURS = 72  # 3 days rolling window
+# how "new" an article must be to qualify (rolling window)
+MAX_AGE_DAYS = 3  # last ~72h
 
-# how many headlines we keep
-TOP_LIMIT = 20
+# how many stories we actually surface
+TOP_N = 20
 
-# HTTP headers we use for RSS/Atom requests
+# headers for RSS / page fetches (helps with user-agent blocks)
 FEED_HEADERS = {
-    "User-Agent": (
-        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-        "AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15"
-    ),
+    "User-Agent": "Mozilla/5.0 (compatible; PurdueMBBFeedBot/1.0)",
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-    "Accept-Language": "en-US,en;q=0.5",
-    "Connection": "close",
 }
 
-# HTTP headers we use when we try to scrape og:image
-SCRAPE_HEADERS = {
-    "User-Agent": (
-        "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) "
-        "AppleWebKit/605.1.15 (KHTML, like Gecko) "
-        "Version/17.0 Mobile/15E148 Safari/604.1"
-    ),
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-    "Accept-Language": "en-US,en;q=0.5",
-    "Connection": "close",
-}
-
-# map funky source strings to nice canonical source names
+# Simple source-name canonicalization so duplicates merge cleanly
 SOURCE_CANON = {
-    "hammer & rails": "Hammer & Rails",
     "hammer and rails": "Hammer & Rails",
+    "hammer & rails": "Hammer & Rails",
+    "hammerandrails": "Hammer & Rails",
+
     "journal & courier": "Journal & Courier",
     "journal and courier": "Journal & Courier",
+    "journal courier": "Journal & Courier",
+
     "goldandblack": "GoldandBlack",
     "goldandblack.com": "GoldandBlack",
     "gold and black": "GoldandBlack",
-    "rivals": "GoldandBlack",
+    "goldandblack (rivals)": "GoldandBlack",
+
     "on3 purdue": "On3 Purdue",
     "on3": "On3 Purdue",
-    "yahoo sports purdue": "Yahoo Sports",
+
+    "espn": "ESPN",
+    "espn purdue": "ESPN",
+
+    "cbs sports": "CBS Sports",
+    "cbs": "CBS Sports",
+
     "yahoo sports": "Yahoo Sports",
     "yahoo! sports": "Yahoo Sports",
-    "cbs sports purdue": "CBS Sports",
-    "cbs sports": "CBS Sports",
-    "espn purdue": "ESPN",
-    "espn": "ESPN",
+    "yahoo": "Yahoo Sports",
+
+    "field of 68": "Field of 68",
+    "fieldof68": "Field of 68",
+
     "purdue sports": "PurdueSports",
     "purduesports.com": "PurdueSports",
-    "purdue sports official": "PurdueSports",
-    "field of 68": "Field of 68",
-    "the field of 68": "Field of 68",
+    "purduesports": "PurdueSports",
 }
 
-# fallback logos for when we absolutely cannot get an article image
-# put these files in static/logos/ in your repo
-FALLBACK_LOGOS = {
-    "Hammer & Rails": "/static/logos/hammer_rails.png",
-    "Journal & Courier": "/static/logos/journal_courier.png",
-    "GoldandBlack": "/static/logos/goldandblack.png",
-    "On3 Purdue": "/static/logos/on3.png",
-    "Yahoo Sports": "/static/logos/yahoo.png",
-    "CBS Sports": "/static/logos/cbs.png",
-    "ESPN": "/static/logos/espn.png",
-    "PurdueSports": "/static/logos/purdue.png",
-    "Field of 68": "/static/logos/field68.png",
-}
-
-# ============================
-# REGEX HELPERS
-# ============================
-
-IMG_TAG_RE = re.compile(
-    r'<img[^>]+src=["\']([^"\']+)["\']',
-    re.IGNORECASE,
-)
-
+IMG_TAG_RE = re.compile(r'<img[^>]+src=["\']([^"\']+)["\']', re.IGNORECASE)
 OG_IMAGE_RE = re.compile(
     r'<meta[^>]+property=["\']og:image["\'][^>]+content=["\']([^"\']+)["\']',
     re.IGNORECASE,
 )
 
-# ============================
+# -------------------------------------------------------------------
 # HELPERS
-# ============================
+# -------------------------------------------------------------------
 
 def canon_source(raw):
-    """Return a nice source string."""
+    """Map raw source/feed title to a nice display name."""
     if not raw:
         return "Unknown"
     key = raw.strip().lower()
@@ -112,24 +83,27 @@ def canon_source(raw):
 
 def canonical_url(url):
     """
-    Strip query + fragment for dedupe comparison.
-    We still keep the original link for display, but we
-    use this normalized key to avoid dupes.
+    Normalize URL for dedupe:
+    - strip query/fragment
+    - lowercase hostname
     """
     if not url:
         return ""
     p = urlparse(url)
-    p2 = p._replace(query="", fragment="")
-    return urlunparse(p2)
+    clean = p._replace(
+        query="",
+        fragment="",
+        netloc=p.netloc.lower(),
+    )
+    return urlunparse(clean)
 
 def parse_date(entry):
     """
-    Best guess at a datetime from a feedparser entry.
-    We check published, updated, etc. If nothing usable,
-    fallback to 'now' so it won't get filtered out just because
-    a feed is missing timestamps.
+    Pull a datetime (UTC) from feedparser entry.
+    We'll try published_parsed, updated_parsed, etc.
+    If all else fails, now().
     """
-    for key in ("published_parsed", "updated_parsed"):
+    for key in ("published_parsed", "updated_parsed", "created_parsed"):
         val = getattr(entry, key, None) or entry.get(key)
         if val:
             try:
@@ -140,23 +114,18 @@ def parse_date(entry):
 
 def fetch_og_image(url):
     """
-    Try to grab og:image (or first <img>) straight from the article page.
-    We pretend to be Mobile Safari because a lot of sites gate images
-    behind UA checks.
+    Try to grab a social/preview image for an article by loading
+    the article HTML (quick + best effort).
+    1. og:image
+    2. first <img>
+    Returns None if nothing obvious.
     """
     if not url:
         return None
-
     try:
-        r = requests.get(
-            url,
-            headers=SCRAPE_HEADERS,
-            timeout=4,
-            allow_redirects=True,
-        )
+        r = requests.get(url, headers=FEED_HEADERS, timeout=5)
         if r.status_code != 200:
             return None
-
         html = r.text
 
         # 1) og:image
@@ -164,7 +133,7 @@ def fetch_og_image(url):
         if m:
             return m.group(1).strip()
 
-        # 2) first <img> fallback
+        # 2) fallback: first <img>
         m2 = IMG_TAG_RE.search(html)
         if m2:
             return m2.group(1).strip()
@@ -174,20 +143,21 @@ def fetch_og_image(url):
 
     return None
 
-def extract_thumb_from_entry(entry, summary_html=None):
+def extract_thumb_from_entry(entry, summary_html):
     """
-    Step 1: RSS media_content/media_thumbnail
-    Step 2: <img> in summary
-    (We'll try fetch_og_image(url) later as a last pass)
+    thumbnail priority:
+    1. RSS media_content/media_thumbnail
+    2. <img> in summary/description
+    We do *not* hit the network here (that happens later as a fallback).
     """
-    # media_content / media_thumbnail, etc.
+    # Step 1: "media_content" or "media_thumbnail"
     media_blocks = entry.get("media_content") or entry.get("media_thumbnail")
     if isinstance(media_blocks, list) and media_blocks:
         cand = media_blocks[0].get("url")
         if cand:
             return cand
 
-    # look inside summary/description for an <img>
+    # Step 2: <img> in summary/description
     if summary_html:
         m = IMG_TAG_RE.search(summary_html)
         if m:
@@ -197,87 +167,109 @@ def extract_thumb_from_entry(entry, summary_html=None):
 
 def normalize_item(source_name, entry):
     """
-    Turn a feed entry into our standard dict.
+    Convert a raw feedparser entry into our normalized dict:
+    {
+        "title": ...,
+        "link": ...,
+        "source": ...,
+        "date": <iso8601 UTC>,
+        "image": <thumb or None>
+    }
     """
     link = entry.get("link") or ""
     title = (entry.get("title") or "").strip()
-    summary_html = (
-        entry.get("summary")
-        or entry.get("summary_detail", {}).get("value")
-        or entry.get("description")
-        or ""
-    )
+
+    # summary vs description can vary between feeds
+    summary_html = entry.get("summary") or entry.get("description") or ""
 
     pub_dt = parse_date(entry)
-
-    # first-pass thumb
     thumb = extract_thumb_from_entry(entry, summary_html)
 
     return {
         "title": title,
         "link": link,
         "source": canon_source(source_name),
-        "date": pub_dt.isoformat(),  # UTC iso string
+        "date": pub_dt.isoformat(),  # keep in UTC, isoformat
         "image": thumb or None,
     }
 
 def looks_like_football(text):
     """
-    Hard football filter.
-    If this returns True -> toss the item completely.
+    "Do we think this is clearly about *football* / football coach / Big Ten tiers football?"
+    If yes -> we exclude.
+    (We really only want men's basketball content.)
     """
+    if not text:
+        return False
+    t = text.lower()
+
     football_terms = [
         "football",
         "qb", "quarterback",
         "touchdown", "wide receiver",
         "linebacker", "safety", "defensive coordinator",
         "ryan walters", "coach walters", "walters'",
-        "big ten tiers",  # careful: sometimes CBB writes that phrase too,
-                          # but usually football power rankings use it
     ]
-    t = text.lower()
+
+    # Heuristic for "Big Ten tiers": sometimes it's basketball, sometimes football.
+    # We'll handle this *lightly* here: Big Ten tiers WITH 'qb' or 'defense' will be caught above.
+    # Otherwise we'll allow it through. We'll refine in is_relevant_purdue.
+
     return any(term in t for term in football_terms)
 
 def is_relevant_purdue(item):
     """
-    SUPER SIMPLE NOW:
-    – Must mention Purdue / Boilermakers somewhere in title or summary blob.
-    – If it screams 'football', throw it out completely.
-    – Anything else -> keep (we do NOT require 'basketball' keyword).
+    Keep it if:
+    - It mentions Purdue / Boilermakers somewhere in title+summary blob.
+    - It is NOT obviously football.
+    We don't require the word 'basketball'. We lean permissive.
     """
-    blob = f"{item.get('title','')} {item.get('source','')}"
-    # must mention Purdue somehow
-    if not any(w in blob.lower() for w in ("purdue", "boilermaker", "boilermakers")):
+    blob = f"{item.get('title','')} {item.get('source','')}".lower()
+
+    # must mention Purdue or Boilermakers
+    if not any(w in blob for w in ["purdue", "boilermaker", "boilermakers"]):
         return False
+
     # reject obvious football
     if looks_like_football(blob):
         return False
+
     return True
 
 def dedupe(items):
     """
-    Deduplicate by (normalized URL OR similar title).
-    Keep the first/top (which for us will generally be newer).
+    Deduplicate by very-similar title OR same canonical URL.
+    We'll keep the first occurrence (which should be newest once we sort later).
     """
     out = []
     seen_urls = set()
+
+    def similar(a, b):
+        # quick+dirty title similarity:
+        # compare lowercase words overlap. If it's like 80% same, call it duplicate.
+        aw = set(a.lower().split())
+        bw = set(b.lower().split())
+        if not aw or not bw:
+            return False
+        inter = len(aw & bw)
+        bigger = max(len(aw), len(bw))
+        ratio = inter / bigger if bigger else 0.0
+        return ratio >= 0.8
+
     for it in items:
         url_key = canonical_url(it.get("link", ""))
 
-        # check if we already saw basically this URL or effectively this exact/super-similar title
-        dup = False
-
+        # URL dup check
         if url_key and url_key in seen_urls:
-            dup = True
+            continue
 
-        else:
-            # soft title match: strip punctuation / lowercase
-            tnorm = re.sub(r"[^a-z0-9]+", " ", it.get("title","").lower()).strip()
-            for kept in out:
-                knorm = re.sub(r"[^a-z0-9]+", " ", kept.get("title","").lower()).strip()
-                if knorm == tnorm:
-                    dup = True
-                    break
+        # fuzzy title dup check
+        title = it.get("title", "")
+        dup = False
+        for kept in out:
+            if similar(title, kept.get("title", "")):
+                dup = True
+                break
 
         if not dup:
             out.append(it)
@@ -288,9 +280,10 @@ def dedupe(items):
 
 def add_thumbnails(items):
     """
-    For any item missing 'image', attempt og:image scrape.
-    NOTE: This is potentially slow / can fail for paywalled sources,
-    so we keep timeout very short and just move on.
+    For any story missing image, try to fetch the article and
+    grab og:image or first <img>.
+    We only do this for the list we actually show (TOP_N-ish),
+    so it's cheap.
     """
     for it in items:
         if it.get("image"):
@@ -300,22 +293,9 @@ def add_thumbnails(items):
             it["image"] = img
     return items
 
-def apply_fallback_logos(items):
-    """
-    For anything STILL missing image, give it a branded fallback
-    based on the source. This keeps cards from looking blank.
-    """
-    for it in items:
-        if not it.get("image"):
-            logo = FALLBACK_LOGOS.get(it.get("source"))
-            if logo:
-                it["image"] = logo
-    return items
-
 def atomic_write_json(path, data_obj):
     """
-    Write JSON atomically (tmp file + rename) so GitHub Pages never
-    serves a half-written file.
+    Write JSON to disk safely (temp file then rename).
     """
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with tempfile.NamedTemporaryFile(
@@ -328,21 +308,23 @@ def atomic_write_json(path, data_obj):
         tmp_path = tmp.name
     os.replace(tmp_path, path)
 
-# ============================
+# -------------------------------------------------------------------
 # CORE
-# ============================
+# -------------------------------------------------------------------
 
-def collect_team(team_slug, feed_list, out_path):
+def collect_team(team_slug, feeds_for_team, out_path):
     """
-    Pull all feeds for a team, normalize, filter, dedupe, sort,
-    slice to TOP_LIMIT, enrich thumbnails, apply logos,
-    and then write items.json.
+    team_slug: e.g. "purdue-mbb"
+    feeds_for_team: list of {name: "...", url: "..."} dicts
+    out_path: e.g. "static/teams/purdue-mbb/items.json"
     """
-    cutoff = datetime.now(timezone.utc) - timedelta(hours=MAX_AGE_HOURS)
+    now = datetime.now(timezone.utc)
+    cutoff = now - timedelta(days=MAX_AGE_DAYS)
 
     raw_items = []
 
-    for feed_def in feed_list:
+    # pull from every feed
+    for feed_def in feeds_for_team:
         source_name = feed_def.get("name", "Source")
         url = feed_def.get("url")
         if not url:
@@ -350,7 +332,7 @@ def collect_team(team_slug, feed_list, out_path):
 
         parsed = feedparser.parse(url, request_headers=FEED_HEADERS)
 
-        # Take only first ~60 entries from each feed for sanity
+        # take first ~60 entries from each feed (usually plenty)
         for entry in parsed.entries[:60]:
             item = normalize_item(source_name, entry)
 
@@ -358,45 +340,48 @@ def collect_team(team_slug, feed_list, out_path):
             try:
                 dt = datetime.fromisoformat(item["date"])
             except Exception:
-                dt = datetime.now(timezone.utc)
+                dt = now
 
             if dt < cutoff:
                 continue
 
-            # Purdue filter (and "no football")
-            if not is_relevant_purdue(item):
-                continue
-
             raw_items.append(item)
 
-    # dedupe
-    deduped = dedupe(raw_items)
+    # basic Purdue/basketball relevance filter
+    filtered = [it for it in raw_items if is_relevant_purdue(it)]
 
     # sort newest first
-    def _dt(i):
-        try:
-            return datetime.fromisoformat(i["date"])
-        except Exception:
-            return datetime.now(timezone.utc)
-    deduped.sort(key=_dt, reverse=True)
+    filtered.sort(
+        key=lambda i: datetime.fromisoformat(i["date"]),
+        reverse=True,
+    )
+
+    # dedupe similar links/titles
+    deduped = dedupe(filtered)
 
     # take top N
-    top_items = deduped[:TOP_LIMIT]
+    top_items = deduped[:TOP_N]
 
-    # thumbnail enrichment + fallback logos
+    # fill in missing thumbnails (best effort)
     top_items = add_thumbnails(top_items)
-    top_items = apply_fallback_logos(top_items)
 
-    data_obj = {"items": top_items, "updated": datetime.now(timezone.utc).isoformat()}
+    # final payload
+    payload = {
+        "team": team_slug,
+        "updated": now.isoformat(),
+        "items": top_items,
+    }
 
-    atomic_write_json(out_path, data_obj)
-    print(f"[{team_slug}] wrote {out_path} ({len(top_items)} items)")
+    # write to disk
+    atomic_write_json(out_path, payload)
+    print(f"[OK] wrote {len(top_items)} items to {out_path}")
 
 def main():
     """
-    Entry point.
-    TEAMS env var: "purdue-mbb"
-    Loads src/feeds.yaml
+    - Look at TEAMS env var, e.g. "purdue-mbb"
+      (you can support multiple like "purdue-mbb,another-team" later)
+    - Load feeds from src/feeds.yaml
+    - For each team: collect + write static/teams/<team>/items.json
     """
     with open("src/feeds.yaml", "r", encoding="utf-8") as f:
         feeds_by_team = yaml.safe_load(f)
