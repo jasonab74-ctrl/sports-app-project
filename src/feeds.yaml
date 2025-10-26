@@ -1,0 +1,30 @@
+purdue-mbb:
+  - name: "Hammer & Rails"
+    url: "https://www.hammerandrails.com/rss/index.xml"
+
+  - name: "GoldandBlack"
+    url: "https://purdue.rivals.com/rss"
+
+  - name: "On3 Purdue"
+    url: "https://www.on3.com/college/purdue-boilermakers/news/feed/"
+
+  - name: "Journal & Courier"
+    url: "https://rssfeeds.jconline.com/jconline/purdue"
+
+  - name: "Yahoo Sports"
+    url: "https://sports.yahoo.com/rss/topics/purdue-boilermakers-basketball/"
+
+  - name: "CBS Sports"
+    url: "https://www.cbssports.com/rss/headlines/college-basketball/teams/pur/"
+
+  - name: "ESPN"
+    url: "https://www.espn.com/espn/rss/ncb/team?id=2509"
+
+  - name: "PurdueSports"
+    url: "https://purduesports.com/rss?path=mbball"
+
+  - name: "Field of 68"
+    url: "https://www.youtube.com/feeds/videos.xml?channel_id=UCJ8m0lYQK0Uj1FghQbK6ZVg"
+
+  - name: "BTN"
+    url: "https://btn.com/feed/?post_type=post&team=purdue-boilermakers&sport=mens-basketball"
