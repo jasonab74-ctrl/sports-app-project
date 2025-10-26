@@ -1,58 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Purdue Boilermakers — Men's Basketball Hub</title>
-  <link rel="stylesheet" href="pro.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Purdue Men's Basketball News</title>
+
+  <link rel="stylesheet" href="static/css/pro.css" />
+  <script defer src="static/js/pro.js"></script>
+
+  <!-- Preload feed -->
+  <link rel="preload" href="static/teams/purdue-mbb/items.json" as="fetch" type="application/json" crossorigin="anonymous" />
 </head>
-<body class="app-shell">
-  <header class="site-header card card-header">
-    <div class="logo-pill"></div>
-    <div class="brand-block">
-      <div class="brand-title">Purdue Boilermakers</div>
-      <div class="brand-sub">Men’s Basketball Hub</div>
+<body class="theme-purdue">
+  <header class="headline-header">
+    <div class="headline-shell">
+      <div class="brand-left">
+        <div class="brand-logo">P</div>
+        <div class="brand-copy">
+          <div class="brand-team">Purdue Boilermakers</div>
+          <div class="brand-scope">Men’s Basketball News</div>
+        </div>
+      </div>
+      <div class="updated-time">
+        Updated <span id="lastUpdated">—</span>
+      </div>
     </div>
   </header>
 
-  <main class="main-col">
-    <section class="card card-main">
-      <div class="card-head">
-        <h2 class="card-title">Top Headlines</h2>
-        <div class="card-accent"></div>
-      </div>
-
-      <div class="updated-row">
-        <span class="updated-at" id="updated-at"></span>
-      </div>
-
-      <ul id="story-list" class="story-list"></ul>
-
-      <div id="empty-state" class="empty-state" hidden>
-        <div class="empty-inner card card-inner">
-          <p class="empty-big">No Purdue Men’s Basketball headlines yet.</p>
-          <p class="empty-sub">New stories will appear here automatically.</p>
+  <main class="feed-wrapper">
+    <section class="feed-grid" id="feedGrid">
+      <!-- cards injected by JS -->
+      <article class="feed-card placeholder">
+        <div class="feed-thumb feed-thumb-fallback"></div>
+        <div class="feed-body">
+          <div class="feed-meta-row">
+            <span class="feed-source">Loading…</span>
+            <span class="feed-age">—</span>
+          </div>
+          <div class="feed-headline">Collecting Purdue men's basketball headlines…</div>
+          <div class="feed-snippet">This will only show Purdue MBB content. No football, no NBA, no general ESPN spam.</div>
         </div>
-      </div>
-    </section>
-
-    <section class="card card-sources">
-      <h2 class="sources-title">Sources</h2>
-      <ul class="sources-list">
-        <li>Hammer & Rails</li>
-        <li>GoldandBlack</li>
-        <li>On3 Purdue</li>
-        <li>Journal &amp; Courier</li>
-        <li>Yahoo Sports</li>
-        <li>CBS Sports</li>
-        <li>ESPN</li>
-        <li>PurdueSports</li>
-        <li>Field of 68</li>
-        <li>BTN</li>
-      </ul>
+      </article>
     </section>
   </main>
 
-  <script src="pro.js"></script>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>Purdue Men's Basketball Fan Feed</div>
+      <div class="footer-note">Unofficial. Automatically surfaces the latest Purdue hoops headlines.</div>
+    </div>
+  </footer>
 </body>
 </html>
