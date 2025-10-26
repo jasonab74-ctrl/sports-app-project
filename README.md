@@ -1,22 +1,13 @@
-# Purdue MBB Hub
+# Purdue Men's Basketball News Feed
 
-Auto-updating Purdue Men's Basketball headlines.
+This repo serves one job: show the latest Purdue men's basketball stories in a clean, mobile-friendly grid.
 
-- Scrapes ~10 trusted Purdue MBB sources (see src/feeds.yaml)
-- Keeps only the last 72 hours
-- Dedupes + sorts newest first
-- Publishes top 20 to static/teams/purdue-mbb/items.json
-- Front end (index.html + pro.css + pro.js) renders that list
+## How it works
+- `/index.html` is the page.
+- `/static/css/pro.css` handles the Purdue black/gold theme.
+- `/static/js/pro.js` loads JSON and draws the cards.
+- `/static/teams/purdue-mbb/items.json` holds the stories (source, title, link, timestamp, snippet, image).
 
-## How it runs
-1. .github/workflows/collect.yml runs every 15 min
-   - runs collect.py
-   - writes static/teams/purdue-mbb/items.json
-   - commits/pushes if changed
-2. .github/workflows/deploy.yml runs on push to main
-   - deploys site to GitHub Pages via Actions (Settings -> Pages -> Source: GitHub Actions)
+The page will render the first 20 items from `items.json`. Newest item should be first. `collected_at` is used to show "Updated HH:MM" in the header.
 
-## You visit:
-https://<your-username>.github.io/sports-app-project/
-
-You're done.
+There are no other widgets. No roster, no schedule, no NIL, no bloat.
