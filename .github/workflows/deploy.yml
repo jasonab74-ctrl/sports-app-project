@@ -1,0 +1,42 @@
+name: Build and Deploy Purdue MBB Hub
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "index.html"
+      - "pro.css"
+      - "pro.js"
+      - "static/teams/purdue-mbb/items.json"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Prepare site bundle
+        run: |
+          rm -rf site
+          mkdir -p site/static/teams/purdue-mbb
+          cp index.html pro.css pro.js site/
+          cp static/teams/purdue-mbb/items.json site/static/teams/purdue-mbb/items.json
+
+      - name: Publish to gh-pages branch
+        run: |
+          cd site
+          git init
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Deploy site"
+          git branch -M gh-pages
+          git push --force https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} gh-pages
