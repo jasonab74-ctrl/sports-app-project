@@ -2,37 +2,45 @@ name: collect-purdue-mbb
 
 on:
   schedule:
-    - cron: "0 * * * *"  # hourly
-  workflow_dispatch:
+    - cron: "0 * * * *"  # runs hourly
+  workflow_dispatch:     # allows manual runs
 
 jobs:
   collect:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
           persist-credentials: false
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.x"
 
-      - name: Run collector
+      - name: Run Purdue MBB collector
         run: |
+          echo "Running collector script..."
           python3 tools/collect.py
 
       - name: Commit & push updated JSON
         run: |
+          echo "Committing and pushing updated JSON..."
           git config user.name "sports-app-bot"
           git config user.email "actions@github"
           git add static/teams/purdue-mbb/items.json
           if git diff --cached --quiet; then
-            echo "No changes."
+            echo "No changes to commit."
           else
             git commit -m "auto: update Purdue MBB feed"
-            git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
+            # Force push to handle out-of-sync commits safely
+            git push --force https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
           fi
+
+      - name: Done
+        run: echo "✅ Collector finished successfully."
