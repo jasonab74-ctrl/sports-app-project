@@ -4,11 +4,17 @@ tools/collect.py
 
 Minimal Purdue MBB collector.
 
+What this script does:
 - Reads RSS feeds from static/sources.json
-- Pulls stories
-- Filters to Purdue men's basketball
-- Writes top 20 to static/teams/purdue-mbb/items.json
-- No external libs required beyond Python stdlib
+- Downloads each feed (urllib only / stdlib only)
+- Parses items out of the RSS/Atom
+- Filters to Purdue men's basketball content
+- Sorts newest first
+- Keeps top 20
+- Stamps collected_at (used for "Updated HH:MM AM/PM" in the UI)
+- Writes to static/teams/purdue-mbb/items.json
+
+This is designed to run in GitHub Actions (collect-purdue-mbb workflow).
 """
 
 import json
@@ -19,21 +25,16 @@ from pathlib import Path
 from urllib.request import urlopen, Request
 from urllib.error import URLError, HTTPError
 
+
+# -------- Paths --------
 ROOT = Path(__file__).resolve().parents[1]
 SOURCES_PATH = ROOT / "static" / "sources.json"
 ITEMS_PATH = ROOT / "static" / "teams" / "purdue-mbb" / "items.json"
 
-KEYWORDS_ANY = [
-    "purdue",
-    "boilermaker",
-    "boilermakers",
-    "painter",
-    "mackey",
-    "boilers"
-    # intentionally basketball-y names/coach/etc.
-]
 
+# -------- HTTP fetch --------
 def http_get(url, timeout=10):
+    """Fetch bytes from a URL using stdlib only."""
     try:
         req = Request(url, headers={"User-Agent": "Mozilla/5.0"})
         with urlopen(req, timeout=timeout) as resp:
@@ -42,81 +43,160 @@ def http_get(url, timeout=10):
         print("fetch fail", url, e)
         return b""
 
+
+# -------- RSS parsing --------
 def parse_rss(xml_bytes, source_name):
-    """Return list[dict] of items with title,url,published,snippet"""
+    """
+    Given raw RSS/Atom bytes, return a list of story dicts:
+    {
+        "source": source_name,
+        "title": ...,
+        "url": ...,
+        "published": ISO8601 string,
+        "snippet": ...,
+        "image": "",
+        "collected_at": ""   (we'll stamp later)
+    }
+    """
     out = []
     if not xml_bytes:
         return out
+
     try:
         root = ET.fromstring(xml_bytes)
     except ET.ParseError:
         return out
 
-    # RSS 2.0: <channel><item>...
+    # Try RSS 2.0 structure: <rss><channel><item>...</item></channel></rss>
     channel = root.find("channel")
-    items = []
     if channel is not None:
-        items = channel.findall("item")
+        item_nodes = channel.findall("item")
     else:
-        # Atom fallback: <entry>
-        items = root.findall("{http://www.w3.org/2005/Atom}entry")
+        # Try Atom structure: <feed><entry>...</entry></feed>
+        item_nodes = root.findall("{http://www.w3.org/2005/Atom}entry")
 
-    for it in items:
+    for node in item_nodes:
+        # title
         title = (
-            (it.findtext("title") or it.findtext("{http://www.w3.org/2005/Atom}title") or "")
-            .strip()
-        )
-        link = it.findtext("link") or ""
-        if not link:
-            # atom style: <link href="...">
-            link_el = it.find("{http://www.w3.org/2005/Atom}link")
-            if link_el is not None:
-                link = link_el.attrib.get("href", "").strip()
-        desc = (
-            (it.findtext("description") or it.findtext("{http://www.w3.org/2005/Atom}summary") or "")
-            .strip()
-        )
-
-        pub_raw = (
-            it.findtext("pubDate")
-            or it.findtext("{http://www.w3.org/2005/Atom}updated")
-            or it.findtext("{http://www.w3.org/2005/Atom}published")
+            node.findtext("title")
+            or node.findtext("{http://www.w3.org/2005/Atom}title")
             or ""
         ).strip()
 
-        # convert pub_raw -> ISO
+        # link
+        link = node.findtext("link") or ""
+        if not link:
+            # Atom feeds use <link href="...">
+            link_el = node.find("{http://www.w3.org/2005/Atom}link")
+            if link_el is not None:
+                link = link_el.attrib.get("href", "").strip()
+
+        # description/snippet
+        desc = (
+            node.findtext("description")
+            or node.findtext("{http://www.w3.org/2005/Atom}summary")
+            or ""
+        ).strip()
+
+        # pubDate / updated / published
+        pub_raw = (
+            node.findtext("pubDate")
+            or node.findtext("{http://www.w3.org/2005/Atom}updated")
+            or node.findtext("{http://www.w3.org/2005/Atom}published")
+            or ""
+        ).strip()
+
+        # convert pub_raw into ISO8601
         published_iso = None
         if pub_raw:
             try:
                 dt = email.utils.parsedate_to_datetime(pub_raw)
                 published_iso = dt.isoformat(timespec="seconds") + "Z"
             except Exception:
-                # last resort: now
                 published_iso = datetime.datetime.utcnow().replace(microsecond=0).isoformat() + "Z"
         else:
             published_iso = datetime.datetime.utcnow().replace(microsecond=0).isoformat() + "Z"
+
+        # normalize snippet to ~240 chars, single line
+        snippet_clean = desc.replace("\n", " ").strip()
+        if len(snippet_clean) > 240:
+            snippet_clean = snippet_clean[:237].rstrip() + "…"
 
         out.append({
             "source": source_name,
             "title": title,
             "url": link,
             "published": published_iso,
-            "snippet": desc[:240].replace("\n", " ").strip(),
+            "snippet": snippet_clean,
             "image": "",
-            "collected_at": ""  # we'll stamp later
+            "collected_at": ""  # we'll stamp in save step
         })
+
     return out
 
+
+# -------- Filtering to Purdue men's basketball --------
 def keep_purdue_mbb(stories):
+    """
+    Story makes the cut if:
+    - It clearly references Purdue / Boilermakers / Painter / Boilers / Mackey, etc.
+    AND
+    - (It looks hoops-ish: basketball / guard play / backcourt / Big Ten talk / etc.)
+      OR
+    - It comes from a known Purdue basketball source (GoldandBlack, On3 Purdue, Purdue Athletics MBB, ESPN Purdue MBB)
+
+    This is intentionally a *little* more forgiving than the first draft so
+    we actually surface more than 1 headline.
+    """
     filtered = []
+
     for s in stories:
-        text_blob = f"{s.get('title','')} {s.get('snippet','')}".lower()
-        if any(k in text_blob for k in KEYWORDS_ANY):
-            # must mention basketball context OR come directly from Purdue Athletics feed name
-            if "basketball" in text_blob or "men" in text_blob or "mbb" in text_blob or "purdue athletics" in s.get("source","").lower():
-                filtered.append(s)
+        title = s.get("title", "").lower()
+        snippet = s.get("snippet", "").lower()
+        src = s.get("source", "").lower()
+
+        text_blob = f"{title} {snippet}"
+
+        is_purdue = (
+            "purdue" in text_blob or
+            "boilermaker" in text_blob or
+            "boilermakers" in text_blob or
+            "boilers" in text_blob or
+            "painter" in text_blob or
+            "mackey" in text_blob
+        )
+
+        is_hoops = (
+            "basketball" in text_blob or
+            "mbb" in text_blob or
+            "men's" in text_blob or
+            "mens" in text_blob or
+            "guard" in text_blob or
+            "backcourt" in text_blob or
+            "big ten" in text_blob or
+            "paint" in text_blob or  # paint touches / post play often shows up in Purdue coverage
+            "3-point" in text_blob or
+            "three-point" in text_blob or
+            "perimeter" in text_blob or
+            "frontcourt" in text_blob or
+            "rebound" in text_blob or
+            "matt painter" in text_blob
+        )
+
+        is_trusted_source = (
+            "goldandblack" in src or
+            "on3" in src or
+            "purdue athletics" in src or
+            "espn" in src
+        )
+
+        if is_purdue and (is_hoops or is_trusted_source):
+            filtered.append(s)
+
     return filtered
 
+
+# -------- Load list of sources --------
 def load_sources():
     try:
         with open(SOURCES_PATH, "r", encoding="utf-8") as f:
@@ -126,65 +206,13 @@ def load_sources():
         print("failed to read sources.json", e)
         return []
 
+
+# -------- Collect all feeds --------
 def collect_all():
-    sources = load_sources()
-    all_items = []
-
-    for src in sources:
-        if src.get("type") != "rss":
-            continue
-        url = src.get("url")
-        if not url:
-            continue
-        raw = http_get(url)
-        items = parse_rss(raw, src.get("name",""))
-        all_items.extend(items)
-
-    # filter to Purdue MBB-ish only
-    filtered = keep_purdue_mbb(all_items)
-
-    # sort newest first by published
-    def sort_key(item):
-        try:
-            return item["published"]
-        except KeyError:
-            return ""
-    filtered.sort(key=sort_key, reverse=True)
-
-    # keep top 20
-    filtered = filtered[:20]
-
-    # stamp collected_at for UI "Updated" badge
-    now_iso = datetime.datetime.utcnow().replace(microsecond=0).isoformat() + "Z"
-    for it in filtered:
-        it["collected_at"] = now_iso
-
-    return filtered
-
-def save_items(items):
-    out = {"items": items}
-    ITEMS_PATH.parent.mkdir(parents=True, exist_ok=True)
-    with open(ITEMS_PATH, "w", encoding="utf-8") as f:
-        json.dump(out, f, indent=2)
-
-def main():
-    stories = collect_all()
-    if not stories:
-        # fallback: keep whatever's already in items.json so the site isn't blank
-        try:
-            current = json.loads(ITEMS_PATH.read_text("utf-8"))
-            existing_items = current.get("items", [])
-        except Exception:
-            existing_items = []
-        if existing_items:
-            # just refresh collected_at
-            now_iso = datetime.datetime.utcnow().replace(microsecond=0).isoformat() + "Z"
-            for it in existing_items:
-                it["collected_at"] = now_iso
-            save_items(existing_items)
-            return
-
-    save_items(stories)
-
-if __name__ == "__main__":
-    main()
+    """
+    - Fetch all RSS feeds from sources.json
+    - Parse stories from each
+    - Filter to Purdue MBB
+    - Sort newest first (by published)
+    - Trim to top 20
+    - Stamp collected
