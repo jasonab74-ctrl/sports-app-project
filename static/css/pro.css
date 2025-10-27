@@ -65,11 +65,13 @@ body.theme-purdue {
   display: flex;
   flex-direction: column;
 }
+
 .brand-team {
   color: var(--purdue-gold);
   font-size: .8rem;
   font-weight: 600;
 }
+
 .brand-scope {
   color: var(--text-main);
   font-size: .9rem;
@@ -87,7 +89,7 @@ body.theme-purdue {
   padding: .4rem .6rem;
 }
 
-/* FEED */
+/* FEED WRAPPER */
 .feed-wrapper {
   max-width: 1200px;
   margin: 1rem auto 4rem auto;
@@ -114,7 +116,7 @@ body.theme-purdue {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  min-height: 260px;
+  min-height: 140px;
   box-shadow: 0 20px 40px rgba(0,0,0,.7);
   text-decoration: none;
   color: var(--text-main);
@@ -124,7 +126,10 @@ body.theme-purdue {
   box-shadow: 0 28px 50px rgba(0,0,0,.9);
 }
 
-/* IMAGE / THUMB */
+/*
+We used to render a top "feed-thumb" image block (16:9). We no longer insert it,
+but we keep styles here in case we bring thumbnails back in future.
+*/
 .feed-thumb {
   background-color: #000;
   background-size: cover;
@@ -132,13 +137,14 @@ body.theme-purdue {
   width: 100%;
   aspect-ratio: 16/9;
   border-bottom: 1px solid var(--border-card);
+  display: none; /* hidden for now, since we aren't rendering it */
 }
 
 .feed-thumb-fallback {
   background-image:
     radial-gradient(circle at 30% 30%, rgba(207,184,124,0.28) 0%, rgba(0,0,0,0) 70%),
     repeating-linear-gradient(-45deg, rgba(207,184,124,0.15) 0px, rgba(207,184,124,0.15) 2px, rgba(0,0,0,0) 2px, rgba(0,0,0,0) 6px);
-  display: flex;
+  display: none; /* also hidden now */
   align-items: center;
   justify-content: center;
   font-size: .8rem;
@@ -153,6 +159,11 @@ body.theme-purdue {
   display: flex;
   flex-direction: column;
   padding: .8rem .9rem 1rem .9rem;
+}
+
+/* Slightly more top padding when there's no image */
+.feed-body-noimg {
+  padding-top: 1rem;
 }
 
 .feed-meta-row {
@@ -172,6 +183,10 @@ body.theme-purdue {
   font-weight: 600;
 }
 
+.feed-age {
+  color: var(--text-dim);
+}
+
 .feed-headline {
   font-size: .9rem;
   line-height: 1.3;
@@ -180,6 +195,7 @@ body.theme-purdue {
   margin-bottom: .5rem;
   word-break: break-word;
 }
+
 .feed-headline a {
   color: inherit;
   text-decoration: none;
@@ -204,19 +220,20 @@ body.theme-purdue {
   font-size: .7rem;
   line-height: 1.4;
 }
+
 .footer-inner {
   max-width: 1200px;
   margin: 0 auto;
   padding: 1rem var(--gutter) 4rem var(--gutter);
 }
+
 .footer-note {
   color: var(--text-dim);
   margin-top: .4rem;
   max-width: 600px;
 }
 
-/* PLACEHOLDER STATE */
-.placeholder .feed-thumb-fallback { font-size: .7rem; color: var(--text-dim); }
+/* PLACEHOLDER STATE (no longer really used but safe to keep) */
 .placeholder .feed-meta-row,
 .placeholder .feed-headline,
 .placeholder .feed-snippet { opacity: .6; }
