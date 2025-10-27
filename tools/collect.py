@@ -2,38 +2,28 @@
 """
 tools/collect.py
 
-Purdue Men's Basketball collector with tiered relevance + fallback volume.
+Locked-in Purdue Men's Basketball feed.
 
-Tiers:
- 3.0 = Tier A: Trusted Purdue sources (GoldandBlack, On3 Purdue, 247 Purdue, Purdue Athletics MBB, SI Purdue, etc.)
-       ALWAYS include. Very high score.
+What we INCLUDE now:
+ - Tier 3.0: Trusted Purdue-ish sources (Purdue Athletics MBB, Purdue team feeds, etc.)
+ - Tier 2.0: Direct Purdue focus (Purdue / Boilermakers / Painter / Braden Smith / etc.)
+ - Tier 1.5: National / Big Ten / Top 25 / contender talk that explicitly mentions Purdue
+ - Tier 1.0: Opponent recap that is clearly about a game vs Purdue (“over No. 1 Purdue”, etc.)
 
- 2.0 = Tier B: Direct Purdue focus. Headline/snippet clearly about Purdue/
-       Boilermakers/Matt Painter/etc. Include. High score.
+What we DROP now:
+ - The old Tier 0.5 "generic college basketball" filler.
+   That was giving you Memphis/Tennessee/Arizona State/etc. That’s gone.
 
- 1.5 = Tier B+: National/Big Ten/Top 25 preview or "who can win it" style piece
-       that explicitly *mentions Purdue* in the teaser we can see.
-       Include. Medium-high score.
+Result:
+ - Fewer total cards, but way higher purity.
+ - Top stories should almost all name Purdue either in title or snippet or be
+   opponent talking specifically about beating/playing Purdue.
 
- 1.0 = Tier C: Opponent-framed recap clearly about a Purdue game/result
-       ("Kentucky's impressive exhibition victory over No. 1 Purdue").
-       Include. Medium score.
-
- 0.5 = Tier Fallback: College men's basketball season / Big Ten / Top 25 context
-       from trusted national college hoops sources (Yahoo Sports College Basketball,
-       CBS Sports College Basketball, ESPN, etc.) that *may not explicitly say
-       'Purdue' in the RSS snippet yet*, but is obviously about men's college
-       basketball / preseason / contenders.
-       We include these LAST so the site never looks empty.
-       Low score.
-
- 0.0 = Drop: generic non-Purdue stuff, or non-basketball sports.
-
-We then:
-- Fetch RSS sources from static/sources.json
-- Score + sort
-- Keep top 20
-- Save to static/teams/purdue-mbb/items.json
+Pipeline:
+ - Fetch RSS sources from static/sources.json
+ - Score and sort by relevance + recency
+ - Keep top 20
+ - Write static/teams/purdue-mbb/items.json
 """
 
 import json
@@ -141,14 +131,26 @@ def parse_rss(xml_bytes, source_name):
 
 TRUSTED_KEYWORDS = [
     # Purdue-focused / insider style brands
+    "purdue athletics",
+    "purdue boilermakers",
+    "purdue boilermaker",
+    "boilermakers",
+    "boilermaker",
+    "purdue mbb",
+    "purdue men's basketball",
+    "purdue men’s basketball",
+    "purdue men's hoops",
+    "purdue men's basketball news",
+    "purdue boilermakers mbb",
+    "espn purdue boilermakers mbb",
+    "cbs sports purdue boilermakers",
     "goldandblack",
     "on3",
     "247sports",
-    "purdue athletics",
     "si purdue",
     "sports illustrated purdue",
     "usa today purdue",
-    "usa today boilermakers",
+    "usa today boilermakers"
 ]
 
 PURDUE_TERMS = [
@@ -169,7 +171,7 @@ PURDUE_TERMS = [
     "top-ranked purdue",
     "top ranked purdue",
     "#1 purdue",
-    "# 1 purdue",
+    "# 1 purdue"
 ]
 
 HOOPS_TERMS = [
@@ -193,15 +195,13 @@ HOOPS_TERMS = [
     "march madness",
     "big ten",
     "final four",
-    "top 25",
-    "top-25",
-    "top25",
     "preseason",
     "season preview",
     "title race",
     "contender",
     "contenders",
     "power rankings",
+    "ranking",
     "rankings",
     "poll",
     "ap poll"
@@ -218,22 +218,17 @@ BAD_SPORT_TERMS = [
     "track and field", "track & field"
 ]
 
-NATIONAL_CBB_SOURCES = [
-    # We'll trust these for Tier 0.5 fallback only.
-    "yahoo sports college basketball",
-    "cbs sports college basketball",
-    "espn",
-    "espn.com",
-    "espn college basketball",
-    "the field of 68",
-]
-
 
 def blob_for(story):
     return f"{story.get('title','')} {story.get('snippet','')}".lower()
 
 
 def is_trusted_source(src: str) -> bool:
+    """
+    If the source name itself sounds like it's Purdue men's basketball focused
+    (Purdue Athletics MBB, CBS Sports Purdue Boilermakers, etc.)
+    treat as max relevance.
+    """
     if not src:
         return False
     s = src.lower()
@@ -241,12 +236,16 @@ def is_trusted_source(src: str) -> bool:
 
 
 def mentions_purdue_direct(blob: str) -> bool:
+    """
+    Clearly Purdue / Painter / Boilers / etc.
+    """
     return any(term in blob for term in PURDUE_TERMS)
 
 
 def is_game_context_about_purdue(blob: str) -> bool:
     """
-    Opponent-side framing but clearly about Purdue game/result.
+    Opponent-side recap of a Purdue game or result.
+    e.g. "5 risers in Kentucky's impressive exhibition victory over No. 1 Purdue"
     """
     triggers = [
         "vs purdue",
@@ -263,22 +262,21 @@ def is_game_context_about_purdue(blob: str) -> bool:
         "beat purdue",
         "beats purdue",
         "upset purdue",
-        "upsets purdue",
+        "upsets purdue"
     ]
     return any(t in blob for t in triggers)
 
 
 def is_big_context_that_mentions_purdue(blob: str) -> bool:
     """
-    National / Big Ten / Top 25 / contender / preseason questions
-    AND Purdue is actually referenced.
+    National / Big Ten / Top 25 / contender talk that explicitly mentions Purdue.
+    We keep this because it’s relevant to Purdue’s status.
     """
     context_terms = [
         "top 25", "top-25", "top25",
         "preseason questions",
         "key questions",
         "season preview",
-        "ahead of the season",
         "title race",
         "contender", "contenders",
         "national title hopes",
@@ -287,56 +285,36 @@ def is_big_context_that_mentions_purdue(blob: str) -> bool:
         "big ten title",
         "conference race",
         "power rankings",
+        "ranking",
         "rankings",
         "poll",
-        "ap poll"
+        "ap poll",
+        "march madness",
+        "ncaa tournament"
     ]
     if not mentions_purdue_direct(blob):
         return False
     return any(t in blob for t in context_terms)
 
 
-def is_generic_college_basketball_story(story):
-    """
-    Tier 0.5 fallback:
-    - Source is a known national men's college basketball feed (Yahoo Sports College Basketball, CBS Sports College Basketball, ESPN, Field of 68, etc.)
-    - Text smells like men's college basketball / preseason / rankings / Big Ten / Top 25
-    - Even if it *doesn't* explicitly say 'Purdue' in the snippet we got
-
-    We use this as filler so the page doesn't look empty.
-    This is bottom-ranked content.
-    """
-    src = (story.get("source") or "").lower()
-    blob = blob_for(story)
-
-    # must be a national CBB source we trust
-    if not any(src.startswith(nsrc) or nsrc in src for nsrc in NATIONAL_CBB_SOURCES):
-        return False
-
-    # must be about men's college basketball landscape, not football/baseball/etc.
-    if any(bad in blob for bad in BAD_SPORT_TERMS):
-        return False
-
-    # must include general men's hoops / season framing
-    hoops_hits = [term for term in HOOPS_TERMS if term in blob]
-    return len(hoops_hits) > 0
-
-
 def is_obviously_other_sport(blob: str) -> bool:
+    """
+    Kill switch to keep out football/other sports.
+    """
     return any(term in blob for term in BAD_SPORT_TERMS)
 
 
 def relevance_tier(story):
     """
-    Returns:
-      3.0  trusted Purdue source
-      2.0  direct Purdue focus
-      1.5  national/season/big-picture talk that explicitly mentions Purdue
-      1.0  opponent recap clearly about a Purdue game/result
-      0.5  generic national men's CBB season talk from a trusted hoops source
-      0.0  ignore
+    Return a numeric tier:
 
-    We DO NOT allow football/baseball/etc.
+    3.0 = Trusted Purdue-ish source by name.
+    2.0 = Direct Purdue mention (Purdue / Boilers / Painter / etc.).
+    1.5 = Big-picture national/B1G/Top 25 convo that explicitly mentions Purdue.
+    1.0 = Opponent recap that is clearly about a Purdue game/result.
+    0.0 = Everything else (including generic hoops that doesn't mention Purdue).
+
+    We also immediately kill if this smells like another sport.
     """
     b = blob_for(story)
     src = story.get("source", "") or ""
@@ -344,60 +322,46 @@ def relevance_tier(story):
     if is_obviously_other_sport(b):
         return 0.0
 
-    # Tier 3.0: always show insiders
+    # Tier 3: source branding itself is Purdue-centric
     if is_trusted_source(src):
         return 3.0
 
-    # Tier 2.0: clearly Purdue / Boilers / Painter, etc.
+    # Tier 2: headline/snippet clearly about Purdue itself
     if mentions_purdue_direct(b):
         return 2.0
 
-    # Tier 1.5: national framing that explicitly mentions Purdue in that framing
+    # Tier 1.5: national/big-ten/top-25 convo that explicitly includes Purdue
     if is_big_context_that_mentions_purdue(b):
         return 1.5
 
-    # Tier 1.0: "X beats Purdue / vs Purdue / over Purdue"
+    # Tier 1: opponent writes about beating/playing Purdue
     if is_game_context_about_purdue(b):
         return 1.0
-
-    # Tier 0.5: generic national men's CBB from known hoops source
-    # (big picture preseason, Big Ten, Top 25, etc.) to pad volume
-    if is_generic_college_basketball_story(story):
-        return 0.5
 
     return 0.0
 
 
 def score_story(story):
     """
-    Convert tier + hoops-y vocabulary into numeric score.
-    Higher score sorts higher.
-    Tier is the main driver:
-      Tier 3.0 -> 30 pts
-      Tier 2.0 -> 20 pts
-      Tier 1.5 -> 15 pts
-      Tier 1.0 -> 10 pts
-      Tier 0.5 -> 5 pts (our filler floor)
+    Convert tier + hoops-y language into numeric score.
     """
     b = blob_for(story)
 
     tier_val = relevance_tier(story)
-    # base from tier
     base_score = {
         3.0: 30.0,
         2.0: 20.0,
         1.5: 15.0,
-        1.0: 10.0,
-        0.5: 5.0
+        1.0: 10.0
     }.get(tier_val, 0.0)
 
     score = base_score
 
-    # bump for hoops-y talk
+    # small bump for hoops vocab
     if any(term in b for term in HOOPS_TERMS):
         score += 1.0
 
-    # bump if explicit Purdue mention
+    # bump again if explicit Purdue mention
     if mentions_purdue_direct(b):
         score += 2.0
 
@@ -418,8 +382,8 @@ def load_sources():
 
 def collect_all():
     """
-    Fetch feeds, parse, apply tier calculation, keep tier >= 0.5,
-    score, sort, cap 20, timestamp.
+    Fetch feeds -> parse -> tier/score -> keep tier >= 1.0
+    -> sort -> cap 20 -> timestamp
     """
     sources = load_sources()
     raw_items = []
@@ -437,13 +401,13 @@ def collect_all():
 
     kept = []
     for it in raw_items:
-        tier_val = relevance_tier(it)
-        if tier_val >= 0.5:
-            it["tier"] = tier_val
+        tval = relevance_tier(it)
+        if tval >= 1.0:
+            it["tier"] = tval
             it["score"] = score_story(it)
             kept.append(it)
 
-    # sort by (score desc, then newest first)
+    # sort by score desc then recency desc
     def sort_key(item):
         try:
             published_ts = datetime.datetime.fromisoformat(
@@ -455,10 +419,10 @@ def collect_all():
 
     kept.sort(key=sort_key, reverse=True)
 
-    # cap to 20 (enough volume to make page feel full)
+    # cap 20
     kept = kept[:20]
 
-    # stamp when we pulled
+    # timestamp for header badge
     now_iso = datetime.datetime.utcnow().replace(microsecond=0).isoformat() + "Z"
     for it in kept:
         it["collected_at"] = now_iso
@@ -477,7 +441,6 @@ def main():
     stories = collect_all()
 
     if not stories:
-        # fallback so page isn't blank
         print("No stories matched after filter. Using previous items.json.")
         try:
             raw = ITEMS_PATH.read_text("utf-8")
