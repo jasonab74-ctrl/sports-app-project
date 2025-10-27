@@ -1,4 +1,6 @@
-// Fetch JSON helper
+// --- small helpers ---
+
+// Fetch JSON with no caching
 async function getJSON(path, fallback) {
   try {
     const res = await fetch(path, { cache: "no-store" });
@@ -10,8 +12,15 @@ async function getJSON(path, fallback) {
   }
 }
 
-// Turn ISO timestamp into "2h ago", "3d ago", etc.
-// Return "" if we can't parse it.
+// Decode HTML entities like &#39; -> ' so titles/snippets read like real language
+function decodeEntities(str) {
+  if (!str) return "";
+  const txt = document.createElement("textarea");
+  txt.innerHTML = str;
+  return txt.value;
+}
+
+// "2h ago", "3d ago", etc. Return "" if we can't parse.
 function timeAgo(iso) {
   if (!iso) return "";
 
@@ -34,36 +43,63 @@ function timeAgo(iso) {
   return diffDay + "d ago";
 }
 
-// Build the feed into the DOM
+// Build a nice canonical key for deduping
+// We'll lowercase, decode entities, strip extra spaces.
+function canonicalTitle(str) {
+  return decodeEntities(str || "")
+    .replace(/\s+/g, " ")
+    .trim()
+    .toLowerCase();
+}
+
+// Dedupe stories by title (first seen wins)
+function dedupeByTitle(items) {
+  const seen = new Set();
+  const out = [];
+  for (const art of items) {
+    const key = canonicalTitle(art.title);
+    if (!key) continue;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push(art);
+  }
+  return out;
+}
+
+// --- rendering ---
+
 function renderFeed(items) {
   const feedGrid = document.getElementById("feedGrid");
+  const footerSources = document.getElementById("footerSources");
   feedGrid.innerHTML = "";
 
-  // top 20 only
-  const topItems = items.slice(0, 20);
+  // 1) Dedupe repeated headlines
+  let cleanedItems = dedupeByTitle(items || []);
 
-  // header timestamp badge ("Updated 5:36 AM")
+  // 2) Limit to top 20 (after dedupe)
+  cleanedItems = cleanedItems.slice(0, 20);
+
+  // 3) Update "Updated HH:MM AM/PM" badge in header
   const updatedEl = document.getElementById("lastUpdated");
-  if (topItems.length && topItems[0].collected_at) {
-    updatedEl.textContent = new Date(topItems[0].collected_at)
+  if (cleanedItems.length && cleanedItems[0].collected_at) {
+    updatedEl.textContent = new Date(cleanedItems[0].collected_at)
       .toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" });
   } else {
     updatedEl.textContent = "recently";
   }
 
-  topItems.forEach(article => {
-    // Card root is still an <a> so the whole card is clickable
+  // 4) Render each article card (no image block)
+  cleanedItems.forEach(article => {
     const card = document.createElement("a");
     card.className = "feed-card";
     card.href = article.url || "#";
     card.target = "_blank";
     card.rel = "noopener noreferrer";
 
-    // CARD BODY (no thumbnail anymore)
     const body = document.createElement("div");
     body.className = "feed-body feed-body-noimg";
 
-    // metadata row: source + age
+    // meta row
     const metaRow = document.createElement("div");
     metaRow.className = "feed-meta-row";
 
@@ -74,10 +110,11 @@ function renderFeed(items) {
     const ageSpan = document.createElement("span");
     ageSpan.className = "feed-age";
     const relAge = timeAgo(article.published);
-    ageSpan.textContent = relAge;
+    if (relAge !== "") {
+      ageSpan.textContent = relAge;
+    }
 
     metaRow.appendChild(srcSpan);
-    // Only append the "age" bit if it's not ""
     if (relAge !== "") {
       metaRow.appendChild(ageSpan);
     }
@@ -85,27 +122,68 @@ function renderFeed(items) {
     // headline
     const headlineDiv = document.createElement("div");
     headlineDiv.className = "feed-headline";
-    headlineDiv.textContent = article.title || "";
+    headlineDiv.textContent = decodeEntities(article.title || "");
 
     // snippet
     const snippetDiv = document.createElement("div");
     snippetDiv.className = "feed-snippet";
-    snippetDiv.textContent = article.snippet || "";
+    snippetDiv.textContent = decodeEntities(article.snippet || "");
 
-    // combine
+    // assemble
     body.appendChild(metaRow);
     body.appendChild(headlineDiv);
     body.appendChild(snippetDiv);
-
-    // assemble card
     card.appendChild(body);
 
-    // add to page
     feedGrid.appendChild(card);
   });
+
+  // 5) Sources footer list: simple and human-readable
+  // We gather unique sources from cleanedItems, plus whatever is in our known set
+  const knownSources = [
+    "GoldandBlack.com",
+    "On3 Purdue Basketball",
+    "247Sports Purdue Basketball",
+    "Purdue Athletics MBB",
+    "ESPN Purdue MBB",
+    "Yahoo Sports College Basketball",
+    "CBS Sports College Basketball",
+    "The Field of 68",
+    "SI Purdue Basketball",
+    "USA Today Purdue Boilermakers"
+  ];
+
+  const seenSources = new Set();
+  cleanedItems.forEach(a => {
+    if (a.source && a.source.trim()) {
+      seenSources.add(a.source.trim());
+    }
+  });
+
+  // Merge: prioritize known (in that nice order), then any extras
+  const mergedSources = [];
+  knownSources.forEach(src => {
+    if (seenSources.has(src)) {
+      mergedSources.push(src);
+      seenSources.delete(src);
+    }
+  });
+  // add anything else we saw that's not in known list
+  seenSources.forEach(src => mergedSources.push(src));
+
+  footerSources.innerHTML = "";
+  const label = document.createElement("div");
+  label.className = "footer-note-heading";
+  label.textContent = "Sources we monitor:";
+  footerSources.appendChild(label);
+
+  const list = document.createElement("div");
+  list.className = "footer-sources-list";
+  list.textContent = mergedSources.join(" · ");
+  footerSources.appendChild(list);
 }
 
-// init on page load
+// --- init ---
 (async function init(){
   const data = await getJSON(
     "static/teams/purdue-mbb/items.json",
