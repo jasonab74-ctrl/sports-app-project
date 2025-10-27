@@ -7,8 +7,9 @@
       "published": "2025-10-27T08:47:18+00:00Z",
       "snippet": "Coach Matt Painter said he wasn&#39;t worried offensively but the same wasn&#39;t true defensively. Plus a look guard and center players from the game at Kentucky.",
       "image": "",
-      "collected_at": "2025-10-27T15:42:08Z",
-      "score": 7
+      "collected_at": "2025-10-27T16:01:12Z",
+      "tier": 2,
+      "score": 24
     },
     {
       "source": "Yahoo Sports College Basketball",
@@ -17,8 +18,20 @@
       "published": "2025-10-27T08:47:18+00:00Z",
       "snippet": "Coach Matt Painter said he wasn&#39;t worried offensively but the same wasn&#39;t true defensively. Plus a look guard and center players from the game at Kentucky.",
       "image": "",
-      "collected_at": "2025-10-27T15:42:08Z",
-      "score": 7
+      "collected_at": "2025-10-27T16:01:12Z",
+      "tier": 2,
+      "score": 24
+    },
+    {
+      "source": "Yahoo Sports College Basketball",
+      "title": "Purdue\u2019s Matt Painter regrets not talking about an NCAA title last year. This season, it\u2019s different",
+      "url": "https://www.nbcsports.com/mens-college-basketball/news/purdues-matt-painter-regrets-not-talking-about-an-ncaa-title-last-year-this-season-its-different",
+      "published": "2025-10-27T15:52:14+00:00Z",
+      "snippet": "Matt Painter believes one of his mistakes last year was not talking about playing for the title enough.",
+      "image": "",
+      "collected_at": "2025-10-27T16:01:12Z",
+      "tier": 2,
+      "score": 22
     },
     {
       "source": "Yahoo Sports College Basketball",
@@ -27,8 +40,9 @@
       "published": "2025-10-26T11:11:00+00:00Z",
       "snippet": "Who impressed in the Wildcats&#39; surging win over #1 Purdue? We\u2019re glad you asked!",
       "image": "",
-      "collected_at": "2025-10-27T15:42:08Z",
-      "score": 5
+      "collected_at": "2025-10-27T16:01:12Z",
+      "tier": 2,
+      "score": 22
     }
   ]
 }
