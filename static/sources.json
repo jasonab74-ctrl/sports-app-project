@@ -11,14 +11,44 @@
       "url": "https://www.on3.com/teams/purdue-boilermakers-basketball/feed/"
     },
     {
+      "name": "247Sports Purdue Basketball",
+      "type": "rss",
+      "url": "https://247sports.com/college/purdue/Article/feed/"
+    },
+    {
       "name": "Purdue Athletics MBB",
       "type": "rss",
       "url": "https://purduesports.com/feeds/mens-basketball.xml"
     },
     {
-      "name": "ESPN College Basketball Purdue",
+      "name": "ESPN Purdue MBB",
       "type": "rss",
       "url": "https://www.espn.com/espn/rss/ncb/team?teamId=2509"
+    },
+    {
+      "name": "Yahoo Sports College Basketball",
+      "type": "rss",
+      "url": "https://sports.yahoo.com/college-basketball/rss/"
+    },
+    {
+      "name": "CBS Sports College Basketball",
+      "type": "rss",
+      "url": "https://www.cbssports.com/college-basketball/rss/rss2.xml"
+    },
+    {
+      "name": "The Field of 68",
+      "type": "rss",
+      "url": "https://feeds.buzzsprout.com/1337991.rss"
+    },
+    {
+      "name": "SI Purdue Basketball",
+      "type": "rss",
+      "url": "https://www.si.com/college/purdue/.rss/full/"
+    },
+    {
+      "name": "USA Today Purdue Boilermakers",
+      "type": "rss",
+      "url": "https://usatoday.com/sports/college/basketball/teams/purdue/boilermakers/rss/"
     }
   ]
 }
