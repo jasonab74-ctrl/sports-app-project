@@ -1,17 +1,17 @@
 /* static/css/pro.css
    Purdue Men's Basketball Hub — full styling
-   Includes layout, card styles, typography, gold/black theme
-   and the new meta row (source + age).
+   Dark theme, Purdue gold, card grid, footer sources list.
 */
 
-/* --- Base Layout --- */
+/* --- Base layout / page chrome --- */
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   background-color: #0b0b0b;
-  color: #fff;
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -22,73 +22,98 @@ a {
   text-decoration: none;
 }
 
-.container {
-  max-width: 900px;
+/* Constrains content horizontally */
+.page-shell {
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 1.25rem;
+  padding: 1rem 1rem 3rem;
 }
 
-/* --- Header --- */
+/* --- Header/top bar --- */
 
-.header {
+.header-block {
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 0.5rem 0 1.25rem 0;
+  flex-direction: column;
+  padding-bottom: 1rem;
   border-bottom: 1px solid #2e2e2e;
 }
 
+@media (min-width: 600px) {
+  .header-block {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+
+.header-left {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
 .header-logo {
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 8px;
   background-color: #d7c89a;
   color: #0b0b0b;
+  font-weight: 700;
+  font-size: 1.4rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
-  font-size: 1.5rem;
-  border-radius: 8px;
   margin-right: 0.75rem;
-  flex-shrink: 0;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
 }
 
-.header-text {
+.header-titles {
   display: flex;
   flex-direction: column;
 }
 
-.header-title {
-  font-size: 1.15rem;
-  font-weight: 700;
+.header-line1 {
+  font-size: 1.05rem;
+  font-weight: 600;
   color: #d7c89a;
   margin-bottom: 0.25rem;
 }
 
-.header-subtitle {
+.header-line2 {
   font-size: 1rem;
   font-weight: 500;
   color: #f2f2f2;
 }
 
-.updated-badge {
+/* timestamp badge ("Updated ...") */
+.header-updated {
   display: inline-block;
+  align-self: flex-start;
   background-color: #1e1e1e;
   border: 1px solid #383838;
-  color: #d7c89a;
-  font-size: 0.85rem;
-  font-weight: 500;
-  padding: 0.25rem 0.75rem;
   border-radius: 8px;
+  padding: 0.35rem 0.6rem;
   margin-top: 0.75rem;
+
+  color: #d7c89a;
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 1.2;
 }
 
-/* --- Feed Grid --- */
+@media (min-width: 600px) {
+  .header-updated {
+    margin-top: 0;
+  }
+}
+
+/* --- Feed grid --- */
 
 #feedGrid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.25rem;
+  gap: 1rem 1rem;
   margin-top: 1.5rem;
 }
 
@@ -98,20 +123,27 @@ a {
   }
 }
 
-/* --- Feed Cards --- */
+@media (min-width: 1000px) {
+  #feedGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* --- Individual story cards --- */
 
 .feed-card {
   display: block;
-  background: linear-gradient(180deg, #1a1a1a 0%, #111 100%);
+  background: radial-gradient(circle at 20% 0%, #1a1a1a 0%, #111 80%);
   border-radius: 12px;
-  padding: 1rem 1.1rem;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
-  transition: transform 0.12s ease, box-shadow 0.15s ease;
+  padding: 1rem 1rem 1rem 1rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.75);
+  border: 1px solid rgba(215, 200, 154, 0.07);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
 }
 
 .feed-card:hover {
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.85);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
 }
 
 .feed-body {
@@ -119,20 +151,19 @@ a {
   flex-direction: column;
 }
 
-/* --- Meta Row (NEW: Source + Time) --- */
-
+/* meta row: source (left) + time (right) */
 .feed-meta-row {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-bottom: 0.45rem;
-  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
   line-height: 1.2;
 }
 
 .feed-source {
   color: #d7c89a;
   font-weight: 600;
+  font-size: 0.8rem;
   margin-right: 0.5rem;
   flex-shrink: 0;
 }
@@ -140,65 +171,71 @@ a {
 .feed-age {
   color: #a0a0a0;
   font-weight: 400;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   margin-left: auto;
   text-align: right;
   flex-shrink: 0;
 }
 
-/* --- Title + Snippet --- */
-
+/* headline and snippet text */
 .feed-headline {
   color: #ffffff;
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 600;
-  line-height: 1.35;
-  margin-bottom: 0.4rem;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+  word-break: break-word;
 }
 
 .feed-snippet {
   color: #c7c6c2;
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   line-height: 1.4;
+  word-break: break-word;
 }
 
 /* --- Footer --- */
 
-.footer {
+.footer-block {
   border-top: 1px solid #2a2a2a;
   margin-top: 2rem;
-  padding-top: 1.25rem;
-  font-size: 0.9rem;
+  padding-top: 1.5rem;
   color: #bfbfbf;
-  line-height: 1.4;
+  font-size: 0.9rem;
+  line-height: 1.45;
 }
 
-.footer strong {
+.footer-headline {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.footer-desc {
+  color: #bfbfbf;
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  max-width: 800px;
+}
+
+.footer-sources-label {
   color: #d7c89a;
   font-weight: 600;
-}
-
-.footer a {
-  color: #d7c89a;
-  text-decoration: none;
-}
-
-.footer a:hover {
-  text-decoration: underline;
-}
-
-/* --- Utility Elements --- */
-
-#sourceList {
-  display: block;
-  margin-top: 0.25rem;
   font-size: 0.9rem;
-  color: #999;
-  word-break: break-word;
-  line-height: 1.4;
+  margin-bottom: 0.4rem;
 }
 
-/* --- Scroll Behavior --- */
+#sourceListStatic {
+  color: #9c9c9c;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  max-width: 900px;
+  word-break: break-word;
+}
+
+/* --- Scrollbar cosmetic (desktop) --- */
 
 ::-webkit-scrollbar {
   width: 10px;
@@ -211,19 +248,47 @@ a {
   background-color: #444;
 }
 
-/* --- PWA / Mobile Tweaks --- */
+/* --- Responsive tweaks for smaller screens --- */
 
 @media (max-width: 500px) {
-  .header-title {
+  .header-logo {
+    width: 40px;
+    height: 40px;
+    font-size: 1.25rem;
+  }
+
+  .header-line1 {
     font-size: 1rem;
   }
+
+  .header-line2 {
+    font-size: 0.95rem;
+  }
+
+  .header-updated {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.5rem;
+    margin-top: 0.75rem;
+  }
+
+  .feed-source {
+    font-size: 0.75rem;
+  }
+
+  .feed-age {
+    font-size: 0.7rem;
+  }
+
   .feed-headline {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
+
   .feed-snippet {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
-  .feed-meta-row {
-    font-size: 0.8rem;
+
+  .footer-desc,
+  #sourceListStatic {
+    font-size: 0.85rem;
   }
 }
