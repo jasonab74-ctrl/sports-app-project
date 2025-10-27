@@ -2,16 +2,31 @@
 """
 tools/collect.py
 
-Purdue Men's Basketball collector with tiered relevance.
+Purdue Men's Basketball collector with tiered, volume-friendly relevance.
 
 Tiers:
- A. Trusted Purdue sources  => ALWAYS KEEP (score very high)
- B. Explicit Purdue mentions => KEEP (score high)
- C. Opponent / game context that is clearly about Purdue playing someone
-    (e.g. "Kentucky's win over No. 1 Purdue") => KEEP (score medium)
- D. Generic college hoops with no Purdue angle => DROP
+ 3 = Tier A: Trusted Purdue sources (GoldandBlack, On3 Purdue, etc.)
+     Always include. Score highest.
 
-This gets us volume without letting Yahoo drown us in random ACC/SEC stories.
+ 2 = Tier B: Direct Purdue focus (Purdue / Boilermakers / Painter / etc. clearly
+     in headline/snippet). Include. High score.
+
+ 1.5 = Tier B-Plus: National / Big Ten / Top 25 context articles that DO mention
+     Purdue somewhere in the teaser/snippet/headline, even if it's not ONLY
+     about Purdue. This boosts volume while staying relevant.
+     Example: "10 key questions for the 2025-26 men's season" where one of
+     the questions is "Can Purdue finally get over the hump?"
+
+ 1 = Tier C: Opponent-framed recap of a Purdue game or result
+     ("5 risers in Kentucky's impressive exhibition victory over No. 1 Purdue").
+     Still relevant. Include. Medium score.
+
+ 0 = Tier D: Generic CBB pieces with no Purdue angle OR non-basketball sports.
+     Drop.
+
+Output:
+- top ~20 highest scored + most recent stories
+- writes static/teams/purdue-mbb/items.json
 """
 
 import json
@@ -29,7 +44,7 @@ SOURCES_PATH = ROOT / "static" / "sources.json"
 ITEMS_PATH = ROOT / "static" / "teams" / "purdue-mbb" / "items.json"
 
 
-# -------- Fetch helper --------
+# -------- HTTP fetch --------
 def http_get(url, timeout=10):
     try:
         req = Request(url, headers={"User-Agent": "Mozilla/5.0"})
@@ -43,7 +58,7 @@ def http_get(url, timeout=10):
 # -------- RSS/Atom parsing --------
 def parse_rss(xml_bytes, source_name):
     """
-    Parse feed entries into normalized dicts.
+    Parse feed entries into normalized dicts for downstream logic.
     """
     out = []
     if not xml_bytes:
@@ -54,7 +69,7 @@ def parse_rss(xml_bytes, source_name):
     except ET.ParseError:
         return out
 
-    # RSS or Atom
+    # Support RSS ("channel"/"item") and Atom ("entry")
     channel = root.find("channel")
     if channel is not None:
         item_nodes = channel.findall("item")
@@ -114,10 +129,10 @@ def parse_rss(xml_bytes, source_name):
     return out
 
 
-# -------- Relevance logic --------
+# -------- relevance signals --------
 
 TRUSTED_KEYWORDS = [
-    # if the source contains ANY of these, it's basically Purdue-focused
+    # If source includes any of these, it's basically Purdue-specific / insider.
     "goldandblack",
     "on3",
     "247sports",
@@ -128,7 +143,6 @@ TRUSTED_KEYWORDS = [
     "usa today boilermakers",
 ]
 
-# Clearly Purdue-related terms / people
 PURDUE_TERMS = [
     "purdue",
     "boilermaker",
@@ -140,19 +154,23 @@ PURDUE_TERMS = [
     "fletcher loyer",
     "zach edey",
     "mackey",
-    "west lafayette"
+    "west lafayette",
+    "no. 1 purdue",
+    "no.1 purdue",
+    "number 1 purdue",
+    "top-ranked purdue",
+    "top ranked purdue"
 ]
 
-# Basketball context words. Not strictly required,
-# but they help boost relevance scoring.
+# language that suggests we're talking hoops not football, baseball, etc.
 HOOPS_TERMS = [
     "basketball",
     "men's basketball",
     "mens basketball",
     "men’s basketball",
     "mbb",
+    "guard",
     "backcourt",
-    "guard play",
     "point guard",
     "frontcourt",
     "rotation",
@@ -162,137 +180,175 @@ HOOPS_TERMS = [
     "ncaa tournament",
     "march madness",
     "big ten",
-    "final four"
+    "final four",
+    "exhibition",
+    "scrimmage"
 ]
 
-def is_trusted_source(source):
-    """Return True if this is one of our Purdue-heavy/insider sources."""
-    if not source:
+BAD_SPORT_TERMS = [
+    "football",
+    "quarterback", "qb",
+    "wide receiver", "running back",
+    "touchdown", "field goal", "kickoff",
+    "baseball", "softball", "volleyball",
+    "soccer", "wrestling", "golf",
+    "track and field", "track & field"
+]
+
+
+def text_blob(story):
+    return f"{story.get('title','')} {story.get('snippet','')}".lower()
+
+
+def is_trusted_source(src: str) -> bool:
+    """
+    Tier 3 (A): sources we basically trust as Purdue-focused.
+    """
+    if not src:
         return False
-    s = source.lower()
+    s = src.lower()
     return any(key in s for key in TRUSTED_KEYWORDS)
 
-def mentions_purdue(title, snippet):
-    """Return True if title/snippet clearly reference Purdue, Painter, Boilers, etc."""
-    blob = f"{title} {snippet}".lower()
+
+def mentions_purdue_direct(blob: str) -> bool:
+    """
+    Tier 2 (B): Purdue clearly the subject.
+    """
     return any(term in blob for term in PURDUE_TERMS)
 
-def is_game_context_about_purdue(title, snippet):
+
+def is_game_context_about_purdue(blob: str) -> bool:
     """
-    Tier C:
-    Return True if this looks like game context where Purdue is on one side,
-    even if the article is framed from the opponent's POV.
-
-    Examples we WANT:
-      "5 risers in Kentucky’s impressive exhibition victory over No. 1 Purdue"
-    That's still actually Purdue-related.
-
-    We'll look for patterns like:
-    - 'over Purdue'
-    - 'vs Purdue'
-    - 'against Purdue'
-    - 'win over No. 1 Purdue'
-    - '#1 Purdue' / 'No. 1 Purdue'
-
-    We'll also allow 'No. 1 Purdue' / 'top-ranked Purdue' even without "Purdue" twice.
+    Tier 1 (C): Opponent-framed article, but specifically referencing
+    playing Purdue / beating Purdue / vs Purdue.
+    Still Purdue-relevant.
     """
-    blob = f"{title} {snippet}".lower()
-
     triggers = [
-        "purdue",
-        "no. 1 purdue",
-        "no.1 purdue",
-        "number 1 purdue",
-        "top-ranked purdue",
-        "top ranked purdue",
         "vs purdue",
         "vs. purdue",
         "against purdue",
         "over purdue",
         "over no. 1 purdue",
         "over no.1 purdue",
-        "over number 1 purdue"
+        "over number 1 purdue",
+        "victory over no. 1 purdue",
+        "victory over purdue",
+        "win over no. 1 purdue",
+        "win over purdue",
+        "beat purdue",
+        "beats purdue",
+        "upset purdue",
+        "upsets purdue",
+        "over #1 purdue",
+        "over # 1 purdue",
+        "#1 purdue",
+        "# 1 purdue"
     ]
-
-    # this is looser than mentions_purdue(): even if Purdue only appears
-    # as the opponent in the framing, we keep it.
     return any(t in blob for t in triggers)
 
-def obvious_other_sport(title, snippet):
+
+def is_big_context_that_mentions_purdue(blob: str) -> bool:
     """
-    We don't want Purdue football or Tennessee football or whatever.
-    If it's clearly football/baseball/etc, drop the score.
+    Tier 1.5 (C+): National / Big Ten / Top 25 preview / questions-style article
+    that includes Purdue somewhere in the chatter — not ONLY Purdue, but Purdue
+    shows up as part of the storyline.
+
+    This is how we get volume back: if they even *touch* Purdue in a
+    national-season-preview style piece, we'll keep it.
     """
-    blob = f"{title} {snippet}".lower()
-    bad_sports = [
-        "football",
-        "quarterback", "qb",
-        "wide receiver", "running back", "touchdown",
-        "field goal", "kickoff",
-        "baseball", "softball", "volleyball",
-        "soccer", "wrestling", "golf", "track and field"
+    # must mention Purdue at least once
+    if not mentions_purdue_direct(blob):
+        return False
+
+    # and should sound like national/big-picture talk
+    context_terms = [
+        "top 25",
+        "top-25",
+        "top25",
+        "preseason questions",
+        "key questions",
+        "season preview",
+        "ahead of the season",
+        "who can win it all",
+        "title race",
+        "national title hopes",
+        "final four contenders",
+        "big ten race",
+        "big ten title",
+        "conference race",
+        "power rankings",
+        "rankings",
+        "poll",
+        "ap poll"
     ]
-    return any(term in blob for term in bad_sports)
+    return any(t in blob for t in context_terms)
+
+
+def is_obviously_other_sport(blob: str) -> bool:
+    """
+    Strong kill switch: don't accidentally let Purdue football or
+    random volleyball in here.
+    """
+    return any(term in blob for term in BAD_SPORT_TERMS)
 
 
 def relevance_tier(story):
     """
-    Return an integer tier:
-      3 = Trusted Purdue source (Tier A)
-      2 = Explicit Purdue reference (Tier B)
-      1 = Opponent framing but clearly about Purdue game/result (Tier C)
-      0 = Everything else (Tier D / ignore)
+    Return numeric "tier" – higher means more Purdue-relevant.
 
-    We also reject obvious non-basketball sports by forcing 0.
+    3.0 = Tier A: trusted Purdue source (GoldandBlack, etc.)
+    2.0 = Tier B: direct Purdue focus (Purdue / Painter / Boilermakers clearly the subject)
+    1.5 = Tier B+: national piece that talks about Purdue as part of top-25 / Big Ten / title convo
+    1.0 = Tier C: game/opponent framing where Purdue is the opponent discussed
+    0.0 = Tier D: irrelevant
+
+    If it's obviously another sport, force 0.0.
     """
-    src = story.get("source", "") or ""
-    ttl = story.get("title", "") or ""
-    snip = story.get("snippet", "") or ""
+    blob = text_blob(story)
 
-    if obvious_other_sport(ttl, snip):
-        return 0  # football/baseball/etc. out
+    if is_obviously_other_sport(blob):
+        return 0.0
 
-    # Tier A
-    if is_trusted_source(src):
-        return 3
+    if is_trusted_source(story.get("source", "")):
+        return 3.0
 
-    # Tier B
-    if mentions_purdue(ttl, snip):
-        return 2
+    if mentions_purdue_direct(blob):
+        # direct Purdue = 2.0, but could also qualify for 1.5,
+        # so 2.0 wins already
+        return 2.0
 
-    # Tier C
-    if is_game_context_about_purdue(ttl, snip):
-        return 1
+    if is_big_context_that_mentions_purdue(blob):
+        # national narrative that mentions Purdue specifically
+        return 1.5
 
-    # Tier D
-    return 0
+    if is_game_context_about_purdue(blob):
+        return 1.0
+
+    return 0.0
 
 
 def score_story(story):
     """
-    Score a story for ordering within the final feed.
-    Higher is better.
-    We'll base it mostly on tier + hoops-specific language.
+    Turn tier + hoops-iness into a numeric score.
+    Higher score sorts earlier.
     """
-    ttl = story.get("title", "") or ""
-    snip = story.get("snippet", "") or ""
-    blob = f"{ttl} {snip}".lower()
+    blob = text_blob(story)
 
-    tier = relevance_tier(story)
-    score = tier * 10  # Tier 3 = 30 pts, Tier 2 = 20 pts, Tier 1 = 10 pts
+    tier_val = relevance_tier(story)
+    score = tier_val * 10.0  # Tier 3 => 30, Tier 2 => 20, Tier 1.5 => 15, Tier 1 => 10
 
-    # Boost if clearly hoops talk
+    # bump if it clearly sounds like hoops (rotation, backcourt, etc)
     if any(term in blob for term in HOOPS_TERMS):
-        score += 2
+        score += 2.0
 
-    # Tiny bump if specifically says "Purdue" etc.
-    if mentions_purdue(ttl, snip):
-        score += 2
+    # small bump for explicit Purdue mention
+    if mentions_purdue_direct(blob):
+        score += 2.0
 
     return score
 
 
-# -------- Pipeline --------
+# -------- pipeline --------
 
 def load_sources():
     try:
@@ -306,8 +362,8 @@ def load_sources():
 
 def collect_all():
     """
-    Fetch all feeds, parse, tag with tier/score,
-    keep tier >=1, sort, limit 20, timestamp.
+    Fetch feeds -> parse -> tier -> filter tier>=1 -> score -> sort -> cap 20
+    -> write collected_at
     """
     sources = load_sources()
     raw_items = []
@@ -323,18 +379,18 @@ def collect_all():
         parsed_items = parse_rss(xml_bytes, src.get("name", ""))
         raw_items.extend(parsed_items)
 
-    # Filter: only keep Tier >=1
+    # Keep only tier >= 1.0 (C, C+, B, A)
     kept = []
     for it in raw_items:
-        tier = relevance_tier(it)
-        if tier >= 1:
-            it["tier"] = tier
+        tier_val = relevance_tier(it)
+        if tier_val >= 1.0:
+            it["tier"] = tier_val
             it["score"] = score_story(it)
             kept.append(it)
 
-    # Sort: higher score first, then newer first
+    # Sort by score desc, then newest first
     def sort_key(item):
-        # published timestamp to float for tie-break
+        # parse published -> timestamp
         published_ts = 0
         try:
             published_ts = datetime.datetime.fromisoformat(
@@ -342,14 +398,14 @@ def collect_all():
             ).timestamp()
         except Exception:
             published_ts = 0
-        return (item.get("score", 0), published_ts)
+        return (item.get("score", 0.0), published_ts)
 
     kept.sort(key=sort_key, reverse=True)
 
-    # Cap at 20 (this should bring back volume)
+    # Cap at 20 to keep UI tight
     kept = kept[:20]
 
-    # Add collected_at timestamp for header badge
+    # Stamp current collected time for header badge
     now_iso = datetime.datetime.utcnow().replace(microsecond=0).isoformat() + "Z"
     for it in kept:
         it["collected_at"] = now_iso
@@ -368,8 +424,8 @@ def main():
     stories = collect_all()
 
     if not stories:
-        # fallback so site isn't blank
-        print("No stories matched (after tier filter). Using previous items.json.")
+        # Fallback so the page isn't blank if for some reason everything filtered out.
+        print("No stories matched after filter. Using previous items.json.")
         try:
             raw = ITEMS_PATH.read_text("utf-8")
             current_json = json.loads(raw)
