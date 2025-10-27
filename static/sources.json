@@ -1,6 +1,11 @@
 {
   "sources": [
     {
+      "name": "Purdue Athletics MBB",
+      "type": "rss",
+      "url": "https://purduesports.com/rss?path=mbball"
+    },
+    {
       "name": "GoldandBlack.com",
       "type": "rss",
       "url": "https://goldandblack.com/feed/"
@@ -8,22 +13,17 @@
     {
       "name": "On3 Purdue Basketball",
       "type": "rss",
-      "url": "https://www.on3.com/teams/purdue-boilermakers-basketball/feed/"
+      "url": "https://www.on3.com/college/purdue-boilermakers/basketball/feed/"
     },
     {
       "name": "247Sports Purdue Basketball",
       "type": "rss",
-      "url": "https://247sports.com/college/purdue/Article/feed/"
+      "url": "https://247sports.com/college/purdue/LongFormArticle/rss/"
     },
     {
-      "name": "Purdue Athletics MBB",
+      "name": "CBS Sports College Basketball",
       "type": "rss",
-      "url": "https://purduesports.com/feeds/mens-basketball.xml"
-    },
-    {
-      "name": "ESPN Purdue MBB",
-      "type": "rss",
-      "url": "https://www.espn.com/espn/rss/ncb/team?teamId=2509"
+      "url": "https://www.cbssports.com/college-basketball/rss/headlines/"
     },
     {
       "name": "Yahoo Sports College Basketball",
@@ -31,24 +31,19 @@
       "url": "https://sports.yahoo.com/college-basketball/rss/"
     },
     {
-      "name": "CBS Sports College Basketball",
+      "name": "ESPN College Basketball",
       "type": "rss",
-      "url": "https://www.cbssports.com/college-basketball/rss/rss2.xml"
-    },
-    {
-      "name": "The Field of 68",
-      "type": "rss",
-      "url": "https://feeds.buzzsprout.com/1337991.rss"
-    },
-    {
-      "name": "SI Purdue Basketball",
-      "type": "rss",
-      "url": "https://www.si.com/college/purdue/.rss/full/"
+      "url": "https://www.espn.com/espn/rss/ncb/news"
     },
     {
       "name": "USA Today Purdue Boilermakers",
       "type": "rss",
-      "url": "https://usatoday.com/sports/college/basketball/teams/purdue/boilermakers/rss/"
+      "url": "https://usatoday.com/sports/college/bigten/purdue/rss/"
+    },
+    {
+      "name": "The Field of 68",
+      "type": "rss",
+      "url": "https://thefieldof68.com/feed/"
     }
   ]
 }
