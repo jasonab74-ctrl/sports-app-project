@@ -1,6 +1,7 @@
-// --- helpers ---
+// static/js/pro.js
+// Renders Purdue MBB feed onto the page.
 
-// Fetch JSON with no caching so we always see latest pipeline output
+// small fetch helper (with fallback if fetch fails)
 async function getJSON(path, fallback) {
   try {
     const res = await fetch(path, { cache: "no-store" });
@@ -12,241 +13,137 @@ async function getJSON(path, fallback) {
   }
 }
 
-// Decode HTML entities so we don't show &#39; etc.
-function decodeEntities(str) {
-  if (!str) return "";
-  const txt = document.createElement("textarea");
-  txt.innerHTML = str;
-  return txt.value;
-}
-
-// Format ISO date into "Oct 27, 7:12 AM"
-function prettyDate(iso) {
+// "2h ago", "Oct 27, 2:15 PM"
+function timeAgoOrStamp(iso) {
   if (!iso) return "";
-  const ms = Date.parse(iso);
-  if (isNaN(ms)) return "";
-  const d = new Date(ms);
-  return d.toLocaleString("en-US", {
+  const then = new Date(iso);
+  const now = new Date();
+  const diffMs = now - then;
+  const diffMin = Math.floor(diffMs / 60000);
+
+  // if it's under 1 min
+  if (diffMin < 1) return "just now";
+  // under 60 min
+  if (diffMin < 60) return diffMin + "m ago";
+
+  const diffHr = Math.floor(diffMin / 60);
+  // under 24h
+  if (diffHr < 24) return diffHr + "h ago";
+
+  // else show a timestamp like "Oct 27, 2:15 PM"
+  // We'll include month short name + day + time
+  const opts = {
     month: "short",
     day: "numeric",
     hour: "numeric",
     minute: "2-digit"
-  });
+  };
+  return then.toLocaleString("en-US", opts);
 }
 
-// "2h ago", "3d ago", etc. Return "" if not parseable.
-function timeAgo(iso) {
-  if (!iso) return "";
-
-  const thenMs = Date.parse(iso);
-  if (isNaN(thenMs)) return "";
-
-  const nowMs = Date.now();
-  const diffMs = nowMs - thenMs;
-  if (diffMs < 0) return "";
-
-  const diffMin = Math.floor(diffMs / 60000);
-
-  if (diffMin < 1) return "just now";
-  if (diffMin < 60) return diffMin + "m ago";
-
-  const diffHr = Math.floor(diffMin / 60);
-  if (diffHr < 24) return diffHr + "h ago";
-
-  const diffDay = Math.floor(diffHr / 24);
-  return diffDay + "d ago";
-}
-
-// Lowercase, strip whitespace, decode entities → used to dedupe duplicates
-function canonicalTitle(str) {
-  return decodeEntities(str || "")
-    .replace(/\s+/g, " ")
-    .trim()
-    .toLowerCase();
-}
-
-// Remove duplicate stories by title
-function dedupeByTitle(items) {
-  const seen = new Set();
-  const out = [];
-  for (const art of items) {
-    const key = canonicalTitle(art.title);
-    if (!key) continue;
-    if (seen.has(key)) continue;
-    seen.add(key);
-    out.push(art);
-  }
-  return out;
-}
-
-// We'll bias Purdue-heavy sources to the top (GoldandBlack, On3, etc.)
-// and down-rank "generic national chatter".
-function sortWithPurdueBias(items) {
-  function sourcePriority(src) {
-    if (!src) return 0;
-    const s = src.toLowerCase();
-    // highest priority: true Purdue insiders, official
-    if (
-      s.includes("goldandblack") ||
-      s.includes("on3") ||
-      s.includes("247") ||
-      s.includes("purdue athletics") ||
-      s.includes("si purdue")
-    ) return 3;
-
-    // mid priority: national but will specifically mention Purdue sometimes
-    if (
-      s.includes("espn") ||
-      s.includes("cbs") ||
-      s.includes("field of 68") ||
-      s.includes("field of68") ||
-      s.includes("fieldof68")
-    ) return 2;
-
-    // lowest: wide-net college basketball feeds (Yahoo, etc.)
-    return 1;
-  }
-
-  return [...items].sort((a, b) => {
-    const ap = sourcePriority(a.source || "");
-    const bp = sourcePriority(b.source || "");
-    if (ap !== bp) return bp - ap; // higher priority first
-
-    // tie-breaker: newer published first
-    const at = Date.parse(a.published || "") || 0;
-    const bt = Date.parse(b.published || "") || 0;
-    return bt - at;
-  });
-}
-
-// --- render ---
-
+// render list of feed stories to the grid
 function renderFeed(items) {
   const feedGrid = document.getElementById("feedGrid");
-  const footerSources = document.getElementById("footerSources");
   feedGrid.innerHTML = "";
 
-  // 1. Clean data:
-  //    - dedupe identical headlines
-  //    - bias order to Purdue-y sources > national > filler
-  let cleanedItems = dedupeByTitle(items || []);
-  cleanedItems = sortWithPurdueBias(cleanedItems);
+  // limit top 20
+  const topItems = items.slice(0, 20);
 
-  // 2. Limit to top 20
-  cleanedItems = cleanedItems.slice(0, 20);
-
-  // 3. Update header "Updated <time>"
+  // header "Updated <time>"
   const updatedEl = document.getElementById("lastUpdated");
-  if (cleanedItems.length && cleanedItems[0].collected_at) {
-    updatedEl.textContent = new Date(cleanedItems[0].collected_at)
-      .toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" });
+  if (topItems.length && topItems[0].collected_at) {
+    updatedEl.textContent =
+      "Updated " +
+      new Date(topItems[0].collected_at).toLocaleTimeString("en-US", {
+        hour: "numeric",
+        minute: "2-digit"
+      });
   } else {
-    updatedEl.textContent = "recently";
+    updatedEl.textContent = "Updated recently";
   }
 
-  // 4. Build feed cards
-  cleanedItems.forEach(article => {
-    const sourceName = article.source || "Source";
-    const publishedIso = article.published || "";
-    const friendlyDate = prettyDate(publishedIso); // "Oct 27, 7:12 AM"
-    const relAge = timeAgo(publishedIso); // "2h ago"
-
+  topItems.forEach(article => {
+    // outer <a> so the whole card is tappable
     const card = document.createElement("a");
     card.className = "feed-card";
     card.href = article.url || "#";
     card.target = "_blank";
     card.rel = "noopener noreferrer";
 
+    // card body wrapper
     const body = document.createElement("div");
-    body.className = "feed-body feed-body-noimg";
+    body.className = "feed-body";
 
-    // meta row: source on left, published date + "ago" on right
+    // meta row across top (source left, age right)
     const metaRow = document.createElement("div");
     metaRow.className = "feed-meta-row";
 
     const srcSpan = document.createElement("span");
     srcSpan.className = "feed-source";
-    srcSpan.textContent = sourceName;
+    srcSpan.textContent = article.source || "Source";
 
-    const rightMeta = document.createElement("span");
-    rightMeta.className = "feed-age";
-    if (friendlyDate && relAge) {
-      rightMeta.textContent = `${friendlyDate} · ${relAge}`;
-    } else if (friendlyDate) {
-      rightMeta.textContent = friendlyDate;
-    } else if (relAge) {
-      rightMeta.textContent = relAge;
-    } else {
-      rightMeta.textContent = ""; // nothing, stays empty
-    }
+    const ageSpan = document.createElement("span");
+    ageSpan.className = "feed-age";
+    ageSpan.textContent = timeAgoOrStamp(article.published || "");
 
     metaRow.appendChild(srcSpan);
-    if (rightMeta.textContent !== "") {
-      metaRow.appendChild(rightMeta);
-    }
+    metaRow.appendChild(ageSpan);
 
     // headline
     const headlineDiv = document.createElement("div");
     headlineDiv.className = "feed-headline";
-    headlineDiv.textContent = decodeEntities(article.title || "");
+    headlineDiv.textContent = article.title || "";
 
     // snippet
     const snippetDiv = document.createElement("div");
     snippetDiv.className = "feed-snippet";
-    snippetDiv.textContent = decodeEntities(article.snippet || "");
+    snippetDiv.textContent = article.snippet || "";
 
-    // assemble the card body
+    // assemble
     body.appendChild(metaRow);
     body.appendChild(headlineDiv);
     body.appendChild(snippetDiv);
 
-    // attach to card
     card.appendChild(body);
-
-    // push into DOM
     feedGrid.appendChild(card);
   });
-
-  // 5. Footer sources list
-  // Right now, Yahoo is spamming & maybe others haven't posted recently.
-  // You asked to always show all sources we track. We'll do that.
-
-  const allSourcesWeTrack = [
-    "GoldandBlack.com",
-    "On3 Purdue Basketball",
-    "247Sports Purdue Basketball",
-    "Purdue Athletics MBB",
-    "ESPN Purdue MBB",
-    "Yahoo Sports College Basketball",
-    "CBS Sports College Basketball",
-    "The Field of 68",
-    "SI Purdue Basketball",
-    "USA Today Purdue Boilermakers"
-  ];
-
-  footerSources.innerHTML = "";
-
-  const label = document.createElement("div");
-  label.className = "footer-note-heading";
-  label.textContent = "Sources we monitor:";
-  footerSources.appendChild(label);
-
-  const list = document.createElement("div");
-  list.className = "footer-sources-list";
-
-  // Join with bullets, but keep them readable on mobile
-  list.textContent = allSourcesWeTrack.join(" · ");
-
-  footerSources.appendChild(list);
 }
 
-// --- init ---
+// render footer list of sources ("Sources we monitor:")
+function renderSourcesFooter(items) {
+  // gather unique non-empty sources, keep stable-ish order of appearance
+  const seen = new Set();
+  const orderedSources = [];
+  items.forEach(it => {
+    const s = (it.source || "").trim();
+    if (s && !seen.has(s.toLowerCase())) {
+      seen.add(s.toLowerCase());
+      orderedSources.push(s);
+    }
+  });
 
-(async function init(){
+  const sourceListEl = document.getElementById("sourceList");
+  if (!sourceListEl) return;
+
+  if (!orderedSources.length) {
+    sourceListEl.textContent = "—";
+    return;
+  }
+
+  // join with " · "
+  sourceListEl.textContent = orderedSources.join(" · ");
+}
+
+// init
+(async function init() {
+  // load items.json
   const data = await getJSON(
     "static/teams/purdue-mbb/items.json",
-    { "items": [] }
+    { items: [] }
   );
 
-  renderFeed(data.items || []);
+  const stories = data.items || [];
+
+  renderFeed(stories);
+  renderSourcesFooter(stories);
 })();
