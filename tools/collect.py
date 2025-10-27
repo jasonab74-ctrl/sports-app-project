@@ -4,10 +4,18 @@ tools/collect.py
 
 Purdue Men's Basketball collector.
 
-Changes in this version:
-- Uses scoring logic instead of simple yes/no filters.
-- Tries hard to include only Purdue MBB content.
-- Penalizes football/baseball/etc. so they don't leak in.
+What this script does:
+- Loads RSS/Atom feeds from static/sources.json
+- Fetches them (urllib only, stdlib only)
+- Parses each item (title, link, description, published date)
+- Scores each story for "Is this Purdue men's basketball?"
+- Keeps only good ones
+- Sorts, trims to top 20
+- Writes static/teams/purdue-mbb/items.json for the site
+
+This pairs with:
+- .github/workflows/collect.yml  (hourly job)
+- static/js/pro.js               (renders cards)
 """
 
 import json
@@ -45,10 +53,10 @@ def parse_rss(xml_bytes, source_name):
         "source": source_name,
         "title": ...,
         "url": ...,
-        "published": ISO8601 string,
+        "published": ISO8601,
         "snippet": ...,
         "image": "",
-        "collected_at": ""   (filled later)
+        "collected_at": ""  (we'll stamp later)
     }
     """
     out = []
@@ -60,12 +68,12 @@ def parse_rss(xml_bytes, source_name):
     except ET.ParseError:
         return out
 
-    # Try RSS 2.0 structure: <rss><channel><item>...</item></channel></rss>
+    # Try RSS 2.0 style: <rss><channel><item>...</item></channel></rss>
     channel = root.find("channel")
     if channel is not None:
         item_nodes = channel.findall("item")
     else:
-        # Try Atom structure: <feed><entry>...</entry></feed>
+        # Try Atom style: <feed><entry>...</entry></feed>
         item_nodes = root.findall("{http://www.w3.org/2005/Atom}entry")
 
     for node in item_nodes:
@@ -79,7 +87,7 @@ def parse_rss(xml_bytes, source_name):
         # link
         link = node.findtext("link") or ""
         if not link:
-            # Atom feeds use <link href="...">
+            # Atom feeds commonly do <link href="..."/>
             link_el = node.find("{http://www.w3.org/2005/Atom}link")
             if link_el is not None:
                 link = link_el.attrib.get("href", "").strip()
@@ -88,10 +96,11 @@ def parse_rss(xml_bytes, source_name):
         desc = (
             node.findtext("description")
             or node.findtext("{http://www.w3.org/2005/Atom}summary")
+            or node.findtext("{http://www.w3.org/2005/Atom}content")
             or ""
         ).strip()
 
-        # pubDate / updated / published
+        # publish date-ish
         pub_raw = (
             node.findtext("pubDate")
             or node.findtext("{http://www.w3.org/2005/Atom}updated")
@@ -100,7 +109,6 @@ def parse_rss(xml_bytes, source_name):
         ).strip()
 
         # convert pub_raw into ISO8601
-        published_iso = None
         if pub_raw:
             try:
                 dt = email.utils.parsedate_to_datetime(pub_raw)
@@ -110,8 +118,8 @@ def parse_rss(xml_bytes, source_name):
         else:
             published_iso = datetime.datetime.utcnow().replace(microsecond=0).isoformat() + "Z"
 
-        # normalize snippet to ~240 chars, single line
-        snippet_clean = desc.replace("\n", " ").strip()
+        # clean snippet down to ~240 chars
+        snippet_clean = desc.replace("\n", " ").replace("\r", " ").strip()
         if len(snippet_clean) > 240:
             snippet_clean = snippet_clean[:237].rstrip() + "…"
 
@@ -122,7 +130,7 @@ def parse_rss(xml_bytes, source_name):
             "published": published_iso,
             "snippet": snippet_clean,
             "image": "",
-            "collected_at": ""  # we'll stamp in save step
+            "collected_at": ""  # set later
         })
 
     return out
@@ -131,26 +139,26 @@ def parse_rss(xml_bytes, source_name):
 # -------- Purdue MBB relevance scoring --------
 def score_story(story):
     """
-    Give the story a numeric score. Higher = more likely to be Purdue men's basketball.
+    Score how likely this story is Purdue men's basketball.
+    Bigger score = more likely we want it.
 
-    We'll look at:
-    - Purdue signals
-    - Men's hoops signals
-    - Trusted source signals
-    - Non-basketball sports signals (which we subtract)
+    We'll add:
+      + Purdue signals
+      + Men's hoops signals
+      + Trusted source signals
+      + Recruiting-but-basketball signals
 
-    At the end we'll return a score like 0, 3, 7, etc.
-    We'll keep only stories above a threshold.
+    We'll subtract:
+      - Football/baseball/other sport terms
     """
     title = story.get("title", "").lower()
     snippet = story.get("snippet", "").lower()
     src = story.get("source", "").lower()
-
     blob = f"{title} {snippet}"
 
     score = 0
 
-    # Strong Purdue ID signals
+    # Strong Purdue ID / program context
     purdue_hits = [
         "purdue",
         "boilermaker",
@@ -159,48 +167,52 @@ def score_story(story):
         "mackey",
         "west lafayette",
         "matt painter",
-        "painter",
+        "painter"
     ]
     if any(k in blob for k in purdue_hits):
         score += 3
 
-    # Men's basketball specific language
+    # Men's basketball language
     hoops_hits = [
         "basketball",
         "mbb",
         "men's basketball",
         "mens basketball",
+        "men’s basketball",
+        "ncaa tournament",
+        "march madness",
+        "big ten",
         "backcourt",
-        "back court",
         "frontcourt",
-        "front court",
         "guard play",
         "point guard",
         "ball screen",
-        "wingspan",
-        "3-point",
-        "three-point",
-        "perimeter",
         "pick-and-roll",
         "pick and roll",
-        "big ten",
-        "ncaa tournament",
-        "march madness",
-        "big man",
+        "perimeter",
+        "3-point",
+        "three-point",
         "rim protector",
-        "painter said",    # often shows up in quotes
-        "painter says",
+        "stretch four",
+        "paint touches",
+        "rebound",
+        "wing depth",
+        "rotation",
+        "starting five",
+        "starting lineup"
     ]
     if any(k in blob for k in hoops_hits):
         score += 3
 
-    # Recruiting that looks like hoops (PG, SG, wing, combo guard, 4-star guard, etc.)
+    # Recruiting context that smells like hoops
     recruit_hits = [
         "commit",
         "commits",
         "commitment",
-        "signed",
         "signs",
+        "signed",
+        "offer from purdue",
+        "purdue offer",
         "4-star",
         "five-star",
         "five star",
@@ -209,63 +221,60 @@ def score_story(story):
         "shooting guard",
         "combo guard",
         "wing",
-        "stretch four",
         "6-foot-",
         "6’",
-        "6′",
-        "offer from purdue",
-        "purdue offer",
+        "6′"
     ]
-    # Light bump, because recruiting is relevant content
     if any(k in blob for k in recruit_hits):
         score += 1
 
-    # Trusted sources get bonus because they mostly talk hoops already
+    # Trusted basketball-ish sources get a bump
     trusted_sources = [
         "goldandblack",
         "on3",
         "purdue athletics",
         "espn",
+        "cbs sports",
         "field of 68",
         "field of68",
-        "fieldof68",
+        "fieldof68"
     ]
     if any(t in src for t in trusted_sources):
         score += 2
 
-    # Now subtract if it's clearly another sport.
-    # We detect and subtract hard here to kill false positives like
-    # "Purdue lands 3-star WR" or "Purdue vs. Iowa football".
+    # Subtract obvious non-basketball sports refs
+    # This kills "Purdue lands 3-star WR" etc.
     non_basketball_hits = [
         "football",
         "qb",
         "quarterback",
-        "offensive line",
-        "o-line",
-        "o line",
-        "defensive line",
-        "d-line",
-        "d line",
-        "linebacker",
         "wide receiver",
         "receiver",
-        "wr",
+        "wr ",
+        " wr",
         "running back",
         "tailback",
-        "rb",
+        "rb ",
+        " rb",
         "touchdown",
-        "td run",
         "field goal",
-        "touchback",
         "kickoff",
-        "kick return",
+        "o-line",
+        "o line",
+        "offensive line",
+        "d-line",
+        "d line",
+        "defensive line",
+        "linebacker",
+        "sack",
+        "interception",
         "baseball",
         "softball",
         "volleyball",
         "soccer",
         "wrestling",
         "track and field",
-        "golf",
+        "golf"
     ]
     if any(k in blob for k in non_basketball_hits):
         score -= 5
@@ -273,12 +282,11 @@ def score_story(story):
     return score
 
 
-def keep_purdue_mbb(stories, min_score=4):
+def keep_purdue_mbb(stories, min_score=2):
     """
     Keep only stories with score >= min_score.
-    Default threshold is 4:
-    - That usually means: either Purdue+hoops, or Purdue+trusted source,
-      and not obviously football.
+    We are using min_score=2 to be a bit more generous so that
+    we fill the page with legit Purdue hoops talk.
     """
     kept = []
     for s in stories:
@@ -302,10 +310,10 @@ def load_sources():
 # -------- Collect all feeds --------
 def collect_all():
     """
-    - Fetch all RSS feeds from sources.json
-    - Parse stories from each
-    - Score & filter stories for Purdue MBB
-    - Sort newest first by published timestamp
+    - Pull all feeds from sources.json
+    - Parse items
+    - Filter/score for Purdue MBB
+    - Sort newest first
     - Trim to top 20
     - Stamp collected_at
     """
@@ -323,18 +331,18 @@ def collect_all():
         parsed = parse_rss(raw, src.get("name", ""))
         all_items.extend(parsed)
 
-    # Filter by score
-    filtered = keep_purdue_mbb(all_items, min_score=4)
+    # Score + filter
+    filtered = keep_purdue_mbb(all_items, min_score=2)
 
-    # Sort newest first by 'published'
+    # Sort newest first
     def sort_key(item):
         return item.get("published", "")
     filtered.sort(key=sort_key, reverse=True)
 
-    # Keep top 20
+    # Cap at 20
     filtered = filtered[:20]
 
-    # Stamp collected_at for every item
+    # Stamp collected_at for UI badge
     now_iso = datetime.datetime.utcnow().replace(microsecond=0).isoformat() + "Z"
     for it in filtered:
         it["collected_at"] = now_iso
@@ -345,7 +353,8 @@ def collect_all():
 # -------- Save items.json --------
 def save_items(items):
     """
-    Write JSON back to static/teams/purdue-mbb/items.json in the shape:
+    Write JSON back to static/teams/purdue-mbb/items.json
+    Shape:
     {
       "items": [...]
     }
@@ -360,8 +369,8 @@ def save_items(items):
 def main():
     """
     Try to pull fresh data.
-    If we get nothing (network down, feeds changed, etc.), don't blank the page:
-    - reuse existing items.json, just refresh collected_at
+    If we somehow get nothing, reuse whatever's already in items.json
+    so the live site never goes blank.
     """
     stories = collect_all()
 
@@ -380,11 +389,9 @@ def main():
                 it["collected_at"] = now_iso
             save_items(existing_items)
         else:
-            # nothing to fall back to, just save empty list
             save_items([])
         return
 
-    # We got fresh stories
     save_items(stories)
 
 
