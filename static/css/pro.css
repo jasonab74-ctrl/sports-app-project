@@ -1,239 +1,229 @@
-:root {
-  --purdue-gold: #cfb87c;
-  --purdue-black: #000000;
-  --bg-page: #0f0f0f;
-  --bg-card: #1a1a1a;
-  --border-card: #2a2a2a;
-  --text-main: #ffffff;
-  --text-dim: #9a9a9a;
-  --radius-lg: 1rem;
-  --gutter: 1rem;
-  --font-stack: system-ui,-apple-system,BlinkMacSystemFont,"Inter","Roboto","Helvetica Neue",Arial,sans-serif;
-}
-
-body.theme-purdue {
-  background-color: var(--bg-page);
-  color: var(--text-main);
-  font-family: var(--font-stack);
-  margin: 0;
-  line-height: 1.4;
-}
-
-/* HEADER */
-.headline-header {
-  background-color: var(--purdue-black);
-  border-bottom: 1px solid var(--purdue-gold);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 20px 40px rgba(0,0,0,.8);
-}
-
-.headline-shell {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: .75rem var(--gutter);
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  row-gap: .75rem;
-}
-
-.brand-left {
-  display: flex;
-  align-items: center;
-  gap: .6rem;
-}
-
-.brand-logo {
-  width: 2.5rem;
-  height: 2.5rem;
-  min-width: 2.5rem;
-  background: var(--purdue-gold);
-  color: #000;
-  font-weight: 700;
-  font-size: 1.25rem;
-  line-height: 2.5rem;
-  text-align: center;
-  border-radius: .5rem;
-  font-family: Georgia,"Times New Roman",serif;
-}
-
-.brand-copy {
-  line-height: 1.2;
-  display: flex;
-  flex-direction: column;
-}
-
-.brand-team {
-  color: var(--purdue-gold);
-  font-size: .8rem;
-  font-weight: 600;
-}
-
-.brand-scope {
-  color: var(--text-main);
-  font-size: .9rem;
-  font-weight: 500;
-}
-
-.updated-time {
-  font-size: .7rem;
-  color: var(--text-dim);
-  font-weight: 500;
-  line-height: 1.2;
-  background: rgba(207,184,124,.1);
-  border: 1px solid rgba(207,184,124,.4);
-  border-radius: .5rem;
-  padding: .4rem .6rem;
-}
-
-/* FEED WRAPPER */
-.feed-wrapper {
-  max-width: 1200px;
-  margin: 1rem auto 4rem auto;
-  padding: 0 var(--gutter);
-}
-
-.feed-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-}
-@media(min-width:600px){
-  .feed-grid { grid-template-columns: 1fr 1fr; }
-}
-@media(min-width:1000px){
-  .feed-grid { grid-template-columns: 1fr 1fr 1fr; }
-}
-
-/* CARD */
-.feed-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-card);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  min-height: 140px;
-  box-shadow: 0 20px 40px rgba(0,0,0,.7);
-  text-decoration: none;
-  color: var(--text-main);
-}
-.feed-card:hover {
-  border-color: var(--purdue-gold);
-  box-shadow: 0 28px 50px rgba(0,0,0,.9);
-}
-
-/*
-We used to render a top "feed-thumb" image block (16:9). We no longer insert it,
-but we keep styles here in case we bring thumbnails back in future.
+/* static/css/pro.css
+   Purdue Men's Basketball Hub — full styling
+   Includes layout, card styles, typography, gold/black theme
+   and the new meta row (source + age).
 */
-.feed-thumb {
-  background-color: #000;
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  aspect-ratio: 16/9;
-  border-bottom: 1px solid var(--border-card);
-  display: none; /* hidden for now, since we aren't rendering it */
+
+/* --- Base Layout --- */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #0b0b0b;
+  color: #fff;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-.feed-thumb-fallback {
-  background-image:
-    radial-gradient(circle at 30% 30%, rgba(207,184,124,0.28) 0%, rgba(0,0,0,0) 70%),
-    repeating-linear-gradient(-45deg, rgba(207,184,124,0.15) 0px, rgba(207,184,124,0.15) 2px, rgba(0,0,0,0) 2px, rgba(0,0,0,0) 6px);
-  display: none; /* also hidden now */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.25rem;
+}
+
+/* --- Header --- */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0.5rem 0 1.25rem 0;
+  border-bottom: 1px solid #2e2e2e;
+}
+
+.header-logo {
+  width: 42px;
+  height: 42px;
+  background-color: #d7c89a;
+  color: #0b0b0b;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: .8rem;
-  color: var(--purdue-gold);
-  font-weight: 600;
-  text-shadow: 0 0 6px #000;
+  font-weight: 700;
+  font-size: 1.5rem;
+  border-radius: 8px;
+  margin-right: 0.75rem;
+  flex-shrink: 0;
 }
 
-/* BODY */
-.feed-body {
-  flex: 1;
+.header-text {
   display: flex;
   flex-direction: column;
-  padding: .8rem .9rem 1rem .9rem;
 }
 
-/* Slightly more top padding when there's no image */
-.feed-body-noimg {
-  padding-top: 1rem;
+.header-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #d7c89a;
+  margin-bottom: 0.25rem;
 }
+
+.header-subtitle {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #f2f2f2;
+}
+
+.updated-badge {
+  display: inline-block;
+  background-color: #1e1e1e;
+  border: 1px solid #383838;
+  color: #d7c89a;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.25rem 0.75rem;
+  border-radius: 8px;
+  margin-top: 0.75rem;
+}
+
+/* --- Feed Grid --- */
+
+#feedGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 700px) {
+  #feedGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --- Feed Cards --- */
+
+.feed-card {
+  display: block;
+  background: linear-gradient(180deg, #1a1a1a 0%, #111 100%);
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  transition: transform 0.12s ease, box-shadow 0.15s ease;
+}
+
+.feed-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+.feed-body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Meta Row (NEW: Source + Time) --- */
 
 .feed-meta-row {
   display: flex;
   justify-content: space-between;
-  font-size: .7rem;
+  align-items: baseline;
+  margin-bottom: 0.45rem;
+  font-size: 0.875rem;
   line-height: 1.2;
-  flex-wrap: wrap;
-  row-gap: .4rem;
-  color: var(--text-dim);
-  font-weight: 500;
-  margin-bottom: .5rem;
 }
 
 .feed-source {
-  color: var(--purdue-gold);
+  color: #d7c89a;
   font-weight: 600;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
 }
 
 .feed-age {
-  color: var(--text-dim);
+  color: #a0a0a0;
+  font-weight: 400;
+  font-size: 0.8rem;
+  margin-left: auto;
+  text-align: right;
+  flex-shrink: 0;
 }
+
+/* --- Title + Snippet --- */
 
 .feed-headline {
-  font-size: .9rem;
-  line-height: 1.3;
+  color: #ffffff;
+  font-size: 1.05rem;
   font-weight: 600;
-  color: var(--text-main);
-  margin-bottom: .5rem;
-  word-break: break-word;
-}
-
-.feed-headline a {
-  color: inherit;
-  text-decoration: none;
-}
-.feed-headline a:hover {
-  text-decoration: underline;
+  line-height: 1.35;
+  margin-bottom: 0.4rem;
 }
 
 .feed-snippet {
-  font-size: .75rem;
+  color: #c7c6c2;
+  font-size: 0.92rem;
   line-height: 1.4;
-  color: var(--text-dim);
-  flex-grow: 1;
 }
 
-/* FOOTER */
-.site-footer {
-  border-top: 1px solid var(--border-card);
-  background: #0a0a0a;
+/* --- Footer --- */
+
+.footer {
+  border-top: 1px solid #2a2a2a;
   margin-top: 2rem;
-  color: var(--text-dim);
-  font-size: .7rem;
+  padding-top: 1.25rem;
+  font-size: 0.9rem;
+  color: #bfbfbf;
   line-height: 1.4;
 }
 
-.footer-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem var(--gutter) 4rem var(--gutter);
+.footer strong {
+  color: #d7c89a;
+  font-weight: 600;
 }
 
-.footer-note {
-  color: var(--text-dim);
-  margin-top: .4rem;
-  max-width: 600px;
+.footer a {
+  color: #d7c89a;
+  text-decoration: none;
 }
 
-/* PLACEHOLDER STATE (no longer really used but safe to keep) */
-.placeholder .feed-meta-row,
-.placeholder .feed-headline,
-.placeholder .feed-snippet { opacity: .6; }
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* --- Utility Elements --- */
+
+#sourceList {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.9rem;
+  color: #999;
+  word-break: break-word;
+  line-height: 1.4;
+}
+
+/* --- Scroll Behavior --- */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #333;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #444;
+}
+
+/* --- PWA / Mobile Tweaks --- */
+
+@media (max-width: 500px) {
+  .header-title {
+    font-size: 1rem;
+  }
+  .feed-headline {
+    font-size: 1rem;
+  }
+  .feed-snippet {
+    font-size: 0.9rem;
+  }
+  .feed-meta-row {
+    font-size: 0.8rem;
+  }
+}
