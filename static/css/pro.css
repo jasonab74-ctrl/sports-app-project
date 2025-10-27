@@ -1,4 +1,3 @@
-/* Purdue theme */
 :root {
   --purdue-gold: #cfb87c;
   --purdue-black: #000000;
@@ -7,7 +6,6 @@
   --border-card: #2a2a2a;
   --text-main: #ffffff;
   --text-dim: #9a9a9a;
-  --radius-md: .75rem;
   --radius-lg: 1rem;
   --gutter: 1rem;
   --font-stack: system-ui,-apple-system,BlinkMacSystemFont,"Inter","Roboto","Helvetica Neue",Arial,sans-serif;
@@ -89,29 +87,23 @@ body.theme-purdue {
   padding: .4rem .6rem;
 }
 
-/* FEED WRAPPER */
+/* FEED */
 .feed-wrapper {
   max-width: 1200px;
   margin: 1rem auto 4rem auto;
   padding: 0 var(--gutter);
 }
 
-/* GRID */
 .feed-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
 }
-
 @media(min-width:600px){
-  .feed-grid {
-    grid-template-columns: 1fr 1fr;
-  }
+  .feed-grid { grid-template-columns: 1fr 1fr; }
 }
 @media(min-width:1000px){
-  .feed-grid {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
+  .feed-grid { grid-template-columns: 1fr 1fr 1fr; }
 }
 
 /* CARD */
@@ -126,15 +118,13 @@ body.theme-purdue {
   box-shadow: 0 20px 40px rgba(0,0,0,.7);
   text-decoration: none;
   color: var(--text-main);
-  position: relative;
 }
-
 .feed-card:hover {
   border-color: var(--purdue-gold);
   box-shadow: 0 28px 50px rgba(0,0,0,.9);
 }
 
-/* THUMB */
+/* IMAGE / THUMB */
 .feed-thumb {
   background-color: #000;
   background-size: cover;
@@ -145,7 +135,9 @@ body.theme-purdue {
 }
 
 .feed-thumb-fallback {
-  background-image: radial-gradient(circle at 30% 30%, rgba(207,184,124,0.28) 0%, rgba(0,0,0,0) 70%), repeating-linear-gradient(-45deg, rgba(207,184,124,0.15) 0px, rgba(207,184,124,0.15) 2px, rgba(0,0,0,0) 2px, rgba(0,0,0,0) 6px);
+  background-image:
+    radial-gradient(circle at 30% 30%, rgba(207,184,124,0.28) 0%, rgba(0,0,0,0) 70%),
+    repeating-linear-gradient(-45deg, rgba(207,184,124,0.15) 0px, rgba(207,184,124,0.15) 2px, rgba(0,0,0,0) 2px, rgba(0,0,0,0) 6px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -155,7 +147,7 @@ body.theme-purdue {
   text-shadow: 0 0 6px #000;
 }
 
-/* BODY AREA */
+/* BODY */
 .feed-body {
   flex: 1;
   display: flex;
@@ -186,10 +178,8 @@ body.theme-purdue {
   font-weight: 600;
   color: var(--text-main);
   margin-bottom: .5rem;
-  text-decoration: none;
   word-break: break-word;
 }
-
 .feed-headline a {
   color: inherit;
   text-decoration: none;
@@ -226,12 +216,7 @@ body.theme-purdue {
 }
 
 /* PLACEHOLDER STATE */
-.placeholder .feed-thumb-fallback {
-  font-size: .7rem;
-  color: var(--text-dim);
-}
+.placeholder .feed-thumb-fallback { font-size: .7rem; color: var(--text-dim); }
 .placeholder .feed-meta-row,
 .placeholder .feed-headline,
-.placeholder .feed-snippet {
-  opacity: .6;
-}
+.placeholder .feed-snippet { opacity: .6; }
