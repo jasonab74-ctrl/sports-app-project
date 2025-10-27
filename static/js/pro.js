@@ -1,7 +1,3 @@
-// static/js/pro.js
-// Purdue Men's Basketball News feed rendering
-
-// --- helper: fetch JSON with fallback ---
 async function getJSON(path, fallback) {
   try {
     const res = await fetch(path, { cache: "no-store" });
@@ -13,136 +9,120 @@ async function getJSON(path, fallback) {
   }
 }
 
-// --- helper: decode HTML entities like &#39; &amp; etc. ---
-function decodeEntities(str) {
-  if (!str || typeof str !== "string") return "";
-  const txt = document.createElement("textarea");
-  txt.innerHTML = str;
-  // innerText or textContent both work, textContent keeps it safe
-  return txt.textContent;
-}
-
-// --- helper: format timestamp for each card ---
-// We DON'T try to do "2h ago" anymore because you said it's not showing right.
-// We just stamp "Oct 27, 2:15 PM" using published or collected_at.
-function formatStamp(iso) {
+// "2h ago", "Oct 27", etc. If we can't parse, return "".
+function timeAgoOrDate(iso) {
   if (!iso) return "";
-  const dt = new Date(iso);
-  // guard against invalid date
-  if (isNaN(dt.getTime())) return "";
+  const then = new Date(iso);
+  if (isNaN(then.getTime())) return "";
 
-  return dt.toLocaleString("en-US", {
-    month: "short",
-    day: "numeric",
-    hour: "numeric",
-    minute: "2-digit"
-  });
+  const now = new Date();
+  const diffMs = now - then;
+  const diffMin = Math.floor(diffMs / 60000);
+
+  if (diffMin < 1) return "just now";
+  if (diffMin < 60) return diffMin + "m ago";
+
+  const diffHr = Math.floor(diffMin / 60);
+  if (diffHr < 24) return diffHr + "h ago";
+
+  const opts = { month: "short", day: "numeric" };
+  return then.toLocaleDateString(undefined, opts);
 }
 
-// --- render the top section timestamp "Updated <time>" ---
-function renderHeaderTimestamp(items) {
-  const updatedEl = document.getElementById("lastUpdated");
-  if (!updatedEl) return;
+// Put the pretty "Updated ..." text in the header using collected_at
+function renderHeaderTimestamp(collectedAtIso) {
+  const headerStamp = document.getElementById("lastUpdated");
+  if (!headerStamp) return;
 
-  if (items.length && items[0].collected_at) {
-    const stamp = new Date(items[0].collected_at).toLocaleTimeString(
-      "en-US",
-      {
+  const label = timeAgoOrDate(collectedAtIso);
+  // if label is "", don't show anything weird, just fallback to time string
+  let fallbackTime = "";
+  if (collectedAtIso) {
+    const d = new Date(collectedAtIso);
+    if (!isNaN(d.getTime())) {
+      fallbackTime = d.toLocaleTimeString("en-US", {
         hour: "numeric",
         minute: "2-digit"
-      }
-    );
-    updatedEl.textContent = "Updated " + stamp;
+      });
+    }
+  }
+
+  if (label) {
+    headerStamp.textContent = "Updated " + label;
+  } else if (fallbackTime) {
+    headerStamp.textContent = "Updated " + fallbackTime;
   } else {
-    updatedEl.textContent = "Updated recently";
+    headerStamp.textContent = "Updated recently";
   }
 }
 
-// --- build each story card ---
-function renderFeed(items) {
-  const feedGrid = document.getElementById("feedGrid");
-  if (!feedGrid) return;
+// Build one article card DOM node
+function buildCard(article) {
+  const card = document.createElement("a");
+  card.className = "feed-card";
+  card.href = article.url || "#";
+  card.target = "_blank";
+  card.rel = "noopener noreferrer";
 
+  // top row: source + (optional) age
+  const metaRow = document.createElement("div");
+  metaRow.className = "feed-meta-row";
+
+  const srcSpan = document.createElement("span");
+  srcSpan.className = "feed-source";
+  srcSpan.textContent = article.source || "Source";
+
+  const ageSpan = document.createElement("span");
+  ageSpan.className = "feed-age";
+  const ageText = timeAgoOrDate(article.published || "");
+  ageSpan.textContent = ageText || ""; // if "", we just won't show anything
+  if (!ageText) {
+    ageSpan.style.display = "none";
+  }
+
+  metaRow.appendChild(srcSpan);
+  metaRow.appendChild(ageSpan);
+
+  // headline
+  const headlineDiv = document.createElement("div");
+  headlineDiv.className = "feed-headline";
+  headlineDiv.textContent = article.title || "";
+
+  // snippet
+  const snippetDiv = document.createElement("div");
+  snippetDiv.className = "feed-snippet";
+  snippetDiv.textContent = article.snippet || "";
+
+  card.appendChild(metaRow);
+  card.appendChild(headlineDiv);
+  card.appendChild(snippetDiv);
+
+  return card;
+}
+
+// Render all cards into the feed grid
+function renderFeed(items, collectedAtIso) {
+  const feedGrid = document.getElementById("feedGrid");
   feedGrid.innerHTML = "";
 
-  // take top 20
+  // show only first 20, like before
   const topItems = items.slice(0, 20);
 
-  // render header timestamp
-  renderHeaderTimestamp(topItems);
+  // timestamp in header
+  renderHeaderTimestamp(collectedAtIso);
 
   topItems.forEach(article => {
-    // outer tappable card
-    const card = document.createElement("a");
-    card.className = "feed-card";
-    card.href = article.url || "#";
-    card.target = "_blank";
-    card.rel = "noopener noreferrer";
-
-    // body wrapper
-    const body = document.createElement("div");
-    body.className = "feed-body";
-
-    // meta row (source left, time right)
-    const metaRow = document.createElement("div");
-    metaRow.className = "feed-meta-row";
-
-    const srcSpan = document.createElement("span");
-    srcSpan.className = "feed-source";
-    srcSpan.textContent = article.source
-      ? decodeEntities(article.source)
-      : "Source";
-
-    const ageSpan = document.createElement("span");
-    ageSpan.className = "feed-age";
-    // prefer published, fallback to collected_at
-    const ts = formatStamp(article.published || article.collected_at || "");
-    ageSpan.textContent = ts;
-
-    metaRow.appendChild(srcSpan);
-    metaRow.appendChild(ageSpan);
-
-    // headline
-    const headlineDiv = document.createElement("div");
-    headlineDiv.className = "feed-headline";
-    headlineDiv.textContent = decodeEntities(article.title || "");
-
-    // snippet / subtext
-    const snippetDiv = document.createElement("div");
-    snippetDiv.className = "feed-snippet";
-    snippetDiv.textContent = decodeEntities(article.snippet || "");
-
-    // put it together
-    body.appendChild(metaRow);
-    body.appendChild(headlineDiv);
-    body.appendChild(snippetDiv);
-
-    card.appendChild(body);
+    const card = buildCard(article);
     feedGrid.appendChild(card);
   });
 }
 
-// --- footer: static trusted Purdue sources list ---
-// You told me this disappeared. We’re going to force it back, unchanged,
-// and we're NOT trying to be clever about "who actually appeared in feed" here.
-function renderFooterSources() {
-  const footerListEl = document.getElementById("sourceListStatic");
-  if (!footerListEl) return;
-
-  footerListEl.textContent =
-    "GoldandBlack.com · On3 Purdue Basketball · 247Sports Purdue Basketball · Purdue Athletics MBB · ESPN Purdue MBB · Yahoo Sports College Basketball · CBS Sports College Basketball · The Field of 68 · SI Purdue Basketball · USA Today Purdue Boilermakers";
-}
-
-// --- init ---
-(async function init() {
-  // pull latest articles JSON
+(async function init(){
+  // NOTE: we changed the JSON schema to include { items: [...], collected_at: "..."}
   const data = await getJSON(
     "static/teams/purdue-mbb/items.json",
-    { items: [] }
+    { items: [], collected_at: "" }
   );
 
-  const stories = Array.isArray(data.items) ? data.items : [];
-
-  renderFeed(stories);          // cards with source + timestamp + decoded text
-  renderFooterSources();        // static Purdue-ish source list you want visible
+  renderFeed(data.items || [], data.collected_at || "");
 })();
