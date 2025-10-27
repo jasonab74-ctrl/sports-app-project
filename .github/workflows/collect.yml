@@ -1,21 +1,26 @@
 name: collect-purdue-mbb
 
 on:
+  # runs on a schedule (every 30 min here; adjust if you want)
   schedule:
-    - cron: "0 * * * *"  # runs hourly
-  workflow_dispatch:     # allows manual runs
+    - cron: "*/30 * * * *"
+  # also let you trigger it manually from the Actions tab
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   collect:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - name: Checkout repo
+      # We must keep credentials so we can push back to main
+      # and we must fetch full history so git can commit cleanly
+      - uses: actions/checkout@v4
         with:
-          persist-credentials: false
+          persist-credentials: true
           fetch-depth: 0
 
       - name: Set up Python
@@ -23,24 +28,30 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Run Purdue MBB collector
+      - name: Install deps (feed parsing, HTML parsing, date utils)
         run: |
-          echo "Running collector script..."
-          python3 tools/collect.py
+          python -m pip install --upgrade pip
+          pip install feedparser requests beautifulsoup4 python-dateutil
+
+      - name: Run collector
+        run: |
+          python tools/collect.py
 
       - name: Commit & push updated JSON
         run: |
-          echo "Committing and pushing updated JSON..."
+          # configure git author for the bot commit
           git config user.name "sports-app-bot"
-          git config user.email "actions@github"
-          git add static/teams/purdue-mbb/items.json
-          if git diff --cached --quiet; then
-            echo "No changes to commit."
-          else
-            git commit -m "auto: update Purdue MBB feed"
-            # Force push to handle out-of-sync commits safely
-            git push --force https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
-          fi
+          git config user.email "actions@users.noreply.github.com"
 
-      - name: Done
-        run: echo "✅ Collector finished successfully."
+          # stage the updated feed file
+          git add static/teams/purdue-mbb/items.json
+
+          # commit if there are changes
+          if ! git diff --cached --quiet; then
+            git commit -m "auto: update Purdue MBB feed"
+            # pull main in case anything landed since checkout, then push
+            git pull --rebase origin main
+            git push origin main
+          else
+            echo "No feed changes to commit."
+          fi
