@@ -1,0 +1,24 @@
+{
+  "sources": [
+    {
+      "name": "GoldandBlack.com",
+      "type": "rss",
+      "url": "https://goldandblack.com/feed/"
+    },
+    {
+      "name": "On3 Purdue Basketball",
+      "type": "rss",
+      "url": "https://www.on3.com/teams/purdue-boilermakers-basketball/feed/"
+    },
+    {
+      "name": "Purdue Athletics MBB",
+      "type": "rss",
+      "url": "https://purduesports.com/feeds/mens-basketball.xml"
+    },
+    {
+      "name": "ESPN College Basketball Purdue",
+      "type": "rss",
+      "url": "https://www.espn.com/espn/rss/ncb/team?teamId=2509"
+    }
+  ]
+}
