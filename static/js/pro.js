@@ -1,0 +1,106 @@
+async function getJSON(path, fallback) {
+  try {
+    const res = await fetch(path, { cache: "no-store" });
+    if (!res.ok) throw new Error("status " + res.status);
+    return await res.json();
+  } catch (err) {
+    console.warn("Could not load", path, err);
+    return fallback;
+  }
+}
+
+// "2h ago", "3d ago"
+function timeAgo(iso) {
+  if (!iso) return "";
+  const then = new Date(iso);
+  const now = new Date();
+  const diffMs = now - then;
+  const diffMin = Math.floor(diffMs / 60000);
+
+  if (diffMin < 1) return "just now";
+  if (diffMin < 60) return diffMin + "m ago";
+
+  const diffHr = Math.floor(diffMin / 60);
+  if (diffHr < 24) return diffHr + "h ago";
+
+  const diffDay = Math.floor(diffHr / 24);
+  return diffDay + "d ago";
+}
+
+function renderFeed(items) {
+  const feedGrid = document.getElementById("feedGrid");
+  feedGrid.innerHTML = "";
+
+  // top 20 only
+  const topItems = items.slice(0, 20);
+
+  // header timestamp
+  const updatedEl = document.getElementById("lastUpdated");
+  if (topItems.length && topItems[0].collected_at) {
+    updatedEl.textContent = new Date(topItems[0].collected_at)
+      .toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" });
+  } else {
+    updatedEl.textContent = "recently";
+  }
+
+  topItems.forEach(article => {
+    const card = document.createElement("a");
+    card.className = "feed-card";
+    card.href = article.url;
+    card.target = "_blank";
+    card.rel = "noopener noreferrer";
+
+    const thumb = document.createElement("div");
+    thumb.className = "feed-thumb";
+
+    if (article.image && article.image.trim() !== "") {
+      thumb.style.backgroundImage = `url('${article.image}')`;
+    } else {
+      thumb.classList.add("feed-thumb-fallback");
+      thumb.textContent = "Purdue Basketball";
+    }
+
+    const body = document.createElement("div");
+    body.className = "feed-body";
+
+    const metaRow = document.createElement("div");
+    metaRow.className = "feed-meta-row";
+
+    const srcSpan = document.createElement("span");
+    srcSpan.className = "feed-source";
+    srcSpan.textContent = article.source || "Source";
+
+    const ageSpan = document.createElement("span");
+    ageSpan.className = "feed-age";
+    ageSpan.textContent = timeAgo(article.published);
+
+    metaRow.appendChild(srcSpan);
+    metaRow.appendChild(ageSpan);
+
+    const headlineDiv = document.createElement("div");
+    headlineDiv.className = "feed-headline";
+    headlineDiv.textContent = article.title || "";
+
+    const snippetDiv = document.createElement("div");
+    snippetDiv.className = "feed-snippet";
+    snippetDiv.textContent = article.snippet || "";
+
+    body.appendChild(metaRow);
+    body.appendChild(headlineDiv);
+    body.appendChild(snippetDiv);
+
+    card.appendChild(thumb);
+    card.appendChild(body);
+
+    feedGrid.appendChild(card);
+  });
+}
+
+(async function init(){
+  const data = await getJSON(
+    "static/teams/purdue-mbb/items.json",
+    { "items": [] }
+  );
+
+  renderFeed(data.items || []);
+})();
