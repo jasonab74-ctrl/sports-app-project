@@ -7,9 +7,9 @@
       "published": "2025-10-27T08:47:18+00:00Z",
       "snippet": "Coach Matt Painter said he wasn&#39;t worried offensively but the same wasn&#39;t true defensively. Plus a look guard and center players from the game at Kentucky.",
       "image": "",
-      "collected_at": "2025-10-27T16:01:12Z",
-      "tier": 2,
-      "score": 24
+      "collected_at": "2025-10-27T16:18:43Z",
+      "tier": 2.0,
+      "score": 23.0
     },
     {
       "source": "Yahoo Sports College Basketball",
@@ -18,20 +18,9 @@
       "published": "2025-10-27T08:47:18+00:00Z",
       "snippet": "Coach Matt Painter said he wasn&#39;t worried offensively but the same wasn&#39;t true defensively. Plus a look guard and center players from the game at Kentucky.",
       "image": "",
-      "collected_at": "2025-10-27T16:01:12Z",
-      "tier": 2,
-      "score": 24
-    },
-    {
-      "source": "Yahoo Sports College Basketball",
-      "title": "Purdue\u2019s Matt Painter regrets not talking about an NCAA title last year. This season, it\u2019s different",
-      "url": "https://www.nbcsports.com/mens-college-basketball/news/purdues-matt-painter-regrets-not-talking-about-an-ncaa-title-last-year-this-season-its-different",
-      "published": "2025-10-27T15:52:14+00:00Z",
-      "snippet": "Matt Painter believes one of his mistakes last year was not talking about playing for the title enough.",
-      "image": "",
-      "collected_at": "2025-10-27T16:01:12Z",
-      "tier": 2,
-      "score": 22
+      "collected_at": "2025-10-27T16:18:43Z",
+      "tier": 2.0,
+      "score": 23.0
     },
     {
       "source": "Yahoo Sports College Basketball",
@@ -40,9 +29,196 @@
       "published": "2025-10-26T11:11:00+00:00Z",
       "snippet": "Who impressed in the Wildcats&#39; surging win over #1 Purdue? We\u2019re glad you asked!",
       "image": "",
-      "collected_at": "2025-10-27T16:01:12Z",
-      "tier": 2,
-      "score": 22
+      "collected_at": "2025-10-27T16:18:43Z",
+      "tier": 2.0,
+      "score": 23.0
+    },
+    {
+      "source": "Yahoo Sports College Basketball",
+      "title": "Purdue\u2019s Matt Painter regrets not talking about an NCAA title last year. This season, it\u2019s different",
+      "url": "https://www.nbcsports.com/mens-college-basketball/news/purdues-matt-painter-regrets-not-talking-about-an-ncaa-title-last-year-this-season-its-different",
+      "published": "2025-10-27T15:52:14+00:00Z",
+      "snippet": "Matt Painter believes one of his mistakes last year was not talking about playing for the title enough.",
+      "image": "",
+      "collected_at": "2025-10-27T16:18:43Z",
+      "tier": 2.0,
+      "score": 22.0
+    },
+    {
+      "source": "Yahoo Sports College Basketball",
+      "title": "Penny Hardaway\u2019s new Memphis roster is a complete overhaul",
+      "url": "https://www.nbcsports.com/mens-college-basketball/news/penny-hardaways-new-memphis-roster-is-a-complete-overhaul",
+      "published": "2025-10-27T16:01:10+00:00Z",
+      "snippet": "Every one of Penny Hardaway&#39;s 15 Tigers are brand-new to Memphis as part of a complete overhaul after earning an NCAA Tournament berth last March.",
+      "image": "",
+      "collected_at": "2025-10-27T16:18:43Z",
+      "tier": 0.5,
+      "score": 6.0
+    },
+    {
+      "source": "Yahoo Sports College Basketball",
+      "title": "Ex-New Mexico guard Donovan Dent ready to shine at UCLA as one of college basketball\u2019s top transfers",
+      "url": "https://www.nbcsports.com/mens-college-basketball/news/ex-new-mexico-guard-donovan-dent-ready-to-shine-at-ucla-as-one-of-college-basketballs-top-transfers",
+      "published": "2025-10-27T15:42:10+00:00Z",
+      "snippet": "UCLA guard Donovan Dent embraces the responsibility that comes with playing for one of college basketball\u2019s most storied programs.",
+      "image": "",
+      "collected_at": "2025-10-27T16:18:43Z",
+      "tier": 0.5,
+      "score": 6.0
+    },
+    {
+      "source": "Yahoo Sports College Basketball",
+      "title": "Observations from Tennessee\u2019s exhibition loss to Duke",
+      "url": "https://www.rockytoptalk.com/basketball/45607/observations-from-tennessees-exhibition-loss-to-duke-basketball",
+      "published": "2025-10-27T14:26:12+00:00Z",
+      "snippet": "Some growing pains.",
+      "image": "",
+      "collected_at": "2025-10-27T16:18:43Z",
+      "tier": 0.5,
+      "score": 6.0
+    },
+    {
+      "source": "Yahoo Sports College Basketball",
+      "title": "Early 2025-26 Syracuse basketball observations",
+      "url": "https://www.nunesmagician.com/syracuse-basketball-mens-orange-boeheim/99657/early-2025-26-syracuse-basketball-observations",
+      "published": "2025-10-27T14:00:00+00:00Z",
+      "snippet": "First impressions of this year\u2019s Orange.",
+      "image": "",
+      "collected_at": "2025-10-27T16:18:43Z",
+      "tier": 0.5,
+      "score": 6.0
+    },
+    {
+      "source": "Yahoo Sports College Basketball",
+      "title": "2025-\u201926 Illinois Fighting Illini Basketball Season Preview",
+      "url": "https://www.btpowerhouse.com/illinois/27781/2025-26-illinois-fighting-illini-basketball-season-preview",
+      "published": "2025-10-27T13:36:28+00:00Z",
+      "snippet": "BTP previews the upcoming season for Illinois and what fans should expect from the program heading into the season.",
+      "image": "",
+      "collected_at": "2025-10-27T16:18:43Z",
+      "tier": 0.5,
+      "score": 6.0
+    },
+    {
+      "source": "Yahoo Sports College Basketball",
+      "title": "10 key questions ahead of the 2025-26 men&#39;s college basketball season",
+      "url": "https://sports.yahoo.com/mens-college-basketball/breaking-news/article/10-key-questions-ahead-of-the-2025-26-mens-college-basketball-season-130025326.html",
+      "published": "2025-10-27T13:00:25+00:00Z",
+      "snippet": "What teams will be relevant in the title chase? Which coaches are under the most pressure to win to save their jobs? College basketball is nearly back; here&#39;s what to know before the action begins.",
+      "image": "",
+      "collected_at": "2025-10-27T16:18:43Z",
+      "tier": 0.5,
+      "score": 6.0
+    },
+    {
+      "source": "Yahoo Sports College Basketball",
+      "title": "London Johnson&#39;s commitment to Louisville basketball may be tipping point for NCAA change",
+      "url": "https://www.courier-journal.com/story/sports/columnists/c-l-brown/2025/10/27/london-johnson-nba-g-league-stats-louisville-basketball-commitment-pat-kelsey-recruiting-2026-class/86639534007/",
+      "published": "2025-10-27T09:12:50+00:00Z",
+      "snippet": "London Johnson, who&#39;s been playing in the NBA G League, committing to Louisville basketball may be the tipping point for coaches on NCAA change.",
+      "image": "",
+      "collected_at": "2025-10-27T16:18:43Z",
+      "tier": 0.5,
+      "score": 6.0
+    },
+    {
+      "source": "Yahoo Sports College Basketball",
+      "title": "What Rick Barnes wants Nate Ament to do more of for Tennessee basketball after Duke exhibition",
+      "url": "https://www.knoxnews.com/story/sports/college/university-of-tennessee/mens-basketball/2025/10/27/nate-ament-tennessee-basketball-draw-fouls-duke-rick-barnes/86921117007/",
+      "published": "2025-10-27T09:10:29+00:00Z",
+      "snippet": "Tennessee basketball coach Rick Barnes wants to see freshman Nate Ament use even more physicality to draw fouls.",
+      "image": "",
+      "collected_at": "2025-10-27T16:18:43Z",
+      "tier": 0.5,
+      "score": 6.0
+    },
+    {
+      "source": "Yahoo Sports College Basketball",
+      "title": "What Rick Barnes wants Nate Ament to do more of for Tennessee basketball after Duke exhibition",
+      "url": "https://www.knoxnews.com/story/sports/college/university-of-tennessee/mens-basketball/2025/10/27/nate-ament-tennessee-basketball-draw-fouls-duke-rick-barnes/86921117007/",
+      "published": "2025-10-27T09:10:29+00:00Z",
+      "snippet": "Tennessee basketball coach Rick Barnes wants to see freshman Nate Ament use even more physicality to draw fouls.",
+      "image": "",
+      "collected_at": "2025-10-27T16:18:43Z",
+      "tier": 0.5,
+      "score": 6.0
+    },
+    {
+      "source": "Yahoo Sports College Basketball",
+      "title": "How does Notre Dame basketball coach Micah Shrewsberry like October exhibition games?",
+      "url": "https://www.southbendtribune.com/story/sports/college/basketball/2025/10/27/october-exhibitions-are-here-to-stay-in-college-basketball-and-thats-good/86918416007/",
+      "published": "2025-10-27T08:00:32+00:00Z",
+      "snippet": "Notre Dame traveled to Butler and hosted DePaul on two Friday nights in October, which were far better for Micah Shrewsberry than two days of practices.",
+      "image": "",
+      "collected_at": "2025-10-27T16:18:43Z",
+      "tier": 0.5,
+      "score": 6.0
+    },
+    {
+      "source": "Yahoo Sports College Basketball",
+      "title": "Cameron Boozer continues to shine for Duke basketball, five observations from win vs Tennessee",
+      "url": "https://www.fayobserver.com/story/sports/college/basketball/2025/10/26/five-observations-from-duke-basketballs-exhibition-win-vs-tennessee/86726295007/",
+      "published": "2025-10-27T02:52:00+00:00Z",
+      "snippet": "No. 5 Duke basketball took down No. 17 Tennessee on the road in its second and final exhibition ahead of the season. Here are five takeaways.",
+      "image": "",
+      "collected_at": "2025-10-27T16:18:43Z",
+      "tier": 0.5,
+      "score": 6.0
+    },
+    {
+      "source": "Yahoo Sports College Basketball",
+      "title": "How Tennessee basketball lost against Duke, Cameron Boozer in top-25 exhibition",
+      "url": "https://www.knoxnews.com/story/sports/college/university-of-tennessee/mens-basketball/2025/10/26/tennessee-basketball-duke-score-stats-exhibition/86747108007/",
+      "published": "2025-10-27T01:15:48+00:00Z",
+      "snippet": "Duke freshman Cameron Boozer had a superstar showing as Tennessee basketball went through a second-half slump in an exhibition loss.",
+      "image": "",
+      "collected_at": "2025-10-27T16:18:43Z",
+      "tier": 0.5,
+      "score": 6.0
+    },
+    {
+      "source": "Yahoo Sports College Basketball",
+      "title": "How Tennessee basketball lost against Duke, Cameron Boozer in top-25 exhibition",
+      "url": "https://www.knoxnews.com/story/sports/college/university-of-tennessee/mens-basketball/2025/10/26/tennessee-basketball-duke-score-stats-exhibition/86747108007/",
+      "published": "2025-10-27T01:15:48+00:00Z",
+      "snippet": "Duke freshman Cameron Boozer had a superstar showing as Tennessee basketball went through a second-half slump in an exhibition loss.",
+      "image": "",
+      "collected_at": "2025-10-27T16:18:43Z",
+      "tier": 0.5,
+      "score": 6.0
+    },
+    {
+      "source": "Yahoo Sports College Basketball",
+      "title": "What to watch for when Arizona men\u2019s basketball hosts Embry-Riddle in final exhibition",
+      "url": "https://www.azdesertswarm.com/basketball/71352/arizona-wildcats-mens-basketball-preview-embry-riddle-tobe-awaka-free-throws-threes-exhibition-2025-florida",
+      "published": "2025-10-27T00:00:00+00:00Z",
+      "snippet": "The official start of the 2025-26 season is just over a week away, but before Arizona gets into the games that count it has one more that doesn\u2019t. The Wildcats host Embry-Riddle on Monday night in their final preseason tuneup. Arizona be\u2026",
+      "image": "",
+      "collected_at": "2025-10-27T16:18:43Z",
+      "tier": 0.5,
+      "score": 6.0
+    },
+    {
+      "source": "Yahoo Sports College Basketball",
+      "title": "Dayton men\u2019s basketball player sidelined over \u2018potential eligibility concerns\u2019",
+      "url": "https://sports.yahoo.com/article/dayton-men-basketball-player-sidelined-235622666.html",
+      "published": "2025-10-26T23:56:22+00:00Z",
+      "snippet": "A University of Dayton men\u2019s basketball player is not allowed to practice or play due to \u201cpotential eligibility concerns.\u201d",
+      "image": "",
+      "collected_at": "2025-10-27T16:18:43Z",
+      "tier": 0.5,
+      "score": 6.0
+    },
+    {
+      "source": "Yahoo Sports College Basketball",
+      "title": "11 takeaways from Alabama basketball&#39;s 25-point exhibition win over Furman",
+      "url": "https://www.tuscaloosanews.com/story/sports/college/sec/2025/10/26/11-takeaways-alabama-basketball-25-point-win-over-furman/86753951007/",
+      "published": "2025-10-26T21:42:11+00:00Z",
+      "snippet": "Dunks, sub groups, the return of Latrell Wrightsell Jr. and more. Here are 11 takeaways from Alabama&#39;s 96-71 win over Furman.",
+      "image": "",
+      "collected_at": "2025-10-27T16:18:43Z",
+      "tier": 0.5,
+      "score": 6.0
     }
   ]
 }
