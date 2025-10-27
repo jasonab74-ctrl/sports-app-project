@@ -4,34 +4,32 @@ tools/collect.py
 
 Purdue Men's Basketball news collector.
 
-Goal:
-1. Surface Purdue men's basketball stories first.
-2. Keep obvious Purdue-adjacent stories (opponents talking about Purdue, "over No. 1 Purdue", etc.).
-3. Add controlled "Big Ten / Top 25 / title contender / season outlook" context
-   to keep the page from looking empty, even if Purdue isn't literally named
-   in the short RSS teaser we got.
+Priorities:
+1. Purdue-first: Painter, Purdue, Braden Smith, "No. 1 Purdue", etc.
+2. Opponent/game context about Purdue ("Kentucky's win over No. 1 Purdue").
+3. Big Ten / Top 25 / title contender / March Madness talk that clearly includes Purdue.
+4. High-level national men's college hoops context from legit national outlets
+   (ESPN / CBS / Yahoo CBB) to keep the page feeling alive,
+   *only if it's clearly men's college basketball content*.
 
-Tiers we keep:
- 3.0 = Trusted Purdue-ish source by name ("Purdue Athletics MBB", "CBS Sports Purdue Boilermakers", etc.)
- 2.0 = Direct Purdue mention (Purdue / Boilermakers / Matt Painter / Braden Smith / etc.)
- 1.5 = National/B1G/contender talk that explicitly mentions Purdue ("Can Purdue finally break through in March?")
- 1.0 = Opponent/game recap clearly about Purdue ("Kentucky's exhibition win over No. 1 Purdue")
- 0.8 = Big Ten / Top 25 / preseason poll / title race / Final Four / March Madness,
-       even if the short snippet we saw didn't literally include "Purdue".
-       This is our soft catch to keep volume decent.
+Still BLOCK:
+- Football / baseball / other sports.
+- Random hyper-local stuff about some unrelated ACC team that never touches Purdue,
+  unless it's coming from a national outlet and obviously men's hoops relevant
+  (that's our new Tier 0.6).
 
-We DROP everything else:
- - Generic "Memphis roster overhaul"
- - "Texas A&M looks promising"
- - Tennessee/Duke breakdowns that have nothing to do with Purdue
- - Other sports (football, baseball, etc.)
+Tiers:
+ 3.0 Purdue-ish source brand (Purdue Athletics MBB, CBS Sports Purdue Boilermakers, etc.)
+ 2.0 Explicit Purdue mention (Purdue / Boilermakers / Matt Painter / Braden Smith / etc.)
+ 1.5 Big-picture national/B1G/contender talk WITH Purdue mentioned
+ 1.0 Opponent recap clearly about Purdue ("victory over No. 1 Purdue")
+ 0.8 Big Ten / Top 25 / Final Four / March Madness / title race,
+     even if Purdue name didn't make the teaser
+ 0.6 National men's college hoops context from trusted national outlets (ESPN / CBS / Yahoo CBB)
+     that is clearly men's basketball talk, used as volume padding
+ 0.0 Drop
 
-Pipeline:
- - Load RSS sources from static/sources.json
- - Fetch, parse, score, sort
- - Keep tier >= 0.8
- - Cap 20
- - Write static/teams/purdue-mbb/items.json
+We keep tier >= 0.6
 """
 
 import json
@@ -183,7 +181,7 @@ PURDUE_TERMS = [
     "# 1 purdue"
 ]
 
-# Basketball-y language we like
+# Basketball-ish language
 HOOPS_TERMS = [
     "basketball",
     "men's basketball",
@@ -225,6 +223,16 @@ BAD_SPORT_TERMS = [
     "baseball", "softball", "volleyball",
     "soccer", "wrestling", "golf",
     "track and field", "track & field"
+]
+
+# Trusted national outlets for filler Tier 0.6
+NATIONAL_OUTLETS = [
+    "yahoo sports college basketball",
+    "espn",
+    "espn college basketball",
+    "cbs sports college basketball",
+    "cbs sports",
+    "yahoo sports"
 ]
 
 
@@ -307,13 +315,8 @@ def is_big_context_that_mentions_purdue(blob: str) -> bool:
 
 def is_big_ten_or_top25_context(blob: str) -> bool:
     """
-    Soft catch: Big Ten / Top 25 / title contender / March Madness
-    talk that *doesn't* explicitly say "Purdue" in the teaser we saw,
-    but is still national men's college basketball context.
-
-    This is Tier 0.8: we keep it low priority, just to keep the page
-    feeling alive, but it must clearly be men's college basketball
-    conversation at a national / Big Ten / ranking / contender level.
+    Soft catch: Big Ten / Top 25 / March Madness / Final Four conversation
+    even if Purdue wasn't literally named in the teaser we saw.
     """
     triggers = [
         "big ten", "b1g",
@@ -338,17 +341,37 @@ def is_obviously_other_sport(blob: str) -> bool:
     return any(term in blob for term in BAD_SPORT_TERMS)
 
 
+def is_from_national_outlet(src: str) -> bool:
+    """
+    Check if story came from ESPN / CBS Sports / Yahoo Sports College Basketball, etc.
+    These are allowed to be low-priority filler.
+    """
+    if not src:
+        return False
+    s = src.lower()
+    return any(n in s for n in NATIONAL_OUTLETS)
+
+
+def looks_like_mens_hoops(blob: str) -> bool:
+    """
+    Require basketball language so we don't pull random admin/AD news.
+    """
+    return any(term in blob for term in HOOPS_TERMS)
+
+
 def relevance_tier(story):
     """
     Return numeric tier:
 
-    3.0 = Source branding sounds Purdue-specific (Purdue Athletics MBB, CBS Sports Purdue Boilermakers, etc.)
-    2.0 = Direct Purdue mention (Purdue / Boilermakers / Painter / Braden Smith / etc.)
-    1.5 = National/B1G/Top 25/contender talk that explicitly names Purdue
-    1.0 = Opponent recap clearly about a Purdue game/result ("victory over No. 1 Purdue")
-    0.8 = Big Ten / Top 25 / March Madness / contender framing even if Purdue
-          wasn't literally in the teaser text we saw. This is our low-priority filler.
-    0.0 = Drop
+    3.0 Purdue-ish source branding (Purdue Athletics MBB, 'Purdue Boilermakers', etc.)
+    2.0 Explicit Purdue mention (Purdue / Boilermakers / Painter / Braden Smith / etc.)
+    1.5 National/B1G/contender talk WITH Purdue mentioned
+    1.0 Opponent recap clearly about Purdue ("victory over No. 1 Purdue")
+    0.8 Big Ten / Top 25 / Final Four / March Madness / title race *even without*
+        Purdue name in the teaser
+    0.6 High-level men's college hoops context from a trusted national outlet
+        (ESPN/CBS/Yahoo CBB) that clearly sounds like men's basketball
+    0.0 Drop
 
     Anything that smells like football/baseball/etc. is 0.0 immediately.
     """
@@ -358,7 +381,7 @@ def relevance_tier(story):
     if is_obviously_other_sport(b):
         return 0.0
 
-    # 3.0: Purdue-flavored source
+    # 3.0: Purdue-flavored source name
     if is_trusted_source(src):
         return 3.0
 
@@ -366,7 +389,7 @@ def relevance_tier(story):
     if mentions_purdue_direct(b):
         return 2.0
 
-    # 1.5: national/B1G/contender talk that explicitly includes Purdue
+    # 1.5: national/B1G/contender talk explicitly mentioning Purdue
     if is_big_context_that_mentions_purdue(b):
         return 1.5
 
@@ -374,9 +397,13 @@ def relevance_tier(story):
     if is_game_context_about_purdue(b):
         return 1.0
 
-    # 0.8: generic Big Ten / Top 25 / March Madness conversation (fallback)
+    # 0.8: Big Ten / Top 25 / March Madness style convo
     if is_big_ten_or_top25_context(b):
         return 0.8
+
+    # 0.6: national men's hoops filler from ESPN/CBS/Yahoo CBB
+    if is_from_national_outlet(src) and looks_like_mens_hoops(b):
+        return 0.6
 
     return 0.0
 
@@ -394,13 +421,14 @@ def score_story(story):
         2.0: 20.0,
         1.5: 15.0,
         1.0: 10.0,
-        0.8: 8.0
+        0.8: 8.0,
+        0.6: 6.0
     }.get(tier_val, 0.0)
 
     score = base_score
 
     # small bump for hoops vocab
-    if any(term in b for term in HOOPS_TERMS):
+    if looks_like_mens_hoops(b):
         score += 1.0
 
     # bump again if explicit Purdue mention
@@ -424,7 +452,7 @@ def load_sources():
 
 def collect_all():
     """
-    Fetch feeds -> parse -> tier/score -> keep tier >= 0.8
+    Fetch feeds -> parse -> tier/score -> keep tier >= 0.6
     -> sort -> cap 20 -> timestamp
     """
     sources = load_sources()
@@ -444,7 +472,7 @@ def collect_all():
     kept = []
     for it in raw_items:
         tval = relevance_tier(it)
-        if tval >= 0.8:
+        if tval >= 0.6:
             it["tier"] = tval
             it["score"] = score_story(it)
             kept.append(it)
