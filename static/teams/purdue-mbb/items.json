@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "title": "No Purdue MBB stories matched filters",
+    "summary": "Collector ran successfully but strict filters removed everything. This is a fallback card.",
+    "link": "",
+    "published": "Just now",
+    "source": "Collector Debug"
+  }
+]
