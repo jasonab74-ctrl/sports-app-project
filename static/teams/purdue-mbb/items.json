@@ -1,245 +1,434 @@
-{
-  "updated": "2025-10-28T17:16:39.065111+00:00",
-  "items": [
-    {
-      "id": "a5f9068c97d06c8d49d21b395733f697",
-      "source": "Purdue Athletics MBB",
-      "title": "#1 Purdue Faces UIndy in Final Exhibition Tuneup",
-      "summary": "Boilermakers have won 35 straight home exhibition games.",
-      "url": "https://purduesports.com/news/2025/10/27/1-purdue-faces-uindy-in-final-exhibition-tuneup",
-      "published": "2025-10-27T19:56:28+00:00"
-    },
-    {
-      "id": "43ab9d69bcd4b3b513ed11bd83a4d3c5",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Go Perfect on Day 2 of Rome Invite",
-      "summary": "",
-      "url": "https://purduesports.com/news/2025/10/26/boilermakers-go-perfect-on-day-2-of-rome-invite",
-      "published": "2025-10-26T01:52:30+00:00"
-    },
-    {
-      "id": "ba77ca81efbda829321fc5f5ef92bb13",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Finish T-6th at Rain-Shortened Steelwood",
-      "summary": "Third round rained out in Alabama.",
-      "url": "https://purduesports.com/news/2025/10/26/boilermakers-in-middle-of-the-pack-at-steelwood",
-      "published": "2025-10-26T00:13:08+00:00"
-    },
-    {
-      "id": "4abca01432e825181446b93424b41e1a",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilers Drop Close Homecoming Game to Rutgers",
-      "summary": "Purdue's Homecoming was spoiled by a 27-24 heartbreaker in Ross-Ade.",
-      "url": "https://purduesports.com/news/2025/10/25/boilers-drop-close-homecoming-game-to-rutgers",
-      "published": "2025-10-25T19:56:28+00:00"
-    },
-    {
-      "id": "9da336fd6e7d0826e4ad905551520298",
-      "source": "Purdue Athletics MBB",
-      "title": "Head Coach Matt Painter Press Conference | Purdue Men's Basketball",
-      "summary": "",
-      "url": "https://purduesports.com/news/2025/10/23/head-coach-matt-painter-press-conference-purdue-mens-basketball",
-      "published": "2025-10-23T18:40:24+00:00"
-    },
-    {
-      "id": "1d73b6d32e8064624fef31a9f00dca4f",
-      "source": "Purdue Athletics MBB",
-      "title": "G Fletcher Loyer Media Session | Purdue Men's Basketball",
-      "summary": "",
-      "url": "https://purduesports.com/news/2025/10/23/g-fletcher-loyer-media-session-purdue-mens-basketball",
-      "published": "2025-10-23T18:34:22+00:00"
-    },
-    {
-      "id": "3ab7f327b15563a460b60e99f3b746c5",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilers Fall in Home Finale",
-      "summary": "Purdue soccer dropped its home finale Sunday night, falling 3\u20131 to Northwestern at Folk Field.",
-      "url": "https://purduesports.com/news/2025/10/20/boilers-fall-in-home-finale",
-      "published": "2025-10-20T01:29:53+00:00"
-    },
-    {
-      "id": "6a9a6c2159529a48ca7b48eb759ced68",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Leap Past #1 Wake Forest to End the Fall",
-      "summary": "",
-      "url": "https://purduesports.com/news/2025/10/19/boilermakers-leap-past-1-wake-forest-to-end-the-fall",
-      "published": "2025-10-19T20:24:53+00:00"
-    },
-    {
-      "id": "0155873d163232472489269c4f7811b3",
-      "source": "Yahoo Sports College Basketball",
-      "title": "Purdue\u2019s Matt Painter regrets not talking about an NCAA title last year. This season, it\u2019s different",
-      "summary": "Matt Painter believes one of his mistakes last year was not talking about playing for the title enough.",
-      "url": "https://www.nbcsports.com/mens-college-basketball/news/purdues-matt-painter-regrets-not-talking-about-an-ncaa-title-last-year-this-season-its-different",
-      "published": "2025-10-27T15:52:14+00:00"
-    },
-    {
-      "id": "cea2f99679c52e7cff84b09d1a36f9f6",
-      "source": "Yahoo Sports College Basketball",
-      "title": "March Madness Odds For Men's NCAA Tournament 2026",
-      "summary": "A look at updated March Madness 2026 betting odds, with Purdue (+900) listed as the favorite to win the 2026 NCAA Tournament.",
-      "url": "https://www.covers.com/ncaab/march-madness/odds",
-      "published": "2025-10-28T17:07:00+00:00"
-    },
-    {
-      "id": "eb482167cbfe5ddc7fd0ef3ca1a045ec",
-      "source": "Purdue Athletics MBB",
-      "title": "Pro Boilers: Week 8 in the NFL",
-      "summary": "",
-      "url": "https://purduesports.com/news/2025/10/28/pro-boilers-week-8-in-the-nfl",
-      "published": "2025-10-28T16:15:00+00:00"
-    },
-    {
-      "id": "ef76283597909aeedb50f756277c6a10",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Scores 118 in Exhibition Win over Purdue Northwest",
-      "summary": "",
-      "url": "https://purduesports.com/news/2025/10/28/purdue-scores-118-in-exhibition-win-over-purdue-northwest",
-      "published": "2025-10-28T01:51:08+00:00"
-    },
-    {
-      "id": "0ab16ccaf55aed488e65cf0845058251",
-      "source": "Purdue Athletics MBB",
-      "title": "Game Highlights: #11 Purdue 3, #20 Minnesota 2",
-      "summary": "",
-      "url": "https://purduesports.com/news/2025/10/27/game-highlights-11-purdue-3-20-minnesota-2",
-      "published": "2025-10-27T16:08:10+00:00"
-    },
-    {
-      "id": "f693a3576c061ad4ba99142456ca0fb8",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Barry Odom Press Conference | Purdue Football",
-      "summary": "",
-      "url": "https://purduesports.com/news/2025/10/27/coach-barry-odom-press-conference-purdue-football-1",
-      "published": "2025-10-27T16:00:26+00:00"
-    },
-    {
-      "id": "49c512752a5a6f4ce40f2284a6ff5077",
-      "source": "Purdue Athletics MBB",
-      "title": "OC Josh Henson Press Conference | Purdue Football",
-      "summary": "",
-      "url": "https://purduesports.com/news/2025/10/27/oc-josh-henson-press-conference-purdue-football",
-      "published": "2025-10-27T15:57:37+00:00"
-    },
-    {
-      "id": "16edb9443d6629958c1bf7ddc076e0c2",
-      "source": "Purdue Athletics MBB",
-      "title": "DC Mike Scherer Press Conference vs. Michigan | Purdue Football",
-      "summary": "",
-      "url": "https://purduesports.com/news/2025/10/27/dc-mike-scherer-press-conference-vs-michigan-purdue-football",
-      "published": "2025-10-27T15:55:53+00:00"
-    },
-    {
-      "id": "1392aeef376f1cf6e256bd3d52f5bb6e",
-      "source": "Purdue Athletics MBB",
-      "title": "TE Christian Moore Media Session | Purdue Football",
-      "summary": "",
-      "url": "https://purduesports.com/news/2025/10/27/te-christian-moore-media-session-purdue-football",
-      "published": "2025-10-27T15:52:59+00:00"
-    },
-    {
-      "id": "ba5986a7a43e78f97ce32c541b5121f4",
-      "source": "Purdue Athletics MBB",
-      "title": "DB Hershey McLaurin Media Session | Purdue Football",
-      "summary": "",
-      "url": "https://purduesports.com/news/2025/10/27/db-hershey-mclaurin-media-session-purdue-football",
-      "published": "2025-10-27T15:50:31+00:00"
-    },
-    {
-      "id": "657b4ace2f17fb2bcf54872f624d8b4c",
-      "source": "Purdue Athletics MBB",
-      "title": "Wrestling Season Preview: 125-141 lbs",
-      "summary": "A positional breakdown of Purdue's 2025-26 squad, covering 125 lbs through 141 lbs.",
-      "url": "https://purduesports.com/news/2025/10/27/wrestling-season-preview-125-141-lbs",
-      "published": "2025-10-27T14:00:00+00:00"
-    },
-    {
-      "id": "fe0814f754879fb825caf395cd5ecf4c",
-      "source": "Purdue Athletics MBB",
-      "title": "#11 Purdue Reverse Sweeps #20 Minnesota",
-      "summary": "",
-      "url": "https://purduesports.com/news/2025/10/26/11-purdue-reverse-sweeps-20-minnesota",
-      "published": "2025-10-26T20:35:00+00:00"
-    },
-    {
-      "id": "824ae4fc83fcae173280ab5dcec02646",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Closes Out Season with 2-0 Victory",
-      "summary": "Purdue soccer finished the 2025 season on a high note Sunday afternoon, earning a 2\u20130 shutout victory over Minnesota at Elizabeth Lyle Robbie Stadium.",
-      "url": "https://purduesports.com/news/2025/10/26/purdue-closes-out-season-with-2-0-victory",
-      "published": "2025-10-26T20:33:09+00:00"
-    },
-    {
-      "id": "1e7b2cf6cc0fdcd59aabfee94f75cba5",
-      "source": "Purdue Athletics MBB",
-      "title": "Halloween Bash at Alexander Moved Up to Tuesday",
-      "summary": "Purdue Baseball's annual free and all ages Halloween Bash at Alexander Field has been moved up one day to Tuesday, Oct. 28 at 6 p.m.",
-      "url": "https://purduesports.com/news/2025/10/26/halloween-bash-at-alexander-moved-up-to-tuesday",
-      "published": "2025-10-26T17:56:00+00:00"
-    },
-    {
-      "id": "508eac448779cb81a19dd6bdc2e2bc1e",
-      "source": "Purdue Athletics MBB",
-      "title": "Game Highlights: Purdue 3, Illinois 0 | Purdue Volleyball",
-      "summary": "",
-      "url": "https://purduesports.com/news/2025/10/25/game-highlights-purdue-3-illinois-0-purdue-volleyball",
-      "published": "2025-10-25T20:04:34+00:00"
-    },
-    {
-      "id": "520162fefc5731127b7aa9a3323bfe1c",
-      "source": "Purdue Athletics MBB",
-      "title": "Head Coach Barry Odom Postgame Press Conference | Purdue Football",
-      "summary": "",
-      "url": "https://purduesports.com/news/2025/10/25/head-coach-barry-odom-postgame-press-conference-purdue-football",
-      "published": "2025-10-25T19:58:43+00:00"
-    },
-    {
-      "id": "2e632943b19abf67867c9237dd3bcf99",
-      "source": "Purdue Athletics MBB",
-      "title": "Players Postgame Press Conference | Purdue Football",
-      "summary": "",
-      "url": "https://purduesports.com/news/2025/10/25/players-postgame-press-conference-purdue-football",
-      "published": "2025-10-25T19:56:58+00:00"
-    },
-    {
-      "id": "1b43d6dd52765ed7128ac7a6ccfff432",
-      "source": "Purdue Athletics MBB",
-      "title": "#11 Purdue Brings Champaign Problems",
-      "summary": "",
-      "url": "https://purduesports.com/news/2025/10/25/11-purdue-brings-champaign-problems",
-      "published": "2025-10-25T02:10:00+00:00"
-    },
-    {
-      "id": "b84a0c7afb0e3754955fa151a6fed66f",
-      "source": "Purdue Athletics MBB",
-      "title": "#1 Purdue vs. #9 Kentucky",
-      "summary": "",
-      "url": "https://purduesports.com/news/2025/10/25/1-purdue-vs-9-kentucky",
-      "published": "2025-10-25T00:51:09+00:00"
-    },
-    {
-      "id": "8f5b253119a0917767d032525a15cbcd",
-      "source": "Purdue Athletics MBB",
-      "title": "#1 Purdue Falls to #9 Kentucky in Exhibition Game",
-      "summary": "#1 Purdue fell to #9 Kentucky in an exhibition game at Rupp Arena.",
-      "url": "https://purduesports.com/news/2025/10/25/1-purdue-falls-to-9-kentucky-in-exhibition-game",
-      "published": "2025-10-25T00:41:52+00:00"
-    },
-    {
-      "id": "4e886b891c1bac44bff6b452a9b7af13",
-      "source": "Purdue Athletics MBB",
-      "title": "C Daniel Jacobsen Media Session | Purdue Men's Basketball",
-      "summary": "",
-      "url": "https://purduesports.com/news/2025/10/23/c-daniel-jacobsen-media-session-purdue-mens-basketball",
-      "published": "2025-10-23T18:33:07+00:00"
-    },
-    {
-      "id": "e7d08d51e5da258de60b05632e94dd5e",
-      "source": "Purdue Athletics MBB",
-      "title": "WR Michael Jackson III Media Session | Purdue Football",
-      "summary": "",
-      "url": "https://purduesports.com/news/2025/10/22/wr-michael-jackson-iii-media-session-purdue-football",
-      "published": "2025-10-22T15:11:44+00:00"
-    }
-  ]
-}
+[
+  {
+    "source": "Yahoo Sports College Basketball",
+    "headline": "Wake Forest Basketball: 2025-26 Preview",
+    "summary": "Basketball season is right around the corner",
+    "url": "https://www.bloggersodear.com/wake-forest-basketball/23341/wake-forest-basketball-2025-26-preview",
+    "published": "Oct 28",
+    "published_iso": "2025-10-28T14:00:00Z"
+  },
+  {
+    "source": "Yahoo Sports College Basketball",
+    "headline": "The good, bad, and unknown from Maryland men’s basketball’s 82-81 exhibition win over UMBC",
+    "summary": "The Terps’ depth got plenty of run with four key contributors sidelined.",
+    "url": "https://www.testudotimes.com/maryland-terps-basketball/84391/the-good-bad-and-unknown-from-maryland-mens-basketballs-82-81-exhibition-win-over-umbc",
+    "published": "Oct 28",
+    "published_iso": "2025-10-28T10:45:00Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "Purdue Scores 118 in Exhibition Win over Purdue Northwest",
+    "summary": "",
+    "url": "https://purduesports.com/news/2025/10/28/purdue-scores-118-in-exhibition-win-over-purdue-northwest",
+    "published": "Oct 28",
+    "published_iso": "2025-10-28T01:51:08Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "Heaney, Anderson Receive Big Ten Weekly Award Accolades",
+    "summary": "",
+    "url": "https://purduesports.com/news/2025/10/27/heaney-anderson-receive-big-ten-weekly-award-accolades",
+    "published": "Oct 27",
+    "published_iso": "2025-10-27T20:00:00Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "#1 Purdue Faces UIndy in Final Exhibition Tuneup",
+    "summary": "Boilermakers have won 35 straight home exhibition games.",
+    "url": "https://purduesports.com/news/2025/10/27/1-purdue-faces-uindy-in-final-exhibition-tuneup",
+    "published": "Oct 27",
+    "published_iso": "2025-10-27T19:56:28Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "Smith Named to Bob Cousy Award Watch List",
+    "summary": "Last year's winner headlines the Bob Cousy Award watch list.",
+    "url": "https://purduesports.com/news/2025/10/27/smith-named-to-bob-cousy-award-watch-list",
+    "published": "Oct 27",
+    "published_iso": "2025-10-27T19:07:31Z"
+  },
+  {
+    "source": "Yahoo Sports College Basketball",
+    "headline": "Texas A&M Basketball shows promise in exhibition win over Arizona State",
+    "summary": "Texas A&M overcame early struggles to beat Arizona State 95-88 in exhibition play, led by Zach Clemence’s 20-point surge and strong second-half.",
+    "url": "https://aggieswire.usatoday.com/story/sports/college/aggies/mens-basketball/2025/10/27/texas-aggies-basketball-arizona-state-exhibition/86924440007/",
+    "published": "Oct 27",
+    "published_iso": "2025-10-27T17:46:31Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "Game 9 Prep: Barry Odom Press Conference",
+    "summary": "",
+    "url": "https://purduesports.com/news/2025/10/27/game-9-prep-barry-odom-press-conference",
+    "published": "Oct 27",
+    "published_iso": "2025-10-27T16:30:00Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "Game Highlights: #11 Purdue 3, #20 Minnesota 2",
+    "summary": "",
+    "url": "https://purduesports.com/news/2025/10/27/game-highlights-11-purdue-3-20-minnesota-2",
+    "published": "Oct 27",
+    "published_iso": "2025-10-27T16:08:10Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "Coach Barry Odom Press Conference | Purdue Football",
+    "summary": "",
+    "url": "https://purduesports.com/news/2025/10/27/coach-barry-odom-press-conference-purdue-football-1",
+    "published": "Oct 27",
+    "published_iso": "2025-10-27T16:00:26Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "OC Josh Henson Press Conference | Purdue Football",
+    "summary": "",
+    "url": "https://purduesports.com/news/2025/10/27/oc-josh-henson-press-conference-purdue-football",
+    "published": "Oct 27",
+    "published_iso": "2025-10-27T15:57:37Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "DC Mike Scherer Press Conference vs. Michigan | Purdue Football",
+    "summary": "",
+    "url": "https://purduesports.com/news/2025/10/27/dc-mike-scherer-press-conference-vs-michigan-purdue-football",
+    "published": "Oct 27",
+    "published_iso": "2025-10-27T15:55:53Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "TE Christian Moore Media Session | Purdue Football",
+    "summary": "",
+    "url": "https://purduesports.com/news/2025/10/27/te-christian-moore-media-session-purdue-football",
+    "published": "Oct 27",
+    "published_iso": "2025-10-27T15:52:59Z"
+  },
+  {
+    "source": "Yahoo Sports College Basketball",
+    "headline": "Purdue’s Matt Painter regrets not talking about an NCAA title last year. This season, it’s different",
+    "summary": "Matt Painter believes one of his mistakes last year was not talking about playing for the title enough.",
+    "url": "https://www.nbcsports.com/mens-college-basketball/news/purdues-matt-painter-regrets-not-talking-about-an-ncaa-title-last-year-this-season-its-different",
+    "published": "Oct 27",
+    "published_iso": "2025-10-27T15:52:14Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "DB Hershey McLaurin Media Session | Purdue Football",
+    "summary": "",
+    "url": "https://purduesports.com/news/2025/10/27/db-hershey-mclaurin-media-session-purdue-football",
+    "published": "Oct 27",
+    "published_iso": "2025-10-27T15:50:31Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "Wrestling Season Preview: 125-141 lbs",
+    "summary": "A positional breakdown of Purdue's 2025-26 squad, covering 125 lbs through 141 lbs.",
+    "url": "https://purduesports.com/news/2025/10/27/wrestling-season-preview-125-141-lbs",
+    "published": "Oct 27",
+    "published_iso": "2025-10-27T14:00:00Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "Volleyball reverse sweep vs. Minnesota",
+    "summary": "",
+    "url": "https://purduesports.com/news/2025/10/26/volleyball-halloween-night-vs-minnesota",
+    "published": "Oct 26",
+    "published_iso": "2025-10-26T21:17:58Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "#11 Purdue Reverse Sweeps #20 Minnesota",
+    "summary": "",
+    "url": "https://purduesports.com/news/2025/10/26/11-purdue-reverse-sweeps-20-minnesota",
+    "published": "Oct 26",
+    "published_iso": "2025-10-26T20:35:00Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "Purdue Closes Out Season with 2-0 Victory",
+    "summary": "Purdue soccer finished the 2025 season on a high note Sunday afternoon, earning a 2–0 shutout victory over Minnesota at Elizabeth Lyle Robbie Stadium.",
+    "url": "https://purduesports.com/news/2025/10/26/purdue-closes-out-season-with-2-0-victory",
+    "published": "Oct 26",
+    "published_iso": "2025-10-26T20:33:09Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "Halloween Bash at Alexander Moved Up to Tuesday",
+    "summary": "Purdue Baseball's annual free and all ages Halloween Bash at Alexander Field has been moved up one day to Tuesday, Oct. 28 at 6 p.m.",
+    "url": "https://purduesports.com/news/2025/10/26/halloween-bash-at-alexander-moved-up-to-tuesday",
+    "published": "Oct 26",
+    "published_iso": "2025-10-26T17:56:00Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "Boilermakers Go Perfect on Day 2 of Rome Invite",
+    "summary": "",
+    "url": "https://purduesports.com/news/2025/10/26/boilermakers-go-perfect-on-day-2-of-rome-invite",
+    "published": "Oct 26",
+    "published_iso": "2025-10-26T01:52:30Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "Boilermakers Finish T-6th at Rain-Shortened Steelwood",
+    "summary": "Third round rained out in Alabama.",
+    "url": "https://purduesports.com/news/2025/10/26/boilermakers-in-middle-of-the-pack-at-steelwood",
+    "published": "Oct 26",
+    "published_iso": "2025-10-26T00:13:08Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "Game Highlights: Purdue 3, Illinois 0 | Purdue Volleyball",
+    "summary": "",
+    "url": "https://purduesports.com/news/2025/10/25/game-highlights-purdue-3-illinois-0-purdue-volleyball",
+    "published": "Oct 25",
+    "published_iso": "2025-10-25T20:04:34Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "Head Coach Barry Odom Postgame Press Conference | Purdue Football",
+    "summary": "",
+    "url": "https://purduesports.com/news/2025/10/25/head-coach-barry-odom-postgame-press-conference-purdue-football",
+    "published": "Oct 25",
+    "published_iso": "2025-10-25T19:58:43Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "Players Postgame Press Conference | Purdue Football",
+    "summary": "",
+    "url": "https://purduesports.com/news/2025/10/25/players-postgame-press-conference-purdue-football",
+    "published": "Oct 25",
+    "published_iso": "2025-10-25T19:56:58Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "Boilers Drop Close Homecoming Game to Rutgers",
+    "summary": "Purdue's Homecoming was spoiled by a 27-24 heartbreaker in Ross-Ade.",
+    "url": "https://purduesports.com/news/2025/10/25/boilers-drop-close-homecoming-game-to-rutgers",
+    "published": "Oct 25",
+    "published_iso": "2025-10-25T19:56:28Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "#11 Purdue Brings Champaign Problems",
+    "summary": "",
+    "url": "https://purduesports.com/news/2025/10/25/11-purdue-brings-champaign-problems",
+    "published": "Oct 25",
+    "published_iso": "2025-10-25T02:10:00Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "#1 Purdue vs. #9 Kentucky",
+    "summary": "",
+    "url": "https://purduesports.com/news/2025/10/25/1-purdue-vs-9-kentucky",
+    "published": "Oct 25",
+    "published_iso": "2025-10-25T00:51:09Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "#1 Purdue Falls to #9 Kentucky in Exhibition Game",
+    "summary": "#1 Purdue fell to #9 Kentucky in an exhibition game at Rupp Arena.",
+    "url": "https://purduesports.com/news/2025/10/25/1-purdue-falls-to-9-kentucky-in-exhibition-game",
+    "published": "Oct 25",
+    "published_iso": "2025-10-25T00:41:52Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "Head Coach Matt Painter Press Conference | Purdue Men's Basketball",
+    "summary": "",
+    "url": "https://purduesports.com/news/2025/10/23/head-coach-matt-painter-press-conference-purdue-mens-basketball",
+    "published": "Oct 23",
+    "published_iso": "2025-10-23T18:40:24Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "G Fletcher Loyer Media Session | Purdue Men's Basketball",
+    "summary": "",
+    "url": "https://purduesports.com/news/2025/10/23/g-fletcher-loyer-media-session-purdue-mens-basketball",
+    "published": "Oct 23",
+    "published_iso": "2025-10-23T18:34:22Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "C Daniel Jacobsen Media Session | Purdue Men's Basketball",
+    "summary": "",
+    "url": "https://purduesports.com/news/2025/10/23/c-daniel-jacobsen-media-session-purdue-mens-basketball",
+    "published": "Oct 23",
+    "published_iso": "2025-10-23T18:33:07Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "Luana Valero Named B1G Freshman of the Week",
+    "summary": "",
+    "url": "https://purduesports.com/news/2025/10/23/luana-valero-named-b1g-freshman-of-the-week",
+    "published": "Oct 23",
+    "published_iso": "2025-10-23T17:53:58Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "Our Love Language",
+    "summary": "",
+    "url": "https://purduesports.com/news/2025/10/22/our-love-language",
+    "published": "Oct 22",
+    "published_iso": "2025-10-22T23:43:33Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "Wright, Dzirkalis Earn Big Ten Weekly Honors",
+    "summary": "Daryn Wright repeats as Diver of the Week, Jānis Dzirkalis honored as Freshman of the Week.",
+    "url": "https://purduesports.com/news/2025/10/22/wright-dzirkalis-earn-big-ten-weekly-honors",
+    "published": "Oct 22",
+    "published_iso": "2025-10-22T20:24:00Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "WR Michael Jackson III Media Session | Purdue Football",
+    "summary": "",
+    "url": "https://purduesports.com/news/2025/10/22/wr-michael-jackson-iii-media-session-purdue-football",
+    "published": "Oct 22",
+    "published_iso": "2025-10-22T15:11:44Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "DB Hudauri Hines Media Session | Purdue Football",
+    "summary": "",
+    "url": "https://purduesports.com/news/2025/10/22/db-hudauri-hines-media-session-purdue-football",
+    "published": "Oct 22",
+    "published_iso": "2025-10-22T15:10:43Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "Smith, Kaufman-Renn Tabbed to CBS Sports All-America Teams",
+    "summary": "CBS Sports has selected Braden Smith as its preseason National Player of the Year, while Trey Kaufman-Renn joined him on the preseason All-American first team, the organization announced Tuesday.",
+    "url": "https://purduesports.com/news/2025/10/21/smith-kaufman-renn-tabbed-to-cbs-sports-all-america-teams1",
+    "published": "Oct 21",
+    "published_iso": "2025-10-21T18:06:03Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "Pro Boilers: Week 7 in the NFL",
+    "summary": "",
+    "url": "https://purduesports.com/news/2025/10/21/pro-boilers-week-7-in-the-nfl",
+    "published": "Oct 21",
+    "published_iso": "2025-10-21T16:15:00Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "Purdue All-Quarter Century Wrestling Team: 285 lbs",
+    "summary": "Coach Ersland and his staff finish unveiling Purdue's top wrestlers of the 21st century.",
+    "url": "https://purduesports.com/news/2025/10/21/purdue-all-quarter-century-wrestling-team-285-lbs",
+    "published": "Oct 21",
+    "published_iso": "2025-10-21T14:32:57Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "Kash's Kab Trivia Part 2 | Purdue Volleyball",
+    "summary": "",
+    "url": "https://purduesports.com/news/2025/10/21/kashs-kab-trivia-part-2-purdue-volleyball",
+    "published": "Oct 21",
+    "published_iso": "2025-10-21T14:07:26Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "Anderson Named Big Ten Setter of the Week",
+    "summary": "",
+    "url": "https://purduesports.com/news/2025/10/20/anderson-named-big-ten-setter-of-the-week-10-20",
+    "published": "Oct 20",
+    "published_iso": "2025-10-20T20:00:00Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "Smith Named Preseason All-American by the Associated Press",
+    "summary": "Associated Press (AP) voters have selected Braden Smith as a unanimous selection to its preseason All-American team, the organization announced Monday afternoon.",
+    "url": "https://purduesports.com/news/2025/10/20/smith-named-preseason-all-american-by-the-associated-press-1",
+    "published": "Oct 20",
+    "published_iso": "2025-10-20T18:23:43Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "RB Devin Mockobee Media Session | Purdue Football",
+    "summary": "",
+    "url": "https://purduesports.com/news/2025/10/20/rb-devin-mockobee-media-session-purdue-football",
+    "published": "Oct 20",
+    "published_iso": "2025-10-20T16:24:06Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "LB Charles Correa Media Session | Purdue Football",
+    "summary": "",
+    "url": "https://purduesports.com/news/2025/10/20/lb-charles-correa-media-session-purdue-football",
+    "published": "Oct 20",
+    "published_iso": "2025-10-20T16:22:48Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "Head Coach Barry Odom Press Conference vs. Rutgers | Purdue Football",
+    "summary": "",
+    "url": "https://purduesports.com/news/2025/10/20/head-coach-barry-odom-press-conference-vs-rutgers-purdue-football",
+    "published": "Oct 20",
+    "published_iso": "2025-10-20T16:01:21Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "DC Mike Scherer Press Conference vs. Rutgers | Purdue Football",
+    "summary": "",
+    "url": "https://purduesports.com/news/2025/10/20/dc-mike-scherer-press-conference-vs-rutgers-purdue-football",
+    "published": "Oct 20",
+    "published_iso": "2025-10-20T15:55:02Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "OC Josh Henson Press Conference vs Rutgers | Purdue Football",
+    "summary": "",
+    "url": "https://purduesports.com/news/2025/10/20/oc-josh-henson-press-conference-vs-rutgers-purdue-football",
+    "published": "Oct 20",
+    "published_iso": "2025-10-20T15:50:35Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "Swim-Dive Sweeps Co-Ed Dual vs Mizzou",
+    "summary": "",
+    "url": "https://purduesports.com/news/2025/10/20/swim-dive-sweeps-co-ed-dual-vs-mizzou",
+    "published": "Oct 20",
+    "published_iso": "2025-10-20T15:28:00Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "Boilers Fall in Home Finale",
+    "summary": "Purdue soccer dropped its home finale Sunday night, falling 3–1 to Northwestern at Folk Field.",
+    "url": "https://purduesports.com/news/2025/10/20/boilers-fall-in-home-finale",
+    "published": "Oct 20",
+    "published_iso": "2025-10-20T01:29:53Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "Purdue Men’s Basketball Scrimmage Highlights",
+    "summary": "",
+    "url": "https://purduesports.com/news/2025/10/19/purdue-mens-basketball-scrimmage-highlights",
+    "published": "Oct 19",
+    "published_iso": "2025-10-19T20:36:46Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "Boilermakers Leap Past #1 Wake Forest to End the Fall",
+    "summary": "",
+    "url": "https://purduesports.com/news/2025/10/19/boilermakers-leap-past-1-wake-forest-to-end-the-fall",
+    "published": "Oct 19",
+    "published_iso": "2025-10-19T20:24:53Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "Shondell, Jewell Reach 500 Wins",
+    "summary": "",
+    "url": "https://purduesports.com/news/2025/10/19/shondell-jewell-reach-500-wins",
+    "published": "Oct 19",
+    "published_iso": "2025-10-19T19:30:00Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "Women's Basketball Fan Day Gallery",
+    "summary": "",
+    "url": "https://purduesports.com/news/2025/10/19/womens-basketball-fan-day-gallery",
+    "published": "Oct 19",
+    "published_iso": "2025-10-19T00:46:38Z"
+  }
+]
