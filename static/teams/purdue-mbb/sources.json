@@ -1,75 +1,42 @@
-{
-  "team": "purdue-mbb",
-  "sources": [
-    {
-      "name": "GoldandBlack.com",
-      "url": "https://goldandblack.com/feed/",
-      "priority_score": 3.0,
-      "notes": "Purdue-focused beat (MBB + FB). Premium articles exist but feed still headlines Purdue hoops.",
-      "team": "purdue-mbb"
-    },
-    {
-      "name": "On3 Purdue Basketball",
-      "url": "https://www.on3.com/teams/purdue-boilermakers/basketball/feed/",
-      "priority_score": 2.9,
-      "notes": "On3 Purdue MBB team feed (roster, recruiting, Painter, game notes).",
-      "team": "purdue-mbb"
-    },
-    {
-      "name": "247Sports Purdue Basketball",
-      "url": "https://247sports.com/college/purdue/Article/rss/",
-      "priority_score": 2.8,
-      "notes": "Purdue 247 Hoops — staff/scouting, recruiting, postgame reaction. Mixed football, we'll filter in code.",
-      "team": "purdue-mbb"
-    },
-    {
-      "name": "Purdue Athletics MBB",
-      "url": "https://purduesports.com/rss?path=mbball",
-      "priority_score": 2.8,
-      "notes": "Official Purdue men’s basketball SID feed: game recaps, quotes, injury/availability, awards.",
-      "team": "purdue-mbb"
-    },
-    {
-      "name": "Yahoo Sports College Basketball",
-      "url": "https://sports.yahoo.com/college-basketball/rss/",
-      "priority_score": 2.5,
-      "notes": "National. We down-rank anything not mentioning Purdue, Boilers, Painter, Braden Smith, Zach Edey, etc.",
-      "team": "purdue-mbb"
-    },
-    {
-      "name": "ESPN Purdue MBB",
-      "url": "https://www.espn.com/college-basketball/team/_/id/2509/purdue-boilermakers",
-      "priority_score": 2.4,
-      "notes": "ESPN’s Purdue team page. No clean RSS historically, but very Purdue-targeted. Scrape headline list.",
-      "team": "purdue-mbb"
-    },
-    {
-      "name": "CBS Sports College Basketball",
-      "url": "https://www.cbssports.com/college-basketball/rss/headlines/",
-      "priority_score": 2.2,
-      "notes": "CBS national CBB. Still relevant for Painter / Purdue ranking / Big Ten talk.",
-      "team": "purdue-mbb"
-    },
-    {
-      "name": "Sports Illustrated Purdue (SI Purdue / Boilermakers)",
-      "url": "https://www.si.com/college/purdue/.rss/full/",
-      "priority_score": 2.7,
-      "notes": "SI Purdue vertical: postgame takeaways, roster news, transfer portal.",
-      "team": "purdue-mbb"
-    },
-    {
-      "name": "The Field of 68",
-      "url": "https://podcasts.apple.com/us/podcast/the-field-of-68-college-basketball-podcast/id1546447759",
-      "priority_score": 1.6,
-      "notes": "National hoops / interviews. We'll keep but low score unless Purdue/Big Ten is in title/desc.",
-      "team": "purdue-mbb"
-    },
-    {
-      "name": "USA Today Purdue Boilermakers",
-      "url": "https://boilerwatch.usatoday.com/feed/",
-      "priority_score": 2.6,
-      "notes": "USA Today Purdue vertical (game takeaways, national-seed talk, Painter quotes).",
-      "team": "purdue-mbb"
-    }
-  ]
-}
+[
+  {
+    "name": "GoldandBlack.com",
+    "rss": "https://www.on3.com/teams/purdue-boilermakers/basketball/feed/" 
+  },
+  {
+    "name": "On3 Purdue Basketball",
+    "rss": "https://www.on3.com/teams/purdue-boilermakers/basketball/feed/"
+  },
+  {
+    "name": "247Sports Purdue Basketball",
+    "rss": "https://247sports.com/college/purdue/Article/rss/"
+  },
+  {
+    "name": "Purdue Athletics MBB",
+    "rss": "https://purduesports.com/rss?path=mbball"
+  },
+  {
+    "name": "ESPN Purdue MBB",
+    "rss": "https://www.espn.com/college-basketball/team/_/id/2509/purdue-boilermakers/rss"
+  },
+  {
+    "name": "Yahoo Sports College Basketball",
+    "rss": "https://sports.yahoo.com/college-basketball/rss/"
+  },
+  {
+    "name": "CBS Sports College Basketball",
+    "rss": "https://www.cbssports.com/college-basketball/rss/headlines/"
+  },
+  {
+    "name": "The Field of 68",
+    "rss": "https://thefieldof68.com/feed/"
+  },
+  {
+    "name": "SI Purdue Basketball",
+    "rss": "https://www.si.com/college/purdue/basketball/rss"
+  },
+  {
+    "name": "USA Today Purdue Boilermakers",
+    "rss": "https://boilermakerswire.usatoday.com/feed/"
+  }
+]
