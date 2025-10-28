@@ -1,220 +1,366 @@
 #!/usr/bin/env python3
-import json, re, html, hashlib, datetime
-from datetime import timezone
+import os
+import json
+import time
+import re
+import hashlib
+import requests
+import feedparser
+from datetime import datetime, timezone
+from bs4 import BeautifulSoup
+from urllib.parse import urlparse
 
-# -----------------
+# ---------------------------
 # CONFIG
-# -----------------
+# ---------------------------
 
-MAX_ITEMS = 50  # we’ll dedupe + sort and front-end will slice top 20
+HERE = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.abspath(os.path.join(HERE, ".."))
+OUTPUT_PATH = os.path.join(
+    PROJECT_ROOT,
+    "static",
+    "teams",
+    "purdue-mbb",
+    "items.json"
+)
 
-TRUSTED_SOURCES = [
-    "GoldandBlack.com",
-    "On3 Purdue Basketball",
-    "247Sports Purdue Basketball",
-    "Purdue Athletics MBB",
-    "ESPN College Basketball",
-    "ESPN Purdue MBB",
-    "Yahoo Sports College Basketball",
-    "CBS Sports College Basketball",
-    "The Field of 68",
-    "SI Purdue Basketball",
-    "USA Today Purdue Boilermakers",
-]
+SOURCES_PATH = os.path.join(
+    PROJECT_ROOT,
+    "static",
+    "teams",
+    "purdue-mbb",
+    "sources.json"
+)
 
+# Words that mean "this is actually about Purdue men's hoops"
 PURDUE_KEYWORDS = [
     "purdue",
-    "boilermaker",
     "boilermakers",
-    "boiler ball",
-    "boilerball",
-    "painter",
     "matt painter",
-    "braden smith",
+    "matt painter's",
     "zach edey",
+    "mackey arena",
     "west lafayette",
-    "purdue men's basketball",
-    "purdue basketball",
-    "purdue mbb",
+    "braden smith",
+    "fletcher loyer",
+    "boilers",
+    "boilermaker",
 ]
 
-# -----------------
-# HELPERS
-# -----------------
+# We will also include other college hoops headlines for context,
+# BUT we boost (score) Purdue-heavy stuff so it floats to top.
+EXTRA_KEYWORDS = [
+    "big ten",
+    "march madness",
+    "ncaa tournament",
+    "college basketball",
+]
 
-def norm_text(t: str) -> str:
+# Max number of articles we’ll keep
+MAX_ITEMS = 30
+
+USER_AGENT = (
+    "Mozilla/5.0 (compatible; PurdueMBBFanFeed/1.0; +https://github.com/jasonab74-ctrl)"
+)
+
+# ---------------------------
+# HELPERS
+# ---------------------------
+
+def load_sources():
+    with open(SOURCES_PATH, "r") as f:
+        return json.load(f)
+
+def fetch_rss(url: str):
+    """
+    Try to parse RSS/Atom. Returns list[dict] with minimal keys:
+    {title, summary, link, published_ts, source_name}
+    We do NOT crash if feed is bad.
+    """
+    try:
+        d = feedparser.parse(url)
+        items = []
+        for entry in d.entries:
+            title = getattr(entry, "title", "").strip()
+            summary = getattr(entry, "summary", "").strip()
+            link = getattr(entry, "link", "").strip()
+
+            # published / updated
+            published_ts = None
+            if hasattr(entry, "published_parsed") and entry.published_parsed:
+                published_ts = int(time.mktime(entry.published_parsed))
+            elif hasattr(entry, "updated_parsed") and entry.updated_parsed:
+                published_ts = int(time.mktime(entry.updated_parsed))
+
+            items.append(
+                {
+                    "title": title,
+                    "summary": summary,
+                    "link": link,
+                    "published_ts": published_ts,
+                }
+            )
+        return items
+    except Exception:
+        return []
+
+def fetch_html(url: str, selector_rules: dict):
+    """
+    "Poor man's scrape" for sources that don't expose RSS.
+    selector_rules looks like:
+    {
+      "item": ".story-card",
+      "title": ".headline",
+      "summary": ".dek",
+      "link": "a",
+      "time": "time"
+    }
+    Everything is best-effort / safe-fail.
+    """
+    try:
+        resp = requests.get(url, headers={"User-Agent": USER_AGENT}, timeout=10)
+    except Exception:
+        return []
+
+    if resp.status_code != 200:
+        return []
+
+    soup = BeautifulSoup(resp.text, "html.parser")
+    cards = soup.select(selector_rules.get("item", "")) or []
+    results = []
+    for card in cards:
+        title_el = card.select_one(selector_rules.get("title", ""))
+        summary_el = card.select_one(selector_rules.get("summary", ""))
+        link_el = card.select_one(selector_rules.get("link", "a"))
+        time_el = card.select_one(selector_rules.get("time", ""))
+
+        title = (title_el.get_text(" ", strip=True) if title_el else "").strip()
+        summary = (summary_el.get_text(" ", strip=True) if summary_el else "").strip()
+        link = ""
+        if link_el and link_el.has_attr("href"):
+            link = link_el["href"].strip()
+            # make absolute if needed
+            if link.startswith("/"):
+                parsed = urlparse(url)
+                link = f"{parsed.scheme}://{parsed.netloc}{link}"
+
+        published_ts = None
+        if time_el:
+            # attempt to parse datetime attr first
+            dt_val = ""
+            if time_el.has_attr("datetime"):
+                dt_val = time_el["datetime"]
+            else:
+                dt_val = time_el.get_text(strip=True)
+            published_ts = try_parse_datetime_to_epoch(dt_val)
+
+        # If there's literally no text, skip
+        if not title and not summary:
+            continue
+
+        results.append(
+            {
+                "title": title,
+                "summary": summary,
+                "link": link,
+                "published_ts": published_ts,
+            }
+        )
+
+    return results
+
+def try_parse_datetime_to_epoch(dt_str: str):
+    """
+    Try a couple common formats → epoch (int).
+    If it fails, return None.
+    """
+    if not dt_str:
+        return None
+
+    FORMATS = [
+        "%Y-%m-%dT%H:%M:%S%z",
+        "%Y-%m-%dT%H:%M:%S.%f%z",
+        "%Y-%m-%d %H:%M:%S%z",
+        "%Y-%m-%d %H:%M:%S",
+        "%a, %d %b %Y %H:%M:%S %Z",
+    ]
+    for fmt in FORMATS:
+        try:
+            dt = datetime.strptime(dt_str, fmt)
+            return int(dt.timestamp())
+        except Exception:
+            pass
+    return None
+
+def clean_text(t: str) -> str:
+    """
+    Clean up the '&#39;' junk etc so it doesn't look broken on page.
+    """
     if not t:
         return ""
-    # decode html entities like &#39; etc.
-    t = html.unescape(t)
-    # collapse whitespace
+    # Minimal HTML entity cleanup for common cases.
+    t = (
+        t.replace("&#39;", "'")
+        .replace("&apos;", "'")
+        .replace("&quot;", '"')
+        .replace("&amp;", "&")
+        .replace("&nbsp;", " ")
+    )
+    # Collapse whitespace
     t = re.sub(r"\s+", " ", t).strip()
     return t
 
-def score_article(a):
+def score_item(title: str, summary: str, source_name: str) -> float:
     """
-    Basic relevance score:
-    - +5 if source is trusted
-    - +X for Purdue keywords in title/snippet
-    - slight bump if title mentions Purdue directly
+    Heuristic scoring:
+    - big boost if we see Purdue/Matt Painter/etc
+    - medium boost if Big Ten / college basketball
+    - tiny boost if source is hyper-relevant (GoldandBlack, On3 Purdue, etc.)
     """
-    score = 0
-    src = (a.get("source") or "").lower()
+    text = f"{title} {summary}".lower()
+    score = 0.0
 
-    if a.get("source") in TRUSTED_SOURCES:
-        score += 5
-
-    title = (a.get("title") or "").lower()
-    snip  = (a.get("snippet") or "").lower()
-
-    # keyword hits
+    # Purdue-heavy?
     for kw in PURDUE_KEYWORDS:
-        if kw in title or kw in snip:
-            score += 3
+        if kw in text:
+            score += 5.0  # strong Purdue signal
 
-    # strong Purdue direct mention
-    if "purdue" in title:
-        score += 4
+    # General college hoops context
+    for kw in EXTRA_KEYWORDS:
+        if kw in text:
+            score += 1.0
 
-    # small recency bump (more recent -> higher)
-    pub = a.get("published") or ""
-    try:
-        dt = datetime.datetime.fromisoformat(pub.replace("Z", "+00:00"))
-        age_minutes = (datetime.datetime.now(timezone.utc) - dt).total_seconds() / 60.0
-        # newer -> less minutes -> bigger bump
-        if age_minutes < 60:
-            score += 2
-        elif age_minutes < 6 * 60:
-            score += 1
-    except Exception:
-        pass
+    # Prefer Purdue-specific outlets
+    if any(x in source_name.lower() for x in [
+        "goldandblack",
+        "purdue athletics",
+        "purdue mbb",
+        "boilermakers",
+        "on3",
+        "247sports",
+        "si purdue",
+    ]):
+        score += 2.0
 
     return score
 
-def to_iso_or_blank(published_raw: str) -> str:
+def dedupe(items):
     """
-    Try hard to normalize a published timestamp to ISO 8601 with Z.
-    If we can't, return "" so the front-end won't show 'Invalid Date'.
+    Avoid obvious duplicates (same normalized title).
     """
-    if not published_raw:
-        return ""
+    seen = set()
+    unique = []
+    for it in items:
+        norm_title = re.sub(r"\W+", "", it["title"].lower())
+        if norm_title in seen:
+            continue
+        seen.add(norm_title)
+        unique.append(it)
+    return unique
 
-    # if it's already close to iso
-    try:
-        dt = datetime.datetime.fromisoformat(published_raw.replace("Z", "+00:00"))
-        return dt.astimezone(timezone.utc).isoformat().replace("+00:00", "Z")
-    except Exception:
-        pass
+def build_item_id(link: str, title: str) -> str:
+    raw = (link or "") + "|" + title
+    h = hashlib.md5(raw.encode("utf-8")).hexdigest()
+    return h
 
-    # try some common RSS/date formats:
-    # Example: "Mon, 27 Oct 2025 13:45:00 GMT"
-    rss_match = re.match(
-        r"[A-Z][a-z]{2},\s+(\d{1,2})\s+([A-Z][a-z]{2})\s+(\d{4})\s+(\d\d:\d\d:\d\d)",
-        published_raw
-    )
-    if rss_match:
-        day, mon_abbr, year, hms = rss_match.groups()
-        mon_map = {
-            "Jan":1,"Feb":2,"Mar":3,"Apr":4,"May":5,"Jun":6,
-            "Jul":7,"Aug":8,"Sep":9,"Oct":10,"Nov":11,"Dec":12
-        }
-        if mon_abbr in mon_map:
-            try:
-                dt = datetime.datetime.strptime(
-                    f"{year}-{mon_map[mon_abbr]:02d}-{int(day):02d} {hms}",
-                    "%Y-%m-%d %H:%M:%S"
-                ).replace(tzinfo=timezone.utc)
-                return dt.isoformat().replace("+00:00","Z")
-            except Exception:
-                pass
+def epoch_to_iso8601(ts):
+    if not ts:
+        return None
+    return datetime.fromtimestamp(ts, tz=timezone.utc).isoformat()
 
-    # couldn't parse
-    return ""
-
-def article_key_for_dedupe(a):
-    """
-    We'll dedupe using URL (strong) and also normalized title as backup.
-    """
-    url = a.get("url","").strip().lower()
-    title = norm_text(a.get("title","")).lower()
-    combo = url + "||" + title
-    return hashlib.sha1(combo.encode("utf-8")).hexdigest()
-
-# -----------------
-# FETCH/BUILD DATA
-# -----------------
-
-def fetch_all_sources():
-    """
-    IMPORTANT NOTE:
-    In your real repo, you're already fetching feeds from Yahoo, ESPN, etc.
-    I'm not reimplementing network fetches here because that part is working.
-
-    Instead, I'm assuming you already built a `raw_items` list like:
-    [
-      {
-        "source": "...",
-        "title": "...",
-        "snippet": "...",
-        "url": "...",
-        "published": "...",
-      },
-      ...
-    ]
-
-    So here we'll just say `return raw_items`.
-    """
-
-    # You already have this logic in your working collector (requests, parsing, etc.).
-    # Keep that part. Just make sure you return the list in this shape.
-
-    # PLACEHOLDER: replace this block with your existing aggregation result.
-    # -------------------------------------------------
-    raw_items = []  # <-- your current scraped items list
-    # -------------------------------------------------
-
-    return raw_items
-
+# ---------------------------
+# MAIN COLLECT
+# ---------------------------
 
 def main():
-    raw_items = fetch_all_sources()
+    print("🔄 Loading sources...")
+    sources = load_sources()
 
-    cleaned = []
-    for art in raw_items:
-        cleaned.append({
-            "source": norm_text(art.get("source","")),
-            "title": norm_text(art.get("title","")),
-            "snippet": norm_text(art.get("snippet","")),
-            "url": art.get("url","").strip(),
-            "published": to_iso_or_blank(art.get("published","")),
-        })
+    all_items = []
 
-    # de-dupe
-    seen = set()
-    deduped = []
-    for a in cleaned:
-        k = article_key_for_dedupe(a)
-        if k in seen:
-            continue
-        seen.add(k)
-        deduped.append(a)
+    for src in sources:
+        name = src.get("name", "Unknown Source").strip()
+        feed_url = src.get("rss")  # may be None
+        scrape = src.get("scrape", {})  # {url, selectors{}}
 
-    # score + sort, highest score first
-    scored = []
-    for a in deduped:
-        scored.append((score_article(a), a))
-    scored.sort(key=lambda x: x[0], reverse=True)
+        pulled = []
 
-    final_items = [a for (_, a) in scored][:MAX_ITEMS]
+        if feed_url:
+            pulled = fetch_rss(feed_url)
+        elif scrape:
+            pulled = fetch_html(
+                scrape.get("url", ""),
+                scrape.get("selectors", {})
+            )
 
-    out = {
-        "items": final_items,
-        "collected_at": datetime.datetime.now(timezone.utc).isoformat().replace("+00:00","Z")
+        # normalize + annotate
+        for p in pulled:
+            title = clean_text(p.get("title", ""))
+            summary = clean_text(p.get("summary", ""))
+            link = p.get("link") or ""
+            published_ts = p.get("published_ts") or None
+
+            if not title and not summary:
+                continue
+
+            all_items.append(
+                {
+                    "title": title,
+                    "summary": summary,
+                    "url": link,
+                    "published_ts": published_ts,
+                    "source": name,
+                }
+            )
+
+    print(f"📦 Pulled raw {len(all_items)} items")
+
+    # score
+    for it in all_items:
+        it["score"] = score_item(it["title"], it["summary"], it["source"])
+
+    # sort by score desc then recency desc
+    all_items.sort(
+        key=lambda x: (
+            x["score"],
+            x["published_ts"] if x["published_ts"] else 0
+        ),
+        reverse=True,
+    )
+
+    # dedupe on title-ish
+    all_items = dedupe(all_items)
+
+    # slice
+    final_items = all_items[:MAX_ITEMS]
+
+    # final shape for site
+    now_iso = datetime.now(timezone.utc).isoformat()
+    site_items = []
+    for it in final_items:
+        site_items.append(
+            {
+                "id": build_item_id(it["url"], it["title"]),
+                "source": it["source"],
+                "title": it["title"],
+                "summary": it["summary"],
+                "url": it["url"],
+                "published": epoch_to_iso8601(it["published_ts"]),
+            }
+        )
+
+    output_obj = {
+        "updated": now_iso,
+        "items": site_items,
     }
 
-    with open("static/teams/purdue-mbb/items.json","w",encoding="utf-8") as f:
-        json.dump(out,f,ensure_ascii=False,indent=2)
+    # write
+    os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
+    with open(OUTPUT_PATH, "w") as f:
+        json.dump(output_obj, f, indent=2)
 
+    print(f"✅ Wrote {len(site_items)} stories to {OUTPUT_PATH}")
+    print("Done.")
 
 if __name__ == "__main__":
     main()
