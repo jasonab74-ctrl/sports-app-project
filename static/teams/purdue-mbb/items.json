@@ -1,366 +1,245 @@
-#!/usr/bin/env python3
-import os
-import json
-import time
-import re
-import hashlib
-import requests
-import feedparser
-from datetime import datetime, timezone
-from bs4 import BeautifulSoup
-from urllib.parse import urlparse
-
-# ---------------------------
-# CONFIG
-# ---------------------------
-
-HERE = os.path.dirname(os.path.abspath(__file__))
-PROJECT_ROOT = os.path.abspath(os.path.join(HERE, ".."))
-OUTPUT_PATH = os.path.join(
-    PROJECT_ROOT,
-    "static",
-    "teams",
-    "purdue-mbb",
-    "items.json"
-)
-
-SOURCES_PATH = os.path.join(
-    PROJECT_ROOT,
-    "static",
-    "teams",
-    "purdue-mbb",
-    "sources.json"
-)
-
-# Words that mean "this is actually about Purdue men's hoops"
-PURDUE_KEYWORDS = [
-    "purdue",
-    "boilermakers",
-    "matt painter",
-    "matt painter's",
-    "zach edey",
-    "mackey arena",
-    "west lafayette",
-    "braden smith",
-    "fletcher loyer",
-    "boilers",
-    "boilermaker",
-]
-
-# We will also include other college hoops headlines for context,
-# BUT we boost (score) Purdue-heavy stuff so it floats to top.
-EXTRA_KEYWORDS = [
-    "big ten",
-    "march madness",
-    "ncaa tournament",
-    "college basketball",
-]
-
-# Max number of articles we’ll keep
-MAX_ITEMS = 30
-
-USER_AGENT = (
-    "Mozilla/5.0 (compatible; PurdueMBBFanFeed/1.0; +https://github.com/jasonab74-ctrl)"
-)
-
-# ---------------------------
-# HELPERS
-# ---------------------------
-
-def load_sources():
-    with open(SOURCES_PATH, "r") as f:
-        return json.load(f)
-
-def fetch_rss(url: str):
-    """
-    Try to parse RSS/Atom. Returns list[dict] with minimal keys:
-    {title, summary, link, published_ts, source_name}
-    We do NOT crash if feed is bad.
-    """
-    try:
-        d = feedparser.parse(url)
-        items = []
-        for entry in d.entries:
-            title = getattr(entry, "title", "").strip()
-            summary = getattr(entry, "summary", "").strip()
-            link = getattr(entry, "link", "").strip()
-
-            # published / updated
-            published_ts = None
-            if hasattr(entry, "published_parsed") and entry.published_parsed:
-                published_ts = int(time.mktime(entry.published_parsed))
-            elif hasattr(entry, "updated_parsed") and entry.updated_parsed:
-                published_ts = int(time.mktime(entry.updated_parsed))
-
-            items.append(
-                {
-                    "title": title,
-                    "summary": summary,
-                    "link": link,
-                    "published_ts": published_ts,
-                }
-            )
-        return items
-    except Exception:
-        return []
-
-def fetch_html(url: str, selector_rules: dict):
-    """
-    "Poor man's scrape" for sources that don't expose RSS.
-    selector_rules looks like:
+{
+  "updated": "2025-10-28T15:19:38.499962+00:00",
+  "items": [
     {
-      "item": ".story-card",
-      "title": ".headline",
-      "summary": ".dek",
-      "link": "a",
-      "time": "time"
+      "id": "a5f9068c97d06c8d49d21b395733f697",
+      "source": "Purdue Athletics MBB",
+      "title": "#1 Purdue Faces UIndy in Final Exhibition Tuneup",
+      "summary": "Boilermakers have won 35 straight home exhibition games.",
+      "url": "https://purduesports.com/news/2025/10/27/1-purdue-faces-uindy-in-final-exhibition-tuneup",
+      "published": "2025-10-27T19:56:28+00:00"
+    },
+    {
+      "id": "0c439c45928ab413c59c7664bc06321f",
+      "source": "Yahoo Sports College Basketball",
+      "title": "Braden Smith takes accountability in Purdue basketball's 'eye-opener' at Kentucky",
+      "summary": "Coach Matt Painter said he wasn't worried offensively but the same wasn't true defensively. Plus a look guard and center players from the game at Kentucky.",
+      "url": "https://www.indystar.com/story/sports/college/purdue/2025/10/27/purdue-basketball-defense-matt-painter-braden-smith-accountable-loss-uk-score-cj-cox-gicarri-harris/86919822007/",
+      "published": "2025-10-27T08:47:18+00:00"
+    },
+    {
+      "id": "43ab9d69bcd4b3b513ed11bd83a4d3c5",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Go Perfect on Day 2 of Rome Invite",
+      "summary": "",
+      "url": "https://purduesports.com/news/2025/10/26/boilermakers-go-perfect-on-day-2-of-rome-invite",
+      "published": "2025-10-26T01:52:30+00:00"
+    },
+    {
+      "id": "ba77ca81efbda829321fc5f5ef92bb13",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Finish T-6th at Rain-Shortened Steelwood",
+      "summary": "Third round rained out in Alabama.",
+      "url": "https://purduesports.com/news/2025/10/26/boilermakers-in-middle-of-the-pack-at-steelwood",
+      "published": "2025-10-26T00:13:08+00:00"
+    },
+    {
+      "id": "4abca01432e825181446b93424b41e1a",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilers Drop Close Homecoming Game to Rutgers",
+      "summary": "Purdue's Homecoming was spoiled by a 27-24 heartbreaker in Ross-Ade.",
+      "url": "https://purduesports.com/news/2025/10/25/boilers-drop-close-homecoming-game-to-rutgers",
+      "published": "2025-10-25T19:56:28+00:00"
+    },
+    {
+      "id": "9da336fd6e7d0826e4ad905551520298",
+      "source": "Purdue Athletics MBB",
+      "title": "Head Coach Matt Painter Press Conference | Purdue Men's Basketball",
+      "summary": "",
+      "url": "https://purduesports.com/news/2025/10/23/head-coach-matt-painter-press-conference-purdue-mens-basketball",
+      "published": "2025-10-23T18:40:24+00:00"
+    },
+    {
+      "id": "1d73b6d32e8064624fef31a9f00dca4f",
+      "source": "Purdue Athletics MBB",
+      "title": "G Fletcher Loyer Media Session | Purdue Men's Basketball",
+      "summary": "",
+      "url": "https://purduesports.com/news/2025/10/23/g-fletcher-loyer-media-session-purdue-mens-basketball",
+      "published": "2025-10-23T18:34:22+00:00"
+    },
+    {
+      "id": "3ab7f327b15563a460b60e99f3b746c5",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilers Fall in Home Finale",
+      "summary": "Purdue soccer dropped its home finale Sunday night, falling 3\u20131 to Northwestern at Folk Field.",
+      "url": "https://purduesports.com/news/2025/10/20/boilers-fall-in-home-finale",
+      "published": "2025-10-20T01:29:53+00:00"
+    },
+    {
+      "id": "6a9a6c2159529a48ca7b48eb759ced68",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Leap Past #1 Wake Forest to End the Fall",
+      "summary": "",
+      "url": "https://purduesports.com/news/2025/10/19/boilermakers-leap-past-1-wake-forest-to-end-the-fall",
+      "published": "2025-10-19T20:24:53+00:00"
+    },
+    {
+      "id": "0155873d163232472489269c4f7811b3",
+      "source": "Yahoo Sports College Basketball",
+      "title": "Purdue\u2019s Matt Painter regrets not talking about an NCAA title last year. This season, it\u2019s different",
+      "summary": "Matt Painter believes one of his mistakes last year was not talking about playing for the title enough.",
+      "url": "https://www.nbcsports.com/mens-college-basketball/news/purdues-matt-painter-regrets-not-talking-about-an-ncaa-title-last-year-this-season-its-different",
+      "published": "2025-10-27T15:52:14+00:00"
+    },
+    {
+      "id": "ef76283597909aeedb50f756277c6a10",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Scores 118 in Exhibition Win over Purdue Northwest",
+      "summary": "",
+      "url": "https://purduesports.com/news/2025/10/28/purdue-scores-118-in-exhibition-win-over-purdue-northwest",
+      "published": "2025-10-28T01:51:08+00:00"
+    },
+    {
+      "id": "0ab16ccaf55aed488e65cf0845058251",
+      "source": "Purdue Athletics MBB",
+      "title": "Game Highlights: #11 Purdue 3, #20 Minnesota 2",
+      "summary": "",
+      "url": "https://purduesports.com/news/2025/10/27/game-highlights-11-purdue-3-20-minnesota-2",
+      "published": "2025-10-27T16:08:10+00:00"
+    },
+    {
+      "id": "f693a3576c061ad4ba99142456ca0fb8",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Barry Odom Press Conference | Purdue Football",
+      "summary": "",
+      "url": "https://purduesports.com/news/2025/10/27/coach-barry-odom-press-conference-purdue-football-1",
+      "published": "2025-10-27T16:00:26+00:00"
+    },
+    {
+      "id": "49c512752a5a6f4ce40f2284a6ff5077",
+      "source": "Purdue Athletics MBB",
+      "title": "OC Josh Henson Press Conference | Purdue Football",
+      "summary": "",
+      "url": "https://purduesports.com/news/2025/10/27/oc-josh-henson-press-conference-purdue-football",
+      "published": "2025-10-27T15:57:37+00:00"
+    },
+    {
+      "id": "16edb9443d6629958c1bf7ddc076e0c2",
+      "source": "Purdue Athletics MBB",
+      "title": "DC Mike Scherer Press Conference vs. Michigan | Purdue Football",
+      "summary": "",
+      "url": "https://purduesports.com/news/2025/10/27/dc-mike-scherer-press-conference-vs-michigan-purdue-football",
+      "published": "2025-10-27T15:55:53+00:00"
+    },
+    {
+      "id": "1392aeef376f1cf6e256bd3d52f5bb6e",
+      "source": "Purdue Athletics MBB",
+      "title": "TE Christian Moore Media Session | Purdue Football",
+      "summary": "",
+      "url": "https://purduesports.com/news/2025/10/27/te-christian-moore-media-session-purdue-football",
+      "published": "2025-10-27T15:52:59+00:00"
+    },
+    {
+      "id": "ba5986a7a43e78f97ce32c541b5121f4",
+      "source": "Purdue Athletics MBB",
+      "title": "DB Hershey McLaurin Media Session | Purdue Football",
+      "summary": "",
+      "url": "https://purduesports.com/news/2025/10/27/db-hershey-mclaurin-media-session-purdue-football",
+      "published": "2025-10-27T15:50:31+00:00"
+    },
+    {
+      "id": "657b4ace2f17fb2bcf54872f624d8b4c",
+      "source": "Purdue Athletics MBB",
+      "title": "Wrestling Season Preview: 125-141 lbs",
+      "summary": "A positional breakdown of Purdue's 2025-26 squad, covering 125 lbs through 141 lbs.",
+      "url": "https://purduesports.com/news/2025/10/27/wrestling-season-preview-125-141-lbs",
+      "published": "2025-10-27T14:00:00+00:00"
+    },
+    {
+      "id": "fe0814f754879fb825caf395cd5ecf4c",
+      "source": "Purdue Athletics MBB",
+      "title": "#11 Purdue Reverse Sweeps #20 Minnesota",
+      "summary": "",
+      "url": "https://purduesports.com/news/2025/10/26/11-purdue-reverse-sweeps-20-minnesota",
+      "published": "2025-10-26T20:35:00+00:00"
+    },
+    {
+      "id": "824ae4fc83fcae173280ab5dcec02646",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Closes Out Season with 2-0 Victory",
+      "summary": "Purdue soccer finished the 2025 season on a high note Sunday afternoon, earning a 2\u20130 shutout victory over Minnesota at Elizabeth Lyle Robbie Stadium.",
+      "url": "https://purduesports.com/news/2025/10/26/purdue-closes-out-season-with-2-0-victory",
+      "published": "2025-10-26T20:33:09+00:00"
+    },
+    {
+      "id": "1e7b2cf6cc0fdcd59aabfee94f75cba5",
+      "source": "Purdue Athletics MBB",
+      "title": "Halloween Bash at Alexander Moved Up to Tuesday",
+      "summary": "Purdue Baseball's annual free and all ages Halloween Bash at Alexander Field has been moved up one day to Tuesday, Oct. 28 at 6 p.m.",
+      "url": "https://purduesports.com/news/2025/10/26/halloween-bash-at-alexander-moved-up-to-tuesday",
+      "published": "2025-10-26T17:56:00+00:00"
+    },
+    {
+      "id": "508eac448779cb81a19dd6bdc2e2bc1e",
+      "source": "Purdue Athletics MBB",
+      "title": "Game Highlights: Purdue 3, Illinois 0 | Purdue Volleyball",
+      "summary": "",
+      "url": "https://purduesports.com/news/2025/10/25/game-highlights-purdue-3-illinois-0-purdue-volleyball",
+      "published": "2025-10-25T20:04:34+00:00"
+    },
+    {
+      "id": "520162fefc5731127b7aa9a3323bfe1c",
+      "source": "Purdue Athletics MBB",
+      "title": "Head Coach Barry Odom Postgame Press Conference | Purdue Football",
+      "summary": "",
+      "url": "https://purduesports.com/news/2025/10/25/head-coach-barry-odom-postgame-press-conference-purdue-football",
+      "published": "2025-10-25T19:58:43+00:00"
+    },
+    {
+      "id": "2e632943b19abf67867c9237dd3bcf99",
+      "source": "Purdue Athletics MBB",
+      "title": "Players Postgame Press Conference | Purdue Football",
+      "summary": "",
+      "url": "https://purduesports.com/news/2025/10/25/players-postgame-press-conference-purdue-football",
+      "published": "2025-10-25T19:56:58+00:00"
+    },
+    {
+      "id": "1b43d6dd52765ed7128ac7a6ccfff432",
+      "source": "Purdue Athletics MBB",
+      "title": "#11 Purdue Brings Champaign Problems",
+      "summary": "",
+      "url": "https://purduesports.com/news/2025/10/25/11-purdue-brings-champaign-problems",
+      "published": "2025-10-25T02:10:00+00:00"
+    },
+    {
+      "id": "b84a0c7afb0e3754955fa151a6fed66f",
+      "source": "Purdue Athletics MBB",
+      "title": "#1 Purdue vs. #9 Kentucky",
+      "summary": "",
+      "url": "https://purduesports.com/news/2025/10/25/1-purdue-vs-9-kentucky",
+      "published": "2025-10-25T00:51:09+00:00"
+    },
+    {
+      "id": "8f5b253119a0917767d032525a15cbcd",
+      "source": "Purdue Athletics MBB",
+      "title": "#1 Purdue Falls to #9 Kentucky in Exhibition Game",
+      "summary": "#1 Purdue fell to #9 Kentucky in an exhibition game at Rupp Arena.",
+      "url": "https://purduesports.com/news/2025/10/25/1-purdue-falls-to-9-kentucky-in-exhibition-game",
+      "published": "2025-10-25T00:41:52+00:00"
+    },
+    {
+      "id": "4e886b891c1bac44bff6b452a9b7af13",
+      "source": "Purdue Athletics MBB",
+      "title": "C Daniel Jacobsen Media Session | Purdue Men's Basketball",
+      "summary": "",
+      "url": "https://purduesports.com/news/2025/10/23/c-daniel-jacobsen-media-session-purdue-mens-basketball",
+      "published": "2025-10-23T18:33:07+00:00"
+    },
+    {
+      "id": "e7d08d51e5da258de60b05632e94dd5e",
+      "source": "Purdue Athletics MBB",
+      "title": "WR Michael Jackson III Media Session | Purdue Football",
+      "summary": "",
+      "url": "https://purduesports.com/news/2025/10/22/wr-michael-jackson-iii-media-session-purdue-football",
+      "published": "2025-10-22T15:11:44+00:00"
+    },
+    {
+      "id": "f6d103a684a664853c1187ff69ad362e",
+      "source": "Purdue Athletics MBB",
+      "title": "DB Hudauri Hines Media Session | Purdue Football",
+      "summary": "",
+      "url": "https://purduesports.com/news/2025/10/22/db-hudauri-hines-media-session-purdue-football",
+      "published": "2025-10-22T15:10:43+00:00"
     }
-    Everything is best-effort / safe-fail.
-    """
-    try:
-        resp = requests.get(url, headers={"User-Agent": USER_AGENT}, timeout=10)
-    except Exception:
-        return []
-
-    if resp.status_code != 200:
-        return []
-
-    soup = BeautifulSoup(resp.text, "html.parser")
-    cards = soup.select(selector_rules.get("item", "")) or []
-    results = []
-    for card in cards:
-        title_el = card.select_one(selector_rules.get("title", ""))
-        summary_el = card.select_one(selector_rules.get("summary", ""))
-        link_el = card.select_one(selector_rules.get("link", "a"))
-        time_el = card.select_one(selector_rules.get("time", ""))
-
-        title = (title_el.get_text(" ", strip=True) if title_el else "").strip()
-        summary = (summary_el.get_text(" ", strip=True) if summary_el else "").strip()
-        link = ""
-        if link_el and link_el.has_attr("href"):
-            link = link_el["href"].strip()
-            # make absolute if needed
-            if link.startswith("/"):
-                parsed = urlparse(url)
-                link = f"{parsed.scheme}://{parsed.netloc}{link}"
-
-        published_ts = None
-        if time_el:
-            # attempt to parse datetime attr first
-            dt_val = ""
-            if time_el.has_attr("datetime"):
-                dt_val = time_el["datetime"]
-            else:
-                dt_val = time_el.get_text(strip=True)
-            published_ts = try_parse_datetime_to_epoch(dt_val)
-
-        # If there's literally no text, skip
-        if not title and not summary:
-            continue
-
-        results.append(
-            {
-                "title": title,
-                "summary": summary,
-                "link": link,
-                "published_ts": published_ts,
-            }
-        )
-
-    return results
-
-def try_parse_datetime_to_epoch(dt_str: str):
-    """
-    Try a couple common formats → epoch (int).
-    If it fails, return None.
-    """
-    if not dt_str:
-        return None
-
-    FORMATS = [
-        "%Y-%m-%dT%H:%M:%S%z",
-        "%Y-%m-%dT%H:%M:%S.%f%z",
-        "%Y-%m-%d %H:%M:%S%z",
-        "%Y-%m-%d %H:%M:%S",
-        "%a, %d %b %Y %H:%M:%S %Z",
-    ]
-    for fmt in FORMATS:
-        try:
-            dt = datetime.strptime(dt_str, fmt)
-            return int(dt.timestamp())
-        except Exception:
-            pass
-    return None
-
-def clean_text(t: str) -> str:
-    """
-    Clean up the '&#39;' junk etc so it doesn't look broken on page.
-    """
-    if not t:
-        return ""
-    # Minimal HTML entity cleanup for common cases.
-    t = (
-        t.replace("&#39;", "'")
-        .replace("&apos;", "'")
-        .replace("&quot;", '"')
-        .replace("&amp;", "&")
-        .replace("&nbsp;", " ")
-    )
-    # Collapse whitespace
-    t = re.sub(r"\s+", " ", t).strip()
-    return t
-
-def score_item(title: str, summary: str, source_name: str) -> float:
-    """
-    Heuristic scoring:
-    - big boost if we see Purdue/Matt Painter/etc
-    - medium boost if Big Ten / college basketball
-    - tiny boost if source is hyper-relevant (GoldandBlack, On3 Purdue, etc.)
-    """
-    text = f"{title} {summary}".lower()
-    score = 0.0
-
-    # Purdue-heavy?
-    for kw in PURDUE_KEYWORDS:
-        if kw in text:
-            score += 5.0  # strong Purdue signal
-
-    # General college hoops context
-    for kw in EXTRA_KEYWORDS:
-        if kw in text:
-            score += 1.0
-
-    # Prefer Purdue-specific outlets
-    if any(x in source_name.lower() for x in [
-        "goldandblack",
-        "purdue athletics",
-        "purdue mbb",
-        "boilermakers",
-        "on3",
-        "247sports",
-        "si purdue",
-    ]):
-        score += 2.0
-
-    return score
-
-def dedupe(items):
-    """
-    Avoid obvious duplicates (same normalized title).
-    """
-    seen = set()
-    unique = []
-    for it in items:
-        norm_title = re.sub(r"\W+", "", it["title"].lower())
-        if norm_title in seen:
-            continue
-        seen.add(norm_title)
-        unique.append(it)
-    return unique
-
-def build_item_id(link: str, title: str) -> str:
-    raw = (link or "") + "|" + title
-    h = hashlib.md5(raw.encode("utf-8")).hexdigest()
-    return h
-
-def epoch_to_iso8601(ts):
-    if not ts:
-        return None
-    return datetime.fromtimestamp(ts, tz=timezone.utc).isoformat()
-
-# ---------------------------
-# MAIN COLLECT
-# ---------------------------
-
-def main():
-    print("🔄 Loading sources...")
-    sources = load_sources()
-
-    all_items = []
-
-    for src in sources:
-        name = src.get("name", "Unknown Source").strip()
-        feed_url = src.get("rss")  # may be None
-        scrape = src.get("scrape", {})  # {url, selectors{}}
-
-        pulled = []
-
-        if feed_url:
-            pulled = fetch_rss(feed_url)
-        elif scrape:
-            pulled = fetch_html(
-                scrape.get("url", ""),
-                scrape.get("selectors", {})
-            )
-
-        # normalize + annotate
-        for p in pulled:
-            title = clean_text(p.get("title", ""))
-            summary = clean_text(p.get("summary", ""))
-            link = p.get("link") or ""
-            published_ts = p.get("published_ts") or None
-
-            if not title and not summary:
-                continue
-
-            all_items.append(
-                {
-                    "title": title,
-                    "summary": summary,
-                    "url": link,
-                    "published_ts": published_ts,
-                    "source": name,
-                }
-            )
-
-    print(f"📦 Pulled raw {len(all_items)} items")
-
-    # score
-    for it in all_items:
-        it["score"] = score_item(it["title"], it["summary"], it["source"])
-
-    # sort by score desc then recency desc
-    all_items.sort(
-        key=lambda x: (
-            x["score"],
-            x["published_ts"] if x["published_ts"] else 0
-        ),
-        reverse=True,
-    )
-
-    # dedupe on title-ish
-    all_items = dedupe(all_items)
-
-    # slice
-    final_items = all_items[:MAX_ITEMS]
-
-    # final shape for site
-    now_iso = datetime.now(timezone.utc).isoformat()
-    site_items = []
-    for it in final_items:
-        site_items.append(
-            {
-                "id": build_item_id(it["url"], it["title"]),
-                "source": it["source"],
-                "title": it["title"],
-                "summary": it["summary"],
-                "url": it["url"],
-                "published": epoch_to_iso8601(it["published_ts"]),
-            }
-        )
-
-    output_obj = {
-        "updated": now_iso,
-        "items": site_items,
-    }
-
-    # write
-    os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
-    with open(OUTPUT_PATH, "w") as f:
-        json.dump(output_obj, f, indent=2)
-
-    print(f"✅ Wrote {len(site_items)} stories to {OUTPUT_PATH}")
-    print("Done.")
-
-if __name__ == "__main__":
-    main()
+  ]
+}
