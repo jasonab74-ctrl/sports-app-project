@@ -2,58 +2,373 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Purdue Men's Basketball Fan Feed – automatically surfacing the latest Boilermakers hoops headlines from trusted sources." />
-  <meta name="theme-color" content="#000000" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Purdue Men's Basketball News</title>
+  <style>
+    :root {
+      --bg-main: #000;
+      --bg-card: #1a1a1a;
+      --bg-card-grad: radial-gradient(circle at 20% 0%, rgba(255,255,255,0.08) 0%, rgba(0,0,0,0) 70%);
+      --text-primary: #fff;
+      --text-secondary: #cfcfcf;
+      --text-dim: #9a9a9a;
+      --accent-gold: #cbb36a;
+      --border-card: rgba(255,255,255,0.07);
+      --border-top: #cbb36a33;
+    }
 
-  <title>Purdue Boilermakers Men's Basketball News</title>
+    body {
+      margin: 0;
+      background-color: var(--bg-main);
+      color: var(--text-primary);
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.4;
+      -webkit-font-smoothing: antialiased;
+    }
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="static/img/purdue.png" />
+    .page-shell {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="static/css/pro.css" />
+    /* ===== HEADER STRIP ===== */
+    .header-bar {
+      background-color: #000;
+      border-bottom: 1px solid var(--border-top);
+      padding: 16px 16px 12px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .header-left {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 12px;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .p-logo {
+      background-color: #d8c691;
+      color: #000;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 1;
+      font-family: Georgia, "Times New Roman", serif;
+      border-radius: 8px;
+      padding: 10px 14px;
+      align-self: flex-start;
+      flex-shrink: 0;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+    }
+
+    .title-block {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .title-line {
+      color: var(--accent-gold);
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .subtitle-line {
+      color: var(--text-primary);
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .updated-pill {
+      background-color: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 6px;
+      color: var(--text-primary);
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.2;
+      padding: 6px 10px;
+      white-space: nowrap;
+      align-self: flex-start;
+    }
+
+    /* ===== FEED GRID WRAPPER ===== */
+    .feed-wrapper {
+      flex: 1;
+      background-color: #000;
+      background-image: radial-gradient(circle at 50% 0%, rgba(255,255,255,0.07) 0%, rgba(0,0,0,0) 70%);
+      padding: 16px;
+    }
+
+    .feed-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    @media(min-width:700px){
+      .feed-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+    }
+    @media(min-width:1100px){
+      .feed-grid {
+        grid-template-columns: repeat(3,1fr);
+      }
+    }
+
+    /* ===== ARTICLE CARD ===== */
+    .card {
+      background-color: var(--bg-card);
+      background-image: var(--bg-card-grad);
+      border-radius: 12px;
+      border: 1px solid var(--border-card);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+      padding: 16px 16px 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-source-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      gap: 8px 12px;
+    }
+
+    .card-source {
+      color: var(--accent-gold);
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .card-headline {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.3;
+      margin: 0 0 12px;
+      word-break: break-word;
+    }
+
+    .card-blurb {
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--text-secondary);
+      line-height: 1.45;
+      margin: 0;
+      word-break: break-word;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer-shell {
+      border-top: 1px solid var(--border-top);
+      background-color: #000;
+      padding: 24px 16px 48px;
+      color: var(--text-primary);
+    }
+
+    .footer-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .footer-headline {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.4;
+      margin: 0 0 8px;
+      color: var(--text-primary);
+    }
+
+    .footer-desc {
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin: 0 0 20px;
+    }
+
+    .footer-sources-label {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 0 0 6px;
+    }
+
+    .footer-sources {
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--text-dim);
+      word-break: break-word;
+    }
+  </style>
 </head>
-<body class="theme-purdue">
+<body>
+<div class="page-shell">
 
   <!-- HEADER -->
-  <header class="headline-header">
-    <div class="headline-shell">
-      <div class="brand-left">
-        <div class="brand-logo">P</div>
-        <div class="brand-copy">
-          <div class="brand-team">Purdue Boilermakers</div>
-          <div class="brand-scope">Men’s Basketball News</div>
-        </div>
+  <header class="header-bar">
+    <div class="header-left">
+      <div class="p-logo">P</div>
+      <div class="title-block">
+        <div class="title-line">Purdue Boilermakers</div>
+        <div class="subtitle-line">Men’s Basketball News</div>
       </div>
-      <div class="updated-time">Updated <span id="lastUpdated">—</span></div>
+    </div>
+    <div class="updated-pill">
+      <!-- We show one clean timestamp, e.g. "Updated 9:18 AM" -->
+      <!-- We read this from the JSON file's "last_updated" field -->
+      <!-- JS below will populate it -->
+      <span id="updated-label">Updated …</span>
     </div>
   </header>
 
-  <!-- MAIN FEED -->
+  <!-- FEED GRID -->
   <main class="feed-wrapper">
-    <div id="feedGrid" class="feed-grid">
-      <!-- Cards will be injected here by pro.js -->
-    </div>
+    <section id="feed" class="feed-grid">
+      <!-- Cards will be injected here by inline JS -->
+    </section>
   </main>
 
   <!-- FOOTER -->
-  <footer class="site-footer">
+  <footer class="footer-shell">
     <div class="footer-inner">
-      <div class="footer-title">Purdue Men's Basketball Fan Feed</div>
-      <div class="footer-note">
+      <p class="footer-headline">Purdue Men's Basketball Fan Feed</p>
+      <p class="footer-desc">
         Unofficial. Automatically surfaces the latest Purdue hoops headlines.
-      </div>
+      </p>
 
-      <!-- Added for dynamic source listing -->
-      <div id="footerSources" class="footer-note" style="margin-top:1rem;">
-        <!-- Filled dynamically by pro.js -->
-      </div>
+      <p class="footer-sources-label">Sources we monitor:</p>
+      <p class="footer-sources" id="sources-list">
+        <!-- will be filled from items.json 'sources' -->
+      </p>
     </div>
   </footer>
 
-  <!-- JS -->
-  <script src="static/js/pro.js" defer></script>
+</div>
+
+<script>
+(async function () {
+  try {
+    // fetch the data file your workflow updates
+    const resp = await fetch('./static/teams/purdue-mbb/items.json?cachebust=' + Date.now());
+    const data = await resp.json();
+
+    // data.items is expected to be an array of articles
+    // each article should look like:
+    // {
+    //   "source": "Yahoo Sports College Basketball",
+    //   "title": "Braden Smith ...",
+    //   "summary": "Coach Matt Painter said ...",
+    //   "published": "2025-10-27T13:00:00Z",
+    //   "url": "https://...",
+    // }
+    //
+    // data.sources might be e.g. ["GoldandBlack.com", "On3 Purdue Basketball", ...]
+    // data.last_updated should be the ISO timestamp the collector wrote.
+
+    const feedEl = document.getElementById('feed');
+    const updatedEl = document.getElementById('updated-label');
+    const sourcesEl = document.getElementById('sources-list');
+
+    // ---- 1. Updated timestamp (top right pill)
+    if (data.last_updated) {
+      const d = new Date(data.last_updated);
+      if (!isNaN(d.getTime())) {
+        // format like "Updated 9:18 AM"
+        const timeStr = d.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+        updatedEl.textContent = `Updated ${timeStr}`;
+      } else {
+        updatedEl.textContent = 'Updated just now';
+      }
+    } else {
+      updatedEl.textContent = 'Updated just now';
+    }
+
+    // ---- 2. Sources list in footer
+    if (Array.isArray(data.sources) && data.sources.length > 0) {
+      sourcesEl.textContent = data.sources.join(' · ');
+    } else {
+      // fallback to what we had hard-coded before
+      sourcesEl.textContent = [
+        "GoldandBlack.com",
+        "On3 Purdue Basketball",
+        "247Sports Purdue Basketball",
+        "Purdue Athletics MBB",
+        "ESPN Purdue MBB",
+        "Yahoo Sports College Basketball",
+        "CBS Sports College Basketball",
+        "The Field of 68",
+        "SI Purdue Basketball",
+        "USA Today Purdue Boilermakers"
+      ].join(' · ');
+    }
+
+    // ---- 3. Render cards
+    if (Array.isArray(data.items)) {
+      // We’ll only render the first ~30 to avoid blowing up mobile
+      data.items.slice(0, 30).forEach(item => {
+        // normalize text and strip weird &#39;
+        const decode = (str) => {
+          if (!str) return '';
+          return str
+            .replace(/&#39;/g, "'")
+            .replace(/&quot;/g, '"')
+            .replace(/&amp;/g, '&')
+            .replace(/&nbsp;/g, ' ')
+            .trim();
+        };
+
+        const source = decode(item.source || '');
+        const title = decode(item.title || '');
+        const summary = decode(item.summary || '');
+
+        // We are NOT showing per-article date right now,
+        // because "Invalid Date" was loud and annoying and mostly wrong.
+        // We'll add it back later after we clean the collector timestamps.
+
+        const card = document.createElement('article');
+        card.className = 'card';
+
+        card.innerHTML = `
+          <div class="card-source-row">
+            <div class="card-source">${source || ""}</div>
+          </div>
+          <h2 class="card-headline">${title}</h2>
+          <p class="card-blurb">${summary}</p>
+        `;
+
+        // click -> open article source
+        if (item.url) {
+          card.style.cursor = 'pointer';
+          card.addEventListener('click', () => {
+            window.open(item.url, '_blank', 'noopener,noreferrer');
+          });
+        }
+
+        feedEl.appendChild(card);
+      });
+    }
+  } catch (err) {
+    console.error('Failed to render feed:', err);
+    // graceful fallback: feed just stays empty
+  }
+})();
+</script>
 
 </body>
 </html>
