@@ -29,20 +29,20 @@ STRONG_HOOPS_TERMS = [
     "boilermakers men's basketball",
     "boilermakers men’s basketball",
     "boilermakers hoops",
-    "painter",           # Matt Painter
+    "painter",
+    "matt painter",
     "braden smith",
     "zach edey",
     "trey kaufman-renn",
     "fletcher loyer",
     "mason gillis",
-    "big ten media day",
-    "exhibition",        # preseason games/scrimmages
-    "scrimmage",
-    "kentucky",          # often tied to preseason scrimmage
-    "rupp arena",
-    "mbb",               # Purdue Athletics uses MBB
+    "mbb",
     "men's basketball",
-    "men’s basketball"
+    "men’s basketball",
+    "exhibition",
+    "scrimmage",
+    "kentucky",
+    "rupp arena",
 ]
 
 GENERAL_PURDUE_TERMS = [
@@ -50,13 +50,12 @@ GENERAL_PURDUE_TERMS = [
     "boilermakers",
     "boilermaker",
     "mackey arena",
-    "matt painter",
     "purdue athletics",
     "purdue mbb",
     "boiler ball",
 ]
 
-# obvious non-hoops sports; we DOWNWEIGHT but we don't insta-kill
+# obvious non-hoops sports; we DOWNWEIGHT
 OTHER_SPORT_TERMS = [
     "football",
     "volleyball",
@@ -89,6 +88,20 @@ def parse_date_struct(dt_struct):
         return 0
 
 
+def short_date_from_ts(epoch_sec):
+    """
+    Given epoch seconds, return e.g. 'Oct 27'.
+    If 0 or invalid, return 'Just now' so frontend never sees ''.
+    """
+    if epoch_sec and epoch_sec > 0:
+        try:
+            d = datetime.datetime.fromtimestamp(epoch_sec)
+            return d.strftime("%b %d")
+        except Exception:
+            pass
+    return "Just now"
+
+
 def fetch_feed(url, display_name):
     """
     Fetch and normalize items from either RSS/Atom or (if not RSS) HTML page.
@@ -98,7 +111,7 @@ def fetch_feed(url, display_name):
         "summary": ...,
         "link": ...,
         "published_ts": <epoch seconds>,
-        "published_human": "Oct 27",
+        "published_human": "Oct 27" (or "Just now"),
         "source": display_name
     }
     """
@@ -117,7 +130,6 @@ def fetch_feed(url, display_name):
                 or ""
             ).strip()
 
-            # pick a date
             published_ts = 0
             published_ts = max(
                 published_ts,
@@ -125,38 +137,28 @@ def fetch_feed(url, display_name):
                 parse_date_struct(e.get("updated_parsed")),
             )
 
-            # nice short date (e.g. "Oct 27")
-            if published_ts:
-                d = datetime.datetime.fromtimestamp(published_ts)
-                published_human = d.strftime("%b %d")
-            else:
-                published_human = ""
-
             out.append({
                 "title": title,
                 "summary": summary,
                 "link": link,
                 "published_ts": published_ts,
-                "published_human": published_human,
+                "published_human": short_date_from_ts(published_ts),
                 "source": display_name,
             })
         return out
 
-    # If it's not RSS, do a simple HTML scrape fallback.
-    # We'll try to grab headlines off the page.
+    # If it's not RSS, basic HTML scrape fallback
     try:
         resp = requests.get(url, timeout=10)
         resp.raise_for_status()
         soup = BeautifulSoup(resp.text, "html.parser")
 
-        # super simple heuristic: <article> blocks, or headline links
+        # look for <article>, fallback to <a>
         articles = soup.find_all("article")
         if not articles:
-            # fallback to links in main content
             articles = soup.select("a")
 
         for a in articles:
-            # try to find a headline-ish text
             headline = ""
             teaser = ""
             link = ""
@@ -167,26 +169,23 @@ def fetch_feed(url, display_name):
             if hasattr(a, "get"):
                 link = a.get("href") or ""
                 if link.startswith("/"):
-                    # make absolute
                     base = "{uri.scheme}://{uri.netloc}".format(uri=urlparse(url))
                     link = base + link
 
-            # basic sanity: must have some headline-like content and a link
+            # skip garbage
             if len(headline.split()) < 3 or not link:
                 continue
 
-            # we don't have published timestamps from raw scrape; set 0
             out.append({
                 "title": headline,
                 "summary": teaser,
                 "link": link,
                 "published_ts": 0,
-                "published_human": "",
+                "published_human": short_date_from_ts(0),
                 "source": display_name,
             })
 
     except Exception:
-        # swallow network/parse errors for this source
         pass
 
     return out
@@ -214,7 +213,7 @@ def score_item(item):
         if kw in t:
             score += 2
 
-    # downweight obvious non-hoops sports if they appear
+    # downweight obvious non-hoops sports
     for kw in OTHER_SPORT_TERMS:
         if kw in t:
             score -= 3
@@ -227,8 +226,11 @@ def score_item(item):
         score += 3
     if "purdue athletics" in src and "basketball" in t:
         score += 2
-    if "goldandblack" in src or "on3" in src or "247sports" in src:
-        # these guys cover Purdue hoops heavily
+    if ("goldandblack" in src
+        or "on3" in src
+        or "247sports" in src
+        or "247 sports" in src):
+        # heavy Purdue recruiting / beat coverage
         score += 2
 
     return score
@@ -246,6 +248,23 @@ def dedupe(items):
         if not prev or it["published_ts"] > prev["published_ts"]:
             by_key[key] = it
     return list(by_key.values())
+
+
+def ensure_nonempty_payload(payload):
+    """
+    Safety: if we somehow ended up with [], create a single debug card.
+    This prevents the frontend from ever rendering 'No recent stories found.'
+    and tells us clearly that collector ran but filtering killed everything.
+    """
+    if payload:
+        return payload
+    return [{
+        "title": "No Purdue MBB stories matched filters",
+        "summary": "Collector ran successfully but strict filters removed everything. This is a fallback card.",
+        "link": "",
+        "published": "Just now",
+        "source": "Collector Debug",
+    }]
 
 
 def main():
@@ -270,29 +289,37 @@ def main():
     for it in all_items:
         it["score"] = score_item(it)
 
-    # 5. Sort by published_ts desc first, then by score desc as tiebreak
-    # (newest first is your requirement; score helps order within same timestamp)
+    # 5. Sort newest -> oldest, tiebreak by score
     def sort_key(it):
         return (it["published_ts"], it["score"])
     all_items.sort(key=sort_key, reverse=True)
 
-    # 6. Soft filter:
-    # Keep anything with score >= 1
+    # 6. Primary filter: score >= 1
     filtered = [it for it in all_items if it["score"] >= 1]
 
-    # 7. Fallback if we accidentally got too aggressive and killed everything
+    # 7. Fallback filter if primary is empty
     if not filtered:
-        # fallback strategy:
-        # grab anything whose source looks like Purdue Athletics MBB
-        fallback = [
-            it for it in all_items
-            if "purdue athletics" in it.get("source", "").lower()
-            or "purdue" in it.get("source", "").lower()
-        ]
-        # if *that* is also empty, final fallback = just take newest 20 of everything
-        filtered = fallback if fallback else all_items
+        fallback = []
+        for it in all_items:
+            text = (it["title"] + " " + it["summary"]).lower()
+            src = it.get("source", "").lower()
+            if (
+                "purdue" in text
+                or "boilermaker" in text
+                or "boilermakers" in text
+                or "purdue" in src
+                or "boilermaker" in src
+                or "boilermakers" in src
+            ):
+                fallback.append(it)
 
-    # 8. Truncate to top N
+        if fallback:
+            filtered = fallback
+        else:
+            # final desperation fallback = everything
+            filtered = all_items
+
+    # 8. Truncate to top MAX_ITEMS
     filtered = filtered[:MAX_ITEMS]
 
     # 9. Prepare final shape for frontend
@@ -302,11 +329,15 @@ def main():
             "title": it["title"],
             "summary": it["summary"],
             "link": it["link"],
-            "published": it["published_human"],  # short date like "Oct 27"
+            # ALWAYS provide published string, never ""
+            "published": it.get("published_human") or "Just now",
             "source": it["source"],
         })
 
-    # 10. Write items.json
+    # 10. Safety: never write an empty array
+    final_payload = ensure_nonempty_payload(final_payload)
+
+    # 11. Write items.json
     ITEMS_PATH.parent.mkdir(parents=True, exist_ok=True)
     with ITEMS_PATH.open("w") as f:
         json.dump(final_payload, f, indent=2)
