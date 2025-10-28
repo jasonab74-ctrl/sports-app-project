@@ -1,13 +1,5 @@
 [
   {
-    "source": "Purdue Athletics MBB",
-    "headline": "Edwards, Santa Cruz Earn Final Big Ten Weekly Awards",
-    "summary": "For the second time this season, two Purdue student-athletes have been named to Big Ten Weekly honors. Purdue’s Emily Edwards was named Goalkeeper of the Week, while Megan Santa Cruz was named Offensive Player of the Week.",
-    "url": "https://purduesports.com/news/2025/10/28/edwards-santa-cruz-earn-final-big-ten-weekly-awards",
-    "published": "Oct 28",
-    "published_iso": "2025-10-28T19:00:00Z"
-  },
-  {
     "source": "Yahoo Sports College Basketball",
     "headline": "Meet our college basketball preseason All-America teams for men’s 2025-26 season",
     "summary": "Here’s our preseason All-American teams for men’s college basketball.",
@@ -126,14 +118,6 @@
     "url": "https://purduesports.com/news/2025/10/27/te-christian-moore-media-session-purdue-football",
     "published": "Oct 27",
     "published_iso": "2025-10-27T15:52:59Z"
-  },
-  {
-    "source": "Yahoo Sports College Basketball",
-    "headline": "Purdue’s Matt Painter regrets not talking about an NCAA title last year. This season, it’s different",
-    "summary": "Matt Painter believes one of his mistakes last year was not talking about playing for the title enough.",
-    "url": "https://www.nbcsports.com/mens-college-basketball/news/purdues-matt-painter-regrets-not-talking-about-an-ncaa-title-last-year-this-season-its-different",
-    "published": "Oct 27",
-    "published_iso": "2025-10-27T15:52:14Z"
   },
   {
     "source": "Purdue Athletics MBB",
@@ -438,5 +422,13 @@
     "url": "https://purduesports.com/news/2025/10/19/shondell-jewell-reach-500-wins",
     "published": "Oct 19",
     "published_iso": "2025-10-19T19:30:00Z"
+  },
+  {
+    "source": "Purdue Athletics MBB",
+    "headline": "Women's Basketball Fan Day Gallery",
+    "summary": "",
+    "url": "https://purduesports.com/news/2025/10/19/womens-basketball-fan-day-gallery",
+    "published": "Oct 19",
+    "published_iso": "2025-10-19T00:46:38Z"
   }
 ]
