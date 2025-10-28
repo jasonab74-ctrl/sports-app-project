@@ -2,12 +2,9 @@ name: collect-purdue-mbb
 
 on:
   schedule:
-    # run every 30 minutes
-    - cron: "*/30 * * * *"
-  # allow manual trigger in Actions tab
+    - cron: "*/30 * * * *"   # every 30 minutes
   workflow_dispatch:
 
-# allow the workflow to commit/push changes
 permissions:
   contents: write
 
@@ -16,52 +13,45 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout full repo with write credentials
-      - name: Checkout repository
+      - name: Checkout repository (full history so we can commit back)
         uses: actions/checkout@v4
         with:
           persist-credentials: true
           fetch-depth: 0
 
-      # 2. Set up Python
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.x"
 
-      # 3. Install dependencies
-      - name: Install dependencies
+      - name: Install deps
         run: |
           python -m pip install --upgrade pip
-          pip install feedparser requests beautifulsoup4 python-dateutil
+          pip install feedparser requests beautifulsoup4
 
-      # 4. Run collector script
       - name: Run collector
         run: |
-          echo "Running Purdue MBB article collector..."
+          echo "Running collector script..."
           python tools/collect.py
 
-      # 5. Commit & push JSON if changed
-      - name: Commit and push updates
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Commit & push updated JSON
         run: |
-          echo "Checking for changes..."
-
+          echo "Preparing git commit..."
           git config user.name "sports-app-bot"
           git config user.email "actions@users.noreply.github.com"
 
-          git add static/teams/purdue-mbb/items.json || true
+          # stage only the Purdue feed file
+          git add static/teams/purdue-mbb/items.json
 
           if ! git diff --cached --quiet; then
-            echo "Changes detected — committing."
+            echo "Changes detected, committing..."
             git commit -m "auto: update Purdue MBB feed"
-            git pull --rebase origin main || true
+
+            echo "Sync with main to avoid non-fast-forward issues..."
+            git pull --rebase origin main
+
+            echo "Push..."
             git push origin main
           else
             echo "No feed changes to commit."
           fi
-
-      # 6. Done
-      - name: Done
-        run: echo "✅ Collector finished successfully."
