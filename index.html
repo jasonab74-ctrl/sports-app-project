@@ -32,7 +32,7 @@
       min-height: 100vh;
     }
 
-    /* ===== HEADER STRIP ===== */
+    /* HEADER */
     .header-bar {
       background-color: #000;
       border-bottom: 1px solid var(--border-top);
@@ -100,7 +100,7 @@
       align-self: flex-start;
     }
 
-    /* ===== FEED GRID WRAPPER ===== */
+    /* FEED GRID */
     .feed-wrapper {
       flex: 1;
       background-color: #000;
@@ -127,7 +127,7 @@
       }
     }
 
-    /* ===== ARTICLE CARD ===== */
+    /* CARD */
     .card {
       background-color: var(--bg-card);
       background-image: var(--bg-card-grad);
@@ -137,43 +137,51 @@
       padding: 16px 16px 20px;
       display: flex;
       flex-direction: column;
+      cursor: pointer;
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 24px 50px rgba(0,0,0,0.9);
     }
 
     .card-source-row {
       display: flex;
-      flex-wrap: wrap;
       align-items: baseline;
       justify-content: space-between;
-      margin-bottom: 12px;
-      gap: 8px 12px;
+      margin-bottom: 10px;
     }
 
     .card-source {
       color: var(--accent-gold);
       font-size: 14px;
       font-weight: 600;
-      line-height: 1.3;
+    }
+
+    .card-date {
+      font-size: 13px;
+      color: var(--text-dim);
     }
 
     .card-headline {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 600;
       color: var(--text-primary);
-      line-height: 1.3;
-      margin: 0 0 12px;
+      line-height: 1.35;
+      margin: 0 0 10px;
       word-break: break-word;
     }
 
     .card-blurb {
-      font-size: 16px;
-      font-weight: 400;
+      font-size: 15px;
       color: var(--text-secondary);
-      line-height: 1.45;
       margin: 0;
+      line-height: 1.45;
       word-break: break-word;
     }
 
-    /* ===== FOOTER ===== */
+    /* FOOTER */
     .footer-shell {
       border-top: 1px solid var(--border-top);
       background-color: #000;
@@ -189,38 +197,32 @@
     .footer-headline {
       font-size: 18px;
       font-weight: 600;
-      line-height: 1.4;
       margin: 0 0 8px;
       color: var(--text-primary);
     }
 
     .footer-desc {
       font-size: 16px;
-      font-weight: 400;
       color: var(--text-secondary);
-      line-height: 1.5;
       margin: 0 0 20px;
     }
 
     .footer-sources-label {
       font-size: 16px;
       font-weight: 600;
-      color: var(--text-primary);
       margin: 0 0 6px;
     }
 
     .footer-sources {
       font-size: 14px;
-      line-height: 1.5;
       color: var(--text-dim);
-      word-break: break-word;
+      line-height: 1.5;
     }
   </style>
 </head>
 <body>
 <div class="page-shell">
 
-  <!-- HEADER -->
   <header class="header-bar">
     <div class="header-left">
       <div class="p-logo">P</div>
@@ -229,81 +231,56 @@
         <div class="subtitle-line">Men’s Basketball News</div>
       </div>
     </div>
-    <div class="updated-pill">
-      <!-- We show one clean timestamp, e.g. "Updated 9:18 AM" -->
-      <!-- We read this from the JSON file's "last_updated" field -->
-      <!-- JS below will populate it -->
-      <span id="updated-label">Updated …</span>
-    </div>
+    <div class="updated-pill"><span id="updated-label">Updated …</span></div>
   </header>
 
-  <!-- FEED GRID -->
   <main class="feed-wrapper">
-    <section id="feed" class="feed-grid">
-      <!-- Cards will be injected here by inline JS -->
-    </section>
+    <section id="feed" class="feed-grid"></section>
   </main>
 
-  <!-- FOOTER -->
   <footer class="footer-shell">
     <div class="footer-inner">
       <p class="footer-headline">Purdue Men's Basketball Fan Feed</p>
-      <p class="footer-desc">
-        Unofficial. Automatically surfaces the latest Purdue hoops headlines.
-      </p>
-
+      <p class="footer-desc">Unofficial. Automatically surfaces the latest Purdue hoops headlines.</p>
       <p class="footer-sources-label">Sources we monitor:</p>
-      <p class="footer-sources" id="sources-list">
-        <!-- will be filled from items.json 'sources' -->
-      </p>
+      <p class="footer-sources" id="sources-list"></p>
     </div>
   </footer>
 
 </div>
 
 <script>
-(async function () {
-  try {
-    // fetch the data file your workflow updates
-    const resp = await fetch('./static/teams/purdue-mbb/items.json?cachebust=' + Date.now());
-    const data = await resp.json();
+(async function(){
+  const decode = (str='') => str
+    .replace(/&#39;/g,"'")
+    .replace(/&quot;/g,'"')
+    .replace(/&amp;/g,"&")
+    .replace(/&nbsp;/g," ")
+    .trim();
 
-    // data.items is expected to be an array of articles
-    // each article should look like:
-    // {
-    //   "source": "Yahoo Sports College Basketball",
-    //   "title": "Braden Smith ...",
-    //   "summary": "Coach Matt Painter said ...",
-    //   "published": "2025-10-27T13:00:00Z",
-    //   "url": "https://...",
-    // }
-    //
-    // data.sources might be e.g. ["GoldandBlack.com", "On3 Purdue Basketball", ...]
-    // data.last_updated should be the ISO timestamp the collector wrote.
+  try {
+    const resp = await fetch('./static/teams/purdue-mbb/items.json?cache=' + Date.now());
+    const data = await resp.json();
 
     const feedEl = document.getElementById('feed');
     const updatedEl = document.getElementById('updated-label');
     const sourcesEl = document.getElementById('sources-list');
 
-    // ---- 1. Updated timestamp (top right pill)
+    // Updated time
     if (data.last_updated) {
       const d = new Date(data.last_updated);
-      if (!isNaN(d.getTime())) {
-        // format like "Updated 9:18 AM"
-        const timeStr = d.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+      if (!isNaN(d)) {
+        const timeStr = d.toLocaleTimeString([], {hour:'numeric',minute:'2-digit'});
         updatedEl.textContent = `Updated ${timeStr}`;
       } else {
         updatedEl.textContent = 'Updated just now';
       }
-    } else {
-      updatedEl.textContent = 'Updated just now';
-    }
+    } else updatedEl.textContent = 'Updated just now';
 
-    // ---- 2. Sources list in footer
+    // Footer sources
     if (Array.isArray(data.sources) && data.sources.length > 0) {
       sourcesEl.textContent = data.sources.join(' · ');
     } else {
-      // fallback to what we had hard-coded before
       sourcesEl.textContent = [
         "GoldandBlack.com",
         "On3 Purdue Basketball",
@@ -318,54 +295,46 @@
       ].join(' · ');
     }
 
-    // ---- 3. Render cards
+    // Cards
     if (Array.isArray(data.items)) {
-      // We’ll only render the first ~30 to avoid blowing up mobile
-      data.items.slice(0, 30).forEach(item => {
-        // normalize text and strip weird &#39;
-        const decode = (str) => {
-          if (!str) return '';
-          return str
-            .replace(/&#39;/g, "'")
-            .replace(/&quot;/g, '"')
-            .replace(/&amp;/g, '&')
-            .replace(/&nbsp;/g, ' ')
-            .trim();
-        };
-
+      const items = data.items.slice(0,40);
+      items.forEach(item=>{
         const source = decode(item.source || '');
         const title = decode(item.title || '');
         const summary = decode(item.summary || '');
+        const url = item.url || '#';
 
-        // We are NOT showing per-article date right now,
-        // because "Invalid Date" was loud and annoying and mostly wrong.
-        // We'll add it back later after we clean the collector timestamps.
+        let dateStr = '';
+        if (item.published) {
+          const d = new Date(item.published);
+          if (!isNaN(d)) {
+            const diff = Date.now() - d.getTime();
+            const hrs = Math.floor(diff/3600000);
+            if (hrs < 1) dateStr = 'Just now';
+            else if (hrs < 24) dateStr = `${hrs}h ago`;
+            else {
+              const days = Math.floor(hrs/24);
+              dateStr = `${days}d ago`;
+            }
+          }
+        }
 
         const card = document.createElement('article');
         card.className = 'card';
-
         card.innerHTML = `
           <div class="card-source-row">
-            <div class="card-source">${source || ""}</div>
+            <div class="card-source">${source}</div>
+            <div class="card-date">${dateStr}</div>
           </div>
           <h2 class="card-headline">${title}</h2>
           <p class="card-blurb">${summary}</p>
         `;
-
-        // click -> open article source
-        if (item.url) {
-          card.style.cursor = 'pointer';
-          card.addEventListener('click', () => {
-            window.open(item.url, '_blank', 'noopener,noreferrer');
-          });
-        }
-
+        card.onclick = ()=>window.open(url,'_blank','noopener,noreferrer');
         feedEl.appendChild(card);
       });
     }
-  } catch (err) {
-    console.error('Failed to render feed:', err);
-    // graceful fallback: feed just stays empty
+  } catch(e){
+    console.error('Render error:',e);
   }
 })();
 </script>
