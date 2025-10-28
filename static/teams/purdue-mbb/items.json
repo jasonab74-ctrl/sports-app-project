@@ -1,6 +1,15 @@
 [
   {
     "source": "Yahoo Sports College Basketball",
+    "headline": "Kentucky Basketball vs. Georgetown preview, viewing info, and prediction",
+    "summary": "Kentucky looks to build on a statement win over Purdue while finalizing rotations before the regular season.﻿",
+    "url": "https://www.aseaofblue.com/kentucky-wildcats-basketball/150864/uk-georgetown-hoyas-time-tv-live-online-stream-prediction",
+    "published_epoch": 1761689405,
+    "published": "Oct 28",
+    "published_iso": "2025-10-28T22:10:05Z"
+  },
+  {
+    "source": "Yahoo Sports College Basketball",
     "headline": "March Madness Odds For Men's NCAA Tournament 2026",
     "summary": "A look at updated March Madness 2026 betting odds, with Purdue (+900) listed as the favorite to win the 2026 NCAA Tournament.",
     "url": "https://www.covers.com/ncaab/march-madness/odds",
@@ -169,14 +178,5 @@
     "published_epoch": 1760984623,
     "published": "Oct 20",
     "published_iso": "2025-10-20T18:23:43Z"
-  },
-  {
-    "source": "Purdue Athletics MBB",
-    "headline": "Purdue Men’s Basketball Scrimmage Highlights",
-    "summary": "",
-    "url": "https://purduesports.com/news/2025/10/19/purdue-mens-basketball-scrimmage-highlights",
-    "published_epoch": 1760906206,
-    "published": "Oct 19",
-    "published_iso": "2025-10-19T20:36:46Z"
   }
 ]
