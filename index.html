@@ -1,343 +1,344 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="background:#000;">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Purdue Men's Basketball News</title>
   <style>
     :root {
-      --bg-main: #000;
-      --bg-card: #1a1a1a;
-      --bg-card-grad: radial-gradient(circle at 20% 0%, rgba(255,255,255,0.08) 0%, rgba(0,0,0,0) 70%);
-      --text-primary: #fff;
-      --text-secondary: #cfcfcf;
-      --text-dim: #9a9a9a;
-      --accent-gold: #cbb36a;
-      --border-card: rgba(255,255,255,0.07);
-      --border-top: #cbb36a33;
+      --bg-main: #000000;
+      --bg-card: radial-gradient(circle at 20% 20%, #1a1a1a 0%, #000000 80%);
+      --text-primary: #ffffff;
+      --text-secondary: #a0a0a0;
+      --accent-gold: #d5c38a;
+      --card-border: rgba(255,255,255,0.07);
     }
-
     body {
       margin: 0;
-      background-color: var(--bg-main);
+      background: var(--bg-main);
       color: var(--text-primary);
-      font-family: -apple-system, BlinkMacSystemFont, "Inter", system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-family:
+        -apple-system, BlinkMacSystemFont, "Inter", Roboto, "Helvetica Neue",
+        Arial, sans-serif;
       line-height: 1.4;
       -webkit-font-smoothing: antialiased;
     }
-
     .page-shell {
       display: flex;
       flex-direction: column;
       min-height: 100vh;
+      background: radial-gradient(circle at 50% 0%, #1a1a1a 0%, #000 70%);
     }
 
-    /* HEADER */
-    .header-bar {
-      background-color: #000;
-      border-bottom: 1px solid var(--border-top);
-      padding: 16px 16px 12px;
+    header {
+      padding: 16px;
+      border-bottom: 1px solid var(--card-border);
       display: flex;
       flex-wrap: wrap;
       align-items: flex-start;
       justify-content: space-between;
-      gap: 12px;
+      color: var(--text-primary);
+      font-weight: 600;
     }
 
-    .header-left {
+    .brand-left {
       display: flex;
-      flex-direction: row;
+      flex-wrap: nowrap;
       align-items: flex-start;
       gap: 12px;
-      flex: 1;
       min-width: 0;
     }
 
-    .p-logo {
-      background-color: #d8c691;
+    .brand-badge {
+      background: #d5c38a;
       color: #000;
       font-weight: 600;
       font-size: 20px;
       line-height: 1;
-      font-family: Georgia, "Times New Roman", serif;
       border-radius: 8px;
-      padding: 10px 14px;
-      align-self: flex-start;
-      flex-shrink: 0;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+      padding: 12px 14px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
     }
 
-    .title-block {
-      display: flex;
-      flex-direction: column;
-      min-width: 0;
-    }
-
-    .title-line {
-      color: var(--accent-gold);
-      font-size: 16px;
-      font-weight: 600;
+    .brand-text {
+      font-size: 14px;
       line-height: 1.3;
-    }
-
-    .subtitle-line {
       color: var(--text-primary);
-      font-size: 18px;
-      font-weight: 600;
-      line-height: 1.3;
-    }
-
-    .updated-pill {
-      background-color: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 6px;
-      color: var(--text-primary);
-      font-size: 13px;
       font-weight: 500;
-      line-height: 1.2;
+    }
+    .brand-text .team {
+      color: var(--accent-gold);
+      font-weight: 600;
+      font-size: 16px;
+    }
+    .updated-pill {
+      color: #000;
+      background: var(--accent-gold);
+      border-radius: 6px;
       padding: 6px 10px;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.2;
       white-space: nowrap;
       align-self: flex-start;
     }
 
-    /* FEED GRID */
-    .feed-wrapper {
+    main {
       flex: 1;
-      background-color: #000;
-      background-image: radial-gradient(circle at 50% 0%, rgba(255,255,255,0.07) 0%, rgba(0,0,0,0) 70%);
-      padding: 16px;
-    }
-
-    .feed-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-      max-width: 1400px;
+      width: 100%;
+      max-width: 1280px;
       margin: 0 auto;
+      padding: 16px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(min(360px,100%),1fr));
+      grid-gap: 16px;
     }
 
-    @media(min-width:700px){
-      .feed-grid {
-        grid-template-columns: repeat(2,1fr);
-      }
-    }
-    @media(min-width:1100px){
-      .feed-grid {
-        grid-template-columns: repeat(3,1fr);
-      }
-    }
-
-    /* CARD */
     .card {
-      background-color: var(--bg-card);
-      background-image: var(--bg-card-grad);
+      background: var(--bg-card);
+      border: 1px solid var(--card-border);
+      box-shadow:
+        0 25px 60px rgba(0,0,0,0.9),
+        0 4px 8px rgba(0,0,0,0.6);
       border-radius: 12px;
-      border: 1px solid var(--border-card);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.8);
-      padding: 16px 16px 20px;
+      padding: 16px;
+      color: var(--text-primary);
       display: flex;
       flex-direction: column;
-      cursor: pointer;
-      transition: transform 0.1s ease, box-shadow 0.1s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 24px 50px rgba(0,0,0,0.9);
-    }
-
-    .card-source-row {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      margin-bottom: 10px;
-    }
-
-    .card-source {
-      color: var(--accent-gold);
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .card-date {
-      font-size: 13px;
-      color: var(--text-dim);
+      min-height: 160px;
     }
 
     .card-headline {
+      color: var(--text-primary);
       font-size: 18px;
       font-weight: 600;
-      color: var(--text-primary);
-      line-height: 1.35;
-      margin: 0 0 10px;
-      word-break: break-word;
+      line-height: 1.3;
+      margin: 8px 0 8px 0;
+      text-decoration: none;
     }
 
-    .card-blurb {
+    .card-headline:hover,
+    .card-headline:focus {
+      text-decoration: underline;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .source-label {
+      color: var(--accent-gold);
+    }
+    .time-label {
+      color: var(--text-secondary);
+      font-weight: 500;
+      margin-left: auto;
+      padding-left: 8px;
+    }
+
+    .summary {
       font-size: 15px;
+      line-height: 1.4;
       color: var(--text-secondary);
-      margin: 0;
-      line-height: 1.45;
-      word-break: break-word;
+      font-weight: 400;
     }
 
-    /* FOOTER */
-    .footer-shell {
-      border-top: 1px solid var(--border-top);
-      background-color: #000;
-      padding: 24px 16px 48px;
+    footer {
+      border-top: 1px solid var(--card-border);
+      background: #000;
+      padding: 24px 16px 64px;
       color: var(--text-primary);
+      line-height: 1.5;
     }
-
     .footer-inner {
-      max-width: 1400px;
+      max-width: 1280px;
       margin: 0 auto;
-    }
-
-    .footer-headline {
-      font-size: 18px;
-      font-weight: 600;
-      margin: 0 0 8px;
+      font-size: 14px;
       color: var(--text-primary);
     }
-
-    .footer-desc {
-      font-size: 16px;
-      color: var(--text-secondary);
-      margin: 0 0 20px;
-    }
-
-    .footer-sources-label {
-      font-size: 16px;
+    .footer-headline {
+      font-size: 20px;
       font-weight: 600;
-      margin: 0 0 6px;
+      margin-bottom: 8px;
+      color: var(--text-primary);
     }
-
+    .footer-desc {
+      margin-bottom: 16px;
+      color: var(--text-secondary);
+    }
+    .footer-sources-head {
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+    }
     .footer-sources {
       font-size: 14px;
-      color: var(--text-dim);
-      line-height: 1.5;
+      color: var(--text-secondary);
+    }
+    .footer-sources a {
+      text-decoration: none;
+      color: var(--text-secondary);
+    }
+    .footer-sources a:hover {
+      text-decoration: underline;
+      color: var(--accent-gold);
+    }
+
+    @media (max-width: 480px) {
+      header {
+        flex-direction: column;
+        gap: 12px;
+      }
+      .updated-pill {
+        align-self: flex-start;
+      }
+      .brand-text {
+        font-size: 13px;
+      }
+      .brand-text .team {
+        font-size: 15px;
+      }
     }
   </style>
 </head>
 <body>
-<div class="page-shell">
-
-  <header class="header-bar">
-    <div class="header-left">
-      <div class="p-logo">P</div>
-      <div class="title-block">
-        <div class="title-line">Purdue Boilermakers</div>
-        <div class="subtitle-line">Men’s Basketball News</div>
+  <div class="page-shell">
+    <header>
+      <div class="brand-left">
+        <div class="brand-badge">P</div>
+        <div class="brand-text">
+          <div class="team">Purdue Boilermakers</div>
+          <div>Men’s Basketball News</div>
+        </div>
       </div>
-    </div>
-    <div class="updated-pill"><span id="updated-label">Updated …</span></div>
-  </header>
+      <div class="updated-pill" id="updated-pill">Updated …</div>
+    </header>
 
-  <main class="feed-wrapper">
-    <section id="feed" class="feed-grid"></section>
-  </main>
+    <main id="feed-grid">
+      <!-- cards injected by JS -->
+    </main>
 
-  <footer class="footer-shell">
-    <div class="footer-inner">
-      <p class="footer-headline">Purdue Men's Basketball Fan Feed</p>
-      <p class="footer-desc">Unofficial. Automatically surfaces the latest Purdue hoops headlines.</p>
-      <p class="footer-sources-label">Sources we monitor:</p>
-      <p class="footer-sources" id="sources-list"></p>
-    </div>
-  </footer>
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-headline">Purdue Men's Basketball Fan Feed</div>
+        <div class="footer-desc">
+          Unofficial. Automatically surfaces the latest Purdue hoops headlines.
+        </div>
 
-</div>
+        <div class="footer-sources-head">Sources we monitor:</div>
+        <div class="footer-sources" id="sources-line">
+          GoldandBlack.com · On3 Purdue Basketball · 247Sports Purdue Basketball ·
+          Purdue Athletics MBB · ESPN Purdue MBB · Yahoo Sports College Basketball ·
+          CBS Sports College Basketball · The Field of 68 · SI Purdue Basketball ·
+          USA Today Purdue Boilermakers
+        </div>
+      </div>
+    </footer>
 
-<script>
-(async function(){
-  const decode = (str='') => str
-    .replace(/&#39;/g,"'")
-    .replace(/&quot;/g,'"')
-    .replace(/&amp;/g,"&")
-    .replace(/&nbsp;/g," ")
-    .trim();
+  </div>
 
-  try {
-    const resp = await fetch('./static/teams/purdue-mbb/items.json?cache=' + Date.now());
-    const data = await resp.json();
+  <script>
+    async function loadFeed() {
+      const gridEl = document.getElementById('feed-grid');
+      const updatedPill = document.getElementById('updated-pill');
 
-    const feedEl = document.getElementById('feed');
-    const updatedEl = document.getElementById('updated-label');
-    const sourcesEl = document.getElementById('sources-list');
+      gridEl.innerHTML = "<div style='color:#777;font-size:14px;'>Loading…</div>";
 
-    // Updated time
-    if (data.last_updated) {
-      const d = new Date(data.last_updated);
-      if (!isNaN(d)) {
-        const timeStr = d.toLocaleTimeString([], {hour:'numeric',minute:'2-digit'});
-        updatedEl.textContent = `Updated ${timeStr}`;
-      } else {
-        updatedEl.textContent = 'Updated just now';
+      let data;
+      try {
+        const res = await fetch("./static/teams/purdue-mbb/items.json", {
+          cache: "no-cache"
+        });
+        data = await res.json();
+      } catch (err) {
+        gridEl.innerHTML =
+          "<div style='color:#777;font-size:14px;'>Could not load feed.</div>";
+        return;
       }
-    } else updatedEl.textContent = 'Updated just now';
 
-    // Footer sources
-    if (Array.isArray(data.sources) && data.sources.length > 0) {
-      sourcesEl.textContent = data.sources.join(' · ');
-    } else {
-      sourcesEl.textContent = [
-        "GoldandBlack.com",
-        "On3 Purdue Basketball",
-        "247Sports Purdue Basketball",
-        "Purdue Athletics MBB",
-        "ESPN Purdue MBB",
-        "Yahoo Sports College Basketball",
-        "CBS Sports College Basketball",
-        "The Field of 68",
-        "SI Purdue Basketball",
-        "USA Today Purdue Boilermakers"
-      ].join(' · ');
+      // show updated time in human-ish way
+      const updatedISO = data.updated;
+      updatedPill.textContent = "Updated " + relativeTimeFromISO(updatedISO);
+
+      // build cards
+      gridEl.innerHTML = "";
+      (data.items || []).forEach(item => {
+        const card = document.createElement("article");
+        card.className = "card";
+
+        const metaRow = document.createElement("div");
+        metaRow.className = "meta-row";
+
+        const sourceSpan = document.createElement("div");
+        sourceSpan.className = "source-label";
+        sourceSpan.textContent = item.source || "Source";
+
+        const timeSpan = document.createElement("div");
+        timeSpan.className = "time-label";
+        timeSpan.textContent = formatPublished(item.published);
+
+        metaRow.appendChild(sourceSpan);
+        metaRow.appendChild(timeSpan);
+
+        const headlineLink = document.createElement("a");
+        headlineLink.className = "card-headline";
+        headlineLink.href = item.url || "#";
+        headlineLink.target = "_blank";
+        headlineLink.rel = "noopener noreferrer";
+        headlineLink.textContent = item.title || "";
+
+        const summaryP = document.createElement("div");
+        summaryP.className = "summary";
+        summaryP.textContent = item.summary || "";
+
+        card.appendChild(metaRow);
+        card.appendChild(headlineLink);
+        card.appendChild(summaryP);
+
+        gridEl.appendChild(card);
+      });
+
+      // if nothing came back
+      if (!data.items || data.items.length === 0) {
+        gridEl.innerHTML =
+          "<div style='color:#777;font-size:14px;'>No recent stories found.</div>";
+      }
     }
 
-    // Cards
-    if (Array.isArray(data.items)) {
-      const items = data.items.slice(0,40);
-      items.forEach(item=>{
-        const source = decode(item.source || '');
-        const title = decode(item.title || '');
-        const summary = decode(item.summary || '');
-        const url = item.url || '#';
+    function relativeTimeFromISO(isoStr) {
+      if (!isoStr) return "just now";
+      const then = new Date(isoStr).getTime();
+      if (Number.isNaN(then)) return "just now";
 
-        let dateStr = '';
-        if (item.published) {
-          const d = new Date(item.published);
-          if (!isNaN(d)) {
-            const diff = Date.now() - d.getTime();
-            const hrs = Math.floor(diff/3600000);
-            if (hrs < 1) dateStr = 'Just now';
-            else if (hrs < 24) dateStr = `${hrs}h ago`;
-            else {
-              const days = Math.floor(hrs/24);
-              dateStr = `${days}d ago`;
-            }
-          }
-        }
+      const now = Date.now();
+      const diffMs = now - then;
+      const diffMin = Math.floor(diffMs / (60 * 1000));
+      const diffHr = Math.floor(diffMs / (60 * 60 * 1000));
+      const diffDay = Math.floor(diffMs / (24 * 60 * 60 * 1000));
 
-        const card = document.createElement('article');
-        card.className = 'card';
-        card.innerHTML = `
-          <div class="card-source-row">
-            <div class="card-source">${source}</div>
-            <div class="card-date">${dateStr}</div>
-          </div>
-          <h2 class="card-headline">${title}</h2>
-          <p class="card-blurb">${summary}</p>
-        `;
-        card.onclick = ()=>window.open(url,'_blank','noopener,noreferrer');
-        feedEl.appendChild(card);
+      if (diffMin < 1) return "just now";
+      if (diffMin < 60) return diffMin + "m ago";
+      if (diffHr < 24) return diffHr + "h ago";
+      return diffDay + "d ago";
+    }
+
+    function formatPublished(isoStr) {
+      if (!isoStr) return ""; // was "Invalid Date"
+      const d = new Date(isoStr);
+      if (isNaN(d.getTime())) return "";
+      // e.g. "Oct 27"
+      return d.toLocaleString("en-US", {
+        month: "short",
+        day: "numeric"
       });
     }
-  } catch(e){
-    console.error('Render error:',e);
-  }
-})();
-</script>
 
+    loadFeed();
+  </script>
 </body>
 </html>
