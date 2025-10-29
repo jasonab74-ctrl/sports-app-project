@@ -1,26 +1,22 @@
-name: Collect Purdue MBB Headlines
+name: collect-purdue-mbb
 
 on:
   schedule:
-    - cron: "*/15 * * * *"   # every 15 minutes
+    - cron: "*/30 * * * *"
   workflow_dispatch:
-  push:
-    paths:
-      - "src/feeds.yml"
-      - "collect.py"
 
 permissions:
   contents: write
 
 jobs:
-  collect-headlines:
+  collect:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Check out repo
+      - name: Checkout
         uses: actions/checkout@v4
         with:
           persist-credentials: true
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -30,17 +26,21 @@ jobs:
       - name: Install deps
         run: |
           python -m pip install --upgrade pip
-          pip install feedparser pyyaml
+          pip install feedparser requests beautifulsoup4
 
-      - name: Run scraper
+      - name: Run collector
         run: |
-          python collect.py
+          python tools/collect.py
 
-      - name: Commit updated items.json
+      - name: Commit & push (if changes)
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
+          git config user.name "sports-app-bot"
+          git config user.email "actions@users.noreply.github.com"
           git add static/teams/purdue-mbb/items.json
-          git commit -m "Update items.json [skip ci]" || echo "No changes to commit"
-          git push
+          if ! git diff --cached --quiet; then
+            git commit -m "auto: update Purdue MBB items.json"
+            git pull --rebase origin main || true
+            git push origin main
+          else
+            echo "No feed changes to commit."
+          fi
