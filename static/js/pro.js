@@ -1,85 +1,111 @@
 (function () {
-  const ITEMS_URL = "static/teams/purdue-mbb/items.json";
-  const SOURCES_URL = "static/sources.json";
+  const NEWS_URL = "static/teams/purdue-mbb/items.json";
+  const BOARD_URL = "static/teams/purdue-mbb/board.json";
+
   const updatedEl = document.getElementById("updated");
   const cardsEl = document.getElementById("cards");
-  const sourcesEl = document.getElementById("sources");
+  const tabButtons = Array.from(document.querySelectorAll(".tab"));
 
-  const fmtDate = (iso) => {
+  const escapeHTML = (s) =>
+    String(s || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+
+  const fmtShortDate = (iso) => {
     try {
       const d = new Date(iso);
-      // valid date?
-      if (isNaN(d.getTime())) return "—";
-      return d.toLocaleDateString(undefined, { month: "short", day: "numeric" });
-    } catch { return "—"; }
+      if (isNaN(d.getTime())) return "";
+      const now = new Date();
+      const opts = { month: "short", day: "numeric" };
+      const base = d.toLocaleDateString(undefined, opts);
+      return d.getFullYear() === now.getFullYear() ? base : `${base}, ${d.getFullYear()}`;
+    } catch { return ""; }
   };
 
   const fmtUpdated = (iso) => {
     try {
       const d = new Date(iso);
       if (isNaN(d.getTime())) return "Updated";
-      const opts = { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" };
-      return `Updated ${d.toLocaleDateString(undefined, opts)}`;
+      const optsDate = { month: "short", day: "numeric" };
+      const optsTime = { hour: "numeric", minute: "2-digit" };
+      const datePart = d.toLocaleDateString(undefined, optsDate);
+      const timePart = d.toLocaleTimeString(undefined, optsTime);
+      const y = d.getFullYear();
+      const showYear = y !== (new Date()).getFullYear();
+      return `Updated ${datePart}${showYear ? ", " + y : ""}, ${timePart}`;
     } catch { return "Updated"; }
   };
 
-  const escapeHTML = (s) =>
-    s.replace(/[&<>"']/g, (m) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[m]));
-
-  async function loadJSON(url) {
+  async function getJSON(url) {
     const res = await fetch(url, { cache: "no-cache" });
-    if (!res.ok) throw new Error(`Failed to fetch ${url}`);
+    if (!res.ok) throw new Error(`Fetch failed: ${url} (${res.status})`);
     return res.json();
   }
 
-  function renderSources(list) {
-    sourcesEl.innerHTML = list.join(" · ");
-  }
-
-  function renderCards(items) {
+  function renderCards(items, isBoard) {
     if (!items || !items.length) {
       cardsEl.innerHTML = `
         <div class="card" style="grid-column:span 12">
-          <div class="kicker">Collector Debug <span>Just now</span></div>
-          <h3>No Purdue MBB stories matched filters</h3>
-          <p>Collector ran successfully but strict filters removed everything. This is a fallback card.</p>
+          <div class="kicker"><span>${isBoard ? "Fan Board" : "News"}</span><span>—</span></div>
+          <h3>No recent ${isBoard ? "threads" : "stories"} found</h3>
+          <p>Check back soon.</p>
         </div>`;
       return;
     }
-    const html = items.map(it => {
-      const title = escapeHTML(it.title || "");
-      const summary = escapeHTML(it.summary || "");
-      const src = escapeHTML(it.source || "");
-      const date = fmtDate(it.published);
-      const url = it.url || "#";
+
+    cardsEl.innerHTML = items.map(it => {
+      const title = escapeHTML(it.title);
+      const summary = escapeHTML(it.summary || (isBoard ? "Fan discussion thread" : ""));
+      const src = escapeHTML(it.source || (isBoard ? "On3 — Purdue MBB Board" : "Source"));
+      const date = fmtShortDate(it.published || it.published_iso || it.published_at);
+      const url = it.url || it.link || "#";
       return `
-      <article class="card">
-        <div class="kicker"><span>${src}</span><span>${date}</span></div>
-        <a href="${url}" target="_blank" rel="noopener">
-          <h3>${title}</h3>
-          <p>${summary}</p>
-        </a>
-      </article>`;
+        <article class="card">
+          <div class="kicker"><span>${src}</span><span>${date}</span></div>
+          <a href="${url}" target="_blank" rel="noopener noreferrer">
+            <h3>${title}</h3>
+            <p>${summary}</p>
+          </a>
+        </article>
+      `;
     }).join("");
-    cardsEl.innerHTML = html;
   }
 
-  async function init() {
+  function setUpdated(iso) {
+    updatedEl.textContent = fmtUpdated(iso || new Date().toISOString());
+  }
+
+  async function showTab(kind) {
+    tabButtons.forEach(b => b.classList.toggle("active", b.dataset.tab === kind));
     try {
-      const [data, sources] = await Promise.all([loadJSON(ITEMS_URL), loadJSON(SOURCES_URL)]);
-      renderSources(sources.display || sources.sources || []);
-      updatedEl.textContent = fmtUpdated(data.updated || data.generated_at || new Date().toISOString());
-      renderCards(data.items || []);
+      if (kind === "board") {
+        const data = await getJSON(BOARD_URL);
+        renderCards(data.items || [], true);
+        setUpdated(data.generated_at);
+      } else {
+        const data = await getJSON(NEWS_URL);
+        renderCards(data.items || [], false);
+        setUpdated(data.generated_at);
+      }
     } catch (err) {
-      updatedEl.textContent = "Updated (load error)";
       cardsEl.innerHTML = `
         <div class="card" style="grid-column:span 12">
           <div class="kicker"><span>Error</span><span>Now</span></div>
-          <h3>Couldn’t load feed</h3>
+          <h3>Couldn’t load ${kind === "board" ? "board" : "news"} feed</h3>
           <p>${escapeHTML(err.message || String(err))}</p>
         </div>`;
+      setUpdated();
     }
   }
 
-  init();
+  // events
+  tabButtons.forEach(btn => {
+    btn.addEventListener("click", () => showTab(btn.dataset.tab));
+  });
+
+  // initial load = News
+  showTab("news");
 })();
