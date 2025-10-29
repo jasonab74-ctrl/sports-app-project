@@ -1,25 +1,76 @@
-l{
-  "display": [
-    "GoldandBlack.com",
-    "On3 Purdue Basketball",
-    "247Sports Purdue Basketball",
-    "Purdue Athletics MBB",
-    "ESPN Purdue MBB",
-    "Yahoo Sports College Basketball",
-    "CBS Sports College Basketball",
-    "The Field of 68",
-    "SI Purdue Basketball",
-    "USA Today Purdue Boilermakers"
-  ],
+{
+  "team": "purdue-mbb",
+  "max_items": 20,
   "feeds": [
-    "https://www.on3.com/teams/purdue-boilermakers/basketball/feed/",
-    "https://purduesports.com/rss?path=mbball",
-    "https://sports.yahoo.com/college-basketball/teams/purdue-boilermakers/news/?format=rss",
-    "https://www.espn.com/espn/rss/ncb/news",
-    "https://www.cbssports.com/college-basketball/rss/all/",
-    "https://www.si.com/college/purdue/.rss",
-    "https://thefieldof68.com/feed",
-    "https://247sports.com/college/purdue/Article/RSS/",
-    "https://goldandblack.com/feed/"
+    {
+      "id": "purdue_athletics_mbb",
+      "name": "Purdue Athletics MBB",
+      "type": "html",
+      "site": "https://purduesports.com",
+      "url": "https://purduesports.com/sports/mens-basketball/news"
+    },
+    {
+      "id": "on3_purdue_basketball_news",
+      "name": "On3 — Purdue Basketball News",
+      "type": "html",
+      "site": "https://www.on3.com",
+      "url": "https://www.on3.com/teams/purdue-boilermakers/category/basketball/news/"
+    },
+    {
+      "id": "247_purdue_basketball",
+      "name": "247Sports Purdue Basketball",
+      "type": "html",
+      "site": "https://247sports.com",
+      "url": "https://247sports.com/college/purdue/Season/2025-Basketball/News/"
+    },
+    {
+      "id": "goldandblack",
+      "name": "GoldandBlack.com",
+      "type": "html",
+      "site": "https://purdue.rivals.com",
+      "url": "https://purdue.rivals.com/"
+    },
+    {
+      "id": "espn_purdue_mbb",
+      "name": "ESPN Purdue MBB",
+      "type": "html",
+      "site": "https://www.espn.com",
+      "url": "https://www.espn.com/mens-college-basketball/team/_/id/2509/purdue-boilermakers"
+    },
+    {
+      "id": "yahoo_cbb",
+      "name": "Yahoo Sports College Basketball",
+      "type": "rss",
+      "site": "https://sports.yahoo.com",
+      "url": "https://sports.yahoo.com/college-basketball/rss/"
+    },
+    {
+      "id": "cbs_cbb",
+      "name": "CBS Sports College Basketball",
+      "type": "html",
+      "site": "https://www.cbssports.com",
+      "url": "https://www.cbssports.com/college-basketball/"
+    },
+    {
+      "id": "si_purdue",
+      "name": "Sports Illustrated — Purdue",
+      "type": "html",
+      "site": "https://www.si.com",
+      "url": "https://www.si.com/college/purdue/"
+    },
+    {
+      "id": "field_of_68",
+      "name": "The Field of 68",
+      "type": "html",
+      "site": "https://www.fieldof68.com",
+      "url": "https://www.fieldof68.com/"
+    },
+    {
+      "id": "usatoday_purdue",
+      "name": "USA Today Purdue Boilermakers",
+      "type": "html",
+      "site": "https://usatoday.com",
+      "url": "https://sports.yahoo.com/ncaab/teams/purdue/"
+    }
   ]
 }
