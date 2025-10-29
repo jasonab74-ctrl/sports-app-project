@@ -1,0 +1,24 @@
+purdue-mbb:
+  - name: "Hammer & Rails"
+    url: "https://www.hammerandrails.com/rss/index.xml"
+
+  - name: "GoldandBlack"
+    url: "https://purdue.rivals.com/rss"   # Rivals Purdue (GoldandBlack)
+
+  - name: "On3 Purdue"
+    url: "https://api.on3.com/content/fb/team/purdue-boilermakers/feed"  # On3; if this ever 404s, swap to their public feed URL
+
+  - name: "Journal & Courier"
+    url: "https://rssfeeds.jconline.com/jconline/sports"  # Lafayette J&C sports RSS
+
+  - name: "Yahoo Sports"
+    url: "https://sports.yahoo.com/college-basketball/team/purdue-boilermakers/news/?format=rss"
+
+  - name: "CBS Sports"
+    url: "https://www.cbssports.com/college-basketball/teams/PURDUE/purdue-boilermakers/rss/"
+
+  - name: "ESPN"
+    url: "https://www.espn.com/college-basketball/team/_/id/2509/purdue-boilermakers?device=ipad&format=rss" 
+
+  - name: "PurdueSports"
+    url: "https://purduesports.com/rss.aspx?path=mbball"
