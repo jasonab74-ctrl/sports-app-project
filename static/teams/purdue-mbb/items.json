@@ -1,11 +1,17 @@
 {
-  "updated_at": "2025-10-29T19:01:45.357774+00:00",
+  "updated_at": "2025-10-29T19:17:42.519748+00:00",
   "items": [
     {
       "source": "ESPN",
       "title": "Top '27 recruit Dooney Johnson commits to Zags",
       "link": "https://www.espn.com/mens-college-basketball/story/_/id/46771449/no-28-recruit-dooney-johnson-commits-gonzaga-2027",
       "date": "2025-10-29T18:39:15+00:00"
+    },
+    {
+      "source": "Yahoo Sports",
+      "title": "Which Duke basketball player made USA TODAY Sports All-America team? Find out here",
+      "link": "https://www.fayobserver.com/story/sports/college/basketball/2025/10/29/duke-basketballs-cameron-boozer-named-to-usa-today-sports-all-america-team/86855283007/",
+      "date": "2025-10-29T18:36:26+00:00"
     },
     {
       "source": "Yahoo Sports",
@@ -114,17 +120,12 @@
       "title": "Meet the Terps: Notes on every Maryland men’s basketball player",
       "link": "https://www.baltimoresun.com/2025/10/29/meet-the-terps-maryland-mens-basketball-roster/",
       "date": "2025-10-29T12:00:00+00:00"
-    },
-    {
-      "source": "Yahoo Sports",
-      "title": "Boxscore from Michigan State-UConn men's basketball exhibition game",
-      "link": "https://spartanswire.usatoday.com/story/sports/college/spartans/mens-basketball/2025/10/29/msu-basketball-uconn-boxscore/86960610007/",
-      "date": "2025-10-29T11:57:25+00:00"
     }
   ],
   "sources": [
     "CBS Sports",
     "ESPN",
+    "Hammer & Rails",
     "Yahoo Sports"
   ]
 }
