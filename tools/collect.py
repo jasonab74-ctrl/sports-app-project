@@ -1,311 +1,167 @@
-import json, re, time, datetime
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+"""
+Collector: Purdue MBB
+ - Reads feeds from static/sources.json
+ - Filters to Purdue *Men's Basketball* only
+ - Scores / ranks items, sorts DESC by published, keeps top 20
+ - Writes static/teams/purdue-mbb/items.json
+"""
+
+import json, os, re, time, hashlib
+from datetime import datetime, timedelta, timezone
+from urllib.parse import urlparse
 import feedparser
 import requests
 from bs4 import BeautifulSoup
 
-# ----------------------------
-# CONFIG: sources to crawl
-# ----------------------------
-SOURCES = [
-    {
-        "name": "Purdue Athletics MBB",
-        "url": "https://purduesports.com/rss?path=mbball",
-        "hard_purdue": True
-    },
-    {
-        "name": "Yahoo Sports College Basketball",
-        "url": "https://sports.yahoo.com/college-basketball/rss/",
-        "hard_purdue": False
-    },
-    {
-        "name": "ESPN Purdue MBB",
-        "url": "https://www.espn.com/espn/rss/ncb/news",
-        "hard_purdue": False
-    },
-    {
-        "name": "CBS Sports College Basketball",
-        "url": "https://www.cbssports.com/college-basketball/rss/all/",
-        "hard_purdue": False
-    },
-    {
-        "name": "SI Purdue Basketball",
-        "url": "https://www.si.com/college/purdue/basketball/rss",
-        "hard_purdue": True
-    },
-    {
-        "name": "USA Today Purdue Boilermakers",
-        "url": "https://feeds.feedblitz.com/purdue-boilermakers&x=1",
-        "hard_purdue": True
-    },
-    {
-        "name": "On3 Purdue Basketball",
-        "url": "https://www.on3.com/college/purdue-boilermakers/feed/",  # often HTML, we'll try
-        "hard_purdue": True,
-        "is_html": True
-    },
-    {
-        "name": "247Sports Purdue Basketball",
-        "url": "https://247sports.com/college/purdue/Feed.rss",
-        "hard_purdue": True
-    },
-    {
-        "name": "The Field of 68",
-        "url": "https://thefieldof68.com/feed/",
-        "hard_purdue": False
-    },
-    {
-        "name": "GoldandBlack.com",
-        "url": "https://purdue.rivals.com/rss",  # many sites expose RSS; if this 404s, we just skip
-        "hard_purdue": True
-    },
-]
+ROOT = os.path.dirname(os.path.dirname(__file__))  # repo root
+OUT_DIR = os.path.join(ROOT, "static", "teams", "purdue-mbb")
+OUT_FILE = os.path.join(OUT_DIR, "items.json")
+SRC_FILE = os.path.join(ROOT, "static", "sources.json")
+WIDGETS_FILE = os.path.join(ROOT, "static", "widgets.json")
 
-# ----------------------------
-# HELPERS
-# ----------------------------
+os.makedirs(OUT_DIR, exist_ok=True)
 
-PURDUE_PATTERNS = [
-    r"\bpurdue\b",
-    r"\bboilermaker(s)?\b",
-    r"\bmatt\s+painter\b",
-    r"\bbraden\s+smith\b",
-    r"\bboilermakers\b",
-]
+# --- Helpers -----------------------------------------------------------------
 
-MBB_PATTERNS = [
-    r"\bbasketball\b",
-    r"\bmbb\b",
-    r"\bmen'?s?\s+basketball\b",
-]
+def now_iso():
+    return datetime.now(timezone.utc).astimezone().isoformat()
 
-def text_score(txt: str, hard_source: bool) -> int:
-    """Score relevance of a story to Purdue men's basketball.
-    Higher = more relevant.
-    We're purposely generous so we don't filter out legit Purdue hoops.
-    """
-    if not txt:
-        txt = ""
-    t = txt.lower()
-
-    score = 0
-
-    # Purdue mentions
-    for pat in PURDUE_PATTERNS:
-        if re.search(pat, t):
-            score += 2
-
-    # Men's basketball mentions
-    for pat in MBB_PATTERNS:
-        if re.search(pat, t):
-            score += 2
-
-    # Explicit Purdue + basketball synergy bonus
-    if re.search(r"\bpurdue\b", t) and re.search(r"basketball", t):
-        score += 4
-
-    # "Boilermakers" with basketball context etc
-    if "boilermaker" in t and ("basketball" in t or "mbb" in t):
-        score += 3
-
-    # trusted Purdue-specific sites get a baseline boost
-    if hard_source:
-        score += 3
-
-    return score
-
-
-def clean_html_summary(s: str) -> str:
-    if not s:
-        return ""
-    soup = BeautifulSoup(s, "html.parser")
-    txt = soup.get_text(" ", strip=True)
-    # collapse weird whitespace
-    txt = re.sub(r"\s+", " ", txt).strip()
-    return txt
-
-
-def fmt_date_short(epoch):
-    """Return 'Oct 27' or 'Oct 27, 2025' if year != current."""
-    if epoch is None:
-        return ""
-    dt = datetime.datetime.fromtimestamp(epoch)
-    now = datetime.datetime.now()
-    if dt.year == now.year:
-        return dt.strftime("%b %d")
-    else:
-        return dt.strftime("%b %d, %Y")
-
-
-def iso_timestamp(epoch):
-    if epoch is None:
-        return ""
-    dt = datetime.datetime.fromtimestamp(epoch)
-    return dt.isoformat()
-
-
-def parse_entry(source_name, hard_src, entry):
-    """Normalize one RSS/Atom entry to our internal shape."""
-    title = entry.get("title", "").strip()
-    link = entry.get("link", "").strip()
-
-    # summary / description
-    summary = entry.get("summary") or entry.get("description") or ""
-    summary = clean_html_summary(summary)
-
-    # choose a published date
-    published_epoch = None
-    if "published_parsed" in entry and entry["published_parsed"]:
-        published_epoch = time.mktime(entry["published_parsed"])
-    elif "updated_parsed" in entry and entry["updated_parsed"]:
-        published_epoch = time.mktime(entry["updated_parsed"])
-
-    score_input_txt = " ".join([
-        title,
-        summary,
-        source_name
-    ])
-
-    score_val = text_score(score_input_txt, hard_src)
-
-    return {
-        "title": title,
-        "link": link,
-        "summary": summary,
-        "source": source_name,
-        "published_epoch": published_epoch,
-        "published_display": fmt_date_short(published_epoch),
-        "published_iso": iso_timestamp(published_epoch),
-        "score": score_val,
-    }
-
-
-def fetch_rss(url):
-    """Return entries[] from an RSS/Atom URL using feedparser."""
-    parsed = feedparser.parse(url)
-    return parsed.entries or []
-
-
-def fetch_html_cards(url, source_name, hard_src):
-    """Some sites don't give clean RSS (like On3). We'll try basic scrape.
-    We'll treat top div/article blocks as 'entries'.
-    Super basic fallback.
-    """
-    out = []
+def to_iso(dt_struct, fallback=None):
     try:
-        r = requests.get(url, timeout=10)
-        if r.status_code != 200:
-            return out
-        soup = BeautifulSoup(r.text, "html.parser")
-
-        # grab headline blocks (very naive selectors)
-        # On3 style often has <a data-testid="headline-link"> etc.
-        article_links = soup.find_all("a")
-        seen = set()
-        now_epoch = time.time()
-
-        for a in article_links:
-            headline = a.get_text(" ", strip=True)
-            href = a.get("href") or ""
-            if not headline or not href:
-                continue
-            # avoid dup
-            key = (headline, href)
-            if key in seen:
-                continue
-            seen.add(key)
-
-            # build faux entry
-            fake_entry = {
-                "title": headline,
-                "link": href if href.startswith("http") else href,
-                "summary": "",
-                "published_parsed": time.localtime(now_epoch),
-            }
-            out.append(parse_entry(source_name, hard_src, fake_entry))
+        if isinstance(dt_struct, time.struct_time):
+            return datetime.fromtimestamp(time.mktime(dt_struct), tz=timezone.utc).astimezone().isoformat()
     except Exception:
         pass
-    return out
+    return fallback or now_iso()
 
+def clean(text):
+    if not text: return ""
+    # de-entity & de-whitespace
+    return re.sub(r"\s+", " ", BeautifulSoup(text, "html.parser").get_text()).strip()
 
-def collect_all():
-    collected = []
+def hostname(url):
+    try:
+        return urlparse(url).hostname or ""
+    except Exception:
+        return ""
 
-    for src in SOURCES:
-        name = src["name"]
-        url = src["url"]
-        hard_src = src.get("hard_purdue", False)
-        is_html = src.get("is_html", False)
+# --- Filtering logic ----------------------------------------------------------
 
-        try:
-            if is_html:
-                entries = fetch_html_cards(url, name, hard_src)
+NEGATIVE = re.compile(
+    r"\b(football|volleyball|soccer|wrestling|baseball|softball|women'?s|wbb|recruiting visit|nfl|mlb|ncaaf)\b",
+    re.I
+)
+PURDUE = re.compile(r"\bpurdue\b", re.I)
+BASKET = re.compile(r"\b(men'?s\s+)?basketball|mbb|boilermakers\b", re.I)
+
+def score_item(title, summary, link, source_hint=""):
+    t = f"{title} {summary} {source_hint} {link}"
+    t_clean = clean(t).lower()
+
+    if NEGATIVE.search(t_clean):
+        return -10
+
+    s = 0
+    if PURDUE.search(t_clean): s += 4
+    if BASKET.search(t_clean): s += 4
+    # prefer strong sources a bit
+    host = hostname(link)
+    if host:
+        if "purduesports.com" in host: s += 2
+        if "yahoo." in host or "espn." in host or "cbs" in host or "si.com" in host: s += 1
+
+    # de-dup googly junk
+    if "/video" in link or "/podcast" in link: s -= 1
+
+    return s
+
+# --- Load config --------------------------------------------------------------
+
+with open(SRC_FILE, "r", encoding="utf-8") as f:
+    SRC = json.load(f)
+with open(WIDGETS_FILE, "r", encoding="utf-8") as f:
+    WCFG = json.load(f)
+
+LIMIT = int(WCFG.get("limit", 20))
+HOURS_BACK = int(WCFG.get("hours_back", 240))  # look back window
+CUTOFF = datetime.now(timezone.utc) - timedelta(hours=HOURS_BACK)
+
+FEEDS = SRC.get("feeds", [])
+
+# --- Collect -----------------------------------------------------------------
+
+items = []
+seen = set()
+
+for feed_url in FEEDS:
+    try:
+        d = feedparser.parse(feed_url)
+        for e in d.entries[:60]:
+            title = clean(e.get("title", ""))
+            summary = clean(e.get("summary", "") or e.get("description", ""))
+            link = e.get("link") or ""
+            if not link: continue
+
+            # published
+            published = None
+            if getattr(e, "published_parsed", None):
+                published = to_iso(e.published_parsed)
+            elif getattr(e, "updated_parsed", None):
+                published = to_iso(e.updated_parsed)
             else:
-                raw_entries = fetch_rss(url)
-                entries = [parse_entry(name, hard_src, e) for e in raw_entries]
-        except Exception:
-            entries = []
+                published = now_iso()
 
-        collected.extend(entries)
+            # skip stale
+            try:
+                if datetime.fromisoformat(published).astimezone(timezone.utc) < CUTOFF:
+                    continue
+            except Exception:
+                pass
 
-    return collected
+            key = hashlib.md5((title + link).encode("utf-8")).hexdigest()
+            if key in seen: continue
+            seen.add(key)
 
+            src_host = hostname(link)
+            source = e.get("source", {}).get("title") or d.feed.get("title") or (src_host or "Source")
 
-def pick_top_purdue(entries, limit=20):
-    """Filter to Purdue men's basketball-ish, but DO NOT go empty.
-    Strategy:
-      1. Score every story.
-      2. Take anything with score >= 5 (pretty Purdue MBB flavored).
-      3. If that ends up empty, fall back to best-scoring Purdue Athletics MBB stories
-         so we at least show something.
-    Then sort newest -> oldest by published_epoch.
-    """
+            s = score_item(title, summary, link, source)
+            if s < 6:  # tightened threshold to reduce off-topic
+                continue
 
-    # first pass: high score
-    primary = [e for e in entries if e["score"] >= 5]
+            items.append({
+                "title": title,
+                "summary": summary,
+                "url": link,
+                "published": published,
+                "source": source,
+                "score": s
+            })
+    except Exception:
+        continue
 
-    # fallback if empty
-    if not primary:
-        primary = [
-            e for e in entries
-            if "purdue" in e["source"].lower()
-        ]
+# sort newest → oldest; then score
+def _sort_key(it):
+    try:
+        ts = datetime.fromisoformat(it["published"]).timestamp()
+    except Exception:
+        ts = 0
+    return (ts, it.get("score", 0))
 
-    # sort newest first using published_epoch
-    def sort_key(e):
-        # newer first means sort by (-epoch, -score as tiebreak)
-        epoch = e["published_epoch"] if e["published_epoch"] else 0
-        return (epoch, e["score"])
+items.sort(key=_sort_key, reverse=True)
+items = items[:LIMIT]
 
-    primary.sort(key=sort_key, reverse=True)
+out = {
+    "team": "purdue-mbb",
+    "updated": now_iso(),
+    "count": len(items),
+    "items": items
+}
 
-    # chop to limit
-    return primary[:limit]
+with open(OUT_FILE, "w", encoding="utf-8") as f:
+    json.dump(out, f, ensure_ascii=False, indent=2)
 
-
-def write_feed(items, path):
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(items, f, ensure_ascii=False)
-
-
-def main():
-    raw = collect_all()
-    top_items = pick_top_purdue(raw, limit=20)
-
-    # final shape we actually write to disk that index.html expects
-    final = []
-    for e in top_items:
-        final.append({
-            "title": e["title"],
-            "link": e["link"],
-            "summary": e["summary"],
-            "source": e["source"],
-            "published": e["published_display"],   # "Oct 27"
-            "published_iso": e["published_iso"],   # "2025-10-27T13:45:00"
-        })
-
-    # IMPORTANT: this path must exist in repo
-    output_path = "static/teams/purdue-mbb/items.json"
-    write_feed(final, output_path)
-
-if __name__ == "__main__":
-    main()
+print(f"Wrote {len(items)} items → {OUT_FILE}")
