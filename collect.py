@@ -1,22 +1,33 @@
 #!/usr/bin/env python3
+
 import os, json, feedparser, yaml
 from datetime import datetime, timedelta, timezone
 from urllib.parse import urlparse, urlunparse
 
+# =========================================================
 # SETTINGS
+# =========================================================
+
 TEAM_SLUG = "purdue-mbb"
 
+# where we write the final JSON that the site reads
 OUT_FILE = f"static/teams/{TEAM_SLUG}/items.json"
 
+# pull up to this many recent items per feed source
 MAX_ITEMS_PER_FEED = 50
-TOP_N = 20
-MAX_AGE_HOURS = 72  # rolling ~3 days
 
+# publish at most this many items total on the page
+TOP_N = 20
+
+# rolling freshness window (hours)
+MAX_AGE_HOURS = 72  # ~3 days
+
+# polite fetch header
 FEED_HEADERS = {
-    "User-Agent": "purdue-mbb-bot/1.0 (+github actions)"
+    "User-Agent": "purdue-mbb-bot/1.0 (github actions; Purdue MBB news aggregator)"
 }
 
-# canonical mapping for source names
+# canonical, nice display names for sources
 SOURCE_MAP = {
     "hammer and rails": "Hammer & Rails",
     "hammer & rails": "Hammer & Rails",
@@ -29,42 +40,77 @@ SOURCE_MAP = {
 
     "journal & courier": "Journal & Courier",
     "journal and courier": "Journal & Courier",
+    "journalandcourier": "Journal & Courier",
+    "jconline": "Journal & Courier",
 
     "yahoo sports": "Yahoo Sports",
+    "yahoo! sports": "Yahoo Sports",
+
     "cbs sports": "CBS Sports",
+    "cbssports.com": "CBS Sports",
+
     "espn": "ESPN",
-    "purdue sports": "PurdueSports",
-    "purduesports.com": "PurdueSports"
+    "espn.com": "ESPN",
+
+    "purduesports": "PurdueSports",
+    "purduesports.com": "PurdueSports",
+
+    # you can add more aliases here if we add feeds later
 }
 
-def canon_source(raw):
+
+# =========================================================
+# HELPERS
+# =========================================================
+
+def canon_source(raw: str) -> str:
+    """
+    Normalize the source string coming from feed metadata.
+    """
     if not raw:
         return "Unknown"
     return SOURCE_MAP.get(raw.strip().lower(), raw.strip())
 
-def canonical_url(url):
+
+def canonical_url(url: str) -> str:
+    """
+    Strip tracking junk etc. Return a clean URL.
+    """
     if not url:
         return ""
-    parts = urlparse(url)
-    # drop tracking junk etc (simple)
-    clean = parts._replace(query="")
-    return urlunparse(clean)
+    try:
+        parsed = urlparse(url)
+        # drop query + fragment to make links cleaner
+        cleaned = parsed._replace(query="", fragment="")
+        return urlunparse(cleaned)
+    except Exception:
+        return url
 
-def parse_date(entry):
-    # Try published_parsed first
-    dt = None
-    if hasattr(entry, "published_parsed") and entry.published_parsed:
-        dt = datetime(*entry.published_parsed[:6], tzinfo=timezone.utc)
-    elif hasattr(entry, "updated_parsed") and entry.updated_parsed:
-        dt = datetime(*entry.updated_parsed[:6], tzinfo=timezone.utc)
-    else:
-        # fallback: now
-        dt = datetime.now(timezone.utc)
-    return dt
+
+def parse_date(entry) -> datetime:
+    """
+    Try multiple fields from feedparser entry and fall back to 'now'.
+    Always return timezone-aware UTC datetime.
+    """
+    candidates = [
+        getattr(entry, "published_parsed", None),
+        getattr(entry, "updated_parsed", None),
+        getattr(entry, "created_parsed", None),
+    ]
+
+    for struct_t in candidates:
+        if struct_t:
+            # struct_time -> aware UTC datetime
+            return datetime(*struct_t[:6], tzinfo=timezone.utc)
+
+    # if nothing, just use now so it doesn't get dropped
+    return datetime.now(timezone.utc)
+
 
 def looks_like_football(blob: str) -> bool:
     """
-    crude keyword filter to toss obvious football-only talk
+    Heuristic: filter obvious football-only stories.
+    We KEEP men's basketball. We DROP football.
     """
     terms = [
         "football",
@@ -73,64 +119,93 @@ def looks_like_football(blob: str) -> bool:
         "touchdown",
         "wide receiver",
         "linebacker",
-        "ryan walters",
-        "coach walters",
-        "walters",
         "defensive coordinator",
+        "defensive backs coach",
         "field goal",
+        "ryan walters",    # Purdue football head coach
+        "coach walters",
+        "walters said",
     ]
     b = blob.lower()
     return any(t in b for t in terms)
 
+
 def is_relevant_purdue(item) -> bool:
-    # Only want Purdue men's basketball content.
-    # We'll do a dumb include of "purdue" AND reject obvious football.
-    blob = f"{item.get('title','')} {item.get('summary','')}"
-    text = blob.lower()
+    """
+    Decide if a story is about Purdue men's basketball (or close enough).
+    We allow 'Purdue', 'Boilermakers', 'basketball', 'Painter', etc.
+    We reject obvious football-only hits.
+    """
+    blob = f"{item.get('title','')} {item.get('summary','')}".lower()
 
-    if "purdue" not in text:
-        return False
+    # auto-keep if it clearly sounds like hoops
+    if (
+        "basketball" in blob
+        or "painter" in blob          # Matt Painter quotes and postgame
+        or "boilermakers" in blob     # generic team nickname
+        or "mbb" in blob              # sometimes writers actually tag it like this
+    ):
+        # but still block if football-y
+        if looks_like_football(blob):
+            return False
+        return True
 
-    if looks_like_football(blob):
-        return False
+    # fallback: keep if it even says "purdue"
+    if "purdue" in blob:
+        if looks_like_football(blob):
+            return False
+        return True
 
-    # You could add "women's basketball" exclude etc here if needed.
+    # otherwise drop it
+    return False
 
-    return True
 
-def normalize_item(source, entry):
+def normalize_item(source_name: str, entry) -> dict:
+    """
+    Convert 1 RSS/Atom entry from feedparser into our standard dict.
+    """
     link = entry.get("link", "") or ""
     title = (entry.get("title", "") or "").strip()
-    summary = (entry.get("summary", "") or "").strip()
+    summary = entry.get("summary", "") or ""
 
     pub_dt = parse_date(entry)
 
     return {
-        "source": canon_source(source),
+        "source": canon_source(source_name),
         "title": title,
         "summary": summary,
         "link": canonical_url(link),
-        "date": pub_dt.isoformat(),
+        "date": pub_dt.isoformat(),  # always store ISO8601 string
     }
 
-def dedupe(items):
+
+def dedupe(items: list[dict]) -> list[dict]:
+    """
+    Deduplicate by (source,title,link) so we don't show the same post
+    repeated in slightly different feeds.
+    """
     seen = set()
     out = []
     for it in items:
-        key = (it["title"], it["link"])
+        key = (it["source"], it["title"], it["link"])
         if key in seen:
             continue
         seen.add(key)
         out.append(it)
     return out
 
+
+# =========================================================
+# MAIN
+# =========================================================
+
 def main():
-    # load feeds list from src/feeds.yml
-    with open("src/feeds.yml", "r", encoding="utf-8") as f:
+    # load feed list from src/feeds.yaml
+    with open("src/feeds.yaml", "r", encoding="utf-8") as f:
         feeds = yaml.safe_load(f).get(TEAM_SLUG, [])
 
     if not feeds:
-        raise SystemExit(f"No feeds found for {TEAM_SLUG}")
+        raise SystemExit(f"No feeds found for {TEAM_SLUG} in src/feeds.yaml")
 
     cutoff = datetime.now(timezone.utc) - timedelta(hours=MAX_AGE_HOURS)
 
@@ -139,6 +214,7 @@ def main():
     for fd in feeds:
         name = fd.get("name", "Unknown")
         url = fd.get("url")
+
         if not url:
             continue
 
@@ -147,43 +223,43 @@ def main():
         for e in parsed.entries[:MAX_ITEMS_PER_FEED]:
             item = normalize_item(name, e)
 
-            # filter by staleness
+            # date check (freshness)
             try:
-                dt_obj = datetime.fromisoformat(item["date"])
-            except ValueError:
-                dt_obj = datetime.now(timezone.utc)
+                dt = datetime.fromisoformat(item["date"])
+            except Exception:
+                # if somehow busted date, keep it anyway (rare)
+                dt = datetime.now(timezone.utc)
 
-            if dt_obj < cutoff:
+            if dt < cutoff:
                 continue
 
-            if not is_relevant_purdue(item):
+            # relevance check
+            if not is_relevant_purdue({
+                "title": item["title"],
+                "summary": item["summary"],
+            }):
                 continue
 
             collected.append(item)
 
     # sort newest first
-    collected.sort(
-        key=lambda it: datetime.fromisoformat(it["date"]),
-        reverse=True
-    )
+    collected.sort(key=lambda x: x["date"], reverse=True)
 
-    # dedupe & cap
-    collected = dedupe(collected)
+    # take top N
     top = collected[:TOP_N]
 
+    # write for frontend
     payload = {
-        "updated_ts": int(datetime.now(timezone.utc).timestamp() * 1000),
-        "items": top
+        "updated_ts": datetime.now(timezone.utc).isoformat(),
+        "items": top,
     }
 
-    # ensure folder exists
-    out_dir = os.path.dirname(OUT_FILE)
-    os.makedirs(out_dir, exist_ok=True)
-
+    os.makedirs(os.path.dirname(OUT_FILE), exist_ok=True)
     with open(OUT_FILE, "w", encoding="utf-8") as f:
         json.dump(payload, f, indent=2)
 
     print(f"Wrote {len(top)} stories to {OUT_FILE}")
+
 
 if __name__ == "__main__":
     main()
