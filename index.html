@@ -3,412 +3,64 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Purdue Boilermakers — Men’s Basketball News</title>
+  <title>Purdue Boilermakers — Men's Basketball Hub</title>
 
-  <style>
-    :root {
-      --bg-main: #000000;
-      --bg-card: radial-gradient(circle at 20% 20%, #1a1a1a 0%, #0f0f0f 70%);
-      --border-card: rgba(255,255,255,0.08);
-      --text-primary: #ffffff;
-      --text-dim: rgba(255,255,255,0.65);
-      --text-gold: #c6b075;
-      --text-date: rgba(255,255,255,0.55);
-      --radius-card: 12px;
-      --radius-badge: 6px;
-      --shadow-card: 0 30px 80px rgba(0,0,0,0.9);
-      --font-stack: -apple-system, BlinkMacSystemFont, "Inter", "SF Pro Display",
-        system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
-    }
-
-    * {
-      box-sizing: border-box;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    body {
-      margin: 0;
-      background-color: var(--bg-main);
-      color: var(--text-primary);
-      font-family: var(--font-stack);
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    header.app-header {
-      width: 100%;
-      background: radial-gradient(circle at 0% 0%, #1a1a1a 0%, #000 60%);
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-      color: var(--text-primary);
-      padding: 16px 16px 12px;
-    }
-
-    .header-inner {
-      max-width: 1400px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: auto 1fr auto;
-      grid-template-areas:
-        "logo title updated";
-      grid-column-gap: 16px;
-      align-items: start;
-    }
-
-    .logo-badge {
-      grid-area: logo;
-      background-color: #c6b075;
-      color: #000;
-      font-weight: 600;
-      font-size: 24px;
-      line-height: 44px;
-      text-align: center;
-      width: 44px;
-      height: 44px;
-      border-radius: 8px;
-      box-shadow: 0 20px 60px rgba(198,176,117,0.4);
-      font-family: "Georgia", "Times New Roman", serif;
-    }
-
-    .title-block {
-      grid-area: title;
-      line-height: 1.25;
-    }
-
-    .title-topline {
-      font-size: 16px;
-      font-weight: 600;
-      color: var(--text-gold);
-    }
-
-    .title-headline {
-      font-size: 18px;
-      font-weight: 600;
-      color: var(--text-primary);
-    }
-
-    .updated-pill {
-      grid-area: updated;
-      align-self: start;
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.18);
-      border-radius: var(--radius-badge);
-      padding: 8px 10px;
-      font-size: 12px;
-      line-height: 1.2;
-      color: var(--text-primary);
-      white-space: nowrap;
-    }
-
-    main.page-body {
-      flex: 1;
-      width: 100%;
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 16px;
-    }
-
-    #stories {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(360px,100%), 1fr));
-      grid-gap: 16px;
-      align-items: start;
-    }
-
-    .story-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-card);
-      border-radius: var(--radius-card);
-      box-shadow: var(--shadow-card);
-      padding: 16px 16px 20px;
-      display: flex;
-      flex-direction: column;
-      min-height: 160px;
-    }
-
-    .story-header-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 12px;
-      flex-wrap: wrap;
-      row-gap: 6px;
-    }
-
-    .story-source {
-      color: var(--text-gold);
-      font-size: 13px;
-      font-weight: 600;
-      line-height: 1.3;
-    }
-
-    .story-date {
-      color: var(--text-date);
-      font-size: 12px;
-      line-height: 1.3;
-    }
-
-    .story-title {
-      font-size: 16px;
-      line-height: 1.4;
-      font-weight: 600;
-      color: var(--text-primary);
-      text-decoration: none;
-      margin: 0 0 10px;
-      word-break: break-word;
-    }
-
-    .story-title:hover,
-    .story-title:focus {
-      text-decoration: underline;
-      text-decoration-color: var(--text-gold);
-    }
-
-    .story-summary {
-      font-size: 14px;
-      line-height: 1.5;
-      color: var(--text-dim);
-      word-break: break-word;
-    }
-
-    .empty {
-      color: var(--text-dim);
-      font-size: 15px;
-      padding: 40px 0 80px;
-      grid-column: 1 / -1;
-    }
-
-    footer.page-footer {
-      width: 100%;
-      background: radial-gradient(circle at 0% 0%, #0f0f0f 0%, #000000 70%);
-      border-top: 1px solid rgba(255,255,255,0.07);
-      color: var(--text-primary);
-      padding: 24px 16px 80px;
-      font-size: 14px;
-      line-height: 1.5;
-    }
-
-    .footer-inner {
-      max-width: 1400px;
-      margin: 0 auto;
-      color: var(--text-primary);
-    }
-
-    .footer-title {
-      font-size: 18px;
-      font-weight: 600;
-      color: var(--text-primary);
-      margin-bottom: 8px;
-    }
-
-    .footer-sub {
-      color: var(--text-dim);
-      margin-bottom: 24px;
-    }
-
-    .footer-sources-label {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--text-primary);
-      margin-bottom: 8px;
-    }
-
-    .footer-sources-list {
-      font-size: 13px;
-      color: var(--text-dim);
-      line-height: 1.6;
-    }
-
-    .footer-sources-list span {
-      white-space: nowrap;
-    }
-
-    @media (max-width:600px) {
-      .header-inner {
-        grid-template-columns: auto 1fr;
-        grid-template-areas:
-          "logo title"
-          "updated updated";
-        row-gap: 12px;
-      }
-      .updated-pill {
-        justify-self: start;
-      }
-
-      .title-topline {
-        font-size: 15px;
-      }
-
-      .title-headline {
-        font-size: 17px;
-      }
-
-      .footer-title {
-        font-size: 16px;
-      }
-
-      .footer-sub {
-        font-size: 14px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="pro.css" />
+  <script defer src="pro.js"></script>
 </head>
-<body>
+<body class="app-shell">
 
-<header class="app-header">
-  <div class="header-inner">
-    <div class="logo-badge">P</div>
-    <div class="title-block">
-      <div class="title-topline">Purdue Boilermakers</div>
-      <div class="title-headline">Men’s Basketball News</div>
+  <!-- App Header -->
+  <header class="app-header">
+    <div class="brand-icon"></div>
+    <div class="brand-block">
+      <div class="brand-title">Purdue Boilermakers</div>
+      <div class="brand-sub">Men’s Basketball Hub</div>
     </div>
-    <div class="updated-pill" id="updated-pill">Updated …</div>
-  </div>
-</header>
+  </header>
 
-<main class="page-body">
-  <div id="stories">
-    <div class="empty">No recent stories found.</div>
-  </div>
-</main>
+  <main class="page-main">
 
-<footer class="page-footer">
-  <div class="footer-inner">
-    <div class="footer-title">Purdue Men's Basketball Fan Feed</div>
-    <div class="footer-sub">
-      Unofficial. Automatically surfaces the latest Purdue hoops headlines.
-    </div>
-
-    <div class="footer-sources-label">Sources we monitor:</div>
-    <div class="footer-sources-list">
-      <span>GoldandBlack.com</span> ·
-      <span>On3 Purdue Basketball</span> ·
-      <span>247Sports Purdue Basketball</span> ·
-      <span>Purdue Athletics MBB</span> ·
-      <span>ESPN Purdue MBB</span> ·
-      <span>Yahoo Sports College Basketball</span> ·
-      <span>CBS Sports College Basketball</span> ·
-      <span>The Field of 68</span> ·
-      <span>SI Purdue Basketball</span> ·
-      <span>USA Today Purdue Boilermakers</span>
-    </div>
-  </div>
-</footer>
-
-<script>
-async function loadFeed() {
-  const FEED_URL = './static/teams/purdue-mbb/items.json';
-
-  try {
-    const res = await fetch(FEED_URL, { cache: 'no-cache' });
-    if (!res.ok) {
-      console.error('fetch failed', res.status);
-      showEmpty();
-      return;
-    }
-
-    const items = await res.json();
-    if (!Array.isArray(items) || items.length === 0) {
-      showEmpty();
-      return;
-    }
-
-    // items are already sorted newest->oldest in collect.py,
-    // but we defensively sort here just in case.
-    items.sort((a, b) => {
-      const ea = Date.parse(a.published_iso || 0) || 0;
-      const eb = Date.parse(b.published_iso || 0) || 0;
-      return eb - ea;
-    });
-
-    renderStories(items);
-    updateHeaderTimestamp(items[0]); // newest item
-  } catch (err) {
-    console.error('error', err);
-    showEmpty();
-  }
-}
-
-function renderStories(items) {
-  const container = document.getElementById('stories');
-  container.innerHTML = '';
-
-  items.forEach(it => {
-    const card = document.createElement('article');
-    card.className = 'story-card';
-
-    const source = it.source || '';
-    const publishedShort = it.published || '';
-    const title = it.title || '';
-    const summary = it.summary || '';
-    const href = it.link || '#';
-
-    card.innerHTML = `
-      <div class="story-header-row">
-        <div class="story-source">${escapeHTML(source)}</div>
-        <div class="story-date">${escapeHTML(publishedShort)}</div>
+    <!-- Headlines panel -->
+    <section class="panel panel-main">
+      <div class="panel-head">
+        <h2 class="panel-title">Top Headlines</h2>
+        <div class="panel-accent"></div>
       </div>
-      <a
-        class="story-title"
-        href="${escapeAttr(href)}"
-        target="_blank"
-        rel="noopener noreferrer"
-      >${escapeHTML(title)}</a>
-      <div class="story-summary">${escapeHTML(summary)}</div>
-    `;
 
-    container.appendChild(card);
-  });
-}
+      <div id="updated-row" class="updated-row" hidden>
+        <span id="updated-at" class="updated-at"></span>
+      </div>
 
-function showEmpty() {
-  const container = document.getElementById('stories');
-  container.innerHTML = '<div class="empty">No recent stories found.</div>';
-  updateHeaderTimestamp(null);
-}
+      <div id="headline-list" class="headline-list">
+        <!-- JS fills with up to 20 cards -->
+      </div>
 
-function updateHeaderTimestamp(latestItem) {
-  const pill = document.getElementById('updated-pill');
-  if (!pill) return;
+      <div id="empty-state" class="empty-state" hidden>
+        <div class="empty-card">
+          <p class="empty-main">
+            No Purdue Men’s Basketball headlines yet.
+          </p>
+          <p class="empty-sub">
+            New stories will appear here automatically.
+          </p>
+        </div>
+      </div>
+    </section>
 
-  if (!latestItem || !latestItem.published_iso) {
-    pill.textContent = 'Updated just now';
-    return;
-  }
+    <!-- Sources panel -->
+    <section class="panel panel-sources">
+      <div class="panel-head">
+        <h2 class="panel-title">Sources</h2>
+        <div class="panel-accent"></div>
+      </div>
 
-  // format like "Updated Oct 28, 5:01 PM"
-  const d = new Date(latestItem.published_iso);
-  if (Number.isNaN(d.getTime())) {
-    pill.textContent = 'Updated just now';
-    return;
-  }
+      <ul id="source-list" class="sources-list">
+        <!-- JS fills with unique source names -->
+      </ul>
+    </section>
 
-  const optsDate = { month: 'short', day: 'numeric' };
-  const optsTime = { hour: 'numeric', minute: '2-digit' };
-  const datePart = d.toLocaleDateString(undefined, optsDate);
-  const timePart = d.toLocaleTimeString(undefined, optsTime).replace(':00', ':00'); // minimal edit, keeps minutes
-
-  const yearNow = (new Date()).getFullYear();
-  const showYear = d.getFullYear() !== yearNow;
-  const dateWithMaybeYear = showYear ? `${datePart}, ${d.getFullYear()}` : datePart;
-
-  pill.textContent = `Updated ${dateWithMaybeYear}, ${timePart}`;
-}
-
-// basic escaping to avoid raw HTML entities like &#39;
-function escapeHTML(str) {
-  return String(str)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;');
-}
-function escapeAttr(str) {
-  return String(str).replace(/"/g, '&quot;');
-}
-
-// run it
-loadFeed();
-</script>
+  </main>
 
 </body>
 </html>
