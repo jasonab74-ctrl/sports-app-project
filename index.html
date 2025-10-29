@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Purdue Boilermakers — Men's Basketball News</title>
+  <title>Purdue Boilermakers — Men’s Basketball News</title>
 
   <style>
     :root {
@@ -100,7 +100,6 @@
       white-space: nowrap;
     }
 
-    /* main content wrapper */
     main.page-body {
       flex: 1;
       width: 100%;
@@ -109,7 +108,6 @@
       padding: 16px;
     }
 
-    /* stories grid */
     #stories {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(min(360px,100%), 1fr));
@@ -117,7 +115,6 @@
       align-items: start;
     }
 
-    /* single story card */
     .story-card {
       background: var(--bg-card);
       border: 1px solid var(--border-card);
@@ -174,7 +171,6 @@
       word-break: break-word;
     }
 
-    /* empty message */
     .empty {
       color: var(--text-dim);
       font-size: 15px;
@@ -266,7 +262,7 @@
       <div class="title-topline">Purdue Boilermakers</div>
       <div class="title-headline">Men’s Basketball News</div>
     </div>
-    <div class="updated-pill" id="updated-pill">Updated just now</div>
+    <div class="updated-pill" id="updated-pill">Updated …</div>
   </div>
 </header>
 
@@ -301,14 +297,12 @@
 
 <script>
 async function loadFeed() {
-  // where the GitHub Action writes the live feed
   const FEED_URL = './static/teams/purdue-mbb/items.json';
 
   try {
     const res = await fetch(FEED_URL, { cache: 'no-cache' });
-
     if (!res.ok) {
-      console.error('Failed to fetch feed JSON', res.status);
+      console.error('fetch failed', res.status);
       showEmpty();
       return;
     }
@@ -319,9 +313,18 @@ async function loadFeed() {
       return;
     }
 
+    // items are already sorted newest->oldest in collect.py,
+    // but we defensively sort here just in case.
+    items.sort((a, b) => {
+      const ea = Date.parse(a.published_iso || 0) || 0;
+      const eb = Date.parse(b.published_iso || 0) || 0;
+      return eb - ea;
+    });
+
     renderStories(items);
+    updateHeaderTimestamp(items[0]); // newest item
   } catch (err) {
-    console.error('Error loading feed:', err);
+    console.error('error', err);
     showEmpty();
   }
 }
@@ -330,78 +333,82 @@ function renderStories(items) {
   const container = document.getElementById('stories');
   container.innerHTML = '';
 
-  // items are expected newest-first already from collect.py
-  // defensive: drop anything missing required core fields
-  const cleaned = items.filter(it =>
-    it &&
-    typeof it.title === 'string' &&
-    typeof it.link === 'string'
-  );
-
-  if (cleaned.length === 0) {
-    showEmpty();
-    return;
-  }
-
-  cleaned.forEach(it => {
+  items.forEach(it => {
     const card = document.createElement('article');
     card.className = 'story-card';
 
-    const safeSource = it.source || '';
-    const safeDate = it.published || '';
-    const safeTitle = it.title || '';
-    const safeSummary = it.summary || '';
-    const safeHref = it.link || '#';
+    const source = it.source || '';
+    const publishedShort = it.published || '';
+    const title = it.title || '';
+    const summary = it.summary || '';
+    const href = it.link || '#';
 
     card.innerHTML = `
       <div class="story-header-row">
-        <div class="story-source">${escapeHTML(safeSource)}</div>
-        <div class="story-date">${escapeHTML(safeDate)}</div>
+        <div class="story-source">${escapeHTML(source)}</div>
+        <div class="story-date">${escapeHTML(publishedShort)}</div>
       </div>
       <a
         class="story-title"
-        href="${escapeAttr(safeHref)}"
+        href="${escapeAttr(href)}"
         target="_blank"
         rel="noopener noreferrer"
-      >${escapeHTML(safeTitle)}</a>
-      <div class="story-summary">${escapeHTML(safeSummary)}</div>
+      >${escapeHTML(title)}</a>
+      <div class="story-summary">${escapeHTML(summary)}</div>
     `;
 
     container.appendChild(card);
   });
-
-  // update header pill to "Updated just now"
-  const pill = document.getElementById('updated-pill');
-  if (pill) {
-    pill.textContent = 'Updated just now';
-  }
 }
 
 function showEmpty() {
   const container = document.getElementById('stories');
   container.innerHTML = '<div class="empty">No recent stories found.</div>';
-
-  const pill = document.getElementById('updated-pill');
-  if (pill) {
-    pill.textContent = 'Updated just now';
-  }
+  updateHeaderTimestamp(null);
 }
 
-// very basic HTML escaping so weird characters (&amp;#39;) don't render raw
+function updateHeaderTimestamp(latestItem) {
+  const pill = document.getElementById('updated-pill');
+  if (!pill) return;
+
+  if (!latestItem || !latestItem.published_iso) {
+    pill.textContent = 'Updated just now';
+    return;
+  }
+
+  // format like "Updated Oct 28, 5:01 PM"
+  const d = new Date(latestItem.published_iso);
+  if (Number.isNaN(d.getTime())) {
+    pill.textContent = 'Updated just now';
+    return;
+  }
+
+  const optsDate = { month: 'short', day: 'numeric' };
+  const optsTime = { hour: 'numeric', minute: '2-digit' };
+  const datePart = d.toLocaleDateString(undefined, optsDate);
+  const timePart = d.toLocaleTimeString(undefined, optsTime).replace(':00', ':00'); // minimal edit, keeps minutes
+
+  const yearNow = (new Date()).getFullYear();
+  const showYear = d.getFullYear() !== yearNow;
+  const dateWithMaybeYear = showYear ? `${datePart}, ${d.getFullYear()}` : datePart;
+
+  pill.textContent = `Updated ${dateWithMaybeYear}, ${timePart}`;
+}
+
+// basic escaping to avoid raw HTML entities like &#39;
 function escapeHTML(str) {
   return String(str)
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;');
 }
-
 function escapeAttr(str) {
-  return String(str)
-    .replace(/"/g, '&quot;');
+  return String(str).replace(/"/g, '&quot;');
 }
 
-// kick off
+// run it
 loadFeed();
 </script>
+
 </body>
 </html>
