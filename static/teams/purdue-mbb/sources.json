@@ -1,0 +1,42 @@
+[
+  {
+    "name": "GoldandBlack.com",
+    "rss": "https://www.on3.com/teams/purdue-boilermakers/basketball/feed/" 
+  },
+  {
+    "name": "On3 Purdue Basketball",
+    "rss": "https://www.on3.com/teams/purdue-boilermakers/basketball/feed/"
+  },
+  {
+    "name": "247Sports Purdue Basketball",
+    "rss": "https://247sports.com/college/purdue/Article/rss/"
+  },
+  {
+    "name": "Purdue Athletics MBB",
+    "rss": "https://purduesports.com/rss?path=mbball"
+  },
+  {
+    "name": "ESPN Purdue MBB",
+    "rss": "https://www.espn.com/college-basketball/team/_/id/2509/purdue-boilermakers/rss"
+  },
+  {
+    "name": "Yahoo Sports College Basketball",
+    "rss": "https://sports.yahoo.com/college-basketball/rss/"
+  },
+  {
+    "name": "CBS Sports College Basketball",
+    "rss": "https://www.cbssports.com/college-basketball/rss/headlines/"
+  },
+  {
+    "name": "The Field of 68",
+    "rss": "https://thefieldof68.com/feed/"
+  },
+  {
+    "name": "SI Purdue Basketball",
+    "rss": "https://www.si.com/college/purdue/basketball/rss"
+  },
+  {
+    "name": "USA Today Purdue Boilermakers",
+    "rss": "https://boilermakerswire.usatoday.com/feed/"
+  }
+]

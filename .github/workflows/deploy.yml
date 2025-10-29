@@ -1,0 +1,49 @@
+name: Build and Deploy Purdue MBB Hub
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "index.html"
+      - "pro.css"
+      - "pro.js"
+      - "static/teams/purdue-mbb/items.json"
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+
+      - name: Prepare site bundle
+        run: |
+          rm -rf site
+          mkdir -p site/static/teams/purdue-mbb
+          cp index.html pro.css pro.js site/
+          cp static/teams/purdue-mbb/items.json site/static/teams/purdue-mbb/items.json
+
+      - name: Publish to gh-pages
+        run: |
+          # create (or update) gh-pages branch contents from ./site
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git checkout --orphan gh-pages-tmp
+          git reset
+          cp -r site/* .
+          git add .
+          git commit -m "Deploy site"
+
+          # force-move branch gh-pages -> new content
+          git branch -D gh-pages 2>/dev/null || true
+          git branch -m gh-pages
+
+          git push -f origin gh-pages

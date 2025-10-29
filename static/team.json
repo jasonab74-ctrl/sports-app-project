@@ -1,0 +1,9 @@
+{
+  "slug": "purdue-mbb",
+  "name": "Purdue Boilermakers",
+  "sport": "Men's Basketball",
+  "colors": {
+    "primary": "#C8A96B",
+    "dark": "#0b0b0c"
+  }
+}

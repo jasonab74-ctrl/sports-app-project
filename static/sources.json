@@ -1,0 +1,86 @@
+{
+  "team": "purdue-mbb",
+  "max_items": 20,
+  "feeds": [
+    {
+      "id": "purdue_athletics_mbb",
+      "name": "Purdue Athletics MBB",
+      "type": "html",
+      "kind": "news",
+      "site": "https://purduesports.com",
+      "url": "https://purduesports.com/sports/mens-basketball/news"
+    },
+    {
+      "id": "on3_purdue_basketball_news",
+      "name": "On3 — Purdue Basketball News",
+      "type": "html",
+      "kind": "news",
+      "site": "https://www.on3.com",
+      "url": "https://www.on3.com/teams/purdue-boilermakers/category/basketball/news/"
+    },
+    {
+      "id": "on3_purdue_mbb_board",
+      "name": "On3 Free Board — Boilermaker Men's Basketball",
+      "type": "html",
+      "kind": "board",
+      "site": "https://www.on3.com",
+      "url": "https://www.on3.com/boards/forums/free-board-boilermaker-mens-basketball.160/"
+    },
+    {
+      "id": "247_purdue_basketball",
+      "name": "247Sports Purdue Basketball",
+      "type": "html",
+      "kind": "news",
+      "site": "https://247sports.com",
+      "url": "https://247sports.com/college/purdue/Season/2025-Basketball/News/"
+    },
+    {
+      "id": "goldandblack",
+      "name": "GoldandBlack.com",
+      "type": "html",
+      "kind": "news",
+      "site": "https://purdue.rivals.com",
+      "url": "https://purdue.rivals.com/"
+    },
+    {
+      "id": "espn_purdue_mbb",
+      "name": "ESPN Purdue MBB",
+      "type": "html",
+      "kind": "news",
+      "site": "https://www.espn.com",
+      "url": "https://www.espn.com/mens-college-basketball/team/_/id/2509/purdue-boilermakers"
+    },
+    {
+      "id": "yahoo_cbb",
+      "name": "Yahoo Sports College Basketball",
+      "type": "rss",
+      "kind": "news",
+      "site": "https://sports.yahoo.com",
+      "url": "https://sports.yahoo.com/college-basketball/rss/"
+    },
+    {
+      "id": "cbs_cbb",
+      "name": "CBS Sports College Basketball",
+      "type": "html",
+      "kind": "news",
+      "site": "https://www.cbssports.com",
+      "url": "https://www.cbssports.com/college-basketball/"
+    },
+    {
+      "id": "si_purdue",
+      "name": "Sports Illustrated — Purdue",
+      "type": "html",
+      "kind": "news",
+      "site": "https://www.si.com",
+      "url": "https://www.si.com/college/purdue/"
+    },
+    {
+      "id": "field_of_68",
+      "name": "The Field of 68",
+      "type": "html",
+      "kind": "news",
+      "site": "https://www.fieldof68.com",
+      "url": "https://www.fieldof68.com/"
+    }
+  ]
+}

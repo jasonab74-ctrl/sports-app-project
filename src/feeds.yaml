@@ -1,0 +1,35 @@
+purdue-mbb:
+  - name: "Hammer & Rails"
+    url: "https://www.hammerandrails.com/rss/index.xml"
+
+  - name: "PurdueSports"
+    # Men's Basketball news is usually under Men's Basketball category,
+    # but Purdue’s site RSS is often sport-mixed. We will filter.
+    url: "https://purduesports.com/rss.aspx?path=mbball"
+
+  - name: "ESPN"
+    # ESPN College Basketball / Big Ten / Team coverage
+    url: "https://www.espn.com/espn/rss/ncb/news"
+
+  - name: "GoldandBlack"
+    # Rivals / GoldandBlack.com does not always expose a public RSS,
+    # but they DO publish via https://purdue.rivals.com/rss
+    # (if that ever changes, just remove it)
+    url: "https://purdue.rivals.com/rss"
+
+  - name: "On3 Purdue"
+    # On3 Purdue feed (Purdue site, includes hoops + recruiting)
+    url: "https://www.on3.com/college/purdue-boilermakers/feed/"
+
+  - name: "Journal & Courier"
+    # Gannett RSS for Purdue basketball can be inconsistent,
+    # so we point at Purdue sports general and let the filter trim.
+    url: "https://rssfeeds.jconline.com/jconline/purdue-sports"
+
+  - name: "CBS Sports"
+    # College Basketball headlines from CBS Sports
+    url: "https://www.cbssports.com/rss/headlines/college-basketball/"
+
+  - name: "Yahoo Sports"
+    # Yahoo College Basketball
+    url: "https://sports.yahoo.com/college-basketball/rss/"
