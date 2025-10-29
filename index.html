@@ -1,66 +1,39 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Purdue Boilermakers — Men's Basketball Hub</title>
-
-  <link rel="stylesheet" href="pro.css" />
-  <script defer src="pro.js"></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Purdue Boilermakers — Men’s Basketball News</title>
+  <link rel="icon" href="static/favicon.png">
+  <link rel="apple-touch-icon" href="static/favicon.png">
+  <link rel="preload" href="static/css/pro.css" as="style">
+  <link rel="stylesheet" href="static/css/pro.css">
+  <meta name="theme-color" content="#0b0b0c" />
 </head>
-<body class="app-shell">
-
-  <!-- App Header -->
-  <header class="app-header">
-    <div class="brand-icon"></div>
-    <div class="brand-block">
-      <div class="brand-title">Purdue Boilermakers</div>
-      <div class="brand-sub">Men’s Basketball Hub</div>
+<body>
+  <header class="site-head">
+    <div class="brand">
+      <span class="badge">P</span>
+      <div class="brand-text">
+        <div class="brand-top">Purdue Boilermakers</div>
+        <div class="brand-bottom">Men’s Basketball News</div>
+      </div>
     </div>
+    <div id="updated" class="updated-pill">Updated …</div>
   </header>
 
-  <main class="page-main">
+  <main id="app" class="app">
+    <div id="cards" class="cards"></div>
 
-    <!-- Headlines panel -->
-    <section class="panel panel-main">
-      <div class="panel-head">
-        <h2 class="panel-title">Top Headlines</h2>
-        <div class="panel-accent"></div>
-      </div>
-
-      <div id="updated-row" class="updated-row" hidden>
-        <span id="updated-at" class="updated-at"></span>
-      </div>
-
-      <div id="headline-list" class="headline-list">
-        <!-- JS fills with up to 20 cards -->
-      </div>
-
-      <div id="empty-state" class="empty-state" hidden>
-        <div class="empty-card">
-          <p class="empty-main">
-            No Purdue Men’s Basketball headlines yet.
-          </p>
-          <p class="empty-sub">
-            New stories will appear here automatically.
-          </p>
-        </div>
-      </div>
+    <section class="about">
+      <h2>Purdue Men's Basketball Fan Feed</h2>
+      <p>Unofficial. Automatically surfaces the latest Purdue hoops headlines.</p>
+      <h3>Sources we monitor:</h3>
+      <p id="sources" class="sources"></p>
     </section>
-
-    <!-- Sources panel -->
-    <section class="panel panel-sources">
-      <div class="panel-head">
-        <h2 class="panel-title">Sources</h2>
-        <div class="panel-accent"></div>
-      </div>
-
-      <ul id="source-list" class="sources-list">
-        <!-- JS fills with unique source names -->
-      </ul>
-    </section>
-
   </main>
 
+  <script defer src="static/js/pro.js"></script>
 </body>
 </html>
