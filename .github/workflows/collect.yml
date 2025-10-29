@@ -2,7 +2,7 @@ name: collect-purdue-mbb
 
 on:
   schedule:
-    - cron: "*/30 * * * *"   # every 30 minutes
+    - cron: "*/30 * * * *"  # every 30 minutes
   workflow_dispatch:
 
 permissions:
@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository (full history so we can commit back)
+      - name: Checkout repo
         uses: actions/checkout@v4
         with:
           persist-credentials: true
@@ -31,26 +31,20 @@ jobs:
 
       - name: Run collector
         run: |
-          echo "Running collector script..."
           python tools/collect.py
 
-      - name: Commit & push updated JSON
+      - name: Commit & push updated feed
         run: |
-          echo "Preparing git commit..."
           git config user.name "sports-app-bot"
           git config user.email "actions@users.noreply.github.com"
 
-          # stage only the Purdue feed file
+          # stage updated feed file
           git add static/teams/purdue-mbb/items.json
 
+          # only commit/push if there are changes
           if ! git diff --cached --quiet; then
-            echo "Changes detected, committing..."
             git commit -m "auto: update Purdue MBB feed"
-
-            echo "Sync with main to avoid non-fast-forward issues..."
             git pull --rebase origin main
-
-            echo "Push..."
             git push origin main
           else
             echo "No feed changes to commit."
