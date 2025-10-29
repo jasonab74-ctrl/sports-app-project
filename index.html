@@ -1,344 +1,407 @@
 <!DOCTYPE html>
-<html lang="en" style="background:#000;">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Purdue Men's Basketball News</title>
+  <title>Purdue Boilermakers — Men's Basketball News</title>
+
   <style>
     :root {
       --bg-main: #000000;
-      --bg-card: radial-gradient(circle at 20% 20%, #1a1a1a 0%, #000000 80%);
+      --bg-card: radial-gradient(circle at 20% 20%, #1a1a1a 0%, #0f0f0f 70%);
+      --border-card: rgba(255,255,255,0.08);
       --text-primary: #ffffff;
-      --text-secondary: #a0a0a0;
-      --accent-gold: #d5c38a;
-      --card-border: rgba(255,255,255,0.07);
+      --text-dim: rgba(255,255,255,0.65);
+      --text-gold: #c6b075;
+      --text-date: rgba(255,255,255,0.55);
+      --radius-card: 12px;
+      --radius-badge: 6px;
+      --shadow-card: 0 30px 80px rgba(0,0,0,0.9);
+      --font-stack: -apple-system, BlinkMacSystemFont, "Inter", "SF Pro Display",
+        system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
     }
-    body {
-      margin: 0;
-      background: var(--bg-main);
-      color: var(--text-primary);
-      font-family:
-        -apple-system, BlinkMacSystemFont, "Inter", Roboto, "Helvetica Neue",
-        Arial, sans-serif;
-      line-height: 1.4;
+
+    * {
+      box-sizing: border-box;
       -webkit-font-smoothing: antialiased;
     }
-    .page-shell {
+
+    body {
+      margin: 0;
+      background-color: var(--bg-main);
+      color: var(--text-primary);
+      font-family: var(--font-stack);
       display: flex;
       flex-direction: column;
       min-height: 100vh;
-      background: radial-gradient(circle at 50% 0%, #1a1a1a 0%, #000 70%);
     }
 
-    header {
-      padding: 16px;
-      border-bottom: 1px solid var(--card-border);
-      display: flex;
-      flex-wrap: wrap;
-      align-items: flex-start;
-      justify-content: space-between;
+    header.app-header {
+      width: 100%;
+      background: radial-gradient(circle at 0% 0%, #1a1a1a 0%, #000 60%);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
       color: var(--text-primary);
-      font-weight: 600;
+      padding: 16px 16px 12px;
     }
 
-    .brand-left {
-      display: flex;
-      flex-wrap: nowrap;
-      align-items: flex-start;
-      gap: 12px;
-      min-width: 0;
+    .header-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      grid-template-areas:
+        "logo title updated";
+      grid-column-gap: 16px;
+      align-items: start;
     }
 
-    .brand-badge {
-      background: #d5c38a;
+    .logo-badge {
+      grid-area: logo;
+      background-color: #c6b075;
       color: #000;
       font-weight: 600;
-      font-size: 20px;
-      line-height: 1;
+      font-size: 24px;
+      line-height: 44px;
+      text-align: center;
+      width: 44px;
+      height: 44px;
       border-radius: 8px;
-      padding: 12px 14px;
-      font-family: Georgia, 'Times New Roman', Times, serif;
+      box-shadow: 0 20px 60px rgba(198,176,117,0.4);
+      font-family: "Georgia", "Times New Roman", serif;
     }
 
-    .brand-text {
-      font-size: 14px;
-      line-height: 1.3;
-      color: var(--text-primary);
-      font-weight: 500;
+    .title-block {
+      grid-area: title;
+      line-height: 1.25;
     }
-    .brand-text .team {
-      color: var(--accent-gold);
-      font-weight: 600;
+
+    .title-topline {
       font-size: 16px;
-    }
-    .updated-pill {
-      color: #000;
-      background: var(--accent-gold);
-      border-radius: 6px;
-      padding: 6px 10px;
-      font-size: 12px;
       font-weight: 600;
-      line-height: 1.2;
-      white-space: nowrap;
-      align-self: flex-start;
+      color: var(--text-gold);
     }
 
-    main {
+    .title-headline {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .updated-pill {
+      grid-area: updated;
+      align-self: start;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: var(--radius-badge);
+      padding: 8px 10px;
+      font-size: 12px;
+      line-height: 1.2;
+      color: var(--text-primary);
+      white-space: nowrap;
+    }
+
+    /* main content wrapper */
+    main.page-body {
       flex: 1;
       width: 100%;
-      max-width: 1280px;
+      max-width: 1400px;
       margin: 0 auto;
       padding: 16px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(min(360px,100%),1fr));
-      grid-gap: 16px;
     }
 
-    .card {
+    /* stories grid */
+    #stories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(360px,100%), 1fr));
+      grid-gap: 16px;
+      align-items: start;
+    }
+
+    /* single story card */
+    .story-card {
       background: var(--bg-card);
-      border: 1px solid var(--card-border);
-      box-shadow:
-        0 25px 60px rgba(0,0,0,0.9),
-        0 4px 8px rgba(0,0,0,0.6);
-      border-radius: 12px;
-      padding: 16px;
-      color: var(--text-primary);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-card);
+      padding: 16px 16px 20px;
       display: flex;
       flex-direction: column;
       min-height: 160px;
     }
 
-    .card-headline {
-      color: var(--text-primary);
-      font-size: 18px;
-      font-weight: 600;
-      line-height: 1.3;
-      margin: 8px 0 8px 0;
-      text-decoration: none;
-    }
-
-    .card-headline:hover,
-    .card-headline:focus {
-      text-decoration: underline;
-    }
-
-    .meta-row {
+    .story-header-row {
       display: flex;
-      flex-wrap: wrap;
-      align-items: baseline;
       justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+      row-gap: 6px;
+    }
+
+    .story-source {
+      color: var(--text-gold);
       font-size: 13px;
       font-weight: 600;
-      margin-bottom: 4px;
-    }
-    .source-label {
-      color: var(--accent-gold);
-    }
-    .time-label {
-      color: var(--text-secondary);
-      font-weight: 500;
-      margin-left: auto;
-      padding-left: 8px;
+      line-height: 1.3;
     }
 
-    .summary {
-      font-size: 15px;
+    .story-date {
+      color: var(--text-date);
+      font-size: 12px;
+      line-height: 1.3;
+    }
+
+    .story-title {
+      font-size: 16px;
       line-height: 1.4;
-      color: var(--text-secondary);
-      font-weight: 400;
+      font-weight: 600;
+      color: var(--text-primary);
+      text-decoration: none;
+      margin: 0 0 10px;
+      word-break: break-word;
     }
 
-    footer {
-      border-top: 1px solid var(--card-border);
-      background: #000;
-      padding: 24px 16px 64px;
+    .story-title:hover,
+    .story-title:focus {
+      text-decoration: underline;
+      text-decoration-color: var(--text-gold);
+    }
+
+    .story-summary {
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--text-dim);
+      word-break: break-word;
+    }
+
+    /* empty message */
+    .empty {
+      color: var(--text-dim);
+      font-size: 15px;
+      padding: 40px 0 80px;
+      grid-column: 1 / -1;
+    }
+
+    footer.page-footer {
+      width: 100%;
+      background: radial-gradient(circle at 0% 0%, #0f0f0f 0%, #000000 70%);
+      border-top: 1px solid rgba(255,255,255,0.07);
       color: var(--text-primary);
+      padding: 24px 16px 80px;
+      font-size: 14px;
       line-height: 1.5;
     }
+
     .footer-inner {
-      max-width: 1280px;
+      max-width: 1400px;
       margin: 0 auto;
-      font-size: 14px;
       color: var(--text-primary);
-    }
-    .footer-headline {
-      font-size: 20px;
-      font-weight: 600;
-      margin-bottom: 8px;
-      color: var(--text-primary);
-    }
-    .footer-desc {
-      margin-bottom: 16px;
-      color: var(--text-secondary);
-    }
-    .footer-sources-head {
-      font-weight: 600;
-      margin-bottom: 8px;
-      color: var(--text-primary);
-    }
-    .footer-sources {
-      font-size: 14px;
-      color: var(--text-secondary);
-    }
-    .footer-sources a {
-      text-decoration: none;
-      color: var(--text-secondary);
-    }
-    .footer-sources a:hover {
-      text-decoration: underline;
-      color: var(--accent-gold);
     }
 
-    @media (max-width: 480px) {
-      header {
-        flex-direction: column;
-        gap: 12px;
+    .footer-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .footer-sub {
+      color: var(--text-dim);
+      margin-bottom: 24px;
+    }
+
+    .footer-sources-label {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .footer-sources-list {
+      font-size: 13px;
+      color: var(--text-dim);
+      line-height: 1.6;
+    }
+
+    .footer-sources-list span {
+      white-space: nowrap;
+    }
+
+    @media (max-width:600px) {
+      .header-inner {
+        grid-template-columns: auto 1fr;
+        grid-template-areas:
+          "logo title"
+          "updated updated";
+        row-gap: 12px;
       }
       .updated-pill {
-        align-self: flex-start;
+        justify-self: start;
       }
-      .brand-text {
-        font-size: 13px;
-      }
-      .brand-text .team {
+
+      .title-topline {
         font-size: 15px;
+      }
+
+      .title-headline {
+        font-size: 17px;
+      }
+
+      .footer-title {
+        font-size: 16px;
+      }
+
+      .footer-sub {
+        font-size: 14px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="page-shell">
-    <header>
-      <div class="brand-left">
-        <div class="brand-badge">P</div>
-        <div class="brand-text">
-          <div class="team">Purdue Boilermakers</div>
-          <div>Men’s Basketball News</div>
-        </div>
-      </div>
-      <div class="updated-pill" id="updated-pill">Updated …</div>
-    </header>
 
-    <main id="feed-grid">
-      <!-- cards injected by JS -->
-    </main>
-
-    <footer>
-      <div class="footer-inner">
-        <div class="footer-headline">Purdue Men's Basketball Fan Feed</div>
-        <div class="footer-desc">
-          Unofficial. Automatically surfaces the latest Purdue hoops headlines.
-        </div>
-
-        <div class="footer-sources-head">Sources we monitor:</div>
-        <div class="footer-sources" id="sources-line">
-          GoldandBlack.com · On3 Purdue Basketball · 247Sports Purdue Basketball ·
-          Purdue Athletics MBB · ESPN Purdue MBB · Yahoo Sports College Basketball ·
-          CBS Sports College Basketball · The Field of 68 · SI Purdue Basketball ·
-          USA Today Purdue Boilermakers
-        </div>
-      </div>
-    </footer>
-
+<header class="app-header">
+  <div class="header-inner">
+    <div class="logo-badge">P</div>
+    <div class="title-block">
+      <div class="title-topline">Purdue Boilermakers</div>
+      <div class="title-headline">Men’s Basketball News</div>
+    </div>
+    <div class="updated-pill" id="updated-pill">Updated just now</div>
   </div>
+</header>
 
-  <script>
-    async function loadFeed() {
-      const gridEl = document.getElementById('feed-grid');
-      const updatedPill = document.getElementById('updated-pill');
+<main class="page-body">
+  <div id="stories">
+    <div class="empty">No recent stories found.</div>
+  </div>
+</main>
 
-      gridEl.innerHTML = "<div style='color:#777;font-size:14px;'>Loading…</div>";
+<footer class="page-footer">
+  <div class="footer-inner">
+    <div class="footer-title">Purdue Men's Basketball Fan Feed</div>
+    <div class="footer-sub">
+      Unofficial. Automatically surfaces the latest Purdue hoops headlines.
+    </div>
 
-      let data;
-      try {
-        const res = await fetch("./static/teams/purdue-mbb/items.json", {
-          cache: "no-cache"
-        });
-        data = await res.json();
-      } catch (err) {
-        gridEl.innerHTML =
-          "<div style='color:#777;font-size:14px;'>Could not load feed.</div>";
-        return;
-      }
+    <div class="footer-sources-label">Sources we monitor:</div>
+    <div class="footer-sources-list">
+      <span>GoldandBlack.com</span> ·
+      <span>On3 Purdue Basketball</span> ·
+      <span>247Sports Purdue Basketball</span> ·
+      <span>Purdue Athletics MBB</span> ·
+      <span>ESPN Purdue MBB</span> ·
+      <span>Yahoo Sports College Basketball</span> ·
+      <span>CBS Sports College Basketball</span> ·
+      <span>The Field of 68</span> ·
+      <span>SI Purdue Basketball</span> ·
+      <span>USA Today Purdue Boilermakers</span>
+    </div>
+  </div>
+</footer>
 
-      // show updated time in human-ish way
-      const updatedISO = data.updated;
-      updatedPill.textContent = "Updated " + relativeTimeFromISO(updatedISO);
+<script>
+async function loadFeed() {
+  // where the GitHub Action writes the live feed
+  const FEED_URL = './static/teams/purdue-mbb/items.json';
 
-      // build cards
-      gridEl.innerHTML = "";
-      (data.items || []).forEach(item => {
-        const card = document.createElement("article");
-        card.className = "card";
+  try {
+    const res = await fetch(FEED_URL, { cache: 'no-cache' });
 
-        const metaRow = document.createElement("div");
-        metaRow.className = "meta-row";
-
-        const sourceSpan = document.createElement("div");
-        sourceSpan.className = "source-label";
-        sourceSpan.textContent = item.source || "Source";
-
-        const timeSpan = document.createElement("div");
-        timeSpan.className = "time-label";
-        timeSpan.textContent = formatPublished(item.published);
-
-        metaRow.appendChild(sourceSpan);
-        metaRow.appendChild(timeSpan);
-
-        const headlineLink = document.createElement("a");
-        headlineLink.className = "card-headline";
-        headlineLink.href = item.url || "#";
-        headlineLink.target = "_blank";
-        headlineLink.rel = "noopener noreferrer";
-        headlineLink.textContent = item.title || "";
-
-        const summaryP = document.createElement("div");
-        summaryP.className = "summary";
-        summaryP.textContent = item.summary || "";
-
-        card.appendChild(metaRow);
-        card.appendChild(headlineLink);
-        card.appendChild(summaryP);
-
-        gridEl.appendChild(card);
-      });
-
-      // if nothing came back
-      if (!data.items || data.items.length === 0) {
-        gridEl.innerHTML =
-          "<div style='color:#777;font-size:14px;'>No recent stories found.</div>";
-      }
+    if (!res.ok) {
+      console.error('Failed to fetch feed JSON', res.status);
+      showEmpty();
+      return;
     }
 
-    function relativeTimeFromISO(isoStr) {
-      if (!isoStr) return "just now";
-      const then = new Date(isoStr).getTime();
-      if (Number.isNaN(then)) return "just now";
-
-      const now = Date.now();
-      const diffMs = now - then;
-      const diffMin = Math.floor(diffMs / (60 * 1000));
-      const diffHr = Math.floor(diffMs / (60 * 60 * 1000));
-      const diffDay = Math.floor(diffMs / (24 * 60 * 60 * 1000));
-
-      if (diffMin < 1) return "just now";
-      if (diffMin < 60) return diffMin + "m ago";
-      if (diffHr < 24) return diffHr + "h ago";
-      return diffDay + "d ago";
+    const items = await res.json();
+    if (!Array.isArray(items) || items.length === 0) {
+      showEmpty();
+      return;
     }
 
-    function formatPublished(isoStr) {
-      if (!isoStr) return ""; // was "Invalid Date"
-      const d = new Date(isoStr);
-      if (isNaN(d.getTime())) return "";
-      // e.g. "Oct 27"
-      return d.toLocaleString("en-US", {
-        month: "short",
-        day: "numeric"
-      });
-    }
+    renderStories(items);
+  } catch (err) {
+    console.error('Error loading feed:', err);
+    showEmpty();
+  }
+}
 
-    loadFeed();
-  </script>
+function renderStories(items) {
+  const container = document.getElementById('stories');
+  container.innerHTML = '';
+
+  // items are expected newest-first already from collect.py
+  // defensive: drop anything missing required core fields
+  const cleaned = items.filter(it =>
+    it &&
+    typeof it.title === 'string' &&
+    typeof it.link === 'string'
+  );
+
+  if (cleaned.length === 0) {
+    showEmpty();
+    return;
+  }
+
+  cleaned.forEach(it => {
+    const card = document.createElement('article');
+    card.className = 'story-card';
+
+    const safeSource = it.source || '';
+    const safeDate = it.published || '';
+    const safeTitle = it.title || '';
+    const safeSummary = it.summary || '';
+    const safeHref = it.link || '#';
+
+    card.innerHTML = `
+      <div class="story-header-row">
+        <div class="story-source">${escapeHTML(safeSource)}</div>
+        <div class="story-date">${escapeHTML(safeDate)}</div>
+      </div>
+      <a
+        class="story-title"
+        href="${escapeAttr(safeHref)}"
+        target="_blank"
+        rel="noopener noreferrer"
+      >${escapeHTML(safeTitle)}</a>
+      <div class="story-summary">${escapeHTML(safeSummary)}</div>
+    `;
+
+    container.appendChild(card);
+  });
+
+  // update header pill to "Updated just now"
+  const pill = document.getElementById('updated-pill');
+  if (pill) {
+    pill.textContent = 'Updated just now';
+  }
+}
+
+function showEmpty() {
+  const container = document.getElementById('stories');
+  container.innerHTML = '<div class="empty">No recent stories found.</div>';
+
+  const pill = document.getElementById('updated-pill');
+  if (pill) {
+    pill.textContent = 'Updated just now';
+  }
+}
+
+// very basic HTML escaping so weird characters (&amp;#39;) don't render raw
+function escapeHTML(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+
+function escapeAttr(str) {
+  return String(str)
+    .replace(/"/g, '&quot;');
+}
+
+// kick off
+loadFeed();
+</script>
 </body>
 </html>
