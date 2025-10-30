@@ -1,24 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-10-30T06:49:16.265868+00:00",
+  "updated": "2025-10-30T07:14:24.023515+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "9886f1e31c92",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Matt Painter Postgame Press Conference vs. UIndy | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2025/10/30/coach-matt-painter-postgame-press-conference-vs-uindy-purdue-mens-basketball",
-      "summary": "",
-      "date": "2025-10-30T01:48:29+00:00"
-    },
-    {
-      "id": "7c41f34ba73c",
-      "source": "Purdue Athletics MBB",
-      "title": "Postgame Press Conference vs. UIndy | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2025/10/30/postgame-press-conference-vs-uindy-purdue-mens-basketball",
-      "summary": "",
-      "date": "2025-10-30T01:47:28+00:00"
-    },
     {
       "id": "758bb935f9cf",
       "source": "Purdue Athletics MBB",
@@ -162,6 +146,22 @@
       "url": "https://purduesports.com/news/2025/10/27/db-hershey-mclaurin-media-session-purdue-football",
       "summary": "",
       "date": "2025-10-27T15:50:31+00:00"
+    },
+    {
+      "id": "76f351456197",
+      "source": "Purdue Athletics MBB",
+      "title": "#11 Purdue Reverse Sweeps #20 Minnesota",
+      "url": "https://purduesports.com/news/2025/10/26/11-purdue-reverse-sweeps-20-minnesota",
+      "summary": "",
+      "date": "2025-10-26T20:35:00+00:00"
+    },
+    {
+      "id": "f213040c2d71",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Closes Out Season with 2-0 Victory",
+      "url": "https://purduesports.com/news/2025/10/26/purdue-closes-out-season-with-2-0-victory",
+      "summary": "Purdue soccer finished the 2025 season on a high note Sunday afternoon, earning a 2–0 shutout victory over Minnesota at Elizabeth Lyle Robbie Stadium.",
+      "date": "2025-10-26T20:33:09+00:00"
     }
   ]
 }
