@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-10-30T03:40:08.862190+00:00",
+  "updated": "2025-10-30T04:17:14.503522+00:00",
   "count": 20,
   "items": [
     {
@@ -42,6 +42,14 @@
       "url": "https://purduesports.com/news/2025/10/29/game-9-prep-purdue-kicks-off-november-at-21-michigan",
       "summary": "",
       "date": "2025-10-29T16:58:04+00:00"
+    },
+    {
+      "id": "6b203ad7cafc",
+      "source": "Purdue Athletics MBB",
+      "title": "#1 Purdue Rolls Past UIndy in Final Exhibition Tuneup",
+      "url": "https://purduesports.com/news/2025/10/29/1-purdue-rolls-past-uindy-in-final-exhibition-tuneup",
+      "summary": "No. 1-ranked Purdue cruised past UIndy at Mackey Arena in the Boilermakers' final tuneup before the regular-season opener on Nov. 4.",
+      "date": "2025-10-29T14:06:06+00:00"
     },
     {
       "id": "ee17db3d845f",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/10/26/purdue-closes-out-season-with-2-0-victory",
       "summary": "Purdue soccer finished the 2025 season on a high note Sunday afternoon, earning a 2–0 shutout victory over Minnesota at Elizabeth Lyle Robbie Stadium.",
       "date": "2025-10-26T20:33:09+00:00"
-    },
-    {
-      "id": "ff79f04194d8",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Go Perfect on Day 2 of Rome Invite",
-      "url": "https://purduesports.com/news/2025/10/26/boilermakers-go-perfect-on-day-2-of-rome-invite",
-      "summary": "",
-      "date": "2025-10-26T01:52:30+00:00"
     }
   ]
 }
