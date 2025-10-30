@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-10-30T22:14:10.303013+00:00",
+  "updated": "2025-10-30T22:38:23.005177+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "366cf3636cfc",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Men’s Basketball vs. UIndy Highlights",
-      "url": "https://purduesports.com/news/2025/10/30/purdue-mens-basketball-vs-uindy-highlights",
-      "summary": "",
-      "date": "2025-10-30T21:55:47+00:00"
-    },
     {
       "id": "b9a5e49f48ad",
       "source": "Purdue Athletics MBB",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2025/10/27/coach-barry-odom-press-conference-purdue-football-1",
       "summary": "",
       "date": "2025-10-27T16:00:26+00:00"
+    },
+    {
+      "id": "f647d97f5695",
+      "source": "Purdue Athletics MBB",
+      "title": "OC Josh Henson Press Conference | Purdue Football",
+      "url": "https://purduesports.com/news/2025/10/27/oc-josh-henson-press-conference-purdue-football",
+      "summary": "",
+      "date": "2025-10-27T15:57:37+00:00"
     }
   ]
 }
