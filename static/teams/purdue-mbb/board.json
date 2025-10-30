@@ -1,0 +1,17 @@
+{
+  "team": "purdue-mbb",
+  "source": "On3 Boilermaker Men’s Basketball • Free Board",
+  "updated_at": "2025-10-29T17:47:00Z",
+  "items": [
+    /* 
+      This starts empty so the page stops 404’ing.
+      The collector (or manual edits) should append thread objects like:
+      {
+        "title": "Exhibition takeaways vs. Indy",
+        "url": "https://www.on3.com/boards/threads/<thread-slug>/",
+        "source": "On3 Fan Board",
+        "published": "2025-10-29T16:12:00Z"
+      }
+    */
+  ]
+}
