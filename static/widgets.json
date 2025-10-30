@@ -1,6 +1,13 @@
 {
-  "team": "purdue-mbb",
-  "limit": 20,
-  "order": "desc",
-  "hours_back": 240
+  "title": "Purdue Boilermakers",
+  "subtitle": "Men’s Basketball",
+  "tabs": [
+    { "id": "news", "label": "News", "source": "static/teams/purdue-mbb/items.json" },
+    { "id": "board", "label": "Fan Board", "source": "static/teams/purdue-mbb/board.json" }
+  ],
+  "footer_sources": [
+    "GoldandBlack.com", "On3 Purdue Basketball", "247Sports Purdue Basketball",
+    "Purdue Athletics MBB", "ESPN Purdue MBB", "Yahoo College Basketball",
+    "CBS Sports College Basketball", "The Field of 68", "SI Purdue"
+  ]
 }
