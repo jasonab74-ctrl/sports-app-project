@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-10-30T15:16:59.737761+00:00",
+  "updated": "2025-10-30T15:42:33.141527+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "e20418071109",
+      "source": "Purdue Athletics MBB",
+      "title": "Kaufman-Renn, Smith Named to NABC Player of the Year Watch List",
+      "url": "https://purduesports.com/news/2025/10/30/kaufman-renn-smith-named-to-nabc-player-of-the-year-watch-list",
+      "summary": "Purdue is the only school with two players on NABC POY watch list.",
+      "date": "2025-10-30T15:00:00+00:00"
+    },
     {
       "id": "3508dd9e5267",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/10/27/dc-mike-scherer-press-conference-vs-michigan-purdue-football",
       "summary": "",
       "date": "2025-10-27T15:55:53+00:00"
-    },
-    {
-      "id": "f3a7ea1fb8ed",
-      "source": "Purdue Athletics MBB",
-      "title": "TE Christian Moore Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2025/10/27/te-christian-moore-media-session-purdue-football",
-      "summary": "",
-      "date": "2025-10-27T15:52:59+00:00"
     }
   ]
 }
