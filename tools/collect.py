@@ -1,302 +1,324 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-
 """
-Purdue Men's Basketball Collector (News + Fan Board)
-----------------------------------------------------
-- Reads sources from static/sources.json
-- Builds two outputs:
-   1) static/teams/purdue-mbb/items.json  (News articles)
-   2) static/teams/purdue-mbb/board.json  (Fan board threads)
-- Filters to Purdue men's basketball, dedupes, sorts newest→oldest, caps 20.
+Purdue MBB collector: news + On3 fan board
+- Pulls multiple sources, filters to Purdue MBB, dedupes, sorts desc, writes items.json
+- Scrapes On3 Free Board (HTML), normalizes relative dates, writes board.json
 """
 
-import os, json, re, time, html, hashlib
-from datetime import datetime, timezone
-from urllib.parse import urljoin, urlparse
+import os, re, json, time, math, html, hashlib
+from datetime import datetime, timedelta, timezone
+from urllib.parse import urlparse, urljoin
 
 import feedparser
 import requests
 from bs4 import BeautifulSoup
 
-ROOT = os.path.dirname(os.path.dirname(__file__))
-TEAM_DIR = os.path.join(ROOT, "static", "teams", "purdue-mbb")
-NEWS_PATH = os.path.join(TEAM_DIR, "items.json")
-BOARD_PATH = os.path.join(TEAM_DIR, "board.json")
-SRC_PATH = os.path.join(ROOT, "static", "sources.json")
+ROOT = os.path.dirname(os.path.abspath(__file__))
+SITE_ROOT = os.path.normpath(os.path.join(ROOT, ".."))
+TEAM_SLUG = "purdue-mbb"
+OUT_DIR = os.path.join(SITE_ROOT, "static", "teams", TEAM_SLUG)
+os.makedirs(OUT_DIR, exist_ok=True)
 
-os.makedirs(TEAM_DIR, exist_ok=True)
+TZ = timezone(timedelta(hours=-5))  # ET fallback; timestamps stay ISO with Z
 
-# ---------------------------------------------------------------------
-# Helpers
-# ---------------------------------------------------------------------
+# -------------------------
+# Utilities
+# -------------------------
+def now_iso():
+    return datetime.now(timezone.utc).isoformat()
 
-def clean(text: str) -> str:
-    if not text:
-        return ""
-    txt = html.unescape(text)
-    txt = re.sub(r"\s+", " ", BeautifulSoup(txt, "html.parser").get_text()).strip()
-    return txt
+def decode(s: str) -> str:
+    return html.unescape((s or "").strip())
 
-def now_iso() -> str:
-    return datetime.now(timezone.utc).astimezone().isoformat()
+def sha(s: str) -> str:
+    return hashlib.sha1(s.encode("utf-8")).hexdigest()[:12]
 
-def parse_epoch(struct_time) -> int:
+def canonical_url(u: str) -> str:
     try:
-        return int(time.mktime(struct_time))
+        p = urlparse(u)
+        # drop tracking params
+        return f"{p.scheme}://{p.netloc}{p.path}".rstrip("/")
     except Exception:
-        return 0
+        return u
 
-def make_hash(s: str) -> str:
-    return hashlib.md5(s.encode("utf-8")).hexdigest()
+def parse_datetime_guess(entry):
+    """
+    Robust date resolver: feed published/parsing + relative phrases.
+    Returns aware UTC datetime.
+    """
+    # 1) feed fields
+    for key in ("published_parsed", "updated_parsed"):
+        dt = getattr(entry, key, None)
+        if dt:
+            return datetime.fromtimestamp(time.mktime(dt), timezone.utc)
+    # 2) dict access
+    for key in ("published_parsed", "updated_parsed"):
+        dt = entry.get(key)
+        if dt:
+            return datetime.fromtimestamp(time.mktime(dt), timezone.utc)
+    # 3) text fields
+    txt = (entry.get("published") or entry.get("updated") or entry.get("date") or "").strip()
+    if txt:
+        # try multiple known patterns
+        for fmt in (
+            "%a, %d %b %Y %H:%M:%S %Z",
+            "%a, %d %b %Y %H:%M:%S %z",
+            "%Y-%m-%dT%H:%M:%S%z",
+            "%Y-%m-%dT%H:%M:%SZ",
+            "%b %d, %Y",
+            "%b %d %Y",
+            "%Y-%m-%d %H:%M:%S",
+        ):
+            try:
+                return datetime.strptime(txt, fmt).astimezone(timezone.utc)
+            except Exception:
+                pass
+        # relative e.g. "9 hours ago"
+        rel = txt.lower()
+        m = re.search(r"(\d+)\s+(minute|hour|day|week|month)s?\s+ago", rel)
+        if m:
+            n = int(m.group(1))
+            unit = m.group(2)
+            dt = datetime.now(timezone.utc)
+            if unit.startswith("minute"):
+                dt -= timedelta(minutes=n)
+            elif unit.startswith("hour"):
+                dt -= timedelta(hours=n)
+            elif unit.startswith("day"):
+                dt -= timedelta(days=n)
+            elif unit.startswith("week"):
+                dt -= timedelta(weeks=n)
+            elif unit.startswith("month"):
+                dt -= timedelta(days=30*n)
+            return dt
+        # absolute short like 10/27/25
+        m2 = re.search(r"(\d{1,2})/(\d{1,2})/(\d{2,4})", txt)
+        if m2:
+            mm, dd, yy = m2.groups()
+            yy = int(yy)
+            if yy < 100:  # 25 => 2025 heuristic
+                yy += 2000
+            try:
+                return datetime(yy, int(mm), int(dd), tzinfo=timezone.utc)
+            except Exception:
+                pass
+    # 4) fallback: now
+    return datetime.now(timezone.utc)
 
-def hostname(url: str) -> str:
+def looks_purdue(text):
+    t = (text or "").lower()
+    return any(k in t for k in (
+        "purdue", "boilermaker", "matt painter", "mackey", "west lafayette",
+        "boilermakers", "trey kaufman", "zach edey", "braden smith", "mason gillis"
+    ))
+
+def to_item(source, title, url, summary, dt):
+    return {
+        "id": sha(canonical_url(url) + title),
+        "source": source,
+        "title": decode(title)[:280],
+        "url": url,
+        "summary": decode(summary)[:400],
+        "date": dt.astimezone(timezone.utc).isoformat(),
+    }
+
+# -------------------------
+# News feeds
+# -------------------------
+FEEDS = [
+    # Purdue official
+    ("Purdue Athletics MBB", "https://purduesports.com/rss?path=mbball"),
+    # Yahoo college basketball (broad; will be filtered)
+    ("Yahoo Sports College Basketball", "https://www.yahoo.com/news/rss/college-basketball"),
+    # ESPN Purdue team news
+    ("ESPN Purdue MBB", "https://www.espn.com/college-basketball/team/_/id/2509/purdue-boilermakers"),
+    # CBS college basketball (broad; filtered)
+    ("CBS Sports College Basketball", "https://www.cbssports.com/rss/headlines/college-basketball/"),
+    # SI Purdue (has Purdue tag page RSS)
+    ("Sports Illustrated — Purdue", "https://www.si.com/college/purdue/.rss"),
+    # The Field of 68 (broad articles; filtered)
+    ("The Field of 68", "https://www.youtube.com/feeds/videos.xml?channel_id=UCtgu-ouR3de2Ww5QQB6W4_Q"),
+]
+
+def fetch_feed(name, url):
+    items = []
     try:
-        return urlparse(url).hostname or ""
-    except Exception:
-        return ""
-
-# ---------------------------------------------------------------------
-# Filtering
-# ---------------------------------------------------------------------
-
-NEG = re.compile(r"\b(football|volleyball|wrestling|soccer|softball|baseball|track|tennis|golf|women'?s)\b", re.I)
-POS = re.compile(r"\b(purdue|boilermakers?|painter|basketball|mbb|mackey)\b", re.I)
-
-def likely_purdue_mbb(text: str) -> bool:
-    t = text.lower()
-    return bool(POS.search(t)) and not NEG.search(t)
-
-# ---------------------------------------------------------------------
-# HTTP session
-# ---------------------------------------------------------------------
-
-session = requests.Session()
-session.headers.update({
-    "User-Agent": "sports-app-project/1.0 (+https://github.com/jasonab74-ctrl)"
-})
-
-# ---------------------------------------------------------------------
-# Scrapers
-# ---------------------------------------------------------------------
-
-def scrape_on3_news(url: str):
-    """On3 Purdue Basketball News."""
-    out = []
-    try:
-        r = session.get(url, timeout=20)
-        r.raise_for_status()
-        soup = BeautifulSoup(r.text, "html.parser")
-
-        # Look for article cards and links
-        cards = soup.select("article, div.card, a[data-vars-content-type='article']")
-        for c in cards:
-            a = c.find("a", href=True)
-            if not a: 
-                continue
-            title = clean(a.get_text())
-            if not title or len(title) < 10:
-                continue
-            if not likely_purdue_mbb(title):
-                continue
-            link = urljoin(url, a["href"])
-            # try summary + time
-            desc_el = c.find("p") or c.find("div", class_=re.compile("summary|dek|deck|excerpt"))
-            summary = clean(desc_el.get_text()) if desc_el else ""
-            time_el = c.find("time")
-            if time_el and time_el.get("datetime"):
-                published = time_el["datetime"]
-            else:
-                published = now_iso()
-
-            out.append({
-                "title": title,
-                "summary": summary,
-                "url": link,
-                "published": published,
-                "source": "On3 — Purdue Basketball News"
-            })
-    except Exception as e:
-        print(f"[WARN] On3 news scrape failed: {e}")
-    return out
-
-def scrape_on3_board(url: str):
-    """On3 Free Board — Boilermaker Men's Basketball (threads)."""
-    out = []
-    try:
-        r = session.get(url, timeout=20)
-        r.raise_for_status()
-        soup = BeautifulSoup(r.text, "html.parser")
-
-        threads = soup.select("div.structItem--thread")
-        for t in threads:
-            title_el = t.select_one("div.structItem-title a")
-            if not title_el:
-                continue
-            title = clean(title_el.text)
-            href = title_el.get("href") or ""
-            if not href:
-                continue
-            # skip stickies/pagination junk
-            if "sticky" in href or "page-" in href:
-                continue
-
-            if not likely_purdue_mbb(title):
-                continue
-
-            link = urljoin(url, href)
-            time_el = t.select_one("time")
-            if time_el and time_el.get("datetime"):
-                published = time_el["datetime"]
-            else:
-                published = now_iso()
-
-            out.append({
-                "title": title,
-                "summary": "Fan discussion thread on On3 Free Board.",
-                "url": link,
-                "published": published,
-                "source": "On3 — Purdue MBB Board"
-            })
-    except Exception as e:
-        print(f"[WARN] On3 board scrape failed: {e}")
-    return out
-
-def scrape_generic_html(url: str, source_name: str):
-    out = []
-    try:
-        r = session.get(url, timeout=20)
-        if r.status_code >= 400:
-            return out
-        soup = BeautifulSoup(r.text, "html.parser")
-        for a in soup.find_all("a", href=True):
-            title = clean(a.get_text())
-            if len(title) < 15:
-                continue
-            if not likely_purdue_mbb(title):
-                continue
-            link = urljoin(url, a["href"])
-            out.append({
-                "title": title,
-                "summary": "",
-                "url": link,
-                "published": now_iso(),
-                "source": source_name
-            })
-    except Exception as e:
-        print(f"[WARN] scrape_generic_html({source_name}): {e}")
-    return out
-
-def parse_rss(url: str, source_name: str):
-    out = []
-    try:
-        feed = feedparser.parse(url)
-        for e in feed.entries[:60]:
-            title = clean(e.get("title", ""))
-            link = e.get("link", "")
-            summary = clean(e.get("summary", "") or e.get("description", ""))
-            if not title or not link:
-                continue
-            if not likely_purdue_mbb(f"{title} {summary}"):
-                continue
-            pub_ts = 0
-            if getattr(e, "published_parsed", None):
-                pub_ts = parse_epoch(e.published_parsed)
-            elif getattr(e, "updated_parsed", None):
-                pub_ts = parse_epoch(e.updated_parsed)
-            published = datetime.fromtimestamp(pub_ts or time.time(), tz=timezone.utc).isoformat()
-            out.append({
-                "title": title,
-                "summary": summary,
-                "url": link,
-                "published": published,
-                "source": source_name
-            })
-    except Exception as e:
-        print(f"[WARN] RSS parse failed for {source_name}: {e}")
-    return out
-
-# ---------------------------------------------------------------------
-# Main
-# ---------------------------------------------------------------------
-
-def write_json(path: str, payload: dict):
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(payload, f, ensure_ascii=False, indent=2)
-
-def main():
-    with open(SRC_PATH, "r", encoding="utf-8") as f:
-        conf = json.load(f)
-    feeds = conf.get("feeds", [])
-    limit = int(conf.get("max_items", 20))
-
-    news_items, board_items = [], []
-    seen_news, seen_board = set(), set()
-
-    for s in feeds:
-        name = s.get("name", "Source")
-        url = s.get("url", "")
-        stype = s.get("type", "rss")
-        kind = s.get("kind", "news")  # "news" or "board"
-
-        items = []
-        try:
-            if "on3.com/teams/purdue-boilermakers/category/basketball/news" in url:
-                items = scrape_on3_news(url)
-            elif "on3.com/boards/forums/free-board-boilermaker-mens-basketball" in url:
-                items = scrape_on3_board(url)
-            elif stype == "rss":
-                items = parse_rss(url, name)
-            else:
-                items = scrape_generic_html(url, name)
-        except Exception as e:
-            print(f"[WARN] fetch failed for {name}: {e}")
-            items = []
-
-        if kind == "board":
-            for it in items:
-                key = make_hash(it["title"] + it["url"])
-                if key in seen_board: 
-                    continue
-                seen_board.add(key)
-                board_items.append(it)
+        if url.endswith(".xml") or url.endswith(".rss") or "/rss" in url or "feeds" in url or "rss?" in url:
+            d = feedparser.parse(url)
+            for e in d.entries[:50]:
+                link = e.get("link") or e.get("id") or ""
+                title = e.get("title") or ""
+                summary = e.get("summary") or e.get("description") or ""
+                dt = parse_datetime_guess(e)
+                items.append(to_item(name, title, link, summary, dt))
         else:
-            for it in items:
-                key = make_hash(it["title"] + it["url"])
-                if key in seen_news: 
-                    continue
-                seen_news.add(key)
-                news_items.append(it)
+            # Basic HTML scrape for ESPN team page
+            if "espn.com/college-basketball/team" in url:
+                res = requests.get(url, timeout=20, headers={"User-Agent":"Mozilla/5.0"})
+                res.raise_for_status()
+                soup = BeautifulSoup(res.text, "html.parser")
+                # grab headline cards that mention Purdue
+                for a in soup.select("a[href]"):
+                    href = a.get("href","")
+                    text = (a.get_text(" ", strip=True) or "")
+                    if not href or not text: 
+                        continue
+                    if not looks_purdue(text):
+                        continue
+                    if href.startswith("/"):
+                        href = urljoin("https://www.espn.com", href)
+                    dt = datetime.now(timezone.utc)
+                    items.append(to_item("ESPN Purdue MBB", text, href, "", dt))
+            else:
+                # default try as feed
+                d = feedparser.parse(url)
+                for e in d.entries[:50]:
+                    link = e.get("link") or e.get("id") or ""
+                    title = e.get("title") or ""
+                    summary = e.get("summary") or e.get("description") or ""
+                    dt = parse_datetime_guess(e)
+                    items.append(to_item(name, title, link, summary, dt))
+    except Exception as ex:
+        print(f"[feed-error] {name}: {ex}")
+    return items
 
-    # Sort newest → oldest by published
-    def sort_key(x):
+def collect_news():
+    raw = []
+    for name, url in FEEDS:
+        raw.extend(fetch_feed(name, url))
+
+    # Filter to Purdue MBB
+    filtered = []
+    for it in raw:
+        text = f"{it['title']} {it['summary']}"
+        if looks_purdue(text):
+            filtered.append(it)
+
+    # Deduplicate by canonical URL or title
+    seen = set()
+    dedup = []
+    for it in filtered:
+        key = (canonical_url(it["url"]) or "") + "||" + it["title"].lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        dedup.append(it)
+
+    # Sort desc by date
+    dedup.sort(key=lambda x: x["date"], reverse=True)
+    return dedup[:20]
+
+# -------------------------
+# On3 board (Free Board – Purdue MBB)
+# -------------------------
+BOARD_URL = "https://www.on3.com/boards/forums/free-board-boilermaker-mens-basketball.160/"
+
+def parse_relative_when(s: str) -> datetime:
+    s = (s or "").strip().lower()
+    # patterns like "9 hours ago", "10 minutes ago"
+    m = re.search(r"(\d+)\s+(minute|hour|day|week)s?\s+ago", s)
+    if m:
+        n = int(m.group(1))
+        unit = m.group(2)
+        dt = datetime.now(timezone.utc)
+        if unit.startswith("minute"):
+            dt -= timedelta(minutes=n)
+        elif unit.startswith("hour"):
+            dt -= timedelta(hours=n)
+        elif unit.startswith("day"):
+            dt -= timedelta(days=n)
+        elif unit.startswith("week"):
+            dt -= timedelta(weeks=n)
+        return dt
+    # absolute like "Oct 29, 2025" or "10/27/25"
+    for fmt in ("%b %d, %Y", "%m/%d/%y", "%m/%d/%Y"):
         try:
-            return datetime.fromisoformat(x["published"]).timestamp()
+            return datetime.strptime(s, fmt).replace(tzinfo=timezone.utc)
         except Exception:
-            return 0
+            pass
+    return datetime.now(timezone.utc)
 
-    news_items.sort(key=sort_key, reverse=True)
-    board_items.sort(key=sort_key, reverse=True)
+def collect_board():
+    out = []
+    try:
+        res = requests.get(BOARD_URL, timeout=20, headers={"User-Agent":"Mozilla/5.0"})
+        res.raise_for_status()
+        soup = BeautifulSoup(res.text, "html.parser")
 
-    news_items = news_items[:limit]
-    board_items = board_items[:limit]
+        # XenForo thread rows
+        for row in soup.select("div.structItem--thread")[:30]:
+            a = row.select_one("a.structItem-title")
+            if not a:
+                a = row.select_one("a.PreviewTooltip")
+            if not a:
+                continue
+            title = decode(a.get_text(" ", strip=True))
+            href = a.get("href", "")
+            if href.startswith("/"):
+                href = urljoin("https://www.on3.com", href)
 
-    # Write outputs
-    write_json(NEWS_PATH, {
-        "team": "purdue-mbb",
-        "generated_at": now_iso(),
-        "count": len(news_items),
-        "items": news_items
-    })
-    write_json(BOARD_PATH, {
-        "team": "purdue-mbb",
-        "generated_at": now_iso(),
-        "count": len(board_items),
-        "items": board_items
-    })
+            # forum name & timestamp
+            forum = soup.select_one("h1.p-title-value")
+            forum_name = forum.get_text(" ", strip=True) if forum else "On3 Free Board"
 
-    print(f"Wrote {len(news_items)} news → {NEWS_PATH}")
-    print(f"Wrote {len(board_items)} board → {BOARD_PATH}")
+            ts = ""
+            time_el = row.select_one("time")
+            if time_el and time_el.get("datetime"):
+                ts = time_el.get("datetime")
+                dt = parse_datetime_guess({"published": ts})
+            else:
+                sub = row.select_one("div.structItem-minor")
+                ts_text = sub.get_text(" ", strip=True) if sub else ""
+                dt = parse_relative_when(ts_text)
+
+            # author
+            author_el = row.select_one("a.username")
+            author = author_el.get_text(strip=True) if author_el else ""
+
+            out.append({
+                "id": sha(href + title),
+                "forum": forum_name,
+                "title": title,
+                "url": href,
+                "author": author,
+                "date": dt.astimezone(timezone.utc).isoformat()
+            })
+    except Exception as ex:
+        print(f"[board-error] {ex}")
+    # Sort desc newest
+    out.sort(key=lambda x: x["date"], reverse=True)
+    return out[:20]
+
+# -------------------------
+# Main
+# -------------------------
+def main():
+    news = collect_news()
+    board = collect_board()
+
+    # Write news
+    items_path = os.path.join(OUT_DIR, "items.json")
+    with open(items_path, "w", encoding="utf-8") as f:
+        json.dump({
+            "team": TEAM_SLUG,
+            "updated": now_iso(),
+            "count": len(news),
+            "items": news
+        }, f, ensure_ascii=False, indent=2)
+
+    # Write board
+    board_path = os.path.join(OUT_DIR, "board.json")
+    with open(board_path, "w", encoding="utf-8") as f:
+        json.dump({
+            "team": TEAM_SLUG,
+            "updated": now_iso(),
+            "count": len(board),
+            "threads": board
+        }, f, ensure_ascii=False, indent=2)
+
+    print(f"Wrote {len(news)} news items → {items_path}")
+    print(f"Wrote {len(board)} board threads → {board_path}")
 
 if __name__ == "__main__":
     main()
