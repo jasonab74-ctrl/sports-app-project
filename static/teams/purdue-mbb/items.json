@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-10-30T12:31:07.674797+00:00",
+  "updated": "2025-10-30T13:27:21.374974+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "a20d0d0e1948",
+      "source": "Purdue Athletics MBB",
+      "title": "The Gold Scripts",
+      "url": "https://purduesports.com/news/2025/10/30/the-gold-scripts",
+      "summary": "The second uniform in Purdue's 2025-26 set to drop is the Gold Script, which will make their debut in the season opener on Monday, Nov. 3.",
+      "date": "2025-10-30T12:11:00+00:00"
+    },
     {
       "id": "26fffb8d5ec5",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/10/27/db-hershey-mclaurin-media-session-purdue-football",
       "summary": "",
       "date": "2025-10-27T15:50:31+00:00"
-    },
-    {
-      "id": "76f351456197",
-      "source": "Purdue Athletics MBB",
-      "title": "#11 Purdue Reverse Sweeps #20 Minnesota",
-      "url": "https://purduesports.com/news/2025/10/26/11-purdue-reverse-sweeps-20-minnesota",
-      "summary": "",
-      "date": "2025-10-26T20:35:00+00:00"
     }
   ]
 }
