@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-10-31T19:35:59.215265+00:00",
+  "updated": "2025-10-31T20:16:49.394969+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "2a955cf99409",
+      "source": "Purdue Athletics MBB",
+      "title": "Buckeridge, Walker Earn All-Big Ten Honors at Big Ten Championships",
+      "url": "https://purduesports.com/news/2025/10/31/buckeridge-walker-earn-all-big-ten-honors-at-big-ten-championships",
+      "summary": "Purdue Cross Country opened the postseason at the Big Ten Championships on Friday where Douglas Buckeridge earned First Team All-Big Ten and Nathan Walker Earned Second Team All-Big Ten.",
+      "date": "2025-10-31T18:52:23+00:00"
+    },
     {
       "id": "68a03f847a75",
       "source": "Purdue Athletics MBB",
@@ -26,14 +34,6 @@
       "url": "https://purduesports.com/news/2025/10/30/boilers-head-back-to-michigan-for-2-day-triple-dual",
       "summary": "The Boilermakers compete against Oakland & Cincinnati as part of a Halloween Weekend road trip.",
       "date": "2025-10-30T19:12:00+00:00"
-    },
-    {
-      "id": "b9a5e49f48ad",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Heads to B1G Championships",
-      "url": "https://purduesports.com/news/2025/10/30/purdue-heads-to-b1g-championships",
-      "summary": "Purdue Cross Country gears up for the 2025 Big Ten Championships on Friday, Oct. 31 starting at 10:35 a.m. in East Lansing, Mich.",
-      "date": "2025-10-30T16:19:00+00:00"
     },
     {
       "id": "e20418071109",
@@ -90,6 +90,14 @@
       "url": "https://purduesports.com/news/2025/10/29/purdue-set-to-host-big-ten-tournament-at-folk-field",
       "summary": "Purdue is hosting the 2025 Big Ten Women’s Soccer Tournament at Folk Field beginning tomorrow, Oct. 30 and running through Nov. 2.",
       "date": "2025-10-29T18:51:35+00:00"
+    },
+    {
+      "id": "7a7c2b81d60d",
+      "source": "Purdue Athletics MBB",
+      "title": "Baseball's Halloween Bash 2025",
+      "url": "https://purduesports.com/news/2025/10/29/baseball-halloweenbash-2025",
+      "summary": "The Boilermakers welcomed fans of all ages to Alexander Field for the annual Halloween Bash.",
+      "date": "2025-10-29T18:45:00+00:00"
     },
     {
       "id": "9511d348066d",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/10/28/purdue-scores-118-in-exhibition-win-over-purdue-northwest",
       "summary": "",
       "date": "2025-10-28T01:51:08+00:00"
-    },
-    {
-      "id": "e3bc5e48ecd0",
-      "source": "CBS Sports College Basketball",
-      "title": "College basketball rankings: Houston, Purdue, Kentucky, Duke and more headline 2025-26 Top 100 And 1 teams",
-      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-rankings-houston-purdue-kentucky-duke-and-more-headline-2025-26-top-100-and-1-teams/",
-      "summary": "You ready for the season? Not until you comb through Matt Norlander's annual, ultimate team ranking guide",
-      "date": "2025-10-27T21:14:36+00:00"
     }
   ]
 }
