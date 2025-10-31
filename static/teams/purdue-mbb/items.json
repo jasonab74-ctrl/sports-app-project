@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-10-31T15:40:19.895360+00:00",
+  "updated": "2025-10-31T16:18:34.392700+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "68a03f847a75",
+      "source": "Purdue Athletics MBB",
+      "title": "#10 Purdue Travels to Michigan State, Michigan",
+      "url": "https://purduesports.com/news/2025/10/30/10-purdue-travels-to-michigan-state-michigan",
+      "summary": "",
+      "date": "2025-10-30T22:11:00+00:00"
+    },
     {
       "id": "366cf3636cfc",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://www.cbssports.com/college-basketball/news/college-basketball-rankings-houston-purdue-kentucky-duke-and-more-headline-2025-26-top-100-and-1-teams/",
       "summary": "You ready for the season? Not until you comb through Matt Norlander's annual, ultimate team ranking guide",
       "date": "2025-10-27T21:14:36+00:00"
-    },
-    {
-      "id": "12d614a91727",
-      "source": "Purdue Athletics MBB",
-      "title": "Game Highlights: #11 Purdue 3, #20 Minnesota 2",
-      "url": "https://purduesports.com/news/2025/10/27/game-highlights-11-purdue-3-20-minnesota-2",
-      "summary": "",
-      "date": "2025-10-27T16:08:10+00:00"
     }
   ]
 }
