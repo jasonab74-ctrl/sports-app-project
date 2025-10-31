@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-10-31T22:39:43.582225+00:00",
+  "updated": "2025-10-31T23:13:52.011637+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "8de66cfe16c4",
+      "source": "Purdue Athletics MBB",
+      "title": "Day 1 of Purdue Invite",
+      "url": "https://purduesports.com/news/2025/10/31/day-1-of-purdue-invite",
+      "summary": "",
+      "date": "2025-10-31T22:00:00+00:00"
+    },
     {
       "id": "2a955cf99409",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/10/28/edwards-santa-cruz-earn-final-big-ten-weekly-awards",
       "summary": "For the second time this season, two Purdue student-athletes have been named to Big Ten Weekly honors. Purdue’s Emily Edwards was named Goalkeeper of the Week, while Megan Santa Cruz was named Offensive Player of the Week.",
       "date": "2025-10-28T19:00:00+00:00"
-    },
-    {
-      "id": "0229a4733ea0",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Scores 118 in Exhibition Win over Purdue Northwest",
-      "url": "https://purduesports.com/news/2025/10/28/purdue-scores-118-in-exhibition-win-over-purdue-northwest",
-      "summary": "",
-      "date": "2025-10-28T01:51:08+00:00"
     }
   ]
 }
