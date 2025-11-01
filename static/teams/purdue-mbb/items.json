@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-01T16:15:48.083940+00:00",
+  "updated": "2025-11-01T16:40:21.166238+00:00",
   "count": 20,
   "items": [
     {
@@ -28,14 +28,6 @@
       "date": "2025-10-31T18:52:23+00:00"
     },
     {
-      "id": "68a03f847a75",
-      "source": "Purdue Athletics MBB",
-      "title": "#10 Purdue Travels to Michigan State, Michigan",
-      "url": "https://purduesports.com/news/2025/10/30/10-purdue-travels-to-michigan-state-michigan",
-      "summary": "",
-      "date": "2025-10-30T22:11:00+00:00"
-    },
-    {
       "id": "366cf3636cfc",
       "source": "Purdue Athletics MBB",
       "title": "Purdue Men’s Basketball vs. UIndy Highlights",
@@ -58,14 +50,6 @@
       "url": "https://purduesports.com/news/2025/10/30/kaufman-renn-smith-named-to-nabc-player-of-the-year-watch-list",
       "summary": "Purdue is the only school with two players on NABC POY watch list.",
       "date": "2025-10-30T15:00:00+00:00"
-    },
-    {
-      "id": "3508dd9e5267",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Invite on Deck",
-      "url": "https://purduesports.com/news/2025/10/30/purdue-invite-on-deck",
-      "summary": "",
-      "date": "2025-10-30T14:08:00+00:00"
     },
     {
       "id": "a20d0d0e1948",
@@ -162,6 +146,22 @@
       "url": "https://purduesports.com/news/2025/10/28/cinematic-recap-11-purdue-volleyball-reverse-sweeps-20-minnesota-3-2",
       "summary": "",
       "date": "2025-10-28T20:10:40+00:00"
+    },
+    {
+      "id": "89c4c091be51",
+      "source": "Purdue Athletics MBB",
+      "title": "Edwards, Santa Cruz Earn Final Big Ten Weekly Awards",
+      "url": "https://purduesports.com/news/2025/10/28/edwards-santa-cruz-earn-final-big-ten-weekly-awards",
+      "summary": "For the second time this season, two Purdue student-athletes have been named to Big Ten Weekly honors. Purdue’s Emily Edwards was named Goalkeeper of the Week, while Megan Santa Cruz was named Offensive Player of the Week.",
+      "date": "2025-10-28T19:00:00+00:00"
+    },
+    {
+      "id": "0229a4733ea0",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Scores 118 in Exhibition Win over Purdue Northwest",
+      "url": "https://purduesports.com/news/2025/10/28/purdue-scores-118-in-exhibition-win-over-purdue-northwest",
+      "summary": "",
+      "date": "2025-10-28T01:51:08+00:00"
     }
   ]
 }
