@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-02T02:57:13.925391+00:00",
+  "updated": "2025-11-02T03:45:14.806601+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "e5ce07733564",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilers Fall on Saturday Night to No. 21 Michigan",
-      "url": "https://purduesports.com/news/2025/11/2/boilers-fall-on-saturday-night-to-no-21-michigan",
-      "summary": "Purdue Football dropped its Saturday night clash at No. 21 Michigan, 21-16, in a hard-fought effort against its third ranked opponent of the season.",
-      "date": "2025-11-02T02:31:55+00:00"
-    },
     {
       "id": "530e6b716e6c",
       "source": "Purdue Athletics MBB",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2025/10/28/cinematic-recap-11-purdue-volleyball-reverse-sweeps-20-minnesota-3-2",
       "summary": "",
       "date": "2025-10-28T20:10:40+00:00"
+    },
+    {
+      "id": "89c4c091be51",
+      "source": "Purdue Athletics MBB",
+      "title": "Edwards, Santa Cruz Earn Final Big Ten Weekly Awards",
+      "url": "https://purduesports.com/news/2025/10/28/edwards-santa-cruz-earn-final-big-ten-weekly-awards",
+      "summary": "For the second time this season, two Purdue student-athletes have been named to Big Ten Weekly honors. Purdue’s Emily Edwards was named Goalkeeper of the Week, while Megan Santa Cruz was named Offensive Player of the Week.",
+      "date": "2025-10-28T19:00:00+00:00"
     }
   ]
 }
