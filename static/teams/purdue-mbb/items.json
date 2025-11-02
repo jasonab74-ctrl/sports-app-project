@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-02T04:42:13.218109+00:00",
+  "updated": "2025-11-02T05:14:15.195106+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "28078e6c49bc",
+      "source": "Purdue Athletics MBB",
+      "title": "#22 Boilers Corral Mustangs to Open Season",
+      "url": "https://purduesports.com/news/2025/11/2/22-boilers-corral-mustangs-to-open-season",
+      "summary": "Purdue starts 1-0 with a 19-13 win at Cal Poly.",
+      "date": "2025-11-02T04:24:44+00:00"
+    },
     {
       "id": "e5ce07733564",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://www.cbssports.com/college-basketball/news/college-basketball-rankings-the-top-100-and-1-players-entering-the-2025-26-season/",
       "summary": "UConn, Florida and Purdue have four players each in our annual preseason ranking of college basketball's Top 100 And 1 Players",
       "date": "2025-10-29T00:27:29+00:00"
-    },
-    {
-      "id": "f03db5de7d9b",
-      "source": "Purdue Athletics MBB",
-      "title": "Cinematic Recap: #11 Purdue Volleyball Reverse Sweeps #20 Minnesota, 3-2",
-      "url": "https://purduesports.com/news/2025/10/28/cinematic-recap-11-purdue-volleyball-reverse-sweeps-20-minnesota-3-2",
-      "summary": "",
-      "date": "2025-10-28T20:10:40+00:00"
     }
   ]
 }
