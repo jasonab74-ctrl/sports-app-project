@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-02T01:14:17.656326+00:00",
+  "updated": "2025-11-02T02:57:13.925391+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "e5ce07733564",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilers Fall on Saturday Night to No. 21 Michigan",
+      "url": "https://purduesports.com/news/2025/11/2/boilers-fall-on-saturday-night-to-no-21-michigan",
+      "summary": "Purdue Football dropped its Saturday night clash at No. 21 Michigan, 21-16, in a hard-fought effort against its third ranked opponent of the season.",
+      "date": "2025-11-02T02:31:55+00:00"
+    },
+    {
+      "id": "530e6b716e6c",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Wins 28 Events, Sweeps Triple Dual",
+      "url": "https://purduesports.com/news/2025/11/1/purdue-wins-28-events-sweeps-triple-dual",
+      "summary": "Five Boilermakers won multiple individual events and Biko Hooper-Haviland eclipsed a freshman record in the 200 fly that had stood since 2011.",
+      "date": "2025-11-01T19:03:00+00:00"
+    },
     {
       "id": "7de7b3bb23f5",
       "source": "Purdue Athletics MBB",
@@ -42,14 +58,6 @@
       "url": "https://purduesports.com/news/2025/10/30/purdue-mens-basketball-vs-uindy-highlights",
       "summary": "",
       "date": "2025-10-30T21:55:47+00:00"
-    },
-    {
-      "id": "d12eb45be61e",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilers Return to Michigan for 2-Day Triple Dual",
-      "url": "https://purduesports.com/news/2025/10/30/boilers-head-back-to-michigan-for-2-day-triple-dual",
-      "summary": "The Boilermakers compete against Oakland & Cincinnati as part of a Halloween Weekend road trip.",
-      "date": "2025-10-30T19:12:00+00:00"
     },
     {
       "id": "e20418071109",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/10/28/cinematic-recap-11-purdue-volleyball-reverse-sweeps-20-minnesota-3-2",
       "summary": "",
       "date": "2025-10-28T20:10:40+00:00"
-    },
-    {
-      "id": "89c4c091be51",
-      "source": "Purdue Athletics MBB",
-      "title": "Edwards, Santa Cruz Earn Final Big Ten Weekly Awards",
-      "url": "https://purduesports.com/news/2025/10/28/edwards-santa-cruz-earn-final-big-ten-weekly-awards",
-      "summary": "For the second time this season, two Purdue student-athletes have been named to Big Ten Weekly honors. Purdue’s Emily Edwards was named Goalkeeper of the Week, while Megan Santa Cruz was named Offensive Player of the Week.",
-      "date": "2025-10-28T19:00:00+00:00"
     }
   ]
 }
