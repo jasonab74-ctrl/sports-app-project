@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-02T09:35:39.085711+00:00",
+  "updated": "2025-11-02T10:13:50.035340+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "808723b1a54a",
+      "source": "Purdue Athletics MBB",
+      "title": "Wrestling Season Opener at Cal Poly",
+      "url": "https://purduesports.com/news/2025/11/2/wrestling-season-opener-at-cal-poly",
+      "summary": "#22 Purdue corralled the Mustangs in Cal Poly's home gym.",
+      "date": "2025-11-02T08:43:17+00:00"
+    },
     {
       "id": "28078e6c49bc",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/10/29/game-9-prep-purdue-kicks-off-november-at-21-michigan",
       "summary": "",
       "date": "2025-10-29T16:58:04+00:00"
-    },
-    {
-      "id": "ee17db3d845f",
-      "source": "CBS Sports College Basketball",
-      "title": "College basketball rankings: The Top 100 and 1 Players entering the 2025-26 season",
-      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-rankings-the-top-100-and-1-players-entering-the-2025-26-season/",
-      "summary": "UConn, Florida and Purdue have four players each in our annual preseason ranking of college basketball's Top 100 And 1 Players",
-      "date": "2025-10-29T00:27:29+00:00"
     }
   ]
 }
