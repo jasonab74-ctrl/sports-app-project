@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-03T14:15:26.064144+00:00",
+  "updated": "2025-11-03T14:42:43.247800+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "5fa5a964669f",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Throttles CSU Bakersfield, Starts 2-0",
-      "url": "https://purduesports.com/news/2025/11/3/purdue-throttles-csu-bakersfield-starts-2-0",
-      "summary": "The #22 Boilermakers won nine matches, including two pins and three technical falls.",
-      "date": "2025-11-03T13:04:31+00:00"
-    },
     {
       "id": "808723b1a54a",
       "source": "Purdue Athletics MBB",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2025/10/29/dl-ian-jeffries-media-session-purdue-football",
       "summary": "",
       "date": "2025-10-29T17:19:08+00:00"
+    },
+    {
+      "id": "ee17db3d845f",
+      "source": "CBS Sports College Basketball",
+      "title": "College basketball rankings: The Top 100 and 1 Players entering the 2025-26 season",
+      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-rankings-the-top-100-and-1-players-entering-the-2025-26-season/",
+      "summary": "UConn, Florida and Purdue have four players each in our annual preseason ranking of college basketball's Top 100 And 1 Players",
+      "date": "2025-10-29T00:27:29+00:00"
     }
   ]
 }
