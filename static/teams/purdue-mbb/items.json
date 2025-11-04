@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-04T03:39:39.502278+00:00",
+  "updated": "2025-11-04T04:17:54.757221+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "235a5917425c",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Women's Basketball Season Opener vs. FDU",
-      "url": "https://purduesports.com/news/2025/11/4/purdue-womens-basketball-season-opener-vs-fdu",
-      "summary": "",
-      "date": "2025-11-04T03:09:20+00:00"
-    },
     {
       "id": "816eb9bde051",
       "source": "Purdue Athletics MBB",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2025/10/31/buckeridge-walker-earn-all-big-ten-honors-at-big-ten-championships",
       "summary": "Purdue Cross Country opened the postseason at the Big Ten Championships on Friday where Douglas Buckeridge earned First Team All-Big Ten and Nathan Walker Earned Second Team All-Big Ten.",
       "date": "2025-10-31T18:52:23+00:00"
+    },
+    {
+      "id": "366cf3636cfc",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Men’s Basketball vs. UIndy Highlights",
+      "url": "https://purduesports.com/news/2025/10/30/purdue-mens-basketball-vs-uindy-highlights",
+      "summary": "",
+      "date": "2025-10-30T21:55:47+00:00"
     }
   ]
 }
