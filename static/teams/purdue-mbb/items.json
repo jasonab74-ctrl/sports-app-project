@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-04T10:18:15.588706+00:00",
+  "updated": "2025-11-04T10:45:47.730270+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "bbee570e855c",
+      "source": "Yahoo Sports College Basketball",
+      "title": "Former IU basketball player claims Purdue's Matt Painter hired him, fraud case records show",
+      "url": "https://www.yahoo.com/news/articles/former-iu-basketball-player-claims-095559624.html",
+      "summary": "",
+      "date": "2025-11-04T09:55:59+00:00"
+    },
     {
       "id": "235a5917425c",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/10/31/day-1-of-purdue-invite",
       "summary": "",
       "date": "2025-10-31T22:00:00+00:00"
-    },
-    {
-      "id": "2a955cf99409",
-      "source": "Purdue Athletics MBB",
-      "title": "Buckeridge, Walker Earn All-Big Ten Honors at Big Ten Championships",
-      "url": "https://purduesports.com/news/2025/10/31/buckeridge-walker-earn-all-big-ten-honors-at-big-ten-championships",
-      "summary": "Purdue Cross Country opened the postseason at the Big Ten Championships on Friday where Douglas Buckeridge earned First Team All-Big Ten and Nathan Walker Earned Second Team All-Big Ten.",
-      "date": "2025-10-31T18:52:23+00:00"
     }
   ]
 }
