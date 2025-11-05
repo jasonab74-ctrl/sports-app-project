@@ -1,32 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-05T20:17:21.926275+00:00",
+  "updated": "2025-11-05T20:41:39.762333+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "0fcc08e886df",
-      "source": "Purdue Athletics MBB",
-      "title": "RB Malachi Thomas Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2025/11/5/rb-malachi-thomas-media-session-purdue-football",
-      "summary": "",
-      "date": "2025-11-05T19:41:13+00:00"
-    },
-    {
-      "id": "6f773ccec878",
-      "source": "Purdue Athletics MBB",
-      "title": "DL CJ Nunnally IV Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2025/11/5/dl-cj-nunnally-iv-media-session-purdue-football",
-      "summary": "",
-      "date": "2025-11-05T19:38:51+00:00"
-    },
-    {
-      "id": "916a4b81889f",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach James Shibest Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2025/11/5/coach-james-shibest-media-session-purdue-football-2",
-      "summary": "",
-      "date": "2025-11-05T19:38:13+00:00"
-    },
     {
       "id": "d18d3f21b67b",
       "source": "Purdue Athletics MBB",
@@ -162,6 +138,30 @@
       "url": "https://purduesports.com/news/2025/11/3/hc-barry-odom-press-conference-vs-ohio-state-purdue-football",
       "summary": "",
       "date": "2025-11-03T17:25:25+00:00"
+    },
+    {
+      "id": "5fa5a964669f",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Throttles CSU Bakersfield, Starts 2-0",
+      "url": "https://purduesports.com/news/2025/11/3/purdue-throttles-csu-bakersfield-starts-2-0",
+      "summary": "The #22 Boilermakers won nine matches, including two pins and three technical falls.",
+      "date": "2025-11-03T13:04:31+00:00"
+    },
+    {
+      "id": "808723b1a54a",
+      "source": "Purdue Athletics MBB",
+      "title": "Wrestling Season Opener at Cal Poly",
+      "url": "https://purduesports.com/news/2025/11/2/wrestling-season-opener-at-cal-poly",
+      "summary": "#22 Purdue corralled the Mustangs in Cal Poly's home gym.",
+      "date": "2025-11-02T08:43:17+00:00"
+    },
+    {
+      "id": "0b08f116ecd0",
+      "source": "Purdue Athletics MBB",
+      "title": "#24 Boilers Corral Mustangs to Open Season",
+      "url": "https://purduesports.com/news/2025/11/2/24-boilers-corral-mustangs-to-open-season",
+      "summary": "Purdue starts 1-0 with a 19-13 win at Cal Poly.",
+      "date": "2025-11-02T04:24:44+00:00"
     }
   ]
 }
