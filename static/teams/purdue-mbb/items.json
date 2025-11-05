@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-05T15:16:09.345998+00:00",
+  "updated": "2025-11-05T15:40:28.753523+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "8950b3f7b31c",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue and Tennessee Agree to Home-and-Home Series",
+      "url": "https://purduesports.com/news/2025/11/5/purdue-and-tennessee-agree-to-home-and-home-series",
+      "summary": "Boilers and Vols will face off in Mackey for first time since Nov. 1981.",
+      "date": "2025-11-05T15:30:00+00:00"
+    },
+    {
+      "id": "bf6c7127babb",
+      "source": "Purdue Athletics MBB",
+      "title": "Game 10 Prep: Purdue Hosts Nation’s #1 Team for 1st Time Since 1989",
+      "url": "https://purduesports.com/news/2025/11/5/game-10-prep-purdue-hosts-nations-1-team-for-1st-time-since-1989",
+      "summary": "",
+      "date": "2025-11-05T13:37:03+00:00"
+    },
     {
       "id": "36741f42ffc0",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/2/boilers-fall-on-saturday-night-to-no-21-michigan",
       "summary": "Purdue Football dropped its Saturday night clash at No. 21 Michigan, 21-16, in a hard-fought effort against its third ranked opponent of the season.",
       "date": "2025-11-02T02:31:55+00:00"
-    },
-    {
-      "id": "530e6b716e6c",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Wins 28 Events, Sweeps Triple Dual",
-      "url": "https://purduesports.com/news/2025/11/1/purdue-wins-28-events-sweeps-triple-dual",
-      "summary": "Five Boilermakers won multiple individual events and Biko Hooper-Haviland eclipsed a freshman record in the 200 fly that had stood since 2011.",
-      "date": "2025-11-01T19:03:00+00:00"
-    },
-    {
-      "id": "070b90dc65c5",
-      "source": "Purdue Athletics MBB",
-      "title": "19 Blocks Power #10 Purdue to 5-Set Thriller",
-      "url": "https://purduesports.com/news/2025/11/1/19-blocks-power-10-purdue-to-5-set-thriller",
-      "summary": "",
-      "date": "2025-11-01T03:01:00+00:00"
     }
   ]
 }
