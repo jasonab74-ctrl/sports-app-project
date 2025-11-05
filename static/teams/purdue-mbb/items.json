@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-05T06:50:08.826651+00:00",
+  "updated": "2025-11-05T07:15:10.075215+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "36741f42ffc0",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Matt Painter Postgame Press Conference vs. Evansville | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2025/11/5/coach-matt-painter-postgame-press-conference-vs-evansville-purdue-mens-basketball",
+      "summary": "",
+      "date": "2025-11-05T03:18:49+00:00"
+    },
+    {
+      "id": "1f04c8c033f2",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Men's Basketball Highlights vs. Evansville",
+      "url": "https://purduesports.com/news/2025/11/5/purdue-mens-basketball-highlights-vs-evansville",
+      "summary": "",
+      "date": "2025-11-05T02:23:49+00:00"
+    },
     {
       "id": "6e8c6166e66b",
       "source": "Purdue Athletics MBB",
@@ -10,6 +26,14 @@
       "url": "https://purduesports.com/news/2025/11/5/1-purdue-takes-down-evansville-in-season-opener",
       "summary": "",
       "date": "2025-11-05T01:58:03+00:00"
+    },
+    {
+      "id": "a12424755e4c",
+      "source": "Purdue Athletics MBB",
+      "title": "Players Postgame Press Conference vs. Evansville | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2025/11/5/players-postgame-press-conference-vs-evansville-purdue-mens-basketball",
+      "summary": "",
+      "date": "2025-11-05T01:44:39+00:00"
     },
     {
       "id": "235a5917425c",
@@ -92,14 +116,6 @@
       "date": "2025-11-03T17:25:25+00:00"
     },
     {
-      "id": "13d7c187f58b",
-      "source": "Purdue Athletics MBB",
-      "title": "#1 Boilermakers Open Season Tuesday vs. Evansville",
-      "url": "https://purduesports.com/news/2025/11/3/1-boilermakers-open-season-tuesday-vs-evansville",
-      "summary": "Purdue men's basketball has won 12 straight season openers.",
-      "date": "2025-11-03T14:47:00+00:00"
-    },
-    {
       "id": "5fa5a964669f",
       "source": "Purdue Athletics MBB",
       "title": "Purdue Throttles CSU Bakersfield, Starts 2-0",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/1/19-blocks-power-10-purdue-to-5-set-thriller",
       "summary": "",
       "date": "2025-11-01T03:01:00+00:00"
-    },
-    {
-      "id": "8de66cfe16c4",
-      "source": "Purdue Athletics MBB",
-      "title": "Day 1 of Purdue Invite",
-      "url": "https://purduesports.com/news/2025/10/31/day-1-of-purdue-invite",
-      "summary": "",
-      "date": "2025-10-31T22:00:00+00:00"
-    },
-    {
-      "id": "2a955cf99409",
-      "source": "Purdue Athletics MBB",
-      "title": "Buckeridge, Walker Earn All-Big Ten Honors at Big Ten Championships",
-      "url": "https://purduesports.com/news/2025/10/31/buckeridge-walker-earn-all-big-ten-honors-at-big-ten-championships",
-      "summary": "Purdue Cross Country opened the postseason at the Big Ten Championships on Friday where Douglas Buckeridge earned First Team All-Big Ten and Nathan Walker Earned Second Team All-Big Ten.",
-      "date": "2025-10-31T18:52:23+00:00"
     }
   ]
 }
