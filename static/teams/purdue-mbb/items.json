@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-05T20:41:39.762333+00:00",
+  "updated": "2025-11-05T21:13:59.233371+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "d18d3f21b67b",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilers Take on Eastern Illinois Thursday Night in Mackey",
-      "url": "https://purduesports.com/news/2025/11/5/boilers-take-on-eastern-illinois-thursday-night-in-mackey",
-      "summary": "",
-      "date": "2025-11-05T18:09:00+00:00"
-    },
     {
       "id": "8950b3f7b31c",
       "source": "Purdue Athletics MBB",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2025/11/2/24-boilers-corral-mustangs-to-open-season",
       "summary": "Purdue starts 1-0 with a 19-13 win at Cal Poly.",
       "date": "2025-11-02T04:24:44+00:00"
+    },
+    {
+      "id": "506a2e518ce5",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilers Fall on Saturday Night to #21 Michigan",
+      "url": "https://purduesports.com/news/2025/11/2/boilers-fall-on-saturday-night-to-no-21-michigan",
+      "summary": "Purdue Football dropped its Saturday night clash at No. 21 Michigan, 21-16, in a hard-fought effort against its third ranked opponent of the season.",
+      "date": "2025-11-02T02:31:55+00:00"
     }
   ]
 }
