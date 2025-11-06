@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-06T20:16:58.440969+00:00",
+  "updated": "2025-11-06T20:41:29.957571+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "4dd7b337e81f",
-      "source": "Purdue Athletics MBB",
-      "title": "#1 Purdue Hosts Oakland to Close Out Homestand",
-      "url": "https://purduesports.com/news/2025/11/6/1-purdue-hosts-oakland-to-close-out-homestand",
-      "summary": "No. 1-ranked Purdue hosts Oakland on Friday night in Mackey Arena.",
-      "date": "2025-11-06T18:37:03+00:00"
-    },
     {
       "id": "3dccb5832cd1",
       "source": "Purdue Athletics MBB",
@@ -108,14 +100,6 @@
       "date": "2025-11-05T01:44:39+00:00"
     },
     {
-      "id": "f4a835b2f3d6",
-      "source": "Purdue Athletics MBB",
-      "title": "Cinematic Recap: #Purdue10  Reverse Sweeps Michigan | Purdue Volleyball",
-      "url": "https://purduesports.com/news/2025/11/4/cinematic-recap-purdue10-reverse-sweeps-michigan-purdue-volleyball",
-      "summary": "",
-      "date": "2025-11-04T15:42:44+00:00"
-    },
-    {
       "id": "235a5917425c",
       "source": "Purdue Athletics MBB",
       "title": "Purdue Women's Basketball Season Opener vs. FDU",
@@ -162,6 +146,22 @@
       "url": "https://purduesports.com/news/2025/11/3/db-hudauri-hines-media-session-purdue-football-1",
       "summary": "",
       "date": "2025-11-03T17:41:27+00:00"
+    },
+    {
+      "id": "55a3fcfcbfc3",
+      "source": "Purdue Athletics MBB",
+      "title": "K Spencer Porath Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2025/11/3/k-spencer-porath-media-session-purdue-football",
+      "summary": "",
+      "date": "2025-11-03T17:40:46+00:00"
+    },
+    {
+      "id": "0ff01f093ac5",
+      "source": "Purdue Athletics MBB",
+      "title": "DC Mike Scherer Press Conference vs Ohio State | Purdue Football",
+      "url": "https://purduesports.com/news/2025/11/3/dc-mike-scherer-press-conference-vs-ohio-state-purdue-football",
+      "summary": "",
+      "date": "2025-11-03T17:26:12+00:00"
     }
   ]
 }
