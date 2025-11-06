@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-06T16:20:24.080867+00:00",
+  "updated": "2025-11-06T16:50:00.751714+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "3dccb5832cd1",
+      "source": "Purdue Athletics MBB",
+      "title": "Painter Added for 2026 Season",
+      "url": "https://purduesports.com/news/2025/11/6/painter-added-for-2026-season",
+      "summary": "Purdue softball head coach Magali Frezzotti announced the addition of Haley Painter for the upcoming 2026 season.",
+      "date": "2025-11-06T15:00:00+00:00"
+    },
     {
       "id": "b2cd7a147eae",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/3/dc-mike-scherer-press-conference-vs-ohio-state-purdue-football",
       "summary": "",
       "date": "2025-11-03T17:26:12+00:00"
-    },
-    {
-      "id": "4d8d12fbb1a8",
-      "source": "Purdue Athletics MBB",
-      "title": "OC Josh Henson Press Conference vs Ohio State | Purdue Football",
-      "url": "https://purduesports.com/news/2025/11/3/oc-josh-henson-press-conference-vs-ohio-state-purdue-football",
-      "summary": "",
-      "date": "2025-11-03T17:26:08+00:00"
     }
   ]
 }
