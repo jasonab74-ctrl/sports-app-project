@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-06T15:17:07.506110+00:00",
+  "updated": "2025-11-06T15:43:14.406756+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "b2cd7a147eae",
+      "source": "Purdue Athletics MBB",
+      "title": "Uber, Learfield, Purdue Athletics Announce Partnership",
+      "url": "https://purduesports.com/news/2025/11/6/uber-learfield-purdue-athletics-announce-partnership",
+      "summary": "Purdue is one of nine universities teaming up with Uber.",
+      "date": "2025-11-06T13:00:00+00:00"
+    },
     {
       "id": "0fcc08e886df",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/3/oc-josh-henson-press-conference-vs-ohio-state-purdue-football",
       "summary": "",
       "date": "2025-11-03T17:26:08+00:00"
-    },
-    {
-      "id": "709878062821",
-      "source": "Purdue Athletics MBB",
-      "title": "HC Barry Odom Press Conference vs Ohio State | Purdue Football",
-      "url": "https://purduesports.com/news/2025/11/3/hc-barry-odom-press-conference-vs-ohio-state-purdue-football",
-      "summary": "",
-      "date": "2025-11-03T17:25:25+00:00"
     }
   ]
 }
