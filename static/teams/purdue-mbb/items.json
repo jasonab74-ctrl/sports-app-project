@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-07T01:10:29.204259+00:00",
+  "updated": "2025-11-07T02:53:01.403099+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "59b1192d5247",
+      "source": "Purdue Athletics MBB",
+      "title": "Karsh Drops 24 as Purdue Downs EIU",
+      "url": "https://purduesports.com/news/2025/11/7/karsh-drops-24-as-purdue-downs-eiu",
+      "summary": "",
+      "date": "2025-11-07T02:00:00+00:00"
+    },
     {
       "id": "a9adf99d4123",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/3/trey-kaufman-renn-media-session-purdue-mens-basketball-1",
       "summary": "",
       "date": "2025-11-03T18:54:15+00:00"
-    },
-    {
-      "id": "392575ce04f1",
-      "source": "Purdue Athletics MBB",
-      "title": "Omer Mayer Media Session | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2025/11/3/omer-mayer-media-session-purdue-mens-basketball",
-      "summary": "",
-      "date": "2025-11-03T18:36:12+00:00"
     }
   ]
 }
