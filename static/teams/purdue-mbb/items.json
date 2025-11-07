@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-07T13:06:31.144192+00:00",
+  "updated": "2025-11-07T13:43:39.537555+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "254be6d146c6",
+      "source": "Purdue Athletics MBB",
+      "title": "#23 Purdue Travels to Tiger Style Invite",
+      "url": "https://purduesports.com/news/2025/11/7/23-purdue-travels-to-tiger-style-invite",
+      "summary": "The Boilermakers will compete in their first tournament of the season.",
+      "date": "2025-11-07T05:38:40+00:00"
+    },
     {
       "id": "59b1192d5247",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/3/coach-matt-painter-press-conference-vs-evansville-purdue-mens-basketball",
       "summary": "",
       "date": "2025-11-03T19:20:50+00:00"
-    },
-    {
-      "id": "73949ada8611",
-      "source": "Purdue Athletics MBB",
-      "title": "Trey Kaufman-Renn Media Session | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2025/11/3/trey-kaufman-renn-media-session-purdue-mens-basketball-1",
-      "summary": "",
-      "date": "2025-11-03T18:54:15+00:00"
     }
   ]
 }
