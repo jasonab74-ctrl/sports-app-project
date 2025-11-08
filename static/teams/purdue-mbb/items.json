@@ -1,8 +1,32 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-08T04:41:04.166845+00:00",
+  "updated": "2025-11-08T05:13:58.299230+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "beab0d9799c7",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Men's Basketball Highlights vs. Oakland",
+      "url": "https://purduesports.com/news/2025/11/8/purdue-mens-basketball-highlights-vs-oakland",
+      "summary": "",
+      "date": "2025-11-08T03:05:13+00:00"
+    },
+    {
+      "id": "82c5f17ed8ea",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Matt Painter Postgame Press Conference vs. Oakland | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2025/11/8/coach-matt-painter-postgame-press-conference-vs-oakland-purdue-mens-basketball",
+      "summary": "",
+      "date": "2025-11-08T03:00:54+00:00"
+    },
+    {
+      "id": "6941fb095ea4",
+      "source": "Purdue Athletics MBB",
+      "title": "Players Postgame Press Conference vs. Oakland | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2025/11/8/players-postgame-press-conference-vs-oakland-purdue-mens-basketball",
+      "summary": "",
+      "date": "2025-11-08T02:50:42+00:00"
+    },
     {
       "id": "d4be47c7ed70",
       "source": "Purdue Athletics MBB",
@@ -138,30 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/4/cinematic-recap-purdue10-reverse-sweeps-michigan-purdue-volleyball",
       "summary": "",
       "date": "2025-11-04T15:42:44+00:00"
-    },
-    {
-      "id": "235a5917425c",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Women's Basketball Season Opener vs. FDU",
-      "url": "https://purduesports.com/news/2025/11/4/purdue-womens-basketball-season-opener-vs-fdu",
-      "summary": "",
-      "date": "2025-11-04T03:09:20+00:00"
-    },
-    {
-      "id": "816eb9bde051",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Men’s Basketball Season Hype",
-      "url": "https://purduesports.com/news/2025/11/4/purdue-mens-basketball-season-hype",
-      "summary": "",
-      "date": "2025-11-04T00:06:23+00:00"
-    },
-    {
-      "id": "67a41c84e225",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Matt Painter Press Conference vs. Evansville | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2025/11/3/coach-matt-painter-press-conference-vs-evansville-purdue-mens-basketball",
-      "summary": "",
-      "date": "2025-11-03T19:20:50+00:00"
     }
   ]
 }
