@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-08T02:44:32.150696+00:00",
+  "updated": "2025-11-08T03:32:42.324827+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "dd297932c985",
+      "source": "Purdue Athletics MBB",
+      "title": "#9 Purdue Reaches Win #20",
+      "url": "https://purduesports.com/news/2025/11/8/9-purdue-reaches-win-20",
+      "summary": "",
+      "date": "2025-11-08T01:01:00+00:00"
+    },
     {
       "id": "254be6d146c6",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/4/purdue-mens-basketball-season-hype",
       "summary": "",
       "date": "2025-11-04T00:06:23+00:00"
-    },
-    {
-      "id": "67a41c84e225",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Matt Painter Press Conference vs. Evansville | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2025/11/3/coach-matt-painter-press-conference-vs-evansville-purdue-mens-basketball",
-      "summary": "",
-      "date": "2025-11-03T19:20:50+00:00"
     }
   ]
 }
