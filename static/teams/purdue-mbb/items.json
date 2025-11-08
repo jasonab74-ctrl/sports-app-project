@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-08T22:37:32.289225+00:00",
+  "updated": "2025-11-08T23:12:43.072356+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "30158134726c",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Barry Odom Postgame Press Conference vs. Ohio State | Purdue Football",
+      "url": "https://purduesports.com/news/2025/11/8/coach-barry-odom-postgame-press-conference-vs-ohio-state-purdue-football",
+      "summary": "",
+      "date": "2025-11-08T22:04:43+00:00"
+    },
+    {
+      "id": "0f7a37c2802a",
+      "source": "Purdue Athletics MBB",
+      "title": "Players Postgame Press Conference vs. Ohio State | Purdue Football",
+      "url": "https://purduesports.com/news/2025/11/8/players-postgame-press-conference-vs-ohio-state-purdue-football",
+      "summary": "",
+      "date": "2025-11-08T21:58:48+00:00"
+    },
     {
       "id": "362e39fbe897",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/5/coach-matt-painter-postgame-press-conference-vs-evansville-purdue-mens-basketball",
       "summary": "",
       "date": "2025-11-05T03:18:49+00:00"
-    },
-    {
-      "id": "1f04c8c033f2",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Men's Basketball Highlights vs. Evansville",
-      "url": "https://purduesports.com/news/2025/11/5/purdue-mens-basketball-highlights-vs-evansville",
-      "summary": "",
-      "date": "2025-11-05T02:23:49+00:00"
-    },
-    {
-      "id": "6e8c6166e66b",
-      "source": "Purdue Athletics MBB",
-      "title": "Loyer's Career High Leads #1 Purdue Past Evansville",
-      "url": "https://purduesports.com/news/2025/11/5/1-purdue-takes-down-evansville-in-season-opener",
-      "summary": "",
-      "date": "2025-11-05T01:58:03+00:00"
     }
   ]
 }
