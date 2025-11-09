@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-09T03:41:20.820261+00:00",
+  "updated": "2025-11-09T04:17:36.343090+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "68f2ad7c6998",
+      "source": "Purdue Athletics MBB",
+      "title": "11.5 Blocks Power #9 Purdue to 3-1 Victory",
+      "url": "https://purduesports.com/news/2025/11/9/115-blocks-power-9-purdue-to-3-1-victory",
+      "summary": "",
+      "date": "2025-11-09T03:32:00+00:00"
+    },
     {
       "id": "57844ee3de2b",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/5/purdue-and-tennessee-agree-to-home-and-home-series",
       "summary": "Boilers and Vols will face off in Mackey for first time since Nov. 1981.",
       "date": "2025-11-05T15:30:00+00:00"
-    },
-    {
-      "id": "bf6c7127babb",
-      "source": "Purdue Athletics MBB",
-      "title": "Game 10 Prep: Purdue Hosts Nation’s #1 Team for 1st Time Since 1989",
-      "url": "https://purduesports.com/news/2025/11/5/game-10-prep-purdue-hosts-nations-1-team-for-1st-time-since-1989",
-      "summary": "",
-      "date": "2025-11-05T13:37:03+00:00"
     }
   ]
 }
