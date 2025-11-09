@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-08T23:35:07.769595+00:00",
+  "updated": "2025-11-09T01:13:52.410288+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "57844ee3de2b",
+      "source": "Purdue Athletics MBB",
+      "title": "Cinematic Recap: #9 Purdue 3, #25 Penn State 0 | Purdue Volleyball",
+      "url": "https://purduesports.com/news/2025/11/8/cinematic-recap-9-purdue-3-25-penn-state-0-purdue-volleyball",
+      "summary": "",
+      "date": "2025-11-08T23:37:01+00:00"
+    },
     {
       "id": "30158134726c",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/5/game-10-prep-purdue-hosts-nations-1-team-for-1st-time-since-1989",
       "summary": "",
       "date": "2025-11-05T13:37:03+00:00"
-    },
-    {
-      "id": "36741f42ffc0",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Matt Painter Postgame Press Conference vs. Evansville | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2025/11/5/coach-matt-painter-postgame-press-conference-vs-evansville-purdue-mens-basketball",
-      "summary": "",
-      "date": "2025-11-05T03:18:49+00:00"
     }
   ]
 }
