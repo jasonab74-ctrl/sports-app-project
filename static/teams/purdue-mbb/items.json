@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-10T18:21:58.393167+00:00",
+  "updated": "2025-11-10T18:47:52.854570+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "fbb806260f3d",
+      "source": "Purdue Athletics MBB",
+      "title": "#9 Purdue  3, Iowa 1 | Purdue Volleyball",
+      "url": "https://purduesports.com/news/2025/11/10/9-purdue-3-iowa-1-purdue-volleyball",
+      "summary": "",
+      "date": "2025-11-10T17:06:12+00:00"
+    },
     {
       "id": "c40b5fdbe57f",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/8/trio-of-multi-event-winners-propel-purdue-past-iowa",
       "summary": "The Boilermakers improved to 4-0 in dual meets and have won 10 straight duals during the fall semester.",
       "date": "2025-11-08T01:08:00+00:00"
-    },
-    {
-      "id": "dd297932c985",
-      "source": "Purdue Athletics MBB",
-      "title": "#9 Purdue Reaches Win #20",
-      "url": "https://purduesports.com/news/2025/11/8/9-purdue-reaches-win-20",
-      "summary": "",
-      "date": "2025-11-08T01:01:00+00:00"
     }
   ]
 }
