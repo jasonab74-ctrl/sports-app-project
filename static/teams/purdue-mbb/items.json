@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-10T14:43:08.018828+00:00",
+  "updated": "2025-11-10T15:17:09.497625+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "07f12fb54f33",
+      "source": "CBS Sports College Basketball",
+      "title": "College basketball rankings: Purdue remains No. 1 after wild week with first major test just days away",
+      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-rankings-purdue-remains-no-1-after-wild-week-with-first-major-test-just-days-away/",
+      "summary": "The Boilermakers are the No. 1 team in the CBS Sports Top 25 And 1",
+      "date": "2025-11-10T14:25:25+00:00"
+    },
     {
       "id": "a656b684cfba",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/5/dl-cj-nunnally-iv-media-session-purdue-football",
       "summary": "",
       "date": "2025-11-05T19:38:51+00:00"
-    },
-    {
-      "id": "916a4b81889f",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach James Shibest Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2025/11/5/coach-james-shibest-media-session-purdue-football-2",
-      "summary": "",
-      "date": "2025-11-05T19:38:13+00:00"
     }
   ]
 }
