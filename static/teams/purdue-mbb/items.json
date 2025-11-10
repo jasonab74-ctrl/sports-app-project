@@ -1,8 +1,48 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-10T16:48:22.869194+00:00",
+  "updated": "2025-11-10T17:13:54.582611+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "c40b5fdbe57f",
+      "source": "Purdue Athletics MBB",
+      "title": "Head Coach Barry Odom Press Conference vs. Washington | Purdue Football",
+      "url": "https://purduesports.com/news/2025/11/10/head-coach-barry-odom-press-conference-vs-washington-purdue-football",
+      "summary": "",
+      "date": "2025-11-10T16:37:55+00:00"
+    },
+    {
+      "id": "97da25ccfc0d",
+      "source": "Purdue Athletics MBB",
+      "title": "OC Josh Henson Press Conference vs. Washington | Purdue Football",
+      "url": "https://purduesports.com/news/2025/11/10/oc-josh-henson-press-conference-vs-washington-purdue-football",
+      "summary": "",
+      "date": "2025-11-10T16:35:32+00:00"
+    },
+    {
+      "id": "1b28405625fd",
+      "source": "Purdue Athletics MBB",
+      "title": "DC Mike Scherer Press Conference vs. Washington | Purdue Football",
+      "url": "https://purduesports.com/news/2025/11/10/dc-mike-scherer-press-conference-vs-washington-purdue-football",
+      "summary": "",
+      "date": "2025-11-10T16:32:41+00:00"
+    },
+    {
+      "id": "e5b7f30544c0",
+      "source": "Purdue Athletics MBB",
+      "title": "WR Jesse Watson Media Session vs. Washington | Purdue Football",
+      "url": "https://purduesports.com/news/2025/11/10/wr-jesse-watson-media-session-vs-washington-purdue-football",
+      "summary": "",
+      "date": "2025-11-10T16:04:37+00:00"
+    },
+    {
+      "id": "5ded970e6669",
+      "source": "Purdue Athletics MBB",
+      "title": "DB Vi'Naz Cobb Media Session vs. Washington | Purdue Football",
+      "url": "https://purduesports.com/news/2025/11/10/db-vinaz-cobb-media-session-vs-washington-purdue-football",
+      "summary": "",
+      "date": "2025-11-10T16:03:39+00:00"
+    },
     {
       "id": "07f12fb54f33",
       "source": "CBS Sports College Basketball",
@@ -122,46 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/8/9-purdue-reaches-win-20",
       "summary": "",
       "date": "2025-11-08T01:01:00+00:00"
-    },
-    {
-      "id": "59b1192d5247",
-      "source": "Purdue Athletics MBB",
-      "title": "Karsh Drops 24 as Purdue Downs EIU",
-      "url": "https://purduesports.com/news/2025/11/7/karsh-drops-24-as-purdue-downs-eiu",
-      "summary": "",
-      "date": "2025-11-07T02:00:00+00:00"
-    },
-    {
-      "id": "3dccb5832cd1",
-      "source": "Purdue Athletics MBB",
-      "title": "Painter Added for 2026 Season",
-      "url": "https://purduesports.com/news/2025/11/6/painter-added-for-2026-season",
-      "summary": "Purdue softball head coach Magali Frezzotti announced the addition of Haley Painter for the upcoming 2026 season.",
-      "date": "2025-11-06T15:00:00+00:00"
-    },
-    {
-      "id": "b2cd7a147eae",
-      "source": "Purdue Athletics MBB",
-      "title": "Uber, Learfield, Purdue Athletics Announce Partnership",
-      "url": "https://purduesports.com/news/2025/11/6/uber-learfield-purdue-athletics-announce-partnership",
-      "summary": "Purdue is one of nine universities teaming up with Uber.",
-      "date": "2025-11-06T13:00:00+00:00"
-    },
-    {
-      "id": "0fcc08e886df",
-      "source": "Purdue Athletics MBB",
-      "title": "RB Malachi Thomas Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2025/11/5/rb-malachi-thomas-media-session-purdue-football",
-      "summary": "",
-      "date": "2025-11-05T19:41:13+00:00"
-    },
-    {
-      "id": "6f773ccec878",
-      "source": "Purdue Athletics MBB",
-      "title": "DL CJ Nunnally IV Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2025/11/5/dl-cj-nunnally-iv-media-session-purdue-football",
-      "summary": "",
-      "date": "2025-11-05T19:38:51+00:00"
     }
   ]
 }
