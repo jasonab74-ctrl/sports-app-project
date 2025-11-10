@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-10T05:16:41.071486+00:00",
+  "updated": "2025-11-10T05:40:51.748180+00:00",
   "count": 20,
   "items": [
     {
@@ -116,14 +116,6 @@
       "date": "2025-11-08T01:01:00+00:00"
     },
     {
-      "id": "254be6d146c6",
-      "source": "Purdue Athletics MBB",
-      "title": "#23 Purdue Travels to Tiger Style Invite",
-      "url": "https://purduesports.com/news/2025/11/7/23-purdue-travels-to-tiger-style-invite",
-      "summary": "The Boilermakers will compete in their first tournament of the season.",
-      "date": "2025-11-07T05:38:40+00:00"
-    },
-    {
       "id": "59b1192d5247",
       "source": "Purdue Athletics MBB",
       "title": "Karsh Drops 24 as Purdue Downs EIU",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2025/11/5/dl-cj-nunnally-iv-media-session-purdue-football",
       "summary": "",
       "date": "2025-11-05T19:38:51+00:00"
+    },
+    {
+      "id": "916a4b81889f",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach James Shibest Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2025/11/5/coach-james-shibest-media-session-purdue-football-2",
+      "summary": "",
+      "date": "2025-11-05T19:38:13+00:00"
     }
   ]
 }
