@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-10T03:53:34.625317+00:00",
+  "updated": "2025-11-10T04:23:09.786657+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "a656b684cfba",
+      "source": "Purdue Athletics MBB",
+      "title": "Baumann, Buell Win Gold; #23 Boilers Nab 6 Medals at Tiger Style Invite",
+      "url": "https://purduesports.com/news/2025/11/10/baumann-buell-win-gold-23-boilers-nab-6-medals-at-tiger-style-invite",
+      "summary": "Purdue totaled 10 placewinners in its first tournament of the year.",
+      "date": "2025-11-10T02:40:38+00:00"
+    },
     {
       "id": "a5a2647531f7",
       "source": "CBS Sports College Basketball",
@@ -106,14 +114,6 @@
       "url": "https://purduesports.com/news/2025/11/8/9-purdue-reaches-win-20",
       "summary": "",
       "date": "2025-11-08T01:01:00+00:00"
-    },
-    {
-      "id": "254be6d146c6",
-      "source": "Purdue Athletics MBB",
-      "title": "#23 Purdue Travels to Tiger Style Invite",
-      "url": "https://purduesports.com/news/2025/11/7/23-purdue-travels-to-tiger-style-invite",
-      "summary": "The Boilermakers will compete in their first tournament of the season.",
-      "date": "2025-11-07T05:38:40+00:00"
     },
     {
       "id": "59b1192d5247",
