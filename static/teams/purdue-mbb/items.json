@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-10T18:47:52.854570+00:00",
+  "updated": "2025-11-10T19:12:29.495002+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "7c22a01b5fa9",
+      "source": "CBS Sports College Basketball",
+      "title": "College basketball rankings: Houston jumps Purdue for No. 1 spot in AP Top 25; Florida drops after early loss",
+      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-rankings-ap-top-25-houston-purdue-florida/",
+      "summary": "Kentucky also received a bump in the rankings ahead of a key matchup against Louisville",
+      "date": "2025-11-10T18:39:39+00:00"
+    },
     {
       "id": "fbb806260f3d",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/8/1-purdue-uses-big-second-half-to-defeat-oakland-87-77",
       "summary": "Braden Smith had 20 points, 9 assists and 7 rebounds in the win over Oakland.",
       "date": "2025-11-08T02:20:20+00:00"
-    },
-    {
-      "id": "01d55f4907c4",
-      "source": "Purdue Athletics MBB",
-      "title": "Trio of Multi-Event Winners Propel Purdue Past Iowa",
-      "url": "https://purduesports.com/news/2025/11/8/trio-of-multi-event-winners-propel-purdue-past-iowa",
-      "summary": "The Boilermakers improved to 4-0 in dual meets and have won 10 straight duals during the fall semester.",
-      "date": "2025-11-08T01:08:00+00:00"
     }
   ]
 }
