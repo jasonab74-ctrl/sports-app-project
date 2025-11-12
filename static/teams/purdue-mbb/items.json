@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-12T16:20:39.664902+00:00",
+  "updated": "2025-11-12T16:49:22.024611+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "b797fb80e09f",
+      "source": "Purdue Athletics MBB",
+      "title": "#2 Purdue Heads South for Showdown With #8 Alabama",
+      "url": "https://purduesports.com/news/2025/11/12/2-purdue-heads-south-for-showdown-with-8-alabama",
+      "summary": "Boilermakers are looking for fifth straight 3-0 start.",
+      "date": "2025-11-12T15:09:00+00:00"
+    },
     {
       "id": "cf9ddd9d9681",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/8/purdue-mens-basketball-highlights-vs-oakland",
       "summary": "",
       "date": "2025-11-08T03:05:13+00:00"
-    },
-    {
-      "id": "82c5f17ed8ea",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Matt Painter Postgame Press Conference vs. Oakland | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2025/11/8/coach-matt-painter-postgame-press-conference-vs-oakland-purdue-mens-basketball",
-      "summary": "",
-      "date": "2025-11-08T03:00:54+00:00"
     }
   ]
 }
