@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-12T18:46:41.162713+00:00",
+  "updated": "2025-11-12T19:12:52.398391+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "d2ba4334897a",
+      "source": "Purdue Athletics MBB",
+      "title": "Volleyball Signs 4 on National Signing Day",
+      "url": "https://purduesports.com/news/2025/11/12/4-sign-with-volleyball",
+      "summary": "HC Dave Shondell announced four signees joining Purdue Volleyball for the 2026 season.",
+      "date": "2025-11-12T17:46:23+00:00"
+    },
     {
       "id": "226b4e2d7f25",
       "source": "Purdue Athletics MBB",
@@ -26,6 +34,14 @@
       "url": "https://purduesports.com/news/2025/11/12/2-purdue-heads-south-for-showdown-with-8-alabama",
       "summary": "Boilermakers are looking for fifth straight 3-0 start.",
       "date": "2025-11-12T15:09:00+00:00"
+    },
+    {
+      "id": "f9d45c66e9cc",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilers Head to Purdue Fort Wayne for Wednesday Clash",
+      "url": "https://purduesports.com/news/2025/11/11/boilers-head-to-purdue-fort-wayne-for-wednesday-clash",
+      "summary": "",
+      "date": "2025-11-11T19:09:00+00:00"
     },
     {
       "id": "cf9ddd9d9681",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/8/coach-barry-odom-postgame-press-conference-vs-ohio-state-purdue-football",
       "summary": "",
       "date": "2025-11-08T22:04:43+00:00"
-    },
-    {
-      "id": "0f7a37c2802a",
-      "source": "Purdue Athletics MBB",
-      "title": "Players Postgame Press Conference vs. Ohio State | Purdue Football",
-      "url": "https://purduesports.com/news/2025/11/8/players-postgame-press-conference-vs-ohio-state-purdue-football",
-      "summary": "",
-      "date": "2025-11-08T21:58:48+00:00"
-    },
-    {
-      "id": "362e39fbe897",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Drops Home Matchup Against #1 Ohio State",
-      "url": "https://purduesports.com/news/2025/11/8/purdue-drops-home-matchup-against-1-ohio-state",
-      "summary": "Purdue Football fell in its penultimate home game of the 2025 season, 34-10, to No. 1 Ohio State.",
-      "date": "2025-11-08T21:35:41+00:00"
     }
   ]
 }
