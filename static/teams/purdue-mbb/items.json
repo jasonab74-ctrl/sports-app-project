@@ -1,8 +1,48 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-12T21:14:29.434758+00:00",
+  "updated": "2025-11-12T21:37:34.725317+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "57745b99490d",
+      "source": "Purdue Athletics MBB",
+      "title": "Trey Kaufman-Renn Media Session vs. Alabama | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2025/11/12/trey-kaufman-renn-media-session-vs-alabama-purdue-mens-basketball",
+      "summary": "",
+      "date": "2025-11-12T20:22:34+00:00"
+    },
+    {
+      "id": "326a61563f6b",
+      "source": "Purdue Athletics MBB",
+      "title": "Braden Smith Media Session vs. Alabama | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2025/11/12/braden-smith-media-session-vs-alabama-purdue-mens-basketball",
+      "summary": "",
+      "date": "2025-11-12T20:20:38+00:00"
+    },
+    {
+      "id": "62db87ce158e",
+      "source": "Purdue Athletics MBB",
+      "title": "Gicarri Harris Media Session vs. Alabama | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2025/11/12/gicarri-harris-media-session-vs-alabama-purdue-mens-basketball",
+      "summary": "",
+      "date": "2025-11-12T20:18:43+00:00"
+    },
+    {
+      "id": "48c391596244",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Matt Painter Press Conference vs. Alabama | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2025/11/12/coach-matt-painter-press-conference-vs-alabama-purdue-mens-basketball",
+      "summary": "",
+      "date": "2025-11-12T19:11:31+00:00"
+    },
+    {
+      "id": "283a6af2bfa5",
+      "source": "Purdue Athletics MBB",
+      "title": "Volleyball Inks 4 on National Signing Day",
+      "url": "https://purduesports.com/news/2025/11/12/4-sign-with-volleyball",
+      "summary": "Lily Bosworth, Elle Schara, MaryKate Scheumann and Sydni Vice will join Purdue Volleyball for the 2026 season.",
+      "date": "2025-11-12T17:46:23+00:00"
+    },
     {
       "id": "226b4e2d7f25",
       "source": "Purdue Athletics MBB",
@@ -26,6 +66,14 @@
       "url": "https://purduesports.com/news/2025/11/12/2-purdue-heads-south-for-showdown-with-8-alabama",
       "summary": "Boilermakers are looking for fifth straight 3-0 start.",
       "date": "2025-11-12T15:09:00+00:00"
+    },
+    {
+      "id": "f9d45c66e9cc",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilers Head to Purdue Fort Wayne for Wednesday Clash",
+      "url": "https://purduesports.com/news/2025/11/11/boilers-head-to-purdue-fort-wayne-for-wednesday-clash",
+      "summary": "",
+      "date": "2025-11-11T19:09:00+00:00"
     },
     {
       "id": "cf9ddd9d9681",
@@ -114,54 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/10/baumann-buell-win-gold-23-boilers-nab-6-medals-at-tiger-style-invite",
       "summary": "Purdue totaled 10 placewinners in its first tournament of the year.",
       "date": "2025-11-10T02:40:38+00:00"
-    },
-    {
-      "id": "a5a2647531f7",
-      "source": "CBS Sports College Basketball",
-      "title": "College basketball rankings: Purdue jumps to No. 1, St. John's falls in Top 25 And 1 after loss to Alabama",
-      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-rankings-purdue-jumps-to-no-1-st-johns-falls-in-top-25-and-1-after-loss-to-alabama/",
-      "summary": "The Red Storm's stay at No. 1 in the Top 25 And 1 didn't make it a week into the college basketball season",
-      "date": "2025-11-09T15:07:08+00:00"
-    },
-    {
-      "id": "68f2ad7c6998",
-      "source": "Purdue Athletics MBB",
-      "title": "11.5 Blocks Power #9 Purdue to 3-1 Victory",
-      "url": "https://purduesports.com/news/2025/11/9/115-blocks-power-9-purdue-to-3-1-victory",
-      "summary": "",
-      "date": "2025-11-09T03:32:00+00:00"
-    },
-    {
-      "id": "57844ee3de2b",
-      "source": "Purdue Athletics MBB",
-      "title": "Cinematic Recap: #9 Purdue 3, #25 Penn State 0 | Purdue Volleyball",
-      "url": "https://purduesports.com/news/2025/11/8/cinematic-recap-9-purdue-3-25-penn-state-0-purdue-volleyball",
-      "summary": "",
-      "date": "2025-11-08T23:37:01+00:00"
-    },
-    {
-      "id": "30158134726c",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Barry Odom Postgame Press Conference vs. Ohio State | Purdue Football",
-      "url": "https://purduesports.com/news/2025/11/8/coach-barry-odom-postgame-press-conference-vs-ohio-state-purdue-football",
-      "summary": "",
-      "date": "2025-11-08T22:04:43+00:00"
-    },
-    {
-      "id": "0f7a37c2802a",
-      "source": "Purdue Athletics MBB",
-      "title": "Players Postgame Press Conference vs. Ohio State | Purdue Football",
-      "url": "https://purduesports.com/news/2025/11/8/players-postgame-press-conference-vs-ohio-state-purdue-football",
-      "summary": "",
-      "date": "2025-11-08T21:58:48+00:00"
-    },
-    {
-      "id": "362e39fbe897",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Drops Home Matchup Against #1 Ohio State",
-      "url": "https://purduesports.com/news/2025/11/8/purdue-drops-home-matchup-against-1-ohio-state",
-      "summary": "Purdue Football fell in its penultimate home game of the 2025 season, 34-10, to No. 1 Ohio State.",
-      "date": "2025-11-08T21:35:41+00:00"
     }
   ]
 }
