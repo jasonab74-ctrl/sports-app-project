@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-13T20:41:35.930029+00:00",
+  "updated": "2025-11-13T21:14:46.044311+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "507d7810e731",
+      "source": "CBS Sports College Basketball",
+      "title": "Today's top games to watch, best bets, odds: Jets at Patriots, No. 2 Purdue at No. 8 Alabama, NBA and more",
+      "url": "https://www.cbssports.com/betting/news/todays-top-games-to-watch-best-bets-odds-jets-at-patriots-no-2-purdue-at-no-8-alabama-nba-and-more/",
+      "summary": "Find best bets and props for the biggest games in sports on Thursday from the SportsLine Projection Model and top CBS Sports experts",
+      "date": "2025-11-13T20:30:42+00:00"
+    },
     {
       "id": "a869f941e05e",
       "source": "CBS Sports College Basketball",
@@ -154,14 +162,6 @@
       "url": "https://www.cbssports.com/college-basketball/news/college-basketball-rankings-ap-top-25-houston-purdue-florida/",
       "summary": "Kentucky also received a bump in the rankings ahead of a key matchup against Louisville",
       "date": "2025-11-10T18:39:39+00:00"
-    },
-    {
-      "id": "fbb806260f3d",
-      "source": "Purdue Athletics MBB",
-      "title": "#9 Purdue  3, Iowa 1 | Purdue Volleyball",
-      "url": "https://purduesports.com/news/2025/11/10/9-purdue-3-iowa-1-purdue-volleyball",
-      "summary": "",
-      "date": "2025-11-10T17:06:12+00:00"
     }
   ]
 }
