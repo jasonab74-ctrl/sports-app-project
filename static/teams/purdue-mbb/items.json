@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-13T14:39:39.820434+00:00",
+  "updated": "2025-11-13T15:17:47.015166+00:00",
   "count": 20,
   "items": [
     {
@@ -84,6 +84,14 @@
       "date": "2025-11-12T15:09:00+00:00"
     },
     {
+      "id": "f9d45c66e9cc",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilers Head to Purdue Fort Wayne for Wednesday Clash",
+      "url": "https://purduesports.com/news/2025/11/11/boilers-head-to-purdue-fort-wayne-for-wednesday-clash",
+      "summary": "",
+      "date": "2025-11-11T19:09:00+00:00"
+    },
+    {
       "id": "cf9ddd9d9681",
       "source": "Purdue Athletics MBB",
       "title": "The Road Black Uniform",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/10/db-vinaz-cobb-media-session-vs-washington-purdue-football",
       "summary": "",
       "date": "2025-11-10T16:03:39+00:00"
-    },
-    {
-      "id": "07f12fb54f33",
-      "source": "CBS Sports College Basketball",
-      "title": "College basketball rankings: Purdue remains No. 1 after wild week with first major test just days away",
-      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-rankings-purdue-remains-no-1-after-wild-week-with-first-major-test-just-days-away/",
-      "summary": "The Boilermakers are the No. 1 team in the CBS Sports Top 25 And 1",
-      "date": "2025-11-10T15:42:26+00:00"
     }
   ]
 }
