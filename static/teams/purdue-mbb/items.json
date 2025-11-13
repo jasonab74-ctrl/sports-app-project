@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-13T22:15:14.721026+00:00",
+  "updated": "2025-11-13T22:40:30.170761+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "ab129c236b01",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilers Set for NCAA Great Lakes Regional",
-      "url": "https://purduesports.com/news/2025/11/13/boilers-set-for-ncaa-great-lakes-regional",
-      "summary": "Purdue Cross Country continues postseason competition on Friday, Nov. 14 at the NCAA Great Lakes Regional in Evansville, Ind.",
-      "date": "2025-11-13T20:35:03+00:00"
-    },
     {
       "id": "507d7810e731",
       "source": "CBS Sports College Basketball",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2025/11/10/23-boilers-at-tiger-style-invite",
       "summary": "Purdue produced two champions, five finalists and 10 placewinners at the annual tournament in Columbia, Mo.",
       "date": "2025-11-10T22:00:15+00:00"
+    },
+    {
+      "id": "7c22a01b5fa9",
+      "source": "CBS Sports College Basketball",
+      "title": "College basketball rankings: Houston jumps Purdue for No. 1 spot in AP Top 25; Florida drops after early loss",
+      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-rankings-ap-top-25-houston-purdue-florida/",
+      "summary": "Kentucky also received a bump in the rankings ahead of a key matchup against Louisville",
+      "date": "2025-11-10T18:39:39+00:00"
     }
   ]
 }
