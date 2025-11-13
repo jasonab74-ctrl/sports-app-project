@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-13T16:47:31.409177+00:00",
+  "updated": "2025-11-13T17:15:36.960117+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "d21cfc49887c",
+      "source": "CBS Sports College Basketball",
+      "title": "Use bet365 bonus code CBSBET365, get $200 bonus bets by backing Patriots-Jets, Alabama-Purdue, Suns-Pacers",
+      "url": "https://www.cbssports.com/nfl/news/use-bet365-bonus-code-cbsbet365-get-200-bonus-bets-patriots-jets-alabama-purdue-suns-pacers/",
+      "summary": "Use bet365 bonus code CBSBET365 to get $200 in bonus bets for NFL, college basketball and NBA betting on Thursday",
+      "date": "2025-11-13T15:55:41+00:00"
+    },
     {
       "id": "fca560916f05",
       "source": "CBS Sports College Basketball",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/10/dc-mike-scherer-press-conference-vs-washington-purdue-football",
       "summary": "",
       "date": "2025-11-10T16:32:41+00:00"
-    },
-    {
-      "id": "e5b7f30544c0",
-      "source": "Purdue Athletics MBB",
-      "title": "WR Jesse Watson Media Session vs. Washington | Purdue Football",
-      "url": "https://purduesports.com/news/2025/11/10/wr-jesse-watson-media-session-vs-washington-purdue-football",
-      "summary": "",
-      "date": "2025-11-10T16:04:37+00:00"
     }
   ]
 }
