@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-13T03:45:58.323177+00:00",
+  "updated": "2025-11-13T04:21:13.908347+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "1c22db57522c",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Athletics Bolsters Fan Safety with OPENGATE Technology",
+      "url": "https://purduesports.com/news/2025/11/13/purdue-athletics-bolsters-fan-safety-with-opengate-technology",
+      "summary": "Fans will notice metal detectors at sporting events moving forward.",
+      "date": "2025-11-13T03:57:48+00:00"
+    },
+    {
+      "id": "ed17bfbdb3a5",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Drops Road Tilt at PFW",
+      "url": "https://purduesports.com/news/2025/11/13/purdue-drops-road-tilt-at-pfw",
+      "summary": "",
+      "date": "2025-11-13T01:15:00+00:00"
+    },
     {
       "id": "57745b99490d",
       "source": "Purdue Athletics MBB",
@@ -44,9 +60,9 @@
       "date": "2025-11-12T17:46:23+00:00"
     },
     {
-      "id": "226b4e2d7f25",
+      "id": "a0b6fa2592d8",
       "source": "Purdue Athletics MBB",
-      "title": "Frezzotti Signs Eight New Boilermakers",
+      "title": "Frezzotti Signs 8 New Boilermakers",
       "url": "https://purduesports.com/news/2025/11/12/frezzotti-signs-eight-new-boilermakers",
       "summary": "Head softball coach, Magali Frezzotti, announced the signing of eight new players for the upcoming 2026-27 academic year.",
       "date": "2025-11-12T16:49:00+00:00"
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/10/db-vinaz-cobb-media-session-vs-washington-purdue-football",
       "summary": "",
       "date": "2025-11-10T16:03:39+00:00"
-    },
-    {
-      "id": "07f12fb54f33",
-      "source": "CBS Sports College Basketball",
-      "title": "College basketball rankings: Purdue remains No. 1 after wild week with first major test just days away",
-      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-rankings-purdue-remains-no-1-after-wild-week-with-first-major-test-just-days-away/",
-      "summary": "The Boilermakers are the No. 1 team in the CBS Sports Top 25 And 1",
-      "date": "2025-11-10T15:42:26+00:00"
-    },
-    {
-      "id": "a656b684cfba",
-      "source": "Purdue Athletics MBB",
-      "title": "Baumann, Buell Win Gold; #23 Boilers Nab 6 Medals at Tiger Style Invite",
-      "url": "https://purduesports.com/news/2025/11/10/baumann-buell-win-gold-23-boilers-nab-6-medals-at-tiger-style-invite",
-      "summary": "Purdue totaled 10 placewinners in its first tournament of the year.",
-      "date": "2025-11-10T02:40:38+00:00"
     }
   ]
 }
