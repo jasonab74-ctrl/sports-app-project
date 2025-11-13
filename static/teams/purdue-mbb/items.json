@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-13T20:17:38.798988+00:00",
+  "updated": "2025-11-13T20:41:35.930029+00:00",
   "count": 20,
   "items": [
     {
@@ -10,6 +10,14 @@
       "url": "https://www.cbssports.com/college-basketball/news/purdue-alabama-prediction-pick-odds-spread-where-to-watch-live/",
       "summary": "The biggest game of Thursday's slate sets up for appointment viewing as Purdue travels to Tuscaloosa",
       "date": "2025-11-13T19:46:15+00:00"
+    },
+    {
+      "id": "9fcc92478883",
+      "source": "Purdue Athletics MBB",
+      "title": "Buell, Schaefer Sweep B1G Wrestler of the Week Awards",
+      "url": "https://purduesports.com/news/2025/11/13/buell-schaefer-sweep-b1g-wrestler-of-the-week-awards",
+      "summary": "Purdue wins both weekly honors for the first time.",
+      "date": "2025-11-13T19:30:00+00:00"
     },
     {
       "id": "7ce7e1f74bc8",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/10/9-purdue-3-iowa-1-purdue-volleyball",
       "summary": "",
       "date": "2025-11-10T17:06:12+00:00"
-    },
-    {
-      "id": "c40b5fdbe57f",
-      "source": "Purdue Athletics MBB",
-      "title": "Head Coach Barry Odom Press Conference vs. Washington | Purdue Football",
-      "url": "https://purduesports.com/news/2025/11/10/head-coach-barry-odom-press-conference-vs-washington-purdue-football",
-      "summary": "",
-      "date": "2025-11-10T16:37:55+00:00"
     }
   ]
 }
