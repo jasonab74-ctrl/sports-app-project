@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-14T17:13:33.783702+00:00",
+  "updated": "2025-11-14T17:39:33.889281+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "69691549a423",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Matt Painter Postgame Press Conference at Alabama | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2025/11/14/coach-matt-painter-postgame-press-conference-at-alabama-purdue-mens-basketball",
-      "summary": "",
-      "date": "2025-11-14T16:13:51+00:00"
-    },
     {
       "id": "e0f9e13e840c",
       "source": "CBS Sports College Basketball",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2025/11/12/frezzotti-signs-eight-new-boilermakers",
       "summary": "Head softball coach, Magali Frezzotti, announced the signing of eight new players for the upcoming 2026-27 academic year.",
       "date": "2025-11-12T16:49:00+00:00"
+    },
+    {
+      "id": "c952c387e3a6",
+      "source": "Purdue Athletics MBB",
+      "title": "Ersland Signs 6 to Class of 2026",
+      "url": "https://purduesports.com/news/2025/11/12/wrestling-signing-class-of-2026-announced",
+      "summary": "Six young wrestlers are bringing their talents to West Lafayette.",
+      "date": "2025-11-12T16:46:12+00:00"
     }
   ]
 }
