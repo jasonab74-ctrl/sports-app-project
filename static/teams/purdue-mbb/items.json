@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-14T01:11:25.282516+00:00",
+  "updated": "2025-11-14T02:55:14.457976+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "d3084e2931dd",
+      "source": "Purdue Athletics MBB",
+      "title": "#20 Purdue Hosts Boilermaker Duals in Lambert Fieldhouse",
+      "url": "https://purduesports.com/news/2025/11/14/20-purdue-hosts-boilermaker-duals-in-lambert-fieldhouse",
+      "summary": "The Boilers will wrestle in the historic venue for the first time since 2008.",
+      "date": "2025-11-14T00:30:25+00:00"
+    },
     {
       "id": "ab129c236b01",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/10/the-road-black-uniform",
       "summary": "The Boilermakers will debut the third new uniform in the 2025-26 set with the road black at Purdue Fort Wayne on Wednesday.",
       "date": "2025-11-10T23:26:08+00:00"
-    },
-    {
-      "id": "15e8baac874a",
-      "source": "Purdue Athletics MBB",
-      "title": "#23 Boilers at Tiger Style Invite",
-      "url": "https://purduesports.com/news/2025/11/10/23-boilers-at-tiger-style-invite",
-      "summary": "Purdue produced two champions, five finalists and 10 placewinners at the annual tournament in Columbia, Mo.",
-      "date": "2025-11-10T22:00:15+00:00"
     }
   ]
 }
