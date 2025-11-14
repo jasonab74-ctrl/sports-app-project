@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-14T20:40:27.331190+00:00",
+  "updated": "2025-11-14T21:14:10.854108+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "9c6a1957aa9f",
+      "source": "Purdue Athletics MBB",
+      "title": "Buckeridge, Walker Take Home All-Region Honors at NCAA Great Lakes Regional",
+      "url": "https://purduesports.com/news/2025/11/14/buckeridge-walker-take-home-all-region-honors-at-ncaa-great-lakes-regional",
+      "summary": "Purdue Cross Country concluded the 2025 season on Friday at the NCAA Great Lakes Region. Douglas Buckeridge and Nathan Walker led Purdue with a pair of all-region accolades.",
+      "date": "2025-11-14T20:02:17+00:00"
+    },
     {
       "id": "e0f9e13e840c",
       "source": "CBS Sports College Basketball",
@@ -58,14 +66,6 @@
       "url": "https://purduesports.com/news/2025/11/14/20-purdue-hosts-boilermaker-duals-in-lambert-fieldhouse",
       "summary": "The Boilers will wrestle in the historic venue for the first time since 2008.",
       "date": "2025-11-14T00:30:25+00:00"
-    },
-    {
-      "id": "ab129c236b01",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilers Set for NCAA Great Lakes Regional",
-      "url": "https://purduesports.com/news/2025/11/13/boilers-set-for-ncaa-great-lakes-regional",
-      "summary": "Purdue Cross Country continues postseason competition on Friday, Nov. 14 at the NCAA Great Lakes Regional in Evansville, Ind.",
-      "date": "2025-11-13T20:35:03+00:00"
     },
     {
       "id": "507d7810e731",
