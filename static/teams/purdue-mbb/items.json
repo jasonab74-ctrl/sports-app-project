@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-14T17:39:33.889281+00:00",
+  "updated": "2025-11-14T18:21:46.625431+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "3a6882edab5a",
+      "source": "CBS Sports College Basketball",
+      "title": "College basketball power rankings: Purdue makes its case for No. 1 ahead of Arizona, Duke",
+      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-power-rankings-purdue-makes-its-case-for-no-1-ahead-of-arizona-duke/",
+      "summary": "Purdue is No. 1 with a bullet -- but early-season wins have Arizona, Illinois, Duke and Louisville in great spots",
+      "date": "2025-11-14T17:35:33+00:00"
+    },
+    {
+      "id": "69691549a423",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Matt Painter Postgame Press Conference at Alabama | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2025/11/14/coach-matt-painter-postgame-press-conference-at-alabama-purdue-mens-basketball",
+      "summary": "",
+      "date": "2025-11-14T16:13:51+00:00"
+    },
     {
       "id": "e0f9e13e840c",
       "source": "CBS Sports College Basketball",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/12/4-sign-with-volleyball",
       "summary": "Lily Bosworth, Elle Schara, MaryKate Scheumann and Sydni Vice will join Purdue Volleyball for the 2026 season.",
       "date": "2025-11-12T17:46:23+00:00"
-    },
-    {
-      "id": "a0b6fa2592d8",
-      "source": "Purdue Athletics MBB",
-      "title": "Frezzotti Signs 8 New Boilermakers",
-      "url": "https://purduesports.com/news/2025/11/12/frezzotti-signs-eight-new-boilermakers",
-      "summary": "Head softball coach, Magali Frezzotti, announced the signing of eight new players for the upcoming 2026-27 academic year.",
-      "date": "2025-11-12T16:49:00+00:00"
-    },
-    {
-      "id": "c952c387e3a6",
-      "source": "Purdue Athletics MBB",
-      "title": "Ersland Signs 6 to Class of 2026",
-      "url": "https://purduesports.com/news/2025/11/12/wrestling-signing-class-of-2026-announced",
-      "summary": "Six young wrestlers are bringing their talents to West Lafayette.",
-      "date": "2025-11-12T16:46:12+00:00"
     }
   ]
 }
