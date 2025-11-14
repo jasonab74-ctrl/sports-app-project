@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-14T04:42:55.900745+00:00",
+  "updated": "2025-11-14T05:15:23.438123+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "8ed3d8c2080b",
+      "source": "CBS Sports College Basketball",
+      "title": "Purdue's old-school attack too much for Alabama in its first road win vs. top-10 nonconference team since 1982",
+      "url": "https://www.cbssports.com/college-basketball/news/purdue-boilermakers-alabama-crimson-tide-braden-smith/",
+      "summary": "No. 2 Purdue proved old-school physicality, high-level execution can be a winning recipe against even the most modern teams",
+      "date": "2025-11-14T04:28:06+00:00"
+    },
     {
       "id": "383465fad609",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/12/wrestling-signing-class-of-2026-announced",
       "summary": "Six young wrestlers are bringing their talents to West Lafayette.",
       "date": "2025-11-12T16:46:12+00:00"
-    },
-    {
-      "id": "b797fb80e09f",
-      "source": "Purdue Athletics MBB",
-      "title": "#2 Purdue Heads South for Showdown With #8 Alabama",
-      "url": "https://purduesports.com/news/2025/11/12/2-purdue-heads-south-for-showdown-with-8-alabama",
-      "summary": "Boilermakers are looking for fifth straight 3-0 start.",
-      "date": "2025-11-12T15:09:00+00:00"
     }
   ]
 }
