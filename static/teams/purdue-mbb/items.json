@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-14T20:17:18.886715+00:00",
+  "updated": "2025-11-14T20:40:27.331190+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "9c6a1957aa9f",
-      "source": "Purdue Athletics MBB",
-      "title": "Buckeridge, Walker Take Home All-Region Honors at NCAA Great Lakes Regional",
-      "url": "https://purduesports.com/news/2025/11/14/buckeridge-walker-take-home-all-region-honors-at-ncaa-great-lakes-regional",
-      "summary": "Purdue Cross Country concluded the 2025 season on Friday at the NCAA Great Lakes Region. Douglas Buckeridge and Nathan Walker led Purdue with a pair of all-region accolades.",
-      "date": "2025-11-14T20:02:17+00:00"
-    },
     {
       "id": "e0f9e13e840c",
       "source": "CBS Sports College Basketball",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2025/11/12/coach-matt-painter-press-conference-vs-alabama-purdue-mens-basketball",
       "summary": "",
       "date": "2025-11-12T19:11:31+00:00"
+    },
+    {
+      "id": "283a6af2bfa5",
+      "source": "Purdue Athletics MBB",
+      "title": "Volleyball Inks 4 on National Signing Day",
+      "url": "https://purduesports.com/news/2025/11/12/4-sign-with-volleyball",
+      "summary": "Lily Bosworth, Elle Schara, MaryKate Scheumann and Sydni Vice will join Purdue Volleyball for the 2026 season.",
+      "date": "2025-11-12T17:46:23+00:00"
     }
   ]
 }
