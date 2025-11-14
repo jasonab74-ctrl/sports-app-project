@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-14T15:14:41.570348+00:00",
+  "updated": "2025-11-14T15:38:47.913905+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "e0f9e13e840c",
+      "source": "CBS Sports College Basketball",
+      "title": "College basketball rankings: Purdue remains No. 1 in the Top 25 And 1 after winning on road at Alabama",
+      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-rankings-purdue-remains-no-1-in-the-top-25-and-1-after-winning-on-road-at-alabama/",
+      "summary": "Trey Kaufman-Renn made his season debut in the Boilermakers' victory vs. the Crimson Tide",
+      "date": "2025-11-14T15:25:31+00:00"
+    },
     {
       "id": "d7b4f29c559b",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/12/frezzotti-signs-eight-new-boilermakers",
       "summary": "Head softball coach, Magali Frezzotti, announced the signing of eight new players for the upcoming 2026-27 academic year.",
       "date": "2025-11-12T16:49:00+00:00"
-    },
-    {
-      "id": "c952c387e3a6",
-      "source": "Purdue Athletics MBB",
-      "title": "Ersland Signs 6 to Class of 2026",
-      "url": "https://purduesports.com/news/2025/11/12/wrestling-signing-class-of-2026-announced",
-      "summary": "Six young wrestlers are bringing their talents to West Lafayette.",
-      "date": "2025-11-12T16:46:12+00:00"
     }
   ]
 }
