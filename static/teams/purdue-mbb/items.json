@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-15T15:37:07.511019+00:00",
+  "updated": "2025-11-15T16:16:07.254055+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "3741da6d6ff6",
+      "source": "Purdue Athletics MBB",
+      "title": "#2 Purdue Hosts Akron For Lone Home Game in 3-Week Stretch",
+      "url": "https://purduesports.com/news/2025/11/15/2-purdue-hosts-akron-for-lone-home-game-in-3-week-stretch",
+      "summary": "Sunday's game is Purdue's lone home game between Nov. 7 and Nov. 28.",
+      "date": "2025-11-15T14:59:19+00:00"
+    },
     {
       "id": "25786ff3c57c",
       "source": "Purdue Athletics MBB",
@@ -44,10 +52,10 @@
       "date": "2025-11-14T16:13:51+00:00"
     },
     {
-      "id": "d7b4f29c559b",
+      "id": "65745f639f75",
       "source": "Purdue Athletics MBB",
       "title": "Matt Painter After Alabama Win",
-      "url": "https://purduesports.com/news/2025/11/14/matt-painter-after-alabama-win",
+      "url": "https://purduesports.com/news/2025/11/14/matt-painter-after-alabama-win-1",
       "summary": "",
       "date": "2025-11-14T14:28:59+00:00"
     },
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/12/gicarri-harris-media-session-vs-alabama-purdue-mens-basketball",
       "summary": "",
       "date": "2025-11-12T20:18:43+00:00"
-    },
-    {
-      "id": "48c391596244",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Matt Painter Press Conference vs. Alabama | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2025/11/12/coach-matt-painter-press-conference-vs-alabama-purdue-mens-basketball",
-      "summary": "",
-      "date": "2025-11-12T19:11:31+00:00"
     }
   ]
 }
