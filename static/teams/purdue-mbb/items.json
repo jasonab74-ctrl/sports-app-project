@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-16T20:15:48.454102+00:00",
+  "updated": "2025-11-16T20:38:43.841700+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "8ea644b29599",
+      "source": "Purdue Athletics MBB",
+      "title": "Wrestling Sweep in Lambert",
+      "url": "https://purduesports.com/news/2025/11/16/wrestling-sweep-in-lambert",
+      "summary": "The #20 Boilermakers dominated Buffalo, NIU and American to improve to 5-0.",
+      "date": "2025-11-16T16:18:21+00:00"
+    },
     {
       "id": "0a5972fd96e4",
       "source": "Purdue Athletics MBB",
@@ -90,14 +98,6 @@
       "url": "https://purduesports.com/news/2025/11/14/2-purdue-records-massive-top-10-road-win-at-8-alabama",
       "summary": "Braden Smith scored 29 points with 7 rebounds and 4 assists.",
       "date": "2025-11-14T02:57:59+00:00"
-    },
-    {
-      "id": "d3084e2931dd",
-      "source": "Purdue Athletics MBB",
-      "title": "#20 Purdue Hosts Boilermaker Duals in Lambert Fieldhouse",
-      "url": "https://purduesports.com/news/2025/11/14/20-purdue-hosts-boilermaker-duals-in-lambert-fieldhouse",
-      "summary": "The Boilers will wrestle in the historic venue for the first time since 2008.",
-      "date": "2025-11-14T00:30:25+00:00"
     },
     {
       "id": "507d7810e731",
