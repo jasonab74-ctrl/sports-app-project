@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-16T17:12:31.867278+00:00",
+  "updated": "2025-11-16T17:37:19.915034+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "8ea644b29599",
-      "source": "Purdue Athletics MBB",
-      "title": "Wrestling Sweep in Lambert",
-      "url": "https://purduesports.com/news/2025/11/16/wrestling-sweep-in-lambert",
-      "summary": "The #20 Boilermakers dominated Buffalo, NIU and American to improve to 5-0.",
-      "date": "2025-11-16T16:18:21+00:00"
-    },
     {
       "id": "0a5972fd96e4",
       "source": "Purdue Athletics MBB",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2025/11/12/trey-kaufman-renn-media-session-vs-alabama-purdue-mens-basketball",
       "summary": "",
       "date": "2025-11-12T20:22:34+00:00"
+    },
+    {
+      "id": "326a61563f6b",
+      "source": "Purdue Athletics MBB",
+      "title": "Braden Smith Media Session vs. Alabama | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2025/11/12/braden-smith-media-session-vs-alabama-purdue-mens-basketball",
+      "summary": "",
+      "date": "2025-11-12T20:20:38+00:00"
     }
   ]
 }
