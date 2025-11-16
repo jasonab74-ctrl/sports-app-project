@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-16T16:16:33.758135+00:00",
+  "updated": "2025-11-16T16:42:41.671373+00:00",
   "count": 20,
   "items": [
     {
@@ -92,14 +92,6 @@
       "date": "2025-11-14T02:57:59+00:00"
     },
     {
-      "id": "d3084e2931dd",
-      "source": "Purdue Athletics MBB",
-      "title": "#20 Purdue Hosts Boilermaker Duals in Lambert Fieldhouse",
-      "url": "https://purduesports.com/news/2025/11/14/20-purdue-hosts-boilermaker-duals-in-lambert-fieldhouse",
-      "summary": "The Boilers will wrestle in the historic venue for the first time since 2008.",
-      "date": "2025-11-14T00:30:25+00:00"
-    },
-    {
       "id": "507d7810e731",
       "source": "CBS Sports College Basketball",
       "title": "Today's top games to watch, best bets, odds: Jets at Patriots, No. 2 Purdue at No. 8 Alabama, NBA and more",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2025/11/12/trey-kaufman-renn-media-session-vs-alabama-purdue-mens-basketball",
       "summary": "",
       "date": "2025-11-12T20:22:34+00:00"
+    },
+    {
+      "id": "326a61563f6b",
+      "source": "Purdue Athletics MBB",
+      "title": "Braden Smith Media Session vs. Alabama | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2025/11/12/braden-smith-media-session-vs-alabama-purdue-mens-basketball",
+      "summary": "",
+      "date": "2025-11-12T20:20:38+00:00"
     }
   ]
 }
