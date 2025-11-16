@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-16T23:13:38.987318+00:00",
+  "updated": "2025-11-16T23:36:26.254945+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "5cfe72a2acc9",
+      "source": "CBS Sports College Basketball",
+      "title": "Tomorrow's Top 25 Today: Purdue poised to leap Houston, return to No. 1 in college basketball rankings",
+      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-rankings-tomorrows-top-25-purdue-leaps-houston-no-1/",
+      "summary": "A new No. 1 is -- probably -- coming again on Monday in the AP Top 25 college basketball poll",
+      "date": "2025-11-16T22:50:18+00:00"
+    },
     {
       "id": "8ea644b29599",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/13/purdue-drops-road-tilt-at-pfw",
       "summary": "",
       "date": "2025-11-13T01:15:00+00:00"
-    },
-    {
-      "id": "57745b99490d",
-      "source": "Purdue Athletics MBB",
-      "title": "Trey Kaufman-Renn Media Session vs. Alabama | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2025/11/12/trey-kaufman-renn-media-session-vs-alabama-purdue-mens-basketball",
-      "summary": "",
-      "date": "2025-11-12T20:22:34+00:00"
     }
   ]
 }
