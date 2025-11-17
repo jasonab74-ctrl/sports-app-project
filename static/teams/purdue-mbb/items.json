@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-17T03:48:43.596564+00:00",
+  "updated": "2025-11-17T04:21:35.477946+00:00",
   "count": 20,
   "items": [
     {
@@ -9,7 +9,15 @@
       "title": "Tomorrow's Top 25 Today: Purdue poised to leap Houston, return to No. 1 in college basketball rankings",
       "url": "https://www.cbssports.com/college-basketball/news/college-basketball-rankings-tomorrows-top-25-purdue-leaps-houston-no-1/",
       "summary": "A new No. 1 is -- probably -- coming again on Monday in the AP Top 25 college basketball poll",
-      "date": "2025-11-17T03:01:17+00:00"
+      "date": "2025-11-17T03:49:47+00:00"
+    },
+    {
+      "id": "d6676322b0ad",
+      "source": "Purdue Athletics MBB",
+      "title": "#2 Purdue Runs Past Akron to Move to 4-0 on Season",
+      "url": "https://purduesports.com/news/2025/11/16/2-purdue-runs-past-akron-to-move-to-4-0-on-season",
+      "summary": "The Boilermakers are 4-0 or better for the fifth consecutive year.",
+      "date": "2025-11-16T18:16:38+00:00"
     },
     {
       "id": "8ea644b29599",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/13/purdue-athletics-bolsters-fan-safety-with-opengate-technology",
       "summary": "Fans will notice metal detectors at sporting events moving forward.",
       "date": "2025-11-13T03:57:48+00:00"
-    },
-    {
-      "id": "ed17bfbdb3a5",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Drops Road Tilt at PFW",
-      "url": "https://purduesports.com/news/2025/11/13/purdue-drops-road-tilt-at-pfw",
-      "summary": "",
-      "date": "2025-11-13T01:15:00+00:00"
     }
   ]
 }
