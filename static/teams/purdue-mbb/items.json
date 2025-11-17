@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-17T17:40:47.782889+00:00",
+  "updated": "2025-11-17T18:22:04.815912+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "b415d311e746",
+      "source": "CBS Sports College Basketball",
+      "title": "College basketball rankings: Illinois surges into top 10 in Coaches Poll, Purdue maintains No. 1 status",
+      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-rankings-coaches-poll-illinois-surge-purdue/",
+      "summary": "Early-season upsets and statement wins are already reshaping the college basketball landscape",
+      "date": "2025-11-17T17:29:26+00:00"
+    },
     {
       "id": "b9aa07ed2d48",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://www.cbssports.com/college-basketball/news/purdue-alabama-prediction-pick-odds-spread-where-to-watch-live/",
       "summary": "The biggest game of Thursday's slate sets up for appointment viewing as Purdue travels to Tuscaloosa",
       "date": "2025-11-13T19:46:15+00:00"
-    },
-    {
-      "id": "9fcc92478883",
-      "source": "Purdue Athletics MBB",
-      "title": "Buell, Schaefer Sweep B1G Wrestler of the Week Awards",
-      "url": "https://purduesports.com/news/2025/11/13/buell-schaefer-sweep-b1g-wrestler-of-the-week-awards",
-      "summary": "Purdue wins both weekly honors for the first time.",
-      "date": "2025-11-13T19:30:00+00:00"
     }
   ]
 }
