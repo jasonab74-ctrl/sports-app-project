@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-17T06:24:22.757175+00:00",
+  "updated": "2025-11-17T06:51:10.048317+00:00",
   "count": 20,
   "items": [
     {
@@ -42,14 +42,6 @@
       "url": "https://purduesports.com/news/2025/11/15/20-purdue-sweeps-boilermaker-duals-to-start-5-0",
       "summary": "The Boilers won 23 of 30 matches in Lambert Fieldhouse.",
       "date": "2025-11-15T22:20:45+00:00"
-    },
-    {
-      "id": "3741da6d6ff6",
-      "source": "Purdue Athletics MBB",
-      "title": "#2 Purdue Hosts Akron For Lone Home Game in 3-Week Stretch",
-      "url": "https://purduesports.com/news/2025/11/15/2-purdue-hosts-akron-for-lone-home-game-in-3-week-stretch",
-      "summary": "Sunday's game is Purdue's lone home game between Nov. 7 and Nov. 28.",
-      "date": "2025-11-15T14:59:19+00:00"
     },
     {
       "id": "25786ff3c57c",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2025/11/13/purdue-athletics-bolsters-fan-safety-with-opengate-technology",
       "summary": "Fans will notice metal detectors at sporting events moving forward.",
       "date": "2025-11-13T03:57:48+00:00"
+    },
+    {
+      "id": "ed17bfbdb3a5",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Drops Road Tilt at PFW",
+      "url": "https://purduesports.com/news/2025/11/13/purdue-drops-road-tilt-at-pfw",
+      "summary": "",
+      "date": "2025-11-13T01:15:00+00:00"
     }
   ]
 }
