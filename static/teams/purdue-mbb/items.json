@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-17T06:51:10.048317+00:00",
+  "updated": "2025-11-17T07:15:42.850613+00:00",
   "count": 20,
   "items": [
     {
@@ -10,6 +10,30 @@
       "url": "https://www.cbssports.com/college-basketball/news/college-basketball-rankings-tomorrows-top-25-purdue-leaps-houston-no-1/",
       "summary": "A new No. 1 is -- probably -- coming again on Monday in the AP Top 25 college basketball poll",
       "date": "2025-11-17T03:49:47+00:00"
+    },
+    {
+      "id": "45b1f9ba8794",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Men's Basketball Highlights vs  Akron",
+      "url": "https://purduesports.com/news/2025/11/17/purdue-mens-basketball-highlights-vs-akron",
+      "summary": "",
+      "date": "2025-11-17T03:42:59+00:00"
+    },
+    {
+      "id": "008248ded733",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Matt Painter Postgame Press Conference vs. Akron | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2025/11/17/coach-matt-painter-postgame-press-conference-vs-akron-purdue-mens-basketball",
+      "summary": "",
+      "date": "2025-11-17T03:36:01+00:00"
+    },
+    {
+      "id": "2df0de3a9a75",
+      "source": "Purdue Athletics MBB",
+      "title": "Players Postgame Press Conference vs. Akron | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2025/11/17/players-postgame-press-conference-vs-akron-purdue-mens-basketball",
+      "summary": "",
+      "date": "2025-11-17T03:08:03+00:00"
     },
     {
       "id": "d6676322b0ad",
@@ -138,30 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/13/goff-announces-baseballs-full-schedule",
       "summary": "Boilermakers to play at three different Triple-A stadiums and a 26-game home slate at Alexander Field.",
       "date": "2025-11-13T18:28:58+00:00"
-    },
-    {
-      "id": "edfb35b3430b",
-      "source": "CBS Sports College Basketball",
-      "title": "College basketball rankings: Purdue, Alabama clash in top-10 showdown as No. 1 Boilermakers face road test",
-      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-rankings-top-25-and-1-purdue-alabama-top-10-game/",
-      "summary": "The No. 1 Boilermakers go on the road to battle the No. 9 Crimson Tide on Thursday",
-      "date": "2025-11-13T15:43:09+00:00"
-    },
-    {
-      "id": "1c22db57522c",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Athletics Bolsters Fan Safety with OPENGATE Technology",
-      "url": "https://purduesports.com/news/2025/11/13/purdue-athletics-bolsters-fan-safety-with-opengate-technology",
-      "summary": "Fans will notice metal detectors at sporting events moving forward.",
-      "date": "2025-11-13T03:57:48+00:00"
-    },
-    {
-      "id": "ed17bfbdb3a5",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Drops Road Tilt at PFW",
-      "url": "https://purduesports.com/news/2025/11/13/purdue-drops-road-tilt-at-pfw",
-      "summary": "",
-      "date": "2025-11-13T01:15:00+00:00"
     }
   ]
 }
