@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-17T18:48:57.612427+00:00",
+  "updated": "2025-11-17T19:11:43.662002+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "fb51dcc7fb0c",
+      "source": "CBS Sports College Basketball",
+      "title": "College basketball rankings: Purdue jumps Houston for No. 1 spot in AP Top 25; Louisville moves into top 10",
+      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-rankings-ap-top-25-purdue-houston-louisville/",
+      "summary": "Illinois also received a bump in the rankings after a huge win over Texas Tech",
+      "date": "2025-11-17T18:42:56+00:00"
+    },
     {
       "id": "b415d311e746",
       "source": "CBS Sports College Basketball",
@@ -154,14 +162,6 @@
       "url": "https://www.cbssports.com/betting/news/todays-top-games-to-watch-best-bets-odds-jets-at-patriots-no-2-purdue-at-no-8-alabama-nba-and-more/",
       "summary": "Find best bets and props for the biggest games in sports on Thursday from the SportsLine Projection Model and top CBS Sports experts",
       "date": "2025-11-13T20:30:42+00:00"
-    },
-    {
-      "id": "a869f941e05e",
-      "source": "CBS Sports College Basketball",
-      "title": "Purdue vs. Alabama prediction, pick, odds, spread: No. 2 Boilermakers go on the road to face No. 8 Tide",
-      "url": "https://www.cbssports.com/college-basketball/news/purdue-alabama-prediction-pick-odds-spread-where-to-watch-live/",
-      "summary": "The biggest game of Thursday's slate sets up for appointment viewing as Purdue travels to Tuscaloosa",
-      "date": "2025-11-13T19:46:15+00:00"
     }
   ]
 }
