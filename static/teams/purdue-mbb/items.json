@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-19T03:42:08.216103+00:00",
+  "updated": "2025-11-19T04:18:51.651463+00:00",
   "count": 20,
   "items": [
     {
@@ -34,14 +34,6 @@
       "url": "https://www.cbssports.com/college-basketball/news/college-basketball-rankings-coaches-poll-illinois-surge-purdue/",
       "summary": "Early-season upsets and statement wins are already reshaping the college basketball landscape",
       "date": "2025-11-17T17:29:26+00:00"
-    },
-    {
-      "id": "b9aa07ed2d48",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Travels to #23/20 Kentucky Tuesday Night",
-      "url": "https://purduesports.com/news/2025/11/17/wbb-preview-template-1",
-      "summary": "",
-      "date": "2025-11-17T13:09:00+00:00"
     },
     {
       "id": "5cfe72a2acc9",
@@ -162,6 +154,14 @@
       "url": "https://www.cbssports.com/college-basketball/news/purdue-boilermakers-alabama-crimson-tide-braden-smith/",
       "summary": "No. 2 Purdue proved old-school physicality, high-level execution can be a winning recipe against even the most modern teams",
       "date": "2025-11-14T13:56:17+00:00"
+    },
+    {
+      "id": "383465fad609",
+      "source": "Purdue Athletics MBB",
+      "title": "#2 Purdue Records Massive Top-10 Road Win at #8 Alabama",
+      "url": "https://purduesports.com/news/2025/11/14/2-purdue-records-massive-top-10-road-win-at-8-alabama",
+      "summary": "Braden Smith scored 29 points with 7 rebounds and 4 assists.",
+      "date": "2025-11-14T02:57:59+00:00"
     }
   ]
 }
