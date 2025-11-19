@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-19T01:11:14.707239+00:00",
+  "updated": "2025-11-19T02:54:05.059801+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "ab2d47cc1a4f",
+      "source": "Purdue Athletics MBB",
+      "title": "#1 Purdue Faces Memphis in Baha Mar Championship",
+      "url": "https://purduesports.com/news/2025/11/19/1-purdue-faces-memphis-in-baha-mar-championship",
+      "summary": "",
+      "date": "2025-11-19T01:45:11+00:00"
+    },
+    {
+      "id": "ab54db6d7623",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Drops Road Contest at #20/20 Kentucky",
+      "url": "https://purduesports.com/news/2025/11/19/purdue-drops-road-contest-at-2020-kentucky",
+      "summary": "",
+      "date": "2025-11-19T01:30:00+00:00"
+    },
     {
       "id": "fb51dcc7fb0c",
       "source": "CBS Sports College Basketball",
@@ -146,22 +162,6 @@
       "url": "https://www.cbssports.com/college-basketball/news/purdue-boilermakers-alabama-crimson-tide-braden-smith/",
       "summary": "No. 2 Purdue proved old-school physicality, high-level execution can be a winning recipe against even the most modern teams",
       "date": "2025-11-14T13:56:17+00:00"
-    },
-    {
-      "id": "383465fad609",
-      "source": "Purdue Athletics MBB",
-      "title": "#2 Purdue Records Massive Top-10 Road Win at #8 Alabama",
-      "url": "https://purduesports.com/news/2025/11/14/2-purdue-records-massive-top-10-road-win-at-8-alabama",
-      "summary": "Braden Smith scored 29 points with 7 rebounds and 4 assists.",
-      "date": "2025-11-14T02:57:59+00:00"
-    },
-    {
-      "id": "507d7810e731",
-      "source": "CBS Sports College Basketball",
-      "title": "Today's top games to watch, best bets, odds: Jets at Patriots, No. 2 Purdue at No. 8 Alabama, NBA and more",
-      "url": "https://www.cbssports.com/betting/news/todays-top-games-to-watch-best-bets-odds-jets-at-patriots-no-2-purdue-at-no-8-alabama-nba-and-more/",
-      "summary": "Find best bets and props for the biggest games in sports on Thursday from the SportsLine Projection Model and top CBS Sports experts",
-      "date": "2025-11-13T20:30:42+00:00"
     }
   ]
 }
