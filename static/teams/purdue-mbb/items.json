@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-19T20:37:18.031172+00:00",
+  "updated": "2025-11-19T21:12:15.600697+00:00",
   "count": 20,
   "items": [
     {
@@ -116,14 +116,6 @@
       "date": "2025-11-14T20:02:17+00:00"
     },
     {
-      "id": "e0f9e13e840c",
-      "source": "CBS Sports College Basketball",
-      "title": "College basketball rankings: Purdue remains No. 1 in the Top 25 And 1 after winning on road at Alabama",
-      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-rankings-purdue-remains-no-1-in-the-top-25-and-1-after-winning-on-road-at-alabama/",
-      "summary": "Trey Kaufman-Renn made his season debut in the Boilermakers' victory vs. the Crimson Tide",
-      "date": "2025-11-14T19:23:08+00:00"
-    },
-    {
       "id": "3a6882edab5a",
       "source": "CBS Sports College Basketball",
       "title": "College basketball power rankings: Purdue makes its case for No. 1 ahead of Arizona, Duke",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2025/11/13/buell-schaefer-sweep-b1g-wrestler-of-the-week-awards",
       "summary": "Purdue wins both weekly honors for the first time.",
       "date": "2025-11-13T19:30:00+00:00"
+    },
+    {
+      "id": "7ce7e1f74bc8",
+      "source": "Purdue Athletics MBB",
+      "title": "Goff Announces Baseball's Full Schedule",
+      "url": "https://purduesports.com/news/2025/11/13/goff-announces-baseballs-full-schedule",
+      "summary": "Boilermakers to play at three different Triple-A stadiums and a 26-game home slate at Alexander Field.",
+      "date": "2025-11-13T18:28:58+00:00"
     }
   ]
 }
