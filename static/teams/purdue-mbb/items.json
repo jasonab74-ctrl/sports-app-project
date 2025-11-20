@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-20T02:52:30.118145+00:00",
+  "updated": "2025-11-20T03:41:03.039272+00:00",
   "count": 20,
   "items": [
     {
@@ -116,14 +116,6 @@
       "date": "2025-11-14T20:02:17+00:00"
     },
     {
-      "id": "3a6882edab5a",
-      "source": "CBS Sports College Basketball",
-      "title": "College basketball power rankings: Purdue makes its case for No. 1 ahead of Arizona, Duke",
-      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-power-rankings-purdue-makes-its-case-for-no-1-ahead-of-arizona-duke/",
-      "summary": "Purdue is No. 1 with a bullet -- but early-season wins have Arizona, Illinois, Duke and Louisville in great spots",
-      "date": "2025-11-14T17:35:33+00:00"
-    },
-    {
       "id": "69691549a423",
       "source": "Purdue Athletics MBB",
       "title": "Coach Matt Painter Postgame Press Conference at Alabama | Purdue Men's Basketball",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2025/11/13/goff-announces-baseballs-full-schedule",
       "summary": "Boilermakers to play at three different Triple-A stadiums and a 26-game home slate at Alexander Field.",
       "date": "2025-11-13T18:28:58+00:00"
+    },
+    {
+      "id": "1c22db57522c",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Athletics Bolsters Fan Safety with OPENGATE Technology",
+      "url": "https://purduesports.com/news/2025/11/13/purdue-athletics-bolsters-fan-safety-with-opengate-technology",
+      "summary": "Fans will notice metal detectors at sporting events moving forward.",
+      "date": "2025-11-13T03:57:48+00:00"
     }
   ]
 }
