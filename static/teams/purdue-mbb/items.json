@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-20T21:14:13.584828+00:00",
+  "updated": "2025-11-20T21:35:06.574473+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "a789d7786ac0",
+      "source": "Purdue Athletics MBB",
+      "title": "#21 Boilermakers to Wrestle at Davidson",
+      "url": "https://purduesports.com/news/2025/11/20/21-boilermakers-to-wrestle-at-davidson",
+      "summary": "",
+      "date": "2025-11-20T19:45:03+00:00"
+    },
     {
       "id": "ab2d47cc1a4f",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/13/goff-announces-baseballs-full-schedule",
       "summary": "Boilermakers to play at three different Triple-A stadiums and a 26-game home slate at Alexander Field.",
       "date": "2025-11-13T18:28:58+00:00"
-    },
-    {
-      "id": "1c22db57522c",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Athletics Bolsters Fan Safety with OPENGATE Technology",
-      "url": "https://purduesports.com/news/2025/11/13/purdue-athletics-bolsters-fan-safety-with-opengate-technology",
-      "summary": "Fans will notice metal detectors at sporting events moving forward.",
-      "date": "2025-11-13T03:57:48+00:00"
     }
   ]
 }
