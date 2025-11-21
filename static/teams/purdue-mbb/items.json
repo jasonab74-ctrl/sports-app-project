@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-21T18:21:34.009391+00:00",
+  "updated": "2025-11-21T18:45:04.637446+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "34d494dfb27a",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Returns to Mackey Arena to Host Miami on Sunday",
+      "url": "https://purduesports.com/news/2025/11/21/purdue-returns-to-mackey-arena-to-host-miami-on-sunday",
+      "summary": "",
+      "date": "2025-11-21T17:09:00+00:00"
+    },
     {
       "id": "5af4086be1bb",
       "source": "CBS Sports College Basketball",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/14/coach-matt-painter-postgame-press-conference-at-alabama-purdue-mens-basketball",
       "summary": "",
       "date": "2025-11-14T16:13:51+00:00"
-    },
-    {
-      "id": "65745f639f75",
-      "source": "Purdue Athletics MBB",
-      "title": "Matt Painter After Alabama Win",
-      "url": "https://purduesports.com/news/2025/11/14/matt-painter-after-alabama-win-1",
-      "summary": "",
-      "date": "2025-11-14T14:28:59+00:00"
     }
   ]
 }
