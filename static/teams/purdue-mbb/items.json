@@ -1,12 +1,12 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-21T04:18:35.391431+00:00",
+  "updated": "2025-11-21T04:43:15.464067+00:00",
   "count": 20,
   "items": [
     {
-      "id": "ac40007b413d",
+      "id": "8b70747db7bb",
       "source": "Purdue Athletics MBB",
-      "title": "#1 Purdue Eases Past Memphis in Baha Mar Championship",
+      "title": "#1 Purdue Uses Second-Half Run to Top Memphis 80-71",
       "url": "https://purduesports.com/news/2025/11/20/purdue-vs-memphis-recap",
       "summary": "",
       "date": "2025-11-20T21:08:49+00:00"
@@ -18,14 +18,6 @@
       "url": "https://purduesports.com/news/2025/11/20/21-boilermakers-to-wrestle-at-davidson",
       "summary": "",
       "date": "2025-11-20T19:45:03+00:00"
-    },
-    {
-      "id": "ab2d47cc1a4f",
-      "source": "Purdue Athletics MBB",
-      "title": "#1 Purdue Faces Memphis in Baha Mar Championship",
-      "url": "https://purduesports.com/news/2025/11/19/1-purdue-faces-memphis-in-baha-mar-championship",
-      "summary": "",
-      "date": "2025-11-19T01:45:11+00:00"
     },
     {
       "id": "ab54db6d7623",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2025/11/13/buell-schaefer-sweep-b1g-wrestler-of-the-week-awards",
       "summary": "Purdue wins both weekly honors for the first time.",
       "date": "2025-11-13T19:30:00+00:00"
+    },
+    {
+      "id": "7ce7e1f74bc8",
+      "source": "Purdue Athletics MBB",
+      "title": "Goff Announces Baseball's Full Schedule",
+      "url": "https://purduesports.com/news/2025/11/13/goff-announces-baseballs-full-schedule",
+      "summary": "Boilermakers to play at three different Triple-A stadiums and a 26-game home slate at Alexander Field.",
+      "date": "2025-11-13T18:28:58+00:00"
     }
   ]
 }
