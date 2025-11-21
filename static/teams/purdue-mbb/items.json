@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-21T17:13:44.678750+00:00",
+  "updated": "2025-11-21T17:38:55.629395+00:00",
   "count": 20,
   "items": [
     {
@@ -34,6 +34,14 @@
       "url": "https://purduesports.com/news/2025/11/21/coach-painter-postgame-press-conference-vs-memphis-purdue-mens-basketball",
       "summary": "",
       "date": "2025-11-21T03:55:39+00:00"
+    },
+    {
+      "id": "b8598c18d3f7",
+      "source": "Purdue Athletics MBB",
+      "title": "15 Lifetime Bests Go Into Record Books on Day 2 at OSU Invite",
+      "url": "https://purduesports.com/news/2025/11/21/15-lifetime-bests-go-into-record-books-on-day-2-at-osu-invite",
+      "summary": "Hotta, Burau & Blume all post NCAA Championships qualifying times while moving into Purdue's all-time top 5 Thursday in Columbus.",
+      "date": "2025-11-21T02:34:00+00:00"
     },
     {
       "id": "8b70747db7bb",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/14/matt-painter-after-alabama-win-1",
       "summary": "",
       "date": "2025-11-14T14:28:59+00:00"
-    },
-    {
-      "id": "383465fad609",
-      "source": "Purdue Athletics MBB",
-      "title": "#2 Purdue Records Massive Top-10 Road Win at #8 Alabama",
-      "url": "https://purduesports.com/news/2025/11/14/2-purdue-records-massive-top-10-road-win-at-8-alabama",
-      "summary": "Braden Smith scored 29 points with 7 rebounds and 4 assists.",
-      "date": "2025-11-14T02:57:59+00:00"
     }
   ]
 }
