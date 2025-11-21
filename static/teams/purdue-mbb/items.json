@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-21T22:14:43.461577+00:00",
+  "updated": "2025-11-21T22:39:53.012258+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "0034c5ed36f8",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Announces 2025-26 Indoor Track & Field Schedule",
+      "url": "https://purduesports.com/news/2025/11/21/purdue-announces-2025-26-indoor-track-and-field-schedule",
+      "summary": "Purdue announced the 2025-26 Indoor Track & Field schedule that is set to begin with one meet on Dec. 6 before the rest of the slate resumes in January.",
+      "date": "2025-11-21T21:15:00+00:00"
+    },
     {
       "id": "a6c2d6a0908f",
       "source": "CBS Sports College Basketball",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/14/buckeridge-walker-take-home-all-region-honors-at-ncaa-great-lakes-regional",
       "summary": "Purdue Cross Country concluded the 2025 season on Friday at the NCAA Great Lakes Region. Douglas Buckeridge and Nathan Walker led Purdue with a pair of all-region accolades.",
       "date": "2025-11-14T20:02:17+00:00"
-    },
-    {
-      "id": "69691549a423",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Matt Painter Postgame Press Conference at Alabama | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2025/11/14/coach-matt-painter-postgame-press-conference-at-alabama-purdue-mens-basketball",
-      "summary": "",
-      "date": "2025-11-14T16:13:51+00:00"
     }
   ]
 }
