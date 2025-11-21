@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-21T16:19:24.936017+00:00",
+  "updated": "2025-11-21T16:43:25.968382+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "5af4086be1bb",
+      "source": "CBS Sports College Basketball",
+      "title": "College basketball rankings: Purdue survives Memphis to set up clash vs. Texas Tech for Baha Mar Championship",
+      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-rankings-purdue-survives-memphis-to-set-up-clash-vs-texas-tech-for-baha-mar-championship/",
+      "summary": "The Boilermakers and Red Raiders will meet on CBS Sports Network in a game sure to shake up the Top 25 And 1",
+      "date": "2025-11-21T16:35:24+00:00"
+    },
     {
       "id": "05373e2139ce",
       "source": "Purdue Athletics MBB",
@@ -58,14 +66,6 @@
       "url": "https://www.cbssports.com/college-basketball/news/college-basketball-rankings-ap-top-25-purdue-houston-louisville/",
       "summary": "Illinois also received a bump in the rankings after a huge win over Texas Tech",
       "date": "2025-11-17T18:42:56+00:00"
-    },
-    {
-      "id": "b415d311e746",
-      "source": "CBS Sports College Basketball",
-      "title": "College basketball rankings: Illinois surges into top 10 in Coaches Poll, Purdue maintains No. 1 status",
-      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-rankings-coaches-poll-illinois-surge-purdue/",
-      "summary": "Early-season upsets and statement wins are already reshaping the college basketball landscape",
-      "date": "2025-11-17T17:29:26+00:00"
     },
     {
       "id": "45b1f9ba8794",
