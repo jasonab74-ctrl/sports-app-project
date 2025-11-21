@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-21T05:16:17.737361+00:00",
+  "updated": "2025-11-21T05:41:36.015607+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "004a185ceb5c",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Painter Postgame Press Conference vs. Memphis | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2025/11/21/coach-painter-postgame-press-conference-vs-memphis-purdue-mens-basketball",
+      "summary": "",
+      "date": "2025-11-21T03:55:39+00:00"
+    },
     {
       "id": "8b70747db7bb",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/13/buell-schaefer-sweep-b1g-wrestler-of-the-week-awards",
       "summary": "Purdue wins both weekly honors for the first time.",
       "date": "2025-11-13T19:30:00+00:00"
-    },
-    {
-      "id": "7ce7e1f74bc8",
-      "source": "Purdue Athletics MBB",
-      "title": "Goff Announces Baseball's Full Schedule",
-      "url": "https://purduesports.com/news/2025/11/13/goff-announces-baseballs-full-schedule",
-      "summary": "Boilermakers to play at three different Triple-A stadiums and a 26-game home slate at Alexander Field.",
-      "date": "2025-11-13T18:28:58+00:00"
     }
   ]
 }
