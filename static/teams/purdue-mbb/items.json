@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-21T18:45:04.637446+00:00",
+  "updated": "2025-11-21T19:12:56.126213+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "5af4086be1bb",
+      "source": "CBS Sports College Basketball",
+      "title": "College basketball rankings: Purdue survives Memphis to set up clash vs. Texas Tech for Baha Mar Championship",
+      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-rankings-purdue-survives-memphis-to-set-up-clash-vs-texas-tech-for-baha-mar-championship/",
+      "summary": "The Boilermakers and Red Raiders will meet on CBS Sports Network in a game sure to shake up the Top 25 And 1",
+      "date": "2025-11-21T18:52:17+00:00"
+    },
     {
       "id": "34d494dfb27a",
       "source": "Purdue Athletics MBB",
@@ -10,14 +18,6 @@
       "url": "https://purduesports.com/news/2025/11/21/purdue-returns-to-mackey-arena-to-host-miami-on-sunday",
       "summary": "",
       "date": "2025-11-21T17:09:00+00:00"
-    },
-    {
-      "id": "5af4086be1bb",
-      "source": "CBS Sports College Basketball",
-      "title": "College basketball rankings: Purdue survives Memphis to set up clash vs. Texas Tech for Baha Mar Championship",
-      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-rankings-purdue-survives-memphis-to-set-up-clash-vs-texas-tech-for-baha-mar-championship/",
-      "summary": "The Boilermakers and Red Raiders will meet on CBS Sports Network in a game sure to shake up the Top 25 And 1",
-      "date": "2025-11-21T16:35:24+00:00"
     },
     {
       "id": "05373e2139ce",
