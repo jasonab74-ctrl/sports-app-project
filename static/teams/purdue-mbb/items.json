@@ -1,12 +1,12 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-22T06:46:08.820215+00:00",
+  "updated": "2025-11-22T07:13:39.155586+00:00",
   "count": 20,
   "items": [
     {
-      "id": "a0049450a236",
+      "id": "13b619053751",
       "source": "Purdue Athletics MBB",
-      "title": "Coacj Painter Postgame Press Conference vs. Texas Tech | Purdue Men's Basketball",
+      "title": "Coach Painter Postgame Press Conference vs. Texas Tech | Purdue Men's Basketball",
       "url": "https://purduesports.com/news/2025/11/22/coacj-painter-postgame-press-conference-vs-texas-tech-purdue-mens-basketball",
       "summary": "",
       "date": "2025-11-22T05:27:12+00:00"
@@ -58,14 +58,6 @@
       "url": "https://purduesports.com/news/2025/11/21/purdue-vs-memphis-photo-gallery",
       "summary": "",
       "date": "2025-11-21T16:02:00+00:00"
-    },
-    {
-      "id": "ffc5cc870652",
-      "source": "Purdue Athletics MBB",
-      "title": "#1 Purdue Takes on #15 Texas Tech for Baha Mar Title",
-      "url": "https://purduesports.com/news/2025/11/21/1-purdue-takes-on-15-texas-tech-for-baha-mar-title",
-      "summary": "",
-      "date": "2025-11-21T15:48:55+00:00"
     },
     {
       "id": "004a185ceb5c",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2025/11/15/20-purdue-sweeps-boilermaker-duals-to-start-5-0",
       "summary": "The Boilers won 23 of 30 matches in Lambert Fieldhouse.",
       "date": "2025-11-15T22:20:45+00:00"
+    },
+    {
+      "id": "25786ff3c57c",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Volleyball vs. Maryland",
+      "url": "https://purduesports.com/news/2025/11/15/purdue-volleyball-vs-maryland",
+      "summary": "",
+      "date": "2025-11-15T03:36:25+00:00"
     }
   ]
 }
