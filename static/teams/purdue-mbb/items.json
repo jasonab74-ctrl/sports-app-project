@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-22T17:36:42.546747+00:00",
+  "updated": "2025-11-22T18:19:56.357288+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "5913e2249bb3",
+      "source": "CBS Sports College Basketball",
+      "title": "College basketball rankings: Purdue passes test with easy win vs. Texas Tech in Bahama Mar Championship",
+      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-rankings-purdue-texas-tech-arizona-top-25-and-1/",
+      "summary": "The Boilermakers are the No. 2 team in Saturday's CBS Sports Top 25 And 1",
+      "date": "2025-11-22T18:04:12+00:00"
+    },
     {
       "id": "13b619053751",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/15/purdue-volleyball-vs-maryland",
       "summary": "",
       "date": "2025-11-15T03:36:25+00:00"
-    },
-    {
-      "id": "9c6a1957aa9f",
-      "source": "Purdue Athletics MBB",
-      "title": "Buckeridge, Walker Take Home All-Region Honors at NCAA Great Lakes Regional",
-      "url": "https://purduesports.com/news/2025/11/14/buckeridge-walker-take-home-all-region-honors-at-ncaa-great-lakes-regional",
-      "summary": "Purdue Cross Country concluded the 2025 season on Friday at the NCAA Great Lakes Region. Douglas Buckeridge and Nathan Walker led Purdue with a pair of all-region accolades.",
-      "date": "2025-11-14T20:02:17+00:00"
     }
   ]
 }
