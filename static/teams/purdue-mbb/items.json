@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-22T05:14:13.852089+00:00",
+  "updated": "2025-11-22T05:38:55.790854+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "a0049450a236",
+      "source": "Purdue Athletics MBB",
+      "title": "Coacj Painter Postgame Press Conference vs. Texas Tech | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2025/11/22/coacj-painter-postgame-press-conference-vs-texas-tech-purdue-mens-basketball",
+      "summary": "",
+      "date": "2025-11-22T05:27:12+00:00"
+    },
+    {
+      "id": "f9af50147d06",
+      "source": "Purdue Athletics MBB",
+      "title": "#1 Purdue Routs #15 Texas Tech for Baha Mar Championship",
+      "url": "https://purduesports.com/news/2025/11/22/1-purdue-routs-15-texas-tech-for-baha-mar-championship",
+      "summary": "",
+      "date": "2025-11-22T05:15:05+00:00"
+    },
     {
       "id": "0034c5ed36f8",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/15/20-purdue-sweeps-boilermaker-duals-to-start-5-0",
       "summary": "The Boilers won 23 of 30 matches in Lambert Fieldhouse.",
       "date": "2025-11-15T22:20:45+00:00"
-    },
-    {
-      "id": "25786ff3c57c",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Volleyball vs. Maryland",
-      "url": "https://purduesports.com/news/2025/11/15/purdue-volleyball-vs-maryland",
-      "summary": "",
-      "date": "2025-11-15T03:36:25+00:00"
-    },
-    {
-      "id": "9c6a1957aa9f",
-      "source": "Purdue Athletics MBB",
-      "title": "Buckeridge, Walker Take Home All-Region Honors at NCAA Great Lakes Regional",
-      "url": "https://purduesports.com/news/2025/11/14/buckeridge-walker-take-home-all-region-honors-at-ncaa-great-lakes-regional",
-      "summary": "Purdue Cross Country concluded the 2025 season on Friday at the NCAA Great Lakes Region. Douglas Buckeridge and Nathan Walker led Purdue with a pair of all-region accolades.",
-      "date": "2025-11-14T20:02:17+00:00"
     }
   ]
 }
