@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-23T21:36:19.090863+00:00",
+  "updated": "2025-11-23T22:13:44.418177+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "a69e9463503d",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Eases Past Miami in Mackey",
+      "url": "https://purduesports.com/news/2025/11/23/purdue-eases-past-miami-in-mackey",
+      "summary": "",
+      "date": "2025-11-23T16:47:00+00:00"
+    },
     {
       "id": "5913e2249bb3",
       "source": "CBS Sports College Basketball",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/15/20-purdue-sweeps-boilermaker-duals-to-start-5-0",
       "summary": "The Boilers won 23 of 30 matches in Lambert Fieldhouse.",
       "date": "2025-11-15T22:20:45+00:00"
-    },
-    {
-      "id": "25786ff3c57c",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Volleyball vs. Maryland",
-      "url": "https://purduesports.com/news/2025/11/15/purdue-volleyball-vs-maryland",
-      "summary": "",
-      "date": "2025-11-15T03:36:25+00:00"
     }
   ]
 }
