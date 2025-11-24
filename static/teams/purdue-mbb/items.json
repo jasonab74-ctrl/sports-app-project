@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-24T04:07:36.485098+00:00",
+  "updated": "2025-11-24T04:51:40.620249+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "ebe3c35f1fd5",
+      "source": "Purdue Athletics MBB",
+      "title": "#1 Purdue 86, #15 Texas Tech 56",
+      "url": "https://purduesports.com/news/2025/11/24/1-purdue-86-15-texas-tech-56",
+      "summary": "",
+      "date": "2025-11-24T02:20:00+00:00"
+    },
     {
       "id": "eca6c2536360",
       "source": "CBS Sports College Basketball",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/16/boilers-fall-in-final-2025-road-game-at-washington",
       "summary": "Purdue Football took a 49-13 loss at Washington on Saturday night to concludes its 2025 road schedule.",
       "date": "2025-11-16T04:08:06+00:00"
-    },
-    {
-      "id": "72440921d3e5",
-      "source": "Purdue Athletics MBB",
-      "title": "#20 Purdue Sweeps Boilermaker Duals to Start 5-0",
-      "url": "https://purduesports.com/news/2025/11/15/20-purdue-sweeps-boilermaker-duals-to-start-5-0",
-      "summary": "The Boilers won 23 of 30 matches in Lambert Fieldhouse.",
-      "date": "2025-11-15T22:20:45+00:00"
     }
   ]
 }
