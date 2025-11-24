@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-24T20:39:57.920531+00:00",
+  "updated": "2025-11-24T21:14:37.806337+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "bec083d496e6",
+      "source": "CBS Sports College Basketball",
+      "title": "College basketball rankings: Purdue remains No. 1 in AP Top 25 ahead of Arizona; Alabama returns to top 10",
+      "url": "https://www.cbssports.com/college-basketball/news/ap-top-25-college-basketball-rankings-purdue-arizona/",
+      "summary": "Michigan State also received a bump in the rankings after a huge win over Kentucky",
+      "date": "2025-11-24T20:43:47+00:00"
+    },
     {
       "id": "2a4ab53eddd9",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/20/purdue-vs-memphis-recap",
       "summary": "",
       "date": "2025-11-20T21:08:49+00:00"
-    },
-    {
-      "id": "ab54db6d7623",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Drops Road Contest at #20/20 Kentucky",
-      "url": "https://purduesports.com/news/2025/11/19/purdue-drops-road-contest-at-2020-kentucky",
-      "summary": "",
-      "date": "2025-11-19T01:30:00+00:00"
     }
   ]
 }
