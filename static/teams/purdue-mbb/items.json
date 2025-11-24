@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-24T04:51:40.620249+00:00",
+  "updated": "2025-11-24T05:16:49.890188+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "19a4c113deaf",
+      "source": "Purdue Athletics MBB",
+      "title": "Balanced Offense Leads Purdue to Senior Night Victory",
+      "url": "https://purduesports.com/news/2025/11/24/balanced-offense-leads-purdue-to-senior-night-victory",
+      "summary": "",
+      "date": "2025-11-24T02:45:00+00:00"
+    },
     {
       "id": "ebe3c35f1fd5",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/16/wrestling-sweep-in-lambert",
       "summary": "The #20 Boilermakers dominated Buffalo, NIU and American to improve to 5-0.",
       "date": "2025-11-16T16:18:21+00:00"
-    },
-    {
-      "id": "0a5972fd96e4",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilers Fall in Final 2025 Road Game at Washington",
-      "url": "https://purduesports.com/news/2025/11/16/boilers-fall-in-final-2025-road-game-at-washington",
-      "summary": "Purdue Football took a 49-13 loss at Washington on Saturday night to concludes its 2025 road schedule.",
-      "date": "2025-11-16T04:08:06+00:00"
     }
   ]
 }
