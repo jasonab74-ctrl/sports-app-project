@@ -1,8 +1,48 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-24T17:41:08.169688+00:00",
+  "updated": "2025-11-24T18:23:26.304742+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "2a4ab53eddd9",
+      "source": "Purdue Athletics MBB",
+      "title": "Senior Night Celebration | Purdue Volleyball",
+      "url": "https://purduesports.com/news/2025/11/24/senior-night-celebration-purdue-volleyball",
+      "summary": "",
+      "date": "2025-11-24T17:54:46+00:00"
+    },
+    {
+      "id": "89d08136dac4",
+      "source": "Purdue Athletics MBB",
+      "title": "Julia Kane Senior Night Send-Off | Purdue Volleyball",
+      "url": "https://purduesports.com/news/2025/11/24/julia-kane-senior-night-send-off-purdue-volleyball",
+      "summary": "",
+      "date": "2025-11-24T17:49:56+00:00"
+    },
+    {
+      "id": "aa9fc61659b9",
+      "source": "Purdue Athletics MBB",
+      "title": "Akasha Anderson Senior Night Send-Off | Purdue Volleyball",
+      "url": "https://purduesports.com/news/2025/11/24/akasha-anderson-senior-night-send-off-purdue-volleyball",
+      "summary": "",
+      "date": "2025-11-24T17:46:43+00:00"
+    },
+    {
+      "id": "6d68259daa87",
+      "source": "Purdue Athletics MBB",
+      "title": "Lindsey Miller Senior Night Send-Off | Purdue Volleyball",
+      "url": "https://purduesports.com/news/2025/11/24/lindsey-miller-senior-night-send-off-purdue-volleyball",
+      "summary": "",
+      "date": "2025-11-24T17:45:18+00:00"
+    },
+    {
+      "id": "2884694715c8",
+      "source": "Purdue Athletics MBB",
+      "title": "Rachel Williams Senior Night Send-Off | Purdue Volleyball",
+      "url": "https://purduesports.com/news/2025/11/24/rachel-williams-senior-night-send-off-purdue-volleyball",
+      "summary": "",
+      "date": "2025-11-24T17:41:34+00:00"
+    },
     {
       "id": "eca6c2536360",
       "source": "CBS Sports College Basketball",
@@ -122,46 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/19/purdue-drops-road-contest-at-2020-kentucky",
       "summary": "",
       "date": "2025-11-19T01:30:00+00:00"
-    },
-    {
-      "id": "45b1f9ba8794",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Men's Basketball Highlights vs  Akron",
-      "url": "https://purduesports.com/news/2025/11/17/purdue-mens-basketball-highlights-vs-akron",
-      "summary": "",
-      "date": "2025-11-17T03:42:59+00:00"
-    },
-    {
-      "id": "008248ded733",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Matt Painter Postgame Press Conference vs. Akron | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2025/11/17/coach-matt-painter-postgame-press-conference-vs-akron-purdue-mens-basketball",
-      "summary": "",
-      "date": "2025-11-17T03:36:01+00:00"
-    },
-    {
-      "id": "2df0de3a9a75",
-      "source": "Purdue Athletics MBB",
-      "title": "Players Postgame Press Conference vs. Akron | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2025/11/17/players-postgame-press-conference-vs-akron-purdue-mens-basketball",
-      "summary": "",
-      "date": "2025-11-17T03:08:03+00:00"
-    },
-    {
-      "id": "d6676322b0ad",
-      "source": "Purdue Athletics MBB",
-      "title": "#2 Purdue Runs Past Akron to Move to 4-0 on Season",
-      "url": "https://purduesports.com/news/2025/11/16/2-purdue-runs-past-akron-to-move-to-4-0-on-season",
-      "summary": "The Boilermakers are 4-0 or better for the fifth consecutive year.",
-      "date": "2025-11-16T18:16:38+00:00"
-    },
-    {
-      "id": "8ea644b29599",
-      "source": "Purdue Athletics MBB",
-      "title": "Wrestling Sweep in Lambert",
-      "url": "https://purduesports.com/news/2025/11/16/wrestling-sweep-in-lambert",
-      "summary": "The #20 Boilermakers dominated Buffalo, NIU and American to improve to 5-0.",
-      "date": "2025-11-16T16:18:21+00:00"
     }
   ]
 }
