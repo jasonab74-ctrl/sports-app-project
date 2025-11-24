@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-24T13:30:12.707450+00:00",
+  "updated": "2025-11-24T13:52:12.352048+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "eca6c2536360",
+      "source": "CBS Sports College Basketball",
+      "title": "Tomorrow's Top 25 Today: Arizona makes case to take over No. 1 spot from Purdue",
+      "url": "https://www.cbssports.com/college-basketball/news/tomorrows-top-25-today-arizona-makes-case-to-take-over-no-1-spot-from-purdue/",
+      "summary": "The Wildcats are off to a hot start and have their eye on the No. 1 ranking in the AP Top 25",
+      "date": "2025-11-24T13:49:38+00:00"
+    },
     {
       "id": "19a4c113deaf",
       "source": "Purdue Athletics MBB",
@@ -18,14 +26,6 @@
       "url": "https://purduesports.com/news/2025/11/24/1-purdue-86-15-texas-tech-56",
       "summary": "",
       "date": "2025-11-24T02:20:00+00:00"
-    },
-    {
-      "id": "eca6c2536360",
-      "source": "CBS Sports College Basketball",
-      "title": "Tomorrow's Top 25 Today: Arizona makes case to take over No. 1 spot from Purdue",
-      "url": "https://www.cbssports.com/college-basketball/news/tomorrows-top-25-today-arizona-makes-case-to-take-over-no-1-spot-from-purdue/",
-      "summary": "The Wildcats are off to a hot start and have their eye on the No. 1 ranking in the AP Top 25",
-      "date": "2025-11-24T01:06:09+00:00"
     },
     {
       "id": "eec53f757852",
