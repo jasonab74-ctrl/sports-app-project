@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-25T18:23:41.705453+00:00",
+  "updated": "2025-11-25T18:49:25.567335+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "0a4f267fb346",
+      "source": "Purdue Athletics MBB",
+      "title": "#21 Wrestling Pummels Davidson, 38-4",
+      "url": "https://purduesports.com/news/2025/11/25/21-wrestling-pummels-davidson",
+      "summary": "Photos from Purdue's rout at Davidson",
+      "date": "2025-11-25T16:42:33+00:00"
+    },
     {
       "id": "bec083d496e6",
       "source": "CBS Sports College Basketball",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/21/coach-painter-postgame-press-conference-vs-memphis-purdue-mens-basketball",
       "summary": "",
       "date": "2025-11-21T03:55:39+00:00"
-    },
-    {
-      "id": "8b70747db7bb",
-      "source": "Purdue Athletics MBB",
-      "title": "#1 Purdue Uses Second-Half Run to Top Memphis 80-71",
-      "url": "https://purduesports.com/news/2025/11/20/purdue-vs-memphis-recap",
-      "summary": "",
-      "date": "2025-11-20T21:08:49+00:00"
     }
   ]
 }
