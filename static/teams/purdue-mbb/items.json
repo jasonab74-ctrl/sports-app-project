@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-25T20:42:10.025082+00:00",
+  "updated": "2025-11-25T21:14:16.481510+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "79f709e295c7",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Closes Out Homestand Against Howard on Wednesday",
+      "url": "https://purduesports.com/news/2025/11/25/purdue-closes-out-homestand-against-howard-on-wednesday",
+      "summary": "",
+      "date": "2025-11-25T19:09:00+00:00"
+    },
     {
       "id": "0a4f267fb346",
       "source": "Purdue Athletics MBB",
@@ -10,6 +18,22 @@
       "url": "https://purduesports.com/news/2025/11/25/21-wrestling-pummels-davidson",
       "summary": "Photos from Purdue's rout at Davidson",
       "date": "2025-11-25T16:42:33+00:00"
+    },
+    {
+      "id": "dcc5adfb84b8",
+      "source": "Purdue Athletics MBB",
+      "title": "LB Charles Correa Media Session vs. Indiana | Purdue Football",
+      "url": "https://purduesports.com/news/2025/11/25/lb-charles-correa-media-session-vs-indiana-purdue-football",
+      "summary": "",
+      "date": "2025-11-25T16:23:41+00:00"
+    },
+    {
+      "id": "3aeb253ea448",
+      "source": "Purdue Athletics MBB",
+      "title": "OL Hank Purvis Media Session vs. Indiana | Purdue Football",
+      "url": "https://purduesports.com/news/2025/11/25/ol-hank-purvis-media-session-vs-indiana-purdue-football",
+      "summary": "",
+      "date": "2025-11-25T16:20:07+00:00"
     },
     {
       "id": "bec083d496e6",
@@ -36,6 +60,22 @@
       "date": "2025-11-24T17:49:56+00:00"
     },
     {
+      "id": "00673c10fd44",
+      "source": "Purdue Athletics MBB",
+      "title": "LB Mani Powell Media Session Purdue Football vs Indiana | Purdue Football",
+      "url": "https://purduesports.com/news/2025/11/24/lb-mani-powell-media-session-purdue-football-vs-indiana-purdue-football",
+      "summary": "",
+      "date": "2025-11-24T17:48:52+00:00"
+    },
+    {
+      "id": "0434bf6a3924",
+      "source": "Purdue Athletics MBB",
+      "title": "WR Michael Jackson III Media Session vs Indiana | Purdue Football",
+      "url": "https://purduesports.com/news/2025/11/24/wr-michael-jackson-iii-media-session-vs-indiana-purdue-football",
+      "summary": "",
+      "date": "2025-11-24T17:48:46+00:00"
+    },
+    {
       "id": "aa9fc61659b9",
       "source": "Purdue Athletics MBB",
       "title": "Akasha Anderson Senior Night Send-Off | Purdue Volleyball",
@@ -58,6 +98,30 @@
       "url": "https://purduesports.com/news/2025/11/24/rachel-williams-senior-night-send-off-purdue-volleyball",
       "summary": "",
       "date": "2025-11-24T17:41:34+00:00"
+    },
+    {
+      "id": "63e7fa3d8106",
+      "source": "Purdue Athletics MBB",
+      "title": "Head Coach Barry Odom Press Conference vs Indiana | Purdue Football",
+      "url": "https://purduesports.com/news/2025/11/24/head-coach-barry-odom-press-conference-vs-indiana-purdue-football",
+      "summary": "",
+      "date": "2025-11-24T17:19:35+00:00"
+    },
+    {
+      "id": "bfa8e81ff28c",
+      "source": "Purdue Athletics MBB",
+      "title": "DC Mike Scherer Press Conference vs. Indiana | Purdue Football",
+      "url": "https://purduesports.com/news/2025/11/24/dc-mike-scherer-press-conference-vs-indiana-purdue-football",
+      "summary": "",
+      "date": "2025-11-24T17:19:15+00:00"
+    },
+    {
+      "id": "f21c3ebc3536",
+      "source": "Purdue Athletics MBB",
+      "title": "OC Josh Henson Press Conference vs. Indiana | Purdue Football",
+      "url": "https://purduesports.com/news/2025/11/24/oc-josh-henson-press-conference-vs-indiana-purdue-football",
+      "summary": "",
+      "date": "2025-11-24T17:19:04+00:00"
     },
     {
       "id": "eca6c2536360",
@@ -92,76 +156,12 @@
       "date": "2025-11-24T00:33:05+00:00"
     },
     {
-      "id": "a69e9463503d",
+      "id": "5b96ad637822",
       "source": "Purdue Athletics MBB",
-      "title": "Purdue Eases Past Miami in Mackey",
-      "url": "https://purduesports.com/news/2025/11/23/purdue-eases-past-miami-in-mackey",
+      "title": "Highlights Purdue Eases Past Miami",
+      "url": "https://purduesports.com/news/2025/11/23/highlights-purdue-eases-past-miami",
       "summary": "",
-      "date": "2025-11-23T16:47:00+00:00"
-    },
-    {
-      "id": "5913e2249bb3",
-      "source": "CBS Sports College Basketball",
-      "title": "College basketball rankings: Purdue passes test with easy win vs. Texas Tech in Bahama Mar Championship",
-      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-rankings-purdue-texas-tech-arizona-top-25-and-1/",
-      "summary": "The Boilermakers are the No. 2 team in Saturday's CBS Sports Top 25 And 1",
-      "date": "2025-11-22T18:04:12+00:00"
-    },
-    {
-      "id": "13b619053751",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Painter Postgame Press Conference vs. Texas Tech | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2025/11/22/coacj-painter-postgame-press-conference-vs-texas-tech-purdue-mens-basketball",
-      "summary": "",
-      "date": "2025-11-22T05:27:12+00:00"
-    },
-    {
-      "id": "f9af50147d06",
-      "source": "Purdue Athletics MBB",
-      "title": "#1 Purdue Routs #15 Texas Tech for Baha Mar Championship",
-      "url": "https://purduesports.com/news/2025/11/22/1-purdue-routs-15-texas-tech-for-baha-mar-championship",
-      "summary": "",
-      "date": "2025-11-22T05:15:05+00:00"
-    },
-    {
-      "id": "0034c5ed36f8",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Announces 2025-26 Indoor Track & Field Schedule",
-      "url": "https://purduesports.com/news/2025/11/21/purdue-announces-2025-26-indoor-track-and-field-schedule",
-      "summary": "Purdue announced the 2025-26 Indoor Track & Field schedule that is set to begin with one meet on Dec. 6 before the rest of the slate resumes in January.",
-      "date": "2025-11-21T21:15:00+00:00"
-    },
-    {
-      "id": "a6c2d6a0908f",
-      "source": "CBS Sports College Basketball",
-      "title": "Purdue vs. Texas Tech prediction, pick, odds, spread: No. 1 Boilermakers battle No. 15 Red Raiders",
-      "url": "https://www.cbssports.com/college-basketball/news/purdue-texas-tech-prediction-pick-odds-spread-baha-mar-championship/",
-      "summary": "Friday night's Baha Mar championship game features two top-15 teams as No. 15 Texas Tech takes on No. 1 Purdue",
-      "date": "2025-11-21T20:51:00+00:00"
-    },
-    {
-      "id": "5af4086be1bb",
-      "source": "CBS Sports College Basketball",
-      "title": "College basketball rankings: Purdue survives Memphis to set up clash vs. Texas Tech for Baha Mar Championship",
-      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-rankings-purdue-survives-memphis-to-set-up-clash-vs-texas-tech-for-baha-mar-championship/",
-      "summary": "The Boilermakers and Red Raiders will meet on CBS Sports Network in a game sure to shake up the Top 25 And 1",
-      "date": "2025-11-21T18:52:17+00:00"
-    },
-    {
-      "id": "32937fb04410",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue vs. Memphis in the Bahamas",
-      "url": "https://purduesports.com/news/2025/11/21/purdue-vs-memphis-photo-gallery",
-      "summary": "",
-      "date": "2025-11-21T16:02:00+00:00"
-    },
-    {
-      "id": "004a185ceb5c",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Painter Postgame Press Conference vs. Memphis | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2025/11/21/coach-painter-postgame-press-conference-vs-memphis-purdue-mens-basketball",
-      "summary": "",
-      "date": "2025-11-21T03:55:39+00:00"
+      "date": "2025-11-23T20:23:48+00:00"
     }
   ]
 }
