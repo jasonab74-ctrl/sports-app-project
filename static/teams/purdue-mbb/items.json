@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-26T20:37:56.992092+00:00",
+  "updated": "2025-11-26T21:13:34.003497+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "e657038b6285",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights: Purdue vs. Howard",
+      "url": "https://purduesports.com/news/2025/11/26/highlights-purdue-vs-howard",
+      "summary": "",
+      "date": "2025-11-26T20:17:07+00:00"
+    },
     {
       "id": "680f3b32366d",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/24/oc-josh-henson-press-conference-vs-indiana-purdue-football",
       "summary": "",
       "date": "2025-11-24T17:19:04+00:00"
-    },
-    {
-      "id": "eca6c2536360",
-      "source": "CBS Sports College Basketball",
-      "title": "Tomorrow's Top 25 Today: Arizona makes case to take over No. 1 spot from Purdue",
-      "url": "https://www.cbssports.com/college-basketball/news/tomorrows-top-25-today-arizona-makes-case-to-take-over-no-1-spot-from-purdue/",
-      "summary": "The Wildcats are off to a hot start and have their eye on the No. 1 ranking in the AP Top 25",
-      "date": "2025-11-24T13:59:00+00:00"
     }
   ]
 }
