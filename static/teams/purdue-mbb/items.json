@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-26T01:11:28.788321+00:00",
+  "updated": "2025-11-26T02:56:29.420226+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "86740f114bbc",
+      "source": "Purdue Athletics MBB",
+      "title": "55 Boilermakers Score at Ohio State Invitational",
+      "url": "https://purduesports.com/news/2025/11/25/55-boilermakers-score-at-ohio-state-invitational",
+      "summary": "Purdue broke five records and posted 47 times/scores that went into the program record books.",
+      "date": "2025-11-25T21:39:00+00:00"
+    },
     {
       "id": "79f709e295c7",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/24/21-boilers-tame-wildcats",
       "summary": "Purdue grapplers improved to 6-0 at Davidson on Sunday.",
       "date": "2025-11-24T00:33:05+00:00"
-    },
-    {
-      "id": "5b96ad637822",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights Purdue Eases Past Miami",
-      "url": "https://purduesports.com/news/2025/11/23/highlights-purdue-eases-past-miami",
-      "summary": "",
-      "date": "2025-11-23T20:23:48+00:00"
     }
   ]
 }
