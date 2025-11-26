@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-26T20:17:36.147165+00:00",
+  "updated": "2025-11-26T20:37:56.992092+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "680f3b32366d",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Katie Gearlds Postgame Press Conference vs. Howard | Purdue Women's Basketball",
+      "url": "https://purduesports.com/news/2025/11/26/coach-katie-gearlds-postgame-press-conference-vs-howard-purdue-womens-basketball",
+      "summary": "",
+      "date": "2025-11-26T19:34:46+00:00"
+    },
+    {
+      "id": "fa4d430e0390",
+      "source": "Purdue Athletics MBB",
+      "title": "Players Postgame Press Conference vs. Howard | Purdue Women's Basketball",
+      "url": "https://purduesports.com/news/2025/11/26/players-postgame-press-conference-vs-howard-purdue-womens-basketball",
+      "summary": "",
+      "date": "2025-11-26T19:23:19+00:00"
+    },
     {
       "id": "38be03f5f99a",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://www.cbssports.com/college-basketball/news/tomorrows-top-25-today-arizona-makes-case-to-take-over-no-1-spot-from-purdue/",
       "summary": "The Wildcats are off to a hot start and have their eye on the No. 1 ranking in the AP Top 25",
       "date": "2025-11-24T13:59:00+00:00"
-    },
-    {
-      "id": "19a4c113deaf",
-      "source": "Purdue Athletics MBB",
-      "title": "Balanced Offense Leads Purdue to Senior Night Victory",
-      "url": "https://purduesports.com/news/2025/11/24/balanced-offense-leads-purdue-to-senior-night-victory",
-      "summary": "",
-      "date": "2025-11-24T02:45:00+00:00"
-    },
-    {
-      "id": "ebe3c35f1fd5",
-      "source": "Purdue Athletics MBB",
-      "title": "#1 Purdue 86, #15 Texas Tech 56",
-      "url": "https://purduesports.com/news/2025/11/24/1-purdue-86-15-texas-tech-56",
-      "summary": "",
-      "date": "2025-11-24T02:20:00+00:00"
     }
   ]
 }
