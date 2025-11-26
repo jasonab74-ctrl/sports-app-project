@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-26T05:41:36.735868+00:00",
+  "updated": "2025-11-26T06:24:10.074803+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "38be03f5f99a",
+      "source": "Purdue Athletics MBB",
+      "title": "#11 Purdue Enters Final Week of Regular Season",
+      "url": "https://purduesports.com/news/2025/11/26/11-purdue-enters-final-week-of-regular-season",
+      "summary": "",
+      "date": "2025-11-26T01:11:00+00:00"
+    },
     {
       "id": "86740f114bbc",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/24/1-purdue-86-15-texas-tech-56",
       "summary": "",
       "date": "2025-11-24T02:20:00+00:00"
-    },
-    {
-      "id": "eec53f757852",
-      "source": "Purdue Athletics MBB",
-      "title": "#21 Boilers Tame Wildcats With 6 Bonus Wins",
-      "url": "https://purduesports.com/news/2025/11/24/21-boilers-tame-wildcats",
-      "summary": "Purdue grapplers improved to 6-0 at Davidson on Sunday.",
-      "date": "2025-11-24T00:33:05+00:00"
     }
   ]
 }
