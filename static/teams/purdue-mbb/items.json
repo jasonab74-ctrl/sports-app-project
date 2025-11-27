@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-27T02:53:54.471161+00:00",
+  "updated": "2025-11-27T03:42:38.705556+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "b20a84afb940",
+      "source": "Purdue Athletics MBB",
+      "title": "#11 Boilermakers Fall in Battle of Heavyweights",
+      "url": "https://purduesports.com/news/2025/11/27/boilermakers-fall-in-battle-of-heavyweights",
+      "summary": "",
+      "date": "2025-11-27T02:30:00+00:00"
+    },
     {
       "id": "e657038b6285",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/24/dc-mike-scherer-press-conference-vs-indiana-purdue-football",
       "summary": "",
       "date": "2025-11-24T17:19:15+00:00"
-    },
-    {
-      "id": "f21c3ebc3536",
-      "source": "Purdue Athletics MBB",
-      "title": "OC Josh Henson Press Conference vs. Indiana | Purdue Football",
-      "url": "https://purduesports.com/news/2025/11/24/oc-josh-henson-press-conference-vs-indiana-purdue-football",
-      "summary": "",
-      "date": "2025-11-24T17:19:04+00:00"
     }
   ]
 }
