@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-27T06:52:15.693823+00:00",
+  "updated": "2025-11-27T07:16:36.348433+00:00",
   "count": 20,
   "items": [
     {
@@ -36,12 +36,12 @@
       "date": "2025-11-26T19:23:19+00:00"
     },
     {
-      "id": "38be03f5f99a",
+      "id": "3af1149a347d",
       "source": "Purdue Athletics MBB",
-      "title": "#11 Purdue Enters Final Week of Regular Season",
-      "url": "https://purduesports.com/news/2025/11/26/11-purdue-enters-final-week-of-regular-season",
+      "title": "#1 Purdue Hosts Eastern Illinois in Final Non-Conference Tuneup",
+      "url": "https://purduesports.com/news/2025/11/26/1-purdue-hosts-eastern-illinois-in-final-non-conference-tuneup",
       "summary": "",
-      "date": "2025-11-26T01:11:00+00:00"
+      "date": "2025-11-26T15:20:09+00:00"
     },
     {
       "id": "86740f114bbc",
@@ -50,14 +50,6 @@
       "url": "https://purduesports.com/news/2025/11/25/55-boilermakers-score-at-ohio-state-invitational",
       "summary": "Purdue broke five records and posted 47 times/scores that went into the program record books.",
       "date": "2025-11-25T21:39:00+00:00"
-    },
-    {
-      "id": "79f709e295c7",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Closes Out Homestand Against Howard on Wednesday",
-      "url": "https://purduesports.com/news/2025/11/25/purdue-closes-out-homestand-against-howard-on-wednesday",
-      "summary": "",
-      "date": "2025-11-25T19:09:00+00:00"
     },
     {
       "id": "0a4f267fb346",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2025/11/24/dc-mike-scherer-press-conference-vs-indiana-purdue-football",
       "summary": "",
       "date": "2025-11-24T17:19:15+00:00"
+    },
+    {
+      "id": "f21c3ebc3536",
+      "source": "Purdue Athletics MBB",
+      "title": "OC Josh Henson Press Conference vs. Indiana | Purdue Football",
+      "url": "https://purduesports.com/news/2025/11/24/oc-josh-henson-press-conference-vs-indiana-purdue-football",
+      "summary": "",
+      "date": "2025-11-24T17:19:04+00:00"
     }
   ]
 }
