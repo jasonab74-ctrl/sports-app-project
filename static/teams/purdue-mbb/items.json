@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-28T22:13:59.431273+00:00",
+  "updated": "2025-11-28T22:39:18.571651+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "3acafe66ffcd",
+      "source": "Purdue Athletics MBB",
+      "title": "Matt Painter Press Conference vs. Eastern Illinois",
+      "url": "https://purduesports.com/news/2025/11/28/matt-painter-press-conference-vs-eastern-illinois",
+      "summary": "",
+      "date": "2025-11-28T20:47:07+00:00"
+    },
+    {
+      "id": "38b9676db043",
+      "source": "Purdue Athletics MBB",
+      "title": "Matt Painter Postgame Press Conference vs Eastern Illinois | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2025/11/28/matt-painter-postgame-press-conference-vs-eastern-illinois-purdue-mens-basketball",
+      "summary": "",
+      "date": "2025-11-28T20:41:13+00:00"
+    },
     {
       "id": "a949ffc56b17",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/24/wr-michael-jackson-iii-media-session-vs-indiana-purdue-football",
       "summary": "",
       "date": "2025-11-24T17:48:46+00:00"
-    },
-    {
-      "id": "aa9fc61659b9",
-      "source": "Purdue Athletics MBB",
-      "title": "Akasha Anderson Senior Night Send-Off | Purdue Volleyball",
-      "url": "https://purduesports.com/news/2025/11/24/akasha-anderson-senior-night-send-off-purdue-volleyball",
-      "summary": "",
-      "date": "2025-11-24T17:46:43+00:00"
-    },
-    {
-      "id": "6d68259daa87",
-      "source": "Purdue Athletics MBB",
-      "title": "Lindsey Miller Senior Night Send-Off | Purdue Volleyball",
-      "url": "https://purduesports.com/news/2025/11/24/lindsey-miller-senior-night-send-off-purdue-volleyball",
-      "summary": "",
-      "date": "2025-11-24T17:45:18+00:00"
     }
   ]
 }
