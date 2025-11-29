@@ -1,24 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-29T06:21:58.633711+00:00",
+  "updated": "2025-11-29T06:48:44.517373+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "0d0a38ceba65",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Barry Odom Postgame Press Conference vs. Indiana | Purdue Football",
-      "url": "https://purduesports.com/news/2025/11/29/coach-barry-odom-postgame-press-conference-vs-indiana-purdue-football",
-      "summary": "",
-      "date": "2025-11-29T04:56:15+00:00"
-    },
-    {
-      "id": "5f13cef1d8b5",
-      "source": "Purdue Athletics MBB",
-      "title": "Players Postgame Press Conference vs. Indiana | Purdue Football",
-      "url": "https://purduesports.com/news/2025/11/29/players-postgame-press-conference-vs-indiana-purdue-football",
-      "summary": "",
-      "date": "2025-11-29T04:55:11+00:00"
-    },
     {
       "id": "3acafe66ffcd",
       "source": "Purdue Athletics MBB",
@@ -162,6 +146,22 @@
       "url": "https://purduesports.com/news/2025/11/24/julia-kane-senior-night-send-off-purdue-volleyball",
       "summary": "",
       "date": "2025-11-24T17:49:56+00:00"
+    },
+    {
+      "id": "00673c10fd44",
+      "source": "Purdue Athletics MBB",
+      "title": "LB Mani Powell Media Session Purdue Football vs Indiana | Purdue Football",
+      "url": "https://purduesports.com/news/2025/11/24/lb-mani-powell-media-session-purdue-football-vs-indiana-purdue-football",
+      "summary": "",
+      "date": "2025-11-24T17:48:52+00:00"
+    },
+    {
+      "id": "0434bf6a3924",
+      "source": "Purdue Athletics MBB",
+      "title": "WR Michael Jackson III Media Session vs Indiana | Purdue Football",
+      "url": "https://purduesports.com/news/2025/11/24/wr-michael-jackson-iii-media-session-vs-indiana-purdue-football",
+      "summary": "",
+      "date": "2025-11-24T17:48:46+00:00"
     }
   ]
 }
