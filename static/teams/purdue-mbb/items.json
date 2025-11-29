@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-29T17:37:40.056075+00:00",
+  "updated": "2025-11-29T18:20:44.085078+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "7ea870e67e04",
+      "source": "CBS Sports College Basketball",
+      "title": "College basketball rankings: Big Ten teams clog Top 25 And 1 as league eyes ending national title drought",
+      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-rankings-top-25-and-1-big-ten-teams-purdue/",
+      "summary": "The Big Ten is well-represented in our daily rankings, headlined by undefeated Purdue at No. 2",
+      "date": "2025-11-29T17:53:54+00:00"
+    },
     {
       "id": "d47f5846e31f",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/24/senior-night-celebration-purdue-volleyball",
       "summary": "",
       "date": "2025-11-24T17:54:46+00:00"
-    },
-    {
-      "id": "89d08136dac4",
-      "source": "Purdue Athletics MBB",
-      "title": "Julia Kane Senior Night Send-Off | Purdue Volleyball",
-      "url": "https://purduesports.com/news/2025/11/24/julia-kane-senior-night-send-off-purdue-volleyball",
-      "summary": "",
-      "date": "2025-11-24T17:49:56+00:00"
     }
   ]
 }
