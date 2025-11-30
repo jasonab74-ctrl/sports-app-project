@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-29T23:37:12.217775+00:00",
+  "updated": "2025-11-30T01:19:53.131814+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "f3e2c537ce7f",
+      "source": "Purdue Athletics MBB",
+      "title": "#11 Purdue Dispatches #15 Indiana 3-1",
+      "url": "https://purduesports.com/news/2025/11/29/11-purdue-dispatches-15-indiana-3-1",
+      "summary": "",
+      "date": "2025-11-29T23:30:00+00:00"
+    },
     {
       "id": "d813340324e5",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/25/ol-hank-purvis-media-session-vs-indiana-purdue-football",
       "summary": "",
       "date": "2025-11-25T16:20:07+00:00"
-    },
-    {
-      "id": "bec083d496e6",
-      "source": "CBS Sports College Basketball",
-      "title": "College basketball rankings: Purdue remains No. 1 in AP Top 25 ahead of Arizona; Alabama returns to top 10",
-      "url": "https://www.cbssports.com/college-basketball/news/ap-top-25-college-basketball-rankings-purdue-arizona/",
-      "summary": "Michigan State also received a bump in the rankings after a huge win over Kentucky",
-      "date": "2025-11-24T20:43:47+00:00"
     }
   ]
 }
