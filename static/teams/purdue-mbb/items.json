@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-30T20:40:12.143238+00:00",
+  "updated": "2025-11-30T21:13:25.518020+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "7d339bfdf7db",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Falls at Central Michigan",
+      "url": "https://purduesports.com/news/2025/11/30/purdue-falls-at-central-michigan",
+      "summary": "",
+      "date": "2025-11-30T20:16:25+00:00"
+    },
     {
       "id": "f3e2c537ce7f",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/25/lb-charles-correa-media-session-vs-indiana-purdue-football",
       "summary": "",
       "date": "2025-11-25T16:23:41+00:00"
-    },
-    {
-      "id": "3aeb253ea448",
-      "source": "Purdue Athletics MBB",
-      "title": "OL Hank Purvis Media Session vs. Indiana | Purdue Football",
-      "url": "https://purduesports.com/news/2025/11/25/ol-hank-purvis-media-session-vs-indiana-purdue-football",
-      "summary": "",
-      "date": "2025-11-25T16:20:07+00:00"
     }
   ]
 }
