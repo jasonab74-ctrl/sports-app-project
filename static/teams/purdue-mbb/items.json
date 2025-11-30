@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-11-30T22:14:01.056815+00:00",
+  "updated": "2025-11-30T22:39:45.474177+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "fee7bbf16390",
+      "source": "Purdue Athletics MBB",
+      "title": "Kash's Kab Part 4 | Purdue Volleyball",
+      "url": "https://purduesports.com/news/2025/11/30/kashs-kab-part-4-purdue-volleyball",
+      "summary": "",
+      "date": "2025-11-30T21:14:23+00:00"
+    },
     {
       "id": "7d339bfdf7db",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/25/21-wrestling-pummels-davidson",
       "summary": "Photos from Purdue's rout at Davidson",
       "date": "2025-11-25T16:42:33+00:00"
-    },
-    {
-      "id": "dcc5adfb84b8",
-      "source": "Purdue Athletics MBB",
-      "title": "LB Charles Correa Media Session vs. Indiana | Purdue Football",
-      "url": "https://purduesports.com/news/2025/11/25/lb-charles-correa-media-session-vs-indiana-purdue-football",
-      "summary": "",
-      "date": "2025-11-25T16:23:41+00:00"
     }
   ]
 }
