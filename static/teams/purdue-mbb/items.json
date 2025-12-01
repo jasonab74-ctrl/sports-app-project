@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-01T05:24:05.287313+00:00",
+  "updated": "2025-12-01T05:47:56.702641+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "e83f7ec64b55",
+      "source": "Purdue Athletics MBB",
+      "title": "Akasha Anderson Media Session NCAA Tournament | Purdue Volleyball",
+      "url": "https://purduesports.com/news/2025/12/1/akasha-anderson-media-session-ncaa-tournament-purdue-volleyball",
+      "summary": "",
+      "date": "2025-12-01T01:09:09+00:00"
+    },
+    {
+      "id": "03a60414bdcb",
+      "source": "Purdue Athletics MBB",
+      "title": "Dave Shondell Media Session NCAA Tournament Preview | Purdue Volleyball",
+      "url": "https://purduesports.com/news/2025/12/1/dave-shondell-media-session-ncaa-tournament-preview-purdue-volleyball",
+      "summary": "",
+      "date": "2025-12-01T01:02:19+00:00"
+    },
     {
       "id": "2c13d0025349",
       "source": "CBS Sports College Basketball",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/26/players-postgame-press-conference-vs-howard-purdue-womens-basketball",
       "summary": "",
       "date": "2025-11-26T19:23:19+00:00"
-    },
-    {
-      "id": "86740f114bbc",
-      "source": "Purdue Athletics MBB",
-      "title": "55 Boilermakers Score at Ohio State Invitational",
-      "url": "https://purduesports.com/news/2025/11/25/55-boilermakers-score-at-ohio-state-invitational",
-      "summary": "Purdue broke five records and posted 47 times/scores that went into the program record books.",
-      "date": "2025-11-25T21:39:00+00:00"
-    },
-    {
-      "id": "0a4f267fb346",
-      "source": "Purdue Athletics MBB",
-      "title": "#21 Wrestling Pummels Davidson, 38-4",
-      "url": "https://purduesports.com/news/2025/11/25/21-wrestling-pummels-davidson",
-      "summary": "Photos from Purdue's rout at Davidson",
-      "date": "2025-11-25T16:42:33+00:00"
     }
   ]
 }
