@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-01T03:22:26.190693+00:00",
+  "updated": "2025-12-01T04:33:28.776656+00:00",
   "count": 20,
   "items": [
     {
@@ -116,14 +116,6 @@
       "date": "2025-11-28T19:36:50+00:00"
     },
     {
-      "id": "cb9d25431d54",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Heads Up to Central Michigan for Sunday Contest",
-      "url": "https://purduesports.com/news/2025/11/28/purdue-heads-up-to-central-michigan-for-sunday-contest",
-      "summary": "",
-      "date": "2025-11-28T18:09:00+00:00"
-    },
-    {
       "id": "b20a84afb940",
       "source": "Purdue Athletics MBB",
       "title": "#11 Boilermakers Fall in Battle of Heavyweights",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2025/11/25/55-boilermakers-score-at-ohio-state-invitational",
       "summary": "Purdue broke five records and posted 47 times/scores that went into the program record books.",
       "date": "2025-11-25T21:39:00+00:00"
+    },
+    {
+      "id": "0a4f267fb346",
+      "source": "Purdue Athletics MBB",
+      "title": "#21 Wrestling Pummels Davidson, 38-4",
+      "url": "https://purduesports.com/news/2025/11/25/21-wrestling-pummels-davidson",
+      "summary": "Photos from Purdue's rout at Davidson",
+      "date": "2025-11-25T16:42:33+00:00"
     }
   ]
 }
