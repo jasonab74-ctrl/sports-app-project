@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-01T22:41:19.339386+00:00",
+  "updated": "2025-12-01T23:14:40.204989+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "cec5ee23bd33",
+      "source": "Purdue Athletics MBB",
+      "title": "Cinematic Recap: #11 Purdue Upends #15 Indiana | Purdue Volleyball",
+      "url": "https://purduesports.com/news/2025/12/1/cinematic-recap-11-purdue-upends-15-indiana-purdue-volleyball",
+      "summary": "",
+      "date": "2025-12-01T21:57:51+00:00"
+    },
     {
       "id": "2326a5c865d4",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/27/boilermakers-fall-in-battle-of-heavyweights",
       "summary": "",
       "date": "2025-11-27T02:30:00+00:00"
-    },
-    {
-      "id": "e657038b6285",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights: Purdue vs. Howard",
-      "url": "https://purduesports.com/news/2025/11/26/highlights-purdue-vs-howard",
-      "summary": "",
-      "date": "2025-11-26T20:17:07+00:00"
     }
   ]
 }
