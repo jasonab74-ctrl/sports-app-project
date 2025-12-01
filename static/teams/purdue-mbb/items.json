@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-01T19:18:11.208903+00:00",
+  "updated": "2025-12-01T19:40:08.793212+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "2326a5c865d4",
+      "source": "Purdue Athletics MBB",
+      "title": "#1 Purdue Opens Big Ten Play at Rutgers",
+      "url": "https://purduesports.com/news/2025/12/1/1-purdue-opens-big-ten-play-at-rutgers",
+      "summary": "",
+      "date": "2025-12-01T19:10:54+00:00"
+    },
     {
       "id": "b20418898bdc",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/26/highlights-purdue-vs-howard",
       "summary": "",
       "date": "2025-11-26T20:17:07+00:00"
-    },
-    {
-      "id": "680f3b32366d",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Katie Gearlds Postgame Press Conference vs. Howard | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2025/11/26/coach-katie-gearlds-postgame-press-conference-vs-howard-purdue-womens-basketball",
-      "summary": "",
-      "date": "2025-11-26T19:34:46+00:00"
     }
   ]
 }
