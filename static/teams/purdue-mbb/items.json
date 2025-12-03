@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-03T04:47:24.285905+00:00",
+  "updated": "2025-12-03T05:15:40.215725+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "08db1ba20585",
+      "source": "Purdue Athletics MBB",
+      "title": "#1 Purdue Rolls Past Rutgers in Big Ten Opener 81-65",
+      "url": "https://purduesports.com/news/2025/12/3/1-purdue-rolls-past-rutgers-in-big-ten-opener-81-65",
+      "summary": "",
+      "date": "2025-12-03T03:45:53+00:00"
+    },
     {
       "id": "08d78fbc51c4",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/28/purdue-mens-basketball-highlights-vs-eastern-illinois",
       "summary": "",
       "date": "2025-11-28T19:38:45+00:00"
-    },
-    {
-      "id": "42d8d20930de",
-      "source": "Purdue Athletics MBB",
-      "title": "Trey Kaufman-Renn, Daniel Jacobsen, and Fletcher Loyer Press Conference | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2025/11/28/trey-kaufman-renn-daniel-jacobsen-and-fletcher-loyer-press-conference-purdue-mens-basketball",
-      "summary": "",
-      "date": "2025-11-28T19:36:50+00:00"
     }
   ]
 }
