@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-03T21:35:40.592189+00:00",
+  "updated": "2025-12-03T22:16:01.683673+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "944ac211f206",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Barry Odom Signing Day Press Conference | Purdue Football",
+      "url": "https://purduesports.com/news/2025/12/3/coach-barry-odom-signing-day-press-conference-purdue-football",
+      "summary": "",
+      "date": "2025-12-03T20:58:35+00:00"
+    },
     {
       "id": "c30670e6d39b",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/29/coach-barry-odom-postgame-press-conference-vs-indiana-purdue-football",
       "summary": "",
       "date": "2025-11-29T04:56:15+00:00"
-    },
-    {
-      "id": "5f13cef1d8b5",
-      "source": "Purdue Athletics MBB",
-      "title": "Players Postgame Press Conference vs. Indiana | Purdue Football",
-      "url": "https://purduesports.com/news/2025/11/29/players-postgame-press-conference-vs-indiana-purdue-football",
-      "summary": "",
-      "date": "2025-11-29T04:55:11+00:00"
     }
   ]
 }
