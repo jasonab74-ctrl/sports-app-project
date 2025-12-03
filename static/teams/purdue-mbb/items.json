@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-03T05:15:40.215725+00:00",
+  "updated": "2025-12-03T05:42:06.135862+00:00",
   "count": 20,
   "items": [
     {
@@ -26,14 +26,6 @@
       "url": "https://purduesports.com/news/2025/12/1/cinematic-recap-11-purdue-upends-15-indiana-purdue-volleyball",
       "summary": "",
       "date": "2025-12-01T21:57:51+00:00"
-    },
-    {
-      "id": "2326a5c865d4",
-      "source": "Purdue Athletics MBB",
-      "title": "#1 Purdue Opens Big Ten Play at Rutgers",
-      "url": "https://purduesports.com/news/2025/12/1/1-purdue-opens-big-ten-play-at-rutgers",
-      "summary": "",
-      "date": "2025-12-01T19:10:54+00:00"
     },
     {
       "id": "b20418898bdc",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2025/11/28/purdue-mens-basketball-highlights-vs-eastern-illinois",
       "summary": "",
       "date": "2025-11-28T19:38:45+00:00"
+    },
+    {
+      "id": "42d8d20930de",
+      "source": "Purdue Athletics MBB",
+      "title": "Trey Kaufman-Renn, Daniel Jacobsen, and Fletcher Loyer Press Conference | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2025/11/28/trey-kaufman-renn-daniel-jacobsen-and-fletcher-loyer-press-conference-purdue-mens-basketball",
+      "summary": "",
+      "date": "2025-11-28T19:36:50+00:00"
     }
   ]
 }
