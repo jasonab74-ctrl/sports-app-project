@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-03T19:14:42.909018+00:00",
+  "updated": "2025-12-03T19:37:29.703566+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "cc5056f26bfb",
+      "source": "Purdue Athletics MBB",
+      "title": "McCallister, Powell Lead Purdue’s All-Big Ten Honorees",
+      "url": "https://purduesports.com/news/2025/12/3/mccallister-powell-lead-purdues-all-big-ten-honorees",
+      "summary": "",
+      "date": "2025-12-03T18:00:00+00:00"
+    },
     {
       "id": "144115eebb9e",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/28/matt-painter-press-conference-vs-eastern-illinois",
       "summary": "",
       "date": "2025-11-28T20:47:07+00:00"
-    },
-    {
-      "id": "38b9676db043",
-      "source": "Purdue Athletics MBB",
-      "title": "Matt Painter Postgame Press Conference vs Eastern Illinois | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2025/11/28/matt-painter-postgame-press-conference-vs-eastern-illinois-purdue-mens-basketball",
-      "summary": "",
-      "date": "2025-11-28T20:41:13+00:00"
     }
   ]
 }
