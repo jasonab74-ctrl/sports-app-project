@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-03T11:38:35.632237+00:00",
+  "updated": "2025-12-03T12:33:43.930306+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "e8bbfeef7f46",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Football 2026 National Signing Day",
+      "url": "https://purduesports.com/news/2025/12/3/2026-purdue-football-national-signing-day",
+      "summary": "",
+      "date": "2025-12-03T11:01:00+00:00"
+    },
     {
       "id": "08db1ba20585",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/28/purdue-mens-basketball-highlights-vs-eastern-illinois",
       "summary": "",
       "date": "2025-11-28T19:38:45+00:00"
-    },
-    {
-      "id": "42d8d20930de",
-      "source": "Purdue Athletics MBB",
-      "title": "Trey Kaufman-Renn, Daniel Jacobsen, and Fletcher Loyer Press Conference | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2025/11/28/trey-kaufman-renn-daniel-jacobsen-and-fletcher-loyer-press-conference-purdue-mens-basketball",
-      "summary": "",
-      "date": "2025-11-28T19:36:50+00:00"
     }
   ]
 }
