@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-03T15:17:27.458716+00:00",
+  "updated": "2025-12-03T15:44:21.883305+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "144115eebb9e",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Men's Basketball Highlights vs. Rutgers",
+      "url": "https://purduesports.com/news/2025/12/3/purdue-mens-basketball-highlights-vs-rutgers",
+      "summary": "",
+      "date": "2025-12-03T14:36:26+00:00"
+    },
+    {
+      "id": "4369256c494a",
+      "source": "Purdue Athletics MBB",
+      "title": "No. 1 Purdue vs. Rutgers Photo Gallery",
+      "url": "https://purduesports.com/news/2025/12/3/no-1-purdue-vs-rutgers-photo-gallery",
+      "summary": "",
+      "date": "2025-12-03T14:29:49+00:00"
+    },
     {
       "id": "e8bbfeef7f46",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/28/matt-painter-postgame-press-conference-vs-eastern-illinois-purdue-mens-basketball",
       "summary": "",
       "date": "2025-11-28T20:41:13+00:00"
-    },
-    {
-      "id": "479e01c2c8ee",
-      "source": "Purdue Athletics MBB",
-      "title": "#1 Purdue Tunes Up for Big Ten Play With Black Friday Victory",
-      "url": "https://purduesports.com/news/2025/11/28/1-purdue-tunes-up-for-big-ten-play-with-rout-of-eastern-illinois",
-      "summary": "",
-      "date": "2025-11-28T20:31:00+00:00"
-    },
-    {
-      "id": "a949ffc56b17",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Men's Basketball Highlights vs. Eastern Illinois",
-      "url": "https://purduesports.com/news/2025/11/28/purdue-mens-basketball-highlights-vs-eastern-illinois",
-      "summary": "",
-      "date": "2025-11-28T19:38:45+00:00"
     }
   ]
 }
