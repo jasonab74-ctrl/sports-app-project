@@ -1,8 +1,40 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-04T05:42:27.001904+00:00",
+  "updated": "2025-12-04T06:25:02.605217+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "0334047ffd0b",
+      "source": "Purdue Athletics MBB",
+      "title": "Postgame Locker Room Purdue Women's Basketball vs. Evansville",
+      "url": "https://purduesports.com/news/2025/12/4/postgame-locker-room-purdue-womens-basketball-vs-evansville",
+      "summary": "",
+      "date": "2025-12-04T02:44:12+00:00"
+    },
+    {
+      "id": "72622d89a5e4",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Katie Gearlds Postgame vs Evansville | Purdue Women's Basketball",
+      "url": "https://purduesports.com/news/2025/12/4/coach-katie-gearlds-postgame-vs-evansville-purdue-womens-basketball",
+      "summary": "",
+      "date": "2025-12-04T02:23:16+00:00"
+    },
+    {
+      "id": "c35b4c4a5bd5",
+      "source": "Purdue Athletics MBB",
+      "title": "Players Postgame Press Conference vs. Evansville | Purdue Women's Basketball",
+      "url": "https://purduesports.com/news/2025/12/4/players-postgame-press-conference-vs-evansville-purdue-womens-basketball",
+      "summary": "",
+      "date": "2025-12-04T02:10:34+00:00"
+    },
+    {
+      "id": "0d4903def9f4",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Downs Evansville 91-49 - Highlights",
+      "url": "https://purduesports.com/news/2025/12/4/purdue-downs-evansville-91-49-highlights",
+      "summary": "",
+      "date": "2025-12-04T02:09:25+00:00"
+    },
     {
       "id": "3da0a741a085",
       "source": "Purdue Athletics MBB",
@@ -130,38 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/29/11-purdue-dispatches-15-indiana-3-1",
       "summary": "",
       "date": "2025-11-29T23:30:00+00:00"
-    },
-    {
-      "id": "d813340324e5",
-      "source": "Purdue Athletics MBB",
-      "title": "Postgame Press Conference vs Indiana | Purdue Volleyball",
-      "url": "https://purduesports.com/news/2025/11/29/postgame-press-conference-vs-indiana-purdue-volleyball",
-      "summary": "",
-      "date": "2025-11-29T22:41:33+00:00"
-    },
-    {
-      "id": "7ea870e67e04",
-      "source": "CBS Sports College Basketball",
-      "title": "College basketball rankings: Big Ten teams clog Top 25 And 1 as league eyes ending national title drought",
-      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-rankings-top-25-and-1-big-ten-teams-purdue/",
-      "summary": "The Big Ten is well-represented in our daily rankings, headlined by undefeated Purdue at No. 2",
-      "date": "2025-11-29T17:53:54+00:00"
-    },
-    {
-      "id": "d47f5846e31f",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue 109, Eastern Illinois 62 | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2025/11/29/purdue-109-eastern-illinois-62-purdue-mens-basketball",
-      "summary": "",
-      "date": "2025-11-29T05:03:03+00:00"
-    },
-    {
-      "id": "0d0a38ceba65",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Barry Odom Postgame Press Conference vs. Indiana | Purdue Football",
-      "url": "https://purduesports.com/news/2025/11/29/coach-barry-odom-postgame-press-conference-vs-indiana-purdue-football",
-      "summary": "",
-      "date": "2025-11-29T04:56:15+00:00"
     }
   ]
 }
