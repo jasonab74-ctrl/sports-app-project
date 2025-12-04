@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-04T03:00:12.017150+00:00",
+  "updated": "2025-12-04T03:55:38.518293+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "3da0a741a085",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Rolls Past Evansville, 91-49",
+      "url": "https://purduesports.com/news/2025/12/3/purdue-rolls-past-evansville-91-49",
+      "summary": "",
+      "date": "2025-12-03T23:47:00+00:00"
+    },
     {
       "id": "944ac211f206",
       "source": "Purdue Athletics MBB",
@@ -58,14 +66,6 @@
       "url": "https://purduesports.com/news/2025/12/3/1-purdue-rolls-past-rutgers-in-big-ten-opener-81-65",
       "summary": "",
       "date": "2025-12-03T03:45:53+00:00"
-    },
-    {
-      "id": "08d78fbc51c4",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Squares Off with Evansville at Mackey on Wednesday",
-      "url": "https://purduesports.com/news/2025/12/2/purdue-squares-off-with-evansville-at-mackey-on-wednesday",
-      "summary": "",
-      "date": "2025-12-02T14:09:00+00:00"
     },
     {
       "id": "cec5ee23bd33",
