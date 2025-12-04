@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-04T18:25:21.941903+00:00",
+  "updated": "2025-12-04T18:53:44.480937+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "d916d882851b",
+      "source": "Purdue Athletics MBB",
+      "title": "Ever True: NCAA Tournament Hype | Purdue Volleyball",
+      "url": "https://purduesports.com/news/2025/12/4/ever-true-ncaa-tournament-hype-purdue-volleyball",
+      "summary": "",
+      "date": "2025-12-04T17:41:52+00:00"
+    },
     {
       "id": "0334047ffd0b",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/30/purdue-falls-at-central-michigan",
       "summary": "",
       "date": "2025-11-30T20:16:25+00:00"
-    },
-    {
-      "id": "f3e2c537ce7f",
-      "source": "Purdue Athletics MBB",
-      "title": "#11 Purdue Dispatches #15 Indiana 3-1",
-      "url": "https://purduesports.com/news/2025/11/29/11-purdue-dispatches-15-indiana-3-1",
-      "summary": "",
-      "date": "2025-11-29T23:30:00+00:00"
     }
   ]
 }
