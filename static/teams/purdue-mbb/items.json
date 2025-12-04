@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-04T20:18:11.843106+00:00",
+  "updated": "2025-12-04T20:43:50.107711+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "ffe2f41abe91",
+      "source": "CBS Sports College Basketball",
+      "title": "Dribble Handoff: Cameron Boozer, Yaxel Lendeborg among second-chance Player of the Year picks",
+      "url": "https://www.cbssports.com/college-basketball/news/duke-cameron-boozer-michigan-lendeborg-player-of-the-year-picks/",
+      "summary": "In October, Braden Smith was the pick. A month-plus into the season, here's where the NPOY race sits ... and where it could go",
+      "date": "2025-12-04T19:56:06+00:00"
+    },
     {
       "id": "d916d882851b",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/11/30/kashs-kab-part-4-purdue-volleyball",
       "summary": "",
       "date": "2025-11-30T21:14:23+00:00"
-    },
-    {
-      "id": "7d339bfdf7db",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Falls at Central Michigan",
-      "url": "https://purduesports.com/news/2025/11/30/purdue-falls-at-central-michigan",
-      "summary": "",
-      "date": "2025-11-30T20:16:25+00:00"
     }
   ]
 }
