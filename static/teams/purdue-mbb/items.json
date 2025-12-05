@@ -1,8 +1,40 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-05T19:36:00.015826+00:00",
+  "updated": "2025-12-05T20:17:46.069579+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "8d578b9a21fc",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Matt Painter Press Conference vs. Iowa State | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2025/12/5/coach-matt-painter-press-conference-vs-iowa-state-purdue-mens-basketball",
+      "summary": "",
+      "date": "2025-12-05T19:36:09+00:00"
+    },
+    {
+      "id": "293e341b376d",
+      "source": "Purdue Athletics MBB",
+      "title": "C.J. Cox Media Session vs. Iowa State | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2025/12/5/cj-cox-media-session-vs-iowa-state-purdue-mens-basketball",
+      "summary": "",
+      "date": "2025-12-05T19:30:37+00:00"
+    },
+    {
+      "id": "46a2fe28fc52",
+      "source": "Purdue Athletics MBB",
+      "title": "Oscar Cluff Media Session vs. Iowa State | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2025/12/5/oscar-cluff-media-session-vs-iowa-state-purdue-mens-basketball",
+      "summary": "",
+      "date": "2025-12-05T19:28:14+00:00"
+    },
+    {
+      "id": "f9222aa7ba9f",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Opens Big Ten Play on the Road at #6/8 Michigan",
+      "url": "https://purduesports.com/news/2025/12/5/purdue-opens-big-ten-play-on-the-road-at-68-michigan",
+      "summary": "",
+      "date": "2025-12-05T19:09:00+00:00"
+    },
     {
       "id": "28455dd32bfe",
       "source": "CBS Sports College Basketball",
@@ -130,38 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/3/purdue-mens-basketball-highlights-vs-rutgers",
       "summary": "",
       "date": "2025-12-03T14:36:26+00:00"
-    },
-    {
-      "id": "5f28f3ceb767",
-      "source": "Purdue Athletics MBB",
-      "title": "#1 Purdue Wins Big Ten Opener at Rutgers",
-      "url": "https://purduesports.com/news/2025/12/3/no-1-purdue-vs-rutgers-photo-gallery",
-      "summary": "",
-      "date": "2025-12-03T14:29:49+00:00"
-    },
-    {
-      "id": "e8bbfeef7f46",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Football 2026 National Signing Day",
-      "url": "https://purduesports.com/news/2025/12/3/2026-purdue-football-national-signing-day",
-      "summary": "",
-      "date": "2025-12-03T11:01:00+00:00"
-    },
-    {
-      "id": "08db1ba20585",
-      "source": "Purdue Athletics MBB",
-      "title": "#1 Purdue Rolls Past Rutgers in Big Ten Opener 81-65",
-      "url": "https://purduesports.com/news/2025/12/3/1-purdue-rolls-past-rutgers-in-big-ten-opener-81-65",
-      "summary": "",
-      "date": "2025-12-03T03:45:53+00:00"
-    },
-    {
-      "id": "cec5ee23bd33",
-      "source": "Purdue Athletics MBB",
-      "title": "Cinematic Recap: #11 Purdue Upends #15 Indiana | Purdue Volleyball",
-      "url": "https://purduesports.com/news/2025/12/1/cinematic-recap-11-purdue-upends-15-indiana-purdue-volleyball",
-      "summary": "",
-      "date": "2025-12-01T21:57:51+00:00"
     }
   ]
 }
