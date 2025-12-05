@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-05T18:20:50.081473+00:00",
+  "updated": "2025-12-05T18:48:16.262954+00:00",
   "count": 20,
   "items": [
     {
@@ -10,6 +10,14 @@
       "url": "https://www.cbssports.com/college-basketball/news/college-basketball-power-rankings-iowa-state-jumps-to-no-2-heading-into-showdown-at-purdue/",
       "summary": "The Cyclones are one of the hottest teams in the nation heading into a huge game vs. the Boilermakers",
       "date": "2025-12-05T18:00:28+00:00"
+    },
+    {
+      "id": "5f904bd4753c",
+      "source": "Purdue Athletics MBB",
+      "title": "Buckeridge to Start Purdue’s Season in Boston",
+      "url": "https://purduesports.com/news/2025/12/5/buckeridge-to-start-purdues-season-in-boston",
+      "summary": "",
+      "date": "2025-12-05T17:43:00+00:00"
     },
     {
       "id": "355b40a9899a",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/1/cinematic-recap-11-purdue-upends-15-indiana-purdue-volleyball",
       "summary": "",
       "date": "2025-12-01T21:57:51+00:00"
-    },
-    {
-      "id": "b20418898bdc",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Men's Basketball Mousehole Highlights vs. Eastern Illinois",
-      "url": "https://purduesports.com/news/2025/12/1/purdue-mens-basketball-mousehole-highlights-vs-eastern-illinois",
-      "summary": "",
-      "date": "2025-12-01T16:07:39+00:00"
     }
   ]
 }
