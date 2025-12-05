@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-05T15:17:02.047836+00:00",
+  "updated": "2025-12-05T15:43:07.764964+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "355b40a9899a",
+      "source": "Purdue Athletics MBB",
+      "title": "#1 Purdue Battles #10 Iowa State in Saturday Showdown in Mackey",
+      "url": "https://purduesports.com/news/2025/12/5/1-purdue-battles-10-iowa-state-in-saturday-showdown-in-mackey",
+      "summary": "",
+      "date": "2025-12-05T15:26:06+00:00"
+    },
     {
       "id": "4e21c440bc71",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/1/akasha-anderson-media-session-ncaa-tournament-purdue-volleyball",
       "summary": "",
       "date": "2025-12-01T01:09:09+00:00"
-    },
-    {
-      "id": "03a60414bdcb",
-      "source": "Purdue Athletics MBB",
-      "title": "Dave Shondell Media Session NCAA Tournament Preview | Purdue Volleyball",
-      "url": "https://purduesports.com/news/2025/12/1/dave-shondell-media-session-ncaa-tournament-preview-purdue-volleyball",
-      "summary": "",
-      "date": "2025-12-01T01:02:19+00:00"
     }
   ]
 }
