@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-05T05:15:45.645891+00:00",
+  "updated": "2025-12-05T05:42:46.972381+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "4e21c440bc71",
+      "source": "Purdue Athletics MBB",
+      "title": "NCAA Tournament Postgame Press Conference vs. Wright State | Purdue Volleyball",
+      "url": "https://purduesports.com/news/2025/12/5/ncaa-tournament-postgame-press-conference-vs-wright-state-purdue-volleyball",
+      "summary": "",
+      "date": "2025-12-05T02:45:47+00:00"
+    },
     {
       "id": "ffe2f41abe91",
       "source": "CBS Sports College Basketball",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/1/dave-shondell-media-session-ncaa-tournament-preview-purdue-volleyball",
       "summary": "",
       "date": "2025-12-01T01:02:19+00:00"
-    },
-    {
-      "id": "2c13d0025349",
-      "source": "CBS Sports College Basketball",
-      "title": "Tomorrow's Top 25 Today: Michigan set to make a big jump in college basketball rankings",
-      "url": "https://www.cbssports.com/college-basketball/news/tomorrows-top-25-today-michigan-set-to-make-a-big-jump-in-college-basketball-rankings/",
-      "summary": "Michigan is poised to ascend the rankings after a big week in Vegas, while Purdue should continue its stay at No. 1",
-      "date": "2025-11-30T23:30:07+00:00"
     }
   ]
 }
