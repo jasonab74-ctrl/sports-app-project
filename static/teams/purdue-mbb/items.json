@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-05T22:15:05.727843+00:00",
+  "updated": "2025-12-05T22:40:52.414396+00:00",
   "count": 20,
   "items": [
     {
@@ -26,6 +26,14 @@
       "url": "https://purduesports.com/news/2025/12/5/oscar-cluff-media-session-vs-iowa-state-purdue-mens-basketball",
       "summary": "",
       "date": "2025-12-05T19:28:14+00:00"
+    },
+    {
+      "id": "7f426bf07722",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilers Get Early Look at UW's Pool Hosting Big Tens",
+      "url": "https://purduesports.com/news/2025/12/5/boilers-get-early-look-at-uws-pool-hosting-big-tens",
+      "summary": "Purdue Men's Swimming visits Madison for the final dual meet of the fall semester.",
+      "date": "2025-12-05T19:09:00+00:00"
     },
     {
       "id": "f9222aa7ba9f",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/3/mccallister-powell-lead-purdues-all-big-ten-honorees",
       "summary": "",
       "date": "2025-12-03T18:00:00+00:00"
-    },
-    {
-      "id": "144115eebb9e",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Men's Basketball Highlights vs. Rutgers",
-      "url": "https://purduesports.com/news/2025/12/3/purdue-mens-basketball-highlights-vs-rutgers",
-      "summary": "",
-      "date": "2025-12-03T14:36:26+00:00"
     }
   ]
 }
