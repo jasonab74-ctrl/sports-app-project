@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-05T17:40:42.945063+00:00",
+  "updated": "2025-12-05T18:20:50.081473+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "28455dd32bfe",
+      "source": "CBS Sports College Basketball",
+      "title": "College basketball power rankings: Iowa State jumps to No. 2 heading into showdown at Purdue",
+      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-power-rankings-iowa-state-jumps-to-no-2-heading-into-showdown-at-purdue/",
+      "summary": "The Cyclones are one of the hottest teams in the nation heading into a huge game vs. the Boilermakers",
+      "date": "2025-12-05T18:00:28+00:00"
+    },
     {
       "id": "355b40a9899a",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/1/purdue-mens-basketball-mousehole-highlights-vs-eastern-illinois",
       "summary": "",
       "date": "2025-12-01T16:07:39+00:00"
-    },
-    {
-      "id": "e83f7ec64b55",
-      "source": "Purdue Athletics MBB",
-      "title": "Akasha Anderson Media Session NCAA Tournament | Purdue Volleyball",
-      "url": "https://purduesports.com/news/2025/12/1/akasha-anderson-media-session-ncaa-tournament-purdue-volleyball",
-      "summary": "",
-      "date": "2025-12-01T01:09:09+00:00"
     }
   ]
 }
