@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-06T04:42:04.841182+00:00",
+  "updated": "2025-12-06T05:14:53.564640+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "e926eb835924",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Volleyball NCAA 2nd Round win over Baylor",
+      "url": "https://purduesports.com/news/2025/12/6/purdue-volleyball-ncaa-2nd-round-win-over-baylor",
+      "summary": "",
+      "date": "2025-12-06T04:19:10+00:00"
+    },
     {
       "id": "d0adec2d589d",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/3/purdue-rolls-past-evansville-91-49",
       "summary": "",
       "date": "2025-12-03T23:47:00+00:00"
-    },
-    {
-      "id": "944ac211f206",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Barry Odom Signing Day Press Conference | Purdue Football",
-      "url": "https://purduesports.com/news/2025/12/3/coach-barry-odom-signing-day-press-conference-purdue-football",
-      "summary": "",
-      "date": "2025-12-03T20:58:35+00:00"
     }
   ]
 }
