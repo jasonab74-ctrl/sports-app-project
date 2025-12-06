@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-06T19:35:27.843203+00:00",
+  "updated": "2025-12-06T20:15:57.096351+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "7fb4c90aa352",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Matt Painter Postgame Press Conference vs. Iowa State | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2025/12/6/coach-matt-painter-postgame-press-conference-vs-iowa-state-purdue-mens-basketball",
+      "summary": "",
+      "date": "2025-12-06T19:53:05+00:00"
+    },
+    {
+      "id": "f579309f63ba",
+      "source": "Purdue Athletics MBB",
+      "title": "Players' Postgame Press Conference vs. Iowa State | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2025/12/6/players-postgame-press-conference-vs-iowa-state-purdue-mens-basketball",
+      "summary": "",
+      "date": "2025-12-06T19:17:46+00:00"
+    },
     {
       "id": "02a3340dd260",
       "source": "CBS Sports College Basketball",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/4/coach-katie-gearlds-postgame-vs-evansville-purdue-womens-basketball",
       "summary": "",
       "date": "2025-12-04T02:23:16+00:00"
-    },
-    {
-      "id": "c35b4c4a5bd5",
-      "source": "Purdue Athletics MBB",
-      "title": "Players Postgame Press Conference vs. Evansville | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2025/12/4/players-postgame-press-conference-vs-evansville-purdue-womens-basketball",
-      "summary": "",
-      "date": "2025-12-04T02:10:34+00:00"
-    },
-    {
-      "id": "0d4903def9f4",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Downs Evansville 91-49 - Highlights",
-      "url": "https://purduesports.com/news/2025/12/4/purdue-downs-evansville-91-49-highlights",
-      "summary": "",
-      "date": "2025-12-04T02:09:25+00:00"
     }
   ]
 }
