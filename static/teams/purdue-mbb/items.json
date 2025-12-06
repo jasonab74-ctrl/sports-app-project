@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-06T15:13:53.936445+00:00",
+  "updated": "2025-12-06T15:37:07.301449+00:00",
   "count": 20,
   "items": [
     {
@@ -68,19 +68,19 @@
       "date": "2025-12-05T19:28:14+00:00"
     },
     {
-      "id": "7f426bf07722",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilers Get Early Look at UW's Pool Hosting Big Tens",
-      "url": "https://purduesports.com/news/2025/12/5/boilers-get-early-look-at-uws-pool-hosting-big-tens",
-      "summary": "Purdue Men's Swimming visits Madison for the final dual meet of the fall semester.",
-      "date": "2025-12-05T19:09:00+00:00"
-    },
-    {
       "id": "f9222aa7ba9f",
       "source": "Purdue Athletics MBB",
       "title": "Purdue Opens Big Ten Play on the Road at #6/8 Michigan",
       "url": "https://purduesports.com/news/2025/12/5/purdue-opens-big-ten-play-on-the-road-at-68-michigan",
       "summary": "",
+      "date": "2025-12-05T19:09:00+00:00"
+    },
+    {
+      "id": "7f426bf07722",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilers Get Early Look at UW's Pool Hosting Big Tens",
+      "url": "https://purduesports.com/news/2025/12/5/boilers-get-early-look-at-uws-pool-hosting-big-tens",
+      "summary": "Purdue Men's Swimming visits Madison for the final dual meet of the fall semester.",
       "date": "2025-12-05T19:09:00+00:00"
     },
     {
@@ -124,14 +124,6 @@
       "date": "2025-12-04T19:56:06+00:00"
     },
     {
-      "id": "1b12ba1563d0",
-      "source": "Purdue Athletics MBB",
-      "title": "#20 Purdue Earns 7 Pre-Seeds at Cliff Keen Invite",
-      "url": "https://purduesports.com/news/2025/12/4/20-purdue-earns-7-pre-seeds-at-cliff-keen-invite",
-      "summary": "It's the Boilers' most in Las Vegas since 2021.",
-      "date": "2025-12-04T19:51:01+00:00"
-    },
-    {
       "id": "d916d882851b",
       "source": "Purdue Athletics MBB",
       "title": "Ever True: NCAA Tournament Hype | Purdue Volleyball",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2025/12/4/players-postgame-press-conference-vs-evansville-purdue-womens-basketball",
       "summary": "",
       "date": "2025-12-04T02:10:34+00:00"
+    },
+    {
+      "id": "0d4903def9f4",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Downs Evansville 91-49 - Highlights",
+      "url": "https://purduesports.com/news/2025/12/4/purdue-downs-evansville-91-49-highlights",
+      "summary": "",
+      "date": "2025-12-04T02:09:25+00:00"
     }
   ]
 }
