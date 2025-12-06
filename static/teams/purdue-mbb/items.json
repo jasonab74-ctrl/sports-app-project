@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-06T13:41:25.898134+00:00",
+  "updated": "2025-12-06T14:13:06.224913+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "02a3340dd260",
+      "source": "CBS Sports College Basketball",
+      "title": "Purdue vs. Iowa State odds, prediction: 2025 college basketball picks from proven model",
+      "url": "https://www.cbssports.com/college-basketball/news/purdue-iowa-state-odds-prediction-2025-college-basketball-picks/",
+      "summary": "SportsLine's model simulated Iowa State Cyclones vs. Purdue Boilermakers 10,000 times (CBS/Paramount+)",
+      "date": "2025-12-06T13:06:31+00:00"
+    },
     {
       "id": "e926eb835924",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/4/players-postgame-press-conference-vs-evansville-purdue-womens-basketball",
       "summary": "",
       "date": "2025-12-04T02:10:34+00:00"
-    },
-    {
-      "id": "0d4903def9f4",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Downs Evansville 91-49 - Highlights",
-      "url": "https://purduesports.com/news/2025/12/4/purdue-downs-evansville-91-49-highlights",
-      "summary": "",
-      "date": "2025-12-04T02:09:25+00:00"
     }
   ]
 }
