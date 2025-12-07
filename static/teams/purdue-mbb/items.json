@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-07T22:39:20.699712+00:00",
+  "updated": "2025-12-07T23:13:37.606887+00:00",
   "count": 20,
   "items": [
     {
@@ -148,20 +148,20 @@
       "date": "2025-12-05T19:28:14+00:00"
     },
     {
-      "id": "f9222aa7ba9f",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Opens Big Ten Play on the Road at #6/8 Michigan",
-      "url": "https://purduesports.com/news/2025/12/5/purdue-opens-big-ten-play-on-the-road-at-68-michigan",
-      "summary": "",
-      "date": "2025-12-05T19:09:00+00:00"
-    },
-    {
       "id": "28455dd32bfe",
       "source": "CBS Sports College Basketball",
       "title": "College basketball power rankings: Iowa State jumps to No. 2 heading into showdown at Purdue",
       "url": "https://www.cbssports.com/college-basketball/news/college-basketball-power-rankings-iowa-state-jumps-to-no-2-heading-into-showdown-at-purdue/",
       "summary": "The Cyclones are one of the hottest teams in the nation heading into a huge game vs. the Boilermakers",
       "date": "2025-12-05T18:00:28+00:00"
+    },
+    {
+      "id": "4e21c440bc71",
+      "source": "Purdue Athletics MBB",
+      "title": "NCAA Tournament Postgame Press Conference vs. Wright State | Purdue Volleyball",
+      "url": "https://purduesports.com/news/2025/12/5/ncaa-tournament-postgame-press-conference-vs-wright-state-purdue-volleyball",
+      "summary": "",
+      "date": "2025-12-05T02:45:47+00:00"
     }
   ]
 }
