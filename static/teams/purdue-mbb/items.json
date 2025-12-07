@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-07T03:11:00.870148+00:00",
+  "updated": "2025-12-07T04:08:01.544317+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "cf7212f74076",
+      "source": "Purdue Athletics MBB",
+      "title": "Blaze of Glory: Purdue's 6th Cliff Keen Las Vegas Champion",
+      "url": "https://purduesports.com/news/2025/12/7/blaze-of-glory-purdues-6th-cliff-keen-las-vegas-champion",
+      "summary": "Purdue put four on the podium for the first time since 2021.",
+      "date": "2025-12-07T03:02:14+00:00"
+    },
     {
       "id": "64a32bc8e916",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/5/ncaa-tournament-postgame-press-conference-vs-wright-state-purdue-volleyball",
       "summary": "",
       "date": "2025-12-05T02:45:47+00:00"
-    },
-    {
-      "id": "ffe2f41abe91",
-      "source": "CBS Sports College Basketball",
-      "title": "Dribble Handoff: Cameron Boozer, Yaxel Lendeborg among second-chance Player of the Year picks",
-      "url": "https://www.cbssports.com/college-basketball/news/duke-cameron-boozer-michigan-lendeborg-player-of-the-year-picks/",
-      "summary": "In October, Braden Smith was the pick. A month-plus into the season, here's where the NPOY race sits ... and where it could go",
-      "date": "2025-12-04T19:56:06+00:00"
     }
   ]
 }
