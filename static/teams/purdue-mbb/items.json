@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-06T23:36:54.638607+00:00",
+  "updated": "2025-12-07T01:19:48.704548+00:00",
   "count": 20,
   "items": [
     {
@@ -140,14 +140,6 @@
       "date": "2025-12-05T17:43:00+00:00"
     },
     {
-      "id": "355b40a9899a",
-      "source": "Purdue Athletics MBB",
-      "title": "#1 Purdue Battles #10 Iowa State in Saturday Showdown in Mackey",
-      "url": "https://purduesports.com/news/2025/12/5/1-purdue-battles-10-iowa-state-in-saturday-showdown-in-mackey",
-      "summary": "",
-      "date": "2025-12-05T15:26:06+00:00"
-    },
-    {
       "id": "4e21c440bc71",
       "source": "Purdue Athletics MBB",
       "title": "NCAA Tournament Postgame Press Conference vs. Wright State | Purdue Volleyball",
@@ -162,6 +154,14 @@
       "url": "https://www.cbssports.com/college-basketball/news/duke-cameron-boozer-michigan-lendeborg-player-of-the-year-picks/",
       "summary": "In October, Braden Smith was the pick. A month-plus into the season, here's where the NPOY race sits ... and where it could go",
       "date": "2025-12-04T19:56:06+00:00"
+    },
+    {
+      "id": "d916d882851b",
+      "source": "Purdue Athletics MBB",
+      "title": "Ever True: NCAA Tournament Hype | Purdue Volleyball",
+      "url": "https://purduesports.com/news/2025/12/4/ever-true-ncaa-tournament-hype-purdue-volleyball",
+      "summary": "",
+      "date": "2025-12-04T17:41:52+00:00"
     }
   ]
 }
