@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-07T01:19:48.704548+00:00",
+  "updated": "2025-12-07T03:11:00.870148+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "64a32bc8e916",
+      "source": "Purdue Athletics MBB",
+      "title": "Buckeridge Turns in #5 Purdue 5000m Performance in Boston",
+      "url": "https://purduesports.com/news/2025/12/7/buckeridge-turns-in-5-purdue-5000m-performance-in-boston",
+      "summary": "",
+      "date": "2025-12-07T02:20:16+00:00"
+    },
+    {
+      "id": "045c16dac034",
+      "source": "Purdue Athletics MBB",
+      "title": "Dzirkalis Sweeps Freestyle Sprints in Madison",
+      "url": "https://purduesports.com/news/2025/12/6/dzirkalis-sweeps-freestyle-sprints-in-madison",
+      "summary": "Rowe & Burau go 1-2 in 200 backstroke but Boilermakers fall in dual meet at #20 Wisconsin.",
+      "date": "2025-12-06T23:58:35+00:00"
+    },
     {
       "id": "1618ab103be3",
       "source": "CBS Sports College Basketball",
@@ -116,14 +132,6 @@
       "date": "2025-12-05T19:09:00+00:00"
     },
     {
-      "id": "7f426bf07722",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilers Get Early Look at UW's Pool Hosting Big Tens",
-      "url": "https://purduesports.com/news/2025/12/5/boilers-get-early-look-at-uws-pool-hosting-big-tens",
-      "summary": "Purdue Men's Swimming visits Madison for the final dual meet of the fall semester.",
-      "date": "2025-12-05T19:09:00+00:00"
-    },
-    {
       "id": "28455dd32bfe",
       "source": "CBS Sports College Basketball",
       "title": "College basketball power rankings: Iowa State jumps to No. 2 heading into showdown at Purdue",
@@ -154,14 +162,6 @@
       "url": "https://www.cbssports.com/college-basketball/news/duke-cameron-boozer-michigan-lendeborg-player-of-the-year-picks/",
       "summary": "In October, Braden Smith was the pick. A month-plus into the season, here's where the NPOY race sits ... and where it could go",
       "date": "2025-12-04T19:56:06+00:00"
-    },
-    {
-      "id": "d916d882851b",
-      "source": "Purdue Athletics MBB",
-      "title": "Ever True: NCAA Tournament Hype | Purdue Volleyball",
-      "url": "https://purduesports.com/news/2025/12/4/ever-true-ncaa-tournament-hype-purdue-volleyball",
-      "summary": "",
-      "date": "2025-12-04T17:41:52+00:00"
     }
   ]
 }
