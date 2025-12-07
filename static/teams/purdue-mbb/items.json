@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-07T20:16:05.994066+00:00",
+  "updated": "2025-12-07T20:39:24.578079+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "2de9b84feb19",
+      "source": "Purdue Athletics MBB",
+      "title": "5 Boilers Place in Jim Koch Wisconsin Open",
+      "url": "https://purduesports.com/news/2025/12/7/5-boilers-place-in-jim-koch-wisconsin-open",
+      "summary": "Purdue sent six to compete at Wisconsin-Parkside's invitational.",
+      "date": "2025-12-07T19:37:24+00:00"
+    },
+    {
+      "id": "4d98e8b4954d",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Drop Big Ten Opener at #6/8 Michigan",
+      "url": "https://purduesports.com/news/2025/12/7/boilermakers-drop-big-ten-opener-at-68-michigan",
+      "summary": "",
+      "date": "2025-12-07T17:39:00+00:00"
+    },
     {
       "id": "cf7212f74076",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://www.cbssports.com/college-basketball/news/college-basketball-power-rankings-iowa-state-jumps-to-no-2-heading-into-showdown-at-purdue/",
       "summary": "The Cyclones are one of the hottest teams in the nation heading into a huge game vs. the Boilermakers",
       "date": "2025-12-05T18:00:28+00:00"
-    },
-    {
-      "id": "5f904bd4753c",
-      "source": "Purdue Athletics MBB",
-      "title": "Buckeridge to Start Purdue’s Season in Boston",
-      "url": "https://purduesports.com/news/2025/12/5/buckeridge-to-start-purdues-season-in-boston",
-      "summary": "",
-      "date": "2025-12-05T17:43:00+00:00"
-    },
-    {
-      "id": "4e21c440bc71",
-      "source": "Purdue Athletics MBB",
-      "title": "NCAA Tournament Postgame Press Conference vs. Wright State | Purdue Volleyball",
-      "url": "https://purduesports.com/news/2025/12/5/ncaa-tournament-postgame-press-conference-vs-wright-state-purdue-volleyball",
-      "summary": "",
-      "date": "2025-12-05T02:45:47+00:00"
     }
   ]
 }
