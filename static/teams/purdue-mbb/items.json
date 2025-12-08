@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-08T18:24:11.699535+00:00",
+  "updated": "2025-12-08T18:51:06.667302+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "95afdea9c12f",
+      "source": "CBS Sports College Basketball",
+      "title": "Arizona jumps to No. 1 in AP Top 25 over Michigan, Duke; Kentucky drops out of college basketball rankings",
+      "url": "https://www.cbssports.com/college-basketball/news/ap-top-25-college-basketball-rankings-arizona-michigan-duke/",
+      "summary": "Duke and Michigan also received slight bumps after previous No. 1-ranked Purdue lost",
+      "date": "2025-12-08T18:33:38+00:00"
+    },
     {
       "id": "0dbdf6880015",
       "source": "CBS Sports College Basketball",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/5/oscar-cluff-media-session-vs-iowa-state-purdue-mens-basketball",
       "summary": "",
       "date": "2025-12-05T19:28:14+00:00"
-    },
-    {
-      "id": "28455dd32bfe",
-      "source": "CBS Sports College Basketball",
-      "title": "College basketball power rankings: Iowa State jumps to No. 2 heading into showdown at Purdue",
-      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-power-rankings-iowa-state-jumps-to-no-2-heading-into-showdown-at-purdue/",
-      "summary": "The Cyclones are one of the hottest teams in the nation heading into a huge game vs. the Boilermakers",
-      "date": "2025-12-05T18:00:28+00:00"
     }
   ]
 }
