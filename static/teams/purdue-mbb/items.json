@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-08T01:13:22.993243+00:00",
+  "updated": "2025-12-08T03:05:43.068366+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "0dbdf6880015",
+      "source": "CBS Sports College Basketball",
+      "title": "Tomorrow's Top 25 Today: Michigan expected to be No. 1 in college basketball rankings; Arizona, Duke make case",
+      "url": "https://www.cbssports.com/college-basketball/news/ap-top-25-predictions-college-basketball-rankings-michigan-arizona-duke/",
+      "summary": "Several teams are positioned to supplant No. 1 Purdue in the AP Top 25 poll on Monday led by Arizona and Michigan",
+      "date": "2025-12-08T01:26:43+00:00"
+    },
     {
       "id": "2de9b84feb19",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://www.cbssports.com/college-basketball/news/college-basketball-power-rankings-iowa-state-jumps-to-no-2-heading-into-showdown-at-purdue/",
       "summary": "The Cyclones are one of the hottest teams in the nation heading into a huge game vs. the Boilermakers",
       "date": "2025-12-05T18:00:28+00:00"
-    },
-    {
-      "id": "4e21c440bc71",
-      "source": "Purdue Athletics MBB",
-      "title": "NCAA Tournament Postgame Press Conference vs. Wright State | Purdue Volleyball",
-      "url": "https://purduesports.com/news/2025/12/5/ncaa-tournament-postgame-press-conference-vs-wright-state-purdue-volleyball",
-      "summary": "",
-      "date": "2025-12-05T02:45:47+00:00"
     }
   ]
 }
