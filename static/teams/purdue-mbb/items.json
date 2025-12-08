@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-08T21:37:11.231389+00:00",
+  "updated": "2025-12-08T22:15:17.494772+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "98e380604911",
-      "source": "Purdue Athletics MBB",
-      "title": "#20 Wrestling at Cliff Keen Las Vegas Invitational",
-      "url": "https://purduesports.com/news/2025/12/8/20-wrestling-at-cliff-keen-las-vegas-invitational",
-      "summary": "Purdue competed in the nation's top regular season wrestling tournament.",
-      "date": "2025-12-08T21:10:48+00:00"
-    },
     {
       "id": "e2c42fb6247d",
       "source": "Purdue Athletics MBB",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2025/12/5/coach-matt-painter-press-conference-vs-iowa-state-purdue-mens-basketball",
       "summary": "",
       "date": "2025-12-05T19:36:09+00:00"
+    },
+    {
+      "id": "293e341b376d",
+      "source": "Purdue Athletics MBB",
+      "title": "C.J. Cox Media Session vs. Iowa State | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2025/12/5/cj-cox-media-session-vs-iowa-state-purdue-mens-basketball",
+      "summary": "",
+      "date": "2025-12-05T19:30:37+00:00"
     }
   ]
 }
