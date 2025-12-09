@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-09T16:49:56.051209+00:00",
+  "updated": "2025-12-09T17:16:46.217728+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "aea5d20d8d63",
+      "source": "Purdue Athletics MBB",
+      "title": "#6 Purdue Looks to Bounce Back Wednesday vs. Minnesota",
+      "url": "https://purduesports.com/news/2025/12/9/6-purdue-looks-to-bounce-back-wednesday-vs-minnesota",
+      "summary": "",
+      "date": "2025-12-09T15:29:23+00:00"
+    },
     {
       "id": "98e380604911",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://www.cbssports.com/college-basketball/news/purdue-vs-iowa-state-prediction-pick-odds-spread-boilermakers-meet-cyclones-in-top-10-clash/",
       "summary": "Here's what you need to know ahead of a top-10 showdown between Purdue and Iowa State",
       "date": "2025-12-05T23:13:51+00:00"
-    },
-    {
-      "id": "8d578b9a21fc",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Matt Painter Press Conference vs. Iowa State | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2025/12/5/coach-matt-painter-press-conference-vs-iowa-state-purdue-mens-basketball",
-      "summary": "",
-      "date": "2025-12-05T19:36:09+00:00"
     }
   ]
 }
