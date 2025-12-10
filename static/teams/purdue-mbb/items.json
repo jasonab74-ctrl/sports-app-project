@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-10T19:37:42.303287+00:00",
+  "updated": "2025-12-10T20:18:46.600272+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "26286839c2e6",
+      "source": "Purdue Athletics MBB",
+      "title": "10 Divers to Compete at Winter Nationals in Texas",
+      "url": "https://purduesports.com/news/2025/12/10/10-divers-to-compete-at-winter-nationals-in-texas",
+      "summary": "Purdue is set to be represented in all but one of the 10 events contested at USA Diving's annual December showcase.",
+      "date": "2025-12-10T15:27:00+00:00"
+    },
     {
       "id": "b0684b5fbb2a",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://www.cbssports.com/college-basketball/news/purdue-iowa-state-odds-prediction-2025-college-basketball-picks/",
       "summary": "SportsLine's model simulated Iowa State Cyclones vs. Purdue Boilermakers 10,000 times (CBS/Paramount+)",
       "date": "2025-12-06T15:41:54+00:00"
-    },
-    {
-      "id": "e926eb835924",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Volleyball NCAA 2nd Round win over Baylor",
-      "url": "https://purduesports.com/news/2025/12/6/purdue-volleyball-ncaa-2nd-round-win-over-baylor",
-      "summary": "",
-      "date": "2025-12-06T04:19:10+00:00"
     }
   ]
 }
