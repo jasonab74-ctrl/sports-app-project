@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-10T23:13:16.039286+00:00",
+  "updated": "2025-12-10T23:37:56.497420+00:00",
   "count": 20,
   "items": [
     {
@@ -10,6 +10,14 @@
       "url": "https://purduesports.com/news/2025/12/10/purdue-athletics-enters-nil-partnership-with-jaba-ai",
       "summary": "",
       "date": "2025-12-10T22:05:03+00:00"
+    },
+    {
+      "id": "f372f523a282",
+      "source": "Purdue Athletics MBB",
+      "title": "Dzirkalis Pairs B1G Swimmer & Freshman of the Week Honors",
+      "url": "https://purduesports.com/news/2025/12/10/dzirkalis-pairs-b1g-swimmer-and-freshman-of-the-week-honors",
+      "summary": "Purdue has had two different Big Ten Swimmer of the Week honorees during the fall semester for the first time since 2008-09",
+      "date": "2025-12-10T21:15:00+00:00"
     },
     {
       "id": "db510ed63778",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/6/coach-matt-painter-postgame-press-conference-vs-iowa-state-purdue-mens-basketball",
       "summary": "",
       "date": "2025-12-06T19:53:05+00:00"
-    },
-    {
-      "id": "f579309f63ba",
-      "source": "Purdue Athletics MBB",
-      "title": "Players' Postgame Press Conference vs. Iowa State | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2025/12/6/players-postgame-press-conference-vs-iowa-state-purdue-mens-basketball",
-      "summary": "",
-      "date": "2025-12-06T19:17:46+00:00"
     }
   ]
 }
