@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-10T20:46:07.319289+00:00",
+  "updated": "2025-12-10T21:17:32.642109+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "db510ed63778",
+      "source": "Purdue Athletics MBB",
+      "title": "51 Boilermakers Receive Academic All-Big Ten Honors for Fall Season",
+      "url": "https://purduesports.com/news/2025/12/10/51-boilermakers-receive-academic-all-big-ten-honors-for-fall-season",
+      "summary": "21 of Purdue's 51 honorees are now multi-year Academic All-Big Ten honorees.",
+      "date": "2025-12-10T19:35:06+00:00"
+    },
     {
       "id": "26286839c2e6",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/6/1-purdue-suffers-first-loss-of-season1",
       "summary": "",
       "date": "2025-12-06T16:22:51+00:00"
-    },
-    {
-      "id": "02a3340dd260",
-      "source": "CBS Sports College Basketball",
-      "title": "Purdue vs. Iowa State odds, prediction: 2025 college basketball picks from proven model",
-      "url": "https://www.cbssports.com/college-basketball/news/purdue-iowa-state-odds-prediction-2025-college-basketball-picks/",
-      "summary": "SportsLine's model simulated Iowa State Cyclones vs. Purdue Boilermakers 10,000 times (CBS/Paramount+)",
-      "date": "2025-12-06T15:41:54+00:00"
     }
   ]
 }
