@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-11T18:53:48.443277+00:00",
+  "updated": "2025-12-11T19:16:09.454904+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "7b1cfc6c6f08",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Rolls Past Lipscomb | Highlights",
+      "url": "https://purduesports.com/news/2025/12/11/purdue-rolls-past-lipscomb-highlights",
+      "summary": "",
+      "date": "2025-12-11T18:22:52+00:00"
+    },
     {
       "id": "7fbb4b9235fb",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/7/boilermakers-drop-big-ten-opener-at-68-michigan",
       "summary": "",
       "date": "2025-12-07T17:39:00+00:00"
-    },
-    {
-      "id": "b7ff4003b1e8",
-      "source": "Purdue Athletics MBB",
-      "title": "Blaze of Glory: Purdue's 8th Cliff Keen Las Vegas Champion",
-      "url": "https://purduesports.com/news/2025/12/7/blaze-of-glory-purdues-6th-cliff-keen-las-vegas-champion",
-      "summary": "Purdue put four on the podium for the first time since 2021.",
-      "date": "2025-12-07T03:02:14+00:00"
     }
   ]
 }
