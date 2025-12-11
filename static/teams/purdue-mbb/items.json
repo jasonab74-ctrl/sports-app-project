@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-11T05:18:53.548601+00:00",
+  "updated": "2025-12-11T05:44:47.633117+00:00",
   "count": 20,
   "items": [
     {
@@ -10,6 +10,30 @@
       "url": "https://purduesports.com/news/2025/12/11/purdue-mens-basketball-win-vs-minnesota",
       "summary": "",
       "date": "2025-12-11T03:15:46+00:00"
+    },
+    {
+      "id": "7341d360f8f1",
+      "source": "Purdue Athletics MBB",
+      "title": "Matt Painter Postgame Press Conference | vs. Minnesota | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2025/12/11/matt-painter-postgame-press-conference-vs-minnesota-purdue-mens-basketball",
+      "summary": "",
+      "date": "2025-12-11T03:12:06+00:00"
+    },
+    {
+      "id": "ccca90a440de",
+      "source": "Purdue Athletics MBB",
+      "title": "Oscar Cluff & Trey Kaufman-Renn Postgame Press Conference | vs. Minnesota | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2025/12/11/oscar-cluff-trey-kaufman-renn-postgame-press-conference-vs-minnesota-purdue-mens-basketball",
+      "summary": "",
+      "date": "2025-12-11T03:00:04+00:00"
+    },
+    {
+      "id": "c9ec038b4e34",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Men's Basketball vs. Minnesota Highlights",
+      "url": "https://purduesports.com/news/2025/12/11/purdue-mens-basketball-vs-minnesota-highlights",
+      "summary": "",
+      "date": "2025-12-11T02:55:15+00:00"
     },
     {
       "id": "f1a3d15dfff9",
@@ -138,30 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/7/buckeridge-turns-in-5-purdue-5000m-performance-in-boston",
       "summary": "",
       "date": "2025-12-07T02:20:16+00:00"
-    },
-    {
-      "id": "045c16dac034",
-      "source": "Purdue Athletics MBB",
-      "title": "Dzirkalis Sweeps Freestyle Sprints in Madison",
-      "url": "https://purduesports.com/news/2025/12/6/dzirkalis-sweeps-freestyle-sprints-in-madison",
-      "summary": "Rowe & Burau go 1-2 in 200 backstroke but Boilermakers fall in dual meet at #20 Wisconsin.",
-      "date": "2025-12-06T23:58:35+00:00"
-    },
-    {
-      "id": "1618ab103be3",
-      "source": "CBS Sports College Basketball",
-      "title": "How Iowa State, sparked by an underrated freshman, pulled off an historic upset of No. 1 Purdue",
-      "url": "https://www.cbssports.com/college-basketball/news/iowa-state-purdue-no-1-loses-college-basketball-upset-ap-top-25-killyan-toure-braden-smith/",
-      "summary": "Purdue's 23-point loss to Iowa State tied the largest home loss by a No. 1 team",
-      "date": "2025-12-06T22:29:17+00:00"
-    },
-    {
-      "id": "e832deed17fd",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Men's Basketball vs. Iowa State",
-      "url": "https://purduesports.com/news/2025/12/6/purdue-mens-basketball-vs-iowa-state",
-      "summary": "",
-      "date": "2025-12-06T20:42:50+00:00"
     }
   ]
 }
