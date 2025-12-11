@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-11T01:15:24.571912+00:00",
+  "updated": "2025-12-11T03:08:55.275706+00:00",
   "count": 20,
   "items": [
     {
@@ -10,6 +10,14 @@
       "url": "https://purduesports.com/news/2025/12/10/purdue-athletics-enters-nil-partnership-with-jaba-ai",
       "summary": "",
       "date": "2025-12-10T22:05:03+00:00"
+    },
+    {
+      "id": "5ff4bd971f98",
+      "source": "Purdue Athletics MBB",
+      "title": "#6 Purdue Stays Unbeaten in Big Ten Play With Win over Minnesota",
+      "url": "https://purduesports.com/news/2025/12/10/6-purdue-stays-unbeaten-in-big-ten-play-with-win-over-minnesota",
+      "summary": "",
+      "date": "2025-12-10T21:16:16+00:00"
     },
     {
       "id": "f372f523a282",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/6/purdue-mens-basketball-vs-iowa-state",
       "summary": "",
       "date": "2025-12-06T20:42:50+00:00"
-    },
-    {
-      "id": "7fb4c90aa352",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Matt Painter Postgame Press Conference vs. Iowa State | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2025/12/6/coach-matt-painter-postgame-press-conference-vs-iowa-state-purdue-mens-basketball",
-      "summary": "",
-      "date": "2025-12-06T19:53:05+00:00"
     }
   ]
 }
