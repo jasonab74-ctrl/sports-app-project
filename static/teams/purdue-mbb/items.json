@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-12T22:15:29.519949+00:00",
+  "updated": "2025-12-12T22:41:45.026327+00:00",
   "count": 20,
   "items": [
     {
@@ -18,6 +18,14 @@
       "url": "https://purduesports.com/news/2025/12/12/6-purdue-wraps-up-homestand-saturday-vs-marquette",
       "summary": "",
       "date": "2025-12-12T14:56:44+00:00"
+    },
+    {
+      "id": "73c36fe805e6",
+      "source": "Purdue Athletics MBB",
+      "title": "Feeling Elite",
+      "url": "https://purduesports.com/news/2025/12/12/feeling-elite",
+      "summary": "Purdue to take on Pitt in a Regional Final on Saturday at 7:30 p.m. ET live on ESPN2 after defeating SMU in 4 sets late Thursday.",
+      "date": "2025-12-12T06:09:00+00:00"
     },
     {
       "id": "4ec9e644b805",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/9/omer-mayer-media-session-vs-minnesota-purdue-mens-basketball",
       "summary": "",
       "date": "2025-12-09T19:20:46+00:00"
-    },
-    {
-      "id": "98e380604911",
-      "source": "Purdue Athletics MBB",
-      "title": "#20 Wrestling at Cliff Keen Las Vegas Invitational",
-      "url": "https://purduesports.com/news/2025/12/8/20-wrestling-at-cliff-keen-las-vegas-invitational",
-      "summary": "Purdue competed in the nation's top regular season wrestling tournament.",
-      "date": "2025-12-08T21:10:48+00:00"
     }
   ]
 }
