@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-12T10:17:45.148570+00:00",
+  "updated": "2025-12-12T10:46:24.455895+00:00",
   "count": 20,
   "items": [
     {
@@ -50,14 +50,6 @@
       "url": "https://purduesports.com/news/2025/12/11/purdue-stays-perfect-at-mackey-with-education-day-win-over-lipscomb",
       "summary": "",
       "date": "2025-12-11T17:01:00+00:00"
-    },
-    {
-      "id": "b70b3dd263a0",
-      "source": "Purdue Athletics MBB",
-      "title": "#3 Seed Purdue Prepped for Regional Semifinal",
-      "url": "https://purduesports.com/news/2025/12/11/3-seed-purdue-prepped-for-regional-semifinals",
-      "summary": "",
-      "date": "2025-12-11T12:30:00+00:00"
     },
     {
       "id": "3246bb613fdf",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2025/12/8/cinematic-recap-ncaa-round-2-vs-6-seed-baylor-purdue-volleyball",
       "summary": "",
       "date": "2025-12-08T20:45:12+00:00"
+    },
+    {
+      "id": "95afdea9c12f",
+      "source": "CBS Sports College Basketball",
+      "title": "Arizona jumps to No. 1 in AP Top 25 over Michigan, Duke; Kentucky drops out of college basketball rankings",
+      "url": "https://www.cbssports.com/college-basketball/news/ap-top-25-college-basketball-rankings-arizona-michigan-duke/",
+      "summary": "Duke and Michigan also received slight bumps after previous No. 1-ranked Purdue lost",
+      "date": "2025-12-08T18:33:38+00:00"
     }
   ]
 }
