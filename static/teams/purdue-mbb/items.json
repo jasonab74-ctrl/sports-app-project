@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-12T16:46:29.674887+00:00",
+  "updated": "2025-12-12T17:15:19.851468+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "91c9839dccff",
+      "source": "Purdue Athletics MBB",
+      "title": "The Retro White Uniform",
+      "url": "https://purduesports.com/news/2025/12/12/the-retro-white-uniform",
+      "summary": "The Boilermakers will debut a throwback uniform to the 80s and 90s when Purdue squares off with Dayton on Sunday at noon.",
+      "date": "2025-12-12T16:55:00+00:00"
+    },
     {
       "id": "8356cb3029b2",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/8/20-wrestling-at-cliff-keen-las-vegas-invitational",
       "summary": "Purdue competed in the nation's top regular season wrestling tournament.",
       "date": "2025-12-08T21:10:48+00:00"
-    },
-    {
-      "id": "e2c42fb6247d",
-      "source": "Purdue Athletics MBB",
-      "title": "Cinematic Recap: NCAA Round 2 vs. 6-Seed Baylor | Purdue Volleyball",
-      "url": "https://purduesports.com/news/2025/12/8/cinematic-recap-ncaa-round-2-vs-6-seed-baylor-purdue-volleyball",
-      "summary": "",
-      "date": "2025-12-08T20:45:12+00:00"
     }
   ]
 }
