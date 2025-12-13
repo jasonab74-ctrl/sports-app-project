@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-13T15:37:33.425166+00:00",
+  "updated": "2025-12-13T16:18:26.336441+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "0cbe2860e964",
+      "source": "Purdue Athletics MBB",
+      "title": "Cinematic Recap: Regional Semifinal Win vs. SMU | Purdue Volleyball",
+      "url": "https://purduesports.com/news/2025/12/13/cinematic-recap-regional-semifinal-win-vs-smu-purdue-volleyball",
+      "summary": "",
+      "date": "2025-12-13T15:26:24+00:00"
+    },
     {
       "id": "bf71ce14b45f",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/10/51-boilermakers-receive-academic-all-big-ten-honors-for-fall-season",
       "summary": "21 of Purdue's 51 honorees are now multi-year Academic All-Big Ten honorees.",
       "date": "2025-12-10T19:35:06+00:00"
-    },
-    {
-      "id": "26286839c2e6",
-      "source": "Purdue Athletics MBB",
-      "title": "10 Divers to Compete at Winter Nationals in Texas",
-      "url": "https://purduesports.com/news/2025/12/10/10-divers-to-compete-at-winter-nationals-in-texas",
-      "summary": "Purdue is set to be represented in all but one of the 10 events contested at USA Diving's annual December showcase.",
-      "date": "2025-12-10T15:27:00+00:00"
     }
   ]
 }
