@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-13T05:42:00.995705+00:00",
+  "updated": "2025-12-13T06:22:45.795543+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "bf71ce14b45f",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue to Debut New Uniforms vs. Dayton on Sunday",
+      "url": "https://purduesports.com/news/2025/12/13/purdue-to-debut-new-uniforms-vs-dayton-on-sunday",
+      "summary": "",
+      "date": "2025-12-13T02:09:00+00:00"
+    },
     {
       "id": "e59ba643bc05",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/10/10-divers-to-compete-at-winter-nationals-in-texas",
       "summary": "Purdue is set to be represented in all but one of the 10 events contested at USA Diving's annual December showcase.",
       "date": "2025-12-10T15:27:00+00:00"
-    },
-    {
-      "id": "35fe48c4de40",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Matt Painer Press Conference vs. Minnesota | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2025/12/9/coach-matt-painer-press-conference-vs-minnesota-purdue-mens-basketball",
-      "summary": "",
-      "date": "2025-12-09T19:22:29+00:00"
     }
   ]
 }
