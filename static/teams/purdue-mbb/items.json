@@ -1,8 +1,40 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-13T21:36:25.134030+00:00",
+  "updated": "2025-12-13T22:13:59.841642+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "23204d8090c3",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Men's Basketball Highlights vs. Marquette",
+      "url": "https://purduesports.com/news/2025/12/13/purdue-mens-basketball-highlights-vs-marquette",
+      "summary": "",
+      "date": "2025-12-13T21:59:54+00:00"
+    },
+    {
+      "id": "1a0fc7e2c5fe",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Matt Painter Press Conference vs. Marquette | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2025/12/13/coach-matt-painter-press-conference-vs-marquette-purdue-mens-basketball",
+      "summary": "",
+      "date": "2025-12-13T21:57:08+00:00"
+    },
+    {
+      "id": "04de98464548",
+      "source": "Purdue Athletics MBB",
+      "title": "Players Postgame Press Conference vs. Marquette | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2025/12/13/players-postgame-press-conference-vs-marquette-purdue-mens-basketball",
+      "summary": "",
+      "date": "2025-12-13T21:55:34+00:00"
+    },
+    {
+      "id": "9e0a34eadfdf",
+      "source": "Purdue Athletics MBB",
+      "title": "#6 Purdue Rolls Marquette in Final Home Game Before Break",
+      "url": "https://purduesports.com/news/2025/12/13/6-purdue-tops-marquette",
+      "summary": "",
+      "date": "2025-12-13T17:59:39+00:00"
+    },
     {
       "id": "0cbe2860e964",
       "source": "Purdue Athletics MBB",
@@ -34,14 +66,6 @@
       "url": "https://purduesports.com/news/2025/12/12/the-retro-white-uniform",
       "summary": "The Boilermakers will debut a throwback uniform to the 80s and 90s when Purdue squares off with Dayton on Sunday at noon.",
       "date": "2025-12-12T16:55:00+00:00"
-    },
-    {
-      "id": "8356cb3029b2",
-      "source": "Purdue Athletics MBB",
-      "title": "#6 Purdue Wraps Up Homestand Saturday vs. Marquette",
-      "url": "https://purduesports.com/news/2025/12/12/6-purdue-wraps-up-homestand-saturday-vs-marquette",
-      "summary": "",
-      "date": "2025-12-12T14:56:44+00:00"
     },
     {
       "id": "73c36fe805e6",
@@ -138,30 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/11/6-purdue-stays-unbeaten-in-big-ten-play-with-win-over-minnesota",
       "summary": "",
       "date": "2025-12-11T02:39:00+00:00"
-    },
-    {
-      "id": "7c1d61501a2d",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Athletics Enters NIL Partnership with JABA AI",
-      "url": "https://purduesports.com/news/2025/12/10/purdue-athletics-enters-nil-partnership-with-jaba-ai",
-      "summary": "",
-      "date": "2025-12-10T22:05:03+00:00"
-    },
-    {
-      "id": "f372f523a282",
-      "source": "Purdue Athletics MBB",
-      "title": "Dzirkalis Pairs B1G Swimmer & Freshman of the Week Honors",
-      "url": "https://purduesports.com/news/2025/12/10/dzirkalis-pairs-b1g-swimmer-and-freshman-of-the-week-honors",
-      "summary": "Purdue has had two different Big Ten Swimmer of the Week honorees during the fall semester for the first time since 2008-09",
-      "date": "2025-12-10T21:15:00+00:00"
-    },
-    {
-      "id": "db510ed63778",
-      "source": "Purdue Athletics MBB",
-      "title": "51 Boilermakers Receive Academic All-Big Ten Honors for Fall Season",
-      "url": "https://purduesports.com/news/2025/12/10/51-boilermakers-receive-academic-all-big-ten-honors-for-fall-season",
-      "summary": "21 of Purdue's 51 honorees are now multi-year Academic All-Big Ten honorees.",
-      "date": "2025-12-10T19:35:06+00:00"
     }
   ]
 }
