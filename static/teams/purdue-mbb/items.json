@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-14T04:11:03.119736+00:00",
+  "updated": "2025-12-14T04:52:36.544297+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "6e1b53da1fbb",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Falls in Regional Final",
+      "url": "https://purduesports.com/news/2025/12/14/purdue-falls-in-regional-final",
+      "summary": "Purdue to take on Pitt in a Regional Final on Saturday at 7:30 p.m. ET live on ESPN2 after defeating SMU in 4 sets late Thursday.",
+      "date": "2025-12-14T03:39:00+00:00"
+    },
     {
       "id": "1d0a9f2bed52",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/11/oscar-cluff-trey-kaufman-renn-postgame-press-conference-vs-minnesota-purdue-mens-basketball",
       "summary": "",
       "date": "2025-12-11T03:00:04+00:00"
-    },
-    {
-      "id": "c9ec038b4e34",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Men's Basketball vs. Minnesota Highlights",
-      "url": "https://purduesports.com/news/2025/12/11/purdue-mens-basketball-vs-minnesota-highlights",
-      "summary": "",
-      "date": "2025-12-11T02:55:15+00:00"
     }
   ]
 }
