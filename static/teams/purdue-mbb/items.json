@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-14T20:40:25.206980+00:00",
+  "updated": "2025-12-14T21:13:48.283507+00:00",
   "count": 20,
   "items": [
     {
@@ -108,14 +108,6 @@
       "date": "2025-12-13T15:26:24+00:00"
     },
     {
-      "id": "bf71ce14b45f",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue to Debut New Uniforms vs. Dayton on Sunday",
-      "url": "https://purduesports.com/news/2025/12/13/purdue-to-debut-new-uniforms-vs-dayton-on-sunday",
-      "summary": "",
-      "date": "2025-12-13T02:09:00+00:00"
-    },
-    {
       "id": "91c9839dccff",
       "source": "Purdue Athletics MBB",
       "title": "The Retro White Uniform",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2025/12/11/tara-daye-and-kiki-smith-postgame-press-conference-vs-lipscomb-purdue-womens-basketball",
       "summary": "",
       "date": "2025-12-11T18:53:36+00:00"
+    },
+    {
+      "id": "7b1cfc6c6f08",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Rolls Past Lipscomb | Highlights",
+      "url": "https://purduesports.com/news/2025/12/11/purdue-rolls-past-lipscomb-highlights",
+      "summary": "",
+      "date": "2025-12-11T18:22:52+00:00"
     }
   ]
 }
