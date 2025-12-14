@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-14T09:15:17.166721+00:00",
+  "updated": "2025-12-14T09:38:50.451612+00:00",
   "count": 20,
   "items": [
     {
@@ -10,6 +10,14 @@
       "url": "https://purduesports.com/news/2025/12/14/purdue-falls-in-regional-final",
       "summary": "",
       "date": "2025-12-14T03:39:00+00:00"
+    },
+    {
+      "id": "73737aa18537",
+      "source": "Purdue Athletics MBB",
+      "title": "Rzepka Wins Gold, Worobel Silver at Winter Nationals",
+      "url": "https://purduesports.com/news/2025/12/14/rzepka-wins-gold-worobel-silver-at-winter-nationals",
+      "summary": "Boilermakers win medals in men's 10-meter, women's 1-meter at the USA Diving championships",
+      "date": "2025-12-14T02:15:00+00:00"
     },
     {
       "id": "1d0a9f2bed52",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/11/oscar-cluff-trey-kaufman-renn-postgame-press-conference-vs-minnesota-purdue-mens-basketball",
       "summary": "",
       "date": "2025-12-11T03:00:04+00:00"
-    },
-    {
-      "id": "c9ec038b4e34",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Men's Basketball vs. Minnesota Highlights",
-      "url": "https://purduesports.com/news/2025/12/11/purdue-mens-basketball-vs-minnesota-highlights",
-      "summary": "",
-      "date": "2025-12-11T02:55:15+00:00"
     }
   ]
 }
