@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-15T16:56:10.445935+00:00",
+  "updated": "2025-12-15T17:22:28.519486+00:00",
   "count": 20,
   "items": [
     {
@@ -132,14 +132,6 @@
       "date": "2025-12-12T06:09:00+00:00"
     },
     {
-      "id": "4ec9e644b805",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue-Morgan State Dual Called Off Due to Illness",
-      "url": "https://purduesports.com/news/2025/12/11/purdue-morgan-state-dual-called-off-due-to-illness",
-      "summary": "Purdue returns to the mat on Friday, Jan. 2.",
-      "date": "2025-12-11T23:46:18+00:00"
-    },
-    {
       "id": "ea12ee95c154",
       "source": "Purdue Athletics MBB",
       "title": "Purdue Women's Basketball win vs Lipscomb",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2025/12/11/tara-daye-and-kiki-smith-postgame-press-conference-vs-lipscomb-purdue-womens-basketball",
       "summary": "",
       "date": "2025-12-11T18:53:36+00:00"
+    },
+    {
+      "id": "7b1cfc6c6f08",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Rolls Past Lipscomb | Highlights",
+      "url": "https://purduesports.com/news/2025/12/11/purdue-rolls-past-lipscomb-highlights",
+      "summary": "",
+      "date": "2025-12-11T18:22:52+00:00"
     }
   ]
 }
