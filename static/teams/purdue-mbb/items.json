@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-15T04:56:57.562749+00:00",
+  "updated": "2025-12-15T05:24:55.543754+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "492832c210c2",
+      "source": "Purdue Athletics MBB",
+      "title": "Press Conference | Post-match of the Regional Final vs. Pitt | Purdue Volleyball",
+      "url": "https://purduesports.com/news/2025/12/15/press-conference-post-match-of-the-regional-final-vs-pitt-purdue-volleyball",
+      "summary": "",
+      "date": "2025-12-15T04:37:38+00:00"
+    },
     {
       "id": "88bc7ff2af48",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/11/tara-daye-and-kiki-smith-postgame-press-conference-vs-lipscomb-purdue-womens-basketball",
       "summary": "",
       "date": "2025-12-11T18:53:36+00:00"
-    },
-    {
-      "id": "7b1cfc6c6f08",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Rolls Past Lipscomb | Highlights",
-      "url": "https://purduesports.com/news/2025/12/11/purdue-rolls-past-lipscomb-highlights",
-      "summary": "",
-      "date": "2025-12-11T18:22:52+00:00"
     }
   ]
 }
