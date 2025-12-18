@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-18T14:46:46.620030+00:00",
+  "updated": "2025-12-18T15:18:10.689038+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "894b107b91ed",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Baseball: Strength Coach Ty Webb's Impact",
+      "url": "https://purduesports.com/news/2025/12/18/purdue-baseball-strength-coach-ty-webbs-impact",
+      "summary": "",
+      "date": "2025-12-18T14:12:00+00:00"
+    },
+    {
+      "id": "87d1421c8b63",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Baseball: Thankful to be Boilermakers",
+      "url": "https://purduesports.com/news/2025/12/18/purdue-baseball-thankful-to-be-boilermakers",
+      "summary": "",
+      "date": "2025-12-18T13:57:27+00:00"
+    },
     {
       "id": "b4cd6485685e",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/11/purdue-womens-basketball-win-vs-lipscomb",
       "summary": "",
       "date": "2025-12-11T19:31:29+00:00"
-    },
-    {
-      "id": "c313b7ec20bb",
-      "source": "Purdue Athletics MBB",
-      "title": "Katie Gearlds Postgame Press Conference | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2025/12/11/katie-gearlds-postgame-press-conference-purdue-womens-basketball",
-      "summary": "",
-      "date": "2025-12-11T18:55:43+00:00"
-    },
-    {
-      "id": "d79a7d28c40c",
-      "source": "Purdue Athletics MBB",
-      "title": "Tara Daye and Kiki Smith Postgame Press Conference | vs. Lipscomb | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2025/12/11/tara-daye-and-kiki-smith-postgame-press-conference-vs-lipscomb-purdue-womens-basketball",
-      "summary": "",
-      "date": "2025-12-11T18:53:36+00:00"
     }
   ]
 }
