@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-18T18:24:21.100737+00:00",
+  "updated": "2025-12-18T18:53:20.858896+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "849aa8cf4566",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Matt Painter Media Session vs. Auburn | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2025/12/18/coach-matt-painter-media-session-vs-auburn-purdue-mens-basketball",
+      "summary": "",
+      "date": "2025-12-18T17:46:31+00:00"
+    },
     {
       "id": "723a6d4b061e",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/13/cinematic-recap-regional-semifinal-win-vs-smu-purdue-volleyball",
       "summary": "",
       "date": "2025-12-13T15:26:24+00:00"
-    },
-    {
-      "id": "91c9839dccff",
-      "source": "Purdue Athletics MBB",
-      "title": "The Retro White Uniform",
-      "url": "https://purduesports.com/news/2025/12/12/the-retro-white-uniform",
-      "summary": "The Boilermakers will debut a throwback uniform to the 80s and 90s when Purdue squares off with Dayton on Sunday at noon.",
-      "date": "2025-12-12T16:55:00+00:00"
     }
   ]
 }
