@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-18T17:45:33.933435+00:00",
+  "updated": "2025-12-18T18:24:21.100737+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "723a6d4b061e",
+      "source": "Purdue Athletics MBB",
+      "title": "Daniel Jacobsen Media Session vs. Auburn | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2025/12/18/daniel-jacobsen-media-session-vs-auburn-purdue-mens-basketball",
+      "summary": "",
+      "date": "2025-12-18T17:44:51+00:00"
+    },
+    {
+      "id": "f2f7f2aa6569",
+      "source": "Purdue Athletics MBB",
+      "title": "Trey Kaufman-Renn Media Session vs. Auburn | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2025/12/18/trey-kaufman-renn-media-session-vs-auburn-purdue-mens-basketball",
+      "summary": "",
+      "date": "2025-12-18T17:44:00+00:00"
+    },
     {
       "id": "894b107b91ed",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/12/the-retro-white-uniform",
       "summary": "The Boilermakers will debut a throwback uniform to the 80s and 90s when Purdue squares off with Dayton on Sunday at noon.",
       "date": "2025-12-12T16:55:00+00:00"
-    },
-    {
-      "id": "73c36fe805e6",
-      "source": "Purdue Athletics MBB",
-      "title": "Feeling Elite",
-      "url": "https://purduesports.com/news/2025/12/12/feeling-elite",
-      "summary": "Purdue to take on Pitt in a Regional Final on Saturday at 7:30 p.m. ET live on ESPN2 after defeating SMU in 4 sets late Thursday.",
-      "date": "2025-12-12T06:09:00+00:00"
-    },
-    {
-      "id": "ea12ee95c154",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Women's Basketball win vs Lipscomb",
-      "url": "https://purduesports.com/news/2025/12/11/purdue-womens-basketball-win-vs-lipscomb",
-      "summary": "",
-      "date": "2025-12-11T19:31:29+00:00"
     }
   ]
 }
