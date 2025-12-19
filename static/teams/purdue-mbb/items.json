@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-19T14:44:09.517448+00:00",
+  "updated": "2025-12-19T15:17:19.461212+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "7ed03f6ca4b7",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Wraps Up Non-Conference Action Against Jackson State on Sunday",
+      "url": "https://purduesports.com/news/2025/12/19/purdue-wraps-up-non-conference-action-against-jackson-state-on-sunday",
+      "summary": "",
+      "date": "2025-12-19T14:00:00+00:00"
+    },
     {
       "id": "f639f103682b",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/13/players-postgame-press-conference-vs-marquette-purdue-mens-basketball",
       "summary": "",
       "date": "2025-12-13T21:55:34+00:00"
-    },
-    {
-      "id": "9e0a34eadfdf",
-      "source": "Purdue Athletics MBB",
-      "title": "#6 Purdue Rolls Marquette in Final Home Game Before Break",
-      "url": "https://purduesports.com/news/2025/12/13/6-purdue-tops-marquette",
-      "summary": "",
-      "date": "2025-12-13T17:59:39+00:00"
     }
   ]
 }
