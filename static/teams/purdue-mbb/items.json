@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-21T20:40:43.129511+00:00",
+  "updated": "2025-12-21T21:13:37.515929+00:00",
   "count": 20,
   "items": [
     {
@@ -26,6 +26,14 @@
       "url": "https://purduesports.com/news/2025/12/21/purdue-closes-non-conference-slate-with-31-point-win-over-jackson-state",
       "summary": "",
       "date": "2025-12-21T19:17:06+00:00"
+    },
+    {
+      "id": "7fcc3efe1c79",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Stays Perfect at Home with 93-62 Win Over Jackson State",
+      "url": "https://purduesports.com/news/2025/12/21/purdue-stays-perfect-at-home-with-93-62-win-over-jackson-state",
+      "summary": "",
+      "date": "2025-12-21T18:01:00+00:00"
     },
     {
       "id": "aca8706073ce",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/14/coach-katie-gearlds-postgame-press-conference-vs-dayton-purdue-womens-basketball",
       "summary": "",
       "date": "2025-12-14T19:09:11+00:00"
-    },
-    {
-      "id": "7ddffa71bd1c",
-      "source": "Purdue Athletics MBB",
-      "title": "Postgame Press Conference vs. Pitt | Purdue Volleyball",
-      "url": "https://purduesports.com/news/2025/12/14/postgame-press-conference-vs-pitt-purdue-volleyball",
-      "summary": "",
-      "date": "2025-12-14T18:39:37+00:00"
     }
   ]
 }
