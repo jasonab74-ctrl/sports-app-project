@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-21T03:12:55.863646+00:00",
+  "updated": "2025-12-21T04:11:45.116769+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "eb185beaf022",
+      "source": "Purdue Athletics MBB",
+      "title": "#6 Purdue Smacks #21 Auburn in Indy Classic",
+      "url": "https://purduesports.com/news/2025/12/21/6-purdue-smacks-21-auburn-in-indy-classic",
+      "summary": "INDIANAPOLIS, Ind. - No. 6 Purdue rolled past No. 21 Auburn in the Indy Classic with an 88-60 win.\n\nC.J. Cox and Braden Smith scored a combined 25 points while Trey Kauffman-Renn added 18 for the Boilermakers, who improved to 11-1 overall entering the Holiday break. \n\nCheck back later tonight for a full recap of the game.",
+      "date": "2025-12-21T01:29:48+00:00"
+    },
     {
       "id": "17b8e263a35c",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/13/purdue-mens-basketball-win-vs-marquette",
       "summary": "",
       "date": "2025-12-13T22:44:16+00:00"
-    },
-    {
-      "id": "23204d8090c3",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Men's Basketball Highlights vs. Marquette",
-      "url": "https://purduesports.com/news/2025/12/13/purdue-mens-basketball-highlights-vs-marquette",
-      "summary": "",
-      "date": "2025-12-13T21:59:54+00:00"
     }
   ]
 }
