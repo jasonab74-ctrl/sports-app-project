@@ -1,14 +1,22 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-21T04:11:45.116769+00:00",
+  "updated": "2025-12-21T04:52:54.847485+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "aca8706073ce",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Men's Basketball win over Auburn at Gainbridge Fieldhouse",
+      "url": "https://purduesports.com/news/2025/12/21/purdue-mens-basketball-win-over-auburn-at-gainbridge-fieldhouse",
+      "summary": "",
+      "date": "2025-12-21T03:44:59+00:00"
+    },
     {
       "id": "eb185beaf022",
       "source": "Purdue Athletics MBB",
       "title": "#6 Purdue Smacks #21 Auburn in Indy Classic",
       "url": "https://purduesports.com/news/2025/12/21/6-purdue-smacks-21-auburn-in-indy-classic",
-      "summary": "INDIANAPOLIS, Ind. - No. 6 Purdue rolled past No. 21 Auburn in the Indy Classic with an 88-60 win.\n\nC.J. Cox and Braden Smith scored a combined 25 points while Trey Kauffman-Renn added 18 for the Boilermakers, who improved to 11-1 overall entering the Holiday break. \n\nCheck back later tonight for a full recap of the game.",
+      "summary": "",
       "date": "2025-12-21T01:29:48+00:00"
     },
     {
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/14/rzepka-wins-gold-worobel-silver-at-winter-nationals",
       "summary": "Boilermakers win medals in men's 10-meter, women's 1-meter at the USA Diving championships",
       "date": "2025-12-14T02:15:00+00:00"
-    },
-    {
-      "id": "1d0a9f2bed52",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Men's Basketball Win vs Marquette",
-      "url": "https://purduesports.com/news/2025/12/13/purdue-mens-basketball-win-vs-marquette",
-      "summary": "",
-      "date": "2025-12-13T22:44:16+00:00"
     }
   ]
 }
