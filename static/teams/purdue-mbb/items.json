@@ -1,8 +1,32 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-21T19:35:45.977530+00:00",
+  "updated": "2025-12-21T20:16:45.319454+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "81e7c6cedf9e",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Gearlds Postgame Press Conference vs. Jackson State | Purdue Women's Basketball",
+      "url": "https://purduesports.com/news/2025/12/21/coach-gearlds-postgame-press-conference-vs-jackson-state-purdue-womens-basketball",
+      "summary": "",
+      "date": "2025-12-21T19:37:39+00:00"
+    },
+    {
+      "id": "9e6575a3e3d2",
+      "source": "Purdue Athletics MBB",
+      "title": "Players Postgame Press Conference vs Jackson State | Purdue Women's Basketball",
+      "url": "https://purduesports.com/news/2025/12/21/players-postgame-press-conference-vs-jackson-state-purdue-womens-basketball",
+      "summary": "",
+      "date": "2025-12-21T19:24:36+00:00"
+    },
+    {
+      "id": "3cba439ba16d",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Closes Non-Conference Slate with 31-Point Win Over Jackson State",
+      "url": "https://purduesports.com/news/2025/12/21/purdue-closes-non-conference-slate-with-31-point-win-over-jackson-state",
+      "summary": "",
+      "date": "2025-12-21T19:17:06+00:00"
+    },
     {
       "id": "aca8706073ce",
       "source": "Purdue Athletics MBB",
@@ -138,30 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/14/postgame-press-conference-vs-pitt-purdue-volleyball",
       "summary": "",
       "date": "2025-12-14T18:39:37+00:00"
-    },
-    {
-      "id": "f0f6ba2ef2b8",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Storms Past Dayton, 80-43",
-      "url": "https://purduesports.com/news/2025/12/14/purdue-storms-past-dayton-80-43",
-      "summary": "",
-      "date": "2025-12-14T17:39:00+00:00"
-    },
-    {
-      "id": "6e1b53da1fbb",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Falls in Regional Final",
-      "url": "https://purduesports.com/news/2025/12/14/purdue-falls-in-regional-final",
-      "summary": "",
-      "date": "2025-12-14T03:39:00+00:00"
-    },
-    {
-      "id": "73737aa18537",
-      "source": "Purdue Athletics MBB",
-      "title": "Rzepka Wins Gold, Worobel Silver at Winter Nationals",
-      "url": "https://purduesports.com/news/2025/12/14/rzepka-wins-gold-worobel-silver-at-winter-nationals",
-      "summary": "Boilermakers win medals in men's 10-meter, women's 1-meter at the USA Diving championships",
-      "date": "2025-12-14T02:15:00+00:00"
     }
   ]
 }
