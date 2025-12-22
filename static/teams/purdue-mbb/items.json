@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-22T01:18:26.834130+00:00",
+  "updated": "2025-12-22T03:15:30.797016+00:00",
   "count": 20,
   "items": [
     {
@@ -66,22 +66,6 @@
       "url": "https://purduesports.com/news/2025/12/19/katie-gearlds-media-session-purdue-womens-basketball-2",
       "summary": "",
       "date": "2025-12-19T18:29:54+00:00"
-    },
-    {
-      "id": "7ed03f6ca4b7",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Wraps Up Non-Conference Action Against Jackson State on Sunday",
-      "url": "https://purduesports.com/news/2025/12/19/purdue-wraps-up-non-conference-action-against-jackson-state-on-sunday",
-      "summary": "",
-      "date": "2025-12-19T14:00:00+00:00"
-    },
-    {
-      "id": "f639f103682b",
-      "source": "Purdue Athletics MBB",
-      "title": "#6 Purdue Battles #21 Auburn in Saturday's Indy Classic",
-      "url": "https://purduesports.com/news/2025/12/18/6-purdue-battles-21-auburn-in-saturdays-indy-classic",
-      "summary": "",
-      "date": "2025-12-18T20:26:43+00:00"
     },
     {
       "id": "849aa8cf4566",
@@ -162,6 +146,22 @@
       "url": "https://purduesports.com/news/2025/12/14/coach-katie-gearlds-postgame-press-conference-vs-dayton-purdue-womens-basketball",
       "summary": "",
       "date": "2025-12-14T19:09:11+00:00"
+    },
+    {
+      "id": "7ddffa71bd1c",
+      "source": "Purdue Athletics MBB",
+      "title": "Postgame Press Conference vs. Pitt | Purdue Volleyball",
+      "url": "https://purduesports.com/news/2025/12/14/postgame-press-conference-vs-pitt-purdue-volleyball",
+      "summary": "",
+      "date": "2025-12-14T18:39:37+00:00"
+    },
+    {
+      "id": "f0f6ba2ef2b8",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Storms Past Dayton, 80-43",
+      "url": "https://purduesports.com/news/2025/12/14/purdue-storms-past-dayton-80-43",
+      "summary": "",
+      "date": "2025-12-14T17:39:00+00:00"
     }
   ]
 }
