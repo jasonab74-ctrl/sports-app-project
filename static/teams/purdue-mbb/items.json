@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-27T16:45:02.774768+00:00",
+  "updated": "2025-12-27T17:12:46.428697+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "43e3a54580a2",
+      "source": "Purdue Athletics MBB",
+      "title": "#5 Purdue Wraps Up Non-Con Play Monday vs. Kent State",
+      "url": "https://purduesports.com/news/2025/12/27/5-purdue-wraps-up-non-con-play-monday-vs-kent-state",
+      "summary": "",
+      "date": "2025-12-27T16:20:52+00:00"
+    },
     {
       "id": "fdc618eeae6c",
       "source": "CBS Sports College Basketball",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/14/coach-katie-gearlds-postgame-press-conference-vs-dayton-purdue-womens-basketball",
       "summary": "",
       "date": "2025-12-14T19:09:11+00:00"
-    },
-    {
-      "id": "7ddffa71bd1c",
-      "source": "Purdue Athletics MBB",
-      "title": "Postgame Press Conference vs. Pitt | Purdue Volleyball",
-      "url": "https://purduesports.com/news/2025/12/14/postgame-press-conference-vs-pitt-purdue-volleyball",
-      "summary": "",
-      "date": "2025-12-14T18:39:37+00:00"
     }
   ]
 }
