@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-28T20:17:41.403222+00:00",
+  "updated": "2025-12-28T20:42:02.239958+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "7388104d5ff8",
+      "source": "Purdue Athletics MBB",
+      "title": "Katie Gearlds Postgame Press Conference | vs. Illinois | Purdue Women's Basketball",
+      "url": "https://purduesports.com/news/2025/12/28/katie-gearlds-postgame-press-conference-vs-illinois-purdue-womens-basketball",
+      "summary": "",
+      "date": "2025-12-28T20:02:14+00:00"
+    },
     {
       "id": "43e3a54580a2",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/14/purdue-improves-to-7-0-at-mackey-with-sunday-win-over-dayton-purdue-womens-basketball",
       "summary": "",
       "date": "2025-12-14T19:18:20+00:00"
-    },
-    {
-      "id": "4b8db30e5b3a",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Katie Gearlds Postgame Press Conference vs. Dayton | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2025/12/14/coach-katie-gearlds-postgame-press-conference-vs-dayton-purdue-womens-basketball",
-      "summary": "",
-      "date": "2025-12-14T19:09:11+00:00"
     }
   ]
 }
