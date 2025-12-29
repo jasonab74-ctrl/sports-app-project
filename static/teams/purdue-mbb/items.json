@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-29T21:38:37.790513+00:00",
+  "updated": "2025-12-29T22:15:20.773522+00:00",
   "count": 20,
   "items": [
     {
@@ -10,6 +10,14 @@
       "url": "https://purduesports.com/news/2025/12/29/the-persistent-pursuit-purdues-senior-trio",
       "summary": "Braden Smith, Fletcher Loyer and Trey Kaufman-Renn are featured in the latest installment of The Persistent Pursuit.",
       "date": "2025-12-29T18:50:32+00:00"
+    },
+    {
+      "id": "4400bb115d7e",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Closes 2025 at Mackey vs. #19 Ohio State",
+      "url": "https://purduesports.com/news/2025/12/29/purdue-closes-2025-at-mackey-vs-19-ohio-state",
+      "summary": "",
+      "date": "2025-12-29T15:08:00+00:00"
     },
     {
       "id": "7388104d5ff8",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/16/purdue-adds-palmer-ahead-of-2025-26-season",
       "summary": "",
       "date": "2025-12-16T21:25:00+00:00"
-    },
-    {
-      "id": "88bc7ff2af48",
-      "source": "Purdue Athletics MBB",
-      "title": "Players Postgame Press Conference vs. Dayton | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2025/12/14/players-postgame-press-conference-vs-dayton-purdue-womens-basketball",
-      "summary": "",
-      "date": "2025-12-14T19:29:58+00:00"
     }
   ]
 }
