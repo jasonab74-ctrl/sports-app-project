@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-30T17:16:40.931047+00:00",
+  "updated": "2025-12-30T17:43:26.833338+00:00",
   "count": 20,
   "items": [
     {
@@ -58,14 +58,6 @@
       "url": "https://purduesports.com/news/2025/12/28/katie-gearlds-postgame-press-conference-vs-illinois-purdue-womens-basketball",
       "summary": "",
       "date": "2025-12-28T20:02:14+00:00"
-    },
-    {
-      "id": "43e3a54580a2",
-      "source": "Purdue Athletics MBB",
-      "title": "#5 Purdue Wraps Up Non-Con Play Monday vs. Kent State",
-      "url": "https://purduesports.com/news/2025/12/27/5-purdue-wraps-up-non-con-play-monday-vs-kent-state",
-      "summary": "",
-      "date": "2025-12-27T16:20:52+00:00"
     },
     {
       "id": "fdc618eeae6c",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2025/12/18/trey-kaufman-renn-media-session-vs-auburn-purdue-mens-basketball",
       "summary": "",
       "date": "2025-12-18T17:44:00+00:00"
+    },
+    {
+      "id": "894b107b91ed",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Baseball: Strength Coach Ty Webb's Impact",
+      "url": "https://purduesports.com/news/2025/12/18/purdue-baseball-strength-coach-ty-webbs-impact",
+      "summary": "",
+      "date": "2025-12-18T14:12:00+00:00"
     }
   ]
 }
