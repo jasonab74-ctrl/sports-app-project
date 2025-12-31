@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-31T20:42:06.381756+00:00",
+  "updated": "2025-12-31T21:14:01.406927+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "f7d175cc4557",
+      "source": "Purdue Athletics MBB",
+      "title": "Katie Gearlds Postgame Press Conference | vs. Ohio State | Purdue Women's Basketball",
+      "url": "https://purduesports.com/news/2025/12/31/katie-gearlds-postgame-press-conference-vs-ohio-state-purdue-womens-basketball",
+      "summary": "",
+      "date": "2025-12-31T20:40:18+00:00"
+    },
     {
       "id": "352a5f3f295b",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/18/daniel-jacobsen-media-session-vs-auburn-purdue-mens-basketball",
       "summary": "",
       "date": "2025-12-18T17:44:51+00:00"
-    },
-    {
-      "id": "f2f7f2aa6569",
-      "source": "Purdue Athletics MBB",
-      "title": "Trey Kaufman-Renn Media Session vs. Auburn | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2025/12/18/trey-kaufman-renn-media-session-vs-auburn-purdue-mens-basketball",
-      "summary": "",
-      "date": "2025-12-18T17:44:00+00:00"
     }
   ]
 }
