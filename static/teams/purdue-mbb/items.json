@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2025-12-31T17:40:09.951540+00:00",
+  "updated": "2025-12-31T18:22:55.447540+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "352a5f3f295b",
+      "source": "Purdue Athletics MBB",
+      "title": "#20 Boilers Ready for East Coast Doubleheader",
+      "url": "https://purduesports.com/news/2025/12/31/20-boilers-ready-for-east-coast-doubleheader",
+      "summary": "Purdue will wrestle Drexel and Rider on the same day in different states.",
+      "date": "2025-12-31T17:00:00+00:00"
+    },
     {
       "id": "dbc224ba5d2a",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/18/trey-kaufman-renn-media-session-vs-auburn-purdue-mens-basketball",
       "summary": "",
       "date": "2025-12-18T17:44:00+00:00"
-    },
-    {
-      "id": "894b107b91ed",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Baseball: Strength Coach Ty Webb's Impact",
-      "url": "https://purduesports.com/news/2025/12/18/purdue-baseball-strength-coach-ty-webbs-impact",
-      "summary": "",
-      "date": "2025-12-18T14:12:00+00:00"
     }
   ]
 }
