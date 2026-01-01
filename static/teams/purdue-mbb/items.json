@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-01T16:20:19.185435+00:00",
+  "updated": "2026-01-01T16:48:55.814077+00:00",
   "count": 20,
   "items": [
     {
@@ -66,14 +66,6 @@
       "url": "https://purduesports.com/news/2025/12/29/the-persistent-pursuit-purdues-senior-trio",
       "summary": "Braden Smith, Fletcher Loyer and Trey Kaufman-Renn are featured in the latest installment of The Persistent Pursuit.",
       "date": "2025-12-29T18:50:32+00:00"
-    },
-    {
-      "id": "4400bb115d7e",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Closes 2025 at Mackey vs. #19 Ohio State",
-      "url": "https://purduesports.com/news/2025/12/29/purdue-closes-2025-at-mackey-vs-19-ohio-state",
-      "summary": "",
-      "date": "2025-12-29T15:08:00+00:00"
     },
     {
       "id": "7388104d5ff8",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2025/12/18/coach-matt-painter-media-session-vs-auburn-purdue-mens-basketball",
       "summary": "",
       "date": "2025-12-18T17:46:31+00:00"
+    },
+    {
+      "id": "723a6d4b061e",
+      "source": "Purdue Athletics MBB",
+      "title": "Daniel Jacobsen Media Session vs. Auburn | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2025/12/18/daniel-jacobsen-media-session-vs-auburn-purdue-mens-basketball",
+      "summary": "",
+      "date": "2025-12-18T17:44:51+00:00"
     }
   ]
 }
