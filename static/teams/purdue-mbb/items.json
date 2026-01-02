@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-02T21:12:27.963538+00:00",
+  "updated": "2026-01-02T21:36:48.841986+00:00",
   "count": 20,
   "items": [
     {
@@ -84,14 +84,6 @@
       "date": "2025-12-28T20:02:14+00:00"
     },
     {
-      "id": "fdc618eeae6c",
-      "source": "CBS Sports College Basketball",
-      "title": "Purdue returns to top five of Coaches Poll, Duke falls after suffering first loss of season",
-      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-rankings-coaches-poll-top-25-purdue-duke/",
-      "summary": "There is some major movement in the latest college basketball Coaches Poll",
-      "date": "2025-12-22T17:22:09+00:00"
-    },
-    {
       "id": "81e7c6cedf9e",
       "source": "Purdue Athletics MBB",
       "title": "Coach Gearlds Postgame Press Conference vs. Jackson State | Purdue Women's Basketball",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2025/12/18/coach-matt-painter-media-session-vs-auburn-purdue-mens-basketball",
       "summary": "",
       "date": "2025-12-18T17:46:31+00:00"
+    },
+    {
+      "id": "723a6d4b061e",
+      "source": "Purdue Athletics MBB",
+      "title": "Daniel Jacobsen Media Session vs. Auburn | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2025/12/18/daniel-jacobsen-media-session-vs-auburn-purdue-mens-basketball",
+      "summary": "",
+      "date": "2025-12-18T17:44:51+00:00"
     }
   ]
 }
