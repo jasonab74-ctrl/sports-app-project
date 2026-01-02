@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-02T22:15:40.019534+00:00",
+  "updated": "2026-01-02T22:43:11.600983+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "30794d329c1e",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Opens 2 Game Road Swing at #20/25 Nebraska on Sunday",
+      "url": "https://purduesports.com/news/2026/01/2/purdue-opens-2-game-road-swing-at-2025-nebraska-on-sunday",
+      "summary": "",
+      "date": "2026-01-02T19:00:00+00:00"
+    },
     {
       "id": "590b50712dec",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/18/coach-matt-painter-media-session-vs-auburn-purdue-mens-basketball",
       "summary": "",
       "date": "2025-12-18T17:46:31+00:00"
-    },
-    {
-      "id": "723a6d4b061e",
-      "source": "Purdue Athletics MBB",
-      "title": "Daniel Jacobsen Media Session vs. Auburn | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2025/12/18/daniel-jacobsen-media-session-vs-auburn-purdue-mens-basketball",
-      "summary": "",
-      "date": "2025-12-18T17:44:51+00:00"
     }
   ]
 }
