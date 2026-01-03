@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-03T18:49:16.318868+00:00",
+  "updated": "2026-01-03T19:12:08.583484+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "4d59850e887a",
+      "source": "CBS Sports College Basketball",
+      "title": "College basketball picks, schedule: Predictions for Purdue vs. Wisconsin and more Top 25 games",
+      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-picks-predictions-odds-betting-lines-top-25-duke-arkansas-purdue/",
+      "summary": "Our experts have picks for all of Saturday's big games as conference play begins for many teams",
+      "date": "2026-01-03T19:06:32+00:00"
+    },
     {
       "id": "d13d65b5ec57",
       "source": "Purdue Athletics MBB",
@@ -42,14 +50,6 @@
       "url": "https://purduesports.com/news/2025/12/31/katie-gearlds-postgame-press-conference-vs-ohio-state-purdue-womens-basketball",
       "summary": "",
       "date": "2025-12-31T20:40:18+00:00"
-    },
-    {
-      "id": "352a5f3f295b",
-      "source": "Purdue Athletics MBB",
-      "title": "#20 Boilers Ready for East Coast Doubleheader",
-      "url": "https://purduesports.com/news/2025/12/31/20-boilers-ready-for-east-coast-doubleheader",
-      "summary": "Purdue will wrestle Drexel and Rider on the same day in different states.",
-      "date": "2025-12-31T17:00:00+00:00"
     },
     {
       "id": "dbc224ba5d2a",
