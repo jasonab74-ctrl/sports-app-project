@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-04T03:24:10.210042+00:00",
+  "updated": "2026-01-04T04:32:42.118708+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "66c7560d6401",
+      "source": "Purdue Athletics MBB",
+      "title": "#5 Purdue Rolls Wisconsin as Smith Breaks Assist Record",
+      "url": "https://purduesports.com/news/2026/01/4/5-purdue-rolls-wisconsin-as-smith-breaks-assist-record",
+      "summary": "",
+      "date": "2026-01-04T00:42:43+00:00"
+    },
     {
       "id": "4d59850e887a",
       "source": "CBS Sports College Basketball",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/19/tara-daye-media-session-purdue-womens-basketball",
       "summary": "",
       "date": "2025-12-19T18:29:59+00:00"
-    },
-    {
-      "id": "bc39960f4b3f",
-      "source": "Purdue Athletics MBB",
-      "title": "Katie Gearlds Media Session | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2025/12/19/katie-gearlds-media-session-purdue-womens-basketball-2",
-      "summary": "",
-      "date": "2025-12-19T18:29:54+00:00"
     }
   ]
 }
