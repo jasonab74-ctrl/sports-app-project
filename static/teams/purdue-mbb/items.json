@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-04T23:39:54.572366+00:00",
+  "updated": "2026-01-05T01:23:08.322256+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "e0b78962e0d6",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue vs. Wisconsin Photo Gallery",
+      "url": "https://purduesports.com/news/2026/01/4/purdue-vs-wisconsin-photo-gallery",
+      "summary": "",
+      "date": "2026-01-04T23:52:48+00:00"
+    },
     {
       "id": "66c7560d6401",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/19/tara-daye-media-session-purdue-womens-basketball",
       "summary": "",
       "date": "2025-12-19T18:29:59+00:00"
-    },
-    {
-      "id": "bc39960f4b3f",
-      "source": "Purdue Athletics MBB",
-      "title": "Katie Gearlds Media Session | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2025/12/19/katie-gearlds-media-session-purdue-womens-basketball-2",
-      "summary": "",
-      "date": "2025-12-19T18:29:54+00:00"
     }
   ]
 }
