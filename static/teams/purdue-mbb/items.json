@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-05T15:18:53.177617+00:00",
+  "updated": "2026-01-05T15:45:29.255261+00:00",
   "count": 20,
   "items": [
     {
@@ -34,6 +34,14 @@
       "url": "https://purduesports.com/news/2026/01/3/20-purdue-finishes-strong-to-salvage-doubleheader",
       "summary": "Boilermakers win seven straight matches to close non-conference action.",
       "date": "2026-01-03T03:42:05+00:00"
+    },
+    {
+      "id": "30794d329c1e",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Opens 2 Game Road Swing at #20/25 Nebraska on Sunday",
+      "url": "https://purduesports.com/news/2026/01/2/purdue-opens-2-game-road-swing-at-2025-nebraska-on-sunday",
+      "summary": "",
+      "date": "2026-01-02T19:00:00+00:00"
     },
     {
       "id": "68dbfb329ed9",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/19/tara-daye-media-session-purdue-womens-basketball",
       "summary": "",
       "date": "2025-12-19T18:29:59+00:00"
-    },
-    {
-      "id": "bc39960f4b3f",
-      "source": "Purdue Athletics MBB",
-      "title": "Katie Gearlds Media Session | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2025/12/19/katie-gearlds-media-session-purdue-womens-basketball-2",
-      "summary": "",
-      "date": "2025-12-19T18:29:54+00:00"
     }
   ]
 }
