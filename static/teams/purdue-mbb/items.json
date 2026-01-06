@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-06T20:44:07.720026+00:00",
+  "updated": "2026-01-06T21:16:19.132507+00:00",
   "count": 20,
   "items": [
     {
@@ -18,6 +18,14 @@
       "url": "https://purduesports.com/news/2026/01/6/fletcher-loyer-media-session-purdue-mens-basketball-1",
       "summary": "",
       "date": "2026-01-06T19:50:28+00:00"
+    },
+    {
+      "id": "d264abcb9216",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Heads to Madison to Face Wisconsin on Thursday",
+      "url": "https://purduesports.com/news/2026/01/6/purdue-heads-to-madison-to-face-wisconsin-on-thursday",
+      "summary": "",
+      "date": "2026-01-06T19:09:00+00:00"
     },
     {
       "id": "7aae05c29afd",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/21/purdue-closes-non-conference-slate-with-31-point-win-over-jackson-state",
       "summary": "",
       "date": "2025-12-21T19:17:06+00:00"
-    },
-    {
-      "id": "7fcc3efe1c79",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Stays Perfect at Home with 93-62 Win Over Jackson State",
-      "url": "https://purduesports.com/news/2025/12/21/purdue-stays-perfect-at-home-with-93-62-win-over-jackson-state",
-      "summary": "",
-      "date": "2025-12-21T18:01:00+00:00"
     }
   ]
 }
