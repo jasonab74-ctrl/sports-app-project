@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-06T18:23:50.263374+00:00",
+  "updated": "2026-01-06T18:52:10.377561+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "7aae05c29afd",
+      "source": "Purdue Athletics MBB",
+      "title": "#5 Purdue Begins Homestand Wednesday vs. Washington",
+      "url": "https://purduesports.com/news/2026/01/6/5-purdue-begins-homestand-wednesday-vs-washington",
+      "summary": "",
+      "date": "2026-01-06T17:00:20+00:00"
+    },
     {
       "id": "926a03d4456e",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/21/6-purdue-smacks-21-auburn-in-indy-classic",
       "summary": "",
       "date": "2025-12-21T01:29:48+00:00"
-    },
-    {
-      "id": "17b8e263a35c",
-      "source": "Purdue Athletics MBB",
-      "title": "Tara Daye Media Session | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2025/12/19/tara-daye-media-session-purdue-womens-basketball",
-      "summary": "",
-      "date": "2025-12-19T18:29:59+00:00"
     }
   ]
 }
