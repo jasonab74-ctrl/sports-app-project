@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-07T17:21:57.610750+00:00",
+  "updated": "2026-01-07T17:48:37.021157+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "fdb1bc5c4679",
+      "source": "CBS Sports College Basketball",
+      "title": "Court Report: What being undefeated in January means for success in March; teams most like Indiana football",
+      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-news-2025-26-season-undefeated-teams-indiana-football-court-report/",
+      "summary": "And more: Why Purdue's Braden Smith is about to become a huge story and the 10 most disappointing teams at the midway mark",
+      "date": "2026-01-07T17:13:27+00:00"
+    },
     {
       "id": "8b905a66f044",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/21/players-postgame-press-conference-vs-jackson-state-purdue-womens-basketball",
       "summary": "",
       "date": "2025-12-21T19:24:36+00:00"
-    },
-    {
-      "id": "3cba439ba16d",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Closes Non-Conference Slate with 31-Point Win Over Jackson State",
-      "url": "https://purduesports.com/news/2025/12/21/purdue-closes-non-conference-slate-with-31-point-win-over-jackson-state",
-      "summary": "",
-      "date": "2025-12-21T19:17:06+00:00"
     }
   ]
 }
