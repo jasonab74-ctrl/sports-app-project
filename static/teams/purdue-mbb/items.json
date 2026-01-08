@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-08T23:14:38.207132+00:00",
+  "updated": "2026-01-08T23:37:50.684846+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "e6095b559eec",
+      "source": "Purdue Athletics MBB",
+      "title": "Senior Day Highlights Busy Final Home Weekend at Pool",
+      "url": "https://purduesports.com/news/2026/01/8/senior-day-highlights-busy-final-home-weekend-at-pool",
+      "summary": "The Boilermakers host SIU on Friday & Illinois on Saturday for the final home meets at the Burke Aquatic Center.",
+      "date": "2026-01-08T21:58:22+00:00"
+    },
     {
       "id": "4c441ac0aed8",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/30/players-postgame-press-conference-vs-kent-state-purdue-mens-basketball",
       "summary": "",
       "date": "2025-12-30T02:17:49+00:00"
-    },
-    {
-      "id": "090d7c235eb1",
-      "source": "Purdue Athletics MBB",
-      "title": "#5 Purdue Ends Non-Con Play With Win Over Kent State",
-      "url": "https://purduesports.com/news/2025/12/29/5-purdue-ends-non-con-play-with-win-over-kent-state",
-      "summary": "",
-      "date": "2025-12-29T22:54:23+00:00"
     }
   ]
 }
