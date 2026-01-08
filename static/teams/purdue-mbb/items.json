@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-08T05:47:19.455763+00:00",
+  "updated": "2026-01-08T06:27:04.434150+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "6709a58fda94",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Matt Painter Postgame Press Conference vs. Washington | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/01/8/coach-matt-painter-postgame-press-conference-vs-washington-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-01-08T04:34:36+00:00"
+    },
+    {
+      "id": "12e5c0eb495b",
+      "source": "Purdue Athletics MBB",
+      "title": "Player Postgame Press Conference vs. Washington | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/01/8/player-postgame-press-conference-vs-washington-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-01-08T04:15:41+00:00"
+    },
     {
       "id": "fdb1bc5c4679",
       "source": "CBS Sports College Basketball",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/29/the-persistent-pursuit-purdues-senior-trio",
       "summary": "Braden Smith, Fletcher Loyer and Trey Kaufman-Renn are featured in the latest installment of The Persistent Pursuit.",
       "date": "2025-12-29T18:50:32+00:00"
-    },
-    {
-      "id": "7388104d5ff8",
-      "source": "Purdue Athletics MBB",
-      "title": "Katie Gearlds Postgame Press Conference | vs. Illinois | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2025/12/28/katie-gearlds-postgame-press-conference-vs-illinois-purdue-womens-basketball",
-      "summary": "",
-      "date": "2025-12-28T20:02:14+00:00"
-    },
-    {
-      "id": "81e7c6cedf9e",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Gearlds Postgame Press Conference vs. Jackson State | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2025/12/21/coach-gearlds-postgame-press-conference-vs-jackson-state-purdue-womens-basketball",
-      "summary": "",
-      "date": "2025-12-21T19:37:39+00:00"
     }
   ]
 }
