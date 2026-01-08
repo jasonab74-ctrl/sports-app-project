@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-08T04:13:14.636220+00:00",
+  "updated": "2026-01-08T04:55:40.054031+00:00",
   "count": 20,
   "items": [
     {
@@ -10,6 +10,14 @@
       "url": "https://www.cbssports.com/college-basketball/news/college-basketball-news-2025-26-season-undefeated-teams-indiana-football-court-report/",
       "summary": "And more: Why Purdue's Braden Smith is about to become a huge story and the 10 most disappointing teams at the midway mark",
       "date": "2026-01-07T22:25:38+00:00"
+    },
+    {
+      "id": "d1fa8255e1a4",
+      "source": "Purdue Athletics MBB",
+      "title": "#5 Purdue Wins 6th Straight With Victory over Washington",
+      "url": "https://purduesports.com/news/2026/01/7/5-purdue-wins-6th-straight-with-win-over-washington",
+      "summary": "",
+      "date": "2026-01-07T19:52:58+00:00"
     },
     {
       "id": "8b905a66f044",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/21/coach-gearlds-postgame-press-conference-vs-jackson-state-purdue-womens-basketball",
       "summary": "",
       "date": "2025-12-21T19:37:39+00:00"
-    },
-    {
-      "id": "9e6575a3e3d2",
-      "source": "Purdue Athletics MBB",
-      "title": "Players Postgame Press Conference vs Jackson State | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2025/12/21/players-postgame-press-conference-vs-jackson-state-purdue-womens-basketball",
-      "summary": "",
-      "date": "2025-12-21T19:24:36+00:00"
     }
   ]
 }
