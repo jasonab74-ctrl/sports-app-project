@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-08T14:20:52.218417+00:00",
+  "updated": "2026-01-08T14:50:40.569557+00:00",
   "count": 20,
   "items": [
     {
@@ -20,20 +20,20 @@
       "date": "2026-01-08T04:15:41+00:00"
     },
     {
+      "id": "50f2ee4558c2",
+      "source": "Purdue Athletics MBB",
+      "title": "#5 Purdue Wins 6th Straight With Victory over Washington",
+      "url": "https://purduesports.com/news/2026/01/8/5-purdue-wins-6th-straight-with-win-over-washington",
+      "summary": "",
+      "date": "2026-01-08T03:52:00+00:00"
+    },
+    {
       "id": "fdb1bc5c4679",
       "source": "CBS Sports College Basketball",
       "title": "Court Report: What being undefeated in January means for success in March; teams most like Indiana football",
       "url": "https://www.cbssports.com/college-basketball/news/college-basketball-news-2025-26-season-undefeated-teams-indiana-football-court-report/",
       "summary": "And more: Why Purdue's Braden Smith is about to become a huge story and the 10 most disappointing teams at the midway mark",
       "date": "2026-01-07T22:25:38+00:00"
-    },
-    {
-      "id": "d1fa8255e1a4",
-      "source": "Purdue Athletics MBB",
-      "title": "#5 Purdue Wins 6th Straight With Victory over Washington",
-      "url": "https://purduesports.com/news/2026/01/7/5-purdue-wins-6th-straight-with-win-over-washington",
-      "summary": "",
-      "date": "2026-01-07T19:52:58+00:00"
     },
     {
       "id": "8b905a66f044",
@@ -58,14 +58,6 @@
       "url": "https://purduesports.com/news/2026/01/6/purdue-heads-to-madison-to-face-wisconsin-on-thursday",
       "summary": "",
       "date": "2026-01-06T19:09:00+00:00"
-    },
-    {
-      "id": "7aae05c29afd",
-      "source": "Purdue Athletics MBB",
-      "title": "#5 Purdue Begins Homestand Wednesday vs. Washington",
-      "url": "https://purduesports.com/news/2026/01/6/5-purdue-begins-homestand-wednesday-vs-washington",
-      "summary": "",
-      "date": "2026-01-06T17:00:20+00:00"
     },
     {
       "id": "926a03d4456e",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2025/12/29/the-persistent-pursuit-purdues-senior-trio",
       "summary": "Braden Smith, Fletcher Loyer and Trey Kaufman-Renn are featured in the latest installment of The Persistent Pursuit.",
       "date": "2025-12-29T18:50:32+00:00"
+    },
+    {
+      "id": "7388104d5ff8",
+      "source": "Purdue Athletics MBB",
+      "title": "Katie Gearlds Postgame Press Conference | vs. Illinois | Purdue Women's Basketball",
+      "url": "https://purduesports.com/news/2025/12/28/katie-gearlds-postgame-press-conference-vs-illinois-purdue-womens-basketball",
+      "summary": "",
+      "date": "2025-12-28T20:02:14+00:00"
     }
   ]
 }
