@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-08T18:52:04.253360+00:00",
+  "updated": "2026-01-08T19:15:35.601333+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "4c441ac0aed8",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Set to Begin 2026 in Louisville",
+      "url": "https://purduesports.com/news/2026/01/8/purdue-set-to-begin-2026-in-louisville",
+      "summary": "",
+      "date": "2026-01-08T17:45:41+00:00"
+    },
+    {
+      "id": "81cbf3dcfd3e",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights: #5 Purdue 81, Washington 73 | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/01/8/highlights-5-purdue-81-washington-73-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-01-08T17:30:19+00:00"
+    },
     {
       "id": "6709a58fda94",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/29/5-purdue-ends-non-con-play-with-win-over-kent-state",
       "summary": "",
       "date": "2025-12-29T22:54:23+00:00"
-    },
-    {
-      "id": "d2039d91dffc",
-      "source": "Purdue Athletics MBB",
-      "title": "The Persistent Pursuit: Purdue's Senior Trio",
-      "url": "https://purduesports.com/news/2025/12/29/the-persistent-pursuit-purdues-senior-trio",
-      "summary": "Braden Smith, Fletcher Loyer and Trey Kaufman-Renn are featured in the latest installment of The Persistent Pursuit.",
-      "date": "2025-12-29T18:50:32+00:00"
-    },
-    {
-      "id": "7388104d5ff8",
-      "source": "Purdue Athletics MBB",
-      "title": "Katie Gearlds Postgame Press Conference | vs. Illinois | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2025/12/28/katie-gearlds-postgame-press-conference-vs-illinois-purdue-womens-basketball",
-      "summary": "",
-      "date": "2025-12-28T20:02:14+00:00"
     }
   ]
 }
