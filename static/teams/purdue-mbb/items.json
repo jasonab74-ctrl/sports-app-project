@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-09T19:16:39.793035+00:00",
+  "updated": "2026-01-09T19:38:50.584258+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "63fad599e5a5",
+      "source": "Purdue Athletics MBB",
+      "title": "2025 Blooper Reel | Purdue Volleyball",
+      "url": "https://purduesports.com/news/2026/01/9/2025-blooper-reel-purdue-volleyball",
+      "summary": "",
+      "date": "2026-01-09T18:58:11+00:00"
+    },
     {
       "id": "912f279c9481",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/30/purdue-vs-kent-state-photo-gallery",
       "summary": "",
       "date": "2025-12-30T14:16:51+00:00"
-    },
-    {
-      "id": "3564de5ba6a9",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Painter Postgame Press Conference vs. Kent State | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2025/12/30/coach-painter-postgame-press-conference-vs-kent-state-purdue-mens-basketball",
-      "summary": "",
-      "date": "2025-12-30T03:00:07+00:00"
     }
   ]
 }
