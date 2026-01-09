@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-09T20:19:15.874133+00:00",
+  "updated": "2026-01-09T20:44:14.036800+00:00",
   "count": 20,
   "items": [
     {
@@ -124,14 +124,6 @@
       "date": "2026-01-04T00:42:43+00:00"
     },
     {
-      "id": "4d59850e887a",
-      "source": "CBS Sports College Basketball",
-      "title": "College basketball picks, schedule: Predictions for Purdue vs. Wisconsin and more Top 25 games",
-      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-picks-predictions-odds-betting-lines-top-25-duke-arkansas-purdue/",
-      "summary": "Our experts have picks for all of Saturday's big games as conference play begins for many teams",
-      "date": "2026-01-03T21:11:44+00:00"
-    },
-    {
       "id": "d13d65b5ec57",
       "source": "Purdue Athletics MBB",
       "title": "#20 Purdue Finishes Strong to Salvage Doubleheader",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2025/12/30/purdue-vs-kent-state-photo-gallery",
       "summary": "",
       "date": "2025-12-30T14:16:51+00:00"
+    },
+    {
+      "id": "3564de5ba6a9",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Painter Postgame Press Conference vs. Kent State | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2025/12/30/coach-painter-postgame-press-conference-vs-kent-state-purdue-mens-basketball",
+      "summary": "",
+      "date": "2025-12-30T03:00:07+00:00"
     }
   ]
 }
