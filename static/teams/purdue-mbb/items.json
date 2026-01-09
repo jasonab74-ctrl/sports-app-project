@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-09T17:45:33.684232+00:00",
+  "updated": "2026-01-09T18:25:07.157350+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "912f279c9481",
+      "source": "Purdue Athletics MBB",
+      "title": "#5 Purdue Battles Penn State on Saturday Afternoon in Mackey",
+      "url": "https://purduesports.com/news/2026/01/9/5-purdue-battles-penn-state-on-saturday-afternoon-in-mackey",
+      "summary": "",
+      "date": "2026-01-09T17:38:07+00:00"
+    },
     {
       "id": "f41c7c58018f",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2025/12/30/coach-painter-postgame-press-conference-vs-kent-state-purdue-mens-basketball",
       "summary": "",
       "date": "2025-12-30T03:00:07+00:00"
-    },
-    {
-      "id": "b95ea7203f71",
-      "source": "Purdue Athletics MBB",
-      "title": "Players Postgame Press Conference vs. Kent State | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2025/12/30/players-postgame-press-conference-vs-kent-state-purdue-mens-basketball",
-      "summary": "",
-      "date": "2025-12-30T02:17:49+00:00"
     }
   ]
 }
