@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-09T05:48:14.149579+00:00",
+  "updated": "2026-01-09T06:26:18.822022+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "f41c7c58018f",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Picks Up Road Win at Wisconsin - Highlights",
+      "url": "https://purduesports.com/news/2026/01/9/purdue-picks-up-road-win-at-wisconsin-highlights",
+      "summary": "",
+      "date": "2026-01-09T02:47:42+00:00"
+    },
     {
       "id": "e6095b559eec",
       "source": "Purdue Athletics MBB",
@@ -74,14 +82,6 @@
       "url": "https://purduesports.com/news/2026/01/6/fletcher-loyer-media-session-purdue-mens-basketball-1",
       "summary": "",
       "date": "2026-01-06T19:50:28+00:00"
-    },
-    {
-      "id": "d264abcb9216",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Heads to Madison to Face Wisconsin on Thursday",
-      "url": "https://purduesports.com/news/2026/01/6/purdue-heads-to-madison-to-face-wisconsin-on-thursday",
-      "summary": "",
-      "date": "2026-01-06T19:09:00+00:00"
     },
     {
       "id": "926a03d4456e",
