@@ -1,32 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-10T22:15:12.350671+00:00",
+  "updated": "2026-01-10T22:42:13.852553+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "7acc16928fd6",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Matt Painter Press Conference vs. Penn State | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/01/10/coach-matt-painter-press-conference-vs-penn-state-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-01-10T21:56:57+00:00"
-    },
-    {
-      "id": "b99ce318fc0c",
-      "source": "Purdue Athletics MBB",
-      "title": "Players Postgame Press Conference vs. Penn State | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/01/10/players-postgame-press-conference-vs-penn-state-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-01-10T21:55:58+00:00"
-    },
-    {
-      "id": "8de4137f4d33",
-      "source": "Purdue Athletics MBB",
-      "title": "#5 Purdue Remains Undefeated in Big Ten Play with Win Over Penn State",
-      "url": "https://purduesports.com/news/2026/01/10/5-purdue-remains-undefeated-in-big-ten-play-with-win-over-penn-state",
-      "summary": "",
-      "date": "2026-01-10T21:22:42+00:00"
-    },
     {
       "id": "6509d3915e0f",
       "source": "Purdue Athletics MBB",
@@ -162,6 +138,30 @@
       "url": "https://purduesports.com/news/2026/01/4/5-purdue-rolls-wisconsin-as-smith-breaks-assist-record",
       "summary": "",
       "date": "2026-01-04T00:42:43+00:00"
+    },
+    {
+      "id": "d13d65b5ec57",
+      "source": "Purdue Athletics MBB",
+      "title": "#20 Purdue Finishes Strong to Salvage Doubleheader",
+      "url": "https://purduesports.com/news/2026/01/3/20-purdue-finishes-strong-to-salvage-doubleheader",
+      "summary": "Boilermakers win seven straight matches to close non-conference action.",
+      "date": "2026-01-03T03:42:05+00:00"
+    },
+    {
+      "id": "68dbfb329ed9",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights: #5 Purdue 101, Kent State 60 | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2025/12/31/highlights-5-purdue-101-kent-state-60-purdue-mens-basketball",
+      "summary": "",
+      "date": "2025-12-31T20:45:22+00:00"
+    },
+    {
+      "id": "f7d175cc4557",
+      "source": "Purdue Athletics MBB",
+      "title": "Katie Gearlds Postgame Press Conference | vs. Ohio State | Purdue Women's Basketball",
+      "url": "https://purduesports.com/news/2025/12/31/katie-gearlds-postgame-press-conference-vs-ohio-state-purdue-womens-basketball",
+      "summary": "",
+      "date": "2025-12-31T20:40:18+00:00"
     }
   ]
 }
