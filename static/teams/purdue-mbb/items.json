@@ -1,14 +1,22 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-10T01:15:29.919099+00:00",
+  "updated": "2026-01-10T03:06:58.262230+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "3d0dbf7b73ce",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Concludes First Day in Louisville",
+      "url": "https://purduesports.com/news/2026/01/10/purdue-concludes-first-day-in-louisville",
+      "summary": "",
+      "date": "2026-01-10T01:41:02+00:00"
+    },
     {
       "id": "d9817412b75e",
       "source": "Purdue Athletics MBB",
       "title": "Purdue Wins 16 of 17 Events vs. SIU",
       "url": "https://purduesports.com/news/2026/01/9/purdue-wins-16-of-17-events-vs-siu",
-      "summary": "Four Boilermakers all won multiple individual events and the Divers posted four 400-point list scores.",
+      "summary": "Four Boilermakers won multiple individual events and the Divers posted four 400-point list scores in the decisive dual victory.",
       "date": "2026-01-09T23:24:00+00:00"
     },
     {
@@ -34,14 +42,6 @@
       "url": "https://purduesports.com/news/2026/01/9/purdue-picks-up-road-win-at-wisconsin-highlights",
       "summary": "",
       "date": "2026-01-09T02:47:42+00:00"
-    },
-    {
-      "id": "e6095b559eec",
-      "source": "Purdue Athletics MBB",
-      "title": "Senior Day Highlights Busy Final Home Weekend at Pool",
-      "url": "https://purduesports.com/news/2026/01/8/senior-day-highlights-busy-final-home-weekend-at-pool",
-      "summary": "The Boilermakers host SIU on Friday & Illinois on Saturday for the final home meets at the Burke Aquatic Center.",
-      "date": "2026-01-08T21:58:22+00:00"
     },
     {
       "id": "4c441ac0aed8",
