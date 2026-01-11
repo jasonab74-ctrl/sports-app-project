@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-10T23:38:48.834465+00:00",
+  "updated": "2026-01-11T01:24:19.052443+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "2164daab54a0",
+      "source": "Purdue Athletics MBB",
+      "title": "Senior Day Features a Bevy of Boilermaker Victories at the Pool",
+      "url": "https://purduesports.com/news/2026/01/10/senior-day-features-a-bevy-of-boilermaker-victories-at-the-pool",
+      "summary": "The Purdue women won 14 events vs. Illinois, 10 coming in 1-2 fashion.",
+      "date": "2026-01-10T23:06:00+00:00"
+    },
     {
       "id": "7acc16928fd6",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/01/4/5-purdue-rolls-wisconsin-as-smith-breaks-assist-record",
       "summary": "",
       "date": "2026-01-04T00:42:43+00:00"
-    },
-    {
-      "id": "d13d65b5ec57",
-      "source": "Purdue Athletics MBB",
-      "title": "#20 Purdue Finishes Strong to Salvage Doubleheader",
-      "url": "https://purduesports.com/news/2026/01/3/20-purdue-finishes-strong-to-salvage-doubleheader",
-      "summary": "Boilermakers win seven straight matches to close non-conference action.",
-      "date": "2026-01-03T03:42:05+00:00"
     }
   ]
 }
