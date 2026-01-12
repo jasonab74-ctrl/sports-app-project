@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-12T15:48:20.084172+00:00",
+  "updated": "2026-01-12T16:21:41.317864+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "a88dc884e262",
-      "source": "Purdue Athletics MBB",
-      "title": "Madison Layden-Zay Becomes Purdue's All-Time 3-Point Leader",
-      "url": "https://purduesports.com/news/2026/01/12/madison-layden-zay-becomes-purdues-all-time-3-point-leader",
-      "summary": "",
-      "date": "2026-01-12T14:22:26+00:00"
-    },
     {
       "id": "1aa5e111ddfe",
       "source": "Purdue Athletics MBB",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/01/6/matt-painter-media-session-purdue-mens-basketball",
       "summary": "",
       "date": "2026-01-06T19:58:00+00:00"
+    },
+    {
+      "id": "f63854166f53",
+      "source": "Purdue Athletics MBB",
+      "title": "Fletcher Loyer Media Session | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/01/6/fletcher-loyer-media-session-purdue-mens-basketball-1",
+      "summary": "",
+      "date": "2026-01-06T19:50:28+00:00"
     }
   ]
 }
