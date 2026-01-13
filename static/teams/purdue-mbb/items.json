@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-13T10:48:29.255526+00:00",
+  "updated": "2026-01-13T11:16:12.818403+00:00",
   "count": 20,
   "items": [
     {
@@ -148,20 +148,20 @@
       "date": "2026-01-08T03:52:00+00:00"
     },
     {
-      "id": "fdb1bc5c4679",
-      "source": "CBS Sports College Basketball",
-      "title": "Court Report: What being undefeated in January means for success in March; teams most like Indiana football",
-      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-news-2025-26-season-undefeated-teams-indiana-football-court-report/",
-      "summary": "And more: Why Purdue's Braden Smith is about to become a huge story and the 10 most disappointing teams at the midway mark",
-      "date": "2026-01-07T22:25:38+00:00"
-    },
-    {
       "id": "8b905a66f044",
       "source": "Purdue Athletics MBB",
       "title": "Matt Painter Media Session | Purdue Men's Basketball",
       "url": "https://purduesports.com/news/2026/01/6/matt-painter-media-session-purdue-mens-basketball",
       "summary": "",
       "date": "2026-01-06T19:58:00+00:00"
+    },
+    {
+      "id": "f63854166f53",
+      "source": "Purdue Athletics MBB",
+      "title": "Fletcher Loyer Media Session | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/01/6/fletcher-loyer-media-session-purdue-mens-basketball-1",
+      "summary": "",
+      "date": "2026-01-06T19:50:28+00:00"
     }
   ]
 }
