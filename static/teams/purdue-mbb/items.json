@@ -1,32 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-13T19:38:02.595841+00:00",
+  "updated": "2026-01-13T20:19:19.962645+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "75d83ed43596",
-      "source": "Purdue Athletics MBB",
-      "title": "Braden Smith Media Session vs. Iowa | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/01/13/braden-smith-media-session-vs-iowa-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-01-13T19:16:56+00:00"
-    },
-    {
-      "id": "73c498b14e46",
-      "source": "Purdue Athletics MBB",
-      "title": "Trey Kaufman-Renn Media Session vs. Iowa | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/01/13/trey-kaufman-renn-media-session-vs-iowa-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-01-13T19:15:13+00:00"
-    },
-    {
-      "id": "958bf87ce952",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Matt Painter Press Conference vs. Iowa | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/01/13/coach-matt-painter-press-conference-vs-iowa-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-01-13T19:13:41+00:00"
-    },
     {
       "id": "51024cb0f98d",
       "source": "Purdue Athletics MBB",
@@ -162,6 +138,30 @@
       "url": "https://purduesports.com/news/2026/01/8/coach-matt-painter-postgame-press-conference-vs-washington-purdue-mens-basketball",
       "summary": "",
       "date": "2026-01-08T04:34:36+00:00"
+    },
+    {
+      "id": "12e5c0eb495b",
+      "source": "Purdue Athletics MBB",
+      "title": "Player Postgame Press Conference vs. Washington | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/01/8/player-postgame-press-conference-vs-washington-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-01-08T04:15:41+00:00"
+    },
+    {
+      "id": "50f2ee4558c2",
+      "source": "Purdue Athletics MBB",
+      "title": "#5 Purdue Wins 6th Straight With Victory over Washington",
+      "url": "https://purduesports.com/news/2026/01/8/5-purdue-wins-6th-straight-with-win-over-washington",
+      "summary": "",
+      "date": "2026-01-08T03:52:00+00:00"
+    },
+    {
+      "id": "8b905a66f044",
+      "source": "Purdue Athletics MBB",
+      "title": "Matt Painter Media Session | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/01/6/matt-painter-media-session-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-01-06T19:58:00+00:00"
     }
   ]
 }
