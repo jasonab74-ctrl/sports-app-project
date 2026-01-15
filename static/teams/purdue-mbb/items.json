@@ -1,8 +1,32 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-15T04:25:50.739065+00:00",
+  "updated": "2026-01-15T04:57:15.344261+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "7628fc045408",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Men's Basketball vs. Iowa",
+      "url": "https://purduesports.com/news/2026/01/15/purdue-mens-basketball-vs-iowa",
+      "summary": "",
+      "date": "2026-01-15T02:51:24+00:00"
+    },
+    {
+      "id": "e581aa5a6800",
+      "source": "Purdue Athletics MBB",
+      "title": "#5 Purdue Remains Undefeated in Big Ten Play with Win Over Iowa",
+      "url": "https://purduesports.com/news/2026/01/15/5-purdue-remains-undefeated-in-big-ten-play-with-win-over-iowa",
+      "summary": "",
+      "date": "2026-01-15T02:08:01+00:00"
+    },
+    {
+      "id": "f4670f04e1bb",
+      "source": "Purdue Athletics MBB",
+      "title": "Event Wins at Home Finales Lead to Big Ten Weekly Honors",
+      "url": "https://purduesports.com/news/2026/01/14/event-wins-at-home-finales-lead-to-big-ten-weekly-honors",
+      "summary": "Boilermakers sweep Big Ten Diver of the Week awards & Dzirkalis earns his third Freshman of the Week honor.",
+      "date": "2026-01-14T21:58:00+00:00"
+    },
     {
       "id": "b73655471aa4",
       "source": "CBS Sports College Basketball",
@@ -34,14 +58,6 @@
       "url": "https://purduesports.com/news/2026/01/13/coach-matt-painter-press-conference-vs-iowa-purdue-mens-basketball",
       "summary": "",
       "date": "2026-01-13T19:13:41+00:00"
-    },
-    {
-      "id": "51024cb0f98d",
-      "source": "Purdue Athletics MBB",
-      "title": "#5 Purdue Wraps Up Homestand Wednesday vs. Iowa",
-      "url": "https://purduesports.com/news/2026/01/13/5-purdue-wraps-up-homestand-wednesday-vs-iowa",
-      "summary": "",
-      "date": "2026-01-13T14:52:52+00:00"
     },
     {
       "id": "a88dc884e262",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/01/9/2025-blooper-reel-purdue-volleyball",
       "summary": "",
       "date": "2026-01-09T18:58:11+00:00"
-    },
-    {
-      "id": "f41c7c58018f",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Picks Up Road Win at Wisconsin - Highlights",
-      "url": "https://purduesports.com/news/2026/01/9/purdue-picks-up-road-win-at-wisconsin-highlights",
-      "summary": "",
-      "date": "2026-01-09T02:47:42+00:00"
-    },
-    {
-      "id": "81cbf3dcfd3e",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights: #5 Purdue 81, Washington 73 | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/01/8/highlights-5-purdue-81-washington-73-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-01-08T17:30:19+00:00"
     }
   ]
 }
