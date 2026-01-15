@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-15T01:15:49.045831+00:00",
+  "updated": "2026-01-15T03:14:10.257641+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "7628fc045408",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Men's Basketball vs. Iowa",
+      "url": "https://purduesports.com/news/2026/01/15/purdue-mens-basketball-vs-iowa",
+      "summary": "",
+      "date": "2026-01-15T02:51:24+00:00"
+    },
+    {
+      "id": "e581aa5a6800",
+      "source": "Purdue Athletics MBB",
+      "title": "#5 Purdue Remains Undefeated in Big Ten Play with Win Over Iowa",
+      "url": "https://purduesports.com/news/2026/01/15/5-purdue-remains-undefeated-in-big-ten-play-with-win-over-iowa",
+      "summary": "",
+      "date": "2026-01-15T02:08:01+00:00"
+    },
     {
       "id": "b73655471aa4",
       "source": "CBS Sports College Basketball",
@@ -34,14 +50,6 @@
       "url": "https://purduesports.com/news/2026/01/13/coach-matt-painter-press-conference-vs-iowa-purdue-mens-basketball",
       "summary": "",
       "date": "2026-01-13T19:13:41+00:00"
-    },
-    {
-      "id": "51024cb0f98d",
-      "source": "Purdue Athletics MBB",
-      "title": "#5 Purdue Wraps Up Homestand Wednesday vs. Iowa",
-      "url": "https://purduesports.com/news/2026/01/13/5-purdue-wraps-up-homestand-wednesday-vs-iowa",
-      "summary": "",
-      "date": "2026-01-13T14:52:52+00:00"
     },
     {
       "id": "a88dc884e262",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/01/9/purdue-picks-up-road-win-at-wisconsin-highlights",
       "summary": "",
       "date": "2026-01-09T02:47:42+00:00"
-    },
-    {
-      "id": "81cbf3dcfd3e",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights: #5 Purdue 81, Washington 73 | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/01/8/highlights-5-purdue-81-washington-73-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-01-08T17:30:19+00:00"
     }
   ]
 }
