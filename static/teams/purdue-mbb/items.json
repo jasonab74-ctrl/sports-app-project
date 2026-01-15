@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-15T06:26:36.653454+00:00",
+  "updated": "2026-01-15T06:57:06.345327+00:00",
   "count": 20,
   "items": [
     {
@@ -12,12 +12,36 @@
       "date": "2026-01-15T02:51:24+00:00"
     },
     {
+      "id": "c3bbe01a664e",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights: #5 Purdue 79, Iowa 72",
+      "url": "https://purduesports.com/news/2026/01/15/highlights-5-purdue-79-iowa-72",
+      "summary": "",
+      "date": "2026-01-15T02:38:07+00:00"
+    },
+    {
+      "id": "9b31d7b756dd",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Matt Painter Postgame Press Conference vs. Iowa | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/01/15/coach-matt-painter-postgame-press-conference-vs-iowa-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-01-15T02:30:28+00:00"
+    },
+    {
       "id": "e581aa5a6800",
       "source": "Purdue Athletics MBB",
       "title": "#5 Purdue Remains Undefeated in Big Ten Play with Win Over Iowa",
       "url": "https://purduesports.com/news/2026/01/15/5-purdue-remains-undefeated-in-big-ten-play-with-win-over-iowa",
       "summary": "",
       "date": "2026-01-15T02:08:01+00:00"
+    },
+    {
+      "id": "11a469aea17e",
+      "source": "Purdue Athletics MBB",
+      "title": "Players' Postgame Press Conference vs. Iowa | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/01/15/players-postgame-press-conference-vs-iowa-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-01-15T02:05:07+00:00"
     },
     {
       "id": "f4670f04e1bb",
@@ -138,30 +162,6 @@
       "url": "https://purduesports.com/news/2026/01/10/blaze-dominates-top-10-showdown-in-20-purdues-loss-at-7-nebraska",
       "summary": "",
       "date": "2026-01-10T04:24:54+00:00"
-    },
-    {
-      "id": "3d0dbf7b73ce",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Concludes First Day in Louisville",
-      "url": "https://purduesports.com/news/2026/01/10/purdue-concludes-first-day-in-louisville",
-      "summary": "",
-      "date": "2026-01-10T01:41:02+00:00"
-    },
-    {
-      "id": "d9817412b75e",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Wins 16 of 17 Events vs. SIU",
-      "url": "https://purduesports.com/news/2026/01/9/purdue-wins-16-of-17-events-vs-siu",
-      "summary": "Four Boilermakers won multiple individual events and the Divers posted four 400-point list scores in the decisive dual victory.",
-      "date": "2026-01-09T23:24:00+00:00"
-    },
-    {
-      "id": "63fad599e5a5",
-      "source": "Purdue Athletics MBB",
-      "title": "2025 Blooper Reel | Purdue Volleyball",
-      "url": "https://purduesports.com/news/2026/01/9/2025-blooper-reel-purdue-volleyball",
-      "summary": "",
-      "date": "2026-01-09T18:58:11+00:00"
     }
   ]
 }
