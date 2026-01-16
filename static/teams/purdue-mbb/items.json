@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-16T14:18:53.012438+00:00",
+  "updated": "2026-01-16T14:47:45.637167+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "59ea02efaaf5",
+      "source": "Purdue Athletics MBB",
+      "title": "#5 Purdue Heads West to Battle USC",
+      "url": "https://purduesports.com/news/2026/01/16/5-purdue-heads-west-to-battle-usc",
+      "summary": "",
+      "date": "2026-01-16T14:15:00+00:00"
+    },
     {
       "id": "a8d129aff820",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/01/10/players-postgame-press-conference-vs-penn-state-purdue-mens-basketball",
       "summary": "",
       "date": "2026-01-10T21:55:58+00:00"
-    },
-    {
-      "id": "8de4137f4d33",
-      "source": "Purdue Athletics MBB",
-      "title": "#5 Purdue Remains Undefeated in Big Ten Play with Win Over Penn State",
-      "url": "https://purduesports.com/news/2026/01/10/5-purdue-remains-undefeated-in-big-ten-play-with-win-over-penn-state",
-      "summary": "",
-      "date": "2026-01-10T21:22:42+00:00"
     }
   ]
 }
