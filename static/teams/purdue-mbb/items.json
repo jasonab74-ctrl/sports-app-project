@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-16T18:25:13.345389+00:00",
+  "updated": "2026-01-16T18:54:27.128933+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "2e9ba55188e8",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Opens West Coast Swing at USC on Sunday",
-      "url": "https://purduesports.com/news/2026/01/16/purdue-opens-west-coast-swing-at-usc-on-sunday",
-      "summary": "",
-      "date": "2026-01-16T15:09:00+00:00"
-    },
     {
       "id": "59ea02efaaf5",
       "source": "Purdue Athletics MBB",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/01/10/coach-matt-painter-press-conference-vs-penn-state-purdue-mens-basketball",
       "summary": "",
       "date": "2026-01-10T21:56:57+00:00"
+    },
+    {
+      "id": "b99ce318fc0c",
+      "source": "Purdue Athletics MBB",
+      "title": "Players Postgame Press Conference vs. Penn State | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/01/10/players-postgame-press-conference-vs-penn-state-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-01-10T21:55:58+00:00"
     }
   ]
 }
