@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-18T20:17:50.671025+00:00",
+  "updated": "2026-01-18T20:41:41.827363+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "4e5968ff74f2",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights: #20 Purdue 28, #18 Maryland | Purdue Wrestling",
+      "url": "https://purduesports.com/news/2026/01/18/highlights-20-purdue-28-18-maryland-purdue-wrestling",
+      "summary": "",
+      "date": "2026-01-18T19:55:59+00:00"
+    },
+    {
+      "id": "f3766b92c80d",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights: #5 Purdue 69, USC 64",
+      "url": "https://purduesports.com/news/2026/01/18/highlights-5-purdue-69-usc-64",
+      "summary": "",
+      "date": "2026-01-18T19:36:08+00:00"
+    },
     {
       "id": "04657f4f7ace",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/01/11/highlights-5-purdue-93-penn-state-85-purdue-mens-basketball",
       "summary": "",
       "date": "2026-01-11T21:55:04+00:00"
-    },
-    {
-      "id": "7cb3fbbe3157",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Katie Gearlds Postgame Press Conference vs. #23 Washington | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2026/01/11/coach-katie-gearlds-postgame-press-conference-vs-23-washington-purdue-womens-basketball",
-      "summary": "",
-      "date": "2026-01-11T21:53:32+00:00"
-    },
-    {
-      "id": "5d054f0a4bb7",
-      "source": "Purdue Athletics MBB",
-      "title": "Players Postgame Press Conference vs. #23 Washington | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2026/01/11/players-postgame-press-conference-vs-23-washington-purdue-womens-basketball",
-      "summary": "",
-      "date": "2026-01-11T21:40:01+00:00"
     }
   ]
 }
