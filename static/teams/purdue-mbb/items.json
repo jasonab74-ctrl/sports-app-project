@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-18T22:14:58.283552+00:00",
+  "updated": "2026-01-18T22:42:26.792678+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "57926e16aba0",
+      "source": "Purdue Athletics MBB",
+      "title": "#20 Purdue Falls, Finishes Long Road Stretch at #21 Rutgers",
+      "url": "https://purduesports.com/news/2026/01/18/20-purdue-falls-finishes-long-road-stretch-at-21-rutgers",
+      "summary": "Purdue picked up three clutch match wins in the team loss.",
+      "date": "2026-01-18T21:15:34+00:00"
+    },
     {
       "id": "4e5968ff74f2",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/01/11/boilermakers-upset-23-washington-in-overtime-purdue-womens-basketball",
       "summary": "",
       "date": "2026-01-11T22:03:18+00:00"
-    },
-    {
-      "id": "1127cb50aa41",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights: #5 Purdue 93, Penn State 85 | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/01/11/highlights-5-purdue-93-penn-state-85-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-01-11T21:55:04+00:00"
     }
   ]
 }
