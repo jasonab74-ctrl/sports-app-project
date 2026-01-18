@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-18T01:23:24.807155+00:00",
+  "updated": "2026-01-18T03:20:05.302828+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "04657f4f7ace",
+      "source": "Purdue Athletics MBB",
+      "title": "#5 Purdue Rallies to Top USC 69-64",
+      "url": "https://purduesports.com/news/2026/01/18/5-purdue-rallies-to-top-usc-69-64",
+      "summary": "",
+      "date": "2026-01-18T02:03:03+00:00"
+    },
     {
       "id": "ba668201a51e",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/01/11/highlights-5-purdue-93-penn-state-85-purdue-mens-basketball",
       "summary": "",
       "date": "2026-01-11T21:55:04+00:00"
-    },
-    {
-      "id": "7cb3fbbe3157",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Katie Gearlds Postgame Press Conference vs. #23 Washington | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2026/01/11/coach-katie-gearlds-postgame-press-conference-vs-23-washington-purdue-womens-basketball",
-      "summary": "",
-      "date": "2026-01-11T21:53:32+00:00"
     }
   ]
 }
