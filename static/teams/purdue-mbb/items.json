@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-18T03:20:05.302828+00:00",
+  "updated": "2026-01-18T04:27:10.271283+00:00",
   "count": 20,
   "items": [
     {
@@ -42,22 +42,6 @@
       "url": "https://purduesports.com/news/2026/01/16/purdue-opens-west-coast-swing-at-usc-on-sunday",
       "summary": "",
       "date": "2026-01-16T15:09:00+00:00"
-    },
-    {
-      "id": "59ea02efaaf5",
-      "source": "Purdue Athletics MBB",
-      "title": "#5 Purdue Heads West to Battle USC",
-      "url": "https://purduesports.com/news/2026/01/16/5-purdue-heads-west-to-battle-usc",
-      "summary": "",
-      "date": "2026-01-16T14:15:00+00:00"
-    },
-    {
-      "id": "a8d129aff820",
-      "source": "Purdue Athletics MBB",
-      "title": "#20 Purdue Closes Road Stretch at #18 Maryland, #21 Rutgers",
-      "url": "https://purduesports.com/news/2026/01/15/20-purdue-closes-road-stretch-at-18-maryland-21-rutgers",
-      "summary": "",
-      "date": "2026-01-15T19:20:34+00:00"
     },
     {
       "id": "7628fc045408",
@@ -162,6 +146,22 @@
       "url": "https://purduesports.com/news/2026/01/11/highlights-5-purdue-93-penn-state-85-purdue-mens-basketball",
       "summary": "",
       "date": "2026-01-11T21:55:04+00:00"
+    },
+    {
+      "id": "7cb3fbbe3157",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Katie Gearlds Postgame Press Conference vs. #23 Washington | Purdue Women's Basketball",
+      "url": "https://purduesports.com/news/2026/01/11/coach-katie-gearlds-postgame-press-conference-vs-23-washington-purdue-womens-basketball",
+      "summary": "",
+      "date": "2026-01-11T21:53:32+00:00"
+    },
+    {
+      "id": "5d054f0a4bb7",
+      "source": "Purdue Athletics MBB",
+      "title": "Players Postgame Press Conference vs. #23 Washington | Purdue Women's Basketball",
+      "url": "https://purduesports.com/news/2026/01/11/players-postgame-press-conference-vs-23-washington-purdue-womens-basketball",
+      "summary": "",
+      "date": "2026-01-11T21:40:01+00:00"
     }
   ]
 }
