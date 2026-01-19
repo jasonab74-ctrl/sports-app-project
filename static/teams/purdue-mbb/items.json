@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-19T19:38:35.695003+00:00",
+  "updated": "2026-01-19T20:18:42.578892+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "435fe910bb93",
+      "source": "Purdue Athletics MBB",
+      "title": "#4 Purdue Wraps Up West Coast Swing Tuesday at UCLA",
+      "url": "https://purduesports.com/news/2026/01/19/4-purdue-wraps-up-west-coast-swing-tuesday-at-ucla",
+      "summary": "",
+      "date": "2026-01-19T19:07:51+00:00"
+    },
+    {
+      "id": "4d72e907e89b",
+      "source": "Purdue Athletics MBB",
+      "title": "Goff Honored by FCA with Kindall Character in Coaching Award",
+      "url": "https://purduesports.com/news/2026/01/19/goff-honored-by-fca-with-kindall-character-in-coaching-award",
+      "summary": "Purdue head coach recognized for his commitment to character, integrity, excellence, teamwork and service",
+      "date": "2026-01-19T18:01:00+00:00"
+    },
     {
       "id": "142d87f770aa",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/01/13/trey-kaufman-renn-media-session-vs-iowa-purdue-mens-basketball",
       "summary": "",
       "date": "2026-01-13T19:15:13+00:00"
-    },
-    {
-      "id": "958bf87ce952",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Matt Painter Press Conference vs. Iowa | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/01/13/coach-matt-painter-press-conference-vs-iowa-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-01-13T19:13:41+00:00"
-    },
-    {
-      "id": "a88dc884e262",
-      "source": "Purdue Athletics MBB",
-      "title": "Madison Layden-Zay Becomes Purdue's All-Time 3-Point Leader",
-      "url": "https://purduesports.com/news/2026/01/12/madison-layden-zay-becomes-purdues-all-time-3-point-leader",
-      "summary": "",
-      "date": "2026-01-12T14:22:26+00:00"
     }
   ]
 }
