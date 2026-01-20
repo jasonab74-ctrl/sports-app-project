@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-20T20:40:08.200420+00:00",
+  "updated": "2026-01-20T21:16:03.232793+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "c8f349f25e37",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue to Host Diving Events at B1G Triple Duals",
+      "url": "https://purduesports.com/news/2026/01/20/purdue-to-host-diving-events-at-b1g-triple-duals",
+      "summary": "Divers to compete on platform Friday, 1-meter Saturday the weekend of Jan. 30-31",
+      "date": "2026-01-20T19:40:17+00:00"
+    },
     {
       "id": "435fe910bb93",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/01/13/trey-kaufman-renn-media-session-vs-iowa-purdue-mens-basketball",
       "summary": "",
       "date": "2026-01-13T19:15:13+00:00"
-    },
-    {
-      "id": "958bf87ce952",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Matt Painter Press Conference vs. Iowa | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/01/13/coach-matt-painter-press-conference-vs-iowa-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-01-13T19:13:41+00:00"
     }
   ]
 }
