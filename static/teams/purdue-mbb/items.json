@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-20T12:38:49.006966+00:00",
+  "updated": "2026-01-20T13:42:10.418057+00:00",
   "count": 20,
   "items": [
     {
@@ -140,14 +140,6 @@
       "date": "2026-01-14T21:58:00+00:00"
     },
     {
-      "id": "b73655471aa4",
-      "source": "CBS Sports College Basketball",
-      "title": "Purdue vs. Iowa odds, spread, time: 2026 college basketball picks for Jan. 14 from proven model",
-      "url": "https://www.cbssports.com/college-basketball/news/purdue-iowa-odds-spread-time-2026-college-basketball-picks-wednesday-january-14/",
-      "summary": "SportsLine's model simulated Iowa Hawkeyes vs. Purdue Boilermakers on Wednesday 10,000 times",
-      "date": "2026-01-14T20:46:29+00:00"
-    },
-    {
       "id": "75d83ed43596",
       "source": "Purdue Athletics MBB",
       "title": "Braden Smith Media Session vs. Iowa | Purdue Men's Basketball",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/01/13/trey-kaufman-renn-media-session-vs-iowa-purdue-mens-basketball",
       "summary": "",
       "date": "2026-01-13T19:15:13+00:00"
+    },
+    {
+      "id": "958bf87ce952",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Matt Painter Press Conference vs. Iowa | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/01/13/coach-matt-painter-press-conference-vs-iowa-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-01-13T19:13:41+00:00"
     }
   ]
 }
