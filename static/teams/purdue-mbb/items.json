@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-20T22:18:30.800705+00:00",
+  "updated": "2026-01-20T22:42:56.797729+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "63538e12a224",
+      "source": "CBS Sports College Basketball",
+      "title": "Kylan Boswell injury: Illinois star guard fractures hand, out for a month with showdown vs. Purdue looming",
+      "url": "https://www.cbssports.com/college-basketball/news/kylan-boswell-injury-illinois-guard-hand-injury/",
+      "summary": "Here is how Illinois' rotation will change without Boswell, who is one of the elite defenders in the Big Ten",
+      "date": "2026-01-20T22:10:08+00:00"
+    },
     {
       "id": "c8f349f25e37",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/01/13/braden-smith-media-session-vs-iowa-purdue-mens-basketball",
       "summary": "",
       "date": "2026-01-13T19:16:56+00:00"
-    },
-    {
-      "id": "73c498b14e46",
-      "source": "Purdue Athletics MBB",
-      "title": "Trey Kaufman-Renn Media Session vs. Iowa | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/01/13/trey-kaufman-renn-media-session-vs-iowa-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-01-13T19:15:13+00:00"
     }
   ]
 }
