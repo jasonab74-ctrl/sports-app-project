@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-21T08:54:29.559322+00:00",
+  "updated": "2026-01-21T09:28:02.565426+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "6f628572a223",
+      "source": "Purdue Athletics MBB",
+      "title": "UCLA Rallies Past #4 Purdue to Hand Boilers 1st League Loss",
+      "url": "https://purduesports.com/news/2026/01/21/ucla-rallies-past-4-purdue-to-hand-boilers-1st-league-loss",
+      "summary": "",
+      "date": "2026-01-21T07:00:01+00:00"
+    },
     {
       "id": "63538e12a224",
       "source": "CBS Sports College Basketball",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/01/14/event-wins-at-home-finales-lead-to-big-ten-weekly-honors",
       "summary": "Boilermakers sweep Big Ten Diver of the Week awards & Dzirkalis earns his third Freshman of the Week honor.",
       "date": "2026-01-14T21:58:00+00:00"
-    },
-    {
-      "id": "75d83ed43596",
-      "source": "Purdue Athletics MBB",
-      "title": "Braden Smith Media Session vs. Iowa | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/01/13/braden-smith-media-session-vs-iowa-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-01-13T19:16:56+00:00"
     }
   ]
 }
