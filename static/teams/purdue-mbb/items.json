@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-22T16:28:11.288182+00:00",
+  "updated": "2026-01-22T17:00:53.008027+00:00",
   "count": 20,
   "items": [
     {
@@ -108,14 +108,6 @@
       "date": "2026-01-17T19:06:00+00:00"
     },
     {
-      "id": "d77be56ae515",
-      "source": "CBS Sports College Basketball",
-      "title": "College basketball picks, schedule: Predictions for Top 25 games with Duke, Purdue in action Saturday",
-      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-picks-predictions-odds-betting-lines-top-25-duke-purdue/",
-      "summary": "Sixteen ranked teams are on the road Saturday, setting up a potentially noisy slate in college hoops",
-      "date": "2026-01-17T18:59:10+00:00"
-    },
-    {
       "id": "95a1098bfb38",
       "source": "Purdue Athletics MBB",
       "title": "#20 Purdue Shells #18 Terps in Big Ten Road Win",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/01/15/players-postgame-press-conference-vs-iowa-purdue-mens-basketball",
       "summary": "",
       "date": "2026-01-15T02:05:07+00:00"
+    },
+    {
+      "id": "f4670f04e1bb",
+      "source": "Purdue Athletics MBB",
+      "title": "Event Wins at Home Finales Lead to Big Ten Weekly Honors",
+      "url": "https://purduesports.com/news/2026/01/14/event-wins-at-home-finales-lead-to-big-ten-weekly-honors",
+      "summary": "Boilermakers sweep Big Ten Diver of the Week awards & Dzirkalis earns his third Freshman of the Week honor.",
+      "date": "2026-01-14T21:58:00+00:00"
     }
   ]
 }
