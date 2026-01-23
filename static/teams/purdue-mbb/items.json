@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-23T17:46:19.039170+00:00",
+  "updated": "2026-01-23T18:26:05.904191+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "1ad9c9545f25",
+      "source": "Purdue Athletics MBB",
+      "title": "#4 Purdue Battles #11 Illinois in Saturday Showdown at Mackey",
+      "url": "https://purduesports.com/news/2026/01/23/4-purdue-battles-11-illinois-in-saturday-showdown-at-mackey",
+      "summary": "",
+      "date": "2026-01-23T17:17:47+00:00"
+    },
     {
       "id": "0d9d0b96fecf",
       "source": "CBS Sports College Basketball",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/01/15/coach-matt-painter-postgame-press-conference-vs-iowa-purdue-mens-basketball",
       "summary": "",
       "date": "2026-01-15T02:30:28+00:00"
-    },
-    {
-      "id": "e581aa5a6800",
-      "source": "Purdue Athletics MBB",
-      "title": "#5 Purdue Remains Undefeated in Big Ten Play with Win Over Iowa",
-      "url": "https://purduesports.com/news/2026/01/15/5-purdue-remains-undefeated-in-big-ten-play-with-win-over-iowa",
-      "summary": "",
-      "date": "2026-01-15T02:08:01+00:00"
     }
   ]
 }
