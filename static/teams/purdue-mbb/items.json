@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-23T16:55:05.280350+00:00",
+  "updated": "2026-01-23T17:22:26.555974+00:00",
   "count": 20,
   "items": [
     {
@@ -10,6 +10,14 @@
       "url": "https://www.cbssports.com/college-basketball/news/bracketology-ncaa-tournament-bracket-field-of-68-predictions-houston-uconn/",
       "summary": "The Big Ten has two teams on the No. 1 seed line for now, but there are many worthy challengers",
       "date": "2026-01-23T16:06:25+00:00"
+    },
+    {
+      "id": "0926c9a989b2",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Finalizes Top 25 Portal Class with 32 New Boilermakers",
+      "url": "https://purduesports.com/news/2026/01/23/purdue-finalizes-top-25-portal-class-with-32-new-boilermakers",
+      "summary": "",
+      "date": "2026-01-23T15:10:53+00:00"
     },
     {
       "id": "29de20b7784e",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/01/15/5-purdue-remains-undefeated-in-big-ten-play-with-win-over-iowa",
       "summary": "",
       "date": "2026-01-15T02:08:01+00:00"
-    },
-    {
-      "id": "11a469aea17e",
-      "source": "Purdue Athletics MBB",
-      "title": "Players' Postgame Press Conference vs. Iowa | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/01/15/players-postgame-press-conference-vs-iowa-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-01-15T02:05:07+00:00"
     }
   ]
 }
