@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-23T21:16:45.673261+00:00",
+  "updated": "2026-01-23T21:41:36.246167+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "e8faa39b8c0f",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Barry Odom Portal Class Press Conference | Purdue Football",
+      "url": "https://purduesports.com/news/2026/01/23/coach-barry-odom-portal-class-press-conference-purdue-football",
+      "summary": "",
+      "date": "2026-01-23T20:42:14+00:00"
+    },
     {
       "id": "fa77442e69bb",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/01/17/20-purdue-shells-18-terps-in-big-ten-road-win",
       "summary": "The short-handed Boilermakers took five wins for bonus points.",
       "date": "2026-01-17T03:27:03+00:00"
-    },
-    {
-      "id": "7628fc045408",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Men's Basketball vs. Iowa",
-      "url": "https://purduesports.com/news/2026/01/15/purdue-mens-basketball-vs-iowa",
-      "summary": "",
-      "date": "2026-01-15T02:51:24+00:00"
     }
   ]
 }
