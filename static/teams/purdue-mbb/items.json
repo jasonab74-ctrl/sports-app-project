@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-23T16:23:15.335859+00:00",
+  "updated": "2026-01-23T16:55:05.280350+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "0d9d0b96fecf",
+      "source": "CBS Sports College Basketball",
+      "title": "Bracketology: No. 2 seeds Houston, UConn, Purdue, Iowa State ready to move up if teams on top line go down",
+      "url": "https://www.cbssports.com/college-basketball/news/bracketology-ncaa-tournament-bracket-field-of-68-predictions-houston-uconn/",
+      "summary": "The Big Ten has two teams on the No. 1 seed line for now, but there are many worthy challengers",
+      "date": "2026-01-23T16:06:25+00:00"
+    },
     {
       "id": "29de20b7784e",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/01/15/players-postgame-press-conference-vs-iowa-purdue-mens-basketball",
       "summary": "",
       "date": "2026-01-15T02:05:07+00:00"
-    },
-    {
-      "id": "f4670f04e1bb",
-      "source": "Purdue Athletics MBB",
-      "title": "Event Wins at Home Finales Lead to Big Ten Weekly Honors",
-      "url": "https://purduesports.com/news/2026/01/14/event-wins-at-home-finales-lead-to-big-ten-weekly-honors",
-      "summary": "Boilermakers sweep Big Ten Diver of the Week awards & Dzirkalis earns his third Freshman of the Week honor.",
-      "date": "2026-01-14T21:58:00+00:00"
     }
   ]
 }
