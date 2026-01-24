@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-24T04:53:17.191593+00:00",
+  "updated": "2026-01-24T05:17:36.558800+00:00",
   "count": 20,
   "items": [
     {
@@ -92,6 +92,14 @@
       "date": "2026-01-22T03:39:00+00:00"
     },
     {
+      "id": "d2ef4d3db36f",
+      "source": "Purdue Athletics MBB",
+      "title": "#17 Purdue to Host Michigan State in B1G Home Opener on Friday",
+      "url": "https://purduesports.com/news/2026/01/21/17-purdue-to-host-michigan-state-in-b1g-home-opener-on-friday",
+      "summary": "Boilers host their annual Hammer Down Cancer dual in Holloway Gymnasium.",
+      "date": "2026-01-21T23:01:55+00:00"
+    },
+    {
       "id": "6f628572a223",
       "source": "Purdue Athletics MBB",
       "title": "UCLA Rallies Past #4 Purdue to Hand Boilers 1st League Loss",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/01/18/highlights-20-purdue-28-18-maryland-purdue-wrestling",
       "summary": "",
       "date": "2026-01-18T19:55:59+00:00"
-    },
-    {
-      "id": "f3766b92c80d",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights: #5 Purdue 69, USC 64",
-      "url": "https://purduesports.com/news/2026/01/18/highlights-5-purdue-69-usc-64",
-      "summary": "",
-      "date": "2026-01-18T19:36:08+00:00"
     }
   ]
 }
