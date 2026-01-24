@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-24T20:41:17.951385+00:00",
+  "updated": "2026-01-24T21:14:05.997079+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "1a577e594e15",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights: #17 Purdue 27, Michigan State 9",
+      "url": "https://purduesports.com/news/2026/01/24/highlights-17-purdue-27-michigan-state-9",
+      "summary": "",
+      "date": "2026-01-24T21:00:47+00:00"
+    },
     {
       "id": "17e66c8cfabb",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/01/18/purdue-drops-west-coast-opener-at-usc",
       "summary": "",
       "date": "2026-01-18T20:39:00+00:00"
-    },
-    {
-      "id": "4e5968ff74f2",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights: #20 Purdue 28, #18 Maryland | Purdue Wrestling",
-      "url": "https://purduesports.com/news/2026/01/18/highlights-20-purdue-28-18-maryland-purdue-wrestling",
-      "summary": "",
-      "date": "2026-01-18T19:55:59+00:00"
     }
   ]
 }
