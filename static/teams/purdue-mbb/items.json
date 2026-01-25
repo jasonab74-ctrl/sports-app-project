@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-25T22:15:38.781872+00:00",
+  "updated": "2026-01-25T22:43:24.245788+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "69012cf2074b",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Katie Gearlds Postgame Press Conference vs. Indiana | Purdue Women's Basketball",
+      "url": "https://purduesports.com/news/2026/01/25/coach-katie-gearlds-postgame-press-conference-vs-indiana-purdue-womens-basketball",
+      "summary": "",
+      "date": "2026-01-25T22:07:24+00:00"
+    },
     {
       "id": "260f41f6c701",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/01/20/purdue-to-host-diving-events-at-b1g-triple-duals",
       "summary": "Divers to compete on platform Friday, 1-meter Saturday the weekend of Jan. 30-31",
       "date": "2026-01-20T19:40:17+00:00"
-    },
-    {
-      "id": "4d72e907e89b",
-      "source": "Purdue Athletics MBB",
-      "title": "Goff Honored by FCA with Kindall Character in Coaching Award",
-      "url": "https://purduesports.com/news/2026/01/19/goff-honored-by-fca-with-kindall-character-in-coaching-award",
-      "summary": "Purdue head coach recognized for his commitment to character, integrity, excellence, teamwork and service",
-      "date": "2026-01-19T18:01:00+00:00"
     }
   ]
 }
