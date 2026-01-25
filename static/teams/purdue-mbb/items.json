@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-25T04:36:09.459391+00:00",
+  "updated": "2026-01-25T05:24:25.038064+00:00",
   "count": 20,
   "items": [
     {
@@ -36,6 +36,14 @@
       "date": "2026-01-24T21:00:47+00:00"
     },
     {
+      "id": "4478bcd836c2",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Wins 3 of 4 in Diving, Butterfly in Dual at Top-10 Indiana",
+      "url": "https://purduesports.com/news/2026/01/24/purdue-wins-3-of-4-in-diving-butterfly-in-dual-at-top-10-indiana",
+      "summary": "",
+      "date": "2026-01-24T19:13:00+00:00"
+    },
+    {
       "id": "17e66c8cfabb",
       "source": "Purdue Athletics MBB",
       "title": "Purdue Hosts Indiana for Barn Burner Trophy Game Sunday on BTN",
@@ -60,28 +68,12 @@
       "date": "2026-01-24T01:31:59+00:00"
     },
     {
-      "id": "da207d04ae47",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Finishes Opening Day at the Crossroads of America Invitational",
-      "url": "https://purduesports.com/news/2026/01/24/purdue-finishes-opening-day-at-the-crossroads-of-america-invitational",
-      "summary": "",
-      "date": "2026-01-24T01:15:41+00:00"
-    },
-    {
       "id": "148b0a51c274",
       "source": "Purdue Athletics MBB",
       "title": "Purdue Downs Old Dominion, 4-1",
       "url": "https://purduesports.com/news/2026/01/23/purdue-downs-old-dominion-4-1",
       "summary": "",
       "date": "2026-01-23T23:06:00+00:00"
-    },
-    {
-      "id": "8d63d4543dd4",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Make Biennial January Trip to Bloomington",
-      "url": "https://purduesports.com/news/2026/01/23/boilermakers-make-biennial-january-trip-to-bloomington",
-      "summary": "Indiana and Purdue a combined 20-3 in dual meet action this season.",
-      "date": "2026-01-23T20:52:00+00:00"
     },
     {
       "id": "e8faa39b8c0f",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/01/18/wten-recap-illinois-st",
       "summary": "",
       "date": "2026-01-18T23:20:00+00:00"
+    },
+    {
+      "id": "57926e16aba0",
+      "source": "Purdue Athletics MBB",
+      "title": "#20 Purdue Falls, Finishes Long Road Stretch at #21 Rutgers",
+      "url": "https://purduesports.com/news/2026/01/18/20-purdue-falls-finishes-long-road-stretch-at-21-rutgers",
+      "summary": "Purdue picked up three clutch match wins in the team loss.",
+      "date": "2026-01-18T21:15:34+00:00"
     }
   ]
 }
