@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-26T03:29:15.944933+00:00",
+  "updated": "2026-01-26T04:41:13.678599+00:00",
   "count": 20,
   "items": [
     {
@@ -74,14 +74,6 @@
       "url": "https://purduesports.com/news/2026/01/24/purdue-wins-3-of-4-in-diving-butterfly-in-dual-at-top-10-indiana",
       "summary": "",
       "date": "2026-01-24T19:13:00+00:00"
-    },
-    {
-      "id": "17e66c8cfabb",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Hosts Indiana for Barn Burner Trophy Game Sunday on BTN",
-      "url": "https://purduesports.com/news/2026/01/24/purdue-hosts-indiana-for-barn-burner-trophy-game-sunday-on-btn",
-      "summary": "",
-      "date": "2026-01-24T15:09:00+00:00"
     },
     {
       "id": "d0a95c719295",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/01/21/ucla-rallies-past-4-purdue-to-hand-boilers-1st-league-loss",
       "summary": "",
       "date": "2026-01-21T07:00:01+00:00"
+    },
+    {
+      "id": "c8f349f25e37",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue to Host Diving Events at B1G Triple Duals",
+      "url": "https://purduesports.com/news/2026/01/20/purdue-to-host-diving-events-at-b1g-triple-duals",
+      "summary": "Divers to compete on platform Friday, 1-meter Saturday the weekend of Jan. 30-31",
+      "date": "2026-01-20T19:40:17+00:00"
     }
   ]
 }
