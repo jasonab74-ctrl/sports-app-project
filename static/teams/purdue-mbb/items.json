@@ -1,8 +1,32 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-26T18:27:51.674589+00:00",
+  "updated": "2026-01-26T19:00:31.615586+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "3d55aedc000a",
+      "source": "CBS Sports College Basketball",
+      "title": "Duke, Nebraska get AP Top 25 boosts, Purdue falls in college basketball rankings",
+      "url": "https://www.cbssports.com/college-basketball/news/ap-top-25-college-basketball-rankings-duke-nebraska-purdue/",
+      "summary": "There was movement in the top 10 of the latest AP Top 25 poll",
+      "date": "2026-01-26T18:07:38+00:00"
+    },
+    {
+      "id": "c00898487fcb",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Matt Painter Press Conference vs. Indiana | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/01/26/coach-matt-painter-press-conference-vs-indiana-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-01-26T18:03:58+00:00"
+    },
+    {
+      "id": "226a8fe81709",
+      "source": "Purdue Athletics MBB",
+      "title": "#12 Purdue Travels to Indiana for Tuesday Night Rivalry Game",
+      "url": "https://purduesports.com/news/2026/01/26/12-purdue-travels-to-indiana-for-tuesday-night-rivalry-game",
+      "summary": "",
+      "date": "2026-01-26T16:39:45+00:00"
+    },
     {
       "id": "1c51fe712470",
       "source": "Purdue Athletics MBB",
@@ -138,30 +162,6 @@
       "url": "https://purduesports.com/news/2026/01/22/purdue-drops-west-coast-finale-at-3-ucla",
       "summary": "",
       "date": "2026-01-22T03:39:00+00:00"
-    },
-    {
-      "id": "6f628572a223",
-      "source": "Purdue Athletics MBB",
-      "title": "UCLA Rallies Past #4 Purdue to Hand Boilers 1st League Loss",
-      "url": "https://purduesports.com/news/2026/01/21/ucla-rallies-past-4-purdue-to-hand-boilers-1st-league-loss",
-      "summary": "",
-      "date": "2026-01-21T07:00:01+00:00"
-    },
-    {
-      "id": "c8f349f25e37",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue to Host Diving Events at B1G Triple Duals",
-      "url": "https://purduesports.com/news/2026/01/20/purdue-to-host-diving-events-at-b1g-triple-duals",
-      "summary": "Divers to compete on platform Friday, 1-meter Saturday the weekend of Jan. 30-31",
-      "date": "2026-01-20T19:40:17+00:00"
-    },
-    {
-      "id": "4d72e907e89b",
-      "source": "Purdue Athletics MBB",
-      "title": "Goff Honored by FCA with Kindall Character in Coaching Award",
-      "url": "https://purduesports.com/news/2026/01/19/goff-honored-by-fca-with-kindall-character-in-coaching-award",
-      "summary": "Purdue head coach recognized for his commitment to character, integrity, excellence, teamwork and service",
-      "date": "2026-01-19T18:01:00+00:00"
     }
   ]
 }
