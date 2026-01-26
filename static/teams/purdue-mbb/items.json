@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-26T17:00:47.355303+00:00",
+  "updated": "2026-01-26T17:51:37.504290+00:00",
   "count": 20,
   "items": [
     {
@@ -124,14 +124,6 @@
       "date": "2026-01-23T19:22:23+00:00"
     },
     {
-      "id": "0d9d0b96fecf",
-      "source": "CBS Sports College Basketball",
-      "title": "Bracketology: No. 2 seeds Houston, UConn, Purdue, Iowa State ready to move up if teams on top line go down",
-      "url": "https://www.cbssports.com/college-basketball/news/bracketology-ncaa-tournament-bracket-field-of-68-predictions-houston-uconn/",
-      "summary": "The Big Ten has two teams on the No. 1 seed line for now, but there are many worthy challengers",
-      "date": "2026-01-23T16:06:25+00:00"
-    },
-    {
       "id": "0926c9a989b2",
       "source": "Purdue Athletics MBB",
       "title": "Purdue Finalizes Top 25 Portal Class with 32 New Boilermakers",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/01/20/purdue-to-host-diving-events-at-b1g-triple-duals",
       "summary": "Divers to compete on platform Friday, 1-meter Saturday the weekend of Jan. 30-31",
       "date": "2026-01-20T19:40:17+00:00"
+    },
+    {
+      "id": "4d72e907e89b",
+      "source": "Purdue Athletics MBB",
+      "title": "Goff Honored by FCA with Kindall Character in Coaching Award",
+      "url": "https://purduesports.com/news/2026/01/19/goff-honored-by-fca-with-kindall-character-in-coaching-award",
+      "summary": "Purdue head coach recognized for his commitment to character, integrity, excellence, teamwork and service",
+      "date": "2026-01-19T18:01:00+00:00"
     }
   ]
 }
