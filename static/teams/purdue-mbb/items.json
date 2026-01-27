@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-27T22:18:21.089195+00:00",
+  "updated": "2026-01-27T22:44:29.736006+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "7699dad83d16",
-      "source": "CBS Sports College Basketball",
-      "title": "Use bet365 bonus code CBSBET365 to get $200 bonus bets by targeting Michigan-Nebraska, Purdue-Indiana",
-      "url": "https://www.cbssports.com/college-basketball/news/use-bet365-bonus-code-cbsbet365-to-get-200-bonus-bets-michigan-nebraska-purdue-indiana/",
-      "summary": "Use bet365 bonus code CBSBET365 to get $200 in bonus bets for college basketball betting on Tuesday",
-      "date": "2026-01-27T16:48:30+00:00"
-    },
     {
       "id": "3d55aedc000a",
       "source": "CBS Sports College Basketball",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/01/23/purdue-finalizes-top-25-portal-class-with-32-new-boilermakers",
       "summary": "",
       "date": "2026-01-23T15:10:53+00:00"
+    },
+    {
+      "id": "29de20b7784e",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Drops West Coast Finale at #3 UCLA",
+      "url": "https://purduesports.com/news/2026/01/22/purdue-drops-west-coast-finale-at-3-ucla",
+      "summary": "",
+      "date": "2026-01-22T03:39:00+00:00"
     }
   ]
 }
