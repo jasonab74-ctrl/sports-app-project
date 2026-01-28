@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-28T20:24:12.955706+00:00",
+  "updated": "2026-01-28T20:55:19.636947+00:00",
   "count": 20,
   "items": [
     {
@@ -124,14 +124,6 @@
       "date": "2026-01-24T19:13:00+00:00"
     },
     {
-      "id": "d0a95c719295",
-      "source": "CBS Sports College Basketball",
-      "title": "Purdue vs. Illinois odds, prediction: 2026 college basketball picks for Jan. 24 from proven model",
-      "url": "https://www.cbssports.com/college-basketball/news/purdue-illinois-odds-prediction-time-2026-college-basketball-picks-saturday-january-24/",
-      "summary": "SportsLine's model simulated Illinois vs. Purdue 10,000 times and revealed college basketball picks for Saturday",
-      "date": "2026-01-24T12:46:11+00:00"
-    },
-    {
       "id": "bd12726f5393",
       "source": "Purdue Athletics MBB",
       "title": "#17 Boilers Hammer Spartans in Big Ten Home Opener",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/01/23/trey-kaufman-renn-media-session-vs-illinois-purdue-mens-basketball",
       "summary": "",
       "date": "2026-01-23T19:34:15+00:00"
+    },
+    {
+      "id": "5f9a5cb1f1a9",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Matt Painter Press Conference vs. Illinois | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/01/23/coach-matt-painter-press-conference-vs-illinois-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-01-23T19:22:23+00:00"
     }
   ]
 }
