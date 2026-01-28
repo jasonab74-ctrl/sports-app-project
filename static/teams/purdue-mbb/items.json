@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-28T06:29:23.411544+00:00",
+  "updated": "2026-01-28T07:00:52.782648+00:00",
   "count": 20,
   "items": [
     {
@@ -58,14 +58,6 @@
       "url": "https://purduesports.com/news/2026/01/26/coach-matt-painter-press-conference-vs-indiana-purdue-mens-basketball",
       "summary": "",
       "date": "2026-01-26T18:03:58+00:00"
-    },
-    {
-      "id": "226a8fe81709",
-      "source": "Purdue Athletics MBB",
-      "title": "#12 Purdue Travels to Indiana for Tuesday Night Rivalry Game",
-      "url": "https://purduesports.com/news/2026/01/26/12-purdue-travels-to-indiana-for-tuesday-night-rivalry-game",
-      "summary": "",
-      "date": "2026-01-26T16:39:45+00:00"
     },
     {
       "id": "1c51fe712470",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/01/23/purdue-downs-old-dominion-4-1",
       "summary": "",
       "date": "2026-01-23T23:06:00+00:00"
+    },
+    {
+      "id": "e8faa39b8c0f",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Barry Odom Portal Class Press Conference | Purdue Football",
+      "url": "https://purduesports.com/news/2026/01/23/coach-barry-odom-portal-class-press-conference-purdue-football",
+      "summary": "",
+      "date": "2026-01-23T20:42:14+00:00"
     }
   ]
 }
