@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-28T20:55:19.636947+00:00",
+  "updated": "2026-01-28T21:25:06.141237+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "acc983bbe13c",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Hosts #13 Michigan State Thursday Night",
+      "url": "https://purduesports.com/news/2026/01/28/purdue-hosts-13-michigan-state-thursday-night",
+      "summary": "",
+      "date": "2026-01-28T19:30:00+00:00"
+    },
     {
       "id": "148877027d6e",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/01/23/trey-kaufman-renn-media-session-vs-illinois-purdue-mens-basketball",
       "summary": "",
       "date": "2026-01-23T19:34:15+00:00"
-    },
-    {
-      "id": "5f9a5cb1f1a9",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Matt Painter Press Conference vs. Illinois | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/01/23/coach-matt-painter-press-conference-vs-illinois-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-01-23T19:22:23+00:00"
     }
   ]
 }
