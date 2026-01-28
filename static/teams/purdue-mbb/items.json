@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-28T21:25:06.141237+00:00",
+  "updated": "2026-01-28T21:52:29.850577+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "7463dd7b66e2",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Announces 2026 Outdoor Track & Field Schedule",
+      "url": "https://purduesports.com/news/2026/01/28/purdue-announces-2026-outdoor-track-and-field-schedule",
+      "summary": "",
+      "date": "2026-01-28T21:43:27+00:00"
+    },
+    {
+      "id": "c4ba7aac96ce",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Katie Gearlds Media Session v. Michigan State | Purdue Women's Basketball",
+      "url": "https://purduesports.com/news/2026/01/28/coach-katie-gearlds-media-session-v-michigan-state-purdue-womens-basketball",
+      "summary": "",
+      "date": "2026-01-28T21:34:28+00:00"
+    },
     {
       "id": "acc983bbe13c",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/01/23/purdue-downs-old-dominion-4-1",
       "summary": "",
       "date": "2026-01-23T23:06:00+00:00"
-    },
-    {
-      "id": "e8faa39b8c0f",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Barry Odom Portal Class Press Conference | Purdue Football",
-      "url": "https://purduesports.com/news/2026/01/23/coach-barry-odom-portal-class-press-conference-purdue-football",
-      "summary": "",
-      "date": "2026-01-23T20:42:14+00:00"
-    },
-    {
-      "id": "fa77442e69bb",
-      "source": "Purdue Athletics MBB",
-      "title": "Trey Kaufman-Renn Media Session vs. Illinois | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/01/23/trey-kaufman-renn-media-session-vs-illinois-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-01-23T19:34:15+00:00"
     }
   ]
 }
