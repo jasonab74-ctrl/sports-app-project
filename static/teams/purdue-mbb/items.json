@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-29T22:22:16.768715+00:00",
+  "updated": "2026-01-29T22:52:58.443986+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "a3e755f48bcd",
+      "source": "Purdue Athletics MBB",
+      "title": "Mackey Mania Returns as #18 Purdue Battles Wisconsin on Sunday",
+      "url": "https://purduesports.com/news/2026/01/29/mackey-mania-returns-as-18-purdue-battles-wisconsin-on-sunday",
+      "summary": "",
+      "date": "2026-01-29T21:47:32+00:00"
+    },
     {
       "id": "a8455bfa9a19",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/01/24/purdue-wins-3-of-4-in-diving-butterfly-in-dual-at-top-10-indiana",
       "summary": "",
       "date": "2026-01-24T19:13:00+00:00"
-    },
-    {
-      "id": "bd12726f5393",
-      "source": "Purdue Athletics MBB",
-      "title": "#17 Boilers Hammer Spartans in Big Ten Home Opener",
-      "url": "https://purduesports.com/news/2026/01/24/17-boilers-hammer-spartans-in-big-ten-home-opener",
-      "summary": "Purdue took seven of 10 matches in the annual Hammer Down Cancer dual.",
-      "date": "2026-01-24T01:31:59+00:00"
     }
   ]
 }
