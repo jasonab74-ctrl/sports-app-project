@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-30T05:05:27.765530+00:00",
+  "updated": "2026-01-30T06:06:14.257555+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "3bfdb8ad8958",
+      "source": "Purdue Athletics MBB",
+      "title": "Madison Layden-Zay & Avery Gordon Postgame Press Conference | Purdue Women's Basketball",
+      "url": "https://purduesports.com/news/2026/01/30/madison-layden-zay-avery-gordon-postgame-press-conference-purdue-womens-basketball",
+      "summary": "",
+      "date": "2026-01-30T02:01:14+00:00"
+    },
+    {
+      "id": "e4e903f24ece",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Katie Gearlds Postgame Press Conference vs Michigan State | Purdue Women's Basketball",
+      "url": "https://purduesports.com/news/2026/01/30/coach-katie-gearlds-postgame-press-conference-vs-michigan-state-purdue-womens-basketball",
+      "summary": "",
+      "date": "2026-01-30T02:01:11+00:00"
+    },
     {
       "id": "a3e755f48bcd",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/01/24/coach-matt-painter-postgame-press-conference-vs-illinois-purdue-mens-basketball",
       "summary": "",
       "date": "2026-01-24T23:05:56+00:00"
-    },
-    {
-      "id": "a42960770a8d",
-      "source": "Purdue Athletics MBB",
-      "title": "Players Postgame Press Conference vs. Illinois | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/01/24/players-postgame-press-conference-vs-illinois-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-01-24T22:42:35+00:00"
-    },
-    {
-      "id": "1a577e594e15",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights: #17 Purdue 27, Michigan State 9",
-      "url": "https://purduesports.com/news/2026/01/24/highlights-17-purdue-27-michigan-state-9",
-      "summary": "",
-      "date": "2026-01-24T21:00:47+00:00"
     }
   ]
 }
