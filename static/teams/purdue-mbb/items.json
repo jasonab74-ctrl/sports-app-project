@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-29T23:47:32.242151+00:00",
+  "updated": "2026-01-30T01:28:39.643269+00:00",
   "count": 20,
   "items": [
     {
@@ -10,6 +10,14 @@
       "url": "https://purduesports.com/news/2026/01/29/mackey-mania-returns-as-18-purdue-battles-wisconsin-on-sunday",
       "summary": "",
       "date": "2026-01-29T21:47:32+00:00"
+    },
+    {
+      "id": "ea575974638d",
+      "source": "Purdue Athletics MBB",
+      "title": "B1G Triple Duals Features Split Site Action",
+      "url": "https://purduesports.com/news/2026/01/29/b1g-triple-duals-features-split-site-action",
+      "summary": "Swimming at Northwestern, Diving at Purdue for the annual dual meet finale.",
+      "date": "2026-01-29T20:30:00+00:00"
     },
     {
       "id": "a8455bfa9a19",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/01/24/highlights-17-purdue-27-michigan-state-9",
       "summary": "",
       "date": "2026-01-24T21:00:47+00:00"
-    },
-    {
-      "id": "4478bcd836c2",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Wins 3 of 4 in Diving, Butterfly in Dual at Top-10 Indiana",
-      "url": "https://purduesports.com/news/2026/01/24/purdue-wins-3-of-4-in-diving-butterfly-in-dual-at-top-10-indiana",
-      "summary": "",
-      "date": "2026-01-24T19:13:00+00:00"
     }
   ]
 }
