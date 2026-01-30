@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-30T07:57:27.026215+00:00",
+  "updated": "2026-01-30T08:40:34.111301+00:00",
   "count": 20,
   "items": [
     {
@@ -58,6 +58,14 @@
       "url": "https://purduesports.com/news/2026/01/28/coach-katie-gearlds-media-session-v-michigan-state-purdue-womens-basketball",
       "summary": "",
       "date": "2026-01-28T21:34:28+00:00"
+    },
+    {
+      "id": "acc983bbe13c",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Hosts #13 Michigan State Thursday Night",
+      "url": "https://purduesports.com/news/2026/01/28/purdue-hosts-13-michigan-state-thursday-night",
+      "summary": "",
+      "date": "2026-01-28T19:30:00+00:00"
     },
     {
       "id": "148877027d6e",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/01/24/coach-matt-painter-postgame-press-conference-vs-illinois-purdue-mens-basketball",
       "summary": "",
       "date": "2026-01-24T23:05:56+00:00"
-    },
-    {
-      "id": "a42960770a8d",
-      "source": "Purdue Athletics MBB",
-      "title": "Players Postgame Press Conference vs. Illinois | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/01/24/players-postgame-press-conference-vs-illinois-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-01-24T22:42:35+00:00"
     }
   ]
 }
