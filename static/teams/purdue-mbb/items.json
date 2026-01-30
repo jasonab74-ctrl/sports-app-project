@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-30T23:20:20.853100+00:00",
+  "updated": "2026-01-30T23:46:30.716257+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "6251eb5ff79b",
+      "source": "Purdue Athletics MBB",
+      "title": "Pfister Enters Purdue’s Record Book at DeLoss Dodds Invitational",
+      "url": "https://purduesports.com/news/2026/01/30/pfister-enters-purdues-record-book-at-deloss-dodds-invitational",
+      "summary": "",
+      "date": "2026-01-30T22:36:26+00:00"
+    },
     {
       "id": "fb5c916806d3",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/01/25/purdue-wins-barn-burner-trophy-game-gearlds-notches-career-win-300",
       "summary": "",
       "date": "2026-01-25T17:39:00+00:00"
-    },
-    {
-      "id": "37f80b0f212f",
-      "source": "Purdue Athletics MBB",
-      "title": "#4 Purdue Drops Second Straight Game, Falling to #11 Illinois",
-      "url": "https://purduesports.com/news/2026/01/24/4-purdue-drops-second-straight-game",
-      "summary": "",
-      "date": "2026-01-24T23:30:00+00:00"
     }
   ]
 }
