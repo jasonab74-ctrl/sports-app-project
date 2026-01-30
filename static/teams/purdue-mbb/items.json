@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-30T22:51:32.706608+00:00",
+  "updated": "2026-01-30T23:20:20.853100+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "fb5c916806d3",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Falls 1-4 at Yale",
+      "url": "https://purduesports.com/news/2026/01/30/boilers-fall-1-4-at-yale",
+      "summary": "",
+      "date": "2026-01-30T21:03:00+00:00"
+    },
+    {
+      "id": "3222221016ac",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Travels to Minnesota for Sunday Clash",
+      "url": "https://purduesports.com/news/2026/01/30/purdue-travels-to-minnesota-for-sunday-clash",
+      "summary": "",
+      "date": "2026-01-30T20:00:00+00:00"
+    },
     {
       "id": "3ab09185df02",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/01/24/4-purdue-drops-second-straight-game",
       "summary": "",
       "date": "2026-01-24T23:30:00+00:00"
-    },
-    {
-      "id": "2fd174bcc0de",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Matt Painter Postgame Press Conference vs. Illinois | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/01/24/coach-matt-painter-postgame-press-conference-vs-illinois-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-01-24T23:05:56+00:00"
-    },
-    {
-      "id": "a42960770a8d",
-      "source": "Purdue Athletics MBB",
-      "title": "Players Postgame Press Conference vs. Illinois | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/01/24/players-postgame-press-conference-vs-illinois-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-01-24T22:42:35+00:00"
     }
   ]
 }
