@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-30T19:06:55.335043+00:00",
+  "updated": "2026-01-30T19:51:46.947770+00:00",
   "count": 20,
   "items": [
     {
@@ -100,14 +100,6 @@
       "date": "2026-01-27T15:19:37+00:00"
     },
     {
-      "id": "3d55aedc000a",
-      "source": "CBS Sports College Basketball",
-      "title": "Duke, Nebraska get AP Top 25 boosts, Purdue falls in college basketball rankings",
-      "url": "https://www.cbssports.com/college-basketball/news/ap-top-25-college-basketball-rankings-duke-nebraska-purdue/",
-      "summary": "There was movement in the top 10 of the latest AP Top 25 poll",
-      "date": "2026-01-26T18:07:38+00:00"
-    },
-    {
       "id": "c00898487fcb",
       "source": "Purdue Athletics MBB",
       "title": "Coach Matt Painter Press Conference vs. Indiana | Purdue Men's Basketball",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/01/24/coach-matt-painter-postgame-press-conference-vs-illinois-purdue-mens-basketball",
       "summary": "",
       "date": "2026-01-24T23:05:56+00:00"
+    },
+    {
+      "id": "a42960770a8d",
+      "source": "Purdue Athletics MBB",
+      "title": "Players Postgame Press Conference vs. Illinois | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/01/24/players-postgame-press-conference-vs-illinois-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-01-24T22:42:35+00:00"
     }
   ]
 }
