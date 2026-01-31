@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-31T22:17:37.121686+00:00",
+  "updated": "2026-01-31T22:46:56.515575+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "dc21df811cb7",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Drops 2-5 Dual at Columbia",
+      "url": "https://purduesports.com/news/2026/01/31/purdue-drops-2-dual-at-columbia5",
+      "summary": "",
+      "date": "2026-01-31T21:17:44+00:00"
+    },
     {
       "id": "44bc8570e394",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/01/25/coach-katie-gearlds-postgame-press-conference-vs-indiana-purdue-womens-basketball",
       "summary": "",
       "date": "2026-01-25T22:07:24+00:00"
-    },
-    {
-      "id": "260f41f6c701",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Defeats Indiana to Bring Barn Burner Trophy Home",
-      "url": "https://purduesports.com/news/2026/01/25/purdue-defeats-indiana-to-bring-barn-burner-trophy-home",
-      "summary": "",
-      "date": "2026-01-25T19:58:59+00:00"
     }
   ]
 }
