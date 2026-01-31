@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-01-31T14:19:44.525177+00:00",
+  "updated": "2026-01-31T14:49:01.133770+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "44bc8570e394",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Women's Golf Hosts Annual Tournament in Puerto Rico to Begin Spring",
+      "url": "https://purduesports.com/news/2026/01/31/purdue-womens-golf-hosts-annual-tournament-in-puerto-rico-to-begin-spring",
+      "summary": "",
+      "date": "2026-01-31T13:49:00+00:00"
+    },
     {
       "id": "6251eb5ff79b",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/01/25/purdue-defeats-indiana-to-bring-barn-burner-trophy-home",
       "summary": "",
       "date": "2026-01-25T19:58:59+00:00"
-    },
-    {
-      "id": "415422063a07",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Wins Barn Burner Trophy Game, Gearlds Notches Career Win 300",
-      "url": "https://purduesports.com/news/2026/01/25/purdue-wins-barn-burner-trophy-game-gearlds-notches-career-win-300",
-      "summary": "",
-      "date": "2026-01-25T17:39:00+00:00"
     }
   ]
 }
