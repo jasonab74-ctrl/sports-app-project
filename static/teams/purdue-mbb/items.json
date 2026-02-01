@@ -1,8 +1,32 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-01T21:17:53.633861+00:00",
+  "updated": "2026-02-01T21:44:49.516072+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "cf9174f60143",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights: #12 Purdue 93, Maryland 63",
+      "url": "https://purduesports.com/news/2026/02/1/highlights-12-purdue-93-maryland-63",
+      "summary": "",
+      "date": "2026-02-01T21:14:21+00:00"
+    },
+    {
+      "id": "e4927d85cdc5",
+      "source": "Purdue Athletics MBB",
+      "title": "#12 Purdue Bounces Back With Rout of Maryland",
+      "url": "https://purduesports.com/news/2026/02/1/12-purdue-bounces-back-with-rout-of-maryland",
+      "summary": "",
+      "date": "2026-02-01T20:59:57+00:00"
+    },
+    {
+      "id": "de6b0bebe9ca",
+      "source": "Purdue Athletics MBB",
+      "title": "#18 Boilers Fall to Wisconsin in Mackey Mania",
+      "url": "https://purduesports.com/news/2026/02/1/boilers-fall-to-wisconsin-in-mackey-mania",
+      "summary": "Purdue faithful turned out 2,568 strong for the annual event.",
+      "date": "2026-02-01T20:38:48+00:00"
+    },
     {
       "id": "9dd263b4b0c7",
       "source": "CBS Sports College Basketball",
@@ -52,14 +76,6 @@
       "date": "2026-01-30T20:00:00+00:00"
     },
     {
-      "id": "3ab09185df02",
-      "source": "Purdue Athletics MBB",
-      "title": "#12 Purdue Looks to Stop Streak Sunday at Maryland",
-      "url": "https://purduesports.com/news/2026/01/30/12-purdue-looks-to-stop-streak-sunday-at-maryland",
-      "summary": "",
-      "date": "2026-01-30T16:58:32+00:00"
-    },
-    {
       "id": "3bfdb8ad8958",
       "source": "Purdue Athletics MBB",
       "title": "Madison Layden-Zay & Avery Gordon Postgame Press Conference | Purdue Women's Basketball",
@@ -74,14 +90,6 @@
       "url": "https://purduesports.com/news/2026/01/30/coach-katie-gearlds-postgame-press-conference-vs-michigan-state-purdue-womens-basketball",
       "summary": "",
       "date": "2026-01-30T02:01:11+00:00"
-    },
-    {
-      "id": "a3e755f48bcd",
-      "source": "Purdue Athletics MBB",
-      "title": "Mackey Mania Returns as #18 Purdue Battles Wisconsin on Sunday",
-      "url": "https://purduesports.com/news/2026/01/29/mackey-mania-returns-as-18-purdue-battles-wisconsin-on-sunday",
-      "summary": "",
-      "date": "2026-01-29T21:47:32+00:00"
     },
     {
       "id": "a8455bfa9a19",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/01/25/coach-katie-gearlds-postgame-press-conference-vs-indiana-purdue-womens-basketball",
       "summary": "",
       "date": "2026-01-25T22:07:24+00:00"
-    },
-    {
-      "id": "260f41f6c701",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Defeats Indiana to Bring Barn Burner Trophy Home",
-      "url": "https://purduesports.com/news/2026/01/25/purdue-defeats-indiana-to-bring-barn-burner-trophy-home",
-      "summary": "",
-      "date": "2026-01-25T19:58:59+00:00"
     }
   ]
 }
