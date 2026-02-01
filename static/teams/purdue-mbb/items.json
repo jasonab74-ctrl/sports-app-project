@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-01T01:53:19.674738+00:00",
+  "updated": "2026-02-01T04:26:11.344901+00:00",
   "count": 20,
   "items": [
     {
@@ -20,20 +20,20 @@
       "date": "2026-01-31T21:17:44+00:00"
     },
     {
+      "id": "cdd317f574b5",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Win 8 Events at B1G Triple Duals",
+      "url": "https://purduesports.com/news/2026/01/31/boilermakers-win-8-events-at-b1g-triple-duals",
+      "summary": "",
+      "date": "2026-01-31T19:26:00+00:00"
+    },
+    {
       "id": "44bc8570e394",
       "source": "Purdue Athletics MBB",
       "title": "Purdue Women's Golf Hosts Annual Tournament in Puerto Rico to Begin Spring",
       "url": "https://purduesports.com/news/2026/01/31/purdue-womens-golf-hosts-annual-tournament-in-puerto-rico-to-begin-spring",
       "summary": "",
       "date": "2026-01-31T13:49:00+00:00"
-    },
-    {
-      "id": "6251eb5ff79b",
-      "source": "Purdue Athletics MBB",
-      "title": "Pfister Enters Purdue’s Record Book at DeLoss Dodds Invitational",
-      "url": "https://purduesports.com/news/2026/01/30/pfister-enters-purdues-record-book-at-deloss-dodds-invitational",
-      "summary": "",
-      "date": "2026-01-30T22:36:26+00:00"
     },
     {
       "id": "fb5c916806d3",
@@ -84,14 +84,6 @@
       "date": "2026-01-29T21:47:32+00:00"
     },
     {
-      "id": "ea575974638d",
-      "source": "Purdue Athletics MBB",
-      "title": "B1G Triple Duals Features Split Site Action",
-      "url": "https://purduesports.com/news/2026/01/29/b1g-triple-duals-features-split-site-action",
-      "summary": "Swimming at Northwestern, Diving at Purdue for the annual dual meet finale.",
-      "date": "2026-01-29T20:30:00+00:00"
-    },
-    {
       "id": "a8455bfa9a19",
       "source": "Purdue Athletics MBB",
       "title": "Buckeridge, Walker Lead Purdue’s USTFCCCA All-Academic Selections",
@@ -132,14 +124,6 @@
       "date": "2026-01-28T05:17:14+00:00"
     },
     {
-      "id": "6de8474f8d4f",
-      "source": "CBS Sports College Basketball",
-      "title": "Indiana vs. Purdue odds, prediction, time: 2026 college basketball picks for Jan. 27 from proven model",
-      "url": "https://www.cbssports.com/college-basketball/news/indiana-purdue-odds-prediction-time-2026-college-basketball-picks-january-27/",
-      "summary": "SportsLine's model simulated the Indiana Hoosiers vs. Purdue Boilermakers on Tuesday and revealed its college basketball picks for this Big Ten matchup",
-      "date": "2026-01-27T23:00:48+00:00"
-    },
-    {
       "id": "1ee1071a5a00",
       "source": "Purdue Athletics MBB",
       "title": "Purdue Football’s 2026 Schedule Announced on BTN",
@@ -162,6 +146,22 @@
       "url": "https://purduesports.com/news/2026/01/25/players-postgame-press-conference-vs-indiana-purdue-womens-basketball",
       "summary": "",
       "date": "2026-01-25T22:17:13+00:00"
+    },
+    {
+      "id": "69012cf2074b",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Katie Gearlds Postgame Press Conference vs. Indiana | Purdue Women's Basketball",
+      "url": "https://purduesports.com/news/2026/01/25/coach-katie-gearlds-postgame-press-conference-vs-indiana-purdue-womens-basketball",
+      "summary": "",
+      "date": "2026-01-25T22:07:24+00:00"
+    },
+    {
+      "id": "260f41f6c701",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Defeats Indiana to Bring Barn Burner Trophy Home",
+      "url": "https://purduesports.com/news/2026/01/25/purdue-defeats-indiana-to-bring-barn-burner-trophy-home",
+      "summary": "",
+      "date": "2026-01-25T19:58:59+00:00"
     }
   ]
 }
