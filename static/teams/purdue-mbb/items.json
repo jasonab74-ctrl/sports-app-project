@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-02T01:46:10.012797+00:00",
+  "updated": "2026-02-02T04:19:47.706457+00:00",
   "count": 20,
   "items": [
     {
@@ -52,28 +52,12 @@
       "date": "2026-01-31T19:26:00+00:00"
     },
     {
-      "id": "44bc8570e394",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Women's Golf Hosts Annual Tournament in Puerto Rico to Begin Spring",
-      "url": "https://purduesports.com/news/2026/01/31/purdue-womens-golf-hosts-annual-tournament-in-puerto-rico-to-begin-spring",
-      "summary": "",
-      "date": "2026-01-31T13:49:00+00:00"
-    },
-    {
       "id": "fb5c916806d3",
       "source": "Purdue Athletics MBB",
       "title": "Purdue Falls 1-4 at Yale",
       "url": "https://purduesports.com/news/2026/01/30/boilers-fall-1-4-at-yale",
       "summary": "",
       "date": "2026-01-30T21:03:00+00:00"
-    },
-    {
-      "id": "3222221016ac",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Travels to Minnesota for Sunday Clash",
-      "url": "https://purduesports.com/news/2026/01/30/purdue-travels-to-minnesota-for-sunday-clash",
-      "summary": "",
-      "date": "2026-01-30T20:00:00+00:00"
     },
     {
       "id": "3bfdb8ad8958",
@@ -162,6 +146,22 @@
       "url": "https://purduesports.com/news/2026/01/25/coach-katie-gearlds-postgame-press-conference-vs-indiana-purdue-womens-basketball",
       "summary": "",
       "date": "2026-01-25T22:07:24+00:00"
+    },
+    {
+      "id": "260f41f6c701",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Defeats Indiana to Bring Barn Burner Trophy Home",
+      "url": "https://purduesports.com/news/2026/01/25/purdue-defeats-indiana-to-bring-barn-burner-trophy-home",
+      "summary": "",
+      "date": "2026-01-25T19:58:59+00:00"
+    },
+    {
+      "id": "415422063a07",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Wins Barn Burner Trophy Game, Gearlds Notches Career Win 300",
+      "url": "https://purduesports.com/news/2026/01/25/purdue-wins-barn-burner-trophy-game-gearlds-notches-career-win-300",
+      "summary": "",
+      "date": "2026-01-25T17:39:00+00:00"
     }
   ]
 }
