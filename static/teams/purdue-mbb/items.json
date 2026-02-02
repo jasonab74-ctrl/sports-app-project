@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-02T18:36:02.227351+00:00",
+  "updated": "2026-02-02T23:22:43.886380+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "a933d9fe1a8d",
+      "source": "Purdue Athletics MBB",
+      "title": "Mackey Mania: Purdue vs. Wisconsin",
+      "url": "https://purduesports.com/news/2026/02/2/mackey-mania-purdue-vs-wisconsin",
+      "summary": "",
+      "date": "2026-02-02T20:11:39+00:00"
+    },
+    {
+      "id": "6b891f48d734",
+      "source": "Purdue Athletics MBB",
+      "title": "Timpf Fires Career-Low 68, Paces Purdue in Puerto Rico",
+      "url": "https://purduesports.com/news/2026/02/2/timpf-fires-career-low-68-paces-purdue-in-puerto-rico",
+      "summary": "",
+      "date": "2026-02-02T18:58:24+00:00"
+    },
     {
       "id": "cf9174f60143",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/01/25/coach-katie-gearlds-postgame-press-conference-vs-indiana-purdue-womens-basketball",
       "summary": "",
       "date": "2026-01-25T22:07:24+00:00"
-    },
-    {
-      "id": "260f41f6c701",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Defeats Indiana to Bring Barn Burner Trophy Home",
-      "url": "https://purduesports.com/news/2026/01/25/purdue-defeats-indiana-to-bring-barn-burner-trophy-home",
-      "summary": "",
-      "date": "2026-01-25T19:58:59+00:00"
-    },
-    {
-      "id": "415422063a07",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Wins Barn Burner Trophy Game, Gearlds Notches Career Win 300",
-      "url": "https://purduesports.com/news/2026/01/25/purdue-wins-barn-burner-trophy-game-gearlds-notches-career-win-300",
-      "summary": "",
-      "date": "2026-01-25T17:39:00+00:00"
     }
   ]
 }
