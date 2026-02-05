@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-05T19:11:34.267507+00:00",
+  "updated": "2026-02-05T19:55:07.125664+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "8e3f8986ddb0",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Matt Painter Press Conference vs. Oregon | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/02/5/coach-matt-painter-press-conference-vs-oregon-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-02-05T19:09:23+00:00"
+    },
     {
       "id": "fb067cfca6e9",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/01/28/purdue-announces-2026-outdoor-track-and-field-schedule",
       "summary": "",
       "date": "2026-01-28T21:43:27+00:00"
-    },
-    {
-      "id": "c4ba7aac96ce",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Katie Gearlds Media Session v. Michigan State | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2026/01/28/coach-katie-gearlds-media-session-v-michigan-state-purdue-womens-basketball",
-      "summary": "",
-      "date": "2026-01-28T21:34:28+00:00"
     }
   ]
 }
