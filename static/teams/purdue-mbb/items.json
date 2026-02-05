@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-05T14:02:24.153682+00:00",
+  "updated": "2026-02-05T15:08:30.369052+00:00",
   "count": 20,
   "items": [
     {
@@ -26,14 +26,6 @@
       "url": "https://purduesports.com/news/2026/02/4/2026-purdue-football-national-signing-day",
       "summary": "",
       "date": "2026-02-04T12:01:00+00:00"
-    },
-    {
-      "id": "8670043b9da6",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Prepped for Penn State at Mackey on Wednesday",
-      "url": "https://purduesports.com/news/2026/02/3/purdue-prepped-for-penn-state-at-mackey-on-wednesday",
-      "summary": "",
-      "date": "2026-02-03T19:09:00+00:00"
     },
     {
       "id": "a933d9fe1a8d",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/01/28/12-purdues-comeback-falls-short-at-indiana",
       "summary": "",
       "date": "2026-01-28T05:17:14+00:00"
+    },
+    {
+      "id": "1ee1071a5a00",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Football’s 2026 Schedule Announced on BTN",
+      "url": "https://purduesports.com/news/2026/01/27/purdue-footballs-2026-schedule-announced-on-btn",
+      "summary": "",
+      "date": "2026-01-27T15:19:37+00:00"
     }
   ]
 }
