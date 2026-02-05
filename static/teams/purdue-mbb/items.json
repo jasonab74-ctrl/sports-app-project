@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-05T16:04:08.250424+00:00",
+  "updated": "2026-02-05T17:14:12.476192+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "3e67b34f388e",
+      "source": "Purdue Athletics MBB",
+      "title": "#4 Joey Blaze tech fall over #24 Cody Goebel - Purdue vs. Wisconsin",
+      "url": "https://purduesports.com/news/2026/02/5/4-joey-blaze-tech-fall-over-24-cody-goebel-purdue-vs-wisconsin",
+      "summary": "",
+      "date": "2026-02-05T15:51:41+00:00"
+    },
+    {
+      "id": "3e2a24f5fcac",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Baseball's New White Pinstripe Uniform",
+      "url": "https://purduesports.com/news/2026/02/5/purdue-baseballs-new-white-pinstripe-uniform",
+      "summary": "",
+      "date": "2026-02-05T15:30:18+00:00"
+    },
     {
       "id": "4034591497d3",
       "source": "Purdue Athletics MBB",
@@ -84,14 +100,6 @@
       "date": "2026-02-01T20:38:48+00:00"
     },
     {
-      "id": "9dd263b4b0c7",
-      "source": "CBS Sports College Basketball",
-      "title": "Where to watch Purdue vs. Maryland: TV channel, stream, odds, prediction, pick",
-      "url": "https://www.cbssports.com/college-basketball/news/purdue-maryland-prediction-pick-odds-spread-where-to-watch-live/",
-      "summary": "Slumping Purdue looks to snap back into winning form as it takes its game on the road vs. Maryland on Sunday",
-      "date": "2026-02-01T18:01:38+00:00"
-    },
-    {
       "id": "dc21df811cb7",
       "source": "Purdue Athletics MBB",
       "title": "Purdue Drops 2-5 Dual at Columbia",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/01/28/coach-katie-gearlds-media-session-v-michigan-state-purdue-womens-basketball",
       "summary": "",
       "date": "2026-01-28T21:34:28+00:00"
-    },
-    {
-      "id": "148877027d6e",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue vs. Indiana Photo Gallery",
-      "url": "https://purduesports.com/news/2026/01/28/purdue-vs-indiana-photo-gallery",
-      "summary": "",
-      "date": "2026-01-28T05:32:14+00:00"
     }
   ]
 }
