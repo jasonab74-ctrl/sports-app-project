@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-05T05:35:51.262616+00:00",
+  "updated": "2026-02-05T06:51:56.937655+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "2c59490f8061",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Katie Gearlds Postgame Press Conference vs. Penn State | Purdue Women's Basketball",
+      "url": "https://purduesports.com/news/2026/02/5/coach-katie-gearlds-postgame-press-conference-vs-penn-state-purdue-womens-basketball",
+      "summary": "",
+      "date": "2026-02-05T03:00:37+00:00"
+    },
+    {
+      "id": "ad8e37705691",
+      "source": "Purdue Athletics MBB",
+      "title": "Players Postgame Press Conference vs. Penn State | Purdue Women's Basketball",
+      "url": "https://purduesports.com/news/2026/02/5/players-postgame-press-conference-vs-penn-state-purdue-womens-basketball",
+      "summary": "",
+      "date": "2026-02-05T02:56:35+00:00"
+    },
     {
       "id": "e1a5b88da493",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/01/28/12-purdues-comeback-falls-short-at-indiana",
       "summary": "",
       "date": "2026-01-28T05:17:14+00:00"
-    },
-    {
-      "id": "1ee1071a5a00",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Football’s 2026 Schedule Announced on BTN",
-      "url": "https://purduesports.com/news/2026/01/27/purdue-footballs-2026-schedule-announced-on-btn",
-      "summary": "",
-      "date": "2026-01-27T15:19:37+00:00"
-    },
-    {
-      "id": "c00898487fcb",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Matt Painter Press Conference vs. Indiana | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/01/26/coach-matt-painter-press-conference-vs-indiana-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-01-26T18:03:58+00:00"
     }
   ]
 }
