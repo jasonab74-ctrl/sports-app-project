@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-06T16:37:36.136812+00:00",
+  "updated": "2026-02-06T17:37:19.152366+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "ed4b100b2cdd",
+      "source": "Purdue Athletics MBB",
+      "title": "#12 Purdue Returns Home to Face Oregon in Annual T-Shirt Game",
+      "url": "https://purduesports.com/news/2026/02/6/12-purdue-returns-home-to-face-oregon-in-annual-t-shirt-game",
+      "summary": "",
+      "date": "2026-02-06T14:50:44+00:00"
+    },
     {
       "id": "e924a7df806c",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/01/30/coach-katie-gearlds-postgame-press-conference-vs-michigan-state-purdue-womens-basketball",
       "summary": "",
       "date": "2026-01-30T02:01:11+00:00"
-    },
-    {
-      "id": "a8455bfa9a19",
-      "source": "Purdue Athletics MBB",
-      "title": "Buckeridge, Walker Lead Purdue’s USTFCCCA All-Academic Selections",
-      "url": "https://purduesports.com/news/2026/01/29/buckeridge-walker-lead-purdues-ustfccca-all-academic-selections",
-      "summary": "",
-      "date": "2026-01-29T20:04:00+00:00"
     }
   ]
 }
