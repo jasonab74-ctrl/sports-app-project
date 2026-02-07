@@ -1,12 +1,28 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-07T22:19:35.515175+00:00",
+  "updated": "2026-02-07T22:52:14.234913+00:00",
   "count": 20,
   "items": [
     {
-      "id": "daf203cbaaf4",
+      "id": "c51e1daff7b6",
       "source": "Purdue Athletics MBB",
-      "title": "#12 Purdue Rallies Past Oregon",
+      "title": "Purdue Wrestlers Sign \"Vintage\" Photos of Themselves",
+      "url": "https://purduesports.com/news/2026/02/7/purdue-wrestlers-sign-vintage-photos-of-themselves",
+      "summary": "",
+      "date": "2026-02-07T22:19:42+00:00"
+    },
+    {
+      "id": "615efee178ed",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Matt Painter Postgame Press Conference vs. Oregon | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/02/7/coach-matt-painter-postgame-press-conference-vs-oregon-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-02-07T21:01:21+00:00"
+    },
+    {
+      "id": "f4f1313279c7",
+      "source": "Purdue Athletics MBB",
+      "title": "#12 Purdue Uses Late Run to Top Oregon 68-64",
       "url": "https://purduesports.com/news/2026/02/7/12-purdue-rallies-past-oregon",
       "summary": "",
       "date": "2026-02-07T20:50:12+00:00"
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/5/coach-katie-gearlds-postgame-press-conference-vs-penn-state-purdue-womens-basketball",
       "summary": "",
       "date": "2026-02-05T03:00:37+00:00"
-    },
-    {
-      "id": "ad8e37705691",
-      "source": "Purdue Athletics MBB",
-      "title": "Players Postgame Press Conference vs. Penn State | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2026/02/5/players-postgame-press-conference-vs-penn-state-purdue-womens-basketball",
-      "summary": "",
-      "date": "2026-02-05T02:56:35+00:00"
-    },
-    {
-      "id": "e1a5b88da493",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Football 2026 National Signing Day",
-      "url": "https://purduesports.com/news/2026/02/4/2026-purdue-football-national-signing-day",
-      "summary": "",
-      "date": "2026-02-04T12:01:00+00:00"
     }
   ]
 }
