@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-07T01:28:21.929013+00:00",
+  "updated": "2026-02-07T03:41:48.717139+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "38b3f59272b0",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Has Strong Opening Day at Windy City Invite",
+      "url": "https://purduesports.com/news/2026/02/7/purdue-has-strong-opening-day-at-windy-city-invite",
+      "summary": "",
+      "date": "2026-02-07T02:36:31+00:00"
+    },
+    {
+      "id": "6711a49b7860",
+      "source": "CBS Sports College Basketball",
+      "title": "Purdue vs. Oregon prediction, pick, odds, spread: Boilermakers face Ducks in Big Ten showdown at home",
+      "url": "https://www.cbssports.com/college-basketball/news/purdue-oregon-prediction-pick-odds-spread-where-to-watch-live/",
+      "summary": "Purude has lost three of its last four games entering this matchup",
+      "date": "2026-02-07T01:47:57+00:00"
+    },
     {
       "id": "236a670b14e3",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/1/12-purdue-bounces-back-with-rout-of-maryland",
       "summary": "",
       "date": "2026-02-01T20:59:57+00:00"
-    },
-    {
-      "id": "de6b0bebe9ca",
-      "source": "Purdue Athletics MBB",
-      "title": "#18 Boilers Fall to Wisconsin in Mackey Mania",
-      "url": "https://purduesports.com/news/2026/02/1/boilers-fall-to-wisconsin-in-mackey-mania",
-      "summary": "Purdue faithful turned out 2,568 strong for the annual event.",
-      "date": "2026-02-01T20:38:48+00:00"
-    },
-    {
-      "id": "dc21df811cb7",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Drops 2-5 Dual at Columbia",
-      "url": "https://purduesports.com/news/2026/01/31/purdue-drops-2-dual-at-columbia5",
-      "summary": "",
-      "date": "2026-01-31T21:17:44+00:00"
     }
   ]
 }
