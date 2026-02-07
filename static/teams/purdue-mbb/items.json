@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-07T14:51:27.655176+00:00",
+  "updated": "2026-02-07T15:19:28.822709+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "ef7c4a60bc61",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Fall Short in South Bend",
+      "url": "https://purduesports.com/news/2026/02/7/boilermakers-fall-short-in-south-bend",
+      "summary": "",
+      "date": "2026-02-07T04:22:00+00:00"
+    },
     {
       "id": "d34799e2ba8d",
       "source": "Purdue Athletics MBB",
@@ -82,14 +90,6 @@
       "url": "https://purduesports.com/news/2026/02/5/coach-matt-painter-press-conference-vs-oregon-purdue-mens-basketball",
       "summary": "",
       "date": "2026-02-05T19:09:23+00:00"
-    },
-    {
-      "id": "fb067cfca6e9",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Looks Ahead to Windy City Invite",
-      "url": "https://purduesports.com/news/2026/02/5/purdue-looks-ahead-to-windy-city-invite",
-      "summary": "",
-      "date": "2026-02-05T17:30:28+00:00"
     },
     {
       "id": "3e67b34f388e",
