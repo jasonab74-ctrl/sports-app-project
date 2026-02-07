@@ -1,8 +1,32 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-07T20:50:09.546009+00:00",
+  "updated": "2026-02-07T21:21:00.086016+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "daf203cbaaf4",
+      "source": "Purdue Athletics MBB",
+      "title": "#12 Purdue Rallies Past Oregon",
+      "url": "https://purduesports.com/news/2026/02/7/12-purdue-rallies-past-oregon",
+      "summary": "",
+      "date": "2026-02-07T20:50:12+00:00"
+    },
+    {
+      "id": "a5194c6a7df9",
+      "source": "Purdue Athletics MBB",
+      "title": "Players Postgame Press Conference vs. Oregon | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/02/7/players-postgame-press-conference-vs-oregon-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-02-07T20:36:13+00:00"
+    },
+    {
+      "id": "9b1bd353f42a",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights: #12 Purdue 68, Oregon 64",
+      "url": "https://purduesports.com/news/2026/02/7/highlights-12-purdue-68-oregon-64",
+      "summary": "",
+      "date": "2026-02-07T20:21:10+00:00"
+    },
     {
       "id": "ef7c4a60bc61",
       "source": "Purdue Athletics MBB",
@@ -138,30 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/4/2026-purdue-football-national-signing-day",
       "summary": "",
       "date": "2026-02-04T12:01:00+00:00"
-    },
-    {
-      "id": "a933d9fe1a8d",
-      "source": "Purdue Athletics MBB",
-      "title": "Mackey Mania: Purdue vs. Wisconsin",
-      "url": "https://purduesports.com/news/2026/02/2/mackey-mania-purdue-vs-wisconsin",
-      "summary": "",
-      "date": "2026-02-02T20:11:39+00:00"
-    },
-    {
-      "id": "6b891f48d734",
-      "source": "Purdue Athletics MBB",
-      "title": "Timpf Fires Career-Low 68, Paces Purdue in Puerto Rico",
-      "url": "https://purduesports.com/news/2026/02/2/timpf-fires-career-low-68-paces-purdue-in-puerto-rico",
-      "summary": "",
-      "date": "2026-02-02T18:58:24+00:00"
-    },
-    {
-      "id": "cf9174f60143",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights: #12 Purdue 93, Maryland 63",
-      "url": "https://purduesports.com/news/2026/02/1/highlights-12-purdue-93-maryland-63",
-      "summary": "",
-      "date": "2026-02-01T21:14:21+00:00"
     }
   ]
 }
