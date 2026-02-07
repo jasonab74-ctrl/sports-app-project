@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-07T03:41:48.717139+00:00",
+  "updated": "2026-02-07T05:02:20.446393+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "d34799e2ba8d",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Earns First Win of the Season",
+      "url": "https://purduesports.com/news/2026/02/7/purdue-earns-first-win-of-the-season",
+      "summary": "",
+      "date": "2026-02-07T03:51:39+00:00"
+    },
     {
       "id": "38b3f59272b0",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/1/highlights-12-purdue-93-maryland-63",
       "summary": "",
       "date": "2026-02-01T21:14:21+00:00"
-    },
-    {
-      "id": "e4927d85cdc5",
-      "source": "Purdue Athletics MBB",
-      "title": "#12 Purdue Bounces Back With Rout of Maryland",
-      "url": "https://purduesports.com/news/2026/02/1/12-purdue-bounces-back-with-rout-of-maryland",
-      "summary": "",
-      "date": "2026-02-01T20:59:57+00:00"
     }
   ]
 }
