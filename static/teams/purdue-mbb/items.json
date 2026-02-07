@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-06T23:47:30.789170+00:00",
+  "updated": "2026-02-07T01:28:21.929013+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "236a670b14e3",
+      "source": "Purdue Athletics MBB",
+      "title": "Head Coach Greg Goff Season Preview | Purdue Baseball",
+      "url": "https://purduesports.com/news/2026/02/7/head-coach-greg-goff-season-preview-purdue-baseball",
+      "summary": "",
+      "date": "2026-02-07T00:22:29+00:00"
+    },
+    {
+      "id": "ea301833f5c6",
+      "source": "Purdue Athletics MBB",
+      "title": "Aaron Manias, Jackson Bessette, Cole Van Assen, Westin Boyle | Purdue Baseball Season Preview",
+      "url": "https://purduesports.com/news/2026/02/7/aaron-manias-jackson-bessette-cole-van-assen-westin-boyle-purdue-baseball-season-preview",
+      "summary": "",
+      "date": "2026-02-07T00:22:04+00:00"
+    },
     {
       "id": "90d0557b14d9",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/01/31/purdue-drops-2-dual-at-columbia5",
       "summary": "",
       "date": "2026-01-31T21:17:44+00:00"
-    },
-    {
-      "id": "cdd317f574b5",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Win 8 Events at B1G Triple Duals",
-      "url": "https://purduesports.com/news/2026/01/31/boilermakers-win-8-events-at-b1g-triple-duals",
-      "summary": "",
-      "date": "2026-01-31T19:26:00+00:00"
-    },
-    {
-      "id": "3bfdb8ad8958",
-      "source": "Purdue Athletics MBB",
-      "title": "Madison Layden-Zay & Avery Gordon Postgame Press Conference | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2026/01/30/madison-layden-zay-avery-gordon-postgame-press-conference-purdue-womens-basketball",
-      "summary": "",
-      "date": "2026-01-30T02:01:14+00:00"
     }
   ]
 }
