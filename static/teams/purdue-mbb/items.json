@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-08T21:48:42.840942+00:00",
+  "updated": "2026-02-08T22:21:15.738416+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "65a57e1ee786",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Falls at Indiana",
+      "url": "https://purduesports.com/news/2026/02/8/purdue-falls-at-indiana",
+      "summary": "",
+      "date": "2026-02-08T21:39:00+00:00"
+    },
+    {
+      "id": "038e28e46477",
+      "source": "Purdue Athletics MBB",
+      "title": "Blaze, Clark Earn Victories in #24 Purdue's Loss to #11 Illinois",
+      "url": "https://purduesports.com/news/2026/02/8/blaze-clark-earn-victories-in-24-purdues-loss-to-11-illinois",
+      "summary": "",
+      "date": "2026-02-08T21:21:23+00:00"
+    },
     {
       "id": "816a05aff822",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/5/purdue-baseball-teammates-4-life",
       "summary": "",
       "date": "2026-02-05T15:06:36+00:00"
-    },
-    {
-      "id": "2c59490f8061",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Katie Gearlds Postgame Press Conference vs. Penn State | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2026/02/5/coach-katie-gearlds-postgame-press-conference-vs-penn-state-purdue-womens-basketball",
-      "summary": "",
-      "date": "2026-02-05T03:00:37+00:00"
-    },
-    {
-      "id": "ad8e37705691",
-      "source": "Purdue Athletics MBB",
-      "title": "Players Postgame Press Conference vs. Penn State | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2026/02/5/players-postgame-press-conference-vs-penn-state-purdue-womens-basketball",
-      "summary": "",
-      "date": "2026-02-05T02:56:35+00:00"
     }
   ]
 }
