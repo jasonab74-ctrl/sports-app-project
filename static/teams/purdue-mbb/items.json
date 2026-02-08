@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-08T02:05:10.906683+00:00",
+  "updated": "2026-02-08T04:41:02.219939+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "816a05aff822",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Completes Trip to Chicago",
+      "url": "https://purduesports.com/news/2026/02/8/purdue-completes-trip-to-chicago",
+      "summary": "",
+      "date": "2026-02-08T00:35:27+00:00"
+    },
     {
       "id": "c51e1daff7b6",
       "source": "Purdue Athletics MBB",
@@ -60,14 +68,6 @@
       "date": "2026-02-07T03:51:39+00:00"
     },
     {
-      "id": "38b3f59272b0",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Has Strong Opening Day at Windy City Invite",
-      "url": "https://purduesports.com/news/2026/02/7/purdue-has-strong-opening-day-at-windy-city-invite",
-      "summary": "",
-      "date": "2026-02-07T02:36:31+00:00"
-    },
-    {
       "id": "6711a49b7860",
       "source": "CBS Sports College Basketball",
       "title": "Purdue vs. Oregon prediction, pick, odds, spread: Boilermakers face Ducks in Big Ten showdown at home",
@@ -98,14 +98,6 @@
       "url": "https://purduesports.com/news/2026/02/6/purdue-mens-golf-begins-spring-season-in-puerto-rico2026",
       "summary": "",
       "date": "2026-02-06T21:39:00+00:00"
-    },
-    {
-      "id": "ed4b100b2cdd",
-      "source": "Purdue Athletics MBB",
-      "title": "#12 Purdue Returns Home to Face Oregon in Annual T-Shirt Game",
-      "url": "https://purduesports.com/news/2026/02/6/12-purdue-returns-home-to-face-oregon-in-annual-t-shirt-game",
-      "summary": "",
-      "date": "2026-02-06T14:50:44+00:00"
     },
     {
       "id": "e924a7df806c",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/02/5/coach-katie-gearlds-postgame-press-conference-vs-penn-state-purdue-womens-basketball",
       "summary": "",
       "date": "2026-02-05T03:00:37+00:00"
+    },
+    {
+      "id": "ad8e37705691",
+      "source": "Purdue Athletics MBB",
+      "title": "Players Postgame Press Conference vs. Penn State | Purdue Women's Basketball",
+      "url": "https://purduesports.com/news/2026/02/5/players-postgame-press-conference-vs-penn-state-purdue-womens-basketball",
+      "summary": "",
+      "date": "2026-02-05T02:56:35+00:00"
     }
   ]
 }
