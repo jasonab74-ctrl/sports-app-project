@@ -1,8 +1,40 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-09T19:59:42.783952+00:00",
+  "updated": "2026-02-09T20:51:08.815498+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "cb780c0c48cc",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Matt Painter Media Session vs. Nebraska | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/02/9/coach-matt-painter-media-session-vs-nebraska-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-02-09T19:44:25+00:00"
+    },
+    {
+      "id": "fecdb42913c6",
+      "source": "Purdue Athletics MBB",
+      "title": "#13 Purdue Travels to #7 Nebraska for Key Big Ten Battle",
+      "url": "https://purduesports.com/news/2026/02/9/13-purdue-travels-to-7-nebraska-for-key-big-ten-battle",
+      "summary": "",
+      "date": "2026-02-09T19:42:47+00:00"
+    },
+    {
+      "id": "c35512ad69fd",
+      "source": "Purdue Athletics MBB",
+      "title": "Trey Kaufman-Renn Media Session vs. Nebraska | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/02/9/trey-kaufman-renn-media-session-vs-nebraska-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-02-09T19:42:12+00:00"
+    },
+    {
+      "id": "6834a1c6b1b8",
+      "source": "Purdue Athletics MBB",
+      "title": "Fletcher Loyer Media Session vs. Nebraska | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/02/9/fletcher-loyer-media-session-vs-nebraska-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-02-09T19:40:08+00:00"
+    },
     {
       "id": "65a57e1ee786",
       "source": "Purdue Athletics MBB",
@@ -130,38 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/5/coach-matt-painter-press-conference-vs-oregon-purdue-mens-basketball",
       "summary": "",
       "date": "2026-02-05T19:09:23+00:00"
-    },
-    {
-      "id": "3e67b34f388e",
-      "source": "Purdue Athletics MBB",
-      "title": "#4 Joey Blaze tech fall over #24 Cody Goebel - Purdue vs. Wisconsin",
-      "url": "https://purduesports.com/news/2026/02/5/4-joey-blaze-tech-fall-over-24-cody-goebel-purdue-vs-wisconsin",
-      "summary": "",
-      "date": "2026-02-05T15:51:41+00:00"
-    },
-    {
-      "id": "4034591497d3",
-      "source": "Purdue Athletics MBB",
-      "title": "Appreciation for Purdue Baseball's Alexander Field",
-      "url": "https://purduesports.com/news/2026/02/5/appreciation-for-purdue-baseballs-alexander-field",
-      "summary": "",
-      "date": "2026-02-05T15:25:36+00:00"
-    },
-    {
-      "id": "b741071ff140",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Baseball: Teammates 4 Life",
-      "url": "https://purduesports.com/news/2026/02/5/purdue-baseball-teammates-4-life",
-      "summary": "",
-      "date": "2026-02-05T15:06:36+00:00"
-    },
-    {
-      "id": "2c59490f8061",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Katie Gearlds Postgame Press Conference vs. Penn State | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2026/02/5/coach-katie-gearlds-postgame-press-conference-vs-penn-state-purdue-womens-basketball",
-      "summary": "",
-      "date": "2026-02-05T03:00:37+00:00"
     }
   ]
 }
