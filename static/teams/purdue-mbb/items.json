@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-10T11:46:30.516542+00:00",
+  "updated": "2026-02-10T13:00:53.974648+00:00",
   "count": 20,
   "items": [
     {
@@ -116,14 +116,6 @@
       "date": "2026-02-07T03:51:39+00:00"
     },
     {
-      "id": "6711a49b7860",
-      "source": "CBS Sports College Basketball",
-      "title": "Purdue vs. Oregon prediction, pick, odds, spread: Boilermakers face Ducks in Big Ten showdown at home",
-      "url": "https://www.cbssports.com/college-basketball/news/purdue-oregon-prediction-pick-odds-spread-where-to-watch-live/",
-      "summary": "Purude has lost three of its last four games entering this matchup",
-      "date": "2026-02-07T01:47:57+00:00"
-    },
-    {
       "id": "236a670b14e3",
       "source": "Purdue Athletics MBB",
       "title": "Head Coach Greg Goff Season Preview | Purdue Baseball",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/02/5/coach-matt-painter-press-conference-vs-oregon-purdue-mens-basketball",
       "summary": "",
       "date": "2026-02-05T19:09:23+00:00"
+    },
+    {
+      "id": "3e67b34f388e",
+      "source": "Purdue Athletics MBB",
+      "title": "#4 Joey Blaze tech fall over #24 Cody Goebel - Purdue vs. Wisconsin",
+      "url": "https://purduesports.com/news/2026/02/5/4-joey-blaze-tech-fall-over-24-cody-goebel-purdue-vs-wisconsin",
+      "summary": "",
+      "date": "2026-02-05T15:51:41+00:00"
     }
   ]
 }
