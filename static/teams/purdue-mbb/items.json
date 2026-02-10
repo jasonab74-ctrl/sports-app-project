@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-10T20:01:11.167444+00:00",
+  "updated": "2026-02-10T21:07:08.779904+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "e820c2427770",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Wrap up Second Round in Puerto Rico",
+      "url": "https://purduesports.com/news/2026/02/10/boilermakers-wrap-up-second-round-in-puerto-rico",
+      "summary": "",
+      "date": "2026-02-10T18:41:43+00:00"
+    },
     {
       "id": "3102219f58ee",
       "source": "CBS Sports College Basketball",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/5/general-manager-brandon-lee-press-conference-purdue-football",
       "summary": "",
       "date": "2026-02-05T20:40:23+00:00"
-    },
-    {
-      "id": "8e3f8986ddb0",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Matt Painter Press Conference vs. Oregon | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/02/5/coach-matt-painter-press-conference-vs-oregon-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-02-05T19:09:23+00:00"
     }
   ]
 }
