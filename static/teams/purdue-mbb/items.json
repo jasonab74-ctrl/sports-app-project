@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-11T16:59:51.237854+00:00",
+  "updated": "2026-02-11T18:02:00.114619+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "c13d39c9f1ce",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights: #13 Purdue 80, #7 Nebraska 77",
+      "url": "https://purduesports.com/news/2026/02/11/highlights-13-purdue-80-7-nebraska-77",
+      "summary": "",
+      "date": "2026-02-11T17:00:39+00:00"
+    },
     {
       "id": "8333f67ea956",
       "source": "CBS Sports College Basketball",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/7/aaron-manias-jackson-bessette-cole-van-assen-westin-boyle-purdue-baseball-season-preview",
       "summary": "",
       "date": "2026-02-07T00:22:04+00:00"
-    },
-    {
-      "id": "6efa8bfb91c8",
-      "source": "Purdue Athletics MBB",
-      "title": "General Manager Brandon Lee Press Conference | Purdue Football",
-      "url": "https://purduesports.com/news/2026/02/5/general-manager-brandon-lee-press-conference-purdue-football",
-      "summary": "",
-      "date": "2026-02-05T20:40:23+00:00"
     }
   ]
 }
