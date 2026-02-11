@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-11T15:32:07.705797+00:00",
+  "updated": "2026-02-11T16:59:51.237854+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "8333f67ea956",
+      "source": "CBS Sports College Basketball",
+      "title": "Bracketology: Purdue rises to a No. 2 seed, Illinois falls off top line in projected NCAA Tournament seeding",
+      "url": "https://www.cbssports.com/college-basketball/news/bracketology-purdue-rises-to-a-no-2-seed-illinois-falls-off-top-line-in-projected-ncaa-tournament-seeding/",
+      "summary": "Two overtime games in the Big Ten brought a shakeup in the CBS Sports Bracketology model",
+      "date": "2026-02-11T16:48:20+00:00"
+    },
     {
       "id": "b13afae4a53b",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/5/general-manager-brandon-lee-press-conference-purdue-football",
       "summary": "",
       "date": "2026-02-05T20:40:23+00:00"
-    },
-    {
-      "id": "8e3f8986ddb0",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Matt Painter Press Conference vs. Oregon | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/02/5/coach-matt-painter-press-conference-vs-oregon-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-02-05T19:09:23+00:00"
     }
   ]
 }
