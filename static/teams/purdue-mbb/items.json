@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-11T19:32:07.399070+00:00",
+  "updated": "2026-02-11T20:33:15.286288+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "7d037cc052c2",
+      "source": "CBS Sports College Basketball",
+      "title": "College basketball rankings: Purdue jumps into top 10 after wild overtime win at Nebraska",
+      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-rankings-top-25-and-1-purdue-nebraska/",
+      "summary": "The Boilermakers, No. 8 in Wednesday's Top 25 And 1, blew a 22-point lead but won in OT vs. the Cornhuskers",
+      "date": "2026-02-11T20:06:32+00:00"
+    },
     {
       "id": "58914ee3805f",
       "source": "CBS Sports College Basketball",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/7/purdue-earns-first-win-of-the-season",
       "summary": "",
       "date": "2026-02-07T03:51:39+00:00"
-    },
-    {
-      "id": "236a670b14e3",
-      "source": "Purdue Athletics MBB",
-      "title": "Head Coach Greg Goff Season Preview | Purdue Baseball",
-      "url": "https://purduesports.com/news/2026/02/7/head-coach-greg-goff-season-preview-purdue-baseball",
-      "summary": "",
-      "date": "2026-02-07T00:22:29+00:00"
     }
   ]
 }
