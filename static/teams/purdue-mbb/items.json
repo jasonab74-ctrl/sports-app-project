@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-11T05:15:09.693027+00:00",
+  "updated": "2026-02-11T06:38:01.103625+00:00",
   "count": 20,
   "items": [
     {
@@ -42,14 +42,6 @@
       "url": "https://purduesports.com/news/2026/02/9/coach-matt-painter-media-session-vs-nebraska-purdue-mens-basketball",
       "summary": "",
       "date": "2026-02-09T19:44:25+00:00"
-    },
-    {
-      "id": "fecdb42913c6",
-      "source": "Purdue Athletics MBB",
-      "title": "#13 Purdue Travels to #7 Nebraska for Key Big Ten Battle",
-      "url": "https://purduesports.com/news/2026/02/9/13-purdue-travels-to-7-nebraska-for-key-big-ten-battle",
-      "summary": "",
-      "date": "2026-02-09T19:42:47+00:00"
     },
     {
       "id": "c35512ad69fd",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/02/7/aaron-manias-jackson-bessette-cole-van-assen-westin-boyle-purdue-baseball-season-preview",
       "summary": "",
       "date": "2026-02-07T00:22:04+00:00"
+    },
+    {
+      "id": "6efa8bfb91c8",
+      "source": "Purdue Athletics MBB",
+      "title": "General Manager Brandon Lee Press Conference | Purdue Football",
+      "url": "https://purduesports.com/news/2026/02/5/general-manager-brandon-lee-press-conference-purdue-football",
+      "summary": "",
+      "date": "2026-02-05T20:40:23+00:00"
     }
   ]
 }
