@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-12T04:20:43.802519+00:00",
+  "updated": "2026-02-12T05:46:25.380283+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "6b0b8014e01d",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Baseball Fan Fest 2026",
+      "url": "https://purduesports.com/news/2026/02/12/purdue-baseball-fan-fest-2026",
+      "summary": "",
+      "date": "2026-02-12T02:01:43+00:00"
+    },
+    {
+      "id": "c7c7c98cc4bc",
+      "source": "Purdue Athletics MBB",
+      "title": "This Week in Purdue Baseball | February 11, 2026",
+      "url": "https://purduesports.com/news/2026/02/11/this-week-in-purdue-baseball-february-11-2026",
+      "summary": "",
+      "date": "2026-02-11T23:20:39+00:00"
+    },
     {
       "id": "77c0cf376c27",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/7/highlights-12-purdue-68-oregon-64",
       "summary": "",
       "date": "2026-02-07T20:21:10+00:00"
-    },
-    {
-      "id": "ef7c4a60bc61",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Fall Short in South Bend",
-      "url": "https://purduesports.com/news/2026/02/7/boilermakers-fall-short-in-south-bend",
-      "summary": "",
-      "date": "2026-02-07T04:22:00+00:00"
-    },
-    {
-      "id": "d34799e2ba8d",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Earns First Win of the Season",
-      "url": "https://purduesports.com/news/2026/02/7/purdue-earns-first-win-of-the-season",
-      "summary": "",
-      "date": "2026-02-07T03:51:39+00:00"
     }
   ]
 }
