@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-12T17:34:46.282686+00:00",
+  "updated": "2026-02-12T18:56:04.480725+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "5a2a4b273a03",
+      "source": "Purdue Athletics MBB",
+      "title": "NCAA Releases First RPI, Second Coaches' Ranking for 2026 Wrestling Championships",
+      "url": "https://purduesports.com/news/2026/02/12/ncaa-releases-first-rpi-second-coaches-ranking-for-2026-wrestling-championships",
+      "summary": "Nine Boilermakers were listed among the pair of rankings.",
+      "date": "2026-02-12T18:23:06+00:00"
+    },
     {
       "id": "427511f67c63",
       "source": "Purdue Athletics MBB",
@@ -12,12 +20,12 @@
       "date": "2026-02-12T15:04:25+00:00"
     },
     {
-      "id": "6b0b8014e01d",
+      "id": "05edca54c1d8",
       "source": "Purdue Athletics MBB",
-      "title": "Purdue Baseball Fan Fest 2026",
-      "url": "https://purduesports.com/news/2026/02/12/purdue-baseball-fan-fest-2026",
+      "title": "Purdue Opens Two-Game Homestand Saturday vs. Rutgers",
+      "url": "https://purduesports.com/news/2026/02/12/purdue-opens-two-game-homestand-saturday-vs-rutgers",
       "summary": "",
-      "date": "2026-02-12T02:01:43+00:00"
+      "date": "2026-02-12T15:01:00+00:00"
     },
     {
       "id": "c7c7c98cc4bc",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/7/12-purdue-rallies-past-oregon",
       "summary": "",
       "date": "2026-02-07T20:50:12+00:00"
-    },
-    {
-      "id": "a5194c6a7df9",
-      "source": "Purdue Athletics MBB",
-      "title": "Players Postgame Press Conference vs. Oregon | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/02/7/players-postgame-press-conference-vs-oregon-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-02-07T20:36:13+00:00"
     }
   ]
 }
