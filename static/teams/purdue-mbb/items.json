@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-13T20:31:44.814862+00:00",
+  "updated": "2026-02-13T21:29:32.688625+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "42a48224115d",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Katie Gearlds Media Session vs. Rutgers | Purdue Women's Basketball",
+      "url": "https://purduesports.com/news/2026/02/13/coach-katie-gearlds-media-session-vs-rutgers-purdue-womens-basketball",
+      "summary": "",
+      "date": "2026-02-13T20:47:49+00:00"
+    },
+    {
+      "id": "1a6194cb1cd3",
+      "source": "Purdue Athletics MBB",
+      "title": "#25 Purdue to Host #6 Iowa for Senior Day, Home Finale",
+      "url": "https://purduesports.com/news/2026/02/13/25-purdue-to-host-6-iowa-for-senior-day-home-finale",
+      "summary": "The Boilers are ready to wrestle in Holloway for the last time this season.",
+      "date": "2026-02-13T20:46:11+00:00"
+    },
     {
       "id": "8e5b01c8685e",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/9/fletcher-loyer-media-session-vs-nebraska-purdue-mens-basketball",
       "summary": "",
       "date": "2026-02-09T19:40:08+00:00"
-    },
-    {
-      "id": "65a57e1ee786",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Falls at Indiana",
-      "url": "https://purduesports.com/news/2026/02/8/purdue-falls-at-indiana",
-      "summary": "",
-      "date": "2026-02-08T21:39:00+00:00"
-    },
-    {
-      "id": "038e28e46477",
-      "source": "Purdue Athletics MBB",
-      "title": "Blaze, Clark Earn Victories in #24 Purdue's Loss to #11 Illinois",
-      "url": "https://purduesports.com/news/2026/02/8/blaze-clark-earn-victories-in-24-purdues-loss-to-11-illinois",
-      "summary": "",
-      "date": "2026-02-08T21:21:23+00:00"
     }
   ]
 }
