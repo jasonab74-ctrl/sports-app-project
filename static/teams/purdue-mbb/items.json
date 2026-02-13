@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-13T04:16:15.444880+00:00",
+  "updated": "2026-02-13T05:42:39.531698+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "ffa70fdcaa48",
+      "source": "Purdue Athletics MBB",
+      "title": "Season Opens in Sugar Land with Purdue vs Portland",
+      "url": "https://purduesports.com/news/2026/02/12/season-opens-in-sugar-land-with-purdue-vs-portland",
+      "summary": "",
+      "date": "2026-02-12T21:01:00+00:00"
+    },
     {
       "id": "5a2a4b273a03",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/7/coach-matt-painter-postgame-press-conference-vs-oregon-purdue-mens-basketball",
       "summary": "",
       "date": "2026-02-07T21:01:21+00:00"
-    },
-    {
-      "id": "f4f1313279c7",
-      "source": "Purdue Athletics MBB",
-      "title": "#12 Purdue Uses Late Run to Top Oregon 68-64",
-      "url": "https://purduesports.com/news/2026/02/7/12-purdue-rallies-past-oregon",
-      "summary": "",
-      "date": "2026-02-07T20:50:12+00:00"
     }
   ]
 }
