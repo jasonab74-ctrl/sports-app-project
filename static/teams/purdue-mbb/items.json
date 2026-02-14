@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-14T01:40:55.362856+00:00",
+  "updated": "2026-02-14T04:05:44.912076+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "691cc8db29fe",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilers Split Day One in Alabama",
+      "url": "https://purduesports.com/news/2026/02/14/boilers-split-day-one-in-alabama",
+      "summary": "Purdue Softball continued its strong start to the season with a 4–0 shutout victory over Georgia Southern, before splitting the day, falling to No. 10 Alabama.",
+      "date": "2026-02-14T02:28:11+00:00"
+    },
     {
       "id": "42a48224115d",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/9/trey-kaufman-renn-media-session-vs-nebraska-purdue-mens-basketball",
       "summary": "",
       "date": "2026-02-09T19:42:12+00:00"
-    },
-    {
-      "id": "6834a1c6b1b8",
-      "source": "Purdue Athletics MBB",
-      "title": "Fletcher Loyer Media Session vs. Nebraska | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/02/9/fletcher-loyer-media-session-vs-nebraska-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-02-09T19:40:08+00:00"
     }
   ]
 }
