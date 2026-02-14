@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-14T18:59:36.767196+00:00",
+  "updated": "2026-02-14T19:30:07.524801+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "efd2e011c279",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Katie Gearlds Postgame Press Conference vs. Rutgers | Purdue Women's Basketball",
+      "url": "https://purduesports.com/news/2026/02/14/coach-katie-gearlds-postgame-press-conference-vs-rutgers-purdue-womens-basketball",
+      "summary": "",
+      "date": "2026-02-14T19:13:08+00:00"
+    },
     {
       "id": "6e9e1d60ab59",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/9/fletcher-loyer-media-session-vs-nebraska-purdue-mens-basketball",
       "summary": "",
       "date": "2026-02-09T19:40:08+00:00"
-    },
-    {
-      "id": "65a57e1ee786",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Falls at Indiana",
-      "url": "https://purduesports.com/news/2026/02/8/purdue-falls-at-indiana",
-      "summary": "",
-      "date": "2026-02-08T21:39:00+00:00"
     }
   ]
 }
