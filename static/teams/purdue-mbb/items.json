@@ -1,8 +1,40 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-14T19:46:39.629859+00:00",
+  "updated": "2026-02-14T20:19:43.202499+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "0e3682fc17ca",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Runs Past Rutgers in Second Half",
+      "url": "https://purduesports.com/news/2026/02/14/purdue-runs-past-rutgers-in-second-half",
+      "summary": "",
+      "date": "2026-02-14T19:51:46+00:00"
+    },
+    {
+      "id": "e146d4b51497",
+      "source": "Purdue Athletics MBB",
+      "title": "Tara Daye and Kiki Smith Postgame Press Conference vs. Rutgers | Purdue Women's Basketball",
+      "url": "https://purduesports.com/news/2026/02/14/tara-daye-and-kiki-smith-postgame-press-conference-vs-rutgers-purdue-womens-basketball",
+      "summary": "",
+      "date": "2026-02-14T19:22:28+00:00"
+    },
+    {
+      "id": "efd2e011c279",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Katie Gearlds Postgame Press Conference vs. Rutgers | Purdue Women's Basketball",
+      "url": "https://purduesports.com/news/2026/02/14/coach-katie-gearlds-postgame-press-conference-vs-rutgers-purdue-womens-basketball",
+      "summary": "",
+      "date": "2026-02-14T19:13:08+00:00"
+    },
+    {
+      "id": "13755faae117",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Surges in Second Half to Beat Rutgers",
+      "url": "https://purduesports.com/news/2026/02/14/purdue-surges-in-second-half-to-beat-rutgers",
+      "summary": "",
+      "date": "2026-02-14T17:39:00+00:00"
+    },
     {
       "id": "6e9e1d60ab59",
       "source": "Purdue Athletics MBB",
@@ -130,38 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/11/13-purdue-outlasts-7-nebraska-in-overtime-80-77",
       "summary": "",
       "date": "2026-02-11T03:15:26+00:00"
-    },
-    {
-      "id": "cb780c0c48cc",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Matt Painter Media Session vs. Nebraska | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/02/9/coach-matt-painter-media-session-vs-nebraska-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-02-09T19:44:25+00:00"
-    },
-    {
-      "id": "c35512ad69fd",
-      "source": "Purdue Athletics MBB",
-      "title": "Trey Kaufman-Renn Media Session vs. Nebraska | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/02/9/trey-kaufman-renn-media-session-vs-nebraska-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-02-09T19:42:12+00:00"
-    },
-    {
-      "id": "6834a1c6b1b8",
-      "source": "Purdue Athletics MBB",
-      "title": "Fletcher Loyer Media Session vs. Nebraska | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/02/9/fletcher-loyer-media-session-vs-nebraska-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-02-09T19:40:08+00:00"
-    },
-    {
-      "id": "65a57e1ee786",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Falls at Indiana",
-      "url": "https://purduesports.com/news/2026/02/8/purdue-falls-at-indiana",
-      "summary": "",
-      "date": "2026-02-08T21:39:00+00:00"
     }
   ]
 }
