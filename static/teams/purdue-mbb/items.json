@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-14T16:22:26.008130+00:00",
+  "updated": "2026-02-14T16:54:04.691968+00:00",
   "count": 20,
   "items": [
     {
@@ -132,14 +132,6 @@
       "date": "2026-02-11T03:15:26+00:00"
     },
     {
-      "id": "8aa4881b0828",
-      "source": "CBS Sports College Basketball",
-      "title": "Purdue vs. Nebraska odds, prediction, time: 2026 college basketball picks for Feb. 10 from proven model",
-      "url": "https://www.cbssports.com/college-basketball/news/purdue-nebraska-odds-prediction-spread-time-2026-college-basketball-picks-tuesday-february-10/",
-      "summary": "SportsLine's model simulated No. 12 Purdue Boilermakers vs. No. 9 Nebraska Cornhuskers on Tuesday and revealed its college basketball picks for this Big Ten matchup",
-      "date": "2026-02-10T21:14:43+00:00"
-    },
-    {
       "id": "cb780c0c48cc",
       "source": "Purdue Athletics MBB",
       "title": "Coach Matt Painter Media Session vs. Nebraska | Purdue Men's Basketball",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/02/9/fletcher-loyer-media-session-vs-nebraska-purdue-mens-basketball",
       "summary": "",
       "date": "2026-02-09T19:40:08+00:00"
+    },
+    {
+      "id": "65a57e1ee786",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Falls at Indiana",
+      "url": "https://purduesports.com/news/2026/02/8/purdue-falls-at-indiana",
+      "summary": "",
+      "date": "2026-02-08T21:39:00+00:00"
     }
   ]
 }
