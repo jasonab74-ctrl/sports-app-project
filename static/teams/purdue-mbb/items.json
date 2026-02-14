@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-14T21:45:14.863677+00:00",
+  "updated": "2026-02-14T22:17:44.123487+00:00",
   "count": 20,
   "items": [
     {
@@ -34,14 +34,6 @@
       "url": "https://purduesports.com/news/2026/02/14/purdue-surges-in-second-half-to-beat-rutgers",
       "summary": "",
       "date": "2026-02-14T17:39:00+00:00"
-    },
-    {
-      "id": "6e9e1d60ab59",
-      "source": "Purdue Athletics MBB",
-      "title": "Walks Burn Boilermakers in First Opening Day Loss Since 2019",
-      "url": "https://purduesports.com/news/2026/02/14/walks-burn-boilermakers-in-first-opening-day-loss-since-2019",
-      "summary": "",
-      "date": "2026-02-14T04:00:54+00:00"
     },
     {
       "id": "691cc8db29fe",
@@ -108,14 +100,6 @@
       "date": "2026-02-12T15:04:25+00:00"
     },
     {
-      "id": "05edca54c1d8",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Opens Two-Game Homestand Saturday vs. Rutgers",
-      "url": "https://purduesports.com/news/2026/02/12/purdue-opens-two-game-homestand-saturday-vs-rutgers",
-      "summary": "",
-      "date": "2026-02-12T15:01:00+00:00"
-    },
-    {
       "id": "c7c7c98cc4bc",
       "source": "Purdue Athletics MBB",
       "title": "This Week in Purdue Baseball | February 11, 2026",
@@ -162,6 +146,22 @@
       "url": "https://purduesports.com/news/2026/02/11/13-purdue-outlasts-7-nebraska-in-overtime-80-77",
       "summary": "",
       "date": "2026-02-11T03:15:26+00:00"
+    },
+    {
+      "id": "cb780c0c48cc",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Matt Painter Media Session vs. Nebraska | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/02/9/coach-matt-painter-media-session-vs-nebraska-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-02-09T19:44:25+00:00"
+    },
+    {
+      "id": "c35512ad69fd",
+      "source": "Purdue Athletics MBB",
+      "title": "Trey Kaufman-Renn Media Session vs. Nebraska | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/02/9/trey-kaufman-renn-media-session-vs-nebraska-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-02-09T19:42:12+00:00"
     }
   ]
 }
