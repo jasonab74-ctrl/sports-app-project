@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-15T01:50:07.011142+00:00",
+  "updated": "2026-02-15T04:17:45.444368+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "5f8907295cff",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Splits Day with #10 Alabama, Georgia Southern",
+      "url": "https://purduesports.com/news/2026/02/15/purdue-splits-day-with-10-alabama-georgia-southern",
+      "summary": "Purdue softball was held to one hit in an 8–0 loss to #10 Alabama, before coming back with an 8-7 win over Georgia Southern to split the day.",
+      "date": "2026-02-15T03:18:17+00:00"
+    },
+    {
+      "id": "5cf3c19db3bc",
+      "source": "Purdue Athletics MBB",
+      "title": "#13 Purdue Rolls Past Iowa on Valentine's Day, 78-57",
+      "url": "https://purduesports.com/news/2026/02/15/13-purdue-rolls-past-iowa-on-valentines-day-78-57",
+      "summary": "",
+      "date": "2026-02-15T01:10:46+00:00"
+    },
     {
       "id": "0e3682fc17ca",
       "source": "Purdue Athletics MBB",
@@ -36,14 +52,6 @@
       "date": "2026-02-14T17:39:00+00:00"
     },
     {
-      "id": "691cc8db29fe",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilers Split Day One in Alabama",
-      "url": "https://purduesports.com/news/2026/02/14/boilers-split-day-one-in-alabama",
-      "summary": "Purdue Softball continued its strong start to the season with a 4–0 shutout victory over Georgia Southern, before splitting the day, falling to No. 10 Alabama.",
-      "date": "2026-02-14T02:28:11+00:00"
-    },
-    {
       "id": "42a48224115d",
       "source": "Purdue Athletics MBB",
       "title": "Coach Katie Gearlds Media Session vs. Rutgers | Purdue Women's Basketball",
@@ -74,14 +82,6 @@
       "url": "https://purduesports.com/news/2026/02/13/trey-kaufman-renn-media-session-vs-iowa-purdue-mens-basketball-1",
       "summary": "",
       "date": "2026-02-13T19:13:54+00:00"
-    },
-    {
-      "id": "9c8c2569acb3",
-      "source": "Purdue Athletics MBB",
-      "title": "#13 Purdue Wraps Up Roadswing Saturday at Iowa",
-      "url": "https://purduesports.com/news/2026/02/13/13-purdue-wraps-up-roadswing-saturday-at-iowa",
-      "summary": "",
-      "date": "2026-02-13T15:04:08+00:00"
     },
     {
       "id": "5a2a4b273a03",
