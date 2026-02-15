@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-15T21:46:29.893598+00:00",
+  "updated": "2026-02-15T22:18:22.542190+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "b7cfa19995e4",
+      "source": "Purdue Athletics MBB",
+      "title": "Blaze Makes B1G Statement as #25 Purdue Falls to #6 Iowa",
+      "url": "https://purduesports.com/news/2026/02/15/blaze-makes-b1g-statement-as-25-purdue-falls-to-6-iowa",
+      "summary": "The 2025 national finalist aced his biggest test yet.",
+      "date": "2026-02-15T21:26:03+00:00"
+    },
     {
       "id": "dc91707107d5",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/9/coach-matt-painter-media-session-vs-nebraska-purdue-mens-basketball",
       "summary": "",
       "date": "2026-02-09T19:44:25+00:00"
-    },
-    {
-      "id": "c35512ad69fd",
-      "source": "Purdue Athletics MBB",
-      "title": "Trey Kaufman-Renn Media Session vs. Nebraska | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/02/9/trey-kaufman-renn-media-session-vs-nebraska-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-02-09T19:42:12+00:00"
     }
   ]
 }
