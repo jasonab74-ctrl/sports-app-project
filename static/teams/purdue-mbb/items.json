@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-15T19:02:02.715122+00:00",
+  "updated": "2026-02-15T19:44:21.329353+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "dc91707107d5",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Baseball's Walk-off Win vs Portland",
+      "url": "https://purduesports.com/news/2026/02/15/purdue-baseballs-walk-off-win-vs-portland",
+      "summary": "",
+      "date": "2026-02-15T19:28:37+00:00"
+    },
+    {
+      "id": "32dbc14a8ba4",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights: #13 Purdue 78, Iowa 57",
+      "url": "https://purduesports.com/news/2026/02/15/highlights-13-purdue-78-iowa-57",
+      "summary": "",
+      "date": "2026-02-15T18:22:15+00:00"
+    },
     {
       "id": "5f8907295cff",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/9/trey-kaufman-renn-media-session-vs-nebraska-purdue-mens-basketball",
       "summary": "",
       "date": "2026-02-09T19:42:12+00:00"
-    },
-    {
-      "id": "6834a1c6b1b8",
-      "source": "Purdue Athletics MBB",
-      "title": "Fletcher Loyer Media Session vs. Nebraska | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/02/9/fletcher-loyer-media-session-vs-nebraska-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-02-09T19:40:08+00:00"
-    },
-    {
-      "id": "65a57e1ee786",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Falls at Indiana",
-      "url": "https://purduesports.com/news/2026/02/8/purdue-falls-at-indiana",
-      "summary": "",
-      "date": "2026-02-08T21:39:00+00:00"
     }
   ]
 }
