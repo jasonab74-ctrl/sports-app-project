@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-16T20:54:37.190916+00:00",
+  "updated": "2026-02-16T21:23:48.340399+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "86a1fb51ac4b",
-      "source": "Purdue Athletics MBB",
-      "title": "#7 Purdue Hosts #1 Michigan to Kick off 3-Game Homestand",
-      "url": "https://purduesports.com/news/2026/02/16/7-purdue-hosts-1-michigan-to-kick-off-3-game-homestand",
-      "summary": "",
-      "date": "2026-02-16T19:51:21+00:00"
-    },
     {
       "id": "0a0bd94ed5ef",
       "source": "Purdue Athletics MBB",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/02/13/coach-katie-gearlds-media-session-vs-rutgers-purdue-womens-basketball",
       "summary": "",
       "date": "2026-02-13T20:47:49+00:00"
+    },
+    {
+      "id": "8e5b01c8685e",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Matt Painter Press Conference vs. Iowa | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/02/13/coach-matt-painter-press-conference-vs-iowa-purdue-mens-basketball-1",
+      "summary": "",
+      "date": "2026-02-13T19:16:54+00:00"
     }
   ]
 }
