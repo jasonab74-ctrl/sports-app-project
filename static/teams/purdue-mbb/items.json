@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-16T15:06:58.727174+00:00",
+  "updated": "2026-02-16T16:03:20.407325+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "43448bbd1a86",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue to Release Boilermaker Legends Collection",
+      "url": "https://purduesports.com/news/2026/02/16/purdue-to-release-boilermaker-legends-collection",
+      "summary": "",
+      "date": "2026-02-16T14:15:00+00:00"
+    },
     {
       "id": "8ba3991d9b21",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/11/highlights-13-purdue-80-7-nebraska-77",
       "summary": "",
       "date": "2026-02-11T17:00:39+00:00"
-    },
-    {
-      "id": "b13afae4a53b",
-      "source": "Purdue Athletics MBB",
-      "title": "#13 Purdue Outlasts #7 Nebraska in Overtime, 80-77",
-      "url": "https://purduesports.com/news/2026/02/11/13-purdue-outlasts-7-nebraska-in-overtime-80-77",
-      "summary": "",
-      "date": "2026-02-11T03:15:26+00:00"
     }
   ]
 }
