@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-16T18:00:25.109223+00:00",
+  "updated": "2026-02-16T19:07:39.249778+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "4a25dca9bc90",
+      "source": "Purdue Athletics MBB",
+      "title": "Senior Day vs. #6 Iowa",
+      "url": "https://purduesports.com/news/2026/02/16/senior-day-vs-iowa",
+      "summary": "Eight Purdue seniors were honored in the final home dual of the season.",
+      "date": "2026-02-16T16:06:39+00:00"
+    },
     {
       "id": "43448bbd1a86",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/11/this-week-in-purdue-baseball-february-11-2026",
       "summary": "",
       "date": "2026-02-11T23:20:39+00:00"
-    },
-    {
-      "id": "c13d39c9f1ce",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights: #13 Purdue 80, #7 Nebraska 77",
-      "url": "https://purduesports.com/news/2026/02/11/highlights-13-purdue-80-7-nebraska-77",
-      "summary": "",
-      "date": "2026-02-11T17:00:39+00:00"
     }
   ]
 }
