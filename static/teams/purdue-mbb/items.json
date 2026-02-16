@@ -1,8 +1,48 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-16T20:24:20.032777+00:00",
+  "updated": "2026-02-16T20:54:37.190916+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "86a1fb51ac4b",
+      "source": "Purdue Athletics MBB",
+      "title": "#7 Purdue Hosts #1 Michigan to Kick off 3-Game Homestand",
+      "url": "https://purduesports.com/news/2026/02/16/7-purdue-hosts-1-michigan-to-kick-off-3-game-homestand",
+      "summary": "",
+      "date": "2026-02-16T19:51:21+00:00"
+    },
+    {
+      "id": "0a0bd94ed5ef",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Matt Painter Press Conference vs. Michigan | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/02/16/coach-matt-painter-press-conference-vs-michigan-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-02-16T19:35:58+00:00"
+    },
+    {
+      "id": "44c9717c9e2c",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Places 7th at Spartan Sun Coast Invitational",
+      "url": "https://purduesports.com/news/2026/02/16/purdue-places-7th-at-spartan-sun-coast-invitational",
+      "summary": "",
+      "date": "2026-02-16T19:34:09+00:00"
+    },
+    {
+      "id": "c47916ccfe12",
+      "source": "Purdue Athletics MBB",
+      "title": "Trey Kaufman-Renn Media Session vs. Michigan | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/02/16/trey-kaufman-renn-media-session-vs-michigan-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-02-16T19:32:59+00:00"
+    },
+    {
+      "id": "e2c419846f1b",
+      "source": "Purdue Athletics MBB",
+      "title": "Daniel Jacobsen Media Session vs. Michigan | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/02/16/daniel-jacobsen-media-session-vs-michigan-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-02-16T19:31:11+00:00"
+    },
     {
       "id": "4a25dca9bc90",
       "source": "Purdue Athletics MBB",
@@ -122,46 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/13/coach-katie-gearlds-media-session-vs-rutgers-purdue-womens-basketball",
       "summary": "",
       "date": "2026-02-13T20:47:49+00:00"
-    },
-    {
-      "id": "8e5b01c8685e",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Matt Painter Press Conference vs. Iowa | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/02/13/coach-matt-painter-press-conference-vs-iowa-purdue-mens-basketball-1",
-      "summary": "",
-      "date": "2026-02-13T19:16:54+00:00"
-    },
-    {
-      "id": "c1eb0a917baf",
-      "source": "Purdue Athletics MBB",
-      "title": "Trey Kaufman-Renn Media Session vs. Iowa | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/02/13/trey-kaufman-renn-media-session-vs-iowa-purdue-mens-basketball-1",
-      "summary": "",
-      "date": "2026-02-13T19:13:54+00:00"
-    },
-    {
-      "id": "5a2a4b273a03",
-      "source": "Purdue Athletics MBB",
-      "title": "NCAA Releases First RPI, Second Coaches' Ranking for 2026 Wrestling Championships",
-      "url": "https://purduesports.com/news/2026/02/12/ncaa-releases-first-rpi-second-coaches-ranking-for-2026-wrestling-championships",
-      "summary": "Nine Boilermakers were listed among the pair of rankings.",
-      "date": "2026-02-12T18:23:06+00:00"
-    },
-    {
-      "id": "427511f67c63",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue vs. Nebraska Photo Gallery",
-      "url": "https://purduesports.com/news/2026/02/12/purdue-vs-nebraska-photo-gallery",
-      "summary": "",
-      "date": "2026-02-12T15:04:25+00:00"
-    },
-    {
-      "id": "c7c7c98cc4bc",
-      "source": "Purdue Athletics MBB",
-      "title": "This Week in Purdue Baseball | February 11, 2026",
-      "url": "https://purduesports.com/news/2026/02/11/this-week-in-purdue-baseball-february-11-2026",
-      "summary": "",
-      "date": "2026-02-11T23:20:39+00:00"
     }
   ]
 }
