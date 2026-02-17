@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-17T01:44:16.148639+00:00",
+  "updated": "2026-02-17T04:14:01.093590+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "3512652bf675",
+      "source": "CBS Sports College Basketball",
+      "title": "College basketball picks, schedule: Predictions for Michigan vs. Purdue and more Top 25 games on Tuesday",
+      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-picks-schedule-predictions-michigan-purdue-north-carolina-unc-kentucky-louisville-nebraska/",
+      "summary": "The No. 1 Wolverines face No. 7 Purdue in a Big Ten brawl that is one of the marquee games on a night jam-packed with great action",
+      "date": "2026-02-17T03:49:40+00:00"
+    },
     {
       "id": "797563a51ed4",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/14/coach-katie-gearlds-postgame-press-conference-vs-rutgers-purdue-womens-basketball",
       "summary": "",
       "date": "2026-02-14T19:13:08+00:00"
-    },
-    {
-      "id": "13755faae117",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Surges in Second Half to Beat Rutgers",
-      "url": "https://purduesports.com/news/2026/02/14/purdue-surges-in-second-half-to-beat-rutgers",
-      "summary": "",
-      "date": "2026-02-14T17:39:00+00:00"
     }
   ]
 }
