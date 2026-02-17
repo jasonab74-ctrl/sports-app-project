@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-17T09:41:51.000310+00:00",
+  "updated": "2026-02-17T10:39:48.525802+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "a1fc0570fcdc",
+      "source": "CBS Sports College Basketball",
+      "title": "Michigan vs. Purdue odds, prediction, time: 2026 college basketball picks for February 17 from proven model",
+      "url": "https://www.cbssports.com/college-basketball/news/michigan-purdue-odds-prediction-time-2026-college-basketball-picks-for-tuesday-february-17/",
+      "summary": "SportsLine's model simulated the No. 1 Michigan Wolverines vs. No. 7 Purdue Boilermakers on Tuesday and revealed its college basketball picks for this Big Ten matchup",
+      "date": "2026-02-17T10:35:49+00:00"
+    },
     {
       "id": "3512652bf675",
       "source": "CBS Sports College Basketball",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/14/tara-daye-and-kiki-smith-postgame-press-conference-vs-rutgers-purdue-womens-basketball",
       "summary": "",
       "date": "2026-02-14T19:22:28+00:00"
-    },
-    {
-      "id": "efd2e011c279",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Katie Gearlds Postgame Press Conference vs. Rutgers | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2026/02/14/coach-katie-gearlds-postgame-press-conference-vs-rutgers-purdue-womens-basketball",
-      "summary": "",
-      "date": "2026-02-14T19:13:08+00:00"
     }
   ]
 }
