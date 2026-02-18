@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-18T21:30:22.225776+00:00",
+  "updated": "2026-02-18T22:27:02.389468+00:00",
   "count": 20,
   "items": [
     {
@@ -84,14 +84,6 @@
       "date": "2026-02-17T13:05:00+00:00"
     },
     {
-      "id": "3512652bf675",
-      "source": "CBS Sports College Basketball",
-      "title": "College basketball picks, schedule: Predictions for Michigan vs. Purdue and more Top 25 games on Tuesday",
-      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-picks-schedule-predictions-michigan-purdue-north-carolina-unc-kentucky-louisville-nebraska/",
-      "summary": "The No. 1 Wolverines face No. 7 Purdue in a Big Ten brawl that is one of the marquee games on a night jam-packed with great action",
-      "date": "2026-02-17T03:49:40+00:00"
-    },
-    {
       "id": "797563a51ed4",
       "source": "Purdue Athletics MBB",
       "title": "#4 Joey Blaze (Purdue) Upsets #3 Mikey Caliendo (Iowa), 7-4 Decision",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/02/15/blaze-makes-b1g-statement-as-25-purdue-falls-to-6-iowa",
       "summary": "The 2025 national finalist aced his biggest test yet.",
       "date": "2026-02-15T21:26:03+00:00"
+    },
+    {
+      "id": "080ddc06e50b",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Falls Short in Big Ten Opener",
+      "url": "https://purduesports.com/news/2026/02/15/purdue-falls-short-in-big-ten-opener",
+      "summary": "",
+      "date": "2026-02-15T21:11:00+00:00"
     }
   ]
 }
