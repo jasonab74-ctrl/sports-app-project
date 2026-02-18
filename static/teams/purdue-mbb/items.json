@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-18T11:34:26.094257+00:00",
+  "updated": "2026-02-18T12:53:10.051849+00:00",
   "count": 20,
   "items": [
     {
@@ -9,7 +9,7 @@
       "title": "After finally reaching No. 1, Michigan looks ready to pull away from pack heading into showdown vs. Duke",
       "url": "https://www.cbssports.com/college-basketball/news/michigan-purdue-score-college-basketball-analysis-game-recap/",
       "summary": "Purdue was the preseason No. 1, but Michigan's win Tuesday showed why it is the (overdue) true No. 1 in college basketball",
-      "date": "2026-02-18T06:53:32+00:00"
+      "date": "2026-02-18T12:49:40+00:00"
     },
     {
       "id": "fccc75b16f49",
@@ -34,14 +34,6 @@
       "url": "https://purduesports.com/news/2026/02/18/players-postgame-press-conference-vs-michigan-purdue-mens-basketball",
       "summary": "",
       "date": "2026-02-18T02:11:07+00:00"
-    },
-    {
-      "id": "33661412340b",
-      "source": "CBS Sports College Basketball",
-      "title": "Use DraftKings promo code to get $200 in bonus bets by targeting Purdue-Michigan, Nebraska-Iowa on Tuesday",
-      "url": "https://www.cbssports.com/college-basketball/news/use-draftkings-promo-code-to-get-200-bonus-bets-purdue-michigan-nebraska-iowa-tuesday/",
-      "summary": "DraftKings offers $200 in bonus bets if your first $5 bet wins for college basketball betting on Tuesday",
-      "date": "2026-02-17T22:12:09+00:00"
     },
     {
       "id": "fb9d0f2b154d",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/02/15/purdue-falls-short-in-big-ten-opener",
       "summary": "",
       "date": "2026-02-15T21:11:00+00:00"
+    },
+    {
+      "id": "dc91707107d5",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Baseball's Walk-off Win vs Portland",
+      "url": "https://purduesports.com/news/2026/02/15/purdue-baseballs-walk-off-win-vs-portland",
+      "summary": "",
+      "date": "2026-02-15T19:28:37+00:00"
     }
   ]
 }
