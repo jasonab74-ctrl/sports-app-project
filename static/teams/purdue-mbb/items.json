@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-18T04:16:43.248664+00:00",
+  "updated": "2026-02-18T05:43:05.322571+00:00",
   "count": 20,
   "items": [
     {
@@ -10,6 +10,22 @@
       "url": "https://purduesports.com/news/2026/02/18/1-michigans-first-half-run-too-much-to-overcome-for-7-boilermakers",
       "summary": "",
       "date": "2026-02-18T03:50:38+00:00"
+    },
+    {
+      "id": "500ffd78baf2",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Matt Painter Postgame Press Conference vs. Michigan | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/02/18/coach-matt-painter-postgame-press-conference-vs-michigan-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-02-18T02:51:33+00:00"
+    },
+    {
+      "id": "bd000d8b48a4",
+      "source": "Purdue Athletics MBB",
+      "title": "Players' Postgame Press Conference vs. Michigan | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/02/18/players-postgame-press-conference-vs-michigan-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-02-18T02:11:07+00:00"
     },
     {
       "id": "33661412340b",
@@ -66,14 +82,6 @@
       "url": "https://purduesports.com/news/2026/02/16/4-joey-blaze-purdue-upsets-3-mikey-caliendo-iowa-7-4-decision",
       "summary": "",
       "date": "2026-02-16T21:09:15+00:00"
-    },
-    {
-      "id": "86a1fb51ac4b",
-      "source": "Purdue Athletics MBB",
-      "title": "#7 Purdue Hosts #1 Michigan to Kick off 3-Game Homestand",
-      "url": "https://purduesports.com/news/2026/02/16/7-purdue-hosts-1-michigan-to-kick-off-3-game-homestand",
-      "summary": "",
-      "date": "2026-02-16T19:51:21+00:00"
     },
     {
       "id": "0a0bd94ed5ef",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/15/purdue-baseballs-walk-off-win-vs-portland",
       "summary": "",
       "date": "2026-02-15T19:28:37+00:00"
-    },
-    {
-      "id": "32dbc14a8ba4",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights: #13 Purdue 78, Iowa 57",
-      "url": "https://purduesports.com/news/2026/02/15/highlights-13-purdue-78-iowa-57",
-      "summary": "",
-      "date": "2026-02-15T18:22:15+00:00"
     }
   ]
 }
