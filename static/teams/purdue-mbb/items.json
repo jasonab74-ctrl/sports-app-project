@@ -1,8 +1,32 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-19T15:11:53.688242+00:00",
+  "updated": "2026-02-19T16:10:05.022780+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "ca246b56c2f3",
+      "source": "Purdue Athletics MBB",
+      "title": "Moodie Announces 2026 Spring Slate",
+      "url": "https://purduesports.com/news/2026/02/19/moodie-announces-2026-spring-slate",
+      "summary": "Head coach Richard Moodie has announced Purdue soccer’s 2026 spring exhibition slate.",
+      "date": "2026-02-19T16:00:00+00:00"
+    },
+    {
+      "id": "10da1967578e",
+      "source": "Purdue Athletics MBB",
+      "title": "#7 Purdue Hosts Indiana Friday on FOX Primetime",
+      "url": "https://purduesports.com/news/2026/02/19/7-purdue-hosts-indiana-friday-on-fox-primetime",
+      "summary": "",
+      "date": "2026-02-19T15:40:48+00:00"
+    },
+    {
+      "id": "652e11541d97",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue vs. Michigan Photo Gallery",
+      "url": "https://purduesports.com/news/2026/02/19/purdue-vs-michigan-photo-gallery",
+      "summary": "",
+      "date": "2026-02-19T14:43:47+00:00"
+    },
     {
       "id": "1baa9fc67100",
       "source": "Purdue Athletics MBB",
@@ -138,30 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/16/purdue-to-release-boilermaker-legends-collection",
       "summary": "",
       "date": "2026-02-16T14:15:00+00:00"
-    },
-    {
-      "id": "8ba3991d9b21",
-      "source": "Purdue Athletics MBB",
-      "title": "Boyle's 4-Hit Game, Homers from Richmond & Manias Power Purdue",
-      "url": "https://purduesports.com/news/2026/02/15/boyles-4-hit-game-homers-from-richmond-and-manias-power-purdue",
-      "summary": "",
-      "date": "2026-02-15T22:59:43+00:00"
-    },
-    {
-      "id": "b7cfa19995e4",
-      "source": "Purdue Athletics MBB",
-      "title": "Blaze Makes B1G Statement as #25 Purdue Falls to #6 Iowa",
-      "url": "https://purduesports.com/news/2026/02/15/blaze-makes-b1g-statement-as-25-purdue-falls-to-6-iowa",
-      "summary": "The 2025 national finalist aced his biggest test yet.",
-      "date": "2026-02-15T21:26:03+00:00"
-    },
-    {
-      "id": "080ddc06e50b",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Falls Short in Big Ten Opener",
-      "url": "https://purduesports.com/news/2026/02/15/purdue-falls-short-in-big-ten-opener",
-      "summary": "",
-      "date": "2026-02-15T21:11:00+00:00"
     }
   ]
 }
