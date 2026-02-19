@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-19T22:58:36.319522+00:00",
+  "updated": "2026-02-19T23:34:03.492644+00:00",
   "count": 20,
   "items": [
     {
@@ -124,14 +124,6 @@
       "date": "2026-02-17T20:50:23+00:00"
     },
     {
-      "id": "8b7772a97aca",
-      "source": "CBS Sports College Basketball",
-      "title": "Today's top games to watch, best bets, odds: No. 1 Michigan at No. 7 Purdue, Champions League and more",
-      "url": "https://www.cbssports.com/betting/news/todays-top-games-to-watch-best-bets-odds-no-1-michigan-at-no-7-purdue-champions-league-and-more/",
-      "summary": "Find best bets and props for the biggest games in sports on Tuesday from the SportsLine Projection Model and top CBS Sports experts",
-      "date": "2026-02-17T20:30:48+00:00"
-    },
-    {
       "id": "947c5fe84884",
       "source": "Purdue Athletics MBB",
       "title": "Boilermakers Make Their Way to Minneapolis for Big Tens",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/02/16/purdue-places-7th-at-spartan-sun-coast-invitational",
       "summary": "",
       "date": "2026-02-16T19:34:09+00:00"
+    },
+    {
+      "id": "c47916ccfe12",
+      "source": "Purdue Athletics MBB",
+      "title": "Trey Kaufman-Renn Media Session vs. Michigan | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/02/16/trey-kaufman-renn-media-session-vs-michigan-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-02-16T19:32:59+00:00"
     }
   ]
 }
