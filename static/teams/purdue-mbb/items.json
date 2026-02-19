@@ -1,8 +1,40 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-19T19:54:34.866913+00:00",
+  "updated": "2026-02-19T20:26:19.416597+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "a253ecfe63b5",
+      "source": "Purdue Athletics MBB",
+      "title": "#22 Purdue to Finish Dual Season at Indiana",
+      "url": "https://purduesports.com/news/2026/02/19/22-purdue-to-finish-dual-season-at-indiana",
+      "summary": "",
+      "date": "2026-02-19T19:44:23+00:00"
+    },
+    {
+      "id": "f29c04a7a47d",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Matt Painter Press Conference vs. Indiana | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/02/19/coach-matt-painter-press-conference-vs-indiana-purdue-mens-basketball-1",
+      "summary": "",
+      "date": "2026-02-19T19:42:17+00:00"
+    },
+    {
+      "id": "2a6716ff194e",
+      "source": "Purdue Athletics MBB",
+      "title": "Braden Smith Media Session vs. Indiana | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/02/19/braden-smith-media-session-vs-indiana-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-02-19T19:34:27+00:00"
+    },
+    {
+      "id": "f1cd741aefa0",
+      "source": "Purdue Athletics MBB",
+      "title": "Trey Kaufman-Renn Media Session vs. Indiana | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/02/19/trey-kaufman-renn-media-session-vs-indiana-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-02-19T19:33:37+00:00"
+    },
     {
       "id": "ca246b56c2f3",
       "source": "Purdue Athletics MBB",
@@ -130,38 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/16/purdue-places-7th-at-spartan-sun-coast-invitational",
       "summary": "",
       "date": "2026-02-16T19:34:09+00:00"
-    },
-    {
-      "id": "c47916ccfe12",
-      "source": "Purdue Athletics MBB",
-      "title": "Trey Kaufman-Renn Media Session vs. Michigan | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/02/16/trey-kaufman-renn-media-session-vs-michigan-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-02-16T19:32:59+00:00"
-    },
-    {
-      "id": "e2c419846f1b",
-      "source": "Purdue Athletics MBB",
-      "title": "Daniel Jacobsen Media Session vs. Michigan | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/02/16/daniel-jacobsen-media-session-vs-michigan-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-02-16T19:31:11+00:00"
-    },
-    {
-      "id": "4a25dca9bc90",
-      "source": "Purdue Athletics MBB",
-      "title": "Senior Day vs. #6 Iowa",
-      "url": "https://purduesports.com/news/2026/02/16/senior-day-vs-iowa",
-      "summary": "Eight Purdue seniors were honored in the final home dual of the season.",
-      "date": "2026-02-16T16:06:39+00:00"
-    },
-    {
-      "id": "43448bbd1a86",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue to Release Boilermaker Legends Collection",
-      "url": "https://purduesports.com/news/2026/02/16/purdue-to-release-boilermaker-legends-collection",
-      "summary": "",
-      "date": "2026-02-16T14:15:00+00:00"
     }
   ]
 }
