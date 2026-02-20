@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-20T20:53:05.647393+00:00",
+  "updated": "2026-02-20T21:19:18.173019+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "7e4de80f1bce",
+      "source": "CBS Sports College Basketball",
+      "title": "Today's top games to watch, best bets, odds: Indiana at No. 7 Purdue, Clippers at Lakers and more",
+      "url": "https://www.cbssports.com/betting/news/todays-top-games-to-watch-best-bets-odds-indiana-at-no-7-purdue-clippers-at-lakers-and-more/",
+      "summary": "Find best bets and props for the biggest games in sports on Friday from the SportsLine Projection Model and top CBS Sports experts",
+      "date": "2026-02-20T20:30:42+00:00"
+    },
     {
       "id": "6f358cf9e919",
       "source": "CBS Sports College Basketball",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/16/4-joey-blaze-purdue-upsets-3-mikey-caliendo-iowa-7-4-decision",
       "summary": "",
       "date": "2026-02-16T21:09:15+00:00"
-    },
-    {
-      "id": "0a0bd94ed5ef",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Matt Painter Press Conference vs. Michigan | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/02/16/coach-matt-painter-press-conference-vs-michigan-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-02-16T19:35:58+00:00"
     }
   ]
 }
