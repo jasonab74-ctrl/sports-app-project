@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-20T17:32:56.094849+00:00",
+  "updated": "2026-02-20T18:38:40.076042+00:00",
   "count": 20,
   "items": [
     {
@@ -124,14 +124,6 @@
       "date": "2026-02-18T20:57:52+00:00"
     },
     {
-      "id": "c37a97484bb3",
-      "source": "CBS Sports College Basketball",
-      "title": "After finally reaching No. 1, Michigan looks ready to pull away from pack heading into showdown vs. Duke",
-      "url": "https://www.cbssports.com/college-basketball/news/michigan-purdue-score-college-basketball-analysis-game-recap/",
-      "summary": "Purdue was the preseason No. 1, but Michigan's win Tuesday showed why it is the (overdue) true No. 1 in college basketball",
-      "date": "2026-02-18T14:04:07+00:00"
-    },
-    {
       "id": "fccc75b16f49",
       "source": "Purdue Athletics MBB",
       "title": "#1 Michigan's First-Half Run Too Much to Overcome for #7 Boilermakers",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/02/16/4-joey-blaze-purdue-upsets-3-mikey-caliendo-iowa-7-4-decision",
       "summary": "",
       "date": "2026-02-16T21:09:15+00:00"
+    },
+    {
+      "id": "0a0bd94ed5ef",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Matt Painter Press Conference vs. Michigan | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/02/16/coach-matt-painter-press-conference-vs-michigan-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-02-16T19:35:58+00:00"
     }
   ]
 }
