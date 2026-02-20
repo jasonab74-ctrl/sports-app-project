@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-20T05:34:24.668517+00:00",
+  "updated": "2026-02-20T06:48:52.468972+00:00",
   "count": 20,
   "items": [
     {
@@ -148,20 +148,20 @@
       "date": "2026-02-18T02:11:07+00:00"
     },
     {
-      "id": "947c5fe84884",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Make Their Way to Minneapolis for Big Tens",
-      "url": "https://purduesports.com/news/2026/02/17/boilermakers-make-their-way-to-minneapolis-for-big-tens",
-      "summary": "",
-      "date": "2026-02-17T13:05:00+00:00"
-    },
-    {
       "id": "797563a51ed4",
       "source": "Purdue Athletics MBB",
       "title": "#4 Joey Blaze (Purdue) Upsets #3 Mikey Caliendo (Iowa), 7-4 Decision",
       "url": "https://purduesports.com/news/2026/02/16/4-joey-blaze-purdue-upsets-3-mikey-caliendo-iowa-7-4-decision",
       "summary": "",
       "date": "2026-02-16T21:09:15+00:00"
+    },
+    {
+      "id": "0a0bd94ed5ef",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Matt Painter Press Conference vs. Michigan | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/02/16/coach-matt-painter-press-conference-vs-michigan-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-02-16T19:35:58+00:00"
     }
   ]
 }
