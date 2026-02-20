@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-19T23:34:03.492644+00:00",
+  "updated": "2026-02-20T01:42:54.550510+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "97be0570f0bb",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Among Elite Field at Round Rock Classic",
+      "url": "https://purduesports.com/news/2026/02/19/purdue-among-elite-field-at-round-rock-classic",
+      "summary": "Purdue, Southern Miss, Baylor and Oregon State all won 30 games last season, posting a combined 159-77 record.",
+      "date": "2026-02-19T22:28:00+00:00"
+    },
     {
       "id": "a253ecfe63b5",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/16/purdue-places-7th-at-spartan-sun-coast-invitational",
       "summary": "",
       "date": "2026-02-16T19:34:09+00:00"
-    },
-    {
-      "id": "c47916ccfe12",
-      "source": "Purdue Athletics MBB",
-      "title": "Trey Kaufman-Renn Media Session vs. Michigan | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/02/16/trey-kaufman-renn-media-session-vs-michigan-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-02-16T19:32:59+00:00"
     }
   ]
 }
