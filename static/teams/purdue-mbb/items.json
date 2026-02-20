@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-20T22:52:29.120262+00:00",
+  "updated": "2026-02-20T23:23:36.967134+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "8dac1d227f4b",
+      "source": "CBS Sports College Basketball",
+      "title": "Indiana vs. Purdue odds, prediction, time: 2026 college basketball picks for Feb. 20 from proven model",
+      "url": "https://www.cbssports.com/college-basketball/news/indiana-purdue-odds-prediction-spread-time-2026-college-basketball-picks-friday-february-20/",
+      "summary": "SportsLine's model simulated Indiana vs. Purdue on Friday and revealed its college basketball picks for this Big Ten Conference matchup",
+      "date": "2026-02-20T22:30:44+00:00"
+    },
     {
       "id": "7e4de80f1bce",
       "source": "CBS Sports College Basketball",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/18/players-postgame-press-conference-vs-michigan-purdue-mens-basketball",
       "summary": "",
       "date": "2026-02-18T02:11:07+00:00"
-    },
-    {
-      "id": "797563a51ed4",
-      "source": "Purdue Athletics MBB",
-      "title": "#4 Joey Blaze (Purdue) Upsets #3 Mikey Caliendo (Iowa), 7-4 Decision",
-      "url": "https://purduesports.com/news/2026/02/16/4-joey-blaze-purdue-upsets-3-mikey-caliendo-iowa-7-4-decision",
-      "summary": "",
-      "date": "2026-02-16T21:09:15+00:00"
     }
   ]
 }
