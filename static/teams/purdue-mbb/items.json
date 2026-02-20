@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-20T20:24:11.464628+00:00",
+  "updated": "2026-02-20T20:53:05.647393+00:00",
   "count": 20,
   "items": [
     {
@@ -10,14 +10,6 @@
       "url": "https://www.cbssports.com/college-basketball/news/college-basketball-rankings-indiana-purdue/",
       "summary": "While they are normally rare, college basketball fans have been spoiled by compelling Friday night matchups in recent weeks -- including tonight's game between Indiana and Purdue",
       "date": "2026-02-20T19:35:07+00:00"
-    },
-    {
-      "id": "4ba49f5e0061",
-      "source": "CBS Sports College Basketball",
-      "title": "Indiana vs. Purdue odds, prediction, time: 2026 college basketball picks for Feb. 20 from proven model",
-      "url": "https://www.cbssports.com/college-basketball/news/indiana-purdue-odds-prediction-time-2026-college-basketball-picks-friday-february-20/",
-      "summary": "SportsLine's model simulated Indiana vs. Purdue on Friday and revealed its college basketball picks for this Big Ten Conference matchup",
-      "date": "2026-02-20T13:32:26+00:00"
     },
     {
       "id": "27ede568675b",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/02/16/4-joey-blaze-purdue-upsets-3-mikey-caliendo-iowa-7-4-decision",
       "summary": "",
       "date": "2026-02-16T21:09:15+00:00"
+    },
+    {
+      "id": "0a0bd94ed5ef",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Matt Painter Press Conference vs. Michigan | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/02/16/coach-matt-painter-press-conference-vs-michigan-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-02-16T19:35:58+00:00"
     }
   ]
 }
