@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-21T12:35:43.786811+00:00",
+  "updated": "2026-02-21T13:38:14.193313+00:00",
   "count": 20,
   "items": [
     {
@@ -26,6 +26,14 @@
       "url": "https://purduesports.com/news/2026/02/21/players-postgame-press-conference-vs-indiana-purdue-mens-basketball",
       "summary": "",
       "date": "2026-02-21T04:05:44+00:00"
+    },
+    {
+      "id": "49a14094894c",
+      "source": "Purdue Athletics MBB",
+      "title": "Worobel Wins Big Ten Title on 3M; Wright Claims Bronze",
+      "url": "https://purduesports.com/news/2026/02/21/worobel-wins-big-ten-title-on-3m-wright-claims-bronze",
+      "summary": "Abby Marcukaitis also took down the Purdue record in the 100 backstroke that had stood since 2019",
+      "date": "2026-02-21T03:48:00+00:00"
     },
     {
       "id": "d3372637fa3f",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/19/boilermakers-go-without-an-xbh-in-loss-at-rice",
       "summary": "",
       "date": "2026-02-19T04:57:00+00:00"
-    },
-    {
-      "id": "e17caca18188",
-      "source": "Purdue Athletics MBB",
-      "title": "Katie Gearlds Media Session vs Iowa | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2026/02/18/katie-gearlds-media-session-vs-iowa-purdue-womens-basketball",
-      "summary": "",
-      "date": "2026-02-18T20:57:52+00:00"
     }
   ]
 }
