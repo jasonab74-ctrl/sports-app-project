@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-21T03:39:52.073603+00:00",
+  "updated": "2026-02-21T05:02:37.306169+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "d3372637fa3f",
+      "source": "Purdue Athletics MBB",
+      "title": "#7 Purdue Rolls Past In-State Rival Indiana at Mackey Arena",
+      "url": "https://purduesports.com/news/2026/02/21/7-purdue-rolls-past-in-state-rival-indiana-at-mackey-arena",
+      "summary": "",
+      "date": "2026-02-21T03:27:48+00:00"
+    },
     {
       "id": "8dac1d227f4b",
       "source": "CBS Sports College Basketball",
@@ -68,14 +76,6 @@
       "date": "2026-02-19T22:28:00+00:00"
     },
     {
-      "id": "a253ecfe63b5",
-      "source": "Purdue Athletics MBB",
-      "title": "#22 Purdue to Finish Dual Season at Indiana",
-      "url": "https://purduesports.com/news/2026/02/19/22-purdue-to-finish-dual-season-at-indiana",
-      "summary": "",
-      "date": "2026-02-19T19:44:23+00:00"
-    },
-    {
       "id": "f29c04a7a47d",
       "source": "Purdue Athletics MBB",
       "title": "Coach Matt Painter Press Conference vs. Indiana | Purdue Men's Basketball",
@@ -106,14 +106,6 @@
       "url": "https://purduesports.com/news/2026/02/19/moodie-announces-2026-spring-slate",
       "summary": "Head coach Richard Moodie has announced Purdue soccer’s 2026 spring exhibition slate.",
       "date": "2026-02-19T16:00:00+00:00"
-    },
-    {
-      "id": "10da1967578e",
-      "source": "Purdue Athletics MBB",
-      "title": "#7 Purdue Hosts Indiana Friday on FOX Primetime",
-      "url": "https://purduesports.com/news/2026/02/19/7-purdue-hosts-indiana-friday-on-fox-primetime",
-      "summary": "",
-      "date": "2026-02-19T15:40:48+00:00"
     },
     {
       "id": "652e11541d97",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/02/18/players-postgame-press-conference-vs-michigan-purdue-mens-basketball",
       "summary": "",
       "date": "2026-02-18T02:11:07+00:00"
+    },
+    {
+      "id": "797563a51ed4",
+      "source": "Purdue Athletics MBB",
+      "title": "#4 Joey Blaze (Purdue) Upsets #3 Mikey Caliendo (Iowa), 7-4 Decision",
+      "url": "https://purduesports.com/news/2026/02/16/4-joey-blaze-purdue-upsets-3-mikey-caliendo-iowa-7-4-decision",
+      "summary": "",
+      "date": "2026-02-16T21:09:15+00:00"
     }
   ]
 }
