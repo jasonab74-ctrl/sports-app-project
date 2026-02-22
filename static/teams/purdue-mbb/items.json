@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-22T21:19:13.714346+00:00",
+  "updated": "2026-02-22T21:45:58.570650+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "5811d10d558b",
+      "source": "Purdue Athletics MBB",
+      "title": "Evans Retires 14 in a Row as Boilers Top #11 Oregon St.",
+      "url": "https://purduesports.com/news/2026/02/22/evans-retires-14-in-a-row-as-boilers-top-11-oregon-st",
+      "summary": "Purdue wins 2 of 3 at the elite Round Rock Classic and finishes its season-opening trip in Texas 4-3.",
+      "date": "2026-02-22T21:27:22+00:00"
+    },
+    {
+      "id": "395738e8f9cd",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Defeats #11 Oregon State",
+      "url": "https://purduesports.com/news/2026/02/22/purdue-defeats-11-oregon-state",
+      "summary": "",
+      "date": "2026-02-22T21:03:05+00:00"
+    },
     {
       "id": "a85976d72322",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/20/purdue-vs-13-iowa-highlights",
       "summary": "",
       "date": "2026-02-20T03:12:39+00:00"
-    },
-    {
-      "id": "106e49ff6b6e",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Katie Gearlds Postgame Press Conference vs. Iowa | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2026/02/20/coach-katie-gearlds-postgame-press-conference-vs-iowa-purdue-womens-basketball",
-      "summary": "",
-      "date": "2026-02-20T02:47:34+00:00"
-    },
-    {
-      "id": "0eed86806d94",
-      "source": "Purdue Athletics MBB",
-      "title": "Players Postgame Press Conference vs. Iowa | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2026/02/20/players-postgame-press-conference-vs-iowa-purdue-womens-basketball",
-      "summary": "",
-      "date": "2026-02-20T02:28:14+00:00"
     }
   ]
 }
