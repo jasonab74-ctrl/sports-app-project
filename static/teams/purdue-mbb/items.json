@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-22T20:49:08.051928+00:00",
+  "updated": "2026-02-22T21:19:13.714346+00:00",
   "count": 20,
   "items": [
     {
@@ -140,14 +140,6 @@
       "date": "2026-02-20T20:30:42+00:00"
     },
     {
-      "id": "6f358cf9e919",
-      "source": "CBS Sports College Basketball",
-      "title": "College basketball rankings: Rivals Indiana, Purdue square off in compelling Friday night showdown",
-      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-rankings-indiana-purdue/",
-      "summary": "While they are normally rare, college basketball fans have been spoiled by compelling Friday night matchups in recent weeks -- including tonight's game between Indiana and Purdue",
-      "date": "2026-02-20T19:35:07+00:00"
-    },
-    {
       "id": "27ede568675b",
       "source": "Purdue Athletics MBB",
       "title": "Purdue vs. #13 Iowa Highlights",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/02/20/coach-katie-gearlds-postgame-press-conference-vs-iowa-purdue-womens-basketball",
       "summary": "",
       "date": "2026-02-20T02:47:34+00:00"
+    },
+    {
+      "id": "0eed86806d94",
+      "source": "Purdue Athletics MBB",
+      "title": "Players Postgame Press Conference vs. Iowa | Purdue Women's Basketball",
+      "url": "https://purduesports.com/news/2026/02/20/players-postgame-press-conference-vs-iowa-purdue-womens-basketball",
+      "summary": "",
+      "date": "2026-02-20T02:28:14+00:00"
     }
   ]
 }
