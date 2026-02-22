@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-21T23:44:50.162869+00:00",
+  "updated": "2026-02-22T01:45:33.691448+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "2e62721ea98c",
+      "source": "Purdue Athletics MBB",
+      "title": "Walk-off: Richmond Powers Comeback, Boyle Wins It",
+      "url": "https://purduesports.com/news/2026/02/22/walk-off-richmond-powers-comeback-boyle-wins-it",
+      "summary": "Purdue rallied from a 5-0 deficit to defeat Baylor on a ninth-inning walk-off, completing the largest comeback in the history of the Round Rock Classic",
+      "date": "2026-02-22T00:07:34+00:00"
+    },
+    {
+      "id": "91eefcc06fcf",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Walk-off Win vs Baylor Highlights",
+      "url": "https://purduesports.com/news/2026/02/21/purdue-walk-off-win-vs-baylor-highlights",
+      "summary": "",
+      "date": "2026-02-21T23:59:58+00:00"
+    },
     {
       "id": "04063584d3ed",
       "source": "CBS Sports College Basketball",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/19/braden-smith-media-session-vs-indiana-purdue-mens-basketball",
       "summary": "",
       "date": "2026-02-19T19:34:27+00:00"
-    },
-    {
-      "id": "f1cd741aefa0",
-      "source": "Purdue Athletics MBB",
-      "title": "Trey Kaufman-Renn Media Session vs. Indiana | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/02/19/trey-kaufman-renn-media-session-vs-indiana-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-02-19T19:33:37+00:00"
-    },
-    {
-      "id": "ca246b56c2f3",
-      "source": "Purdue Athletics MBB",
-      "title": "Moodie Announces 2026 Spring Slate",
-      "url": "https://purduesports.com/news/2026/02/19/moodie-announces-2026-spring-slate",
-      "summary": "Head coach Richard Moodie has announced Purdue soccer’s 2026 spring exhibition slate.",
-      "date": "2026-02-19T16:00:00+00:00"
     }
   ]
 }
