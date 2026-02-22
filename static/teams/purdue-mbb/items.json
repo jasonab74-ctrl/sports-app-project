@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-22T04:12:19.310806+00:00",
+  "updated": "2026-02-22T05:33:11.959594+00:00",
   "count": 20,
   "items": [
     {
@@ -10,6 +10,14 @@
       "url": "https://purduesports.com/news/2026/02/22/purdue-mourns-the-passing-of-boilermaker-legend-rondale-moore",
       "summary": "",
       "date": "2026-02-22T03:36:27+00:00"
+    },
+    {
+      "id": "565210b61940",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue's Daryn Wright Wins Silver on Platform at Big Tens",
+      "url": "https://purduesports.com/news/2026/02/22/purdues-daryn-wright-wins-silver-on-platform-at-big-tens",
+      "summary": "",
+      "date": "2026-02-22T02:44:34+00:00"
     },
     {
       "id": "375fa8f51892",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/20/players-postgame-press-conference-vs-iowa-purdue-womens-basketball",
       "summary": "",
       "date": "2026-02-20T02:28:14+00:00"
-    },
-    {
-      "id": "60d656ecf971",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Rally Comes Up Short vs. #13 Iowa",
-      "url": "https://purduesports.com/news/2026/02/20/purdue-rally-comes-up-short-vs-13-iowa",
-      "summary": "",
-      "date": "2026-02-20T00:39:00+00:00"
     }
   ]
 }
