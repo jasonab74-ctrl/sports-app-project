@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-23T17:35:44.470107+00:00",
+  "updated": "2026-02-23T18:55:54.524420+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "4ceb326686be",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Destined for the Bahamas",
+      "url": "https://purduesports.com/news/2026/02/23/boilermakers-destined-for-bahamas",
+      "summary": "",
+      "date": "2026-02-23T18:00:00+00:00"
+    },
     {
       "id": "5811d10d558b",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/20/coach-katie-gearlds-postgame-press-conference-vs-iowa-purdue-womens-basketball",
       "summary": "",
       "date": "2026-02-20T02:47:34+00:00"
-    },
-    {
-      "id": "0eed86806d94",
-      "source": "Purdue Athletics MBB",
-      "title": "Players Postgame Press Conference vs. Iowa | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2026/02/20/players-postgame-press-conference-vs-iowa-purdue-womens-basketball",
-      "summary": "",
-      "date": "2026-02-20T02:28:14+00:00"
     }
   ]
 }
