@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-23T21:39:05.361810+00:00",
+  "updated": "2026-02-23T22:35:43.437141+00:00",
   "count": 20,
   "items": [
     {
@@ -74,6 +74,14 @@
       "url": "https://purduesports.com/news/2026/02/21/purdue-walk-off-win-vs-baylor-highlights",
       "summary": "",
       "date": "2026-02-21T23:59:58+00:00"
+    },
+    {
+      "id": "04063584d3ed",
+      "source": "CBS Sports College Basketball",
+      "title": "College basketball rankings: Trey Kaufman-Renn stars as No. 8 Purdue topples rival Indiana",
+      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-rankings-top-25-and-1-purdue-indiana-trey-kaufman-renn/",
+      "summary": "Purdue's senior star dropped 20 points on Friday as the Boilermakers cruised to an easy victory over the Hoosiers",
+      "date": "2026-02-21T15:42:45+00:00"
     },
     {
       "id": "4ed9b23a46f5",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/20/coach-katie-gearlds-postgame-press-conference-vs-iowa-purdue-womens-basketball",
       "summary": "",
       "date": "2026-02-20T02:47:34+00:00"
-    },
-    {
-      "id": "0eed86806d94",
-      "source": "Purdue Athletics MBB",
-      "title": "Players Postgame Press Conference vs. Iowa | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2026/02/20/players-postgame-press-conference-vs-iowa-purdue-womens-basketball",
-      "summary": "",
-      "date": "2026-02-20T02:28:14+00:00"
     }
   ]
 }
