@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-24T21:03:12.450783+00:00",
+  "updated": "2026-02-24T21:57:44.569917+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "2a27df693e53",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Katie Gearlds Media Session vs. Oregon | Purdue Women's Basketball",
+      "url": "https://purduesports.com/news/2026/02/24/coach-katie-gearlds-media-session-vs-oregon-purdue-womens-basketball",
+      "summary": "",
+      "date": "2026-02-24T21:43:44+00:00"
+    },
+    {
+      "id": "1f6977bf28d0",
+      "source": "Purdue Athletics MBB",
+      "title": "Madison Layden-Zay Senior Day Media Session | Purdue Women's Basketball",
+      "url": "https://purduesports.com/news/2026/02/24/madison-layden-zay-senior-day-media-session-purdue-womens-basketball",
+      "summary": "",
+      "date": "2026-02-24T21:43:29+00:00"
+    },
     {
       "id": "013bbe93a2e3",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/21/7-purdue-rolls-past-in-state-rival-indiana-at-mackey-arena",
       "summary": "",
       "date": "2026-02-21T03:27:48+00:00"
-    },
-    {
-      "id": "5f2f1e03ee2c",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights: #7 Purdue 93, Indiana 64",
-      "url": "https://purduesports.com/news/2026/02/21/highlights-7-purdue-93-indiana-64",
-      "summary": "",
-      "date": "2026-02-21T03:22:15+00:00"
-    },
-    {
-      "id": "fb4fe0812fda",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Rally but Lose on a Walk-off vs. #20 Southern Miss",
-      "url": "https://purduesports.com/news/2026/02/21/boilermakers-rally-but-lose-on-a-walk-off-vs-20-southern-miss",
-      "summary": "",
-      "date": "2026-02-21T01:16:00+00:00"
     }
   ]
 }
