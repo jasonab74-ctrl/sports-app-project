@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-24T20:29:02.003808+00:00",
+  "updated": "2026-02-24T21:03:12.450783+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "013bbe93a2e3",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue to Honor Layden-Zay with Senior Night vs. Oregon",
+      "url": "https://purduesports.com/news/2026/02/24/purdue-to-honor-layden-zay-with-senior-night-vs-oregon",
+      "summary": "",
+      "date": "2026-02-24T19:09:00+00:00"
+    },
+    {
+      "id": "6dd7b61a73ce",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Set to Battle Illinois State",
+      "url": "https://purduesports.com/news/2026/02/24/purdue-set-to-battle-illinois-state",
+      "summary": "",
+      "date": "2026-02-24T18:34:01+00:00"
+    },
     {
       "id": "b043b2406825",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/21/boilermakers-rally-but-lose-on-a-walk-off-vs-20-southern-miss",
       "summary": "",
       "date": "2026-02-21T01:16:00+00:00"
-    },
-    {
-      "id": "27ede568675b",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue vs. #13 Iowa Highlights",
-      "url": "https://purduesports.com/news/2026/02/20/purdue-vs-13-iowa-highlights",
-      "summary": "",
-      "date": "2026-02-20T03:12:39+00:00"
-    },
-    {
-      "id": "106e49ff6b6e",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Katie Gearlds Postgame Press Conference vs. Iowa | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2026/02/20/coach-katie-gearlds-postgame-press-conference-vs-iowa-purdue-womens-basketball",
-      "summary": "",
-      "date": "2026-02-20T02:47:34+00:00"
     }
   ]
 }
