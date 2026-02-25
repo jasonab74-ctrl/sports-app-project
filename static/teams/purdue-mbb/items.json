@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-25T15:30:28.324541+00:00",
+  "updated": "2026-02-25T16:42:55.744612+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "51918cc2f6cf",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Men's S&D Big Tens Excitement",
+      "url": "https://purduesports.com/news/2026/02/25/purdue-mens-sd-big-tens-excitement",
+      "summary": "",
+      "date": "2026-02-25T15:26:07+00:00"
+    },
     {
       "id": "9a72f8a2869c",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/21/coach-matt-painter-postgame-press-conference-vs-indiana-purdue-mens-basketball",
       "summary": "",
       "date": "2026-02-21T04:08:55+00:00"
-    },
-    {
-      "id": "82b03355ea41",
-      "source": "Purdue Athletics MBB",
-      "title": "Players Postgame Press Conference vs. Indiana | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/02/21/players-postgame-press-conference-vs-indiana-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-02-21T04:05:44+00:00"
     }
   ]
 }
