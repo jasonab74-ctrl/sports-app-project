@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-25T18:58:36.626117+00:00",
+  "updated": "2026-02-25T19:49:51.786290+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "e50f0f5cd0ab",
+      "source": "CBS Sports College Basketball",
+      "title": "Bracketology: UConn still has challengers for fourth No. 1 seed, can Purdue or Iowa State make a charge?",
+      "url": "https://www.cbssports.com/college-basketball/news/bracketology-uconn-purdue-iowa-state-ncaa-tournament/",
+      "summary": "Here is how the NCAA Tournament picture is shaping up entering Wednesday night's action",
+      "date": "2026-02-25T19:16:09+00:00"
+    },
     {
       "id": "77deb3dc73ad",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/22/walk-off-richmond-powers-comeback-boyle-wins-it",
       "summary": "Purdue rallied from a 5-0 deficit to defeat Baylor on a ninth-inning walk-off, completing the largest comeback in the history of the Round Rock Classic",
       "date": "2026-02-22T00:07:34+00:00"
-    },
-    {
-      "id": "91eefcc06fcf",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Walk-off Win vs Baylor Highlights",
-      "url": "https://purduesports.com/news/2026/02/21/purdue-walk-off-win-vs-baylor-highlights",
-      "summary": "",
-      "date": "2026-02-21T23:59:58+00:00"
     }
   ]
 }
