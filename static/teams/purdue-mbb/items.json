@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-25T04:15:16.098482+00:00",
+  "updated": "2026-02-25T05:42:31.455918+00:00",
   "count": 20,
   "items": [
     {
@@ -50,6 +50,14 @@
       "url": "https://purduesports.com/news/2026/02/24/purdue-women-at-big-ten-championships",
       "summary": "",
       "date": "2026-02-24T18:05:13+00:00"
+    },
+    {
+      "id": "8072c1f5532d",
+      "source": "Purdue Athletics MBB",
+      "title": "This Week in Purdue Baseball | February 24, 2026",
+      "url": "https://purduesports.com/news/2026/02/24/this-week-in-purdue-baseball-february-24-2026",
+      "summary": "",
+      "date": "2026-02-24T17:43:45+00:00"
     },
     {
       "id": "4ceb326686be",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/21/players-postgame-press-conference-vs-indiana-purdue-mens-basketball",
       "summary": "",
       "date": "2026-02-21T04:05:44+00:00"
-    },
-    {
-      "id": "49a14094894c",
-      "source": "Purdue Athletics MBB",
-      "title": "Worobel Wins Big Ten Title on 3M; Wright Claims Bronze",
-      "url": "https://purduesports.com/news/2026/02/21/worobel-wins-big-ten-title-on-3m-wright-claims-bronze",
-      "summary": "Abby Marcukaitis also took down the Purdue record in the 100 backstroke that had stood since 2019",
-      "date": "2026-02-21T03:48:00+00:00"
     }
   ]
 }
