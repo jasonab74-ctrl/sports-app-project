@@ -1,15 +1,39 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-25T17:53:33.098576+00:00",
+  "updated": "2026-02-25T18:58:36.626117+00:00",
   "count": 20,
   "items": [
     {
-      "id": "51918cc2f6cf",
+      "id": "77deb3dc73ad",
       "source": "Purdue Athletics MBB",
-      "title": "Purdue Men's S&D Big Tens Excitement",
-      "url": "https://purduesports.com/news/2026/02/25/purdue-mens-sd-big-tens-excitement",
+      "title": "Purdue, Gonzaga to Tip off 2026-27 Season in Las Vegas",
+      "url": "https://purduesports.com/news/2026/02/25/purdue-gonzaga-to-tip-off-2026-27-season-in-las-vegas",
       "summary": "",
-      "date": "2026-02-25T15:26:07+00:00"
+      "date": "2026-02-25T18:00:00+00:00"
+    },
+    {
+      "id": "8e3c870330c8",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Set for B1G Indoor Championships",
+      "url": "https://purduesports.com/news/2026/02/25/purdue-set-for-b1g-indoor-championships",
+      "summary": "",
+      "date": "2026-02-25T17:59:34+00:00"
+    },
+    {
+      "id": "cd5b26def0bf",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Stories: Layden-Zay Leaves Her Mark in School History",
+      "url": "https://purduesports.com/news/2026/02/25/purdue-stories-layden-zay-leaves-her-mark-in-school-history",
+      "summary": "",
+      "date": "2026-02-25T17:09:04+00:00"
+    },
+    {
+      "id": "1d63b1c66007",
+      "source": "Purdue Athletics MBB",
+      "title": "#8 Purdue Hosts #13 Michigan State in Key Big Ten Clash",
+      "url": "https://purduesports.com/news/2026/02/25/8-purdue-hosts-13-michigan-state-in-key-big-ten-clash",
+      "summary": "",
+      "date": "2026-02-25T16:42:52+00:00"
     },
     {
       "id": "9a72f8a2869c",
@@ -138,30 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/21/purdue-walk-off-win-vs-baylor-highlights",
       "summary": "",
       "date": "2026-02-21T23:59:58+00:00"
-    },
-    {
-      "id": "4ed9b23a46f5",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Heads to #14/15 Maryland on Sunday",
-      "url": "https://purduesports.com/news/2026/02/21/purdue-heads-to-1415-maryland-on-sunday",
-      "summary": "",
-      "date": "2026-02-21T15:09:00+00:00"
-    },
-    {
-      "id": "b9e5a8bfdea9",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Baseball Highlights vs Southern Miss",
-      "url": "https://purduesports.com/news/2026/02/21/purdue-baseball-highlights-vs-southern-miss",
-      "summary": "",
-      "date": "2026-02-21T05:10:57+00:00"
-    },
-    {
-      "id": "cf70c5f9c7e7",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Matt Painter Postgame Press Conference vs. indiana | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/02/21/coach-matt-painter-postgame-press-conference-vs-indiana-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-02-21T04:08:55+00:00"
     }
   ]
 }
