@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-26T14:07:13.169577+00:00",
+  "updated": "2026-02-26T15:11:12.852849+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "15a2232e3a4f",
+      "source": "CBS Sports College Basketball",
+      "title": "Michigan State vs. Purdue odds, prediction: 2026 college basketball picks for February 26 from proven model",
+      "url": "https://www.cbssports.com/college-basketball/news/michigan-state-purdue-odds-prediction-2026-college-basketball-picks-february-26/",
+      "summary": "SportsLine's model simulated No. 13 Michigan State Spartans vs. No. 8 Purdue Boilermakers and revealed its college basketball picks for this Big Ten Conference matchup",
+      "date": "2026-02-26T14:43:07+00:00"
+    },
     {
       "id": "e85aa3ae9a1b",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/22/purdues-daryn-wright-wins-silver-on-platform-at-big-tens",
       "summary": "",
       "date": "2026-02-22T02:44:34+00:00"
-    },
-    {
-      "id": "375fa8f51892",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Splits Day Two in Atlanta",
-      "url": "https://purduesports.com/news/2026/02/22/purdue-splits-day-two-in-atlanta",
-      "summary": "Purdue Softball used early power and a four-run fifth inning to hold off a late rally and secure an 8–6 win over Charleston Cougars, before falling in a nightcap with the Georgia State Panthers.",
-      "date": "2026-02-22T01:58:40+00:00"
     }
   ]
 }
