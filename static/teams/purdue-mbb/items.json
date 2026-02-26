@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-26T19:39:34.813678+00:00",
+  "updated": "2026-02-26T20:30:47.074903+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "282f14923439",
+      "source": "CBS Sports College Basketball",
+      "title": "Use DraftKings promo code to get $200 bonus bets by targeting Rockets-Magic, Michigan State-Purdue on Thursday",
+      "url": "https://www.cbssports.com/betting/news/use-draftkings-promo-code-to-get-200-bonus-bets-rockets-magic-michigan-state-purdue-thursday/",
+      "summary": "DraftKings offers $200 in bonus bets if your first $5 bet wins for NBA and college basketball betting on Thursday",
+      "date": "2026-02-26T20:06:25+00:00"
+    },
     {
       "id": "15a2232e3a4f",
       "source": "CBS Sports College Basketball",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/22/purdue-mourns-the-passing-of-boilermaker-legend-rondale-moore",
       "summary": "",
       "date": "2026-02-22T03:36:27+00:00"
-    },
-    {
-      "id": "565210b61940",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue's Daryn Wright Wins Silver on Platform at Big Tens",
-      "url": "https://purduesports.com/news/2026/02/22/purdues-daryn-wright-wins-silver-on-platform-at-big-tens",
-      "summary": "",
-      "date": "2026-02-22T02:44:34+00:00"
     }
   ]
 }
