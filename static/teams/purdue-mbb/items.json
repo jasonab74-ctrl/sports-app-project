@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-26T01:41:59.007221+00:00",
+  "updated": "2026-02-26T04:11:59.362904+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "ff8141586732",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilers Qualify for NCAAs with Record-Setting Relay",
+      "url": "https://purduesports.com/news/2026/02/26/boilermakers-qualify-for-ncaas-with-record-setting-relay",
+      "summary": "Purdue's 200 medley relay team earned a berth to the NCAA Championships with a team-record time of 1:23.10",
+      "date": "2026-02-26T01:43:00+00:00"
+    },
     {
       "id": "e50f0f5cd0ab",
       "source": "CBS Sports College Basketball",
@@ -44,14 +52,6 @@
       "date": "2026-02-25T16:42:52+00:00"
     },
     {
-      "id": "9a72f8a2869c",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Men Return to Madison for Big Ten Championships",
-      "url": "https://purduesports.com/news/2026/02/24/purdue-men-return-to-madison-for-big-ten-championships",
-      "summary": "",
-      "date": "2026-02-24T22:10:00+00:00"
-    },
-    {
       "id": "2a27df693e53",
       "source": "Purdue Athletics MBB",
       "title": "Coach Katie Gearlds Media Session vs. Oregon | Purdue Women's Basketball",
@@ -66,14 +66,6 @@
       "url": "https://purduesports.com/news/2026/02/24/madison-layden-zay-senior-day-media-session-purdue-womens-basketball",
       "summary": "",
       "date": "2026-02-24T21:43:29+00:00"
-    },
-    {
-      "id": "013bbe93a2e3",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue to Honor Layden-Zay with Senior Night vs. Oregon",
-      "url": "https://purduesports.com/news/2026/02/24/purdue-to-honor-layden-zay-with-senior-night-vs-oregon",
-      "summary": "",
-      "date": "2026-02-24T19:09:00+00:00"
     },
     {
       "id": "6dd7b61a73ce",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/02/22/walk-off-richmond-powers-comeback-boyle-wins-it",
       "summary": "Purdue rallied from a 5-0 deficit to defeat Baylor on a ninth-inning walk-off, completing the largest comeback in the history of the Round Rock Classic",
       "date": "2026-02-22T00:07:34+00:00"
+    },
+    {
+      "id": "91eefcc06fcf",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Walk-off Win vs Baylor Highlights",
+      "url": "https://purduesports.com/news/2026/02/21/purdue-walk-off-win-vs-baylor-highlights",
+      "summary": "",
+      "date": "2026-02-21T23:59:58+00:00"
     }
   ]
 }
