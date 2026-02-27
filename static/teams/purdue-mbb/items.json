@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-27T12:45:33.987092+00:00",
+  "updated": "2026-02-27T13:56:21.718579+00:00",
   "count": 20,
   "items": [
     {
@@ -26,6 +26,14 @@
       "url": "https://www.cbssports.com/college-basketball/news/michigan-state-purdue-odds-prediction-time-2026-college-basketball-picks-february-26/",
       "summary": "SportsLine's model simulated No. 13 Michigan State Spartans vs. No. 8 Purdue Boilermakers and revealed its college basketball picks for this Big Ten Conference matchup",
       "date": "2026-02-26T22:21:18+00:00"
+    },
+    {
+      "id": "bbf040ef4e7c",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Plays in Holly Springs to Close Out Pre-Conference Slate",
+      "url": "https://purduesports.com/news/2026/02/26/purdue-plays-in-holly-spring-to-close-out-pre-conference-slate",
+      "summary": "The Boilermakers host Marist at the NMAC, where they are 22-5 since 2022",
+      "date": "2026-02-26T22:05:00+00:00"
     },
     {
       "id": "35425b59e09f",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/22/purdue-mourns-the-passing-of-boilermaker-legend-rondale-moore",
       "summary": "",
       "date": "2026-02-22T03:36:27+00:00"
-    },
-    {
-      "id": "565210b61940",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue's Daryn Wright Wins Silver on Platform at Big Tens",
-      "url": "https://purduesports.com/news/2026/02/22/purdues-daryn-wright-wins-silver-on-platform-at-big-tens",
-      "summary": "",
-      "date": "2026-02-22T02:44:34+00:00"
     }
   ]
 }
