@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-27T01:29:02.388383+00:00",
+  "updated": "2026-02-27T03:55:10.450547+00:00",
   "count": 20,
   "items": [
     {
@@ -68,14 +68,6 @@
       "date": "2026-02-25T18:00:00+00:00"
     },
     {
-      "id": "8e3c870330c8",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Set for B1G Indoor Championships",
-      "url": "https://purduesports.com/news/2026/02/25/purdue-set-for-b1g-indoor-championships",
-      "summary": "",
-      "date": "2026-02-25T17:59:34+00:00"
-    },
-    {
       "id": "cd5b26def0bf",
       "source": "Purdue Athletics MBB",
       "title": "Purdue Stories: Layden-Zay Leaves Her Mark in School History",
@@ -106,14 +98,6 @@
       "url": "https://purduesports.com/news/2026/02/24/madison-layden-zay-senior-day-media-session-purdue-womens-basketball",
       "summary": "",
       "date": "2026-02-24T21:43:29+00:00"
-    },
-    {
-      "id": "6dd7b61a73ce",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Set to Battle Illinois State",
-      "url": "https://purduesports.com/news/2026/02/24/purdue-set-to-battle-illinois-state",
-      "summary": "",
-      "date": "2026-02-24T18:34:01+00:00"
     },
     {
       "id": "b043b2406825",
@@ -162,6 +146,22 @@
       "url": "https://purduesports.com/news/2026/02/22/purdue-falls-at-1415-maryland",
       "summary": "",
       "date": "2026-02-22T18:39:00+00:00"
+    },
+    {
+      "id": "14986bb84fd9",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Mourns the Passing of Rondale Moore",
+      "url": "https://purduesports.com/news/2026/02/22/purdue-mourns-the-passing-of-boilermaker-legend-rondale-moore",
+      "summary": "",
+      "date": "2026-02-22T03:36:27+00:00"
+    },
+    {
+      "id": "565210b61940",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue's Daryn Wright Wins Silver on Platform at Big Tens",
+      "url": "https://purduesports.com/news/2026/02/22/purdues-daryn-wright-wins-silver-on-platform-at-big-tens",
+      "summary": "",
+      "date": "2026-02-22T02:44:34+00:00"
     }
   ]
 }
