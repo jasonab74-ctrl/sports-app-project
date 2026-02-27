@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-27T13:56:21.718579+00:00",
+  "updated": "2026-02-27T14:37:28.173216+00:00",
   "count": 20,
   "items": [
     {
@@ -58,14 +58,6 @@
       "url": "https://purduesports.com/news/2026/02/26/players-postgame-press-conference-vs-oregon-purdue-womens-basketball",
       "summary": "",
       "date": "2026-02-26T02:37:21+00:00"
-    },
-    {
-      "id": "ff8141586732",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilers Qualify for NCAAs with Record-Setting Relay",
-      "url": "https://purduesports.com/news/2026/02/26/boilermakers-qualify-for-ncaas-with-record-setting-relay",
-      "summary": "Purdue's 200 medley relay team earned a berth to the NCAA Championships with a team-record time of 1:23.10",
-      "date": "2026-02-26T01:43:00+00:00"
     },
     {
       "id": "e50f0f5cd0ab",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/02/22/purdue-mourns-the-passing-of-boilermaker-legend-rondale-moore",
       "summary": "",
       "date": "2026-02-22T03:36:27+00:00"
+    },
+    {
+      "id": "565210b61940",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue's Daryn Wright Wins Silver on Platform at Big Tens",
+      "url": "https://purduesports.com/news/2026/02/22/purdues-daryn-wright-wins-silver-on-platform-at-big-tens",
+      "summary": "",
+      "date": "2026-02-22T02:44:34+00:00"
     }
   ]
 }
