@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-27T06:10:04.784488+00:00",
+  "updated": "2026-02-27T07:26:34.786556+00:00",
   "count": 20,
   "items": [
     {
@@ -92,14 +92,6 @@
       "date": "2026-02-25T17:09:04+00:00"
     },
     {
-      "id": "1d63b1c66007",
-      "source": "Purdue Athletics MBB",
-      "title": "#8 Purdue Hosts #13 Michigan State in Key Big Ten Clash",
-      "url": "https://purduesports.com/news/2026/02/25/8-purdue-hosts-13-michigan-state-in-key-big-ten-clash",
-      "summary": "",
-      "date": "2026-02-25T16:42:52+00:00"
-    },
-    {
       "id": "2a27df693e53",
       "source": "Purdue Athletics MBB",
       "title": "Coach Katie Gearlds Media Session vs. Oregon | Purdue Women's Basketball",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/02/22/purdue-falls-at-1415-maryland",
       "summary": "",
       "date": "2026-02-22T18:39:00+00:00"
+    },
+    {
+      "id": "14986bb84fd9",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Mourns the Passing of Rondale Moore",
+      "url": "https://purduesports.com/news/2026/02/22/purdue-mourns-the-passing-of-boilermaker-legend-rondale-moore",
+      "summary": "",
+      "date": "2026-02-22T03:36:27+00:00"
     }
   ]
 }
