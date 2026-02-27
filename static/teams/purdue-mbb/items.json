@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-27T14:37:28.173216+00:00",
+  "updated": "2026-02-27T15:33:36.609506+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "3e87c835d577",
+      "source": "CBS Sports College Basketball",
+      "title": "Bracketology: Michigan State's win at Purdue lifts Spartans in latest NCAA Tournament projection",
+      "url": "https://www.cbssports.com/college-basketball/news/bracketology-michigan-states-win-purdue-ncaa-tournament-projection/",
+      "summary": "The Spartans are up a seed line following an impressive road win over a high-end Big Ten foe",
+      "date": "2026-02-27T14:42:50+00:00"
+    },
+    {
+      "id": "14f09c95dc15",
+      "source": "CBS Sports College Basketball",
+      "title": "College basketball rankings: Purdue's disappointment continues as Boilermakers lose fourth game at home",
+      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-rankings-top-25-and-1-purdue/",
+      "summary": "Purdue's season has hardly gone as expected -- especially at home -- after entering the season as the No. 1 team in the country",
+      "date": "2026-02-27T14:42:21+00:00"
+    },
     {
       "id": "c8a7807255ce",
       "source": "Purdue Athletics MBB",
@@ -18,6 +34,14 @@
       "url": "https://purduesports.com/news/2026/02/27/evan-mackesy-breaks-purdue-record-in-400-im-at-big-tens",
       "summary": "",
       "date": "2026-02-27T03:49:06+00:00"
+    },
+    {
+      "id": "2e51d3e40a93",
+      "source": "Purdue Athletics MBB",
+      "title": "Miller Wins B1G Title on 1-Meter; Mackesy Breaks 400 IM Record",
+      "url": "https://purduesports.com/news/2026/02/27/miller-wins-b1g-title-on-1-meter-mackesy-breaks-400-im-record",
+      "summary": "Max Miller was victorious on 1-meter for Purdue's first Big Ten champion in the event since 2011",
+      "date": "2026-02-27T02:56:00+00:00"
     },
     {
       "id": "c505b22b4713",
@@ -138,30 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/22/purdue-defeats-11-oregon-state",
       "summary": "",
       "date": "2026-02-22T21:03:05+00:00"
-    },
-    {
-      "id": "a85976d72322",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Falls at #14/15 Maryland",
-      "url": "https://purduesports.com/news/2026/02/22/purdue-falls-at-1415-maryland",
-      "summary": "",
-      "date": "2026-02-22T18:39:00+00:00"
-    },
-    {
-      "id": "14986bb84fd9",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Mourns the Passing of Rondale Moore",
-      "url": "https://purduesports.com/news/2026/02/22/purdue-mourns-the-passing-of-boilermaker-legend-rondale-moore",
-      "summary": "",
-      "date": "2026-02-22T03:36:27+00:00"
-    },
-    {
-      "id": "565210b61940",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue's Daryn Wright Wins Silver on Platform at Big Tens",
-      "url": "https://purduesports.com/news/2026/02/22/purdues-daryn-wright-wins-silver-on-platform-at-big-tens",
-      "summary": "",
-      "date": "2026-02-22T02:44:34+00:00"
     }
   ]
 }
