@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-28T20:45:32.729120+00:00",
+  "updated": "2026-02-28T21:15:47.109288+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "14f09c95dc15",
+      "source": "CBS Sports College Basketball",
+      "title": "College basketball rankings: Purdue's disappointment continues as Boilermakers lose fourth game at home",
+      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-rankings-top-25-and-1-purdue/",
+      "summary": "Purdue's season has hardly gone as expected -- especially at home -- after entering the season as the No. 1 team in the country",
+      "date": "2026-02-28T20:49:07+00:00"
+    },
     {
       "id": "0048640a19f4",
       "source": "Purdue Athletics MBB",
@@ -42,14 +50,6 @@
       "url": "https://purduesports.com/news/2026/02/27/purdue-heads-to-northwestern-with-big-ten-tournament-berth-on-the-line",
       "summary": "",
       "date": "2026-02-27T19:09:00+00:00"
-    },
-    {
-      "id": "14f09c95dc15",
-      "source": "CBS Sports College Basketball",
-      "title": "College basketball rankings: Purdue's disappointment continues as Boilermakers lose fourth game at home",
-      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-rankings-top-25-and-1-purdue/",
-      "summary": "Purdue's season has hardly gone as expected -- especially at home -- after entering the season as the No. 1 team in the country",
-      "date": "2026-02-27T18:03:41+00:00"
     },
     {
       "id": "3e87c835d577",
