@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-28T04:39:17.246465+00:00",
+  "updated": "2026-02-28T05:29:14.255988+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "5889e6ea3095",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Sets Single-Game Hits Record, Sweeps the Day",
+      "url": "https://purduesports.com/news/2026/02/28/purdue-sets-single-game-hits-record-sweeps-the-day",
+      "summary": "",
+      "date": "2026-02-28T04:15:19+00:00"
+    },
     {
       "id": "187d630ad5a3",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/24/this-week-in-purdue-baseball-february-24-2026",
       "summary": "",
       "date": "2026-02-24T17:43:45+00:00"
-    },
-    {
-      "id": "4ceb326686be",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Destined for the Bahamas",
-      "url": "https://purduesports.com/news/2026/02/23/boilermakers-destined-for-bahamas",
-      "summary": "",
-      "date": "2026-02-23T18:00:00+00:00"
     }
   ]
 }
