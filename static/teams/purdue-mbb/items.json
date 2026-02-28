@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-28T14:45:39.886734+00:00",
+  "updated": "2026-02-28T15:16:51.192013+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "0048640a19f4",
+      "source": "Purdue Athletics MBB",
+      "title": "#8 Purdue Begins Final Week of Regular Season Sunday at Ohio State",
+      "url": "https://purduesports.com/news/2026/02/28/8-purdue-begins-final-week-of-regular-season-sunday-at-ohio-state",
+      "summary": "",
+      "date": "2026-02-28T14:57:00+00:00"
+    },
     {
       "id": "5889e6ea3095",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/24/this-week-in-purdue-baseball-february-24-2026",
       "summary": "",
       "date": "2026-02-24T17:43:45+00:00"
-    },
-    {
-      "id": "4ceb326686be",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Destined for the Bahamas",
-      "url": "https://purduesports.com/news/2026/02/23/boilermakers-destined-for-bahamas",
-      "summary": "",
-      "date": "2026-02-23T18:00:00+00:00"
     }
   ]
 }
