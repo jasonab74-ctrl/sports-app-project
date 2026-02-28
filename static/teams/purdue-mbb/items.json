@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-02-28T01:22:57.998518+00:00",
+  "updated": "2026-02-28T03:25:35.169038+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "187d630ad5a3",
+      "source": "Purdue Athletics MBB",
+      "title": "Flores, Bessette Homer in Friday Night Win",
+      "url": "https://purduesports.com/news/2026/02/28/flores-bessette-homer-in-friday-night-win",
+      "summary": "Flores homered as a part of a five-run fourth inning and Bessette later hit a three-run blast in Purdue's 9-4 win",
+      "date": "2026-02-28T01:17:45+00:00"
+    },
     {
       "id": "9c4b331f83f7",
       "source": "Purdue Athletics MBB",
@@ -36,14 +44,6 @@
       "date": "2026-02-27T14:42:50+00:00"
     },
     {
-      "id": "79ffbf4eff39",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Takes on Xavier",
-      "url": "https://purduesports.com/news/2026/02/27/purdue-takes-on-xavier",
-      "summary": "",
-      "date": "2026-02-27T13:15:00+00:00"
-    },
-    {
       "id": "c8a7807255ce",
       "source": "Purdue Athletics MBB",
       "title": "#13 Michigan State Hands #8 Purdue 76-74 Setback",
@@ -74,14 +74,6 @@
       "url": "https://www.cbssports.com/college-basketball/news/michigan-state-purdue-odds-prediction-time-2026-college-basketball-picks-february-26/",
       "summary": "SportsLine's model simulated No. 13 Michigan State Spartans vs. No. 8 Purdue Boilermakers and revealed its college basketball picks for this Big Ten Conference matchup",
       "date": "2026-02-26T22:21:18+00:00"
-    },
-    {
-      "id": "bbf040ef4e7c",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Plays in Holly Springs to Close Out Pre-Conference Slate",
-      "url": "https://purduesports.com/news/2026/02/26/purdue-plays-in-holly-spring-to-close-out-pre-conference-slate",
-      "summary": "The Boilermakers host Marist at the NMAC, where they are 22-5 since 2022",
-      "date": "2026-02-26T22:05:00+00:00"
     },
     {
       "id": "35425b59e09f",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/02/24/this-week-in-purdue-baseball-february-24-2026",
       "summary": "",
       "date": "2026-02-24T17:43:45+00:00"
+    },
+    {
+      "id": "4ceb326686be",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Destined for the Bahamas",
+      "url": "https://purduesports.com/news/2026/02/23/boilermakers-destined-for-bahamas",
+      "summary": "",
+      "date": "2026-02-23T18:00:00+00:00"
     }
   ]
 }
