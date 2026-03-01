@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-01T22:47:30.326126+00:00",
+  "updated": "2026-03-01T23:18:13.695752+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "b1e2e604107a",
+      "source": "Purdue Athletics MBB",
+      "title": "Fours are Wild as Purdue Completes 4-Game Sweep",
+      "url": "https://purduesports.com/news/2026/03/1/4s-are-wild-as-purdue-completes-4-game-sweep",
+      "summary": "Boilermakers score 4 in an inning 4 times, win 6th straight game",
+      "date": "2026-03-01T22:18:01+00:00"
+    },
+    {
+      "id": "5f5218c042e1",
+      "source": "Purdue Athletics MBB",
+      "title": "#8 Purdue Drops 2nd Straight Game, Falling to Ohio State 82-74",
+      "url": "https://purduesports.com/news/2026/03/1/8-purdue-drops-2nd-straight-game-falling-to-ohio-state-82-74",
+      "summary": "",
+      "date": "2026-03-01T22:03:02+00:00"
+    },
     {
       "id": "3bb5beab4b1f",
       "source": "Purdue Athletics MBB",
@@ -10,6 +26,14 @@
       "url": "https://purduesports.com/news/2026/03/1/boilers-close-out-a-perfect-5-0-weekend",
       "summary": "Purdue Softball closed out a perfect 5-0 weekend with an 8-2 win over Western Carolina this afternoon at Draper Diamond.",
       "date": "2026-03-01T20:42:12+00:00"
+    },
+    {
+      "id": "fc281e452b5c",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Punches Big Ten Tournament Ticket with Season Finale Win at Northwestern",
+      "url": "https://purduesports.com/news/2026/03/1/purdue-punches-big-ten-tournament-ticket-with-season-finale-win-at-northwestern",
+      "summary": "",
+      "date": "2026-03-01T19:39:00+00:00"
     },
     {
       "id": "374a3c3e7118",
@@ -50,14 +74,6 @@
       "url": "https://purduesports.com/news/2026/03/1/another-saturday-walk-off-as-boilers-sweep-twinbill",
       "summary": "Purdue scores 5 in the bottom of the ninth to win an 11-10 slugfest; pitching leads the way in the nightcap",
       "date": "2026-03-01T02:25:52+00:00"
-    },
-    {
-      "id": "0048640a19f4",
-      "source": "Purdue Athletics MBB",
-      "title": "#8 Purdue Begins Final Week of Regular Season Sunday at Ohio State",
-      "url": "https://purduesports.com/news/2026/02/28/8-purdue-begins-final-week-of-regular-season-sunday-at-ohio-state",
-      "summary": "",
-      "date": "2026-02-28T14:57:00+00:00"
     },
     {
       "id": "5889e6ea3095",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/25/purdue-gonzaga-to-tip-off-2026-27-season-in-las-vegas",
       "summary": "",
       "date": "2026-02-25T18:00:00+00:00"
-    },
-    {
-      "id": "cd5b26def0bf",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Stories: Layden-Zay Leaves Her Mark in School History",
-      "url": "https://purduesports.com/news/2026/02/25/purdue-stories-layden-zay-leaves-her-mark-in-school-history",
-      "summary": "",
-      "date": "2026-02-25T17:09:04+00:00"
-    },
-    {
-      "id": "2a27df693e53",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Katie Gearlds Media Session vs. Oregon | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2026/02/24/coach-katie-gearlds-media-session-vs-oregon-purdue-womens-basketball",
-      "summary": "",
-      "date": "2026-02-24T21:43:44+00:00"
     }
   ]
 }
