@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-01T19:19:58.781657+00:00",
+  "updated": "2026-03-01T19:41:41.186991+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "374a3c3e7118",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue's Top Dives on 10-Meter at Big Ten Championships",
+      "url": "https://purduesports.com/news/2026/03/1/purdues-top-dives-on-10-meter-at-big-ten-championships",
+      "summary": "",
+      "date": "2026-03-01T18:53:06+00:00"
+    },
     {
       "id": "29a143ec19d7",
       "source": "CBS Sports College Basketball",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/24/madison-layden-zay-senior-day-media-session-purdue-womens-basketball",
       "summary": "",
       "date": "2026-02-24T21:43:29+00:00"
-    },
-    {
-      "id": "b043b2406825",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Women at Big Ten Championships",
-      "url": "https://purduesports.com/news/2026/02/24/purdue-women-at-big-ten-championships",
-      "summary": "",
-      "date": "2026-02-24T18:05:13+00:00"
     }
   ]
 }
