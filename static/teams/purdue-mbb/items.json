@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-01T09:24:39.254869+00:00",
+  "updated": "2026-03-01T09:50:28.551563+00:00",
   "count": 20,
   "items": [
     {
@@ -42,6 +42,14 @@
       "url": "https://purduesports.com/news/2026/02/28/purdue-sets-single-game-hits-record-sweeps-the-day",
       "summary": "",
       "date": "2026-02-28T04:15:19+00:00"
+    },
+    {
+      "id": "32f541411ff7",
+      "source": "Purdue Athletics MBB",
+      "title": "Dzirkalis, Mackey Take Down Team Records on Friday at Big Tens",
+      "url": "https://purduesports.com/news/2026/02/28/dzirkalis-mackey-take-down-team-records-on-friday-at-big-tens",
+      "summary": "",
+      "date": "2026-02-28T03:00:00+00:00"
     },
     {
       "id": "187d630ad5a3",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/24/purdue-women-at-big-ten-championships",
       "summary": "",
       "date": "2026-02-24T18:05:13+00:00"
-    },
-    {
-      "id": "8072c1f5532d",
-      "source": "Purdue Athletics MBB",
-      "title": "This Week in Purdue Baseball | February 24, 2026",
-      "url": "https://purduesports.com/news/2026/02/24/this-week-in-purdue-baseball-february-24-2026",
-      "summary": "",
-      "date": "2026-02-24T17:43:45+00:00"
     }
   ]
 }
