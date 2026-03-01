@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-01T08:52:43.532572+00:00",
+  "updated": "2026-03-01T09:24:39.254869+00:00",
   "count": 20,
   "items": [
     {
@@ -66,6 +66,14 @@
       "url": "https://purduesports.com/news/2026/02/27/purdue-heads-to-northwestern-with-big-ten-tournament-berth-on-the-line",
       "summary": "",
       "date": "2026-02-27T19:09:00+00:00"
+    },
+    {
+      "id": "3e87c835d577",
+      "source": "CBS Sports College Basketball",
+      "title": "Bracketology: Michigan State's win at Purdue lifts Spartans in latest NCAA Tournament projection",
+      "url": "https://www.cbssports.com/college-basketball/news/bracketology-michigan-states-win-purdue-ncaa-tournament-projection/",
+      "summary": "The Spartans are up a seed line following an impressive road win over a high-end Big Ten foe",
+      "date": "2026-02-27T14:42:50+00:00"
     },
     {
       "id": "c8a7807255ce",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/24/this-week-in-purdue-baseball-february-24-2026",
       "summary": "",
       "date": "2026-02-24T17:43:45+00:00"
-    },
-    {
-      "id": "4ceb326686be",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Destined for the Bahamas",
-      "url": "https://purduesports.com/news/2026/02/23/boilermakers-destined-for-bahamas",
-      "summary": "",
-      "date": "2026-02-23T18:00:00+00:00"
     }
   ]
 }
