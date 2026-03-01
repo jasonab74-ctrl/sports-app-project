@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-01T21:17:37.116088+00:00",
+  "updated": "2026-03-01T21:43:26.571875+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "3bb5beab4b1f",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilers Close Out a Perfect 5-0 Weekend",
+      "url": "https://purduesports.com/news/2026/03/1/boilers-close-out-a-perfect-5-0-weekend",
+      "summary": "Purdue Softball closed out a perfect 5-0 weekend with an 8-2 win over Western Carolina this afternoon at Draper Diamond.",
+      "date": "2026-03-01T20:42:12+00:00"
+    },
     {
       "id": "374a3c3e7118",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/24/coach-katie-gearlds-media-session-vs-oregon-purdue-womens-basketball",
       "summary": "",
       "date": "2026-02-24T21:43:44+00:00"
-    },
-    {
-      "id": "1f6977bf28d0",
-      "source": "Purdue Athletics MBB",
-      "title": "Madison Layden-Zay Senior Day Media Session | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2026/02/24/madison-layden-zay-senior-day-media-session-purdue-womens-basketball",
-      "summary": "",
-      "date": "2026-02-24T21:43:29+00:00"
     }
   ]
 }
