@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-01T05:34:38.524899+00:00",
+  "updated": "2026-03-01T06:39:03.628357+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "8384778616e5",
+      "source": "CBS Sports College Basketball",
+      "title": "Purdue vs. Ohio State prediction, pick, odds, spread: Inside a must-win spot for Buckeyes against Purdue",
+      "url": "https://www.cbssports.com/college-basketball/news/purdue-ohio-state-prediction-pick-odds-spread-where-to-watch-live/",
+      "summary": "Here's what you need to know about the Ohio State-Purdue clash.",
+      "date": "2026-03-01T05:46:57+00:00"
+    },
     {
       "id": "efa247cb0dd7",
       "source": "Purdue Athletics MBB",
@@ -18,14 +26,6 @@
       "url": "https://purduesports.com/news/2026/03/1/another-saturday-walk-off-as-boilers-sweep-twinbill",
       "summary": "Purdue scores 5 in the bottom of the ninth to win an 11-10 slugfest; pitching leads the way in the nightcap",
       "date": "2026-03-01T02:25:52+00:00"
-    },
-    {
-      "id": "14f09c95dc15",
-      "source": "CBS Sports College Basketball",
-      "title": "College basketball rankings: Purdue's disappointment continues as Boilermakers lose fourth game at home",
-      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-rankings-top-25-and-1-purdue/",
-      "summary": "Purdue's season has hardly gone as expected -- especially at home -- after entering the season as the No. 1 team in the country",
-      "date": "2026-02-28T20:49:07+00:00"
     },
     {
       "id": "0048640a19f4",
@@ -66,14 +66,6 @@
       "url": "https://purduesports.com/news/2026/02/27/purdue-heads-to-northwestern-with-big-ten-tournament-berth-on-the-line",
       "summary": "",
       "date": "2026-02-27T19:09:00+00:00"
-    },
-    {
-      "id": "3e87c835d577",
-      "source": "CBS Sports College Basketball",
-      "title": "Bracketology: Michigan State's win at Purdue lifts Spartans in latest NCAA Tournament projection",
-      "url": "https://www.cbssports.com/college-basketball/news/bracketology-michigan-states-win-purdue-ncaa-tournament-projection/",
-      "summary": "The Spartans are up a seed line following an impressive road win over a high-end Big Ten foe",
-      "date": "2026-02-27T14:42:50+00:00"
     },
     {
       "id": "c8a7807255ce",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/02/24/this-week-in-purdue-baseball-february-24-2026",
       "summary": "",
       "date": "2026-02-24T17:43:45+00:00"
+    },
+    {
+      "id": "4ceb326686be",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Destined for the Bahamas",
+      "url": "https://purduesports.com/news/2026/02/23/boilermakers-destined-for-bahamas",
+      "summary": "",
+      "date": "2026-02-23T18:00:00+00:00"
     }
   ]
 }
