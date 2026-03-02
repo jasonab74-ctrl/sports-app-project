@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-02T20:31:03.373046+00:00",
+  "updated": "2026-03-02T21:28:01.352396+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "d03ab10e9cd2",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Given Pre-Seeds for 2026 Big Ten Championships",
+      "url": "https://purduesports.com/news/2026/03/2/purdue-given-pre-seeds-for-2026-big-ten-championships",
+      "summary": "Seven Boilermakers are seeded in the top 10, the most since 2021.",
+      "date": "2026-03-02T20:57:21+00:00"
+    },
     {
       "id": "1d589219c8e6",
       "source": "CBS Sports College Basketball",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/26/players-postgame-press-conference-vs-oregon-purdue-womens-basketball",
       "summary": "",
       "date": "2026-02-26T02:37:21+00:00"
-    },
-    {
-      "id": "77deb3dc73ad",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue, Gonzaga to Tip off 2026-27 Season in Las Vegas",
-      "url": "https://purduesports.com/news/2026/02/25/purdue-gonzaga-to-tip-off-2026-27-season-in-las-vegas",
-      "summary": "",
-      "date": "2026-02-25T18:00:00+00:00"
     }
   ]
 }
