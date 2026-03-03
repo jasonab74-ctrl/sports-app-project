@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-03T14:40:45.402768+00:00",
+  "updated": "2026-03-03T15:42:18.334487+00:00",
   "count": 20,
   "items": [
     {
@@ -66,14 +66,6 @@
       "url": "https://www.cbssports.com/college-basketball/news/ohio-state-purdue-odds-prediction-2026-college-basketball-picks-march-1-best-bets/",
       "summary": "SportsLine's model simulated Purdue vs. Ohio State 10,000 times and revealed its Sunday college basketball picks for their Big Ten matchup on CBS and Paramount+",
       "date": "2026-03-01T16:16:50+00:00"
-    },
-    {
-      "id": "8384778616e5",
-      "source": "CBS Sports College Basketball",
-      "title": "Purdue vs. Ohio State prediction, pick, odds, spread: Inside a must-win spot for Buckeyes against Purdue",
-      "url": "https://www.cbssports.com/college-basketball/news/purdue-ohio-state-prediction-pick-odds-spread-where-to-watch-live/",
-      "summary": "Here's what you need to know about the Ohio State-Purdue clash.",
-      "date": "2026-03-01T05:46:57+00:00"
     },
     {
       "id": "efa247cb0dd7",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/02/26/players-postgame-press-conference-vs-oregon-purdue-womens-basketball",
       "summary": "",
       "date": "2026-02-26T02:37:21+00:00"
+    },
+    {
+      "id": "77deb3dc73ad",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue, Gonzaga to Tip off 2026-27 Season in Las Vegas",
+      "url": "https://purduesports.com/news/2026/02/25/purdue-gonzaga-to-tip-off-2026-27-season-in-las-vegas",
+      "summary": "",
+      "date": "2026-02-25T18:00:00+00:00"
     }
   ]
 }
