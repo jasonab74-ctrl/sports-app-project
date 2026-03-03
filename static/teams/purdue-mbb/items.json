@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-03T16:39:51.950570+00:00",
+  "updated": "2026-03-03T17:38:53.083081+00:00",
   "count": 20,
   "items": [
     {
@@ -58,14 +58,6 @@
       "url": "https://purduesports.com/news/2026/03/1/purdues-top-dives-on-10-meter-at-big-ten-championships",
       "summary": "",
       "date": "2026-03-01T18:53:06+00:00"
-    },
-    {
-      "id": "29a143ec19d7",
-      "source": "CBS Sports College Basketball",
-      "title": "Ohio State vs. Purdue odds, prediction, time: 2026 college basketball picks for March 1 from advanced model",
-      "url": "https://www.cbssports.com/college-basketball/news/ohio-state-purdue-odds-prediction-2026-college-basketball-picks-march-1-best-bets/",
-      "summary": "SportsLine's model simulated Purdue vs. Ohio State 10,000 times and revealed its Sunday college basketball picks for their Big Ten matchup on CBS and Paramount+",
-      "date": "2026-03-01T16:16:50+00:00"
     },
     {
       "id": "efa247cb0dd7",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/02/25/purdue-gonzaga-to-tip-off-2026-27-season-in-las-vegas",
       "summary": "",
       "date": "2026-02-25T18:00:00+00:00"
+    },
+    {
+      "id": "cd5b26def0bf",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Stories: Layden-Zay Leaves Her Mark in School History",
+      "url": "https://purduesports.com/news/2026/02/25/purdue-stories-layden-zay-leaves-her-mark-in-school-history",
+      "summary": "",
+      "date": "2026-02-25T17:09:04+00:00"
     }
   ]
 }
