@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-03T19:37:51.171727+00:00",
+  "updated": "2026-03-03T20:27:05.735906+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "b348ad249852",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Katie Gearlds Big Ten Tournament Media Session | Purdue Women's Basketball",
+      "url": "https://purduesports.com/news/2026/03/3/coach-katie-gearlds-big-ten-tournament-media-session-purdue-womens-basketball",
+      "summary": "",
+      "date": "2026-03-03T19:30:50+00:00"
+    },
     {
       "id": "b43f605a0f0e",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/27/evan-mackesy-breaks-purdue-record-in-400-im-at-big-tens",
       "summary": "",
       "date": "2026-02-27T03:49:06+00:00"
-    },
-    {
-      "id": "2e51d3e40a93",
-      "source": "Purdue Athletics MBB",
-      "title": "Miller Wins B1G Title on 1-Meter; Mackesy Breaks 400 IM Record",
-      "url": "https://purduesports.com/news/2026/02/27/miller-wins-b1g-title-on-1-meter-mackesy-breaks-400-im-record",
-      "summary": "Max Miller was victorious on 1-meter for Purdue's first Big Ten champion in the event since 2011",
-      "date": "2026-02-27T02:56:00+00:00"
     }
   ]
 }
