@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-04T15:34:40.479368+00:00",
+  "updated": "2026-03-04T16:36:45.466863+00:00",
   "count": 20,
   "items": [
     {
@@ -124,14 +124,6 @@
       "date": "2026-02-28T04:15:19+00:00"
     },
     {
-      "id": "32f541411ff7",
-      "source": "Purdue Athletics MBB",
-      "title": "Dzirkalis, Mackey Take Down Team Records on Friday at Big Tens",
-      "url": "https://purduesports.com/news/2026/02/28/dzirkalis-mackey-take-down-team-records-on-friday-at-big-tens",
-      "summary": "",
-      "date": "2026-02-28T03:00:00+00:00"
-    },
-    {
       "id": "187d630ad5a3",
       "source": "Purdue Athletics MBB",
       "title": "Flores, Bessette Homer in Friday Night Win",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/02/27/evan-mackesy-breaks-purdue-record-in-400-im-at-big-tens",
       "summary": "",
       "date": "2026-02-27T03:49:06+00:00"
+    },
+    {
+      "id": "2e51d3e40a93",
+      "source": "Purdue Athletics MBB",
+      "title": "Miller Wins B1G Title on 1-Meter; Mackesy Breaks 400 IM Record",
+      "url": "https://purduesports.com/news/2026/02/27/miller-wins-b1g-title-on-1-meter-mackesy-breaks-400-im-record",
+      "summary": "Max Miller was victorious on 1-meter for Purdue's first Big Ten champion in the event since 2011",
+      "date": "2026-02-27T02:56:00+00:00"
     }
   ]
 }
