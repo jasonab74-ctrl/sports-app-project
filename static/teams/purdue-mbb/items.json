@@ -1,8 +1,40 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-04T21:32:58.975928+00:00",
+  "updated": "2026-03-04T22:25:48.711600+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "4907c019e8d2",
+      "source": "Purdue Athletics MBB",
+      "title": "Devin Mockobee Pro Day Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/03/4/devin-mockobee-pro-day-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-03-04T21:36:15+00:00"
+    },
+    {
+      "id": "d37d590419cd",
+      "source": "Purdue Athletics MBB",
+      "title": "C.J. Nunnally IV Pro Day Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/03/4/cj-nunnally-iv-pro-day-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-03-04T21:34:53+00:00"
+    },
+    {
+      "id": "ec65486debb0",
+      "source": "Purdue Athletics MBB",
+      "title": "Mani Powell Pro Day Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/03/4/mani-powell-pro-day-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-03-04T21:33:39+00:00"
+    },
+    {
+      "id": "9123a797bde7",
+      "source": "Purdue Athletics MBB",
+      "title": "2026 Pro Day Highlights | Purdue Football",
+      "url": "https://purduesports.com/news/2026/03/4/2026-pro-day-highlights-purdue-football",
+      "summary": "",
+      "date": "2026-03-04T21:32:59+00:00"
+    },
     {
       "id": "2a0cc5ac24e9",
       "source": "Purdue Athletics MBB",
@@ -10,6 +42,14 @@
       "url": "https://purduesports.com/news/2026/03/4/21-purdue-takes-on-2026-big-ten-championships",
       "summary": "Purdue is sending its most experienced lineup since 2016.",
       "date": "2026-03-04T17:32:51+00:00"
+    },
+    {
+      "id": "bd837d81e8c1",
+      "source": "Purdue Athletics MBB",
+      "title": "Mattice Qualifies for NCAAs in the Mile",
+      "url": "https://purduesports.com/news/2026/03/4/mattice-qualifies-for-ncaas-in-the-mile",
+      "summary": "Senior is the first Boilermaker from the pool this year to officially qualify for national championship meet",
+      "date": "2026-03-04T17:24:00+00:00"
     },
     {
       "id": "b348ad249852",
@@ -122,46 +162,6 @@
       "url": "https://purduesports.com/news/2026/02/28/purdue-sets-single-game-hits-record-sweeps-the-day",
       "summary": "",
       "date": "2026-02-28T04:15:19+00:00"
-    },
-    {
-      "id": "187d630ad5a3",
-      "source": "Purdue Athletics MBB",
-      "title": "Flores, Bessette Homer in Friday Night Win",
-      "url": "https://purduesports.com/news/2026/02/28/flores-bessette-homer-in-friday-night-win",
-      "summary": "Flores homered as a part of a five-run fourth inning and Bessette later hit a three-run blast in Purdue's 9-4 win",
-      "date": "2026-02-28T01:17:45+00:00"
-    },
-    {
-      "id": "9c4b331f83f7",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Command Singles Play in 5-2 Victory",
-      "url": "https://purduesports.com/news/2026/02/28/boilermakers-command-singles-play-in-5-2-victory",
-      "summary": "",
-      "date": "2026-02-28T00:15:00+00:00"
-    },
-    {
-      "id": "c8a7807255ce",
-      "source": "Purdue Athletics MBB",
-      "title": "#13 Michigan State Hands #8 Purdue 76-74 Setback",
-      "url": "https://purduesports.com/news/2026/02/27/13-michigan-state-hands-8-purdue-76-74-setback",
-      "summary": "",
-      "date": "2026-02-27T04:34:12+00:00"
-    },
-    {
-      "id": "5c1c3d2429c7",
-      "source": "Purdue Athletics MBB",
-      "title": "Evan Mackesy Breaks Purdue Record in 400 IM at Big Tens",
-      "url": "https://purduesports.com/news/2026/02/27/evan-mackesy-breaks-purdue-record-in-400-im-at-big-tens",
-      "summary": "",
-      "date": "2026-02-27T03:49:06+00:00"
-    },
-    {
-      "id": "2e51d3e40a93",
-      "source": "Purdue Athletics MBB",
-      "title": "Miller Wins B1G Title on 1-Meter; Mackesy Breaks 400 IM Record",
-      "url": "https://purduesports.com/news/2026/02/27/miller-wins-b1g-title-on-1-meter-mackesy-breaks-400-im-record",
-      "summary": "Max Miller was victorious on 1-meter for Purdue's first Big Ten champion in the event since 2011",
-      "date": "2026-02-27T02:56:00+00:00"
     }
   ]
 }
