@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-05T04:07:45.259501+00:00",
+  "updated": "2026-03-05T05:30:11.288748+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "bff6b72bddbf",
+      "source": "Purdue Athletics MBB",
+      "title": "#15 Purdue Rallies to Top Northwestern Behind Cox's Career High",
+      "url": "https://purduesports.com/news/2026/03/5/15-purdue-rallies-to-top-northwestern-behind-coxs-career-high",
+      "summary": "",
+      "date": "2026-03-05T04:28:48+00:00"
+    },
     {
       "id": "6655838a86f5",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/03/1/purdues-top-dives-on-10-meter-at-big-ten-championships",
       "summary": "",
       "date": "2026-03-01T18:53:06+00:00"
-    },
-    {
-      "id": "efa247cb0dd7",
-      "source": "Purdue Athletics MBB",
-      "title": "Softball Cruises to Two Run-Rule Victories",
-      "url": "https://purduesports.com/news/2026/03/1/softball-cruises-to-two-run-rule-victories",
-      "summary": "Purdue Softball exploded for 10 runs in the first and late innings to secure a 10–0 run-rule victory over Southern Illinois Salukis, before securing another run-rule victory over Lipscomb in the afternoon.",
-      "date": "2026-03-01T03:17:04+00:00"
     }
   ]
 }
