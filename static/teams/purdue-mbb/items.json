@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-04T23:52:41.418582+00:00",
+  "updated": "2026-03-05T01:43:18.014941+00:00",
   "count": 20,
   "items": [
     {
@@ -10,6 +10,14 @@
       "url": "https://purduesports.com/news/2026/03/4/20-boilers-complete-2026-pro-day",
       "summary": "",
       "date": "2026-03-04T21:54:00+00:00"
+    },
+    {
+      "id": "ef4b3d51eb17",
+      "source": "Purdue Athletics MBB",
+      "title": "This Week in Purdue Baseball | March 4, 2026",
+      "url": "https://purduesports.com/news/2026/03/4/this-week-in-purdue-baseball-march-4-2026",
+      "summary": "",
+      "date": "2026-03-04T21:44:41+00:00"
     },
     {
       "id": "4907c019e8d2",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/03/1/softball-cruises-to-two-run-rule-victories",
       "summary": "Purdue Softball exploded for 10 runs in the first and late innings to secure a 10–0 run-rule victory over Southern Illinois Salukis, before securing another run-rule victory over Lipscomb in the afternoon.",
       "date": "2026-03-01T03:17:04+00:00"
-    },
-    {
-      "id": "514e2ba8052d",
-      "source": "Purdue Athletics MBB",
-      "title": "Another Saturday Walk-off as Boilers Sweep Twinbill",
-      "url": "https://purduesports.com/news/2026/03/1/another-saturday-walk-off-as-boilers-sweep-twinbill",
-      "summary": "Purdue scores 5 in the bottom of the ninth to win an 11-10 slugfest; pitching leads the way in the nightcap",
-      "date": "2026-03-01T02:25:52+00:00"
     }
   ]
 }
