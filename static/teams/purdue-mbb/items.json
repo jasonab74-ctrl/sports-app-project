@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-05T05:30:11.288748+00:00",
+  "updated": "2026-03-05T06:09:00.068577+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "a3000676067b",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Women's Basketball Press Conference 2026 Big Ten Tournament",
+      "url": "https://purduesports.com/news/2026/03/5/purdue-womens-basketball-press-conference-2026-big-ten-tournament",
+      "summary": "",
+      "date": "2026-03-05T05:20:38+00:00"
+    },
     {
       "id": "bff6b72bddbf",
       "source": "Purdue Athletics MBB",
@@ -10,6 +18,14 @@
       "url": "https://purduesports.com/news/2026/03/5/15-purdue-rallies-to-top-northwestern-behind-coxs-career-high",
       "summary": "",
       "date": "2026-03-05T04:28:48+00:00"
+    },
+    {
+      "id": "3d9bc5b05f5f",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Rally Falls Short at Big Ten Tournament vs. Oregon",
+      "url": "https://purduesports.com/news/2026/03/5/purdue-rally-falls-short-at-big-ten-tournament-vs-oregon",
+      "summary": "",
+      "date": "2026-03-05T01:39:00+00:00"
     },
     {
       "id": "6655838a86f5",
@@ -108,14 +124,6 @@
       "date": "2026-03-03T18:51:49+00:00"
     },
     {
-      "id": "294b0d8281a1",
-      "source": "Purdue Athletics MBB",
-      "title": "14th Seed Purdue Opens Big Ten Tournament Wednesday Night vs. 11th Seed Oregon",
-      "url": "https://purduesports.com/news/2026/03/3/14th-seed-purdue-opens-big-ten-tournament-wednesday-night-vs-11th-seed-oregon",
-      "summary": "",
-      "date": "2026-03-03T17:09:00+00:00"
-    },
-    {
       "id": "d03ab10e9cd2",
       "source": "Purdue Athletics MBB",
       "title": "Purdue Given Pre-Seeds for 2026 Big Ten Championships",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/03/1/purdue-punches-big-ten-tournament-ticket-with-season-finale-win-at-northwestern",
       "summary": "",
       "date": "2026-03-01T19:39:00+00:00"
-    },
-    {
-      "id": "374a3c3e7118",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue's Top Dives on 10-Meter at Big Ten Championships",
-      "url": "https://purduesports.com/news/2026/03/1/purdues-top-dives-on-10-meter-at-big-ten-championships",
-      "summary": "",
-      "date": "2026-03-01T18:53:06+00:00"
     }
   ]
 }
