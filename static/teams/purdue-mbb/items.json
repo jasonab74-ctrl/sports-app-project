@@ -1,8 +1,40 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-07T19:18:18.765204+00:00",
+  "updated": "2026-03-07T19:41:49.838501+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "9920dab6a471",
+      "source": "Purdue Athletics MBB",
+      "title": "Charles Correa Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/03/7/charles-correa-media-session-purdue-football-2",
+      "summary": "",
+      "date": "2026-03-07T19:30:12+00:00"
+    },
+    {
+      "id": "4b815e1a3597",
+      "source": "Purdue Athletics MBB",
+      "title": "Winston Berglund Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/03/7/winston-berglund-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-03-07T19:28:32+00:00"
+    },
+    {
+      "id": "4134a3830f80",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Kevin Kane Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/03/7/coach-kevin-kane-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-03-07T19:27:26+00:00"
+    },
+    {
+      "id": "d2c4fb8cc46d",
+      "source": "CBS Sports College Basketball",
+      "title": "Purdue vs. Wisconsin odds, prediction: 2026 college basketball picks for March 7 from proven model",
+      "url": "https://www.cbssports.com/college-basketball/news/purdue-wisconsin-odds-prediction-time-how-to-watch-2026-college-basketball-picks-saturday-march-7/",
+      "summary": "SportsLine's model simulated Wisconsin vs. No. 15 Purdue and revealed its college basketball picks for this Big Ten matchup on CBS and Paramount+",
+      "date": "2026-03-07T19:00:50+00:00"
+    },
     {
       "id": "52003c6762af",
       "source": "Purdue Athletics MBB",
@@ -130,38 +162,6 @@
       "url": "https://purduesports.com/news/2026/03/4/devin-mockobee-pro-day-media-session-purdue-football",
       "summary": "",
       "date": "2026-03-04T21:36:15+00:00"
-    },
-    {
-      "id": "d37d590419cd",
-      "source": "Purdue Athletics MBB",
-      "title": "C.J. Nunnally IV Pro Day Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/03/4/cj-nunnally-iv-pro-day-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-03-04T21:34:53+00:00"
-    },
-    {
-      "id": "ec65486debb0",
-      "source": "Purdue Athletics MBB",
-      "title": "Mani Powell Pro Day Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/03/4/mani-powell-pro-day-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-03-04T21:33:39+00:00"
-    },
-    {
-      "id": "9123a797bde7",
-      "source": "Purdue Athletics MBB",
-      "title": "2026 Pro Day Highlights | Purdue Football",
-      "url": "https://purduesports.com/news/2026/03/4/2026-pro-day-highlights-purdue-football",
-      "summary": "",
-      "date": "2026-03-04T21:32:59+00:00"
-    },
-    {
-      "id": "2a0cc5ac24e9",
-      "source": "Purdue Athletics MBB",
-      "title": "#21 Purdue Takes On 2026 Big Ten Championships",
-      "url": "https://purduesports.com/news/2026/03/4/21-purdue-takes-on-2026-big-ten-championships",
-      "summary": "Purdue is sending its most experienced lineup since 2016.",
-      "date": "2026-03-04T17:32:51+00:00"
     }
   ]
 }
