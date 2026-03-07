@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-06T23:48:33.069603+00:00",
+  "updated": "2026-03-07T01:26:12.241449+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "0dde5d599059",
+      "source": "CBS Sports College Basketball",
+      "title": "Wisconsin vs. Purdue prediction, pick, odds, spread: No. 15 Boilermakers eye return to form in Big Ten finale",
+      "url": "https://www.cbssports.com/college-basketball/news/wisconsin-vs-purdue-prediction-pick-odds-spread-where-to-watch/",
+      "summary": "Here's what you need to know about this Big Ten tilt, featuring two of the best guards in college basketball and dinosaurs mirroring the past",
+      "date": "2026-03-06T23:56:56+00:00"
+    },
     {
       "id": "1c3d43ccf745",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/03/4/21-purdue-takes-on-2026-big-ten-championships",
       "summary": "Purdue is sending its most experienced lineup since 2016.",
       "date": "2026-03-04T17:32:51+00:00"
-    },
-    {
-      "id": "99db506a82d0",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilers Set 9 Records as 19 Score at Big Tens",
-      "url": "https://purduesports.com/news/2026/03/4/boilers-set-9-records-as-19-score-at-big-tens",
-      "summary": "Purdue enjoyed a 186-point improvement during a record-setting showing in Madison",
-      "date": "2026-03-04T17:26:00+00:00"
     }
   ]
 }
