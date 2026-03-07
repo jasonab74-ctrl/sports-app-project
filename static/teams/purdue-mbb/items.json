@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-07T01:26:12.241449+00:00",
+  "updated": "2026-03-07T03:31:32.144506+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "52003c6762af",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Drop Decision to #22 USC",
+      "url": "https://purduesports.com/news/2026/03/7/boilermakers-drop-decision-to-22-usc",
+      "summary": "",
+      "date": "2026-03-07T02:01:00+00:00"
+    },
+    {
+      "id": "081aa09bb161",
+      "source": "Purdue Athletics MBB",
+      "title": "Dionne, Flores Homer but Purdue's Rally Comes Up a Run Short",
+      "url": "https://purduesports.com/news/2026/03/7/dionne-flores-homer-but-purdues-rally-comes-up-a-run-short",
+      "summary": "",
+      "date": "2026-03-07T01:56:26+00:00"
+    },
     {
       "id": "0dde5d599059",
       "source": "CBS Sports College Basketball",
@@ -28,28 +44,12 @@
       "date": "2026-03-06T15:37:48+00:00"
     },
     {
-      "id": "19e8d3aad656",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Open Big Ten, Home Seasons vs. #23 Oregon",
-      "url": "https://purduesports.com/news/2026/03/5/boilermakers-open-big-ten-home-seasons-vs-24-oregon",
-      "summary": "",
-      "date": "2026-03-05T22:01:09+00:00"
-    },
-    {
       "id": "bf36520ae157",
       "source": "Purdue Athletics MBB",
       "title": "Highlights: #15 Purdue 70, Northwestern 66",
       "url": "https://purduesports.com/news/2026/03/5/highlights-15-purdue-70-northwestern-66",
       "summary": "",
       "date": "2026-03-05T21:13:49+00:00"
-    },
-    {
-      "id": "272b6fdb187b",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers March into Big Ten Play at Home",
-      "url": "https://purduesports.com/news/2026/03/5/boilermakers-march-into-big-ten-play-at-home",
-      "summary": "",
-      "date": "2026-03-05T20:59:17+00:00"
     },
     {
       "id": "307fa0c68375",
@@ -74,14 +74,6 @@
       "url": "https://purduesports.com/news/2026/03/5/luca-puccinelli-media-session-purdue-football",
       "summary": "",
       "date": "2026-03-05T17:05:10+00:00"
-    },
-    {
-      "id": "2b2d5cb763e8",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermaker Classic Extended Through Monday",
-      "url": "https://purduesports.com/news/2026/03/5/boilermaker-classic-extended-through-monday",
-      "summary": "The Boilers begin a 19-day homestand starting with hosting the Boilermaker Classic this weekend from Mar. 6 to Mar. 9.",
-      "date": "2026-03-05T16:43:40+00:00"
     },
     {
       "id": "a3000676067b",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/03/4/21-purdue-takes-on-2026-big-ten-championships",
       "summary": "Purdue is sending its most experienced lineup since 2016.",
       "date": "2026-03-04T17:32:51+00:00"
+    },
+    {
+      "id": "99db506a82d0",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilers Set 9 Records as 19 Score at Big Tens",
+      "url": "https://purduesports.com/news/2026/03/4/boilers-set-9-records-as-19-score-at-big-tens",
+      "summary": "Purdue enjoyed a 186-point improvement during a record-setting showing in Madison",
+      "date": "2026-03-04T17:26:00+00:00"
     }
   ]
 }
