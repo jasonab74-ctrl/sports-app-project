@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-07T23:17:12.492004+00:00",
+  "updated": "2026-03-07T23:43:06.848910+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "e35695bd1ba3",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Defeats Oregon in 2-1 Pitcher's Duel - Highlights",
+      "url": "https://purduesports.com/news/2026/03/7/purdue-defeats-oregon-in-2-1-pitchers-duel-highlights",
+      "summary": "",
+      "date": "2026-03-07T22:56:49+00:00"
+    },
     {
       "id": "f899a8b0e37a",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/03/5/purdue-rally-falls-short-at-big-ten-tournament-vs-oregon",
       "summary": "",
       "date": "2026-03-05T01:39:00+00:00"
-    },
-    {
-      "id": "6655838a86f5",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Hosts NFL and CFL Scouts for Pro Day",
-      "url": "https://purduesports.com/news/2026/03/4/20-boilers-complete-2026-pro-day",
-      "summary": "",
-      "date": "2026-03-04T21:54:00+00:00"
     }
   ]
 }
