@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-08T01:43:56.951264+00:00",
+  "updated": "2026-03-08T04:06:34.684762+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "12ce6cc823be",
+      "source": "Purdue Athletics MBB",
+      "title": "#21 Purdue Secures 4 NCAA Bids; Boilers Close Day 1 at B1G Championships",
+      "url": "https://purduesports.com/news/2026/03/8/21-purdue-secures-4-ncaa-bids-boilers-close-day-1-at-b1g-championships",
+      "summary": "Seven Boilers wrestle on to Day 2 in the Bryce Jordan Center.",
+      "date": "2026-03-08T03:06:06+00:00"
+    },
+    {
+      "id": "b84d610b1025",
+      "source": "Purdue Athletics MBB",
+      "title": "Wisconsin Spoils #15 Purdue Senior Day, 97-93",
+      "url": "https://purduesports.com/news/2026/03/8/wisconsin-spoils-15-purdue-senior-day-97-93",
+      "summary": "",
+      "date": "2026-03-08T02:02:48+00:00"
+    },
     {
       "id": "e35695bd1ba3",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/03/5/purdue-womens-basketball-press-conference-2026-big-ten-tournament",
       "summary": "",
       "date": "2026-03-05T05:20:38+00:00"
-    },
-    {
-      "id": "bff6b72bddbf",
-      "source": "Purdue Athletics MBB",
-      "title": "#15 Purdue Rallies to Top Northwestern Behind Cox's Career High",
-      "url": "https://purduesports.com/news/2026/03/5/15-purdue-rallies-to-top-northwestern-behind-coxs-career-high",
-      "summary": "",
-      "date": "2026-03-05T04:28:48+00:00"
-    },
-    {
-      "id": "3d9bc5b05f5f",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Rally Falls Short at Big Ten Tournament vs. Oregon",
-      "url": "https://purduesports.com/news/2026/03/5/purdue-rally-falls-short-at-big-ten-tournament-vs-oregon",
-      "summary": "",
-      "date": "2026-03-05T01:39:00+00:00"
     }
   ]
 }
