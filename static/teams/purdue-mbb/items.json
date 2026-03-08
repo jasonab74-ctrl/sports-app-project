@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-08T17:46:04.761737+00:00",
+  "updated": "2026-03-08T18:26:21.418561+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "b0ab604c143e",
+      "source": "CBS Sports College Basketball",
+      "title": "College basketball rankings: Wisconsin heads into Big Ten Tournament on hot streak after wild win vs. Purdue",
+      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-rankings-top-25-and-1-wisconsin-purdue-big-ten-tournament/",
+      "summary": "The Badgers continue their climb in the Top 25 And 1, where they are ranked No. 23, and could be trouble in the Big Ten tourney",
+      "date": "2026-03-08T17:58:58+00:00"
+    },
     {
       "id": "9536173a875e",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/03/5/george-burhenn-media-session-purdue-football-2",
       "summary": "",
       "date": "2026-03-05T17:06:23+00:00"
-    },
-    {
-      "id": "c84cd5c7afca",
-      "source": "Purdue Athletics MBB",
-      "title": "Luca Puccinelli Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/03/5/luca-puccinelli-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-03-05T17:05:10+00:00"
     }
   ]
 }
