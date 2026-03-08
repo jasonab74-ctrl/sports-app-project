@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-08T12:36:47.985302+00:00",
+  "updated": "2026-03-08T13:36:22.258240+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "9536173a875e",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Begin South Carolina Swing",
+      "url": "https://purduesports.com/news/2026/03/8/boilermakers-begin-south-carolina-swing",
+      "summary": "",
+      "date": "2026-03-08T13:00:00+00:00"
+    },
     {
       "id": "12ce6cc823be",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/03/5/luca-puccinelli-media-session-purdue-football",
       "summary": "",
       "date": "2026-03-05T17:05:10+00:00"
-    },
-    {
-      "id": "a3000676067b",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Women's Basketball Press Conference 2026 Big Ten Tournament",
-      "url": "https://purduesports.com/news/2026/03/5/purdue-womens-basketball-press-conference-2026-big-ten-tournament",
-      "summary": "",
-      "date": "2026-03-05T05:20:38+00:00"
     }
   ]
 }
