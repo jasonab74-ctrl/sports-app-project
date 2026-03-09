@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-09T16:32:29.389602+00:00",
+  "updated": "2026-03-09T17:43:03.719680+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "46909b871064",
+      "source": "CBS Sports College Basketball",
+      "title": "College basketball rankings: Purdue plummets in latest Coaches Poll, Miami (Ohio) stays at No. 20",
+      "url": "https://www.cbssports.com/college-basketball/news/coaches-poll-college-basketball-rankings-purdue-miami-ohio/",
+      "summary": "The Redhawks completed an undefeated regular season last week but stayed at No. 20 in this week's rankings",
+      "date": "2026-03-09T17:20:58+00:00"
+    },
     {
       "id": "d1709a23b2f4",
       "source": "Purdue Athletics MBB",
@@ -84,14 +92,6 @@
       "date": "2026-03-07T22:40:38+00:00"
     },
     {
-      "id": "0dde5d599059",
-      "source": "CBS Sports College Basketball",
-      "title": "Wisconsin vs. Purdue prediction, pick, odds, spread: No. 15 Boilermakers eye return to form in Big Ten finale",
-      "url": "https://www.cbssports.com/college-basketball/news/wisconsin-vs-purdue-prediction-pick-odds-spread-where-to-watch/",
-      "summary": "Here's what you need to know about this Big Ten tilt, featuring two of the best guards in college basketball and dinosaurs mirroring the past",
-      "date": "2026-03-07T20:56:32+00:00"
-    },
-    {
       "id": "421d838467f0",
       "source": "Purdue Athletics MBB",
       "title": "Boarman Shocks Defending NCAA Champion, Advances to B1G Semifinals",
@@ -132,14 +132,6 @@
       "date": "2026-03-07T19:27:26+00:00"
     },
     {
-      "id": "d2c4fb8cc46d",
-      "source": "CBS Sports College Basketball",
-      "title": "Purdue vs. Wisconsin odds, prediction: 2026 college basketball picks for March 7 from proven model",
-      "url": "https://www.cbssports.com/college-basketball/news/purdue-wisconsin-odds-prediction-time-how-to-watch-2026-college-basketball-picks-saturday-march-7/",
-      "summary": "SportsLine's model simulated Wisconsin vs. No. 15 Purdue and revealed its college basketball picks for this Big Ten matchup on CBS and Paramount+",
-      "date": "2026-03-07T19:00:50+00:00"
-    },
-    {
       "id": "52003c6762af",
       "source": "Purdue Athletics MBB",
       "title": "Boilermakers Drop Decision to #22 USC",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/03/7/purdue-vs-oregon-game-1-highlights",
       "summary": "",
       "date": "2026-03-07T00:56:38+00:00"
+    },
+    {
+      "id": "1c3d43ccf745",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilers Win Home Opener 5-0",
+      "url": "https://purduesports.com/news/2026/03/6/boilers-win-home-opener-5-0",
+      "summary": "Purdue wins its home opener at Bittinger Stadium 5-0, shutting out the Bonnies of St. Bonaventure to begin the Boilermaker Classic.",
+      "date": "2026-03-06T21:50:29+00:00"
     }
   ]
 }
