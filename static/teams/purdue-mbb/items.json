@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-09T01:44:48.390297+00:00",
+  "updated": "2026-03-09T04:12:00.919612+00:00",
   "count": 20,
   "items": [
     {
@@ -18,6 +18,14 @@
       "url": "https://purduesports.com/news/2026/03/8/boilers-sweep-the-day",
       "summary": "Purdue Softball swept day three of the Boilermaker Classic, heading into the final day 4-0.",
       "date": "2026-03-08T23:34:40+00:00"
+    },
+    {
+      "id": "ae9b728cc830",
+      "source": "Purdue Athletics MBB",
+      "title": "Oregon's Offensive Onslaught Dooms Purdue in Rubber Game",
+      "url": "https://purduesports.com/news/2026/03/8/oregons-offensive-onslaught-dooms-purdue-in-rubber-game",
+      "summary": "",
+      "date": "2026-03-08T21:11:00+00:00"
     },
     {
       "id": "8d65b674182f",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/03/7/purdue-vs-oregon-game-1-highlights",
       "summary": "",
       "date": "2026-03-07T00:56:38+00:00"
-    },
-    {
-      "id": "1c3d43ccf745",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilers Win Home Opener 5-0",
-      "url": "https://purduesports.com/news/2026/03/6/boilers-win-home-opener-5-0",
-      "summary": "Purdue wins its home opener at Bittinger Stadium 5-0, shutting out the Bonnies of St. Bonaventure to begin the Boilermaker Classic.",
-      "date": "2026-03-06T21:50:29+00:00"
     }
   ]
 }
