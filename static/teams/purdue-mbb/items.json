@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-08T23:44:42.956962+00:00",
+  "updated": "2026-03-09T01:44:48.390297+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "d1709a23b2f4",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers to Open Big Ten Tournament Play Thursday Night",
+      "url": "https://purduesports.com/news/2026/03/9/boilermakers-to-open-big-ten-tournament-play-thursday-night",
+      "summary": "",
+      "date": "2026-03-09T00:45:37+00:00"
+    },
+    {
+      "id": "61683b984603",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilers Sweep the Day",
+      "url": "https://purduesports.com/news/2026/03/8/boilers-sweep-the-day",
+      "summary": "Purdue Softball swept day three of the Boilermaker Classic, heading into the final day 4-0.",
+      "date": "2026-03-08T23:34:40+00:00"
+    },
     {
       "id": "8d65b674182f",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/03/6/boilers-win-home-opener-5-0",
       "summary": "Purdue wins its home opener at Bittinger Stadium 5-0, shutting out the Bonnies of St. Bonaventure to begin the Boilermaker Classic.",
       "date": "2026-03-06T21:50:29+00:00"
-    },
-    {
-      "id": "bf36520ae157",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights: #15 Purdue 70, Northwestern 66",
-      "url": "https://purduesports.com/news/2026/03/5/highlights-15-purdue-70-northwestern-66",
-      "summary": "",
-      "date": "2026-03-05T21:13:49+00:00"
-    },
-    {
-      "id": "307fa0c68375",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Josh Henson Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/03/5/coach-josh-henson-media-session-purdue-football-2",
-      "summary": "",
-      "date": "2026-03-05T17:12:08+00:00"
     }
   ]
 }
