@@ -1,8 +1,48 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-10T19:34:21.094127+00:00",
+  "updated": "2026-03-10T20:27:43.156732+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "38432622f668",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Barry Odom Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/03/10/coach-barry-odom-media-session-purdue-football-5",
+      "summary": "",
+      "date": "2026-03-10T19:38:11+00:00"
+    },
+    {
+      "id": "4d16b68310c5",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Kelvin Green Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/03/10/coach-kelvin-green-media-session-purdue-football-1",
+      "summary": "",
+      "date": "2026-03-10T19:35:22+00:00"
+    },
+    {
+      "id": "7629d8ef33ab",
+      "source": "Purdue Athletics MBB",
+      "title": "DL T.J. Lindsey Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/03/10/dl-tj-lindsey-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-03-10T19:31:51+00:00"
+    },
+    {
+      "id": "76ecd5f37588",
+      "source": "Purdue Athletics MBB",
+      "title": "DL Ian Jeffries Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/03/10/dl-ian-jeffries-media-session-purdue-football-1",
+      "summary": "",
+      "date": "2026-03-10T19:28:43+00:00"
+    },
+    {
+      "id": "3253efe6afd3",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Opens Second Week of Spring Ball",
+      "url": "https://purduesports.com/news/2026/03/10/purdue-opens-second-week-of-spring-ball",
+      "summary": "",
+      "date": "2026-03-10T18:20:00+00:00"
+    },
     {
       "id": "c1507c3b86d8",
       "source": "Purdue Athletics MBB",
@@ -122,46 +162,6 @@
       "url": "https://purduesports.com/news/2026/03/7/boilermakers-take-down-hoosiers-4-2",
       "summary": "",
       "date": "2026-03-07T20:08:26+00:00"
-    },
-    {
-      "id": "9920dab6a471",
-      "source": "Purdue Athletics MBB",
-      "title": "Charles Correa Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/03/7/charles-correa-media-session-purdue-football-2",
-      "summary": "",
-      "date": "2026-03-07T19:30:12+00:00"
-    },
-    {
-      "id": "4b815e1a3597",
-      "source": "Purdue Athletics MBB",
-      "title": "Winston Berglund Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/03/7/winston-berglund-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-03-07T19:28:32+00:00"
-    },
-    {
-      "id": "4134a3830f80",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Kevin Kane Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/03/7/coach-kevin-kane-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-03-07T19:27:26+00:00"
-    },
-    {
-      "id": "52003c6762af",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Drop Decision to #22 USC",
-      "url": "https://purduesports.com/news/2026/03/7/boilermakers-drop-decision-to-22-usc",
-      "summary": "",
-      "date": "2026-03-07T02:01:00+00:00"
-    },
-    {
-      "id": "081aa09bb161",
-      "source": "Purdue Athletics MBB",
-      "title": "Dionne, Flores Homer but Purdue's Rally Comes Up a Run Short",
-      "url": "https://purduesports.com/news/2026/03/7/dionne-flores-homer-but-purdues-rally-comes-up-a-run-short",
-      "summary": "",
-      "date": "2026-03-07T01:56:26+00:00"
     }
   ]
 }
