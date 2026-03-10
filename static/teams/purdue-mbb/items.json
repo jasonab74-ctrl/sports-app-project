@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-10T12:51:49.933017+00:00",
+  "updated": "2026-03-10T13:57:49.665901+00:00",
   "count": 20,
   "items": [
     {
@@ -10,6 +10,14 @@
       "url": "https://purduesports.com/news/2026/03/9/brown-and-purdue-place-4th-in-shootout-at-wachesaw",
       "summary": "",
       "date": "2026-03-09T22:13:54+00:00"
+    },
+    {
+      "id": "971f1766d84b",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Host Milwaukee for First Midweek Home Game",
+      "url": "https://purduesports.com/news/2026/03/9/boilermakers-host-milwaukee-for-first-midweek-home-game",
+      "summary": "The $3 midweek deals on beers, hot dogs and popcorn make their season debut on a 75-degree day",
+      "date": "2026-03-09T20:49:00+00:00"
     },
     {
       "id": "7861db194631",
@@ -76,14 +84,6 @@
       "date": "2026-03-08T17:58:58+00:00"
     },
     {
-      "id": "9536173a875e",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Begin South Carolina Swing",
-      "url": "https://purduesports.com/news/2026/03/8/boilermakers-begin-south-carolina-swing",
-      "summary": "",
-      "date": "2026-03-08T13:00:00+00:00"
-    },
-    {
       "id": "12ce6cc823be",
       "source": "Purdue Athletics MBB",
       "title": "#21 Purdue Secures 4 NCAA Bids; Boilers Close Day 1 at B1G Championships",
@@ -106,14 +106,6 @@
       "url": "https://purduesports.com/news/2026/03/7/purdue-defeats-oregon-in-2-1-pitchers-duel-highlights",
       "summary": "",
       "date": "2026-03-07T22:56:49+00:00"
-    },
-    {
-      "id": "f899a8b0e37a",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilers Extend Win Streak to Seven",
-      "url": "https://purduesports.com/news/2026/03/7/boilers-extend-win-streak-to-seven",
-      "summary": "Purdue kept its momentum rolling into the second day of the Boilermaker Classic, bringing home an 8-1 win against Northern Illinois.",
-      "date": "2026-03-07T22:40:38+00:00"
     },
     {
       "id": "421d838467f0",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/03/7/boilermakers-drop-decision-to-22-usc",
       "summary": "",
       "date": "2026-03-07T02:01:00+00:00"
+    },
+    {
+      "id": "081aa09bb161",
+      "source": "Purdue Athletics MBB",
+      "title": "Dionne, Flores Homer but Purdue's Rally Comes Up a Run Short",
+      "url": "https://purduesports.com/news/2026/03/7/dionne-flores-homer-but-purdues-rally-comes-up-a-run-short",
+      "summary": "",
+      "date": "2026-03-07T01:56:26+00:00"
     }
   ]
 }
