@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-10T14:51:17.269498+00:00",
+  "updated": "2026-03-10T15:55:39.340036+00:00",
   "count": 20,
   "items": [
     {
@@ -74,14 +74,6 @@
       "url": "https://purduesports.com/news/2026/03/8/purdue-vs-oregon-game-3-highlights",
       "summary": "",
       "date": "2026-03-08T20:00:56+00:00"
-    },
-    {
-      "id": "b0ab604c143e",
-      "source": "CBS Sports College Basketball",
-      "title": "College basketball rankings: Wisconsin heads into Big Ten Tournament on hot streak after wild win vs. Purdue",
-      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-rankings-top-25-and-1-wisconsin-purdue-big-ten-tournament/",
-      "summary": "The Badgers continue their climb in the Top 25 And 1, where they are ranked No. 23, and could be trouble in the Big Ten tourney",
-      "date": "2026-03-08T17:58:58+00:00"
     },
     {
       "id": "12ce6cc823be",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/03/7/dionne-flores-homer-but-purdues-rally-comes-up-a-run-short",
       "summary": "",
       "date": "2026-03-07T01:56:26+00:00"
+    },
+    {
+      "id": "6d90c9361229",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue vs Oregon Game 1 Highlights",
+      "url": "https://purduesports.com/news/2026/03/7/purdue-vs-oregon-game-1-highlights",
+      "summary": "",
+      "date": "2026-03-07T00:56:38+00:00"
     }
   ]
 }
