@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-10T17:41:50.211144+00:00",
+  "updated": "2026-03-10T18:40:10.628837+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "c1507c3b86d8",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Men's Swim-Dive at the Big Ten Championships",
+      "url": "https://purduesports.com/news/2026/03/10/purdue-mens-swim-dive-at-the-big-ten-championships",
+      "summary": "",
+      "date": "2026-03-10T17:34:11+00:00"
+    },
     {
       "id": "d21310c73091",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/03/7/dionne-flores-homer-but-purdues-rally-comes-up-a-run-short",
       "summary": "",
       "date": "2026-03-07T01:56:26+00:00"
-    },
-    {
-      "id": "6d90c9361229",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue vs Oregon Game 1 Highlights",
-      "url": "https://purduesports.com/news/2026/03/7/purdue-vs-oregon-game-1-highlights",
-      "summary": "",
-      "date": "2026-03-07T00:56:38+00:00"
     }
   ]
 }
