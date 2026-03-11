@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-11T17:25:18.407841+00:00",
+  "updated": "2026-03-11T18:08:02.501786+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "442dade64891",
+      "source": "Purdue Athletics MBB",
+      "title": "#18 Purdue Heads to Chicago in Search of Big Ten Tournament Title",
+      "url": "https://purduesports.com/news/2026/03/11/18-purdue-heads-to-chicago-in-search-of-big-ten-tournament-title",
+      "summary": "",
+      "date": "2026-03-11T17:31:20+00:00"
+    },
     {
       "id": "aadc14fa1365",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/03/7/boarman-shocks-defending-ncaa-champion-advances-to-b1g-semifinals",
       "summary": "Seven Boilermakers advance to Session II on Saturday night.",
       "date": "2026-03-07T20:09:43+00:00"
-    },
-    {
-      "id": "57536150950b",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Take Down Hoosiers, 4-2",
-      "url": "https://purduesports.com/news/2026/03/7/boilermakers-take-down-hoosiers-4-2",
-      "summary": "",
-      "date": "2026-03-07T20:08:26+00:00"
     }
   ]
 }
