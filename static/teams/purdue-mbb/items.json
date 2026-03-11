@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-11T01:27:12.554914+00:00",
+  "updated": "2026-03-11T03:40:24.440997+00:00",
   "count": 20,
   "items": [
     {
@@ -58,14 +58,6 @@
       "url": "https://purduesports.com/news/2026/03/9/brown-and-purdue-place-4th-in-shootout-at-wachesaw",
       "summary": "",
       "date": "2026-03-09T22:13:54+00:00"
-    },
-    {
-      "id": "971f1766d84b",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Host Milwaukee for First Midweek Home Game",
-      "url": "https://purduesports.com/news/2026/03/9/boilermakers-host-milwaukee-for-first-midweek-home-game",
-      "summary": "The $3 midweek deals on beers, hot dogs and popcorn make their season debut on a 75-degree day",
-      "date": "2026-03-09T20:49:00+00:00"
     },
     {
       "id": "7861db194631",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/03/7/boilermakers-take-down-hoosiers-4-2",
       "summary": "",
       "date": "2026-03-07T20:08:26+00:00"
+    },
+    {
+      "id": "9920dab6a471",
+      "source": "Purdue Athletics MBB",
+      "title": "Charles Correa Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/03/7/charles-correa-media-session-purdue-football-2",
+      "summary": "",
+      "date": "2026-03-07T19:30:12+00:00"
     }
   ]
 }
