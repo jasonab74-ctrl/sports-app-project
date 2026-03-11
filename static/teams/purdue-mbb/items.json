@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-11T11:56:12.056860+00:00",
+  "updated": "2026-03-11T12:54:36.699985+00:00",
   "count": 20,
   "items": [
     {
@@ -10,6 +10,14 @@
       "url": "https://purduesports.com/news/2026/03/11/purdue-scores-17-in-midweek-route-of-milwaukee-highlights",
       "summary": "",
       "date": "2026-03-11T00:28:25+00:00"
+    },
+    {
+      "id": "be1e37d25609",
+      "source": "Purdue Athletics MBB",
+      "title": "5 Boilermakers Qualify for NCAAs on Both Springboards",
+      "url": "https://purduesports.com/news/2026/03/11/5-boilermakers-qualify-for-ncaas-on-both-springboards26",
+      "summary": "",
+      "date": "2026-03-11T00:02:00+00:00"
     },
     {
       "id": "38432622f668",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/03/7/boarman-shocks-defending-ncaa-champion-advances-to-b1g-semifinals",
       "summary": "Seven Boilermakers advance to Session II on Saturday night.",
       "date": "2026-03-07T20:09:43+00:00"
-    },
-    {
-      "id": "57536150950b",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Take Down Hoosiers, 4-2",
-      "url": "https://purduesports.com/news/2026/03/7/boilermakers-take-down-hoosiers-4-2",
-      "summary": "",
-      "date": "2026-03-07T20:08:26+00:00"
     }
   ]
 }
