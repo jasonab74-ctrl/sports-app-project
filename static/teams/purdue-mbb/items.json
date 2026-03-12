@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-12T18:07:25.737216+00:00",
+  "updated": "2026-03-12T19:22:58.283180+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "abe0080993e5",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Travels West for More Big Ten Play",
+      "url": "https://purduesports.com/news/2026/03/12/purdue-travels-west-for-back-to-back-big-ten-play",
+      "summary": "",
+      "date": "2026-03-12T18:14:41+00:00"
+    },
     {
       "id": "7470c79d1776",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/03/8/wisconsin-spoils-15-purdue-senior-day-97-93",
       "summary": "",
       "date": "2026-03-08T02:02:48+00:00"
-    },
-    {
-      "id": "e35695bd1ba3",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Defeats Oregon in 2-1 Pitcher's Duel - Highlights",
-      "url": "https://purduesports.com/news/2026/03/7/purdue-defeats-oregon-in-2-1-pitchers-duel-highlights",
-      "summary": "",
-      "date": "2026-03-07T22:56:49+00:00"
     }
   ]
 }
