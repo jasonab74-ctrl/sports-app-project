@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-12T21:27:43.617842+00:00",
+  "updated": "2026-03-12T21:55:12.081322+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "263adc41d543",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Set for First Series vs Maryland Since 2023",
+      "url": "https://purduesports.com/news/2026/03/12/purdue-set-for-first-series-vs-maryland-since-2023",
+      "summary": "The Boilermakers play inside the Beltway for weekend No. 2 of Big Ten play.",
+      "date": "2026-03-12T20:51:52+00:00"
+    },
     {
       "id": "920c29841f33",
       "source": "Purdue Athletics MBB",
@@ -18,6 +26,14 @@
       "url": "https://purduesports.com/news/2026/03/12/purdue-travels-west-for-back-to-back-big-ten-play",
       "summary": "",
       "date": "2026-03-12T18:14:41+00:00"
+    },
+    {
+      "id": "bb9457df1610",
+      "source": "Purdue Athletics MBB",
+      "title": "This Week in Purdue Baseball | March 12, 2026",
+      "url": "https://purduesports.com/news/2026/03/12/this-week-in-purdue-baseball-march-12-2026",
+      "summary": "",
+      "date": "2026-03-12T16:32:03+00:00"
     },
     {
       "id": "7470c79d1776",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/03/8/oregons-offensive-onslaught-dooms-purdue-in-rubber-game",
       "summary": "",
       "date": "2026-03-08T21:11:00+00:00"
-    },
-    {
-      "id": "8d65b674182f",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue vs Oregon Game 3 Highlights",
-      "url": "https://purduesports.com/news/2026/03/8/purdue-vs-oregon-game-3-highlights",
-      "summary": "",
-      "date": "2026-03-08T20:00:56+00:00"
-    },
-    {
-      "id": "12ce6cc823be",
-      "source": "Purdue Athletics MBB",
-      "title": "#21 Purdue Secures 4 NCAA Bids; Boilers Close Day 1 at B1G Championships",
-      "url": "https://purduesports.com/news/2026/03/8/21-purdue-secures-4-ncaa-bids-boilers-close-day-1-at-b1g-championships",
-      "summary": "Seven Boilers wrestle on to Day 2 in the Bryce Jordan Center.",
-      "date": "2026-03-08T03:06:06+00:00"
     }
   ]
 }
