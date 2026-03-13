@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-13T01:42:11.291542+00:00",
+  "updated": "2026-03-13T04:07:33.444339+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "7ce58e1a50b2",
+      "source": "Purdue Athletics MBB",
+      "title": "#18 Purdue Starts Fast to Roll Past Northwestern into Big Ten Quarters",
+      "url": "https://purduesports.com/news/2026/03/13/18-purdue-starts-fast-to-roll-past-northwestern-into-big-ten-quarters",
+      "summary": "",
+      "date": "2026-03-13T01:25:11+00:00"
+    },
     {
       "id": "263adc41d543",
       "source": "Purdue Athletics MBB",
@@ -42,14 +50,6 @@
       "url": "https://purduesports.com/news/2026/03/12/purdue-stories-rob-blackmans-broadcasting-journey",
       "summary": "Farm fields to Final Four: the story behind the longtime voice of Purdue Basketball.",
       "date": "2026-03-12T16:23:32+00:00"
-    },
-    {
-      "id": "442dade64891",
-      "source": "Purdue Athletics MBB",
-      "title": "#18 Purdue Heads to Chicago in Search of Big Ten Tournament Title",
-      "url": "https://purduesports.com/news/2026/03/11/18-purdue-heads-to-chicago-in-search-of-big-ten-tournament-title",
-      "summary": "",
-      "date": "2026-03-11T17:31:20+00:00"
     },
     {
       "id": "38cccbb870ea",
