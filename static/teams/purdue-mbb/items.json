@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-13T04:07:33.444339+00:00",
+  "updated": "2026-03-13T05:30:42.451746+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "a2a7dfb526e7",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Press Conference - Big Ten Tournament 3rd Round",
+      "url": "https://purduesports.com/news/2026/03/13/purdue-press-conference-big-ten-tournament-3rd-round",
+      "summary": "",
+      "date": "2026-03-13T03:08:38+00:00"
+    },
     {
       "id": "7ce58e1a50b2",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/03/8/boilers-sweep-the-day",
       "summary": "Purdue Softball swept day three of the Boilermaker Classic, heading into the final day 4-0.",
       "date": "2026-03-08T23:34:40+00:00"
-    },
-    {
-      "id": "ae9b728cc830",
-      "source": "Purdue Athletics MBB",
-      "title": "Oregon's Offensive Onslaught Dooms Purdue in Rubber Game",
-      "url": "https://purduesports.com/news/2026/03/8/oregons-offensive-onslaught-dooms-purdue-in-rubber-game",
-      "summary": "",
-      "date": "2026-03-08T21:11:00+00:00"
     }
   ]
 }
