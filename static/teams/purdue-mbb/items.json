@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-14T01:28:35.430112+00:00",
+  "updated": "2026-03-14T03:52:55.179294+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "4165152c3f1e",
+      "source": "Purdue Athletics MBB",
+      "title": "#18 Purdue Rolls #11 Nebraska to Move Into Big Ten Semifinals",
+      "url": "https://purduesports.com/news/2026/03/14/18-purdue-rolls-11-nebraska-to-move-into-big-ten-semifinals",
+      "summary": "",
+      "date": "2026-03-14T01:17:26+00:00"
+    },
     {
       "id": "f92fd2ed1cfc",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/03/9/brown-and-purdue-place-4th-in-shootout-at-wachesaw",
       "summary": "",
       "date": "2026-03-09T22:13:54+00:00"
-    },
-    {
-      "id": "7861db194631",
-      "source": "Purdue Athletics MBB",
-      "title": "Softball Continues Win Streak",
-      "url": "https://purduesports.com/news/2026/03/9/softball-continues-win-streak",
-      "summary": "Purdue Softball closed out the Boilermaker Classic with a commanding 9-0 win over Green Bay. The Boilers are now on a 10 game win streak.",
-      "date": "2026-03-09T20:41:42+00:00"
     }
   ]
 }
