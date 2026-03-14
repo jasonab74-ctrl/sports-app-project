@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-14T12:38:15.230822+00:00",
+  "updated": "2026-03-14T13:41:40.286471+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "d6da9ed6fe7c",
+      "source": "CBS Sports College Basketball",
+      "title": "Purdue vs. UCLA odds, prediction: 2026 Big Ten Tournament semifinal picks from proven model",
+      "url": "https://www.cbssports.com/college-basketball/news/purdue-ucla-odds-prediction-time-2026-big-ten-tournament-semifinal-picks-from-proven-model/",
+      "summary": "SportsLine's model simulated UCLA Bruins vs. Purdue Boilermakers and revealed its college basketball picks for this 2026 Big Ten Tournament semifinal matchup",
+      "date": "2026-03-14T12:51:21+00:00"
+    },
+    {
+      "id": "546c1baf2789",
+      "source": "Purdue Athletics MBB",
+      "title": "#18 Purdue Battles UCLA in Big Ten Tournament Semifinal Showdown",
+      "url": "https://purduesports.com/news/2026/03/14/18-purdue-battles-ucla-in-big-ten-tournament-semifinal-showdown",
+      "summary": "",
+      "date": "2026-03-14T12:00:00+00:00"
+    },
     {
       "id": "05ea0036c11d",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/03/10/dl-ian-jeffries-media-session-purdue-football-1",
       "summary": "",
       "date": "2026-03-10T19:28:43+00:00"
-    },
-    {
-      "id": "3253efe6afd3",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Opens Second Week of Spring Ball",
-      "url": "https://purduesports.com/news/2026/03/10/purdue-opens-second-week-of-spring-ball",
-      "summary": "",
-      "date": "2026-03-10T18:20:00+00:00"
-    },
-    {
-      "id": "c1507c3b86d8",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Men's Swim-Dive at the Big Ten Championships",
-      "url": "https://purduesports.com/news/2026/03/10/purdue-mens-swim-dive-at-the-big-ten-championships",
-      "summary": "",
-      "date": "2026-03-10T17:34:11+00:00"
     }
   ]
 }
