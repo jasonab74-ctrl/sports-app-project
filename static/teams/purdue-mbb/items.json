@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-14T21:48:02.914239+00:00",
+  "updated": "2026-03-14T22:20:41.658176+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "644a394f2522",
-      "source": "CBS Sports College Basketball",
-      "title": "2026 Big Ten Tournament bracket, scores, schedule as Michigan, Purdue punch tickets to title game in Chicago",
-      "url": "https://www.cbssports.com/college-basketball/news/big-ten-tournament-2026-bracket-schedule-scores/",
-      "summary": "Find the latest on the 2026 Big Ten Tournament, including the bracket, scores, schedule and more",
-      "date": "2026-03-14T21:43:00+00:00"
-    },
     {
       "id": "a5117854c7e4",
       "source": "CBS Sports College Basketball",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/03/10/coach-kelvin-green-media-session-purdue-football-1",
       "summary": "",
       "date": "2026-03-10T19:35:22+00:00"
+    },
+    {
+      "id": "7629d8ef33ab",
+      "source": "Purdue Athletics MBB",
+      "title": "DL T.J. Lindsey Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/03/10/dl-tj-lindsey-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-03-10T19:31:51+00:00"
     }
   ]
 }
