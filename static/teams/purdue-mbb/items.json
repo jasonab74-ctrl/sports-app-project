@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-14T05:07:20.452001+00:00",
+  "updated": "2026-03-14T06:04:06.688958+00:00",
   "count": 20,
   "items": [
     {
@@ -18,6 +18,22 @@
       "url": "https://purduesports.com/news/2026/03/14/purdue-falls-short-3-4-at-washington",
       "summary": "",
       "date": "2026-03-14T03:09:52+00:00"
+    },
+    {
+      "id": "113559003c47",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Blasts 5 Home Runs in Win at Maryland - Highlights",
+      "url": "https://purduesports.com/news/2026/03/14/purdue-blasts-5-home-runs-in-win-at-maryland-highlights",
+      "summary": "",
+      "date": "2026-03-14T02:53:16+00:00"
+    },
+    {
+      "id": "5d2418f4f972",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue MBB Press Conference vs. Nebraska",
+      "url": "https://purduesports.com/news/2026/03/14/purdue-mbb-press-conference-vs-nebraska",
+      "summary": "",
+      "date": "2026-03-14T02:02:20+00:00"
     },
     {
       "id": "4165152c3f1e",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/03/9/brown-and-purdue-place-4th-in-shootout-at-wachesaw",
       "summary": "",
       "date": "2026-03-09T22:13:54+00:00"
-    },
-    {
-      "id": "7861db194631",
-      "source": "Purdue Athletics MBB",
-      "title": "Softball Continues Win Streak",
-      "url": "https://purduesports.com/news/2026/03/9/softball-continues-win-streak",
-      "summary": "Purdue Softball closed out the Boilermaker Classic with a commanding 9-0 win over Green Bay. The Boilers are now on a 10 game win streak.",
-      "date": "2026-03-09T20:41:42+00:00"
-    },
-    {
-      "id": "25a836260132",
-      "source": "Purdue Athletics MBB",
-      "title": "Gossett, Moore Earn Big Ten Honors",
-      "url": "https://purduesports.com/news/2026/03/9/gosset-moore-earn-big-ten-honors",
-      "summary": "Julia Gossett becomes the first pitcher in Purdue history to earn Big Ten Pitcher of the Week honors in back-to-back weeks. Freshman, Anna Moore, earns her first-career honors after a stellar debut at Bittinger Stadium.",
-      "date": "2026-03-09T20:00:00+00:00"
     }
   ]
 }
