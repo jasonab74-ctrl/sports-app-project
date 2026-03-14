@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-14T17:50:03.503440+00:00",
+  "updated": "2026-03-14T18:29:56.438041+00:00",
   "count": 20,
   "items": [
     {
@@ -10,6 +10,14 @@
       "url": "https://www.cbssports.com/college-basketball/news/purdue-ucla-odds-prediction-time-how-to-watch-2026-big-ten-tournament-semifinal-picks-from-proven-model/",
       "summary": "SportsLine's model simulated UCLA Bruins vs. Purdue Boilermakers and revealed its college basketball picks for this 2026 Big Ten Tournament semifinal matchup",
       "date": "2026-03-14T17:42:37+00:00"
+    },
+    {
+      "id": "2f80656b40e4",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Secures 4th Straight Victory",
+      "url": "https://purduesports.com/news/2026/03/14/purdue-secures-4th-straight-victory",
+      "summary": "",
+      "date": "2026-03-14T17:38:27+00:00"
     },
     {
       "id": "546c1baf2789",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/03/10/dl-tj-lindsey-media-session-purdue-football",
       "summary": "",
       "date": "2026-03-10T19:31:51+00:00"
-    },
-    {
-      "id": "76ecd5f37588",
-      "source": "Purdue Athletics MBB",
-      "title": "DL Ian Jeffries Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/03/10/dl-ian-jeffries-media-session-purdue-football-1",
-      "summary": "",
-      "date": "2026-03-10T19:28:43+00:00"
     }
   ]
 }
