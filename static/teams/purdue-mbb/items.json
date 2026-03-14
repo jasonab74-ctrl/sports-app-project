@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-14T23:22:23.485159+00:00",
+  "updated": "2026-03-14T23:48:56.581519+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "8793fe3873e8",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Ride 7-Run Inning to Series-Clinching Win",
-      "url": "https://purduesports.com/news/2026/03/14/boilermakers-ride-7-run-inning-to-series-clinching-win",
-      "summary": "Westin Boyle and CJ Richmond connected for a two-run double & two-run homer in consecutive at-bats in Purdue's big inning.",
-      "date": "2026-03-14T23:06:19+00:00"
-    },
     {
       "id": "216b8ca9900f",
       "source": "Purdue Athletics MBB",
@@ -42,6 +34,14 @@
       "url": "https://purduesports.com/news/2026/03/14/purdue-secures-4th-straight-victory",
       "summary": "",
       "date": "2026-03-14T17:38:27+00:00"
+    },
+    {
+      "id": "546c1baf2789",
+      "source": "Purdue Athletics MBB",
+      "title": "#18 Purdue Battles UCLA in Big Ten Tournament Semifinal Showdown",
+      "url": "https://purduesports.com/news/2026/03/14/18-purdue-battles-ucla-in-big-ten-tournament-semifinal-showdown",
+      "summary": "",
+      "date": "2026-03-14T12:00:00+00:00"
     },
     {
       "id": "05ea0036c11d",
