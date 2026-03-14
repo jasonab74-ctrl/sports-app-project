@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-14T03:52:55.179294+00:00",
+  "updated": "2026-03-14T05:07:20.452001+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "215826b85e64",
+      "source": "Purdue Athletics MBB",
+      "title": "5 Homers Power Purdue's 14 Unanswered Runs in Win at UMD",
+      "url": "https://purduesports.com/news/2026/03/14/5-homers-power-purdues-14-unanswered-runs-in-win-at-umd",
+      "summary": "Dylan Drake hit a go-ahead grand slam in the 8th inning as the Boilermakers scored 12 times over the final 2 frames",
+      "date": "2026-03-14T03:30:45+00:00"
+    },
+    {
+      "id": "38530c725c54",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Falls Short 3-4 at Washington",
+      "url": "https://purduesports.com/news/2026/03/14/purdue-falls-short-3-4-at-washington",
+      "summary": "",
+      "date": "2026-03-14T03:09:52+00:00"
+    },
     {
       "id": "4165152c3f1e",
       "source": "Purdue Athletics MBB",
@@ -10,14 +26,6 @@
       "url": "https://purduesports.com/news/2026/03/14/18-purdue-rolls-11-nebraska-to-move-into-big-ten-semifinals",
       "summary": "",
       "date": "2026-03-14T01:17:26+00:00"
-    },
-    {
-      "id": "f92fd2ed1cfc",
-      "source": "Purdue Athletics MBB",
-      "title": "#18 Purdue Battles #11 Nebraska for Spot in Big Ten Semifinals",
-      "url": "https://purduesports.com/news/2026/03/13/18-purdue-battles-11-nebraska-for-spot-in-big-ten-semifinals",
-      "summary": "",
-      "date": "2026-03-13T12:30:00+00:00"
     },
     {
       "id": "f20b938fc833",
@@ -42,30 +50,6 @@
       "url": "https://purduesports.com/news/2026/03/13/18-purdue-starts-fast-to-roll-past-northwestern-into-big-ten-quarters",
       "summary": "",
       "date": "2026-03-13T01:25:11+00:00"
-    },
-    {
-      "id": "263adc41d543",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Set for First Series vs Maryland Since 2023",
-      "url": "https://purduesports.com/news/2026/03/12/purdue-set-for-first-series-vs-maryland-since-2023",
-      "summary": "The Boilermakers play inside the Beltway for weekend No. 2 of Big Ten play.",
-      "date": "2026-03-12T20:51:52+00:00"
-    },
-    {
-      "id": "920c29841f33",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Hosts Ohio State at Bittinger Stadium",
-      "url": "https://purduesports.com/news/2026/03/12/purdue-hosts-ohio-state-at-bittinger-stadium",
-      "summary": "",
-      "date": "2026-03-12T18:58:38+00:00"
-    },
-    {
-      "id": "abe0080993e5",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Travels West for More Big Ten Play",
-      "url": "https://purduesports.com/news/2026/03/12/purdue-travels-west-for-back-to-back-big-ten-play",
-      "summary": "",
-      "date": "2026-03-12T18:14:41+00:00"
     },
     {
       "id": "bb9457df1610",
@@ -162,6 +146,22 @@
       "url": "https://purduesports.com/news/2026/03/9/brown-and-purdue-place-4th-in-shootout-at-wachesaw",
       "summary": "",
       "date": "2026-03-09T22:13:54+00:00"
+    },
+    {
+      "id": "7861db194631",
+      "source": "Purdue Athletics MBB",
+      "title": "Softball Continues Win Streak",
+      "url": "https://purduesports.com/news/2026/03/9/softball-continues-win-streak",
+      "summary": "Purdue Softball closed out the Boilermaker Classic with a commanding 9-0 win over Green Bay. The Boilers are now on a 10 game win streak.",
+      "date": "2026-03-09T20:41:42+00:00"
+    },
+    {
+      "id": "25a836260132",
+      "source": "Purdue Athletics MBB",
+      "title": "Gossett, Moore Earn Big Ten Honors",
+      "url": "https://purduesports.com/news/2026/03/9/gosset-moore-earn-big-ten-honors",
+      "summary": "Julia Gossett becomes the first pitcher in Purdue history to earn Big Ten Pitcher of the Week honors in back-to-back weeks. Freshman, Anna Moore, earns her first-career honors after a stellar debut at Bittinger Stadium.",
+      "date": "2026-03-09T20:00:00+00:00"
     }
   ]
 }
