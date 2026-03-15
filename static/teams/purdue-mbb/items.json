@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-15T01:55:16.825623+00:00",
+  "updated": "2026-03-15T04:29:29.184053+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "6562bd93640c",
+      "source": "Purdue Athletics MBB",
+      "title": "#18 Purdue Set for Championship Sunday Against #3 Michigan",
+      "url": "https://purduesports.com/news/2026/03/15/18-purdue-set-for-championship-sunday-against-3-michigan",
+      "summary": "",
+      "date": "2026-03-15T03:48:09+00:00"
+    },
     {
       "id": "8793fe3873e8",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/03/11/5-boilermakers-qualify-for-ncaas-on-both-springboards26",
       "summary": "",
       "date": "2026-03-11T00:02:00+00:00"
-    },
-    {
-      "id": "38432622f668",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Barry Odom Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/03/10/coach-barry-odom-media-session-purdue-football-5",
-      "summary": "",
-      "date": "2026-03-10T19:38:11+00:00"
     }
   ]
 }
