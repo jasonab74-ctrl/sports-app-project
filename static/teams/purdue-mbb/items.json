@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-15T22:21:20.180484+00:00",
+  "updated": "2026-03-15T22:53:32.905717+00:00",
   "count": 20,
   "items": [
     {
@@ -58,14 +58,6 @@
       "url": "https://purduesports.com/news/2026/03/15/18-purdue-vs-ucla-photo-gallery",
       "summary": "",
       "date": "2026-03-15T04:15:36+00:00"
-    },
-    {
-      "id": "6562bd93640c",
-      "source": "Purdue Athletics MBB",
-      "title": "#18 Purdue Set for Championship Sunday Against #3 Michigan",
-      "url": "https://purduesports.com/news/2026/03/15/18-purdue-set-for-championship-sunday-against-3-michigan",
-      "summary": "",
-      "date": "2026-03-15T03:48:09+00:00"
     },
     {
       "id": "8793fe3873e8",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/03/13/purdue-vs-northwestern-photo-gallery",
       "summary": "",
       "date": "2026-03-13T05:32:28+00:00"
+    },
+    {
+      "id": "a2a7dfb526e7",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Press Conference - Big Ten Tournament 3rd Round",
+      "url": "https://purduesports.com/news/2026/03/13/purdue-press-conference-big-ten-tournament-3rd-round",
+      "summary": "",
+      "date": "2026-03-13T03:08:38+00:00"
     }
   ]
 }
