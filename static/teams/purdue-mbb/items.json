@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-15T09:57:09.081423+00:00",
+  "updated": "2026-03-15T10:29:15.619283+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "0a7fc94b2c5e",
+      "source": "CBS Sports College Basketball",
+      "title": "2026 Big Ten Tournament bracket, scores, schedule as Michigan, Purdue square off for conference title",
+      "url": "https://www.cbssports.com/college-basketball/news/big-ten-tournament-2026-bracket-schedule-scores/",
+      "summary": "Find the latest on the 2026 Big Ten Tournament, including the bracket, scores, schedule and more",
+      "date": "2026-03-15T10:00:57+00:00"
+    },
     {
       "id": "1d3d3344ef97",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/03/11/mackesy-relay-team-to-rep-purdue-men-at-ncaas",
       "summary": "",
       "date": "2026-03-11T16:19:00+00:00"
-    },
-    {
-      "id": "aadc14fa1365",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Scores 17 in Midweek Route of Milwaukee - Highlights",
-      "url": "https://purduesports.com/news/2026/03/11/purdue-scores-17-in-midweek-route-of-milwaukee-highlights",
-      "summary": "",
-      "date": "2026-03-11T00:28:25+00:00"
     }
   ]
 }
