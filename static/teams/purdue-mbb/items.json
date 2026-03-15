@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-15T22:53:32.905717+00:00",
+  "updated": "2026-03-15T23:23:28.903575+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "6c56a35ae355",
+      "source": "Purdue Athletics MBB",
+      "title": "#2 Seed Boilermakers To Face #15 Queens in NCAA Tournament First Round on Friday in St. Louis",
+      "url": "https://purduesports.com/news/2026/03/15/2-seed-boilermakers-to-face-15-queens-in-ncaa-tournament-first-round-on-friday-in-st-louis",
+      "summary": "",
+      "date": "2026-03-15T22:37:00+00:00"
+    },
     {
       "id": "c4d7a8f029a7",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/03/13/purdue-vs-northwestern-photo-gallery",
       "summary": "",
       "date": "2026-03-13T05:32:28+00:00"
-    },
-    {
-      "id": "a2a7dfb526e7",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Press Conference - Big Ten Tournament 3rd Round",
-      "url": "https://purduesports.com/news/2026/03/13/purdue-press-conference-big-ten-tournament-3rd-round",
-      "summary": "",
-      "date": "2026-03-13T03:08:38+00:00"
     }
   ]
 }
