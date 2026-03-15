@@ -1,15 +1,23 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-15T21:22:32.784001+00:00",
+  "updated": "2026-03-15T21:49:20.156752+00:00",
   "count": 20,
   "items": [
     {
-      "id": "0a7fc94b2c5e",
+      "id": "1c9d974d5d03",
       "source": "CBS Sports College Basketball",
-      "title": "2026 Big Ten Tournament bracket, scores, schedule as Michigan, Purdue square off for conference title",
+      "title": "2026 Big Ten Tournament scores, results, bracket: Purdue knocks off Michigan for conference title",
       "url": "https://www.cbssports.com/college-basketball/news/big-ten-tournament-2026-bracket-schedule-scores/",
-      "summary": "Find the latest on the 2026 Big Ten Tournament, including the bracket, scores, schedule and more",
-      "date": "2026-03-15T18:42:28+00:00"
+      "summary": "The Boilermakers won four games in four days from Chicago to win the Big Ten Tournament",
+      "date": "2026-03-15T21:45:24+00:00"
+    },
+    {
+      "id": "05b8dc3bb5a5",
+      "source": "CBS Sports College Basketball",
+      "title": "College basketball conference tournaments 2026: Arkansas, Purdue clinch final auto bids to the NCAA Tournament",
+      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-conference-tournaments-2026-schedule-results-automatic-bids-march-madness/",
+      "summary": "Arkansas won its first SEC title since 2000 with a win over Vanderbilt, while Purdue upset Michigan in the Big Ten title game",
+      "date": "2026-03-15T21:42:57+00:00"
     },
     {
       "id": "07fe3480f98b",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/03/13/18-purdue-starts-fast-to-roll-past-northwestern-into-big-ten-quarters",
       "summary": "",
       "date": "2026-03-13T01:25:11+00:00"
-    },
-    {
-      "id": "bb9457df1610",
-      "source": "Purdue Athletics MBB",
-      "title": "This Week in Purdue Baseball | March 12, 2026",
-      "url": "https://purduesports.com/news/2026/03/12/this-week-in-purdue-baseball-march-12-2026",
-      "summary": "",
-      "date": "2026-03-12T16:32:03+00:00"
     }
   ]
 }
