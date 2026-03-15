@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-15T14:54:11.539580+00:00",
+  "updated": "2026-03-15T15:24:07.620178+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "d518d43db828",
+      "source": "CBS Sports College Basketball",
+      "title": "Michigan vs. Purdue odds, prediction: 2026 Big Ten Tournament Final picks for March 15 from proven model",
+      "url": "https://www.cbssports.com/college-basketball/news/michigan-purdue-odds-prediction-2026-big-ten-tournament-final-picks/",
+      "summary": "SportsLine's model simulated the Michigan Wolverines vs. Purdue Boilermakers and revealed its Big Ten Tournament Championship Game picks for Sunday's matchup on CBS and Paramount+",
+      "date": "2026-03-15T15:06:56+00:00"
+    },
     {
       "id": "548390f21312",
       "source": "CBS Sports College Basketball",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/03/12/this-week-in-purdue-baseball-march-12-2026",
       "summary": "",
       "date": "2026-03-12T16:32:03+00:00"
-    },
-    {
-      "id": "7470c79d1776",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Stories: Rob Blackman's Broadcasting Journey",
-      "url": "https://purduesports.com/news/2026/03/12/purdue-stories-rob-blackmans-broadcasting-journey",
-      "summary": "Farm fields to Final Four: the story behind the longtime voice of Purdue Basketball.",
-      "date": "2026-03-12T16:23:32+00:00"
     }
   ]
 }
