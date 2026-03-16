@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-16T19:51:00.329604+00:00",
+  "updated": "2026-03-16T20:32:27.789475+00:00",
   "count": 20,
   "items": [
     {
@@ -9,7 +9,15 @@
       "title": "College basketball rankings: Purdue, Arkansas rise in AP Top 25; Miami (Ohio) drops out in latest poll",
       "url": "https://www.cbssports.com/college-basketball/news/ap-top-25-college-basketball-rankings-purdue-arkansas-miami-ohio/",
       "summary": "There was plenty of movement in the AP Top 25 ahead of the NCAA Tournament",
-      "date": "2026-03-16T18:43:01+00:00"
+      "date": "2026-03-16T20:00:15+00:00"
+    },
+    {
+      "id": "b492eac8ffb2",
+      "source": "Purdue Athletics MBB",
+      "title": "Moore Earns Big Ten Freshman of the Week for Second-Consecutive Week",
+      "url": "https://purduesports.com/news/2026/03/16/moore-earns-big-ten-freshman-of-the-week-for-second-consecutive-week",
+      "summary": "Anna Moore makes Purdue history becoming the first-ever freshman to win Big Ten Freshman of the Week in back-to-back weeks.",
+      "date": "2026-03-16T20:00:00+00:00"
     },
     {
       "id": "58c62d612eef",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/03/14/purdue-mbb-press-conference-vs-nebraska",
       "summary": "",
       "date": "2026-03-14T02:02:20+00:00"
-    },
-    {
-      "id": "4165152c3f1e",
-      "source": "Purdue Athletics MBB",
-      "title": "#18 Purdue Rolls #11 Nebraska to Move Into Big Ten Semifinals",
-      "url": "https://purduesports.com/news/2026/03/14/18-purdue-rolls-11-nebraska-to-move-into-big-ten-semifinals",
-      "summary": "",
-      "date": "2026-03-14T01:17:26+00:00"
     }
   ]
 }
