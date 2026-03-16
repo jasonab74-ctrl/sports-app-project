@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-16T17:55:21.876273+00:00",
+  "updated": "2026-03-16T18:54:53.118694+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "28d6b11ca8cd",
+      "source": "CBS Sports College Basketball",
+      "title": "College basketball rankings: Purdue, Arkansas rise in AP Top 25; Miami (Ohio) drops out in latest poll",
+      "url": "https://www.cbssports.com/college-basketball/news/ap-top-25-college-basketball-rankings-purdue-arkansas-miami-ohio/",
+      "summary": "There was plenty of movement in the AP Top 25 ahead of the NCAA Tournament",
+      "date": "2026-03-16T18:43:01+00:00"
+    },
     {
       "id": "58c62d612eef",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/03/14/18-purdue-rolls-11-nebraska-to-move-into-big-ten-semifinals",
       "summary": "",
       "date": "2026-03-14T01:17:26+00:00"
-    },
-    {
-      "id": "f20b938fc833",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue vs. Northwestern Photo Gallery",
-      "url": "https://purduesports.com/news/2026/03/13/purdue-vs-northwestern-photo-gallery",
-      "summary": "",
-      "date": "2026-03-13T05:32:28+00:00"
     }
   ]
 }
