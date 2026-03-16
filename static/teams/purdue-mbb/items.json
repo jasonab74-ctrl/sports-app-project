@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-16T16:35:35.555649+00:00",
+  "updated": "2026-03-16T17:55:21.876273+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "58c62d612eef",
+      "source": "Purdue Athletics MBB",
+      "title": "#19 Purdue Prepped for NCAA Wrestling Championships",
+      "url": "https://purduesports.com/news/2026/03/16/19-purdue-prepped-for-ncaa-wrestling-championships",
+      "summary": "",
+      "date": "2026-03-16T17:00:00+00:00"
+    },
     {
       "id": "74953a7e194d",
       "source": "CBS Sports College Basketball",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/03/13/purdue-vs-northwestern-photo-gallery",
       "summary": "",
       "date": "2026-03-13T05:32:28+00:00"
-    },
-    {
-      "id": "a2a7dfb526e7",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Press Conference - Big Ten Tournament 3rd Round",
-      "url": "https://purduesports.com/news/2026/03/13/purdue-press-conference-big-ten-tournament-3rd-round",
-      "summary": "",
-      "date": "2026-03-13T03:08:38+00:00"
     }
   ]
 }
