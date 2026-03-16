@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-16T01:56:38.081273+00:00",
+  "updated": "2026-03-16T04:38:33.951715+00:00",
   "count": 20,
   "items": [
     {
@@ -92,14 +92,6 @@
       "date": "2026-03-14T21:58:57+00:00"
     },
     {
-      "id": "a5117854c7e4",
-      "source": "CBS Sports College Basketball",
-      "title": "Purdue vs. UCLA odds, prediction: 2026 Big Ten Tournament semifinal picks from proven model",
-      "url": "https://www.cbssports.com/college-basketball/news/purdue-ucla-odds-prediction-time-how-to-watch-2026-big-ten-tournament-semifinal-picks-from-proven-model/",
-      "summary": "SportsLine's model simulated UCLA Bruins vs. Purdue Boilermakers and revealed its college basketball picks for this 2026 Big Ten Tournament semifinal matchup",
-      "date": "2026-03-14T17:42:37+00:00"
-    },
-    {
       "id": "2f80656b40e4",
       "source": "Purdue Athletics MBB",
       "title": "Purdue Secures 4th Straight Victory",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/03/13/purdue-vs-northwestern-photo-gallery",
       "summary": "",
       "date": "2026-03-13T05:32:28+00:00"
+    },
+    {
+      "id": "a2a7dfb526e7",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Press Conference - Big Ten Tournament 3rd Round",
+      "url": "https://purduesports.com/news/2026/03/13/purdue-press-conference-big-ten-tournament-3rd-round",
+      "summary": "",
+      "date": "2026-03-13T03:08:38+00:00"
     }
   ]
 }
