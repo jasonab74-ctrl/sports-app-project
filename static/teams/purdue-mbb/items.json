@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-17T22:27:31.702633+00:00",
+  "updated": "2026-03-17T22:59:49.384617+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "49165df3390a",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Adds Wednesday Home Game vs Oakland City",
+      "url": "https://purduesports.com/news/2026/03/17/purdue-adds-wednesday-midweek-game-vs-oakland-city",
+      "summary": "Free admission at Alexander Field for 4 p.m. matinee vs a top 25 NAIA team",
+      "date": "2026-03-17T21:27:06+00:00"
+    },
     {
       "id": "3fe7f4283afe",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/03/14/highlights-purdue-6-ohio-state-5",
       "summary": "",
       "date": "2026-03-14T22:23:19+00:00"
-    },
-    {
-      "id": "216b8ca9900f",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Rides 7-Run 2nd Inning to Win at Maryland - Highlights",
-      "url": "https://purduesports.com/news/2026/03/14/purdue-rides-7-run-2nd-inning-to-win-at-maryland-highlights",
-      "summary": "",
-      "date": "2026-03-14T22:21:55+00:00"
     }
   ]
 }
