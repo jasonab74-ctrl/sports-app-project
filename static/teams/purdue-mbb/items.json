@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-17T14:20:15.519323+00:00",
+  "updated": "2026-03-17T15:37:04.667075+00:00",
   "count": 20,
   "items": [
     {
@@ -108,14 +108,6 @@
       "date": "2026-03-15T21:58:36+00:00"
     },
     {
-      "id": "1c9d974d5d03",
-      "source": "CBS Sports College Basketball",
-      "title": "2026 Big Ten Tournament scores, results, bracket: Purdue knocks off Michigan for conference title",
-      "url": "https://www.cbssports.com/college-basketball/news/big-ten-tournament-2026-bracket-schedule-scores/",
-      "summary": "The Boilermakers won four games in four days from Chicago to win the Big Ten Tournament",
-      "date": "2026-03-15T21:45:24+00:00"
-    },
-    {
       "id": "b30667b15e03",
       "source": "Purdue Athletics MBB",
       "title": "Purdue at Maryland Game 3 Highlights",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/03/14/18-purdue-advances-to-title-game-with-win-over-ucla",
       "summary": "",
       "date": "2026-03-14T21:58:57+00:00"
+    },
+    {
+      "id": "383a6b4ee008",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights: Purdue 73, UCLA 66 (Big Ten Tournament Semifinals)",
+      "url": "https://purduesports.com/news/2026/03/14/highlights-purdue-73-ucla-66-big-ten-tournament-semifinals",
+      "summary": "",
+      "date": "2026-03-14T21:39:12+00:00"
     }
   ]
 }
