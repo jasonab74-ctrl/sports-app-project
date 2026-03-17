@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-17T15:37:04.667075+00:00",
+  "updated": "2026-03-17T16:59:26.431257+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "1b9199d57330",
+      "source": "Purdue Athletics MBB",
+      "title": "Moore Earns D1 Softball's National Freshman of the Week",
+      "url": "https://purduesports.com/news/2026/03/17/moore-earns-d1-softballs-national-freshman-of-the-week",
+      "summary": "After making Purdue history becoming the first-ever freshman to win Big Ten Freshman of the Week in back-to-back weeks, Anna Moore was named D1 Softball's National Freshman of the Week on Tuesday.",
+      "date": "2026-03-17T16:00:00+00:00"
+    },
     {
       "id": "28d6b11ca8cd",
       "source": "CBS Sports College Basketball",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/03/14/18-purdue-advances-to-title-game-with-win-over-ucla",
       "summary": "",
       "date": "2026-03-14T21:58:57+00:00"
-    },
-    {
-      "id": "383a6b4ee008",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights: Purdue 73, UCLA 66 (Big Ten Tournament Semifinals)",
-      "url": "https://purduesports.com/news/2026/03/14/highlights-purdue-73-ucla-66-big-ten-tournament-semifinals",
-      "summary": "",
-      "date": "2026-03-14T21:39:12+00:00"
     }
   ]
 }
