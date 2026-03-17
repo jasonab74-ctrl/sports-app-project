@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-17T22:59:49.384617+00:00",
+  "updated": "2026-03-17T23:39:05.537437+00:00",
   "count": 20,
   "items": [
     {
@@ -18,6 +18,14 @@
       "url": "https://purduesports.com/news/2026/03/17/brown-paces-purdue-at-briars-creek",
       "summary": "",
       "date": "2026-03-17T20:40:50+00:00"
+    },
+    {
+      "id": "f2e0529036d9",
+      "source": "Purdue Athletics MBB",
+      "title": "3 Boilers Set to Represent Purdue Women at NCAAs",
+      "url": "https://purduesports.com/news/2026/03/17/3-boilermakers-set-to-represent-purdue-women-at-ncaas",
+      "summary": "Purdue to be represented in the mile plus all 3 diving events in Atlanta",
+      "date": "2026-03-17T19:24:00+00:00"
     },
     {
       "id": "1b9199d57330",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/03/14/boilermakers-ride-7-run-inning-to-series-clinching-win",
       "summary": "Westin Boyle and CJ Richmond connected for a two-run double & two-run homer in consecutive at-bats in Purdue's big inning.",
       "date": "2026-03-14T23:06:19+00:00"
-    },
-    {
-      "id": "ef7900da0bcb",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights: Purdue 6, Ohio State 5",
-      "url": "https://purduesports.com/news/2026/03/14/highlights-purdue-6-ohio-state-5",
-      "summary": "",
-      "date": "2026-03-14T22:23:19+00:00"
     }
   ]
 }
