@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-17T12:59:42.299690+00:00",
+  "updated": "2026-03-17T14:20:15.519323+00:00",
   "count": 20,
   "items": [
     {
@@ -116,14 +116,6 @@
       "date": "2026-03-15T21:45:24+00:00"
     },
     {
-      "id": "05b8dc3bb5a5",
-      "source": "CBS Sports College Basketball",
-      "title": "College basketball conference tournaments 2026: Arkansas, Purdue clinch final auto bids to the NCAA Tournament",
-      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-conference-tournaments-2026-schedule-results-automatic-bids-march-madness/",
-      "summary": "Arkansas won its first SEC title since 2000 with a win over Vanderbilt, while Purdue upset Michigan in the Big Ten title game",
-      "date": "2026-03-15T21:42:57+00:00"
-    },
-    {
       "id": "b30667b15e03",
       "source": "Purdue Athletics MBB",
       "title": "Purdue at Maryland Game 3 Highlights",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/03/14/purdue-rides-7-run-2nd-inning-to-win-at-maryland-highlights",
       "summary": "",
       "date": "2026-03-14T22:21:55+00:00"
+    },
+    {
+      "id": "525e3a76d069",
+      "source": "Purdue Athletics MBB",
+      "title": "#18 Purdue Advances to Title Game with Win over UCLA",
+      "url": "https://purduesports.com/news/2026/03/14/18-purdue-advances-to-title-game-with-win-over-ucla",
+      "summary": "",
+      "date": "2026-03-14T21:58:57+00:00"
     }
   ]
 }
