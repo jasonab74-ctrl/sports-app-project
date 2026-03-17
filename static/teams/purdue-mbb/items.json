@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-17T20:33:27.737267+00:00",
+  "updated": "2026-03-17T21:32:32.182573+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "3fe7f4283afe",
+      "source": "Purdue Athletics MBB",
+      "title": "Brown Paces Purdue at Briar’s Creek",
+      "url": "https://purduesports.com/news/2026/03/17/brown-paces-purdue-at-briars-creek",
+      "summary": "",
+      "date": "2026-03-17T20:40:50+00:00"
+    },
     {
       "id": "1b9199d57330",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/03/14/purdue-rides-7-run-2nd-inning-to-win-at-maryland-highlights",
       "summary": "",
       "date": "2026-03-14T22:21:55+00:00"
-    },
-    {
-      "id": "525e3a76d069",
-      "source": "Purdue Athletics MBB",
-      "title": "#18 Purdue Advances to Title Game with Win over UCLA",
-      "url": "https://purduesports.com/news/2026/03/14/18-purdue-advances-to-title-game-with-win-over-ucla",
-      "summary": "",
-      "date": "2026-03-14T21:58:57+00:00"
     }
   ]
 }
