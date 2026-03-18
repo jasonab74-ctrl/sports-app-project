@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-18T14:22:28.190997+00:00",
+  "updated": "2026-03-18T15:45:57.658736+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "443e3e6eeadd",
+      "source": "Purdue Athletics MBB",
+      "title": "#2 Seed Purdue Battles Queens in NCAA First Round",
+      "url": "http://localhost/news/2026/03/18/2-seed-purdue-battles-queens-in-ncaa-first-round",
+      "summary": "",
+      "date": "2026-03-18T13:44:52+00:00"
+    },
     {
       "id": "57214a9976ca",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/03/14/highlights-purdue-6-ohio-state-5",
       "summary": "",
       "date": "2026-03-14T22:23:19+00:00"
-    },
-    {
-      "id": "88a23b037c16",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Rides 7-Run 2nd Inning to Win at Maryland - Highlights",
-      "url": "http://localhost/news/2026/03/14/purdue-rides-7-run-2nd-inning-to-win-at-maryland-highlights",
-      "summary": "",
-      "date": "2026-03-14T22:21:55+00:00"
     }
   ]
 }
