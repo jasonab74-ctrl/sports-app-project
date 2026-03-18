@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-18T12:58:38.929381+00:00",
+  "updated": "2026-03-18T14:22:28.190997+00:00",
   "count": 20,
   "items": [
     {
@@ -34,14 +34,6 @@
       "url": "http://localhost/news/2026/03/17/moore-earns-d1-softballs-national-freshman-of-the-week",
       "summary": "After making Purdue history becoming the first-ever freshman to win Big Ten Freshman of the Week in back-to-back weeks, Anna Moore was named D1 Softball's National Freshman of the Week on Tuesday.",
       "date": "2026-03-17T16:00:00+00:00"
-    },
-    {
-      "id": "28d6b11ca8cd",
-      "source": "CBS Sports College Basketball",
-      "title": "College basketball rankings: Purdue, Arkansas rise in AP Top 25; Miami (Ohio) drops out in latest poll",
-      "url": "https://www.cbssports.com/college-basketball/news/ap-top-25-college-basketball-rankings-purdue-arkansas-miami-ohio/",
-      "summary": "There was plenty of movement in the AP Top 25 ahead of the NCAA Tournament",
-      "date": "2026-03-16T20:00:15+00:00"
     },
     {
       "id": "67d0af83ee11",
@@ -162,6 +154,14 @@
       "url": "http://localhost/news/2026/03/14/highlights-purdue-6-ohio-state-5",
       "summary": "",
       "date": "2026-03-14T22:23:19+00:00"
+    },
+    {
+      "id": "88a23b037c16",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Rides 7-Run 2nd Inning to Win at Maryland - Highlights",
+      "url": "http://localhost/news/2026/03/14/purdue-rides-7-run-2nd-inning-to-win-at-maryland-highlights",
+      "summary": "",
+      "date": "2026-03-14T22:21:55+00:00"
     }
   ]
 }
