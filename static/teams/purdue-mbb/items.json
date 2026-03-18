@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-17T23:39:05.537437+00:00",
+  "updated": "2026-03-18T01:48:47.882325+00:00",
   "count": 20,
   "items": [
     {
@@ -58,14 +58,6 @@
       "url": "https://purduesports.com/news/2026/03/16/19-purdue-prepped-for-ncaa-wrestling-championships",
       "summary": "",
       "date": "2026-03-16T17:00:00+00:00"
-    },
-    {
-      "id": "74953a7e194d",
-      "source": "CBS Sports College Basketball",
-      "title": "2026 NCAA Tournament West Region bracket preview: Predictions, sleepers, players to watch",
-      "url": "https://www.cbssports.com/college-basketball/news/2026-ncaa-tournament-west-region-bracket-preview/",
-      "summary": "Arizona headlines a West Region featuring Purdue's elite offense, Gonzaga's postseason pedigree and a potential breakout star in BYU freshman AJ Dybantsa.",
-      "date": "2026-03-16T14:55:33+00:00"
     },
     {
       "id": "3551a95febea",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/03/14/boilermakers-ride-7-run-inning-to-series-clinching-win",
       "summary": "Westin Boyle and CJ Richmond connected for a two-run double & two-run homer in consecutive at-bats in Purdue's big inning.",
       "date": "2026-03-14T23:06:19+00:00"
+    },
+    {
+      "id": "ef7900da0bcb",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights: Purdue 6, Ohio State 5",
+      "url": "https://purduesports.com/news/2026/03/14/highlights-purdue-6-ohio-state-5",
+      "summary": "",
+      "date": "2026-03-14T22:23:19+00:00"
     }
   ]
 }
