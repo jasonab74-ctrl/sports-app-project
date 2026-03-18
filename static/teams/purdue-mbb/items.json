@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-18T21:05:21.957083+00:00",
+  "updated": "2026-03-18T21:56:50.498438+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "18b18aad2fe8",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Football | Winning Edge 3",
+      "url": "http://localhost/news/2026/03/18/purdue-football-winning-edge-3",
+      "summary": "",
+      "date": "2026-03-18T18:54:30+00:00"
+    },
     {
       "id": "68be8434508f",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/03/15/purdue-mens-basketball-wins-29th-big-ten-championship-purdue-80-michigan-72",
       "summary": "",
       "date": "2026-03-15T21:58:36+00:00"
-    },
-    {
-      "id": "f209a27a6160",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue at Maryland Game 3 Highlights",
-      "url": "http://localhost/news/2026/03/15/purdue-at-maryland-game-3-highlights",
-      "summary": "",
-      "date": "2026-03-15T21:36:07+00:00"
     }
   ]
 }
