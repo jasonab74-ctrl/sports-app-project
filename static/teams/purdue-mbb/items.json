@@ -1,40 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-18T22:31:27.878171+00:00",
+  "updated": "2026-03-18T23:26:26.909062+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "18b18aad2fe8",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Football | Winning Edge 3",
-      "url": "http://localhost/news/2026/03/18/purdue-football-winning-edge-3",
-      "summary": "",
-      "date": "2026-03-18T18:54:30+00:00"
-    },
-    {
-      "id": "68be8434508f",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Football | Winning Edge 2",
-      "url": "http://localhost/news/2026/03/18/purdue-football-winning-edge-2",
-      "summary": "",
-      "date": "2026-03-18T18:42:37+00:00"
-    },
-    {
-      "id": "c976574c2595",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Football | Winning Edge",
-      "url": "http://localhost/news/2026/03/18/purdue-football-winning-edge",
-      "summary": "",
-      "date": "2026-03-18T18:37:19+00:00"
-    },
-    {
-      "id": "0c983383a82f",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Football | On a Mission",
-      "url": "http://localhost/news/2026/03/18/purdue-football-on-a-mission",
-      "summary": "",
-      "date": "2026-03-18T18:13:37+00:00"
-    },
     {
       "id": "443e3e6eeadd",
       "source": "Purdue Athletics MBB",
@@ -162,6 +130,38 @@
       "url": "http://localhost/news/2026/03/15/purdue-mens-basketball-wins-29th-big-ten-championship-purdue-80-michigan-72",
       "summary": "",
       "date": "2026-03-15T21:58:36+00:00"
+    },
+    {
+      "id": "f209a27a6160",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue at Maryland Game 3 Highlights",
+      "url": "http://localhost/news/2026/03/15/purdue-at-maryland-game-3-highlights",
+      "summary": "",
+      "date": "2026-03-15T21:36:07+00:00"
+    },
+    {
+      "id": "49d848cc8138",
+      "source": "Purdue Athletics MBB",
+      "title": "#18 Purdue vs. UCLA Photo Gallery",
+      "url": "http://localhost/news/2026/03/15/18-purdue-vs-ucla-photo-gallery",
+      "summary": "",
+      "date": "2026-03-15T04:15:36+00:00"
+    },
+    {
+      "id": "4e0b78922211",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Ride 7-Run Inning to Series-Clinching Win",
+      "url": "http://localhost/news/2026/03/14/boilermakers-ride-7-run-inning-to-series-clinching-win",
+      "summary": "Westin Boyle and CJ Richmond connected for a two-run double & two-run homer in consecutive at-bats in Purdue's big inning.",
+      "date": "2026-03-14T23:06:19+00:00"
+    },
+    {
+      "id": "7e5fe89a2afe",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights: Purdue 6, Ohio State 5",
+      "url": "http://localhost/news/2026/03/14/highlights-purdue-6-ohio-state-5",
+      "summary": "",
+      "date": "2026-03-14T22:23:19+00:00"
     }
   ]
 }
