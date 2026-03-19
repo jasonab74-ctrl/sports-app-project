@@ -1,32 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-19T18:50:16.513738+00:00",
+  "updated": "2026-03-19T19:42:36.221902+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "1adb69d7f229",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue to Host Penn State, #5 Ohio State",
-      "url": "http://localhost/news/2026/03/19/purdue-to-host-penn-state-5-ohio-state",
-      "summary": "",
-      "date": "2026-03-19T18:12:00+00:00"
-    },
-    {
-      "id": "16386e2528a9",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Opens Outdoor Season in Tampa",
-      "url": "http://localhost/news/2026/03/19/purdue-opens-outdoor-season-in-tampa",
-      "summary": "",
-      "date": "2026-03-19T16:12:25+00:00"
-    },
-    {
-      "id": "9190f60c5c82",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Lands 77 on Winter Academic All-Big Ten Teams",
-      "url": "http://localhost/news/2026/03/19/purdue-lands-77-on-winter-academic-all-big-ten-teams",
-      "summary": "",
-      "date": "2026-03-19T15:02:00+00:00"
-    },
     {
       "id": "723a20d7fdd3",
       "source": "Purdue Athletics MBB",
@@ -162,6 +138,30 @@
       "url": "http://localhost/news/2026/03/15/omer-mayer-big-ten-title-media-session-purdue-mens-basketball",
       "summary": "",
       "date": "2026-03-15T23:30:37+00:00"
+    },
+    {
+      "id": "d18871bef3f8",
+      "source": "Purdue Athletics MBB",
+      "title": "Oscar Cluff Big Ten Title Media Session | Purdue Men's Basketball",
+      "url": "http://localhost/news/2026/03/15/oscar-cluff-big-ten-title-media-session-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-03-15T23:27:19+00:00"
+    },
+    {
+      "id": "05e1fa94d885",
+      "source": "Purdue Athletics MBB",
+      "title": "#2 Seed Boilermakers To Face #15 Queens in NCAA Tournament First Round on Friday in St. Louis",
+      "url": "http://localhost/news/2026/03/15/2-seed-boilermakers-to-face-15-queens-in-ncaa-tournament-first-round-on-friday-in-st-louis",
+      "summary": "",
+      "date": "2026-03-15T22:37:00+00:00"
+    },
+    {
+      "id": "a3dab75e4e25",
+      "source": "Purdue Athletics MBB",
+      "title": "#18 Purdue Wins Big Ten Tournament Title Over #3 Michigan",
+      "url": "http://localhost/news/2026/03/15/18-purdue-wins-big-ten-tournament-title-over-3-michigan",
+      "summary": "",
+      "date": "2026-03-15T22:08:16+00:00"
     }
   ]
 }
