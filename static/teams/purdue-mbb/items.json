@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-19T16:13:38.426069+00:00",
+  "updated": "2026-03-19T17:30:21.908903+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "16386e2528a9",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Opens Outdoor Season in Tampa",
+      "url": "http://localhost/news/2026/03/19/purdue-opens-outdoor-season-in-tampa",
+      "summary": "",
+      "date": "2026-03-19T16:12:25+00:00"
+    },
     {
       "id": "9190f60c5c82",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/03/15/oscar-cluff-big-ten-title-media-session-purdue-mens-basketball",
       "summary": "",
       "date": "2026-03-15T23:27:19+00:00"
-    },
-    {
-      "id": "05e1fa94d885",
-      "source": "Purdue Athletics MBB",
-      "title": "#2 Seed Boilermakers To Face #15 Queens in NCAA Tournament First Round on Friday in St. Louis",
-      "url": "http://localhost/news/2026/03/15/2-seed-boilermakers-to-face-15-queens-in-ncaa-tournament-first-round-on-friday-in-st-louis",
-      "summary": "",
-      "date": "2026-03-15T22:37:00+00:00"
     }
   ]
 }
