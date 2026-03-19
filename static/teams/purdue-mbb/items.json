@@ -1,15 +1,63 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-19T08:35:53.686510+00:00",
+  "updated": "2026-03-19T09:37:33.146241+00:00",
   "count": 20,
   "items": [
     {
-      "id": "57214a9976ca",
+      "id": "723a20d7fdd3",
       "source": "Purdue Athletics MBB",
-      "title": "Purdue Adds Wednesday Home Game vs Oakland City",
-      "url": "http://localhost/news/2026/03/17/purdue-adds-wednesday-midweek-game-vs-oakland-city",
-      "summary": "Free admission at Alexander Field for 4 p.m. matinee vs a top 25 NAIA team",
-      "date": "2026-03-17T21:27:06+00:00"
+      "title": "Boilermakers Pound Out 17 Hits in Home Win",
+      "url": "http://localhost/news/2026/03/19/boilermakers-pound-out-17-hits-in-home-win",
+      "summary": "",
+      "date": "2026-03-19T01:39:35+00:00"
+    },
+    {
+      "id": "6323bf231807",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue vs Oakland City Highlights",
+      "url": "http://localhost/news/2026/03/19/purdue-vs-oakland-city-highlights",
+      "summary": "",
+      "date": "2026-03-19T00:10:59+00:00"
+    },
+    {
+      "id": "18b18aad2fe8",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Football | Winning Edge 3",
+      "url": "http://localhost/news/2026/03/18/purdue-football-winning-edge-3",
+      "summary": "",
+      "date": "2026-03-18T18:54:30+00:00"
+    },
+    {
+      "id": "68be8434508f",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Football | Winning Edge 2",
+      "url": "http://localhost/news/2026/03/18/purdue-football-winning-edge-2",
+      "summary": "",
+      "date": "2026-03-18T18:42:37+00:00"
+    },
+    {
+      "id": "c976574c2595",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Football | Winning Edge",
+      "url": "http://localhost/news/2026/03/18/purdue-football-winning-edge",
+      "summary": "",
+      "date": "2026-03-18T18:37:19+00:00"
+    },
+    {
+      "id": "0c983383a82f",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Football | On a Mission",
+      "url": "http://localhost/news/2026/03/18/purdue-football-on-a-mission",
+      "summary": "",
+      "date": "2026-03-18T18:13:37+00:00"
+    },
+    {
+      "id": "443e3e6eeadd",
+      "source": "Purdue Athletics MBB",
+      "title": "#2 Seed Purdue Battles Queens in NCAA First Round",
+      "url": "http://localhost/news/2026/03/18/2-seed-purdue-battles-queens-in-ncaa-first-round",
+      "summary": "",
+      "date": "2026-03-18T13:44:52+00:00"
     },
     {
       "id": "597296ea602d",
@@ -114,54 +162,6 @@
       "url": "http://localhost/news/2026/03/15/18-purdue-wins-big-ten-tournament-title-over-3-michigan",
       "summary": "",
       "date": "2026-03-15T22:08:16+00:00"
-    },
-    {
-      "id": "0401f53d37ad",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Men's Basketball Wins 29th Big Ten Championship (Purdue 80, Michigan 72)",
-      "url": "http://localhost/news/2026/03/15/purdue-mens-basketball-wins-29th-big-ten-championship-purdue-80-michigan-72",
-      "summary": "",
-      "date": "2026-03-15T21:58:36+00:00"
-    },
-    {
-      "id": "f209a27a6160",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue at Maryland Game 3 Highlights",
-      "url": "http://localhost/news/2026/03/15/purdue-at-maryland-game-3-highlights",
-      "summary": "",
-      "date": "2026-03-15T21:36:07+00:00"
-    },
-    {
-      "id": "49d848cc8138",
-      "source": "Purdue Athletics MBB",
-      "title": "#18 Purdue vs. UCLA Photo Gallery",
-      "url": "http://localhost/news/2026/03/15/18-purdue-vs-ucla-photo-gallery",
-      "summary": "",
-      "date": "2026-03-15T04:15:36+00:00"
-    },
-    {
-      "id": "4e0b78922211",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Ride 7-Run Inning to Series-Clinching Win",
-      "url": "http://localhost/news/2026/03/14/boilermakers-ride-7-run-inning-to-series-clinching-win",
-      "summary": "Westin Boyle and CJ Richmond connected for a two-run double & two-run homer in consecutive at-bats in Purdue's big inning.",
-      "date": "2026-03-14T23:06:19+00:00"
-    },
-    {
-      "id": "7e5fe89a2afe",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights: Purdue 6, Ohio State 5",
-      "url": "http://localhost/news/2026/03/14/highlights-purdue-6-ohio-state-5",
-      "summary": "",
-      "date": "2026-03-14T22:23:19+00:00"
-    },
-    {
-      "id": "88a23b037c16",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Rides 7-Run 2nd Inning to Win at Maryland - Highlights",
-      "url": "http://localhost/news/2026/03/14/purdue-rides-7-run-2nd-inning-to-win-at-maryland-highlights",
-      "summary": "",
-      "date": "2026-03-14T22:21:55+00:00"
     }
   ]
 }
