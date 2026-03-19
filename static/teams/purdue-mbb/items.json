@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-19T22:27:26.803855+00:00",
+  "updated": "2026-03-19T22:56:06.950420+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "d0c1a6eb4409",
+      "source": "Purdue Athletics MBB",
+      "title": "#18 Ducks Head to West Lafayette",
+      "url": "http://localhost/news/2026/03/19/18-ducks-head-to-west-lafayette",
+      "summary": "After sweeping Ohio State to start conference play, the Boilers look to extend their 14-game win streak against No. 18 Oregon this weekend in West Lafayette.",
+      "date": "2026-03-19T22:10:01+00:00"
+    },
     {
       "id": "1adb69d7f229",
       "source": "Purdue Athletics MBB",
@@ -114,14 +122,6 @@
       "url": "http://localhost/news/2026/03/16/moore-earns-big-ten-freshman-of-the-week-for-second-consecutive-week",
       "summary": "Anna Moore makes Purdue history becoming the first-ever freshman to win Big Ten Freshman of the Week in back-to-back weeks.",
       "date": "2026-03-16T20:00:00+00:00"
-    },
-    {
-      "id": "96888a22172a",
-      "source": "Purdue Athletics MBB",
-      "title": "#19 Purdue Prepped for NCAA Wrestling Championships",
-      "url": "http://localhost/news/2026/03/16/19-purdue-prepped-for-ncaa-wrestling-championships",
-      "summary": "",
-      "date": "2026-03-16T17:00:00+00:00"
     },
     {
       "id": "0dcd9edfd0d5",
