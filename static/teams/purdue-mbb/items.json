@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-20T21:28:54.224911+00:00",
+  "updated": "2026-03-20T21:53:30.546951+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "25f4c621714a",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Freshman Record Holder, Ida Lindqvist, Named B1G Freshman of the Week",
+      "url": "http://localhost/news/2026/03/20/purdue-freshman-record-holder-ida-lindqvist-named-b1g-freshman-of-the-week",
+      "summary": "",
+      "date": "2026-03-20T15:00:00+00:00"
+    },
     {
       "id": "947e52776448",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/03/16/highlights-purdue-12-ohio-state-6",
       "summary": "",
       "date": "2026-03-16T00:29:27+00:00"
-    },
-    {
-      "id": "8576387f7911",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Matt Painter Big Ten Title Press Conference | Purdue Men's Basketball",
-      "url": "http://localhost/news/2026/03/15/coach-matt-painter-big-ten-title-press-conference-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-03-15T23:43:43+00:00"
     }
   ]
 }
