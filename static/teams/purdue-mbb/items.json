@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-21T15:46:35.658483+00:00",
+  "updated": "2026-03-21T16:22:57.372968+00:00",
   "count": 20,
   "items": [
     {
@@ -18,6 +18,14 @@
       "url": "https://www.cbssports.com/college-basketball/news/braden-smith-ncaa-assist-record-bobby-hurley-purdue/",
       "summary": "Smith broke the record on Friday in the first round of the 2026 NCAA Tournament",
       "date": "2026-03-21T08:09:40+00:00"
+    },
+    {
+      "id": "8d7259acf3d0",
+      "source": "Purdue Athletics MBB",
+      "title": "NCAA Career Assists Record Belongs to Purdue's Braden Smith",
+      "url": "http://localhost/news/2026/03/21/ncaa-career-assists-record-belongs-to-purdues-braden-smith",
+      "summary": "",
+      "date": "2026-03-21T03:49:00+00:00"
     },
     {
       "id": "d600644c4776",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/03/17/moore-earns-d1-softballs-national-freshman-of-the-week",
       "summary": "After making Purdue history becoming the first-ever freshman to win Big Ten Freshman of the Week in back-to-back weeks, Anna Moore was named D1 Softball's National Freshman of the Week on Tuesday.",
       "date": "2026-03-17T16:00:00+00:00"
-    },
-    {
-      "id": "67d0af83ee11",
-      "source": "Purdue Athletics MBB",
-      "title": "Moore Earns Big Ten Freshman of the Week for Second-Consecutive Week",
-      "url": "http://localhost/news/2026/03/16/moore-earns-big-ten-freshman-of-the-week-for-second-consecutive-week",
-      "summary": "Anna Moore makes Purdue history becoming the first-ever freshman to win Big Ten Freshman of the Week in back-to-back weeks.",
-      "date": "2026-03-16T20:00:00+00:00"
     }
   ]
 }
