@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-21T14:51:01.326569+00:00",
+  "updated": "2026-03-21T15:20:42.354807+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "b819c1f5ce52",
+      "source": "CBS Sports College Basketball",
+      "title": "Purdue's Matt Painter rejects mid-major NCAA Tournament coaches' scheduling complaints",
+      "url": "https://www.cbssports.com/college-basketball/news/purdue-matt-painter-rejects-mid-major-coaches-ncaa-tournament-scheduling/",
+      "summary": "The Boilermakers coach delivered a rebuttal against Miami (Ohio) and High Point's scheduling cries during the NCAA Tournament",
+      "date": "2026-03-21T15:17:01+00:00"
+    },
+    {
+      "id": "e8e860291d93",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Faces 7th-Seeded Miami For Berth in Sweet 16",
+      "url": "http://localhost/news/2026/03/21/purdue-faces-7th-seeded-miami-for-berth-in-sweet-16",
+      "summary": "",
+      "date": "2026-03-21T14:43:53+00:00"
+    },
     {
       "id": "77095feea866",
       "source": "CBS Sports College Basketball",
@@ -146,22 +162,6 @@
       "url": "http://localhost/news/2026/03/17/brown-paces-purdue-at-briars-creek",
       "summary": "",
       "date": "2026-03-17T20:40:50+00:00"
-    },
-    {
-      "id": "004efe850c8f",
-      "source": "Purdue Athletics MBB",
-      "title": "Moore Earns D1 Softball's National Freshman of the Week",
-      "url": "http://localhost/news/2026/03/17/moore-earns-d1-softballs-national-freshman-of-the-week",
-      "summary": "After making Purdue history becoming the first-ever freshman to win Big Ten Freshman of the Week in back-to-back weeks, Anna Moore was named D1 Softball's National Freshman of the Week on Tuesday.",
-      "date": "2026-03-17T16:00:00+00:00"
-    },
-    {
-      "id": "67d0af83ee11",
-      "source": "Purdue Athletics MBB",
-      "title": "Moore Earns Big Ten Freshman of the Week for Second-Consecutive Week",
-      "url": "http://localhost/news/2026/03/16/moore-earns-big-ten-freshman-of-the-week-for-second-consecutive-week",
-      "summary": "Anna Moore makes Purdue history becoming the first-ever freshman to win Big Ten Freshman of the Week in back-to-back weeks.",
-      "date": "2026-03-16T20:00:00+00:00"
     }
   ]
 }
