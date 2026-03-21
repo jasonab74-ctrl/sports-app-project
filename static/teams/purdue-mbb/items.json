@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-21T22:48:28.381371+00:00",
+  "updated": "2026-03-21T23:19:18.754880+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "869d20ea4c06",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Wins 2-1 Behind Erdman for Third Time",
-      "url": "http://localhost/news/2026/03/21/purdue-wins-2-1-behind-erdman-for-third-time",
-      "summary": "Banks hit a go-ahead home run in the 6th inning & Purdue turned 3 double plays for the 2nd day in a row",
-      "date": "2026-03-21T22:36:23+00:00"
-    },
     {
       "id": "713eeb10427b",
       "source": "Purdue Athletics MBB",
@@ -162,6 +154,14 @@
       "url": "http://localhost/news/2026/03/18/purdue-football-winning-edge-2",
       "summary": "",
       "date": "2026-03-18T18:42:37+00:00"
+    },
+    {
+      "id": "c976574c2595",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Football | Winning Edge",
+      "url": "http://localhost/news/2026/03/18/purdue-football-winning-edge",
+      "summary": "",
+      "date": "2026-03-18T18:37:19+00:00"
     }
   ]
 }
