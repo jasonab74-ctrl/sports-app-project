@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-21T14:21:54.643324+00:00",
+  "updated": "2026-03-21T14:51:01.326569+00:00",
   "count": 20,
   "items": [
     {
@@ -10,6 +10,14 @@
       "url": "https://www.cbssports.com/college-basketball/news/braden-smith-ncaa-assist-record-bobby-hurley-purdue/",
       "summary": "Smith broke the record on Friday in the first round of the 2026 NCAA Tournament",
       "date": "2026-03-21T08:09:40+00:00"
+    },
+    {
+      "id": "8d7259acf3d0",
+      "source": "Purdue Athletics MBB",
+      "title": "NCAA Career Assists Record Belongs to Purdue's Braden Smith",
+      "url": "http://localhost/news/2026/03/21/ncaa-career-assists-record-belongs-to-purdues-braden-smith",
+      "summary": "",
+      "date": "2026-03-21T03:49:00+00:00"
     },
     {
       "id": "d600644c4776",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/03/16/moore-earns-big-ten-freshman-of-the-week-for-second-consecutive-week",
       "summary": "Anna Moore makes Purdue history becoming the first-ever freshman to win Big Ten Freshman of the Week in back-to-back weeks.",
       "date": "2026-03-16T20:00:00+00:00"
-    },
-    {
-      "id": "0dcd9edfd0d5",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights: Purdue 12, Ohio State 6",
-      "url": "http://localhost/news/2026/03/16/highlights-purdue-12-ohio-state-6",
-      "summary": "",
-      "date": "2026-03-16T00:29:27+00:00"
     }
   ]
 }
