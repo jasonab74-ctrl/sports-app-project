@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-21T16:52:42.717545+00:00",
+  "updated": "2026-03-21T17:20:55.186077+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "12b3b04cddbd",
+      "source": "Purdue Athletics MBB",
+      "title": "Blaze Finishes Sixth, Boilermakers 29th at NCAA Championships",
+      "url": "http://localhost/news/2026/03/21/blaze-finishes-sixth-boilermakers-29th-at-ncaa-championships",
+      "summary": "",
+      "date": "2026-03-21T15:57:43+00:00"
+    },
     {
       "id": "b819c1f5ce52",
       "source": "CBS Sports College Basketball",
@@ -10,6 +18,14 @@
       "url": "https://www.cbssports.com/college-basketball/news/purdue-matt-painter-rejects-mid-major-coaches-ncaa-tournament-scheduling/",
       "summary": "The Boilermakers coach delivered a rebuttal against Miami (Ohio) and High Point's scheduling cries during the NCAA Tournament",
       "date": "2026-03-21T15:17:01+00:00"
+    },
+    {
+      "id": "e8e860291d93",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Faces 7th-Seeded Miami For Berth in Sweet 16",
+      "url": "http://localhost/news/2026/03/21/purdue-faces-7th-seeded-miami-for-berth-in-sweet-16",
+      "summary": "",
+      "date": "2026-03-21T14:43:53+00:00"
     },
     {
       "id": "77095feea866",
@@ -146,22 +162,6 @@
       "url": "http://localhost/news/2026/03/18/purdue-football-on-a-mission",
       "summary": "",
       "date": "2026-03-18T18:13:37+00:00"
-    },
-    {
-      "id": "597296ea602d",
-      "source": "Purdue Athletics MBB",
-      "title": "Brown Paces Purdue at Briar’s Creek",
-      "url": "http://localhost/news/2026/03/17/brown-paces-purdue-at-briars-creek",
-      "summary": "",
-      "date": "2026-03-17T20:40:50+00:00"
-    },
-    {
-      "id": "004efe850c8f",
-      "source": "Purdue Athletics MBB",
-      "title": "Moore Earns D1 Softball's National Freshman of the Week",
-      "url": "http://localhost/news/2026/03/17/moore-earns-d1-softballs-national-freshman-of-the-week",
-      "summary": "After making Purdue history becoming the first-ever freshman to win Big Ten Freshman of the Week in back-to-back weeks, Anna Moore was named D1 Softball's National Freshman of the Week on Tuesday.",
-      "date": "2026-03-17T16:00:00+00:00"
     }
   ]
 }
