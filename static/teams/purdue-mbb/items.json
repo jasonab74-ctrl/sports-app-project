@@ -1,12 +1,20 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-21T18:28:45.807359+00:00",
+  "updated": "2026-03-21T19:00:08.268519+00:00",
   "count": 20,
   "items": [
     {
-      "id": "12b3b04cddbd",
+      "id": "713eeb10427b",
       "source": "Purdue Athletics MBB",
-      "title": "Blaze Finishes Sixth, Boilermakers 29th at NCAA Championships",
+      "title": "Purdue vs. Queens Photo Gallery",
+      "url": "http://localhost/news/2026/03/21/purdue-vs-queens-photo-gallery",
+      "summary": "",
+      "date": "2026-03-21T16:49:11+00:00"
+    },
+    {
+      "id": "aa4e700618ac",
+      "source": "Purdue Athletics MBB",
+      "title": "Blaze Places Sixth, Boilermakers 29th at NCAA Championships",
       "url": "http://localhost/news/2026/03/21/blaze-finishes-sixth-boilermakers-29th-at-ncaa-championships",
       "summary": "",
       "date": "2026-03-21T15:57:43+00:00"
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/03/18/purdue-football-winning-edge",
       "summary": "",
       "date": "2026-03-18T18:37:19+00:00"
-    },
-    {
-      "id": "0c983383a82f",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Football | On a Mission",
-      "url": "http://localhost/news/2026/03/18/purdue-football-on-a-mission",
-      "summary": "",
-      "date": "2026-03-18T18:13:37+00:00"
     }
   ]
 }
