@@ -1,40 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-21T07:29:35.766472+00:00",
+  "updated": "2026-03-21T07:54:02.440180+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "d600644c4776",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue MBB Press Conference vs. Queens",
-      "url": "http://localhost/news/2026/03/21/purdue-mbb-press-conference-vs-queens",
-      "summary": "",
-      "date": "2026-03-21T03:35:02+00:00"
-    },
-    {
-      "id": "9bd8687e0539",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Throwers Open Season Strong at USF Alumni Invitational",
-      "url": "http://localhost/news/2026/03/21/purdue-throwers-open-season-strong-at-usf-alumni-invitational",
-      "summary": "",
-      "date": "2026-03-21T00:26:33+00:00"
-    },
-    {
-      "id": "17bb82a39c84",
-      "source": "Purdue Athletics MBB",
-      "title": "Manias Blasts Off Twice as Boilers Score a Dozen in Win",
-      "url": "http://localhost/news/2026/03/21/manias-blasts-off-twice-as-boilers-score-a-dozen-in-win",
-      "summary": "Boilermakers score 5 in the third inning & rack up 8-plus runs for the sixth straight game",
-      "date": "2026-03-21T00:03:38+00:00"
-    },
-    {
-      "id": "132fabd7a666",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Drops Battle to Penn State",
-      "url": "http://localhost/news/2026/03/20/purdue-drops-battle-to-penn-state",
-      "summary": "",
-      "date": "2026-03-20T23:02:00+00:00"
-    },
     {
       "id": "25f4c621714a",
       "source": "Purdue Athletics MBB",
@@ -52,12 +20,44 @@
       "date": "2026-03-20T01:17:37+00:00"
     },
     {
+      "id": "e3e34e1f7206",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Hosts Penn State for Home Weekend #2",
+      "url": "http://localhost/news/2026/03/19/purdue-hosts-penn-state-for-home-weekend-2",
+      "summary": "The Boilermakers continue their 6-game homestand as part of another 70-degree weekend at Alexander",
+      "date": "2026-03-19T22:22:02+00:00"
+    },
+    {
+      "id": "d0c1a6eb4409",
+      "source": "Purdue Athletics MBB",
+      "title": "#18 Ducks Head to West Lafayette",
+      "url": "http://localhost/news/2026/03/19/18-ducks-head-to-west-lafayette",
+      "summary": "After sweeping Ohio State to start conference play, the Boilers look to extend their 14-game win streak against No. 18 Oregon this weekend in West Lafayette.",
+      "date": "2026-03-19T22:10:01+00:00"
+    },
+    {
       "id": "8515ebe877f7",
       "source": "Purdue Athletics MBB",
       "title": "Purdue MBB NCAA First-Round Press Conference",
       "url": "http://localhost/news/2026/03/19/purdue-mbb-ncaa-first-round-press-conference",
       "summary": "",
       "date": "2026-03-19T22:01:31+00:00"
+    },
+    {
+      "id": "1adb69d7f229",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue to Host Penn State, #5 Ohio State",
+      "url": "http://localhost/news/2026/03/19/purdue-to-host-penn-state-5-ohio-state",
+      "summary": "",
+      "date": "2026-03-19T18:12:00+00:00"
+    },
+    {
+      "id": "16386e2528a9",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Opens Outdoor Season in Tampa",
+      "url": "http://localhost/news/2026/03/19/purdue-opens-outdoor-season-in-tampa",
+      "summary": "",
+      "date": "2026-03-19T16:12:25+00:00"
     },
     {
       "id": "9190f60c5c82",
@@ -124,6 +124,14 @@
       "date": "2026-03-18T18:13:37+00:00"
     },
     {
+      "id": "443e3e6eeadd",
+      "source": "Purdue Athletics MBB",
+      "title": "#2 Seed Purdue Battles Queens in NCAA First Round",
+      "url": "http://localhost/news/2026/03/18/2-seed-purdue-battles-queens-in-ncaa-first-round",
+      "summary": "",
+      "date": "2026-03-18T13:44:52+00:00"
+    },
+    {
       "id": "597296ea602d",
       "source": "Purdue Athletics MBB",
       "title": "Brown Paces Purdue at Briar’s Creek",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/03/16/highlights-purdue-12-ohio-state-6",
       "summary": "",
       "date": "2026-03-16T00:29:27+00:00"
-    },
-    {
-      "id": "8576387f7911",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Matt Painter Big Ten Title Press Conference | Purdue Men's Basketball",
-      "url": "http://localhost/news/2026/03/15/coach-matt-painter-big-ten-title-press-conference-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-03-15T23:43:43+00:00"
     }
   ]
 }
