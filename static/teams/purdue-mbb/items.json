@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-21T05:59:44.224195+00:00",
+  "updated": "2026-03-21T06:55:19.625807+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "d600644c4776",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue MBB Press Conference vs. Queens",
-      "url": "http://localhost/news/2026/03/21/purdue-mbb-press-conference-vs-queens",
-      "summary": "",
-      "date": "2026-03-21T03:35:02+00:00"
-    },
     {
       "id": "9bd8687e0539",
       "source": "Purdue Athletics MBB",
@@ -162,6 +154,14 @@
       "url": "http://localhost/news/2026/03/15/coach-matt-painter-big-ten-title-press-conference-purdue-mens-basketball",
       "summary": "",
       "date": "2026-03-15T23:43:43+00:00"
+    },
+    {
+      "id": "9b66882008d2",
+      "source": "Purdue Athletics MBB",
+      "title": "Oscar Cluff and Braden Smith Big Ten Title Press Conference | Purdue Men's Basketball",
+      "url": "http://localhost/news/2026/03/15/oscar-cluff-and-braden-smith-big-ten-title-press-conference-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-03-15T23:37:56+00:00"
     }
   ]
 }
