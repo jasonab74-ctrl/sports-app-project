@@ -1,32 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-22T09:38:25.347892+00:00",
+  "updated": "2026-03-22T10:21:24.797214+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "c40a5bba6d2f",
-      "source": "Purdue Athletics MBB",
-      "title": "Wright Closes Career as Silver Medalist at NCAAs",
-      "url": "http://localhost/news/2026/03/22/wright-closes-career-as-silver-medalist-at-ncaas",
-      "summary": "Daryn Wright capped her career as a six-time All-American; Purdue finishes T-21st at NCAAs",
-      "date": "2026-03-22T00:34:53+00:00"
-    },
-    {
-      "id": "43143d993ffc",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue's Daryn Wright Wins Silver on Platform at NCAAs",
-      "url": "http://localhost/news/2026/03/22/purdues-daryn-wright-wins-silver-on-platform-at-ncaas",
-      "summary": "",
-      "date": "2026-03-22T00:34:23+00:00"
-    },
-    {
-      "id": "869d20ea4c06",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Wins 2-1 Behind Erdman for Third Time",
-      "url": "http://localhost/news/2026/03/21/purdue-wins-2-1-behind-erdman-for-third-time",
-      "summary": "Banks hit a go-ahead home run in the 6th inning & Purdue turned 3 double plays for the 2nd day in a row",
-      "date": "2026-03-21T22:36:23+00:00"
-    },
     {
       "id": "713eeb10427b",
       "source": "Purdue Athletics MBB",
@@ -162,6 +138,30 @@
       "url": "http://localhost/news/2026/03/18/this-week-in-purdue-baseball-march-19-2026",
       "summary": "",
       "date": "2026-03-18T20:23:12+00:00"
+    },
+    {
+      "id": "18b18aad2fe8",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Football | Winning Edge 3",
+      "url": "http://localhost/news/2026/03/18/purdue-football-winning-edge-3",
+      "summary": "",
+      "date": "2026-03-18T18:54:30+00:00"
+    },
+    {
+      "id": "68be8434508f",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Football | Winning Edge 2",
+      "url": "http://localhost/news/2026/03/18/purdue-football-winning-edge-2",
+      "summary": "",
+      "date": "2026-03-18T18:42:37+00:00"
+    },
+    {
+      "id": "c976574c2595",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Football | Winning Edge",
+      "url": "http://localhost/news/2026/03/18/purdue-football-winning-edge",
+      "summary": "",
+      "date": "2026-03-18T18:37:19+00:00"
     }
   ]
 }
