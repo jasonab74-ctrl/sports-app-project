@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-22T22:20:12.891949+00:00",
+  "updated": "2026-03-22T22:50:21.311700+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "011e05b45d3f",
+      "source": "Purdue Athletics MBB",
+      "title": "Big Inning Burns Baseball as PSU Staves Off Sweep",
+      "url": "http://localhost/news/2026/03/22/big-inning-burns-baseball-as-psu-staves-off-sweep",
+      "summary": "Purdue rallied to cut it to a 3-run deficit but could not overcome PSU's 11-run 2nd inning",
+      "date": "2026-03-22T21:33:25+00:00"
+    },
     {
       "id": "c40a5bba6d2f",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/03/18/this-week-in-purdue-baseball-march-19-2026",
       "summary": "",
       "date": "2026-03-18T20:23:12+00:00"
-    },
-    {
-      "id": "18b18aad2fe8",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Football | Winning Edge 3",
-      "url": "http://localhost/news/2026/03/18/purdue-football-winning-edge-3",
-      "summary": "",
-      "date": "2026-03-18T18:54:30+00:00"
     }
   ]
 }
