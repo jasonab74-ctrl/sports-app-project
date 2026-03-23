@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-23T07:03:05.415987+00:00",
+  "updated": "2026-03-23T08:11:28.672665+00:00",
   "count": 20,
   "items": [
     {
@@ -50,6 +50,14 @@
       "url": "https://www.cbssports.com/college-basketball/news/purdue-matt-painter-rejects-mid-major-coaches-ncaa-tournament-scheduling/",
       "summary": "The Boilermakers coach delivered a rebuttal against Miami (Ohio) and High Point's scheduling cries during the NCAA Tournament",
       "date": "2026-03-21T15:17:01+00:00"
+    },
+    {
+      "id": "e8e860291d93",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Faces 7th-Seeded Miami For Berth in Sweet 16",
+      "url": "http://localhost/news/2026/03/21/purdue-faces-7th-seeded-miami-for-berth-in-sweet-16",
+      "summary": "",
+      "date": "2026-03-21T14:43:53+00:00"
     },
     {
       "id": "77095feea866",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/03/18/this-week-in-purdue-baseball-march-19-2026",
       "summary": "",
       "date": "2026-03-18T20:23:12+00:00"
-    },
-    {
-      "id": "18b18aad2fe8",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Football | Winning Edge 3",
-      "url": "http://localhost/news/2026/03/18/purdue-football-winning-edge-3",
-      "summary": "",
-      "date": "2026-03-18T18:54:30+00:00"
     }
   ]
 }
