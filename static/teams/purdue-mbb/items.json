@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-23T19:43:41.236859+00:00",
+  "updated": "2026-03-23T20:33:14.516774+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "6a9224ce0b11",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue at 2026 NCAA Wrestling Championships",
+      "url": "http://localhost/news/2026/03/23/purdue-at-2026-ncaa-wrestling-championships",
+      "summary": "Photos by Trish Sexton",
+      "date": "2026-03-23T18:22:54+00:00"
+    },
     {
       "id": "de9b9689c744",
       "source": "Purdue Athletics MBB",
@@ -10,6 +18,14 @@
       "url": "http://localhost/news/2026/03/23/purdue-stories-tkr-demonstrates-the-philosophical-pursuit-of-character",
       "summary": "Philosophy major Trey Kaufman-Renn is always in search of meaning beyond the final score",
       "date": "2026-03-23T17:11:53+00:00"
+    },
+    {
+      "id": "ea20105d5420",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue vs. Miami Photo Gallery",
+      "url": "http://localhost/news/2026/03/23/purdue-vs-miami-photo-gallery",
+      "summary": "",
+      "date": "2026-03-23T14:36:59+00:00"
     },
     {
       "id": "011e05b45d3f",
@@ -146,22 +162,6 @@
       "url": "http://localhost/news/2026/03/19/purdue-lands-77-on-winter-academic-all-big-ten-teams",
       "summary": "",
       "date": "2026-03-19T15:02:00+00:00"
-    },
-    {
-      "id": "723a20d7fdd3",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Pound Out 17 Hits in Home Win",
-      "url": "http://localhost/news/2026/03/19/boilermakers-pound-out-17-hits-in-home-win",
-      "summary": "",
-      "date": "2026-03-19T01:39:35+00:00"
-    },
-    {
-      "id": "6323bf231807",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue vs Oakland City Highlights",
-      "url": "http://localhost/news/2026/03/19/purdue-vs-oakland-city-highlights",
-      "summary": "",
-      "date": "2026-03-19T00:10:59+00:00"
     }
   ]
 }
