@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-23T16:53:06.692488+00:00",
+  "updated": "2026-03-23T17:47:17.404735+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "de9b9689c744",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Stories: TKR Demonstrates the Philosophical Pursuit of Character",
+      "url": "http://localhost/news/2026/03/23/purdue-stories-tkr-demonstrates-the-philosophical-pursuit-of-character",
+      "summary": "Philosophy major Trey Kaufman-Renn is always in search of meaning beyond the final score",
+      "date": "2026-03-23T17:11:53+00:00"
+    },
     {
       "id": "011e05b45d3f",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/03/19/purdue-vs-oakland-city-highlights",
       "summary": "",
       "date": "2026-03-19T00:10:59+00:00"
-    },
-    {
-      "id": "3f5babe2cc1f",
-      "source": "Purdue Athletics MBB",
-      "title": "This Week in Purdue Baseball | March 19, 2026",
-      "url": "http://localhost/news/2026/03/18/this-week-in-purdue-baseball-march-19-2026",
-      "summary": "",
-      "date": "2026-03-18T20:23:12+00:00"
     }
   ]
 }
