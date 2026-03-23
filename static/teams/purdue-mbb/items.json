@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-23T21:31:06.711921+00:00",
+  "updated": "2026-03-23T22:26:56.068992+00:00",
   "count": 20,
   "items": [
     {
@@ -58,6 +58,14 @@
       "url": "https://www.cbssports.com/college-basketball/news/purdue-matt-painter-rejects-mid-major-coaches-ncaa-tournament-scheduling/",
       "summary": "The Boilermakers coach delivered a rebuttal against Miami (Ohio) and High Point's scheduling cries during the NCAA Tournament",
       "date": "2026-03-21T15:17:01+00:00"
+    },
+    {
+      "id": "77095feea866",
+      "source": "CBS Sports College Basketball",
+      "title": "Braden Smith breaks NCAA career assist record: Purdue star passes Bobby Hurley's mark with 1,077 dimes",
+      "url": "https://www.cbssports.com/college-basketball/news/braden-smith-ncaa-assist-record-bobby-hurley-purdue/",
+      "summary": "Smith broke the record on Friday in the first round of the 2026 NCAA Tournament",
+      "date": "2026-03-21T08:09:40+00:00"
     },
     {
       "id": "8d7259acf3d0",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/03/18/this-week-in-purdue-baseball-march-19-2026",
       "summary": "",
       "date": "2026-03-18T20:23:12+00:00"
-    },
-    {
-      "id": "18b18aad2fe8",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Football | Winning Edge 3",
-      "url": "http://localhost/news/2026/03/18/purdue-football-winning-edge-3",
-      "summary": "",
-      "date": "2026-03-18T18:54:30+00:00"
     }
   ]
 }
