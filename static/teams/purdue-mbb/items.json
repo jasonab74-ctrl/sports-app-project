@@ -1,8 +1,40 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-24T15:39:46.515060+00:00",
+  "updated": "2026-03-24T16:55:07.496011+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "c959ea1eba31",
+      "source": "Purdue Athletics MBB",
+      "title": "#3 Xavier Townsend Post Practice Media Session | Purdue Football",
+      "url": "http://localhost/news/2026/03/24/3-xavier-townsend-post-practice-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-03-24T16:12:39+00:00"
+    },
+    {
+      "id": "3f187cb4791b",
+      "source": "Purdue Athletics MBB",
+      "title": "#8 De'Nylon Morrissette Post Practice Media Session | Purdue Football",
+      "url": "http://localhost/news/2026/03/24/8-denylon-morrissette-post-practice-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-03-24T16:09:58+00:00"
+    },
+    {
+      "id": "decc5b410060",
+      "source": "Purdue Athletics MBB",
+      "title": "Wide Receivers Coach Bilal Marshall Post Practice Media Session | Purdue Football",
+      "url": "http://localhost/news/2026/03/24/wide-receivers-coach-bilal-marshall-post-practice-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-03-24T16:07:47+00:00"
+    },
+    {
+      "id": "60bdbcb0cc94",
+      "source": "Purdue Athletics MBB",
+      "title": "Head Coach Barry Odom Post Practice Media Session | Purdue Football",
+      "url": "http://localhost/news/2026/03/24/head-coach-barry-odom-post-practice-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-03-24T16:06:53+00:00"
+    },
     {
       "id": "d02c1e857f75",
       "source": "Purdue Athletics MBB",
@@ -130,38 +162,6 @@
       "url": "http://localhost/news/2026/03/21/purdue-mbb-press-conference-vs-queens",
       "summary": "",
       "date": "2026-03-21T03:35:02+00:00"
-    },
-    {
-      "id": "9bd8687e0539",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Throwers Open Season Strong at USF Alumni Invitational",
-      "url": "http://localhost/news/2026/03/21/purdue-throwers-open-season-strong-at-usf-alumni-invitational",
-      "summary": "",
-      "date": "2026-03-21T00:26:33+00:00"
-    },
-    {
-      "id": "17bb82a39c84",
-      "source": "Purdue Athletics MBB",
-      "title": "Manias Blasts Off Twice as Boilers Score a Dozen in Win",
-      "url": "http://localhost/news/2026/03/21/manias-blasts-off-twice-as-boilers-score-a-dozen-in-win",
-      "summary": "Boilermakers score 5 in the third inning & rack up 8-plus runs for the sixth straight game",
-      "date": "2026-03-21T00:03:38+00:00"
-    },
-    {
-      "id": "1cf810bdb0ac",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Scores 12 in Series-Opening Win vs Penn St.",
-      "url": "http://localhost/news/2026/03/20/purdue-scores-12-in-series-opening-win-vs-penn-st",
-      "summary": "",
-      "date": "2026-03-20T23:48:49+00:00"
-    },
-    {
-      "id": "132fabd7a666",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Drops Battle to Penn State",
-      "url": "http://localhost/news/2026/03/20/purdue-drops-battle-to-penn-state",
-      "summary": "",
-      "date": "2026-03-20T23:02:00+00:00"
     }
   ]
 }
