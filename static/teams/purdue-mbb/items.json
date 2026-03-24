@@ -1,12 +1,20 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-24T14:20:35.867784+00:00",
+  "updated": "2026-03-24T15:39:46.515060+00:00",
   "count": 20,
   "items": [
     {
-      "id": "22efc62fb98f",
+      "id": "d02c1e857f75",
       "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Close Out Homestand with 2 Midweek Dates",
+      "title": "2-Seed Purdue Battles Texas for Spot in Elite Eight",
+      "url": "http://localhost/news/2026/03/24/2-seed-purdue-battles-texas-for-spot-in-elite-eight",
+      "summary": "",
+      "date": "2026-03-24T13:32:19+00:00"
+    },
+    {
+      "id": "a80858778bd9",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilers Close Out Homestand with 2 Midweek Dates",
       "url": "http://localhost/news/2026/03/23/boilermakers-close-out-homestand-with-2-midweek-dates",
       "summary": "Purdue hosts Valpo on Tuesday, UIC on Wednesday -- with $3 deals in play for both games",
       "date": "2026-03-23T21:14:00+00:00"
@@ -44,6 +52,14 @@
       "date": "2026-03-22T21:33:25+00:00"
     },
     {
+      "id": "4be8c0f81114",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue vs Penn State Game 3 Highlights",
+      "url": "http://localhost/news/2026/03/22/purdue-vs-penn-state-game-3-highlights",
+      "summary": "",
+      "date": "2026-03-22T21:30:33+00:00"
+    },
+    {
       "id": "c40a5bba6d2f",
       "source": "Purdue Athletics MBB",
       "title": "Wright Closes Career as Silver Medalist at NCAAs",
@@ -60,12 +76,28 @@
       "date": "2026-03-22T00:34:23+00:00"
     },
     {
+      "id": "f1de68ef0509",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights: Purdue 7, #17 Oregon 4",
+      "url": "http://localhost/news/2026/03/21/highlights-purdue-7-17-oregon-4",
+      "summary": "",
+      "date": "2026-03-21T22:58:22+00:00"
+    },
+    {
       "id": "869d20ea4c06",
       "source": "Purdue Athletics MBB",
       "title": "Purdue Wins 2-1 Behind Erdman for Third Time",
       "url": "http://localhost/news/2026/03/21/purdue-wins-2-1-behind-erdman-for-third-time",
       "summary": "Banks hit a go-ahead home run in the 6th inning & Purdue turned 3 double plays for the 2nd day in a row",
       "date": "2026-03-21T22:36:23+00:00"
+    },
+    {
+      "id": "33053e012f84",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Turns 3 Double Plays in 2-1 Win vs Penn St.",
+      "url": "http://localhost/news/2026/03/21/purdue-turns-3-double-plays-in-2-1-win-vs-penn-st",
+      "summary": "",
+      "date": "2026-03-21T22:30:12+00:00"
     },
     {
       "id": "713eeb10427b",
@@ -116,52 +148,20 @@
       "date": "2026-03-21T00:03:38+00:00"
     },
     {
+      "id": "1cf810bdb0ac",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Scores 12 in Series-Opening Win vs Penn St.",
+      "url": "http://localhost/news/2026/03/20/purdue-scores-12-in-series-opening-win-vs-penn-st",
+      "summary": "",
+      "date": "2026-03-20T23:48:49+00:00"
+    },
+    {
       "id": "132fabd7a666",
       "source": "Purdue Athletics MBB",
       "title": "Purdue Drops Battle to Penn State",
       "url": "http://localhost/news/2026/03/20/purdue-drops-battle-to-penn-state",
       "summary": "",
       "date": "2026-03-20T23:02:00+00:00"
-    },
-    {
-      "id": "25f4c621714a",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Freshman Record Holder, Ida Lindqvist, Named B1G Freshman of the Week",
-      "url": "http://localhost/news/2026/03/20/purdue-freshman-record-holder-ida-lindqvist-named-b1g-freshman-of-the-week",
-      "summary": "",
-      "date": "2026-03-20T15:00:00+00:00"
-    },
-    {
-      "id": "947e52776448",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Resume Spring Season at Hootie Intercollegiate",
-      "url": "http://localhost/news/2026/03/20/boilermakers-resume-spring-season-at-hootie-intercollegiate",
-      "summary": "",
-      "date": "2026-03-20T01:17:37+00:00"
-    },
-    {
-      "id": "8515ebe877f7",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue MBB NCAA First-Round Press Conference",
-      "url": "http://localhost/news/2026/03/19/purdue-mbb-ncaa-first-round-press-conference",
-      "summary": "",
-      "date": "2026-03-19T22:01:31+00:00"
-    },
-    {
-      "id": "9190f60c5c82",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Lands 77 on Winter Academic All-Big Ten Teams",
-      "url": "http://localhost/news/2026/03/19/purdue-lands-77-on-winter-academic-all-big-ten-teams",
-      "summary": "",
-      "date": "2026-03-19T15:02:00+00:00"
-    },
-    {
-      "id": "723a20d7fdd3",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Pound Out 17 Hits in Home Win",
-      "url": "http://localhost/news/2026/03/19/boilermakers-pound-out-17-hits-in-home-win",
-      "summary": "",
-      "date": "2026-03-19T01:39:35+00:00"
     }
   ]
 }
