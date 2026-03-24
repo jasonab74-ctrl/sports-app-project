@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-24T12:59:30.467543+00:00",
+  "updated": "2026-03-24T14:20:35.867784+00:00",
   "count": 20,
   "items": [
     {
@@ -84,14 +84,6 @@
       "date": "2026-03-21T15:57:43+00:00"
     },
     {
-      "id": "b819c1f5ce52",
-      "source": "CBS Sports College Basketball",
-      "title": "Purdue's Matt Painter rejects mid-major NCAA Tournament coaches' scheduling complaints",
-      "url": "https://www.cbssports.com/college-basketball/news/purdue-matt-painter-rejects-mid-major-coaches-ncaa-tournament-scheduling/",
-      "summary": "The Boilermakers coach delivered a rebuttal against Miami (Ohio) and High Point's scheduling cries during the NCAA Tournament",
-      "date": "2026-03-21T15:17:01+00:00"
-    },
-    {
       "id": "8d7259acf3d0",
       "source": "Purdue Athletics MBB",
       "title": "NCAA Career Assists Record Belongs to Purdue's Braden Smith",
@@ -162,6 +154,14 @@
       "url": "http://localhost/news/2026/03/19/purdue-lands-77-on-winter-academic-all-big-ten-teams",
       "summary": "",
       "date": "2026-03-19T15:02:00+00:00"
+    },
+    {
+      "id": "723a20d7fdd3",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Pound Out 17 Hits in Home Win",
+      "url": "http://localhost/news/2026/03/19/boilermakers-pound-out-17-hits-in-home-win",
+      "summary": "",
+      "date": "2026-03-19T01:39:35+00:00"
     }
   ]
 }
