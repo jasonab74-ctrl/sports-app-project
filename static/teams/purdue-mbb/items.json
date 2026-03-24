@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-24T08:44:00.686592+00:00",
+  "updated": "2026-03-24T09:51:18.263635+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "22efc62fb98f",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Close Out Homestand with 2 Midweek Dates",
+      "url": "http://localhost/news/2026/03/23/boilermakers-close-out-homestand-with-2-midweek-dates",
+      "summary": "Purdue hosts Valpo on Tuesday, UIC on Wednesday -- with $3 deals in play for both games",
+      "date": "2026-03-23T21:14:00+00:00"
+    },
     {
       "id": "6a9224ce0b11",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/03/19/purdue-lands-77-on-winter-academic-all-big-ten-teams",
       "summary": "",
       "date": "2026-03-19T15:02:00+00:00"
-    },
-    {
-      "id": "723a20d7fdd3",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Pound Out 17 Hits in Home Win",
-      "url": "http://localhost/news/2026/03/19/boilermakers-pound-out-17-hits-in-home-win",
-      "summary": "",
-      "date": "2026-03-19T01:39:35+00:00"
     }
   ]
 }
