@@ -1,40 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-24T19:51:20.420453+00:00",
+  "updated": "2026-03-24T20:35:41.532007+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "30bd38047ce4",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilers Host Beacons for Midweek Matchup",
-      "url": "http://localhost/news/2026/03/24/boilers-host-beacons-for-midweek-matchup",
-      "summary": "Purdue will host its final matchup of the 14-game homestand taking on the Beacons of Valparaiso Wednesday night at Bittinger Stadium.",
-      "date": "2026-03-24T19:28:16+00:00"
-    },
-    {
-      "id": "7d8d7085931a",
-      "source": "Purdue Athletics MBB",
-      "title": "Spring Soccer Schedule Update",
-      "url": "http://localhost/news/2026/03/24/spring-soccer-schedule-update",
-      "summary": "After announcing Purdue soccer’s 2026 spring exhibition slate last month, head coach Richard Moodie has announced updates to the schedule.",
-      "date": "2026-03-24T18:47:00+00:00"
-    },
-    {
-      "id": "1b0fbf763342",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Returns to Practice Following Spring Break",
-      "url": "http://localhost/news/2026/03/24/purdue-returns-to-practice-following-spring-break",
-      "summary": "",
-      "date": "2026-03-24T18:30:00+00:00"
-    },
-    {
-      "id": "c2cd7f89ef40",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Continues Big Ten Play in Bloomington",
-      "url": "http://localhost/news/2026/03/24/purdue-continues-big-ten-play-in-bloomington",
-      "summary": "",
-      "date": "2026-03-24T17:41:04+00:00"
-    },
     {
       "id": "c959ea1eba31",
       "source": "Purdue Athletics MBB",
@@ -162,6 +130,38 @@
       "url": "http://localhost/news/2026/03/21/purdue-turns-3-double-plays-in-2-1-win-vs-penn-st",
       "summary": "",
       "date": "2026-03-21T22:30:12+00:00"
+    },
+    {
+      "id": "713eeb10427b",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue vs. Queens Photo Gallery",
+      "url": "http://localhost/news/2026/03/21/purdue-vs-queens-photo-gallery",
+      "summary": "",
+      "date": "2026-03-21T16:49:11+00:00"
+    },
+    {
+      "id": "aa4e700618ac",
+      "source": "Purdue Athletics MBB",
+      "title": "Blaze Places Sixth, Boilermakers 29th at NCAA Championships",
+      "url": "http://localhost/news/2026/03/21/blaze-finishes-sixth-boilermakers-29th-at-ncaa-championships",
+      "summary": "",
+      "date": "2026-03-21T15:57:43+00:00"
+    },
+    {
+      "id": "8d7259acf3d0",
+      "source": "Purdue Athletics MBB",
+      "title": "NCAA Career Assists Record Belongs to Purdue's Braden Smith",
+      "url": "http://localhost/news/2026/03/21/ncaa-career-assists-record-belongs-to-purdues-braden-smith",
+      "summary": "",
+      "date": "2026-03-21T03:49:00+00:00"
+    },
+    {
+      "id": "d600644c4776",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue MBB Press Conference vs. Queens",
+      "url": "http://localhost/news/2026/03/21/purdue-mbb-press-conference-vs-queens",
+      "summary": "",
+      "date": "2026-03-21T03:35:02+00:00"
     }
   ]
 }
