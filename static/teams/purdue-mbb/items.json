@@ -1,8 +1,40 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-24T04:13:32.272584+00:00",
+  "updated": "2026-03-24T05:41:04.221814+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "22efc62fb98f",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Close Out Homestand with 2 Midweek Dates",
+      "url": "http://localhost/news/2026/03/23/boilermakers-close-out-homestand-with-2-midweek-dates",
+      "summary": "Purdue hosts Valpo on Tuesday, UIC on Wednesday -- with $3 deals in play for both games",
+      "date": "2026-03-23T21:14:00+00:00"
+    },
+    {
+      "id": "6a9224ce0b11",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue at 2026 NCAA Wrestling Championships",
+      "url": "http://localhost/news/2026/03/23/purdue-at-2026-ncaa-wrestling-championships",
+      "summary": "Photos by Trish Sexton",
+      "date": "2026-03-23T18:22:54+00:00"
+    },
+    {
+      "id": "de9b9689c744",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Stories: TKR Demonstrates the Philosophical Pursuit of Character",
+      "url": "http://localhost/news/2026/03/23/purdue-stories-tkr-demonstrates-the-philosophical-pursuit-of-character",
+      "summary": "Philosophy major Trey Kaufman-Renn is always in search of meaning beyond the final score",
+      "date": "2026-03-23T17:11:53+00:00"
+    },
+    {
+      "id": "ea20105d5420",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue vs. Miami Photo Gallery",
+      "url": "http://localhost/news/2026/03/23/purdue-vs-miami-photo-gallery",
+      "summary": "",
+      "date": "2026-03-23T14:36:59+00:00"
+    },
     {
       "id": "011e05b45d3f",
       "source": "Purdue Athletics MBB",
@@ -130,38 +162,6 @@
       "url": "http://localhost/news/2026/03/19/purdue-lands-77-on-winter-academic-all-big-ten-teams",
       "summary": "",
       "date": "2026-03-19T15:02:00+00:00"
-    },
-    {
-      "id": "723a20d7fdd3",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Pound Out 17 Hits in Home Win",
-      "url": "http://localhost/news/2026/03/19/boilermakers-pound-out-17-hits-in-home-win",
-      "summary": "",
-      "date": "2026-03-19T01:39:35+00:00"
-    },
-    {
-      "id": "6323bf231807",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue vs Oakland City Highlights",
-      "url": "http://localhost/news/2026/03/19/purdue-vs-oakland-city-highlights",
-      "summary": "",
-      "date": "2026-03-19T00:10:59+00:00"
-    },
-    {
-      "id": "3f5babe2cc1f",
-      "source": "Purdue Athletics MBB",
-      "title": "This Week in Purdue Baseball | March 19, 2026",
-      "url": "http://localhost/news/2026/03/18/this-week-in-purdue-baseball-march-19-2026",
-      "summary": "",
-      "date": "2026-03-18T20:23:12+00:00"
-    },
-    {
-      "id": "18b18aad2fe8",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Football | Winning Edge 3",
-      "url": "http://localhost/news/2026/03/18/purdue-football-winning-edge-3",
-      "summary": "",
-      "date": "2026-03-18T18:54:30+00:00"
     }
   ]
 }
