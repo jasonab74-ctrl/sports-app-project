@@ -1,8 +1,32 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-25T01:47:53.361247+00:00",
+  "updated": "2026-03-25T04:15:17.996806+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "3b13b513ded8",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Victorious vs Valpo Via Go-Ahead Run in 7th",
+      "url": "http://localhost/news/2026/03/25/purdue-victorious-vs-valpo-via-go-ahead-run-in-7th",
+      "summary": "Thrilling 7th inning featured a web gem from Boyle & a go-ahead RBI single from Manias",
+      "date": "2026-03-25T00:14:16+00:00"
+    },
+    {
+      "id": "219b89529553",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Finish T-4th in First Action in a Month",
+      "url": "http://localhost/news/2026/03/25/boilermakers-finish-t-4th-in-first-action-in-a-month",
+      "summary": "",
+      "date": "2026-03-25T00:06:11+00:00"
+    },
+    {
+      "id": "6f30f2520d96",
+      "source": "Purdue Athletics MBB",
+      "title": "Boyle Makes a Web Gem in Purdue's Win vs Valpo",
+      "url": "http://localhost/news/2026/03/24/boyle-makes-a-web-gem-in-purdues-win-vs-valpo",
+      "summary": "",
+      "date": "2026-03-24T23:43:18+00:00"
+    },
     {
       "id": "6ee18060cec8",
       "source": "Purdue Athletics MBB",
@@ -84,14 +108,6 @@
       "date": "2026-03-24T13:32:19+00:00"
     },
     {
-      "id": "a80858778bd9",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilers Close Out Homestand with 2 Midweek Dates",
-      "url": "http://localhost/news/2026/03/23/boilermakers-close-out-homestand-with-2-midweek-dates",
-      "summary": "Purdue hosts Valpo on Tuesday, UIC on Wednesday -- with $3 deals in play for both games",
-      "date": "2026-03-23T21:14:00+00:00"
-    },
-    {
       "id": "6a9224ce0b11",
       "source": "Purdue Athletics MBB",
       "title": "Purdue at 2026 NCAA Wrestling Championships",
@@ -146,22 +162,6 @@
       "url": "http://localhost/news/2026/03/22/purdues-daryn-wright-wins-silver-on-platform-at-ncaas",
       "summary": "",
       "date": "2026-03-22T00:34:23+00:00"
-    },
-    {
-      "id": "f1de68ef0509",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights: Purdue 7, #17 Oregon 4",
-      "url": "http://localhost/news/2026/03/21/highlights-purdue-7-17-oregon-4",
-      "summary": "",
-      "date": "2026-03-21T22:58:22+00:00"
-    },
-    {
-      "id": "869d20ea4c06",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Wins 2-1 Behind Erdman for Third Time",
-      "url": "http://localhost/news/2026/03/21/purdue-wins-2-1-behind-erdman-for-third-time",
-      "summary": "Banks hit a go-ahead home run in the 6th inning & Purdue turned 3 double plays for the 2nd day in a row",
-      "date": "2026-03-21T22:36:23+00:00"
     }
   ]
 }
