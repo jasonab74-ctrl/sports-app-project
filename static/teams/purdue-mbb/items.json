@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-24T23:30:38.111758+00:00",
+  "updated": "2026-03-25T01:47:53.361247+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "6ee18060cec8",
+      "source": "Purdue Athletics MBB",
+      "title": "Record 11 Boilers to Represent Purdue Men at NCAAs",
+      "url": "http://localhost/news/2026/03/24/record-11-boilers-to-represent-purdue-men-at-ncaas",
+      "summary": "Purdue to be represented in 8 events at the national championship meet",
+      "date": "2026-03-24T20:38:00+00:00"
+    },
     {
       "id": "30bd38047ce4",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/03/21/purdue-wins-2-1-behind-erdman-for-third-time",
       "summary": "Banks hit a go-ahead home run in the 6th inning & Purdue turned 3 double plays for the 2nd day in a row",
       "date": "2026-03-21T22:36:23+00:00"
-    },
-    {
-      "id": "33053e012f84",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Turns 3 Double Plays in 2-1 Win vs Penn St.",
-      "url": "http://localhost/news/2026/03/21/purdue-turns-3-double-plays-in-2-1-win-vs-penn-st",
-      "summary": "",
-      "date": "2026-03-21T22:30:12+00:00"
     }
   ]
 }
