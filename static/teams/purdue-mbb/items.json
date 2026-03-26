@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-26T20:31:47.220139+00:00",
+  "updated": "2026-03-26T21:26:16.423217+00:00",
   "count": 20,
   "items": [
     {
@@ -124,6 +124,14 @@
       "date": "2026-03-24T23:43:18+00:00"
     },
     {
+      "id": "6ee18060cec8",
+      "source": "Purdue Athletics MBB",
+      "title": "Record 11 Boilers to Represent Purdue Men at NCAAs",
+      "url": "http://localhost/news/2026/03/24/record-11-boilers-to-represent-purdue-men-at-ncaas",
+      "summary": "Purdue to be represented in 8 events at the national championship meet",
+      "date": "2026-03-24T20:38:00+00:00"
+    },
+    {
       "id": "7d8d7085931a",
       "source": "Purdue Athletics MBB",
       "title": "Spring Soccer Schedule Update",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/03/24/3-xavier-townsend-post-practice-media-session-purdue-football",
       "summary": "",
       "date": "2026-03-24T16:12:39+00:00"
-    },
-    {
-      "id": "3f187cb4791b",
-      "source": "Purdue Athletics MBB",
-      "title": "#8 De'Nylon Morrissette Post Practice Media Session | Purdue Football",
-      "url": "http://localhost/news/2026/03/24/8-denylon-morrissette-post-practice-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-03-24T16:09:58+00:00"
     }
   ]
 }
