@@ -1,8 +1,48 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-26T19:55:41.077622+00:00",
+  "updated": "2026-03-26T20:31:47.220139+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "e5b29744e1aa",
+      "source": "Purdue Athletics MBB",
+      "title": "Defensive End #23 Trey Smith Post Practice Media Session | Purdue Football",
+      "url": "http://localhost/news/2026/03/26/defensive-end-23-trey-smith-post-practice-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-03-26T17:00:23+00:00"
+    },
+    {
+      "id": "17a2768cf65e",
+      "source": "Purdue Athletics MBB",
+      "title": "Defensive End #18 Elo Modozie Post Practice Media Session | Purdue Football",
+      "url": "http://localhost/news/2026/03/26/defensive-end-18-elo-modozie-post-practice-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-03-26T16:58:59+00:00"
+    },
+    {
+      "id": "5697e4ab4dda",
+      "source": "Purdue Athletics MBB",
+      "title": "Defensive Ends Coach Jake Trump Post Practice Media Session | Purdue Football",
+      "url": "http://localhost/news/2026/03/26/defensive-ends-coach-jake-trump-post-practice-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-03-26T16:58:03+00:00"
+    },
+    {
+      "id": "7ab7dd5ec2eb",
+      "source": "Purdue Athletics MBB",
+      "title": "Special Teams Coordinator James Shibest Post Practice Media Session | Purdue Football",
+      "url": "http://localhost/news/2026/03/26/special-teams-coordinator-james-shibest-post-practice-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-03-26T16:57:04+00:00"
+    },
+    {
+      "id": "1663f12ca27b",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue at Michigan Schedule Update",
+      "url": "http://localhost/news/2026/03/26/purdue-at-michigan-schedule-update",
+      "summary": "Due to inclement weather in the Ann Arbor area, Purdue's Friday contest with Michigan has been moved up to a 4:00 p.m. est start time.",
+      "date": "2026-03-26T16:27:07+00:00"
+    },
     {
       "id": "b455b6593928",
       "source": "Purdue Athletics MBB",
@@ -84,14 +124,6 @@
       "date": "2026-03-24T23:43:18+00:00"
     },
     {
-      "id": "6ee18060cec8",
-      "source": "Purdue Athletics MBB",
-      "title": "Record 11 Boilers to Represent Purdue Men at NCAAs",
-      "url": "http://localhost/news/2026/03/24/record-11-boilers-to-represent-purdue-men-at-ncaas",
-      "summary": "Purdue to be represented in 8 events at the national championship meet",
-      "date": "2026-03-24T20:38:00+00:00"
-    },
-    {
       "id": "7d8d7085931a",
       "source": "Purdue Athletics MBB",
       "title": "Spring Soccer Schedule Update",
@@ -130,38 +162,6 @@
       "url": "http://localhost/news/2026/03/24/8-denylon-morrissette-post-practice-media-session-purdue-football",
       "summary": "",
       "date": "2026-03-24T16:09:58+00:00"
-    },
-    {
-      "id": "decc5b410060",
-      "source": "Purdue Athletics MBB",
-      "title": "Wide Receivers Coach Bilal Marshall Post Practice Media Session | Purdue Football",
-      "url": "http://localhost/news/2026/03/24/wide-receivers-coach-bilal-marshall-post-practice-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-03-24T16:07:47+00:00"
-    },
-    {
-      "id": "60bdbcb0cc94",
-      "source": "Purdue Athletics MBB",
-      "title": "Head Coach Barry Odom Post Practice Media Session | Purdue Football",
-      "url": "http://localhost/news/2026/03/24/head-coach-barry-odom-post-practice-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-03-24T16:06:53+00:00"
-    },
-    {
-      "id": "d02c1e857f75",
-      "source": "Purdue Athletics MBB",
-      "title": "2-Seed Purdue Battles Texas for Spot in Elite Eight",
-      "url": "http://localhost/news/2026/03/24/2-seed-purdue-battles-texas-for-spot-in-elite-eight",
-      "summary": "",
-      "date": "2026-03-24T13:32:19+00:00"
-    },
-    {
-      "id": "6a9224ce0b11",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue at 2026 NCAA Wrestling Championships",
-      "url": "http://localhost/news/2026/03/23/purdue-at-2026-ncaa-wrestling-championships",
-      "summary": "Photos by Trish Sexton",
-      "date": "2026-03-23T18:22:54+00:00"
     }
   ]
 }
