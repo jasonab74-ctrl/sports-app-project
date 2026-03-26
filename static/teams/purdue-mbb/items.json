@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-26T04:42:50.970554+00:00",
+  "updated": "2026-03-26T06:09:16.590227+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "c2310f104f0e",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Men's Swim-Dive Set for NCAA Championships",
+      "url": "http://localhost/news/2026/03/26/purdue-mens-swim-dive-set-for-ncaa-championships",
+      "summary": "",
+      "date": "2026-03-26T04:35:40+00:00"
+    },
     {
       "id": "d19fd9983c20",
       "source": "Purdue Athletics MBB",
@@ -10,6 +18,30 @@
       "url": "http://localhost/news/2026/03/26/rogers-swiderski-star-as-boilers-score-18-in-wild-win",
       "summary": "Purdue posted a pair of 6-run innings in a game that featured 31 runs, matching the most ever at Alexander",
       "date": "2026-03-26T02:18:14+00:00"
+    },
+    {
+      "id": "159022de19bb",
+      "source": "Purdue Athletics MBB",
+      "title": "Head Coach Matt Painter Press Conference | Sweet 16 vs. Texas",
+      "url": "http://localhost/news/2026/03/26/head-coach-matt-painter-press-conference-sweet-16-vs-texas",
+      "summary": "",
+      "date": "2026-03-26T02:12:56+00:00"
+    },
+    {
+      "id": "88b587c0c548",
+      "source": "Purdue Athletics MBB",
+      "title": "Braden Smith, Fletcher Loyer, and Trey Kaufman-Renn Press Conference | Sweet 16 vs. Texas",
+      "url": "http://localhost/news/2026/03/26/braden-smith-fletcher-loyer-and-trey-kaufman-renn-press-conference-sweet-16-vs-texas",
+      "summary": "",
+      "date": "2026-03-26T02:07:47+00:00"
+    },
+    {
+      "id": "d60ed12b5072",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Scores 18 in Midweek Slugfest Win vs UIC",
+      "url": "http://localhost/news/2026/03/26/purdue-scores-18-in-midweek-slugfest-win-vs-uic",
+      "summary": "",
+      "date": "2026-03-26T01:20:26+00:00"
     },
     {
       "id": "85543c9e36b5",
@@ -130,38 +162,6 @@
       "url": "http://localhost/news/2026/03/23/purdue-stories-tkr-demonstrates-the-philosophical-pursuit-of-character",
       "summary": "Philosophy major Trey Kaufman-Renn is always in search of meaning beyond the final score",
       "date": "2026-03-23T17:11:53+00:00"
-    },
-    {
-      "id": "ea20105d5420",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue vs. Miami Photo Gallery",
-      "url": "http://localhost/news/2026/03/23/purdue-vs-miami-photo-gallery",
-      "summary": "",
-      "date": "2026-03-23T14:36:59+00:00"
-    },
-    {
-      "id": "011e05b45d3f",
-      "source": "Purdue Athletics MBB",
-      "title": "Big Inning Burns Baseball as PSU Staves Off Sweep",
-      "url": "http://localhost/news/2026/03/22/big-inning-burns-baseball-as-psu-staves-off-sweep",
-      "summary": "Purdue rallied to cut it to a 3-run deficit but could not overcome PSU's 11-run 2nd inning",
-      "date": "2026-03-22T21:33:25+00:00"
-    },
-    {
-      "id": "4be8c0f81114",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue vs Penn State Game 3 Highlights",
-      "url": "http://localhost/news/2026/03/22/purdue-vs-penn-state-game-3-highlights",
-      "summary": "",
-      "date": "2026-03-22T21:30:33+00:00"
-    },
-    {
-      "id": "c40a5bba6d2f",
-      "source": "Purdue Athletics MBB",
-      "title": "Wright Closes Career as Silver Medalist at NCAAs",
-      "url": "http://localhost/news/2026/03/22/wright-closes-career-as-silver-medalist-at-ncaas",
-      "summary": "Daryn Wright capped her career as a six-time All-American; Purdue finishes T-21st at NCAAs",
-      "date": "2026-03-22T00:34:53+00:00"
     }
   ]
 }
