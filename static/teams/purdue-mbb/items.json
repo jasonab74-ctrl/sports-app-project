@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-26T09:56:43.443372+00:00",
+  "updated": "2026-03-26T10:51:14.681563+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "85543c9e36b5",
-      "source": "Purdue Athletics MBB",
-      "title": "8-Run Fifth Leads Boilers to Run-Rule Victory",
-      "url": "http://localhost/news/2026/03/26/8-run-fifth-leads-boilers-to-run-rule-victory",
-      "summary": "The Boilers walked-off Valparaiso in five innings powered by an eight-run fifth inning. Purdue (24-8) improved to 11-2 during its 13-game homestand.",
-      "date": "2026-03-26T01:00:56+00:00"
-    },
     {
       "id": "3b13b513ded8",
       "source": "Purdue Athletics MBB",
@@ -162,6 +154,14 @@
       "url": "http://localhost/news/2026/03/22/wright-closes-career-as-silver-medalist-at-ncaas",
       "summary": "Daryn Wright capped her career as a six-time All-American; Purdue finishes T-21st at NCAAs",
       "date": "2026-03-22T00:34:53+00:00"
+    },
+    {
+      "id": "43143d993ffc",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue's Daryn Wright Wins Silver on Platform at NCAAs",
+      "url": "http://localhost/news/2026/03/22/purdues-daryn-wright-wins-silver-on-platform-at-ncaas",
+      "summary": "",
+      "date": "2026-03-22T00:34:23+00:00"
     }
   ]
 }
