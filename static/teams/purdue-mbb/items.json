@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-26T10:51:14.681563+00:00",
+  "updated": "2026-03-26T11:45:01.072345+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "d19fd9983c20",
+      "source": "Purdue Athletics MBB",
+      "title": "Rogers, Swiderski Star as Boilers Score 18 in Wild Win",
+      "url": "http://localhost/news/2026/03/26/rogers-swiderski-star-as-boilers-score-18-in-wild-win",
+      "summary": "Purdue posted a pair of 6-run innings in a game that featured 31 runs, matching the most ever at Alexander",
+      "date": "2026-03-26T02:18:14+00:00"
+    },
+    {
+      "id": "85543c9e36b5",
+      "source": "Purdue Athletics MBB",
+      "title": "8-Run Fifth Leads Boilers to Run-Rule Victory",
+      "url": "http://localhost/news/2026/03/26/8-run-fifth-leads-boilers-to-run-rule-victory",
+      "summary": "The Boilers walked-off Valparaiso in five innings powered by an eight-run fifth inning. Purdue (24-8) improved to 11-2 during its 13-game homestand.",
+      "date": "2026-03-26T01:00:56+00:00"
+    },
     {
       "id": "3b13b513ded8",
       "source": "Purdue Athletics MBB",
@@ -34,14 +50,6 @@
       "url": "http://localhost/news/2026/03/24/record-11-boilers-to-represent-purdue-men-at-ncaas",
       "summary": "Purdue to be represented in 8 events at the national championship meet",
       "date": "2026-03-24T20:38:00+00:00"
-    },
-    {
-      "id": "30bd38047ce4",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilers Host Beacons for Midweek Matchup",
-      "url": "http://localhost/news/2026/03/24/boilers-host-beacons-for-midweek-matchup",
-      "summary": "Purdue will host its final matchup of the 14-game homestand taking on the Beacons of Valparaiso Wednesday night at Bittinger Stadium.",
-      "date": "2026-03-24T19:28:16+00:00"
     },
     {
       "id": "7d8d7085931a",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/03/22/wright-closes-career-as-silver-medalist-at-ncaas",
       "summary": "Daryn Wright capped her career as a six-time All-American; Purdue finishes T-21st at NCAAs",
       "date": "2026-03-22T00:34:53+00:00"
-    },
-    {
-      "id": "43143d993ffc",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue's Daryn Wright Wins Silver on Platform at NCAAs",
-      "url": "http://localhost/news/2026/03/22/purdues-daryn-wright-wins-silver-on-platform-at-ncaas",
-      "summary": "",
-      "date": "2026-03-22T00:34:23+00:00"
     }
   ]
 }
