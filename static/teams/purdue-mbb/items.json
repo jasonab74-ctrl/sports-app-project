@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-27T16:11:19.335108+00:00",
+  "updated": "2026-03-27T17:24:39.855394+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "d11dd47bea61",
+      "source": "Purdue Athletics MBB",
+      "title": "#2 Seed Purdue Faces Top-Seeded Arizona for Spot in Final Four",
+      "url": "http://localhost/news/2026/03/27/2-seed-purdue-faces-top-seeded-arizona-for-spot-in-final-four",
+      "summary": "",
+      "date": "2026-03-27T15:15:00+00:00"
+    },
     {
       "id": "21d7604c493d",
       "source": "CBS Sports College Basketball",
@@ -10,6 +18,14 @@
       "url": "https://www.cbssports.com/college-basketball/news/purdue-escapes-iowa-stuns-in-sweet-16-mets-batter-paul-skenes-on-opening-day-will-wade-set-for-lsu-reunion/",
       "summary": "Plus picks and predictions for this weekend's women's Sweet 16 action",
       "date": "2026-03-27T13:07:27+00:00"
+    },
+    {
+      "id": "03a32fafe498",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue vs. Texas Photo Gallery",
+      "url": "http://localhost/news/2026/03/27/purdue-vs-texas-photo-gallery",
+      "summary": "",
+      "date": "2026-03-27T12:22:11+00:00"
     },
     {
       "id": "931b17049995",
@@ -146,22 +162,6 @@
       "url": "http://localhost/news/2026/03/26/braden-smith-fletcher-loyer-and-trey-kaufman-renn-press-conference-sweet-16-vs-texas",
       "summary": "",
       "date": "2026-03-26T02:07:47+00:00"
-    },
-    {
-      "id": "d60ed12b5072",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Scores 18 in Midweek Slugfest Win vs UIC",
-      "url": "http://localhost/news/2026/03/26/purdue-scores-18-in-midweek-slugfest-win-vs-uic",
-      "summary": "",
-      "date": "2026-03-26T01:20:26+00:00"
-    },
-    {
-      "id": "85543c9e36b5",
-      "source": "Purdue Athletics MBB",
-      "title": "8-Run Fifth Leads Boilers to Run-Rule Victory",
-      "url": "http://localhost/news/2026/03/26/8-run-fifth-leads-boilers-to-run-rule-victory",
-      "summary": "The Boilers walked-off Valparaiso in five innings powered by an eight-run fifth inning. Purdue (24-8) improved to 11-2 during its 13-game homestand.",
-      "date": "2026-03-26T01:00:56+00:00"
     }
   ]
 }
