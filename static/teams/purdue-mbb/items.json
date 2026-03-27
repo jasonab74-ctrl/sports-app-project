@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-27T10:41:48.145439+00:00",
+  "updated": "2026-03-27T11:37:52.143358+00:00",
   "count": 20,
   "items": [
     {
@@ -20,44 +20,12 @@
       "date": "2026-03-27T05:06:31+00:00"
     },
     {
-      "id": "239d9230485b",
-      "source": "Purdue Athletics MBB",
-      "title": "Walker Cracks Purdue’s 10,000m Top 5 at Raleigh Relays",
-      "url": "http://localhost/news/2026/03/27/walker-cracks-purdues-10000m-top-5-at-raleigh-relays",
-      "summary": "",
-      "date": "2026-03-27T04:08:25+00:00"
-    },
-    {
-      "id": "51819f52e0d4",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue MBB Press Conference vs. Texas",
-      "url": "http://localhost/news/2026/03/27/purdue-mbb-press-conference-vs-texas",
-      "summary": "",
-      "date": "2026-03-27T04:03:50+00:00"
-    },
-    {
-      "id": "1dee4571ef17",
-      "source": "Purdue Athletics MBB",
-      "title": "Sweet 16 vs Texas Postgame Press Conference | Purdue Men’s Basketball",
-      "url": "http://localhost/news/2026/03/27/sweet-16-vs-texas-postgame-press-conference-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-03-27T03:54:09+00:00"
-    },
-    {
       "id": "f21705adeedb",
       "source": "CBS Sports College Basketball",
       "title": "Purdue survives upset bid from Texas after star Trey Kaufman-Renn's game-winning tip-in with 0.7 seconds left",
       "url": "https://www.cbssports.com/college-basketball/news/purdue-survives-upset-bid-texas-trey-kaufman-renns-game-winning-tip-in/",
       "summary": "The Boilermakers advanced to the Elite Eight with the win over the Longhorns",
       "date": "2026-03-27T02:13:29+00:00"
-    },
-    {
-      "id": "f20f280192ff",
-      "source": "Purdue Athletics MBB",
-      "title": "Baseball Back on the Road for Trip Up to Michigan St.",
-      "url": "http://localhost/news/2026/03/26/baseball-back-on-the-road-for-trip-up-to-michigan-st",
-      "summary": "Purdue is averaging 9.7 runs per game while compiling a 10-4 record in March",
-      "date": "2026-03-26T23:05:00+00:00"
     },
     {
       "id": "e5b29744e1aa",
@@ -162,6 +130,38 @@
       "url": "http://localhost/news/2026/03/25/purdue-victorious-vs-valpo-via-go-ahead-run-in-7th",
       "summary": "Thrilling 7th inning featured a web gem from Boyle & a go-ahead RBI single from Manias",
       "date": "2026-03-25T00:14:16+00:00"
+    },
+    {
+      "id": "219b89529553",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Finish T-4th in First Action in a Month",
+      "url": "http://localhost/news/2026/03/25/boilermakers-finish-t-4th-in-first-action-in-a-month",
+      "summary": "",
+      "date": "2026-03-25T00:06:11+00:00"
+    },
+    {
+      "id": "6f30f2520d96",
+      "source": "Purdue Athletics MBB",
+      "title": "Boyle Makes a Web Gem in Purdue's Win vs Valpo",
+      "url": "http://localhost/news/2026/03/24/boyle-makes-a-web-gem-in-purdues-win-vs-valpo",
+      "summary": "",
+      "date": "2026-03-24T23:43:18+00:00"
+    },
+    {
+      "id": "7d8d7085931a",
+      "source": "Purdue Athletics MBB",
+      "title": "Spring Soccer Schedule Update",
+      "url": "http://localhost/news/2026/03/24/spring-soccer-schedule-update",
+      "summary": "After announcing Purdue soccer’s 2026 spring exhibition slate last month, head coach Richard Moodie has announced updates to the schedule.",
+      "date": "2026-03-24T18:47:00+00:00"
+    },
+    {
+      "id": "1b0fbf763342",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Returns to Practice Following Spring Break",
+      "url": "http://localhost/news/2026/03/24/purdue-returns-to-practice-following-spring-break",
+      "summary": "",
+      "date": "2026-03-24T18:30:00+00:00"
     }
   ]
 }
