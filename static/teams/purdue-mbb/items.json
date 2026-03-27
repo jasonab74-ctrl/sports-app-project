@@ -1,15 +1,23 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-27T02:29:20.701400+00:00",
+  "updated": "2026-03-27T04:56:22.238947+00:00",
   "count": 20,
   "items": [
     {
-      "id": "f20f280192ff",
-      "source": "Purdue Athletics MBB",
-      "title": "Baseball Back on the Road for Trip Up to Michigan St.",
-      "url": "http://localhost/news/2026/03/26/baseball-back-on-the-road-for-trip-up-to-michigan-st",
-      "summary": "Purdue is averaging 9.7 runs per game while compiling a 10-4 record in March",
-      "date": "2026-03-26T23:05:00+00:00"
+      "id": "931b17049995",
+      "source": "CBS Sports College Basketball",
+      "title": "Inside Purdue's put-back: Coaches detail tough decisions made as thrilling, heartbreaking play rocks Texas",
+      "url": "https://www.cbssports.com/college-basketball/news/inside-purdue-put-back-trey-kaufman-renn-matt-painter-sean-miller-texas/",
+      "summary": "Matt Painter and Sean Miller spoke exclusively with CBS Sports about the difficult calls that led to Purdue's Sweet 16-winning layup by Trey Kaufman-Renn",
+      "date": "2026-03-27T04:14:22+00:00"
+    },
+    {
+      "id": "f21705adeedb",
+      "source": "CBS Sports College Basketball",
+      "title": "Purdue survives upset bid from Texas after star Trey Kaufman-Renn's game-winning tip-in with 0.7 seconds left",
+      "url": "https://www.cbssports.com/college-basketball/news/purdue-survives-upset-bid-texas-trey-kaufman-renns-game-winning-tip-in/",
+      "summary": "The Boilermakers advanced to the Elite Eight with the win over the Longhorns",
+      "date": "2026-03-27T02:13:29+00:00"
     },
     {
       "id": "e5b29744e1aa",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/03/24/purdue-continues-big-ten-play-in-bloomington",
       "summary": "",
       "date": "2026-03-24T17:41:04+00:00"
-    },
-    {
-      "id": "c959ea1eba31",
-      "source": "Purdue Athletics MBB",
-      "title": "#3 Xavier Townsend Post Practice Media Session | Purdue Football",
-      "url": "http://localhost/news/2026/03/24/3-xavier-townsend-post-practice-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-03-24T16:12:39+00:00"
     }
   ]
 }
