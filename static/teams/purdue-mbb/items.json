@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-27T19:22:15.724992+00:00",
+  "updated": "2026-03-27T19:56:00.844738+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "d11dd47bea61",
+      "source": "Purdue Athletics MBB",
+      "title": "#2 Seed Purdue Faces Top-Seeded Arizona for Spot in Final Four",
+      "url": "http://localhost/news/2026/03/27/2-seed-purdue-faces-top-seeded-arizona-for-spot-in-final-four",
+      "summary": "",
+      "date": "2026-03-27T15:15:00+00:00"
+    },
     {
       "id": "21d7604c493d",
       "source": "CBS Sports College Basketball",
@@ -10,6 +18,14 @@
       "url": "https://www.cbssports.com/college-basketball/news/purdue-escapes-iowa-stuns-in-sweet-16-mets-batter-paul-skenes-on-opening-day-will-wade-set-for-lsu-reunion/",
       "summary": "Plus picks and predictions for this weekend's women's Sweet 16 action",
       "date": "2026-03-27T13:07:27+00:00"
+    },
+    {
+      "id": "03a32fafe498",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue vs. Texas Photo Gallery",
+      "url": "http://localhost/news/2026/03/27/purdue-vs-texas-photo-gallery",
+      "summary": "",
+      "date": "2026-03-27T12:22:11+00:00"
     },
     {
       "id": "931b17049995",
@@ -34,6 +50,22 @@
       "url": "http://localhost/news/2026/03/27/walker-cracks-purdues-10000m-top-5-at-raleigh-relays",
       "summary": "",
       "date": "2026-03-27T04:08:25+00:00"
+    },
+    {
+      "id": "51819f52e0d4",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue MBB Press Conference vs. Texas",
+      "url": "http://localhost/news/2026/03/27/purdue-mbb-press-conference-vs-texas",
+      "summary": "",
+      "date": "2026-03-27T04:03:50+00:00"
+    },
+    {
+      "id": "1dee4571ef17",
+      "source": "Purdue Athletics MBB",
+      "title": "Sweet 16 vs Texas Postgame Press Conference | Purdue Men’s Basketball",
+      "url": "http://localhost/news/2026/03/27/sweet-16-vs-texas-postgame-press-conference-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-03-27T03:54:09+00:00"
     },
     {
       "id": "f21705adeedb",
@@ -130,38 +162,6 @@
       "url": "http://localhost/news/2026/03/26/braden-smith-fletcher-loyer-and-trey-kaufman-renn-press-conference-sweet-16-vs-texas",
       "summary": "",
       "date": "2026-03-26T02:07:47+00:00"
-    },
-    {
-      "id": "d60ed12b5072",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Scores 18 in Midweek Slugfest Win vs UIC",
-      "url": "http://localhost/news/2026/03/26/purdue-scores-18-in-midweek-slugfest-win-vs-uic",
-      "summary": "",
-      "date": "2026-03-26T01:20:26+00:00"
-    },
-    {
-      "id": "85543c9e36b5",
-      "source": "Purdue Athletics MBB",
-      "title": "8-Run Fifth Leads Boilers to Run-Rule Victory",
-      "url": "http://localhost/news/2026/03/26/8-run-fifth-leads-boilers-to-run-rule-victory",
-      "summary": "The Boilers walked-off Valparaiso in five innings powered by an eight-run fifth inning. Purdue (24-8) improved to 11-2 during its 13-game homestand.",
-      "date": "2026-03-26T01:00:56+00:00"
-    },
-    {
-      "id": "3b13b513ded8",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Victorious vs Valpo Via Go-Ahead Run in 7th",
-      "url": "http://localhost/news/2026/03/25/purdue-victorious-vs-valpo-via-go-ahead-run-in-7th",
-      "summary": "Thrilling 7th inning featured a web gem from Boyle & a go-ahead RBI single from Manias",
-      "date": "2026-03-25T00:14:16+00:00"
-    },
-    {
-      "id": "219b89529553",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Finish T-4th in First Action in a Month",
-      "url": "http://localhost/news/2026/03/25/boilermakers-finish-t-4th-in-first-action-in-a-month",
-      "summary": "",
-      "date": "2026-03-25T00:06:11+00:00"
     }
   ]
 }
