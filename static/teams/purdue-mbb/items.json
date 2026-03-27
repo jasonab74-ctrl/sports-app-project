@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-26T23:57:27.091804+00:00",
+  "updated": "2026-03-27T02:29:20.701400+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "f20f280192ff",
+      "source": "Purdue Athletics MBB",
+      "title": "Baseball Back on the Road for Trip Up to Michigan St.",
+      "url": "http://localhost/news/2026/03/26/baseball-back-on-the-road-for-trip-up-to-michigan-st",
+      "summary": "Purdue is averaging 9.7 runs per game while compiling a 10-4 record in March",
+      "date": "2026-03-26T23:05:00+00:00"
+    },
     {
       "id": "e5b29744e1aa",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/03/24/3-xavier-townsend-post-practice-media-session-purdue-football",
       "summary": "",
       "date": "2026-03-24T16:12:39+00:00"
-    },
-    {
-      "id": "3f187cb4791b",
-      "source": "Purdue Athletics MBB",
-      "title": "#8 De'Nylon Morrissette Post Practice Media Session | Purdue Football",
-      "url": "http://localhost/news/2026/03/24/8-denylon-morrissette-post-practice-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-03-24T16:09:58+00:00"
     }
   ]
 }
