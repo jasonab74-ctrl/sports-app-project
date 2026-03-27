@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-27T12:54:07.622320+00:00",
+  "updated": "2026-03-27T14:08:29.642775+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "21d7604c493d",
+      "source": "CBS Sports College Basketball",
+      "title": "Purdue escapes, Iowa stuns in Sweet 16; Mets batter Paul Skenes on Opening Day; Will Wade set for LSU reunion",
+      "url": "https://www.cbssports.com/college-basketball/news/purdue-escapes-iowa-stuns-in-sweet-16-mets-batter-paul-skenes-on-opening-day-will-wade-set-for-lsu-reunion/",
+      "summary": "Plus picks and predictions for this weekend's women's Sweet 16 action",
+      "date": "2026-03-27T13:07:27+00:00"
+    },
     {
       "id": "931b17049995",
       "source": "CBS Sports College Basketball",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/03/26/8-run-fifth-leads-boilers-to-run-rule-victory",
       "summary": "The Boilers walked-off Valparaiso in five innings powered by an eight-run fifth inning. Purdue (24-8) improved to 11-2 during its 13-game homestand.",
       "date": "2026-03-26T01:00:56+00:00"
-    },
-    {
-      "id": "3b13b513ded8",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Victorious vs Valpo Via Go-Ahead Run in 7th",
-      "url": "http://localhost/news/2026/03/25/purdue-victorious-vs-valpo-via-go-ahead-run-in-7th",
-      "summary": "Thrilling 7th inning featured a web gem from Boyle & a go-ahead RBI single from Manias",
-      "date": "2026-03-25T00:14:16+00:00"
     }
   ]
 }
