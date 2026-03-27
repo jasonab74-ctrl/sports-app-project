@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-27T22:36:09.219707+00:00",
+  "updated": "2026-03-27T23:27:07.753613+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "96415b1bc14d",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue at Michigan St. Game 1 Highlights",
+      "url": "http://localhost/news/2026/03/27/purdue-at-michigan-st-game-1-highlights",
+      "summary": "",
+      "date": "2026-03-27T22:35:09+00:00"
+    },
     {
       "id": "d11dd47bea61",
       "source": "Purdue Athletics MBB",
@@ -114,14 +122,6 @@
       "url": "http://localhost/news/2026/03/26/special-teams-coordinator-james-shibest-post-practice-media-session-purdue-football",
       "summary": "",
       "date": "2026-03-26T16:57:04+00:00"
-    },
-    {
-      "id": "1663f12ca27b",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue at Michigan Schedule Update",
-      "url": "http://localhost/news/2026/03/26/purdue-at-michigan-schedule-update",
-      "summary": "Due to inclement weather in the Ann Arbor area, Purdue's Friday contest with Michigan has been moved up to a 4:00 p.m. est start time.",
-      "date": "2026-03-26T16:27:07+00:00"
     },
     {
       "id": "b455b6593928",
