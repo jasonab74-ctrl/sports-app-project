@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-28T22:54:55.844573+00:00",
+  "updated": "2026-03-28T23:25:25.731934+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "b4e6614b3082",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Drops 1-4 Decision",
+      "url": "http://localhost/news/2026/03/28/purdue-drops-1-4-decision",
+      "summary": "",
+      "date": "2026-03-28T22:14:14+00:00"
+    },
     {
       "id": "3365666b6d15",
       "source": "CBS Sports College Basketball",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/03/26/purdue-mens-swim-dive-set-for-ncaa-championships",
       "summary": "",
       "date": "2026-03-26T04:35:40+00:00"
-    },
-    {
-      "id": "d19fd9983c20",
-      "source": "Purdue Athletics MBB",
-      "title": "Rogers, Swiderski Star as Boilers Score 18 in Wild Win",
-      "url": "http://localhost/news/2026/03/26/rogers-swiderski-star-as-boilers-score-18-in-wild-win",
-      "summary": "Purdue posted a pair of 6-run innings in a game that featured 31 runs, matching the most ever at Alexander",
-      "date": "2026-03-26T02:18:14+00:00"
     }
   ]
 }
