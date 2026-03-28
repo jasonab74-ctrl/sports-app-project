@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-27T23:52:13.625991+00:00",
+  "updated": "2026-03-28T01:46:29.003694+00:00",
   "count": 20,
   "items": [
     {
@@ -10,14 +10,6 @@
       "url": "http://localhost/news/2026/03/27/purdue-at-michigan-st-game-1-highlights",
       "summary": "",
       "date": "2026-03-27T22:35:09+00:00"
-    },
-    {
-      "id": "8b9ae1b85dde",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilers Fall 9-1 at Michigan",
-      "url": "http://localhost/news/2026/03/27/boilers-fall-9-1-at-michigan",
-      "summary": "Purdue Softball struck first but was unable to hold off a pair of multi-run innings, falling 9–1 to Michigan on Friday afternoon at Hutchins Stadium.",
-      "date": "2026-03-27T22:23:21+00:00"
     },
     {
       "id": "d11dd47bea61",
@@ -90,6 +82,14 @@
       "url": "https://www.cbssports.com/college-basketball/news/purdue-survives-upset-bid-texas-trey-kaufman-renns-game-winning-tip-in/",
       "summary": "The Boilermakers advanced to the Elite Eight with the win over the Longhorns",
       "date": "2026-03-27T02:13:29+00:00"
+    },
+    {
+      "id": "f20f280192ff",
+      "source": "Purdue Athletics MBB",
+      "title": "Baseball Back on the Road for Trip Up to Michigan St.",
+      "url": "http://localhost/news/2026/03/26/baseball-back-on-the-road-for-trip-up-to-michigan-st",
+      "summary": "Purdue is averaging 9.7 runs per game while compiling a 10-4 record in March",
+      "date": "2026-03-26T23:05:00+00:00"
     },
     {
       "id": "e5b29744e1aa",
