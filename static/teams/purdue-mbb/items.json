@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-28T16:27:21.535064+00:00",
+  "updated": "2026-03-28T16:59:00.164543+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "3365666b6d15",
+      "source": "CBS Sports College Basketball",
+      "title": "Arizona vs. Purdue for Final Four: Wildcats hope to snap 25-year hex; is this Matt Painter's last great shot?",
+      "url": "https://www.cbssports.com/college-basketball/news/arizona-purude-elite-eight-march-madness-2026-preview/",
+      "summary": "Every Elite Eight game is huge, but Saturday's battle in San Jose feels like it has the most riding on it of any in this year's tourney",
+      "date": "2026-03-28T16:55:40+00:00"
+    },
     {
       "id": "7c9b4b6b2add",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/03/26/rogers-swiderski-star-as-boilers-score-18-in-wild-win",
       "summary": "Purdue posted a pair of 6-run innings in a game that featured 31 runs, matching the most ever at Alexander",
       "date": "2026-03-26T02:18:14+00:00"
-    },
-    {
-      "id": "159022de19bb",
-      "source": "Purdue Athletics MBB",
-      "title": "Head Coach Matt Painter Press Conference | Sweet 16 vs. Texas",
-      "url": "http://localhost/news/2026/03/26/head-coach-matt-painter-press-conference-sweet-16-vs-texas",
-      "summary": "",
-      "date": "2026-03-26T02:12:56+00:00"
     }
   ]
 }
