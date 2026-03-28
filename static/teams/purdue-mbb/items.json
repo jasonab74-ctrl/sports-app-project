@@ -1,8 +1,32 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-28T13:46:50.025444+00:00",
+  "updated": "2026-03-28T14:27:01.021269+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "7c9b4b6b2add",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Concludes Friday’s Split Squad Action",
+      "url": "http://localhost/news/2026/03/28/purdue-concludes-fridays-split-squad-action",
+      "summary": "",
+      "date": "2026-03-28T00:49:38+00:00"
+    },
+    {
+      "id": "96415b1bc14d",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue at Michigan St. Game 1 Highlights",
+      "url": "http://localhost/news/2026/03/27/purdue-at-michigan-st-game-1-highlights",
+      "summary": "",
+      "date": "2026-03-27T22:35:09+00:00"
+    },
+    {
+      "id": "8b9ae1b85dde",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilers Fall 9-1 at Michigan",
+      "url": "http://localhost/news/2026/03/27/boilers-fall-9-1-at-michigan",
+      "summary": "Purdue Softball struck first but was unable to hold off a pair of multi-run innings, falling 9–1 to Michigan on Friday afternoon at Hutchins Stadium.",
+      "date": "2026-03-27T22:23:21+00:00"
+    },
     {
       "id": "d11dd47bea61",
       "source": "Purdue Athletics MBB",
@@ -76,14 +100,6 @@
       "date": "2026-03-27T02:13:29+00:00"
     },
     {
-      "id": "f20f280192ff",
-      "source": "Purdue Athletics MBB",
-      "title": "Baseball Back on the Road for Trip Up to Michigan St.",
-      "url": "http://localhost/news/2026/03/26/baseball-back-on-the-road-for-trip-up-to-michigan-st",
-      "summary": "Purdue is averaging 9.7 runs per game while compiling a 10-4 record in March",
-      "date": "2026-03-26T23:05:00+00:00"
-    },
-    {
       "id": "e5b29744e1aa",
       "source": "Purdue Athletics MBB",
       "title": "Defensive End #23 Trey Smith Post Practice Media Session | Purdue Football",
@@ -116,14 +132,6 @@
       "date": "2026-03-26T16:57:04+00:00"
     },
     {
-      "id": "1663f12ca27b",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue at Michigan Schedule Update",
-      "url": "http://localhost/news/2026/03/26/purdue-at-michigan-schedule-update",
-      "summary": "Due to inclement weather in the Ann Arbor area, Purdue's Friday contest with Michigan has been moved up to a 4:00 p.m. est start time.",
-      "date": "2026-03-26T16:27:07+00:00"
-    },
-    {
       "id": "b455b6593928",
       "source": "Purdue Athletics MBB",
       "title": "Highlights: Purdue 10, Valparaiso 2",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/03/26/head-coach-matt-painter-press-conference-sweet-16-vs-texas",
       "summary": "",
       "date": "2026-03-26T02:12:56+00:00"
-    },
-    {
-      "id": "88b587c0c548",
-      "source": "Purdue Athletics MBB",
-      "title": "Braden Smith, Fletcher Loyer, and Trey Kaufman-Renn Press Conference | Sweet 16 vs. Texas",
-      "url": "http://localhost/news/2026/03/26/braden-smith-fletcher-loyer-and-trey-kaufman-renn-press-conference-sweet-16-vs-texas",
-      "summary": "",
-      "date": "2026-03-26T02:07:47+00:00"
     }
   ]
 }
