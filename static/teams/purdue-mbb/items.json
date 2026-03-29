@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-29T17:55:26.216330+00:00",
+  "updated": "2026-03-29T18:35:18.237760+00:00",
   "count": 20,
   "items": [
     {
@@ -10,14 +10,6 @@
       "url": "https://www.cbssports.com/college-basketball/news/purdue-continuity-turnover-rebuild-loss-to-arizona/",
       "summary": "Purdue has been a model of consistency in an era of college basketball where teams annually turn over entire rosters. Can it sustain success after an exodus of experienced talent?",
       "date": "2026-03-29T17:37:11+00:00"
-    },
-    {
-      "id": "38467bdb6485",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Prepares to Defend Crown at Coach Mo Classic",
-      "url": "http://localhost/news/2026/03/29/purdue-prepares-to-defend-crown-at-coach-mo-classic",
-      "summary": "",
-      "date": "2026-03-29T12:17:00+00:00"
     },
     {
       "id": "73e18ab1ad3a",
@@ -162,6 +154,14 @@
       "url": "http://localhost/news/2026/03/27/sweet-16-vs-texas-postgame-press-conference-purdue-mens-basketball",
       "summary": "",
       "date": "2026-03-27T03:54:09+00:00"
+    },
+    {
+      "id": "e5b29744e1aa",
+      "source": "Purdue Athletics MBB",
+      "title": "Defensive End #23 Trey Smith Post Practice Media Session | Purdue Football",
+      "url": "http://localhost/news/2026/03/26/defensive-end-23-trey-smith-post-practice-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-03-26T17:00:23+00:00"
     }
   ]
 }
