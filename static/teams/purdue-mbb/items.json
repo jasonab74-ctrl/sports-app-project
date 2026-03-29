@@ -1,8 +1,48 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-29T08:34:11.118141+00:00",
+  "updated": "2026-03-29T09:31:53.088220+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "b27dee457058",
+      "source": "Purdue Athletics MBB",
+      "title": "No. 2 Purdue Falls to No. 1 Arizona to End Tournament Run",
+      "url": "http://localhost/news/2026/03/29/mbb-recap-purdue-arizona",
+      "summary": "",
+      "date": "2026-03-29T02:51:10+00:00"
+    },
+    {
+      "id": "ea2401a12f71",
+      "source": "Purdue Athletics MBB",
+      "title": "Sterling Again: Wills Wins Silver on Platform at NCAAs",
+      "url": "http://localhost/news/2026/03/29/sterling-again-wills-wins-silver-on-platform-at-ncaas",
+      "summary": "Purdue had 3 All-Americans & 4 of the top 20 finishers on platform to conclude NCAAs",
+      "date": "2026-03-29T02:00:00+00:00"
+    },
+    {
+      "id": "57a7dd954956",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilers Even the Series with 13-6 Win Over Michigan",
+      "url": "http://localhost/news/2026/03/29/boilers-even-the-series-with-13-6-win-over-michigan",
+      "summary": "Purdue (25-9, 5-3 Big Ten) used a six-run fifth inning and a 15-hit performance to power past Michigan (20-13, 1-7 Big Ten), 13–6, on Saturday afternoon at Hutchins Stadium.",
+      "date": "2026-03-29T00:38:17+00:00"
+    },
+    {
+      "id": "0258416bce59",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Hits 2 Grand Slams, Scores 15 Unanswered in Comeback Win",
+      "url": "http://localhost/news/2026/03/29/purdue-hits-2-grand-slams-scores-15-unanswered-in-comeback-win",
+      "summary": "Boland's 5 2/3 scoreless innings, grand slams from Moore & Richmond help Purdue over 8-1 deficit",
+      "date": "2026-03-29T00:20:00+00:00"
+    },
+    {
+      "id": "b4e6614b3082",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Drops 1-4 Decision",
+      "url": "http://localhost/news/2026/03/28/purdue-drops-1-4-decision",
+      "summary": "",
+      "date": "2026-03-28T22:14:14+00:00"
+    },
     {
       "id": "3365666b6d15",
       "source": "CBS Sports College Basketball",
@@ -34,14 +74,6 @@
       "url": "http://localhost/news/2026/03/27/boilers-fall-9-1-at-michigan",
       "summary": "Purdue Softball struck first but was unable to hold off a pair of multi-run innings, falling 9–1 to Michigan on Friday afternoon at Hutchins Stadium.",
       "date": "2026-03-27T22:23:21+00:00"
-    },
-    {
-      "id": "d11dd47bea61",
-      "source": "Purdue Athletics MBB",
-      "title": "#2 Seed Purdue Faces Top-Seeded Arizona for Spot in Final Four",
-      "url": "http://localhost/news/2026/03/27/2-seed-purdue-faces-top-seeded-arizona-for-spot-in-final-four",
-      "summary": "",
-      "date": "2026-03-27T15:15:00+00:00"
     },
     {
       "id": "21d7604c493d",
@@ -100,14 +132,6 @@
       "date": "2026-03-27T03:54:09+00:00"
     },
     {
-      "id": "f21705adeedb",
-      "source": "CBS Sports College Basketball",
-      "title": "Purdue survives upset bid from Texas after star Trey Kaufman-Renn's game-winning tip-in with 0.7 seconds left",
-      "url": "https://www.cbssports.com/college-basketball/news/purdue-survives-upset-bid-texas-trey-kaufman-renns-game-winning-tip-in/",
-      "summary": "The Boilermakers advanced to the Elite Eight with the win over the Longhorns",
-      "date": "2026-03-27T02:13:29+00:00"
-    },
-    {
       "id": "e5b29744e1aa",
       "source": "Purdue Athletics MBB",
       "title": "Defensive End #23 Trey Smith Post Practice Media Session | Purdue Football",
@@ -138,30 +162,6 @@
       "url": "http://localhost/news/2026/03/26/special-teams-coordinator-james-shibest-post-practice-media-session-purdue-football",
       "summary": "",
       "date": "2026-03-26T16:57:04+00:00"
-    },
-    {
-      "id": "b455b6593928",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights: Purdue 10, Valparaiso 2",
-      "url": "http://localhost/news/2026/03/26/highlights-purdue-10-valparaiso-2",
-      "summary": "",
-      "date": "2026-03-26T13:15:00+00:00"
-    },
-    {
-      "id": "c2310f104f0e",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Men's Swim-Dive Set for NCAA Championships",
-      "url": "http://localhost/news/2026/03/26/purdue-mens-swim-dive-set-for-ncaa-championships",
-      "summary": "",
-      "date": "2026-03-26T04:35:40+00:00"
-    },
-    {
-      "id": "d19fd9983c20",
-      "source": "Purdue Athletics MBB",
-      "title": "Rogers, Swiderski Star as Boilers Score 18 in Wild Win",
-      "url": "http://localhost/news/2026/03/26/rogers-swiderski-star-as-boilers-score-18-in-wild-win",
-      "summary": "Purdue posted a pair of 6-run innings in a game that featured 31 runs, matching the most ever at Alexander",
-      "date": "2026-03-26T02:18:14+00:00"
     }
   ]
 }
