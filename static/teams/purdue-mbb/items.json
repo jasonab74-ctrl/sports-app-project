@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-30T01:59:44.792386+00:00",
+  "updated": "2026-03-30T04:50:02.376111+00:00",
   "count": 20,
   "items": [
     {
@@ -132,14 +132,6 @@
       "date": "2026-03-27T22:23:21+00:00"
     },
     {
-      "id": "21d7604c493d",
-      "source": "CBS Sports College Basketball",
-      "title": "Purdue escapes, Iowa stuns in Sweet 16; Mets batter Paul Skenes on Opening Day; Will Wade set for LSU reunion",
-      "url": "https://www.cbssports.com/college-basketball/news/purdue-escapes-iowa-stuns-in-sweet-16-mets-batter-paul-skenes-on-opening-day-will-wade-set-for-lsu-reunion/",
-      "summary": "Plus picks and predictions for this weekend's women's Sweet 16 action",
-      "date": "2026-03-27T13:07:27+00:00"
-    },
-    {
       "id": "03a32fafe498",
       "source": "Purdue Athletics MBB",
       "title": "Purdue vs. Texas Photo Gallery",
@@ -162,6 +154,14 @@
       "url": "http://localhost/news/2026/03/27/purdue-mbb-press-conference-vs-texas",
       "summary": "",
       "date": "2026-03-27T04:03:50+00:00"
+    },
+    {
+      "id": "1dee4571ef17",
+      "source": "Purdue Athletics MBB",
+      "title": "Sweet 16 vs Texas Postgame Press Conference | Purdue Men’s Basketball",
+      "url": "http://localhost/news/2026/03/27/sweet-16-vs-texas-postgame-press-conference-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-03-27T03:54:09+00:00"
     }
   ]
 }
