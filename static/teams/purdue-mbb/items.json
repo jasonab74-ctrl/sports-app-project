@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-29T23:34:35.774382+00:00",
+  "updated": "2026-03-30T01:59:44.792386+00:00",
   "count": 20,
   "items": [
     {
@@ -148,20 +148,20 @@
       "date": "2026-03-27T12:22:11+00:00"
     },
     {
-      "id": "931b17049995",
-      "source": "CBS Sports College Basketball",
-      "title": "Inside Purdue's put-back: Coaches detail tough decisions made as thrilling, heartbreaking play rocks Texas",
-      "url": "https://www.cbssports.com/college-basketball/news/inside-purdue-put-back-trey-kaufman-renn-matt-painter-sean-miller-texas/",
-      "summary": "Matt Painter and Sean Miller spoke exclusively with CBS Sports about the difficult calls that led to Purdue's Sweet 16-winning layup by Trey Kaufman-Renn",
-      "date": "2026-03-27T07:04:26+00:00"
+      "id": "239d9230485b",
+      "source": "Purdue Athletics MBB",
+      "title": "Walker Cracks Purdue’s 10,000m Top 5 at Raleigh Relays",
+      "url": "http://localhost/news/2026/03/27/walker-cracks-purdues-10000m-top-5-at-raleigh-relays",
+      "summary": "",
+      "date": "2026-03-27T04:08:25+00:00"
     },
     {
-      "id": "966ca9d18dce",
-      "source": "CBS Sports College Basketball",
-      "title": "NCAA Tournament scores, winners and losers: Iowa's magical season, Purdue, Illinois, Arizona win in Sweet 16",
-      "url": "https://www.cbssports.com/college-basketball/news/ncaa-tournament-scores-winners-and-losers-iowa-purdue-illinois-arizona-sweet-16/",
-      "summary": "A Purdue game-winner and an epic Iowa finish headlined Thursday's Sweet 16 action.",
-      "date": "2026-03-27T05:06:31+00:00"
+      "id": "51819f52e0d4",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue MBB Press Conference vs. Texas",
+      "url": "http://localhost/news/2026/03/27/purdue-mbb-press-conference-vs-texas",
+      "summary": "",
+      "date": "2026-03-27T04:03:50+00:00"
     }
   ]
 }
