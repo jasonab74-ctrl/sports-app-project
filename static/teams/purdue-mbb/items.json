@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-30T06:27:38.721245+00:00",
+  "updated": "2026-03-30T08:08:23.654290+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "a5e5548b149c",
+      "source": "Purdue Athletics MBB",
+      "title": "Rogers Hits Boilers' 4th Slam of Week in Rubber Game Win at MSU",
+      "url": "http://localhost/news/2026/03/29/rogers-hits-boilers-4th-slam-of-week-in-rubber-game-win-at-msu",
+      "summary": "Purdue wins its third straight B1G series and takes a series in East Lansing for first time since 2009",
+      "date": "2026-03-29T22:17:45+00:00"
+    },
     {
       "id": "6d89bf2b252d",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/03/27/sweet-16-vs-texas-postgame-press-conference-purdue-mens-basketball",
       "summary": "",
       "date": "2026-03-27T03:54:09+00:00"
-    },
-    {
-      "id": "e5b29744e1aa",
-      "source": "Purdue Athletics MBB",
-      "title": "Defensive End #23 Trey Smith Post Practice Media Session | Purdue Football",
-      "url": "http://localhost/news/2026/03/26/defensive-end-23-trey-smith-post-practice-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-03-26T17:00:23+00:00"
     }
   ]
 }
