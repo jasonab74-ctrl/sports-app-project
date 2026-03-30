@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-30T18:11:44.252716+00:00",
+  "updated": "2026-03-30T19:32:15.595502+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "c637e6704372",
+      "source": "Purdue Athletics MBB",
+      "title": "Big Ten / SEC Volleyball Challenge Slated For West Lafayette",
+      "url": "http://localhost/news/2026/03/30/big-ten-sec-volleyball-challenge-slated-for-west-lafayette",
+      "summary": "",
+      "date": "2026-03-30T15:02:51+00:00"
+    },
     {
       "id": "a5e5548b149c",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/03/27/purdue-mbb-press-conference-vs-texas",
       "summary": "",
       "date": "2026-03-27T04:03:50+00:00"
-    },
-    {
-      "id": "1dee4571ef17",
-      "source": "Purdue Athletics MBB",
-      "title": "Sweet 16 vs Texas Postgame Press Conference | Purdue Men’s Basketball",
-      "url": "http://localhost/news/2026/03/27/sweet-16-vs-texas-postgame-press-conference-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-03-27T03:54:09+00:00"
     }
   ]
 }
