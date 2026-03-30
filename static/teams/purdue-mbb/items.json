@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-30T09:53:35.660305+00:00",
+  "updated": "2026-03-30T10:56:48.398138+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "a0c4c9afa26c",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Falls Short vs. #45 Iowa",
-      "url": "http://localhost/news/2026/03/29/purdue-falls-short-vs-45-iowa",
-      "summary": "",
-      "date": "2026-03-29T19:13:00+00:00"
-    },
     {
       "id": "116df02e070a",
       "source": "CBS Sports College Basketball",
@@ -162,6 +154,14 @@
       "url": "http://localhost/news/2026/03/26/defensive-end-18-elo-modozie-post-practice-media-session-purdue-football",
       "summary": "",
       "date": "2026-03-26T16:58:59+00:00"
+    },
+    {
+      "id": "5697e4ab4dda",
+      "source": "Purdue Athletics MBB",
+      "title": "Defensive Ends Coach Jake Trump Post Practice Media Session | Purdue Football",
+      "url": "http://localhost/news/2026/03/26/defensive-ends-coach-jake-trump-post-practice-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-03-26T16:58:03+00:00"
     }
   ]
 }
