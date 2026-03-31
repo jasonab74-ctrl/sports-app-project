@@ -1,8 +1,56 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-03-31T17:52:17.539792+00:00",
+  "updated": "2026-03-31T18:54:50.111035+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "97e6fa1b43ba",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue vs Texas",
+      "url": "http://localhost/news/2026/03/31/purdue-vs-texas",
+      "summary": "",
+      "date": "2026-03-31T17:03:03+00:00"
+    },
+    {
+      "id": "62bf0428c098",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers at NCAA Championships",
+      "url": "http://localhost/news/2026/03/31/boilermakers-at-ncaa-championship",
+      "summary": "",
+      "date": "2026-03-31T16:20:23+00:00"
+    },
+    {
+      "id": "0a1561d8e201",
+      "source": "Purdue Athletics MBB",
+      "title": "DB #7 Don Saunders Post Practice Media Session | Purdue Football",
+      "url": "http://localhost/news/2026/03/31/db-7-don-saunders-post-practice-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-03-31T16:07:42+00:00"
+    },
+    {
+      "id": "5bfaacc31860",
+      "source": "Purdue Athletics MBB",
+      "title": "DB #4 Hudauri Hines Post Practice Media Session | Purdue Football",
+      "url": "http://localhost/news/2026/03/31/db-4-hudauri-hines-post-practice-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-03-31T16:07:36+00:00"
+    },
+    {
+      "id": "527be2acb852",
+      "source": "Purdue Athletics MBB",
+      "title": "Defensive Backs Coach Charles Clark Post Practice Media Session | Purdue Football",
+      "url": "http://localhost/news/2026/03/31/defensive-backs-coach-charles-clark-post-practice-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-03-31T16:04:53+00:00"
+    },
+    {
+      "id": "e29919a7631e",
+      "source": "Purdue Athletics MBB",
+      "title": "Head Coach Barry Odom Post Practice Media Session | Purdue Football",
+      "url": "http://localhost/news/2026/03/31/head-coach-barry-odom-post-practice-media-session-purdue-football-1",
+      "summary": "",
+      "date": "2026-03-31T16:00:04+00:00"
+    },
     {
       "id": "c637e6704372",
       "source": "Purdue Athletics MBB",
@@ -114,54 +162,6 @@
       "url": "http://localhost/news/2026/03/27/purdue-at-michigan-st-game-1-highlights",
       "summary": "",
       "date": "2026-03-27T22:35:09+00:00"
-    },
-    {
-      "id": "8b9ae1b85dde",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilers Fall 9-1 at Michigan",
-      "url": "http://localhost/news/2026/03/27/boilers-fall-9-1-at-michigan",
-      "summary": "Purdue Softball struck first but was unable to hold off a pair of multi-run innings, falling 9–1 to Michigan on Friday afternoon at Hutchins Stadium.",
-      "date": "2026-03-27T22:23:21+00:00"
-    },
-    {
-      "id": "03a32fafe498",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue vs. Texas Photo Gallery",
-      "url": "http://localhost/news/2026/03/27/purdue-vs-texas-photo-gallery",
-      "summary": "",
-      "date": "2026-03-27T12:22:11+00:00"
-    },
-    {
-      "id": "239d9230485b",
-      "source": "Purdue Athletics MBB",
-      "title": "Walker Cracks Purdue’s 10,000m Top 5 at Raleigh Relays",
-      "url": "http://localhost/news/2026/03/27/walker-cracks-purdues-10000m-top-5-at-raleigh-relays",
-      "summary": "",
-      "date": "2026-03-27T04:08:25+00:00"
-    },
-    {
-      "id": "51819f52e0d4",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue MBB Press Conference vs. Texas",
-      "url": "http://localhost/news/2026/03/27/purdue-mbb-press-conference-vs-texas",
-      "summary": "",
-      "date": "2026-03-27T04:03:50+00:00"
-    },
-    {
-      "id": "1dee4571ef17",
-      "source": "Purdue Athletics MBB",
-      "title": "Sweet 16 vs Texas Postgame Press Conference | Purdue Men’s Basketball",
-      "url": "http://localhost/news/2026/03/27/sweet-16-vs-texas-postgame-press-conference-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-03-27T03:54:09+00:00"
-    },
-    {
-      "id": "e5b29744e1aa",
-      "source": "Purdue Athletics MBB",
-      "title": "Defensive End #23 Trey Smith Post Practice Media Session | Purdue Football",
-      "url": "http://localhost/news/2026/03/26/defensive-end-23-trey-smith-post-practice-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-03-26T17:00:23+00:00"
     }
   ]
 }
