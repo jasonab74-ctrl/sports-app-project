@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-01T19:35:20.038433+00:00",
+  "updated": "2026-04-01T20:38:49.927785+00:00",
   "count": 20,
   "items": [
     {
@@ -100,14 +100,6 @@
       "date": "2026-03-29T19:13:00+00:00"
     },
     {
-      "id": "116df02e070a",
-      "source": "CBS Sports College Basketball",
-      "title": "What's next for Purdue? Longtime anomaly of continuity faces roster turnover, rebuild after loss to Arizona",
-      "url": "https://www.cbssports.com/college-basketball/news/purdue-continuity-turnover-rebuild-loss-to-arizona/",
-      "summary": "Purdue has been a model of consistency in an era of college basketball where teams annually turn over entire rosters. Can it sustain success after an exodus of experienced talent?",
-      "date": "2026-03-29T17:37:11+00:00"
-    },
-    {
       "id": "73e18ab1ad3a",
       "source": "Purdue Athletics MBB",
       "title": "Elite 8 vs. Arizona Postgame Press Conference  Purdue Men’s Basketball",
@@ -162,6 +154,14 @@
       "url": "http://localhost/news/2026/03/28/purdue-drops-1-4-decision",
       "summary": "",
       "date": "2026-03-28T22:14:14+00:00"
+    },
+    {
+      "id": "7c9b4b6b2add",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Concludes Friday’s Split Squad Action",
+      "url": "http://localhost/news/2026/03/28/purdue-concludes-fridays-split-squad-action",
+      "summary": "",
+      "date": "2026-03-28T00:49:38+00:00"
     }
   ]
 }
