@@ -1,24 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-01T02:26:30.862579+00:00",
+  "updated": "2026-04-01T05:10:37.368704+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "95ba5cf6d53e",
-      "source": "Purdue Athletics MBB",
-      "title": "Title Defended! Purdue Victorious at Coach Mo Classic",
-      "url": "http://localhost/news/2026/03/31/title-defended-purdue-victorious-at-coach-mo-classic",
-      "summary": "",
-      "date": "2026-03-31T20:58:12+00:00"
-    },
-    {
-      "id": "75b2559005d2",
-      "source": "Purdue Athletics MBB",
-      "title": "Rogers Adds National Hitter of the Week Honor to List",
-      "url": "http://localhost/news/2026/03/31/rogers-adds-national-hitter-of-the-week-honor-to-list",
-      "summary": "Purdue center fielder hit 2 grand slams during three-homer, 13-RBI week, leading Boilers to 4 wins",
-      "date": "2026-03-31T19:45:00+00:00"
-    },
     {
       "id": "fcf0a8d506e2",
       "source": "Purdue Athletics MBB",
@@ -162,6 +146,22 @@
       "url": "http://localhost/news/2026/03/28/purdue-drops-1-4-decision",
       "summary": "",
       "date": "2026-03-28T22:14:14+00:00"
+    },
+    {
+      "id": "7c9b4b6b2add",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Concludes Friday’s Split Squad Action",
+      "url": "http://localhost/news/2026/03/28/purdue-concludes-fridays-split-squad-action",
+      "summary": "",
+      "date": "2026-03-28T00:49:38+00:00"
+    },
+    {
+      "id": "96415b1bc14d",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue at Michigan St. Game 1 Highlights",
+      "url": "http://localhost/news/2026/03/27/purdue-at-michigan-st-game-1-highlights",
+      "summary": "",
+      "date": "2026-03-27T22:35:09+00:00"
     }
   ]
 }
