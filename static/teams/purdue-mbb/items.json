@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-02T15:55:36.889637+00:00",
+  "updated": "2026-04-02T16:52:48.979571+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "2462e6ccea4d",
+      "source": "Purdue Athletics MBB",
+      "title": "RB #2 Fame Ijeboi Media Session | Purdue Football",
+      "url": "http://localhost/news/2026/04/2/rb-2-fame-ijeboi-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-04-02T15:59:20+00:00"
+    },
+    {
+      "id": "928802d6ae45",
+      "source": "Purdue Athletics MBB",
+      "title": "RB #22 Antonio Harris Media Session | Purdue Football",
+      "url": "http://localhost/news/2026/04/2/rb-22-antonio-harris-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-04-02T15:57:35+00:00"
+    },
     {
       "id": "65e4ac4ee5b9",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "http://localhost/news/2026/03/29/purdue-hits-2-grand-slams-in-16-run-outburst-at-msu",
       "summary": "",
       "date": "2026-03-29T01:10:27+00:00"
-    },
-    {
-      "id": "57a7dd954956",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilers Even the Series with 13-6 Win Over Michigan",
-      "url": "http://localhost/news/2026/03/29/boilers-even-the-series-with-13-6-win-over-michigan",
-      "summary": "Purdue (25-9, 5-3 Big Ten) used a six-run fifth inning and a 15-hit performance to power past Michigan (20-13, 1-7 Big Ten), 13–6, on Saturday afternoon at Hutchins Stadium.",
-      "date": "2026-03-29T00:38:17+00:00"
-    },
-    {
-      "id": "dd8e8246d689",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Hits 2 Grand Slams, Scores 15 Unanswered",
-      "url": "http://localhost/news/2026/03/29/purdue-hits-2-grand-slams-scores-15-unanswered-in-comeback-win",
-      "summary": "Boland's 5 2/3 scoreless innings, grand slams from Moore & Richmond help Purdue over 8-1 deficit",
-      "date": "2026-03-29T00:20:00+00:00"
     }
   ]
 }
