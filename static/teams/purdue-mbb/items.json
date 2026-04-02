@@ -1,56 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-02T20:29:57.819515+00:00",
+  "updated": "2026-04-02T21:04:18.864687+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "b78d39df91d8",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Sweep Big Ten’s Weekly Awards",
-      "url": "http://localhost/news/2026/04/2/boilermakers-sweep-big-tens-weekly-awards",
-      "summary": "",
-      "date": "2026-04-02T19:45:23+00:00"
-    },
-    {
-      "id": "848aeffdf7ea",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Cornell Ford Media Session | Purdue Football",
-      "url": "http://localhost/news/2026/04/2/coach-cornell-ford-media-session-purdue-football-1",
-      "summary": "",
-      "date": "2026-04-02T18:48:46+00:00"
-    },
-    {
-      "id": "2462e6ccea4d",
-      "source": "Purdue Athletics MBB",
-      "title": "RB #2 Fame Ijeboi Media Session | Purdue Football",
-      "url": "http://localhost/news/2026/04/2/rb-2-fame-ijeboi-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-04-02T15:59:20+00:00"
-    },
-    {
-      "id": "928802d6ae45",
-      "source": "Purdue Athletics MBB",
-      "title": "RB #22 Antonio Harris Media Session | Purdue Football",
-      "url": "http://localhost/news/2026/04/2/rb-22-antonio-harris-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-04-02T15:57:35+00:00"
-    },
-    {
-      "id": "65e4ac4ee5b9",
-      "source": "Purdue Athletics MBB",
-      "title": "This Week in Purdue Baseball | April 1, 2026",
-      "url": "http://localhost/news/2026/04/2/this-week-in-purdue-baseball-april-1-2026",
-      "summary": "",
-      "date": "2026-04-02T10:20:29+00:00"
-    },
-    {
-      "id": "fad30d25af15",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilers Host Wisconsin, Schedule Shifted Due to Weather",
-      "url": "http://localhost/news/2026/04/1/boilers-host-wisconsin-schedule-shifted-due-to-weather",
-      "summary": "Purdue will welcome Wisconsin to West Lafayette this weekend for a three-game series, which has shifted from its originally scheduled dates due to impending weather.",
-      "date": "2026-04-01T18:17:28+00:00"
-    },
     {
       "id": "95ba5cf6d53e",
       "source": "Purdue Athletics MBB",
@@ -162,6 +114,54 @@
       "url": "http://localhost/news/2026/03/29/mbb-recap-purdue-arizona",
       "summary": "",
       "date": "2026-03-29T02:51:10+00:00"
+    },
+    {
+      "id": "ea2401a12f71",
+      "source": "Purdue Athletics MBB",
+      "title": "Sterling Again: Wills Wins Silver on Platform at NCAAs",
+      "url": "http://localhost/news/2026/03/29/sterling-again-wills-wins-silver-on-platform-at-ncaas",
+      "summary": "Purdue had 3 All-Americans & 4 of the top 20 finishers on platform to conclude NCAAs",
+      "date": "2026-03-29T02:00:00+00:00"
+    },
+    {
+      "id": "cd50a749f1ed",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Hits 2 Grand Slams in 16-Run Outburst at MSU",
+      "url": "http://localhost/news/2026/03/29/purdue-hits-2-grand-slams-in-16-run-outburst-at-msu",
+      "summary": "",
+      "date": "2026-03-29T01:10:27+00:00"
+    },
+    {
+      "id": "57a7dd954956",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilers Even the Series with 13-6 Win Over Michigan",
+      "url": "http://localhost/news/2026/03/29/boilers-even-the-series-with-13-6-win-over-michigan",
+      "summary": "Purdue (25-9, 5-3 Big Ten) used a six-run fifth inning and a 15-hit performance to power past Michigan (20-13, 1-7 Big Ten), 13–6, on Saturday afternoon at Hutchins Stadium.",
+      "date": "2026-03-29T00:38:17+00:00"
+    },
+    {
+      "id": "dd8e8246d689",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Hits 2 Grand Slams, Scores 15 Unanswered",
+      "url": "http://localhost/news/2026/03/29/purdue-hits-2-grand-slams-scores-15-unanswered-in-comeback-win",
+      "summary": "Boland's 5 2/3 scoreless innings, grand slams from Moore & Richmond help Purdue over 8-1 deficit",
+      "date": "2026-03-29T00:20:00+00:00"
+    },
+    {
+      "id": "b4e6614b3082",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Drops 1-4 Decision",
+      "url": "http://localhost/news/2026/03/28/purdue-drops-1-4-decision",
+      "summary": "",
+      "date": "2026-03-28T22:14:14+00:00"
+    },
+    {
+      "id": "7c9b4b6b2add",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Concludes Friday’s Split Squad Action",
+      "url": "http://localhost/news/2026/03/28/purdue-concludes-fridays-split-squad-action",
+      "summary": "",
+      "date": "2026-03-28T00:49:38+00:00"
     }
   ]
 }
