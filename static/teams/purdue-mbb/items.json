@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-02T18:50:09.869860+00:00",
+  "updated": "2026-04-02T19:44:57.596754+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "848aeffdf7ea",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Cornell Ford Media Session | Purdue Football",
+      "url": "http://localhost/news/2026/04/2/coach-cornell-ford-media-session-purdue-football-1",
+      "summary": "",
+      "date": "2026-04-02T18:48:46+00:00"
+    },
     {
       "id": "2462e6ccea4d",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/03/29/sterling-again-wills-wins-silver-on-platform-at-ncaas",
       "summary": "Purdue had 3 All-Americans & 4 of the top 20 finishers on platform to conclude NCAAs",
       "date": "2026-03-29T02:00:00+00:00"
-    },
-    {
-      "id": "cd50a749f1ed",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Hits 2 Grand Slams in 16-Run Outburst at MSU",
-      "url": "http://localhost/news/2026/03/29/purdue-hits-2-grand-slams-in-16-run-outburst-at-msu",
-      "summary": "",
-      "date": "2026-03-29T01:10:27+00:00"
     }
   ]
 }
