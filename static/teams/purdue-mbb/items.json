@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-03T15:58:52.141932+00:00",
+  "updated": "2026-04-03T16:49:02.331642+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "bd10c6d4ade2",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Head to Naples for Elite Calusa Cup",
-      "url": "http://localhost/news/2026/04/3/boilermakers-head-to-naples-for-elite-calusa-cup",
-      "summary": "",
-      "date": "2026-04-03T14:49:01+00:00"
-    },
     {
       "id": "960d13bd9714",
       "source": "Purdue Athletics MBB",
@@ -18,14 +10,6 @@
       "url": "http://localhost/news/2026/04/3/baseball-begins-2nd-half-by-hosting-illini",
       "summary": "Purdue & Illinois have both won 3 consecutive series in Big Ten play; first pitch Friday now at 2 p.m.",
       "date": "2026-04-03T00:31:30+00:00"
-    },
-    {
-      "id": "9af266562429",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Heads East Continuing Big Ten Play",
-      "url": "http://localhost/news/2026/04/2/purdue-heads-east-continuing-big-ten-play",
-      "summary": "",
-      "date": "2026-04-02T23:00:00+00:00"
     },
     {
       "id": "b78d39df91d8",
@@ -162,6 +146,22 @@
       "url": "http://localhost/news/2026/03/29/purdue-hits-4th-grand-slam-of-the-week-in-game-3-win-at-msu-highlights",
       "summary": "",
       "date": "2026-03-29T21:11:18+00:00"
+    },
+    {
+      "id": "a0c4c9afa26c",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Falls Short vs. #45 Iowa",
+      "url": "http://localhost/news/2026/03/29/purdue-falls-short-vs-45-iowa",
+      "summary": "",
+      "date": "2026-03-29T19:13:00+00:00"
+    },
+    {
+      "id": "73e18ab1ad3a",
+      "source": "Purdue Athletics MBB",
+      "title": "Elite 8 vs. Arizona Postgame Press Conference  Purdue Men’s Basketball",
+      "url": "http://localhost/news/2026/03/29/elite-8-vs-arizona-postgame-press-conference-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-03-29T04:51:41+00:00"
     }
   ]
 }
