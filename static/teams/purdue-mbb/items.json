@@ -1,48 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-03T13:10:08.158661+00:00",
+  "updated": "2026-04-03T14:10:16.473715+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "960d13bd9714",
-      "source": "Purdue Athletics MBB",
-      "title": "Baseball Begins 2nd Half by Hosting Illini",
-      "url": "http://localhost/news/2026/04/3/baseball-begins-2nd-half-by-hosting-illini",
-      "summary": "Purdue & Illinois have both won 3 consecutive series in Big Ten play; first pitch Friday now at 2 p.m.",
-      "date": "2026-04-03T00:31:30+00:00"
-    },
-    {
-      "id": "b78d39df91d8",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Sweep Big Ten’s Weekly Awards",
-      "url": "http://localhost/news/2026/04/2/boilermakers-sweep-big-tens-weekly-awards",
-      "summary": "",
-      "date": "2026-04-02T19:45:23+00:00"
-    },
-    {
-      "id": "848aeffdf7ea",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Cornell Ford Media Session | Purdue Football",
-      "url": "http://localhost/news/2026/04/2/coach-cornell-ford-media-session-purdue-football-1",
-      "summary": "",
-      "date": "2026-04-02T18:48:46+00:00"
-    },
-    {
-      "id": "2462e6ccea4d",
-      "source": "Purdue Athletics MBB",
-      "title": "RB #2 Fame Ijeboi Media Session | Purdue Football",
-      "url": "http://localhost/news/2026/04/2/rb-2-fame-ijeboi-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-04-02T15:59:20+00:00"
-    },
-    {
-      "id": "928802d6ae45",
-      "source": "Purdue Athletics MBB",
-      "title": "RB #22 Antonio Harris Media Session | Purdue Football",
-      "url": "http://localhost/news/2026/04/2/rb-22-antonio-harris-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-04-02T15:57:35+00:00"
-    },
     {
       "id": "65e4ac4ee5b9",
       "source": "Purdue Athletics MBB",
@@ -162,6 +122,46 @@
       "url": "http://localhost/news/2026/03/29/elite-8-vs-arizona-postgame-press-conference-purdue-mens-basketball",
       "summary": "",
       "date": "2026-03-29T04:51:41+00:00"
+    },
+    {
+      "id": "b27dee457058",
+      "source": "Purdue Athletics MBB",
+      "title": "No. 2 Purdue Falls to No. 1 Arizona to End Tournament Run",
+      "url": "http://localhost/news/2026/03/29/mbb-recap-purdue-arizona",
+      "summary": "",
+      "date": "2026-03-29T02:51:10+00:00"
+    },
+    {
+      "id": "ea2401a12f71",
+      "source": "Purdue Athletics MBB",
+      "title": "Sterling Again: Wills Wins Silver on Platform at NCAAs",
+      "url": "http://localhost/news/2026/03/29/sterling-again-wills-wins-silver-on-platform-at-ncaas",
+      "summary": "Purdue had 3 All-Americans & 4 of the top 20 finishers on platform to conclude NCAAs",
+      "date": "2026-03-29T02:00:00+00:00"
+    },
+    {
+      "id": "cd50a749f1ed",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Hits 2 Grand Slams in 16-Run Outburst at MSU",
+      "url": "http://localhost/news/2026/03/29/purdue-hits-2-grand-slams-in-16-run-outburst-at-msu",
+      "summary": "",
+      "date": "2026-03-29T01:10:27+00:00"
+    },
+    {
+      "id": "57a7dd954956",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilers Even the Series with 13-6 Win Over Michigan",
+      "url": "http://localhost/news/2026/03/29/boilers-even-the-series-with-13-6-win-over-michigan",
+      "summary": "Purdue (25-9, 5-3 Big Ten) used a six-run fifth inning and a 15-hit performance to power past Michigan (20-13, 1-7 Big Ten), 13–6, on Saturday afternoon at Hutchins Stadium.",
+      "date": "2026-03-29T00:38:17+00:00"
+    },
+    {
+      "id": "dd8e8246d689",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Hits 2 Grand Slams, Scores 15 Unanswered",
+      "url": "http://localhost/news/2026/03/29/purdue-hits-2-grand-slams-scores-15-unanswered-in-comeback-win",
+      "summary": "Boland's 5 2/3 scoreless innings, grand slams from Moore & Richmond help Purdue over 8-1 deficit",
+      "date": "2026-03-29T00:20:00+00:00"
     }
   ]
 }
