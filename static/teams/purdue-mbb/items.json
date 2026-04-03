@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-03T03:18:10.457279+00:00",
+  "updated": "2026-04-03T05:19:16.680477+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "960d13bd9714",
+      "source": "Purdue Athletics MBB",
+      "title": "Baseball Begins 2nd Half by Hosting Illini",
+      "url": "http://localhost/news/2026/04/3/baseball-begins-2nd-half-by-hosting-illini",
+      "summary": "Purdue & Illinois have both won 3 consecutive series in Big Ten play",
+      "date": "2026-04-03T00:31:30+00:00"
+    },
     {
       "id": "b78d39df91d8",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/03/29/elite-8-vs-arizona-postgame-press-conference-purdue-mens-basketball",
       "summary": "",
       "date": "2026-03-29T04:51:41+00:00"
-    },
-    {
-      "id": "b27dee457058",
-      "source": "Purdue Athletics MBB",
-      "title": "No. 2 Purdue Falls to No. 1 Arizona to End Tournament Run",
-      "url": "http://localhost/news/2026/03/29/mbb-recap-purdue-arizona",
-      "summary": "",
-      "date": "2026-03-29T02:51:10+00:00"
     }
   ]
 }
