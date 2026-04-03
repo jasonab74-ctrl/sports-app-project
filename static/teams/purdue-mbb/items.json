@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-03T22:33:44.975767+00:00",
+  "updated": "2026-04-03T23:28:14.205125+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "1c74cb14ef43",
+      "source": "Purdue Athletics MBB",
+      "title": "Rogers Makes Great Catch in CF to Help Purdue Win Game 1 vs Illinois - Highlights",
+      "url": "http://localhost/news/2026/04/3/rogers-makes-great-catch-in-cf-to-help-purdue-win-game-1-vs-illinois-highlights",
+      "summary": "",
+      "date": "2026-04-03T22:44:00+00:00"
+    },
     {
       "id": "b50c6229ce8c",
       "source": "Purdue Athletics MBB",
@@ -34,14 +42,6 @@
       "url": "http://localhost/news/2026/04/3/boilermakers-head-to-naples-for-elite-calusa-cup",
       "summary": "",
       "date": "2026-04-03T14:49:01+00:00"
-    },
-    {
-      "id": "960d13bd9714",
-      "source": "Purdue Athletics MBB",
-      "title": "Baseball Begins 2nd Half by Hosting Illini",
-      "url": "http://localhost/news/2026/04/3/baseball-begins-2nd-half-by-hosting-illini",
-      "summary": "Purdue & Illinois have both won 3 consecutive series in Big Ten play; first pitch Friday now at 2 p.m.",
-      "date": "2026-04-03T00:31:30+00:00"
     },
     {
       "id": "b78d39df91d8",
