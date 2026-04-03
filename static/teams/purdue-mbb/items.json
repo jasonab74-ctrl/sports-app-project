@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-03T19:57:33.467986+00:00",
+  "updated": "2026-04-03T20:38:00.399297+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "2a203fe186e8",
-      "source": "Purdue Athletics MBB",
-      "title": "School Record-Tying 6 Boilers Named NWCA Scholar All-Americans",
-      "url": "http://localhost/news/2026/04/3/school-record-tying-6-boilers-named-nwca-scholar-all-americans",
-      "summary": "Purdue matched the record set in 2024.",
-      "date": "2026-04-03T18:10:29+00:00"
-    },
     {
       "id": "bd10c6d4ade2",
       "source": "Purdue Athletics MBB",
@@ -162,6 +154,14 @@
       "url": "http://localhost/news/2026/03/29/rogers-hits-boilers-4th-slam-of-week-in-rubber-game-win-at-msu",
       "summary": "Purdue wins its third straight B1G series and takes a series in East Lansing for first time since 2009",
       "date": "2026-03-29T22:17:45+00:00"
+    },
+    {
+      "id": "6d89bf2b252d",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Hits 4th Grand Slam of the Week in Game 3 Win at MSU - Highlights",
+      "url": "http://localhost/news/2026/03/29/purdue-hits-4th-grand-slam-of-the-week-in-game-3-win-at-msu-highlights",
+      "summary": "",
+      "date": "2026-03-29T21:11:18+00:00"
     }
   ]
 }
