@@ -1,8 +1,32 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-04T05:40:03.315886+00:00",
+  "updated": "2026-04-04T06:53:46.167448+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "b50c6229ce8c",
+      "source": "Purdue Athletics MBB",
+      "title": "Saturday Softball Shifted to 4 PM Start",
+      "url": "http://localhost/news/2026/04/3/saturday-softball-shifted-to-4-pm-start",
+      "summary": "Purdue's second game against Wisconsin, originally slated for Saturday, Apr. 4, will now have a 4:00 p.m. est start time due to impending weather.",
+      "date": "2026-04-03T21:00:47+00:00"
+    },
+    {
+      "id": "421f03fc512d",
+      "source": "Purdue Athletics MBB",
+      "title": "Wisconsin Takes Series Opener",
+      "url": "http://localhost/news/2026/04/3/wisconsin-takes-series-opener",
+      "summary": "The Purdue Boilermakers (25-11, 5-5 Big Ten) fell short to the Wisconsin Badgers (20-11, 6-4 Big Ten) on Friday afternoon at Bittinger Field.",
+      "date": "2026-04-03T20:44:56+00:00"
+    },
+    {
+      "id": "2a203fe186e8",
+      "source": "Purdue Athletics MBB",
+      "title": "School Record-Tying 6 Boilers Named NWCA Scholar All-Americans",
+      "url": "http://localhost/news/2026/04/3/school-record-tying-6-boilers-named-nwca-scholar-all-americans",
+      "summary": "Purdue matched the record set in 2024.",
+      "date": "2026-04-03T18:10:29+00:00"
+    },
     {
       "id": "bd10c6d4ade2",
       "source": "Purdue Athletics MBB",
@@ -58,14 +82,6 @@
       "url": "http://localhost/news/2026/04/2/this-week-in-purdue-baseball-april-1-2026",
       "summary": "",
       "date": "2026-04-02T10:20:29+00:00"
-    },
-    {
-      "id": "fad30d25af15",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilers Host Wisconsin, Schedule Shifted Due to Weather",
-      "url": "http://localhost/news/2026/04/1/boilers-host-wisconsin-schedule-shifted-due-to-weather",
-      "summary": "Purdue will welcome Wisconsin to West Lafayette this weekend for a three-game series, which has shifted from its originally scheduled dates due to impending weather.",
-      "date": "2026-04-01T18:17:28+00:00"
     },
     {
       "id": "95ba5cf6d53e",
@@ -146,22 +162,6 @@
       "url": "http://localhost/news/2026/03/29/rogers-hits-boilers-4th-slam-of-week-in-rubber-game-win-at-msu",
       "summary": "Purdue wins its third straight B1G series and takes a series in East Lansing for first time since 2009",
       "date": "2026-03-29T22:17:45+00:00"
-    },
-    {
-      "id": "6d89bf2b252d",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Hits 4th Grand Slam of the Week in Game 3 Win at MSU - Highlights",
-      "url": "http://localhost/news/2026/03/29/purdue-hits-4th-grand-slam-of-the-week-in-game-3-win-at-msu-highlights",
-      "summary": "",
-      "date": "2026-03-29T21:11:18+00:00"
-    },
-    {
-      "id": "a0c4c9afa26c",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Falls Short vs. #45 Iowa",
-      "url": "http://localhost/news/2026/03/29/purdue-falls-short-vs-45-iowa",
-      "summary": "",
-      "date": "2026-03-29T19:13:00+00:00"
     }
   ]
 }
