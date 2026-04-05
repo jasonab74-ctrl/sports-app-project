@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-05T04:40:37.549474+00:00",
+  "updated": "2026-04-05T06:12:15.252055+00:00",
   "count": 20,
   "items": [
     {
@@ -10,6 +10,14 @@
       "url": "http://localhost/news/2026/04/5/malbroughs-3-double-night-not-enough-vs-illini",
       "summary": "Illini's 4-run 6th inning decided the game even after Purdue brought the tying run to the plate in 7th & 8th",
       "date": "2026-04-05T01:59:40+00:00"
+    },
+    {
+      "id": "c37fa282279f",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue vs Illinois Game 2 Highlights",
+      "url": "http://localhost/news/2026/04/5/purdue-vs-illinois-game-2-highlights",
+      "summary": "",
+      "date": "2026-04-05T01:57:24+00:00"
     },
     {
       "id": "613501c81e57",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/03/31/head-coach-barry-odom-post-practice-media-session-purdue-football-1",
       "summary": "",
       "date": "2026-03-31T16:00:04+00:00"
-    },
-    {
-      "id": "c637e6704372",
-      "source": "Purdue Athletics MBB",
-      "title": "Big Ten / SEC Volleyball Challenge Slated For West Lafayette",
-      "url": "http://localhost/news/2026/03/30/big-ten-sec-volleyball-challenge-slated-for-west-lafayette",
-      "summary": "",
-      "date": "2026-03-30T15:02:51+00:00"
     }
   ]
 }
