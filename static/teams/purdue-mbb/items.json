@@ -1,31 +1,15 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-05T12:43:51.952284+00:00",
+  "updated": "2026-04-05T13:50:32.125919+00:00",
   "count": 20,
   "items": [
     {
-      "id": "71e410f6b5b9",
+      "id": "e7a1f24075fd",
       "source": "Purdue Athletics MBB",
-      "title": "Malbrough's 3-Double Night Not Enough vs Illini",
-      "url": "http://localhost/news/2026/04/5/malbroughs-3-double-night-not-enough-vs-illini",
-      "summary": "Illini's 4-run 6th inning decided the game even after Purdue brought the tying run to the plate in 7th & 8th",
-      "date": "2026-04-05T01:59:40+00:00"
-    },
-    {
-      "id": "c37fa282279f",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue vs Illinois Game 2 Highlights",
-      "url": "http://localhost/news/2026/04/5/purdue-vs-illinois-game-2-highlights",
-      "summary": "",
-      "date": "2026-04-05T01:57:24+00:00"
-    },
-    {
-      "id": "613501c81e57",
-      "source": "Purdue Athletics MBB",
-      "title": "Seventh Inning Burns Boilers in Game 2",
-      "url": "http://localhost/news/2026/04/5/seventh-inning-burns-boilers-in-game-two",
-      "summary": "The Boilermakers fell in game two to the Badgers after a seventh inning grand slam",
-      "date": "2026-04-05T00:49:59+00:00"
+      "title": "Saturday Softball Shifted to 5 PM Start",
+      "url": "http://localhost/news/2026/04/4/saturday-softball-shifted-to-5-pm-start",
+      "summary": "Purdue's second game against Wisconsin, originally slated for Saturday, Apr. 4 at 2:00 p.m., will now have a 5:00 p.m. est start time due to impending weather.",
+      "date": "2026-04-04T16:20:00+00:00"
     },
     {
       "id": "1c74cb14ef43",
@@ -162,6 +146,22 @@
       "url": "http://localhost/news/2026/03/31/head-coach-barry-odom-post-practice-media-session-purdue-football-1",
       "summary": "",
       "date": "2026-03-31T16:00:04+00:00"
+    },
+    {
+      "id": "c637e6704372",
+      "source": "Purdue Athletics MBB",
+      "title": "Big Ten / SEC Volleyball Challenge Slated For West Lafayette",
+      "url": "http://localhost/news/2026/03/30/big-ten-sec-volleyball-challenge-slated-for-west-lafayette",
+      "summary": "",
+      "date": "2026-03-30T15:02:51+00:00"
+    },
+    {
+      "id": "a5e5548b149c",
+      "source": "Purdue Athletics MBB",
+      "title": "Rogers Hits Boilers' 4th Slam of Week in Rubber Game Win at MSU",
+      "url": "http://localhost/news/2026/03/29/rogers-hits-boilers-4th-slam-of-week-in-rubber-game-win-at-msu",
+      "summary": "Purdue wins its third straight B1G series and takes a series in East Lansing for first time since 2009",
+      "date": "2026-03-29T22:17:45+00:00"
     }
   ]
 }
