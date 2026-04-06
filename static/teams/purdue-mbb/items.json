@@ -1,40 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-06T11:43:07.026942+00:00",
+  "updated": "2026-04-06T12:58:49.955770+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "7a9eb2fa57a3",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers in 6th After 18 Holes at Calusa Pines",
-      "url": "http://localhost/news/2026/04/5/boilermakers-in-6th-after-18-holes-at-calusa-pines",
-      "summary": "",
-      "date": "2026-04-05T23:41:42+00:00"
-    },
-    {
-      "id": "46b69f99a6b7",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Shutout on Easter Sunday",
-      "url": "http://localhost/news/2026/04/5/purdue-shutout-on-easter-sunday",
-      "summary": "",
-      "date": "2026-04-05T21:55:00+00:00"
-    },
-    {
-      "id": "cb1a3e2696d8",
-      "source": "Purdue Athletics MBB",
-      "title": "Bullpen Shines as Boilers Score 10 Unanswered to Win Series",
-      "url": "http://localhost/news/2026/04/5/bullpen-shines-as-boilers-score-10-unanswered-to-win-series",
-      "summary": "Purdue overcomes a 5-run 1st inning to post 4th straight Big Ten series win",
-      "date": "2026-04-05T21:02:05+00:00"
-    },
-    {
-      "id": "6883e00c78cd",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Scores 10 Unanswered Runs to Win Series vs Illinois - Highlights",
-      "url": "http://localhost/news/2026/04/5/purdue-scores-10-unanswered-runs-to-win-series-vs-illinois-highlights",
-      "summary": "",
-      "date": "2026-04-05T20:54:55+00:00"
-    },
     {
       "id": "71e410f6b5b9",
       "source": "Purdue Athletics MBB",
@@ -82,6 +50,14 @@
       "url": "http://localhost/news/2026/04/3/school-record-tying-6-boilers-named-nwca-scholar-all-americans",
       "summary": "Purdue matched the record set in 2024.",
       "date": "2026-04-03T18:10:29+00:00"
+    },
+    {
+      "id": "bd10c6d4ade2",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Head to Naples for Elite Calusa Cup",
+      "url": "http://localhost/news/2026/04/3/boilermakers-head-to-naples-for-elite-calusa-cup",
+      "summary": "",
+      "date": "2026-04-03T14:49:01+00:00"
     },
     {
       "id": "b78d39df91d8",
@@ -162,6 +138,30 @@
       "url": "http://localhost/news/2026/03/31/db-7-don-saunders-post-practice-media-session-purdue-football",
       "summary": "",
       "date": "2026-03-31T16:07:42+00:00"
+    },
+    {
+      "id": "5bfaacc31860",
+      "source": "Purdue Athletics MBB",
+      "title": "DB #4 Hudauri Hines Post Practice Media Session | Purdue Football",
+      "url": "http://localhost/news/2026/03/31/db-4-hudauri-hines-post-practice-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-03-31T16:07:36+00:00"
+    },
+    {
+      "id": "527be2acb852",
+      "source": "Purdue Athletics MBB",
+      "title": "Defensive Backs Coach Charles Clark Post Practice Media Session | Purdue Football",
+      "url": "http://localhost/news/2026/03/31/defensive-backs-coach-charles-clark-post-practice-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-03-31T16:04:53+00:00"
+    },
+    {
+      "id": "e29919a7631e",
+      "source": "Purdue Athletics MBB",
+      "title": "Head Coach Barry Odom Post Practice Media Session | Purdue Football",
+      "url": "http://localhost/news/2026/03/31/head-coach-barry-odom-post-practice-media-session-purdue-football-1",
+      "summary": "",
+      "date": "2026-03-31T16:00:04+00:00"
     }
   ]
 }
