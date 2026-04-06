@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-06T22:30:11.088932+00:00",
+  "updated": "2026-04-06T23:05:49.355415+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "20e736c49d4d",
+      "source": "Purdue Athletics MBB",
+      "title": "Midweek Matchup Against UIC Postponed",
+      "url": "http://localhost/news/2026/04/6/midweek-matchup-against-uic-postponed",
+      "summary": "Due to a scheduling conflict, Purdue's matchup against UIC will be postponed for a later date.",
+      "date": "2026-04-06T22:13:42+00:00"
+    },
     {
       "id": "7a9eb2fa57a3",
       "source": "Purdue Athletics MBB",
@@ -124,6 +132,14 @@
       "date": "2026-04-02T10:20:29+00:00"
     },
     {
+      "id": "caa42cafcf4c",
+      "source": "Purdue Athletics MBB",
+      "title": "Zilbershlag Signs for Purdue",
+      "url": "http://localhost/news/2026/04/1/zilbershlag-signs-for-purdue",
+      "summary": "",
+      "date": "2026-04-01T15:21:00+00:00"
+    },
+    {
       "id": "95ba5cf6d53e",
       "source": "Purdue Athletics MBB",
       "title": "Title Defended! Purdue Victorious at Coach Mo Classic",
@@ -146,22 +162,6 @@
       "url": "http://localhost/news/2026/03/31/purdue-ends-march-with-tuesday-practice",
       "summary": "",
       "date": "2026-03-31T17:20:00+00:00"
-    },
-    {
-      "id": "62bf0428c098",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers at NCAA Championships",
-      "url": "http://localhost/news/2026/03/31/boilermakers-at-ncaa-championship",
-      "summary": "",
-      "date": "2026-03-31T16:20:23+00:00"
-    },
-    {
-      "id": "0a1561d8e201",
-      "source": "Purdue Athletics MBB",
-      "title": "DB #7 Don Saunders Post Practice Media Session | Purdue Football",
-      "url": "http://localhost/news/2026/03/31/db-7-don-saunders-post-practice-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-03-31T16:07:42+00:00"
     }
   ]
 }
