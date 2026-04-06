@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-06T21:33:14.841763+00:00",
+  "updated": "2026-04-06T22:30:11.088932+00:00",
   "count": 20,
   "items": [
     {
@@ -124,14 +124,6 @@
       "date": "2026-04-02T10:20:29+00:00"
     },
     {
-      "id": "caa42cafcf4c",
-      "source": "Purdue Athletics MBB",
-      "title": "Zilbershlag Signs for Purdue",
-      "url": "http://localhost/news/2026/04/1/zilbershlag-signs-for-purdue",
-      "summary": "",
-      "date": "2026-04-01T15:21:00+00:00"
-    },
-    {
       "id": "95ba5cf6d53e",
       "source": "Purdue Athletics MBB",
       "title": "Title Defended! Purdue Victorious at Coach Mo Classic",
@@ -162,6 +154,14 @@
       "url": "http://localhost/news/2026/03/31/boilermakers-at-ncaa-championship",
       "summary": "",
       "date": "2026-03-31T16:20:23+00:00"
+    },
+    {
+      "id": "0a1561d8e201",
+      "source": "Purdue Athletics MBB",
+      "title": "DB #7 Don Saunders Post Practice Media Session | Purdue Football",
+      "url": "http://localhost/news/2026/03/31/db-7-don-saunders-post-practice-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-03-31T16:07:42+00:00"
     }
   ]
 }
