@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-07T20:41:01.190007+00:00",
+  "updated": "2026-04-07T21:37:27.861745+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "a16d5db34509",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Takes Practice Back Outside on Tuesday",
-      "url": "http://localhost/news/2026/04/7/purdue-takes-practice-back-outside-on-tuesday",
-      "summary": "",
-      "date": "2026-04-07T19:30:00+00:00"
-    },
     {
       "id": "8f372bc8b988",
       "source": "Purdue Athletics MBB",
@@ -162,6 +154,14 @@
       "url": "http://localhost/news/2026/04/2/coach-cornell-ford-media-session-purdue-football-1",
       "summary": "",
       "date": "2026-04-02T18:48:46+00:00"
+    },
+    {
+      "id": "2462e6ccea4d",
+      "source": "Purdue Athletics MBB",
+      "title": "RB #2 Fame Ijeboi Media Session | Purdue Football",
+      "url": "http://localhost/news/2026/04/2/rb-2-fame-ijeboi-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-04-02T15:59:20+00:00"
     }
   ]
 }
