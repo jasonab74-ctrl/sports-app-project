@@ -1,8 +1,56 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-07T19:55:01.369348+00:00",
+  "updated": "2026-04-07T20:41:01.190007+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "a16d5db34509",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Takes Practice Back Outside on Tuesday",
+      "url": "http://localhost/news/2026/04/7/purdue-takes-practice-back-outside-on-tuesday",
+      "summary": "",
+      "date": "2026-04-07T19:30:00+00:00"
+    },
+    {
+      "id": "8f372bc8b988",
+      "source": "Purdue Athletics MBB",
+      "title": "OL Nuku Mafi Post Practice Media Session | Purdue Football",
+      "url": "http://localhost/news/2026/04/7/ol-nuku-mafi-post-practice-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-04-07T16:36:37+00:00"
+    },
+    {
+      "id": "4f72869a1eda",
+      "source": "Purdue Athletics MBB",
+      "title": "OL Jude McCoskey Post Practice Media Session | Purdue Football",
+      "url": "http://localhost/news/2026/04/7/ol-jude-mccoskey-post-practice-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-04-07T16:35:17+00:00"
+    },
+    {
+      "id": "c8fc93782bc0",
+      "source": "Purdue Athletics MBB",
+      "title": "OL Coach Zach Crabtree Post Practice Media Session | Purdue Football",
+      "url": "http://localhost/news/2026/04/7/ol-coach-zach-crabtree-post-practice-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-04-07T16:34:12+00:00"
+    },
+    {
+      "id": "2cbf6ba6ac0a",
+      "source": "Purdue Athletics MBB",
+      "title": "Head Coach Barry Odom Post Practice Media Session | Purdue Football",
+      "url": "http://localhost/news/2026/04/7/head-coach-barry-odom-post-practice-media-session-purdue-football-2",
+      "summary": "",
+      "date": "2026-04-07T16:32:24+00:00"
+    },
+    {
+      "id": "fe275c560b40",
+      "source": "Purdue Athletics MBB",
+      "title": "Pierce Signs With the Boilermakers for the 2026-27 Season",
+      "url": "http://localhost/news/2026/04/7/pierce-signs-with-the-boilermakers-for-the-2026-27-season",
+      "summary": "",
+      "date": "2026-04-07T13:52:21+00:00"
+    },
     {
       "id": "1c5bf71b73bb",
       "source": "Purdue Athletics MBB",
@@ -114,54 +162,6 @@
       "url": "http://localhost/news/2026/04/2/coach-cornell-ford-media-session-purdue-football-1",
       "summary": "",
       "date": "2026-04-02T18:48:46+00:00"
-    },
-    {
-      "id": "2462e6ccea4d",
-      "source": "Purdue Athletics MBB",
-      "title": "RB #2 Fame Ijeboi Media Session | Purdue Football",
-      "url": "http://localhost/news/2026/04/2/rb-2-fame-ijeboi-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-04-02T15:59:20+00:00"
-    },
-    {
-      "id": "928802d6ae45",
-      "source": "Purdue Athletics MBB",
-      "title": "RB #22 Antonio Harris Media Session | Purdue Football",
-      "url": "http://localhost/news/2026/04/2/rb-22-antonio-harris-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-04-02T15:57:35+00:00"
-    },
-    {
-      "id": "65e4ac4ee5b9",
-      "source": "Purdue Athletics MBB",
-      "title": "This Week in Purdue Baseball | April 1, 2026",
-      "url": "http://localhost/news/2026/04/2/this-week-in-purdue-baseball-april-1-2026",
-      "summary": "",
-      "date": "2026-04-02T10:20:29+00:00"
-    },
-    {
-      "id": "caa42cafcf4c",
-      "source": "Purdue Athletics MBB",
-      "title": "Zilbershlag Signs for Purdue",
-      "url": "http://localhost/news/2026/04/1/zilbershlag-signs-for-purdue",
-      "summary": "",
-      "date": "2026-04-01T15:21:00+00:00"
-    },
-    {
-      "id": "95ba5cf6d53e",
-      "source": "Purdue Athletics MBB",
-      "title": "Title Defended! Purdue Victorious at Coach Mo Classic",
-      "url": "http://localhost/news/2026/03/31/title-defended-purdue-victorious-at-coach-mo-classic",
-      "summary": "",
-      "date": "2026-03-31T20:58:12+00:00"
-    },
-    {
-      "id": "75b2559005d2",
-      "source": "Purdue Athletics MBB",
-      "title": "Rogers Adds National Hitter of the Week Honor to List",
-      "url": "http://localhost/news/2026/03/31/rogers-adds-national-hitter-of-the-week-honor-to-list",
-      "summary": "Purdue center fielder hit 2 grand slams during three-homer, 13-RBI week, leading Boilers to 4 wins",
-      "date": "2026-03-31T19:45:00+00:00"
     }
   ]
 }
