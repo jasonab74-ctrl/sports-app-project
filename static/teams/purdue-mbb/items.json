@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-07T06:50:11.348449+00:00",
+  "updated": "2026-04-07T08:09:03.548194+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "1c5bf71b73bb",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Move to 4th After 36 Holes at Calusa Pines",
-      "url": "http://localhost/news/2026/04/7/boilermakers-move-to-4th-after-36-holes-at-calusa-pines",
-      "summary": "",
-      "date": "2026-04-07T01:06:38+00:00"
-    },
     {
       "id": "20e736c49d4d",
       "source": "Purdue Athletics MBB",
@@ -162,6 +154,14 @@
       "url": "http://localhost/news/2026/03/31/rogers-adds-national-hitter-of-the-week-honor-to-list",
       "summary": "Purdue center fielder hit 2 grand slams during three-homer, 13-RBI week, leading Boilers to 4 wins",
       "date": "2026-03-31T19:45:00+00:00"
+    },
+    {
+      "id": "fcf0a8d506e2",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Ends March with Tuesday Practice",
+      "url": "http://localhost/news/2026/03/31/purdue-ends-march-with-tuesday-practice",
+      "summary": "",
+      "date": "2026-03-31T17:20:00+00:00"
     }
   ]
 }
