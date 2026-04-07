@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-07T16:07:11.827676+00:00",
+  "updated": "2026-04-07T17:31:02.171380+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "fe275c560b40",
-      "source": "Purdue Athletics MBB",
-      "title": "Pierce Signs With the Boilermakers for the 2026-27 Season",
-      "url": "http://localhost/news/2026/04/7/pierce-signs-with-the-boilermakers-for-the-2026-27-season",
-      "summary": "",
-      "date": "2026-04-07T13:52:21+00:00"
-    },
     {
       "id": "1c5bf71b73bb",
       "source": "Purdue Athletics MBB",
@@ -162,6 +154,14 @@
       "url": "http://localhost/news/2026/03/31/title-defended-purdue-victorious-at-coach-mo-classic",
       "summary": "",
       "date": "2026-03-31T20:58:12+00:00"
+    },
+    {
+      "id": "75b2559005d2",
+      "source": "Purdue Athletics MBB",
+      "title": "Rogers Adds National Hitter of the Week Honor to List",
+      "url": "http://localhost/news/2026/03/31/rogers-adds-national-hitter-of-the-week-honor-to-list",
+      "summary": "Purdue center fielder hit 2 grand slams during three-homer, 13-RBI week, leading Boilers to 4 wins",
+      "date": "2026-03-31T19:45:00+00:00"
     }
   ]
 }
