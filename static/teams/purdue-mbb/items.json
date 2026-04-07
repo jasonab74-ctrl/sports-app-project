@@ -1,8 +1,32 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-07T13:08:07.675743+00:00",
+  "updated": "2026-04-07T14:51:37.341887+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "f61c85e9ec34",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Wins Rubber Game vs Illinois",
+      "url": "http://localhost/news/2026/04/7/purdue-wins-rubber-game-vs-illinois",
+      "summary": "",
+      "date": "2026-04-07T13:55:20+00:00"
+    },
+    {
+      "id": "93ff6dcd02e7",
+      "source": "Purdue Athletics MBB",
+      "title": "Baseball Players Draw Purdue Pete",
+      "url": "http://localhost/news/2026/04/7/baseball-players-draw-purdue-pete",
+      "summary": "",
+      "date": "2026-04-07T13:53:13+00:00"
+    },
+    {
+      "id": "fe275c560b40",
+      "source": "Purdue Athletics MBB",
+      "title": "Pierce Signs With the Boilermakers for the 2026-27 Season",
+      "url": "http://localhost/news/2026/04/7/pierce-signs-with-the-boilermakers-for-the-2026-27-season",
+      "summary": "",
+      "date": "2026-04-07T13:52:21+00:00"
+    },
     {
       "id": "1c5bf71b73bb",
       "source": "Purdue Athletics MBB",
@@ -138,30 +162,6 @@
       "url": "http://localhost/news/2026/04/2/this-week-in-purdue-baseball-april-1-2026",
       "summary": "",
       "date": "2026-04-02T10:20:29+00:00"
-    },
-    {
-      "id": "caa42cafcf4c",
-      "source": "Purdue Athletics MBB",
-      "title": "Zilbershlag Signs for Purdue",
-      "url": "http://localhost/news/2026/04/1/zilbershlag-signs-for-purdue",
-      "summary": "",
-      "date": "2026-04-01T15:21:00+00:00"
-    },
-    {
-      "id": "95ba5cf6d53e",
-      "source": "Purdue Athletics MBB",
-      "title": "Title Defended! Purdue Victorious at Coach Mo Classic",
-      "url": "http://localhost/news/2026/03/31/title-defended-purdue-victorious-at-coach-mo-classic",
-      "summary": "",
-      "date": "2026-03-31T20:58:12+00:00"
-    },
-    {
-      "id": "75b2559005d2",
-      "source": "Purdue Athletics MBB",
-      "title": "Rogers Adds National Hitter of the Week Honor to List",
-      "url": "http://localhost/news/2026/03/31/rogers-adds-national-hitter-of-the-week-honor-to-list",
-      "summary": "Purdue center fielder hit 2 grand slams during three-homer, 13-RBI week, leading Boilers to 4 wins",
-      "date": "2026-03-31T19:45:00+00:00"
     }
   ]
 }
