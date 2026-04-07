@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-07T02:35:13.481513+00:00",
+  "updated": "2026-04-07T05:04:58.696076+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "20e736c49d4d",
-      "source": "Purdue Athletics MBB",
-      "title": "Midweek Matchup Against UIC Postponed",
-      "url": "http://localhost/news/2026/04/6/midweek-matchup-against-uic-postponed",
-      "summary": "Due to a scheduling conflict, Purdue's matchup against UIC will be postponed for a later date.",
-      "date": "2026-04-06T22:13:42+00:00"
-    },
     {
       "id": "7a9eb2fa57a3",
       "source": "Purdue Athletics MBB",
@@ -162,6 +154,14 @@
       "url": "http://localhost/news/2026/03/31/purdue-ends-march-with-tuesday-practice",
       "summary": "",
       "date": "2026-03-31T17:20:00+00:00"
+    },
+    {
+      "id": "62bf0428c098",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers at NCAA Championships",
+      "url": "http://localhost/news/2026/03/31/boilermakers-at-ncaa-championship",
+      "summary": "",
+      "date": "2026-03-31T16:20:23+00:00"
     }
   ]
 }
