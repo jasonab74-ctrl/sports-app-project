@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-08T10:35:01.799014+00:00",
+  "updated": "2026-04-08T11:50:18.862406+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "60ed47e7b012",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Pulls Away Late in Midweek Marathon",
+      "url": "http://localhost/news/2026/04/8/purdue-pulls-away-late-in-midweek-marathon",
+      "summary": "The Boilermakers scored 6 in the 7th inning to break a 6-6 tie while posting win No. 10 at Alexander",
+      "date": "2026-04-08T03:00:00+00:00"
+    },
+    {
+      "id": "9f4698d22910",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Scores 13 in Midweek Win vs Bradley - Highlights",
+      "url": "http://localhost/news/2026/04/8/purdue-scores-13-in-midweek-win-vs-bradley-highlights",
+      "summary": "",
+      "date": "2026-04-08T02:42:08+00:00"
+    },
     {
       "id": "8fd6927423ad",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "http://localhost/news/2026/04/3/school-record-tying-6-boilers-named-nwca-scholar-all-americans",
       "summary": "Purdue matched the record set in 2024.",
       "date": "2026-04-03T18:10:29+00:00"
-    },
-    {
-      "id": "b78d39df91d8",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Sweep Big Ten’s Weekly Awards",
-      "url": "http://localhost/news/2026/04/2/boilermakers-sweep-big-tens-weekly-awards",
-      "summary": "",
-      "date": "2026-04-02T19:45:23+00:00"
-    },
-    {
-      "id": "848aeffdf7ea",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Cornell Ford Media Session | Purdue Football",
-      "url": "http://localhost/news/2026/04/2/coach-cornell-ford-media-session-purdue-football-1",
-      "summary": "",
-      "date": "2026-04-02T18:48:46+00:00"
     }
   ]
 }
