@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-08T04:36:42.206922+00:00",
+  "updated": "2026-04-08T06:18:19.173326+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "60ed47e7b012",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Pulls Away Late in Midweek Marathon",
+      "url": "http://localhost/news/2026/04/8/purdue-pulls-away-late-in-midweek-marathon",
+      "summary": "The Boilermakers scored 6 in the 7th inning to break a 6-6 tie while posting win No. 10 at Alexander",
+      "date": "2026-04-08T03:00:00+00:00"
+    },
     {
       "id": "8fd6927423ad",
       "source": "Purdue Athletics MBB",
@@ -74,14 +82,6 @@
       "url": "http://localhost/news/2026/04/6/midweek-matchup-against-uic-postponed",
       "summary": "Due to a scheduling conflict, Purdue's matchup against UIC will be postponed for a later date.",
       "date": "2026-04-06T22:13:42+00:00"
-    },
-    {
-      "id": "7a9eb2fa57a3",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers in 6th After 18 Holes at Calusa Pines",
-      "url": "http://localhost/news/2026/04/5/boilermakers-in-6th-after-18-holes-at-calusa-pines",
-      "summary": "",
-      "date": "2026-04-05T23:41:42+00:00"
     },
     {
       "id": "46b69f99a6b7",
