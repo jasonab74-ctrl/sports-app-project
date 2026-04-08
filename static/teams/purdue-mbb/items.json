@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-08T23:06:16.420062+00:00",
+  "updated": "2026-04-08T23:57:33.587902+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "cbf6c591d70b",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Returns to Action in Georgia",
+      "url": "http://localhost/news/2026/04/8/purdue-returns-to-action-in-georgia",
+      "summary": "",
+      "date": "2026-04-08T17:14:08+00:00"
+    },
+    {
+      "id": "c2f57921eee2",
+      "source": "Purdue Athletics MBB",
+      "title": "This Week in Purdue Baseball | April 8, 2026",
+      "url": "http://localhost/news/2026/04/8/this-week-in-purdue-baseball-april-8-2026",
+      "summary": "",
+      "date": "2026-04-08T15:52:50+00:00"
+    },
     {
       "id": "60ed47e7b012",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "http://localhost/news/2026/04/3/rogers-makes-great-catch-in-cf-to-help-purdue-win-game-1-vs-illinois-highlights",
       "summary": "",
       "date": "2026-04-03T22:44:00+00:00"
-    },
-    {
-      "id": "421f03fc512d",
-      "source": "Purdue Athletics MBB",
-      "title": "Wisconsin Takes Series Opener",
-      "url": "http://localhost/news/2026/04/3/wisconsin-takes-series-opener",
-      "summary": "The Purdue Boilermakers (25-11, 5-5 Big Ten) fell short to the Wisconsin Badgers (20-11, 6-4 Big Ten) on Friday afternoon at Bittinger Field.",
-      "date": "2026-04-03T20:44:56+00:00"
-    },
-    {
-      "id": "2a203fe186e8",
-      "source": "Purdue Athletics MBB",
-      "title": "School Record-Tying 6 Boilers Named NWCA Scholar All-Americans",
-      "url": "http://localhost/news/2026/04/3/school-record-tying-6-boilers-named-nwca-scholar-all-americans",
-      "summary": "Purdue matched the record set in 2024.",
-      "date": "2026-04-03T18:10:29+00:00"
     }
   ]
 }
