@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-09T11:51:01.262910+00:00",
+  "updated": "2026-04-09T13:13:59.036951+00:00",
   "count": 20,
   "items": [
     {
@@ -10,14 +10,6 @@
       "url": "http://localhost/news/2026/04/8/purdue-returns-to-action-in-georgia",
       "summary": "",
       "date": "2026-04-08T17:14:08+00:00"
-    },
-    {
-      "id": "c2f57921eee2",
-      "source": "Purdue Athletics MBB",
-      "title": "This Week in Purdue Baseball | April 8, 2026",
-      "url": "http://localhost/news/2026/04/8/this-week-in-purdue-baseball-april-8-2026",
-      "summary": "",
-      "date": "2026-04-08T15:52:50+00:00"
     },
     {
       "id": "60ed47e7b012",
@@ -162,6 +154,14 @@
       "url": "http://localhost/news/2026/04/3/rogers-makes-great-catch-in-cf-to-help-purdue-win-game-1-vs-illinois-highlights",
       "summary": "",
       "date": "2026-04-03T22:44:00+00:00"
+    },
+    {
+      "id": "421f03fc512d",
+      "source": "Purdue Athletics MBB",
+      "title": "Wisconsin Takes Series Opener",
+      "url": "http://localhost/news/2026/04/3/wisconsin-takes-series-opener",
+      "summary": "The Purdue Boilermakers (25-11, 5-5 Big Ten) fell short to the Wisconsin Badgers (20-11, 6-4 Big Ten) on Friday afternoon at Bittinger Field.",
+      "date": "2026-04-03T20:44:56+00:00"
     }
   ]
 }
