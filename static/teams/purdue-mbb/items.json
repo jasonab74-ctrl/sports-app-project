@@ -1,24 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-09T23:58:50.365464+00:00",
+  "updated": "2026-04-10T02:55:48.718628+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "cffe41e0cd5a",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Gears Up for Final Home Matches",
-      "url": "http://localhost/news/2026/04/9/purdue-gears-up-for-final-home-matches",
-      "summary": "",
-      "date": "2026-04-09T19:29:11+00:00"
-    },
-    {
-      "id": "fa192a9a99ce",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilers Begin 2nd Half of Big Ten Season at Northwestern",
-      "url": "http://localhost/news/2026/04/9/boilers-begin-2nd-half-of-big-ten-season-at-northwestern",
-      "summary": "Purdue has won 4 consecutive series in Big Ten play for 5th time in team history",
-      "date": "2026-04-09T19:15:45+00:00"
-    },
     {
       "id": "cbf6c591d70b",
       "source": "Purdue Athletics MBB",
@@ -116,6 +100,14 @@
       "date": "2026-04-07T01:06:38+00:00"
     },
     {
+      "id": "20e736c49d4d",
+      "source": "Purdue Athletics MBB",
+      "title": "Midweek Matchup Against UIC Postponed",
+      "url": "http://localhost/news/2026/04/6/midweek-matchup-against-uic-postponed",
+      "summary": "Due to a scheduling conflict, Purdue's matchup against UIC will be postponed for a later date.",
+      "date": "2026-04-06T22:13:42+00:00"
+    },
+    {
       "id": "46b69f99a6b7",
       "source": "Purdue Athletics MBB",
       "title": "Purdue Shutout on Easter Sunday",
@@ -162,6 +154,14 @@
       "url": "http://localhost/news/2026/04/5/seventh-inning-burns-boilers-in-game-two",
       "summary": "The Boilermakers fell in game two to the Badgers after a seventh inning grand slam",
       "date": "2026-04-05T00:49:59+00:00"
+    },
+    {
+      "id": "1c74cb14ef43",
+      "source": "Purdue Athletics MBB",
+      "title": "Rogers Makes Great Catch in CF to Help Purdue Win Game 1 vs Illinois - Highlights",
+      "url": "http://localhost/news/2026/04/3/rogers-makes-great-catch-in-cf-to-help-purdue-win-game-1-vs-illinois-highlights",
+      "summary": "",
+      "date": "2026-04-03T22:44:00+00:00"
     }
   ]
 }
