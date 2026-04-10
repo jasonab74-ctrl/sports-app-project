@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-10T15:44:52.659166+00:00",
+  "updated": "2026-04-10T16:43:40.185798+00:00",
   "count": 20,
   "items": [
     {
@@ -18,6 +18,14 @@
       "url": "http://localhost/news/2026/04/9/boilers-begin-2nd-half-of-big-ten-season-at-northwestern",
       "summary": "Purdue has won 4 consecutive series in Big Ten play for 5th time in team history",
       "date": "2026-04-09T19:15:45+00:00"
+    },
+    {
+      "id": "cbf6c591d70b",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Returns to Action in Georgia",
+      "url": "http://localhost/news/2026/04/8/purdue-returns-to-action-in-georgia",
+      "summary": "",
+      "date": "2026-04-08T17:14:08+00:00"
     },
     {
       "id": "c2f57921eee2",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/04/5/seventh-inning-burns-boilers-in-game-two",
       "summary": "The Boilermakers fell in game two to the Badgers after a seventh inning grand slam",
       "date": "2026-04-05T00:49:59+00:00"
-    },
-    {
-      "id": "1c74cb14ef43",
-      "source": "Purdue Athletics MBB",
-      "title": "Rogers Makes Great Catch in CF to Help Purdue Win Game 1 vs Illinois - Highlights",
-      "url": "http://localhost/news/2026/04/3/rogers-makes-great-catch-in-cf-to-help-purdue-win-game-1-vs-illinois-highlights",
-      "summary": "",
-      "date": "2026-04-03T22:44:00+00:00"
     }
   ]
 }
