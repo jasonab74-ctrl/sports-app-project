@@ -1,8 +1,40 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-11T02:34:12.747981+00:00",
+  "updated": "2026-04-11T04:50:34.556160+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "bc435bb0a795",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilers Drop Series Opener at Indiana",
+      "url": "http://localhost/news/2026/04/11/boilers-drop-series-opener-at-indiana",
+      "summary": "Purdue dropped the series opener at rival Indiana falling 4-1Friday evening at Andy Mohr Field.",
+      "date": "2026-04-11T01:40:36+00:00"
+    },
+    {
+      "id": "04488b433e68",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Topples #58 Nebraska, 4-1",
+      "url": "http://localhost/news/2026/04/11/purdue-topples-58-nebraska-4-1",
+      "summary": "",
+      "date": "2026-04-11T01:28:00+00:00"
+    },
+    {
+      "id": "e6e5082687fb",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Posts 7 Zeros, Scores 7 in the 9th to Win in Evanston",
+      "url": "http://localhost/news/2026/04/11/purdue-posts-7-zeros-scores-7-in-the-9th-to-win-in-evanston",
+      "summary": "Boilermakers victorious at Northwestern to improve to 14-5 since March 10",
+      "date": "2026-04-11T00:23:05+00:00"
+    },
+    {
+      "id": "e5a35ad9fe43",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Wins Game at 1 at Northwestern - Highlights",
+      "url": "http://localhost/news/2026/04/11/purdue-wins-game-at-1-at-northwestern-highlights",
+      "summary": "",
+      "date": "2026-04-11T00:00:04+00:00"
+    },
     {
       "id": "cffe41e0cd5a",
       "source": "Purdue Athletics MBB",
@@ -10,14 +42,6 @@
       "url": "http://localhost/news/2026/04/9/purdue-gears-up-for-final-home-matches",
       "summary": "",
       "date": "2026-04-09T19:29:11+00:00"
-    },
-    {
-      "id": "fa192a9a99ce",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilers Begin 2nd Half of Big Ten Season at Northwestern",
-      "url": "http://localhost/news/2026/04/9/boilers-begin-2nd-half-of-big-ten-season-at-northwestern",
-      "summary": "Purdue has won 4 consecutive series in Big Ten play for 5th time in team history",
-      "date": "2026-04-09T19:15:45+00:00"
     },
     {
       "id": "c2f57921eee2",
@@ -138,30 +162,6 @@
       "url": "http://localhost/news/2026/04/5/malbroughs-3-double-night-not-enough-vs-illini",
       "summary": "Illini's 4-run 6th inning decided the game even after Purdue brought the tying run to the plate in 7th & 8th",
       "date": "2026-04-05T01:59:40+00:00"
-    },
-    {
-      "id": "c37fa282279f",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue vs Illinois Game 2 Highlights",
-      "url": "http://localhost/news/2026/04/5/purdue-vs-illinois-game-2-highlights",
-      "summary": "",
-      "date": "2026-04-05T01:57:24+00:00"
-    },
-    {
-      "id": "613501c81e57",
-      "source": "Purdue Athletics MBB",
-      "title": "Seventh Inning Burns Boilers in Game 2",
-      "url": "http://localhost/news/2026/04/5/seventh-inning-burns-boilers-in-game-two",
-      "summary": "The Boilermakers fell in game two to the Badgers after a seventh inning grand slam",
-      "date": "2026-04-05T00:49:59+00:00"
-    },
-    {
-      "id": "1c74cb14ef43",
-      "source": "Purdue Athletics MBB",
-      "title": "Rogers Makes Great Catch in CF to Help Purdue Win Game 1 vs Illinois - Highlights",
-      "url": "http://localhost/news/2026/04/3/rogers-makes-great-catch-in-cf-to-help-purdue-win-game-1-vs-illinois-highlights",
-      "summary": "",
-      "date": "2026-04-03T22:44:00+00:00"
     }
   ]
 }
