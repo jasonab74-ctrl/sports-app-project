@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-11T13:52:03.574304+00:00",
+  "updated": "2026-04-11T14:32:02.873804+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "6f3e6cc6a740",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Hosts 15 Teams for Boilermaker Spring Classic, April 12-13",
-      "url": "http://localhost/news/2026/04/11/purdue-hosts-15-teams-for-boilermaker-spring-classic-april-12-13",
-      "summary": "",
-      "date": "2026-04-11T12:06:00+00:00"
-    },
     {
       "id": "bc435bb0a795",
       "source": "Purdue Athletics MBB",
@@ -162,6 +154,14 @@
       "url": "http://localhost/news/2026/04/5/purdue-scores-10-unanswered-runs-to-win-series-vs-illinois-highlights",
       "summary": "",
       "date": "2026-04-05T20:54:55+00:00"
+    },
+    {
+      "id": "71e410f6b5b9",
+      "source": "Purdue Athletics MBB",
+      "title": "Malbrough's 3-Double Night Not Enough vs Illini",
+      "url": "http://localhost/news/2026/04/5/malbroughs-3-double-night-not-enough-vs-illini",
+      "summary": "Illini's 4-run 6th inning decided the game even after Purdue brought the tying run to the plate in 7th & 8th",
+      "date": "2026-04-05T01:59:40+00:00"
     }
   ]
 }
