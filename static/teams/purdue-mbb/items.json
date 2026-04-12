@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-12T21:29:03.462019+00:00",
+  "updated": "2026-04-12T21:59:19.101413+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "f312f856c942",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Hits 4 Home Runs, Completes Sweep of Northwestern - Highlights",
+      "url": "http://localhost/news/2026/04/12/purdue-hits-4-home-runs-completes-sweep-of-northwestern-highlights",
+      "summary": "",
+      "date": "2026-04-12T21:15:06+00:00"
+    },
     {
       "id": "a47157d9e499",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/04/7/ol-nuku-mafi-post-practice-media-session-purdue-football",
       "summary": "",
       "date": "2026-04-07T16:36:37+00:00"
-    },
-    {
-      "id": "4f72869a1eda",
-      "source": "Purdue Athletics MBB",
-      "title": "OL Jude McCoskey Post Practice Media Session | Purdue Football",
-      "url": "http://localhost/news/2026/04/7/ol-jude-mccoskey-post-practice-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-04-07T16:35:17+00:00"
     }
   ]
 }
