@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-12T15:57:58.521439+00:00",
+  "updated": "2026-04-12T16:41:48.038382+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "a47157d9e499",
+      "source": "Purdue Athletics MBB",
+      "title": "Baseball Rallies to Win 10-Inning Thriller at NU",
+      "url": "http://localhost/news/2026/04/11/baseball-rallies-to-win-extra-innings-thriller-in-10",
+      "summary": "Purdue clinches its 5th straight B1G series win & 7th straight series victory vs. Northwestern",
+      "date": "2026-04-11T23:49:14+00:00"
+    },
+    {
+      "id": "a72fe9bbd04c",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Rallies for 10-Inning Win at Northwestern - Highlights",
+      "url": "http://localhost/news/2026/04/11/purdue-rallies-for-10-inning-win-at-northwestern-highlights",
+      "summary": "",
+      "date": "2026-04-11T22:54:33+00:00"
+    },
     {
       "id": "2a1b88153816",
       "source": "Purdue Athletics MBB",
@@ -92,14 +108,6 @@
       "date": "2026-04-11T00:00:04+00:00"
     },
     {
-      "id": "cffe41e0cd5a",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Gears Up for Final Home Matches",
-      "url": "http://localhost/news/2026/04/9/purdue-gears-up-for-final-home-matches",
-      "summary": "",
-      "date": "2026-04-09T19:29:11+00:00"
-    },
-    {
       "id": "c2f57921eee2",
       "source": "Purdue Athletics MBB",
       "title": "This Week in Purdue Baseball | April 8, 2026",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/04/7/ol-jude-mccoskey-post-practice-media-session-purdue-football",
       "summary": "",
       "date": "2026-04-07T16:35:17+00:00"
-    },
-    {
-      "id": "c8fc93782bc0",
-      "source": "Purdue Athletics MBB",
-      "title": "OL Coach Zach Crabtree Post Practice Media Session | Purdue Football",
-      "url": "http://localhost/news/2026/04/7/ol-coach-zach-crabtree-post-practice-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-04-07T16:34:12+00:00"
     }
   ]
 }
