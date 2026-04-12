@@ -1,64 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-11T23:44:00.730524+00:00",
+  "updated": "2026-04-12T02:03:36.406188+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "a72fe9bbd04c",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Rallies for 10-Inning Win at Northwestern - Highlights",
-      "url": "http://localhost/news/2026/04/11/purdue-rallies-for-10-inning-win-at-northwestern-highlights",
-      "summary": "",
-      "date": "2026-04-11T22:54:33+00:00"
-    },
-    {
-      "id": "2a1b88153816",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilers Suffer 5-1 Loss in Game Two",
-      "url": "http://localhost/news/2026/04/11/boilers-suffer-5-1-loss-in-game-two",
-      "summary": "Purdue fell 5-1 to Indiana in game two of the series, marking its third-consecutive Big Ten series loss.",
-      "date": "2026-04-11T21:34:30+00:00"
-    },
-    {
-      "id": "ceb8fcfafb4c",
-      "source": "Purdue Athletics MBB",
-      "title": "Head Coach Barry Odom Spring Showcase Media Session | Purdue Football",
-      "url": "http://localhost/news/2026/04/11/head-coach-barry-odom-spring-showcase-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-04-11T19:57:35+00:00"
-    },
-    {
-      "id": "8d205bc90500",
-      "source": "Purdue Athletics MBB",
-      "title": "QAB Ryan Browne Spring Showcase Media Session | Purdue Football",
-      "url": "http://localhost/news/2026/04/11/qab-ryan-browne-spring-showcase-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-04-11T19:56:50+00:00"
-    },
-    {
-      "id": "8d9b992cb215",
-      "source": "Purdue Athletics MBB",
-      "title": "LB Charles Correa Spring Showcase Media Session | Purdue Football",
-      "url": "http://localhost/news/2026/04/11/lb-charles-correa-spring-showcase-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-04-11T19:54:58+00:00"
-    },
-    {
-      "id": "7f0a0c738260",
-      "source": "Purdue Athletics MBB",
-      "title": "OC Josh Henson Spring Showcase Media Session | Purdue Football",
-      "url": "http://localhost/news/2026/04/11/oc-josh-henson-spring-showcase-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-04-11T19:53:26+00:00"
-    },
-    {
-      "id": "7fad943be989",
-      "source": "Purdue Athletics MBB",
-      "title": "DC Kevin Kane Spring Showcase Media Session | Purdue Football",
-      "url": "http://localhost/news/2026/04/11/dc-kevin-kane-spring-showcase-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-04-11T19:47:48+00:00"
-    },
     {
       "id": "6f3e6cc6a740",
       "source": "Purdue Athletics MBB",
@@ -162,6 +106,62 @@
       "url": "http://localhost/news/2026/04/7/ol-jude-mccoskey-post-practice-media-session-purdue-football",
       "summary": "",
       "date": "2026-04-07T16:35:17+00:00"
+    },
+    {
+      "id": "c8fc93782bc0",
+      "source": "Purdue Athletics MBB",
+      "title": "OL Coach Zach Crabtree Post Practice Media Session | Purdue Football",
+      "url": "http://localhost/news/2026/04/7/ol-coach-zach-crabtree-post-practice-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-04-07T16:34:12+00:00"
+    },
+    {
+      "id": "2cbf6ba6ac0a",
+      "source": "Purdue Athletics MBB",
+      "title": "Head Coach Barry Odom Post Practice Media Session | Purdue Football",
+      "url": "http://localhost/news/2026/04/7/head-coach-barry-odom-post-practice-media-session-purdue-football-2",
+      "summary": "",
+      "date": "2026-04-07T16:32:24+00:00"
+    },
+    {
+      "id": "fe275c560b40",
+      "source": "Purdue Athletics MBB",
+      "title": "Pierce Signs With the Boilermakers for the 2026-27 Season",
+      "url": "http://localhost/news/2026/04/7/pierce-signs-with-the-boilermakers-for-the-2026-27-season",
+      "summary": "",
+      "date": "2026-04-07T13:52:21+00:00"
+    },
+    {
+      "id": "1c5bf71b73bb",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Move to 4th After 36 Holes at Calusa Pines",
+      "url": "http://localhost/news/2026/04/7/boilermakers-move-to-4th-after-36-holes-at-calusa-pines",
+      "summary": "",
+      "date": "2026-04-07T01:06:38+00:00"
+    },
+    {
+      "id": "46b69f99a6b7",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Shutout on Easter Sunday",
+      "url": "http://localhost/news/2026/04/5/purdue-shutout-on-easter-sunday",
+      "summary": "",
+      "date": "2026-04-05T21:55:00+00:00"
+    },
+    {
+      "id": "cb1a3e2696d8",
+      "source": "Purdue Athletics MBB",
+      "title": "Bullpen Shines as Boilers Score 10 Unanswered to Win Series",
+      "url": "http://localhost/news/2026/04/5/bullpen-shines-as-boilers-score-10-unanswered-to-win-series",
+      "summary": "Purdue overcomes a 5-run 1st inning to post 4th straight Big Ten series win",
+      "date": "2026-04-05T21:02:05+00:00"
+    },
+    {
+      "id": "6883e00c78cd",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Scores 10 Unanswered Runs to Win Series vs Illinois - Highlights",
+      "url": "http://localhost/news/2026/04/5/purdue-scores-10-unanswered-runs-to-win-series-vs-illinois-highlights",
+      "summary": "",
+      "date": "2026-04-05T20:54:55+00:00"
     }
   ]
 }
