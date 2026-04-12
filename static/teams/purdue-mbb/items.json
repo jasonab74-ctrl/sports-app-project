@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-12T15:03:10.359101+00:00",
+  "updated": "2026-04-12T15:57:58.521439+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "2a1b88153816",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilers Suffer 5-1 Loss in Game Two",
+      "url": "http://localhost/news/2026/04/11/boilers-suffer-5-1-loss-in-game-two",
+      "summary": "Purdue fell 5-1 to Indiana in game two of the series, marking its third-consecutive Big Ten series loss.",
+      "date": "2026-04-11T21:34:30+00:00"
+    },
     {
       "id": "ceb8fcfafb4c",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/04/7/ol-coach-zach-crabtree-post-practice-media-session-purdue-football",
       "summary": "",
       "date": "2026-04-07T16:34:12+00:00"
-    },
-    {
-      "id": "2cbf6ba6ac0a",
-      "source": "Purdue Athletics MBB",
-      "title": "Head Coach Barry Odom Post Practice Media Session | Purdue Football",
-      "url": "http://localhost/news/2026/04/7/head-coach-barry-odom-post-practice-media-session-purdue-football-2",
-      "summary": "",
-      "date": "2026-04-07T16:32:24+00:00"
     }
   ]
 }
