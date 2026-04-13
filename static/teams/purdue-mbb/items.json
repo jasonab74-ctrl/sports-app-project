@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-13T03:56:52.374772+00:00",
+  "updated": "2026-04-13T06:13:04.542967+00:00",
   "count": 20,
   "items": [
     {
@@ -84,14 +84,6 @@
       "date": "2026-04-11T19:47:48+00:00"
     },
     {
-      "id": "6f3e6cc6a740",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Hosts 15 Teams for Boilermaker Spring Classic, April 12-13",
-      "url": "http://localhost/news/2026/04/11/purdue-hosts-15-teams-for-boilermaker-spring-classic-april-12-13",
-      "summary": "",
-      "date": "2026-04-11T12:06:00+00:00"
-    },
-    {
       "id": "bc435bb0a795",
       "source": "Purdue Athletics MBB",
       "title": "Boilers Drop Series Opener at Indiana",
@@ -162,6 +154,14 @@
       "url": "http://localhost/news/2026/04/7/purdue-takes-practice-back-outside-on-tuesday",
       "summary": "",
       "date": "2026-04-07T19:30:00+00:00"
+    },
+    {
+      "id": "8f372bc8b988",
+      "source": "Purdue Athletics MBB",
+      "title": "OL Nuku Mafi Post Practice Media Session | Purdue Football",
+      "url": "http://localhost/news/2026/04/7/ol-nuku-mafi-post-practice-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-04-07T16:36:37+00:00"
     }
   ]
 }
