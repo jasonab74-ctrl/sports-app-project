@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-13T16:17:40.123538+00:00",
+  "updated": "2026-04-13T17:37:09.514270+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "16e6d2e6a4df",
+      "source": "Purdue Athletics MBB",
+      "title": "Klug Strikes Out 8, Purdue Hits 4 Homers to Complete Sweep",
+      "url": "http://localhost/news/2026/04/12/klug-strikes-out-8-purdue-hits-4-homers-to-complete-sweep",
+      "summary": "Purdue scores in 6 different innings to win wire-to-wire at Northwestern 8-3",
+      "date": "2026-04-12T22:47:20+00:00"
+    },
     {
       "id": "f312f856c942",
       "source": "Purdue Athletics MBB",
@@ -28,9 +36,9 @@
       "date": "2026-04-11T22:54:33+00:00"
     },
     {
-      "id": "2a1b88153816",
+      "id": "c89240972243",
       "source": "Purdue Athletics MBB",
-      "title": "Boilers Suffer 5-1 Loss in Game Two",
+      "title": "Boilers Suffer 5-1 Loss in Game 2",
       "url": "http://localhost/news/2026/04/11/boilers-suffer-5-1-loss-in-game-two",
       "summary": "Purdue fell 5-1 to Indiana in game two of the series, marking its third-consecutive Big Ten series loss.",
       "date": "2026-04-11T21:34:30+00:00"
@@ -74,14 +82,6 @@
       "url": "http://localhost/news/2026/04/11/dc-kevin-kane-spring-showcase-media-session-purdue-football",
       "summary": "",
       "date": "2026-04-11T19:47:48+00:00"
-    },
-    {
-      "id": "6f3e6cc6a740",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Hosts 15 Teams for Boilermaker Spring Classic, April 12-13",
-      "url": "http://localhost/news/2026/04/11/purdue-hosts-15-teams-for-boilermaker-spring-classic-april-12-13",
-      "summary": "",
-      "date": "2026-04-11T12:06:00+00:00"
     },
     {
       "id": "bc435bb0a795",
