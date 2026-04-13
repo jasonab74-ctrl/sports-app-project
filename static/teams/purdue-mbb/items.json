@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-13T20:29:55.075017+00:00",
+  "updated": "2026-04-13T21:24:44.288107+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "270f2450b408",
+      "source": "Purdue Athletics MBB",
+      "title": "Women's Golf Boilermaker Spring Classic Photo Gallery",
+      "url": "http://localhost/news/2026/04/13/womens-golf-boilermaker-spring-classic-photo-gallery",
+      "summary": "",
+      "date": "2026-04-13T21:05:21+00:00"
+    },
     {
       "id": "a8c0a7ec1790",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/04/7/boilermakers-finish-strong-at-calusa-cup",
       "summary": "",
       "date": "2026-04-07T20:35:55+00:00"
-    },
-    {
-      "id": "a16d5db34509",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Takes Practice Back Outside on Tuesday",
-      "url": "http://localhost/news/2026/04/7/purdue-takes-practice-back-outside-on-tuesday",
-      "summary": "",
-      "date": "2026-04-07T19:30:00+00:00"
     }
   ]
 }
