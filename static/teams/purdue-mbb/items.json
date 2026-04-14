@@ -1,8 +1,32 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-13T23:08:45.227036+00:00",
+  "updated": "2026-04-14T00:04:43.752180+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "726182459bf3",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Finishes Runner-Up at Boilermaker Spring Classic",
+      "url": "http://localhost/news/2026/04/13/purdue-finishes-runner-up-at-boilermaker-spring-classic",
+      "summary": "",
+      "date": "2026-04-13T22:34:32+00:00"
+    },
+    {
+      "id": "270f2450b408",
+      "source": "Purdue Athletics MBB",
+      "title": "Women's Golf Boilermaker Spring Classic Photo Gallery",
+      "url": "http://localhost/news/2026/04/13/womens-golf-boilermaker-spring-classic-photo-gallery",
+      "summary": "",
+      "date": "2026-04-13T21:05:21+00:00"
+    },
+    {
+      "id": "a8c0a7ec1790",
+      "source": "Purdue Athletics MBB",
+      "title": "Softball Schedule Updates",
+      "url": "http://localhost/news/2026/04/13/softball-schedule-updates",
+      "summary": "Purdue has made adjustments to the final games on the regular season slate, including adding a midweek against Miami Ohio and rescheduling the previously postponed matchup with UIC.",
+      "date": "2026-04-13T19:47:00+00:00"
+    },
     {
       "id": "16e6d2e6a4df",
       "source": "Purdue Athletics MBB",
@@ -138,30 +162,6 @@
       "url": "http://localhost/news/2026/04/8/purdue-scores-13-in-midweek-win-vs-bradley-highlights",
       "summary": "",
       "date": "2026-04-08T02:42:08+00:00"
-    },
-    {
-      "id": "8fd6927423ad",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Finish Strong at Calusa Cup",
-      "url": "http://localhost/news/2026/04/7/boilermakers-finish-strong-at-calusa-cup",
-      "summary": "",
-      "date": "2026-04-07T20:35:55+00:00"
-    },
-    {
-      "id": "a16d5db34509",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Takes Practice Back Outside on Tuesday",
-      "url": "http://localhost/news/2026/04/7/purdue-takes-practice-back-outside-on-tuesday",
-      "summary": "",
-      "date": "2026-04-07T19:30:00+00:00"
-    },
-    {
-      "id": "8f372bc8b988",
-      "source": "Purdue Athletics MBB",
-      "title": "OL Nuku Mafi Post Practice Media Session | Purdue Football",
-      "url": "http://localhost/news/2026/04/7/ol-nuku-mafi-post-practice-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-04-07T16:36:37+00:00"
     }
   ]
 }
