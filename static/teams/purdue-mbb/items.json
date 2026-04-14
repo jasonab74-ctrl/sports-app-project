@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-14T09:11:53.829543+00:00",
+  "updated": "2026-04-14T10:43:17.735541+00:00",
   "count": 20,
   "items": [
     {
@@ -18,6 +18,14 @@
       "url": "http://localhost/news/2026/04/13/womens-golf-boilermaker-spring-classic-photo-gallery",
       "summary": "",
       "date": "2026-04-13T21:05:21+00:00"
+    },
+    {
+      "id": "6216fa5e90ca",
+      "source": "Purdue Athletics MBB",
+      "title": "Midweek vs Miami Features Pair of 20-Win Teams at Alexander",
+      "url": "http://localhost/news/2026/04/13/midweek-vs-miami-features-pair-of-20-win-teams-at-alexander",
+      "summary": "Purdue rides 5-game win streak into the opener of a 5-game homestand",
+      "date": "2026-04-13T21:01:00+00:00"
     },
     {
       "id": "a8c0a7ec1790",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/04/8/purdue-pulls-away-late-in-midweek-marathon",
       "summary": "The Boilermakers scored 6 in the 7th inning to break a 6-6 tie while posting win No. 10 at Alexander",
       "date": "2026-04-08T03:00:00+00:00"
-    },
-    {
-      "id": "9f4698d22910",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Scores 13 in Midweek Win vs Bradley - Highlights",
-      "url": "http://localhost/news/2026/04/8/purdue-scores-13-in-midweek-win-vs-bradley-highlights",
-      "summary": "",
-      "date": "2026-04-08T02:42:08+00:00"
     }
   ]
 }
