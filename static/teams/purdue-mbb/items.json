@@ -1,48 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-15T21:12:18.533562+00:00",
+  "updated": "2026-04-15T22:07:39.955610+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "a0013adaeb21",
-      "source": "Purdue Athletics MBB",
-      "title": "Blaze To Wrestle 3-Time NCAA Champion in RAF Debut",
-      "url": "http://localhost/news/2026/04/15/blaze-to-wrestle-3-time-ncaa-champion-in-raf-debut",
-      "summary": "The Boilermaker is set to wrestle Jason Nolf at RAF 08 in Philadelphia Saturday night.",
-      "date": "2026-04-15T16:02:33+00:00"
-    },
-    {
-      "id": "cabee932359a",
-      "source": "Purdue Athletics MBB",
-      "title": "Honda Awards 50th Anniversary | Purdue Athletics",
-      "url": "http://localhost/news/2026/04/15/honda-awards-50th-anniversary-purdue-athletics",
-      "summary": "",
-      "date": "2026-04-15T15:23:20+00:00"
-    },
-    {
-      "id": "a2c69361dd47",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Football 2026 Spring Showcase",
-      "url": "http://localhost/news/2026/04/15/purdue-football-2026-spring-showcase",
-      "summary": "",
-      "date": "2026-04-15T14:58:56+00:00"
-    },
-    {
-      "id": "532d5e1ec4ea",
-      "source": "Purdue Athletics MBB",
-      "title": "7 Consecutive Zeros from Bullpen Not Enough in 11-Inning Loss",
-      "url": "http://localhost/news/2026/04/15/7-consecutive-zeros-from-bullpen-not-enough-in-11-inning-loss",
-      "summary": "Boyle hits his first home run as a Boilermaker but Purdue held scoreless after the 4th inning",
-      "date": "2026-04-15T03:01:40+00:00"
-    },
-    {
-      "id": "5c38fd6e0433",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Falls to Miami (Ohio) in 11 Innings - Highlights",
-      "url": "http://localhost/news/2026/04/15/purdue-falls-to-miami-ohio-in-11-innings-highlights",
-      "summary": "",
-      "date": "2026-04-15T02:57:48+00:00"
-    },
     {
       "id": "0cceec6a35e4",
       "source": "Purdue Athletics MBB",
@@ -66,6 +26,14 @@
       "url": "http://localhost/news/2026/04/13/womens-golf-boilermaker-spring-classic-photo-gallery",
       "summary": "",
       "date": "2026-04-13T21:05:21+00:00"
+    },
+    {
+      "id": "6216fa5e90ca",
+      "source": "Purdue Athletics MBB",
+      "title": "Midweek vs Miami Features Pair of 20-Win Teams at Alexander",
+      "url": "http://localhost/news/2026/04/13/midweek-vs-miami-features-pair-of-20-win-teams-at-alexander",
+      "summary": "Purdue rides 5-game win streak into the opener of a 5-game homestand",
+      "date": "2026-04-13T21:01:00+00:00"
     },
     {
       "id": "a8c0a7ec1790",
@@ -162,6 +130,38 @@
       "url": "http://localhost/news/2026/04/11/boilers-drop-series-opener-at-indiana",
       "summary": "Purdue dropped the series opener at rival Indiana falling 4-1Friday evening at Andy Mohr Field.",
       "date": "2026-04-11T01:40:36+00:00"
+    },
+    {
+      "id": "04488b433e68",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Topples #58 Nebraska, 4-1",
+      "url": "http://localhost/news/2026/04/11/purdue-topples-58-nebraska-4-1",
+      "summary": "",
+      "date": "2026-04-11T01:28:00+00:00"
+    },
+    {
+      "id": "e6e5082687fb",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Posts 7 Zeros, Scores 7 in the 9th to Win in Evanston",
+      "url": "http://localhost/news/2026/04/11/purdue-posts-7-zeros-scores-7-in-the-9th-to-win-in-evanston",
+      "summary": "Boilermakers victorious at Northwestern to improve to 14-5 since March 10",
+      "date": "2026-04-11T00:23:05+00:00"
+    },
+    {
+      "id": "e5a35ad9fe43",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Wins Game at 1 at Northwestern - Highlights",
+      "url": "http://localhost/news/2026/04/11/purdue-wins-game-at-1-at-northwestern-highlights",
+      "summary": "",
+      "date": "2026-04-11T00:00:04+00:00"
+    },
+    {
+      "id": "c2f57921eee2",
+      "source": "Purdue Athletics MBB",
+      "title": "This Week in Purdue Baseball | April 8, 2026",
+      "url": "http://localhost/news/2026/04/8/this-week-in-purdue-baseball-april-8-2026",
+      "summary": "",
+      "date": "2026-04-08T15:52:50+00:00"
     }
   ]
 }
