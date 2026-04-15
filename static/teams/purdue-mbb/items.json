@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-15T07:45:13.714247+00:00",
+  "updated": "2026-04-15T09:12:39.236363+00:00",
   "count": 20,
   "items": [
     {
@@ -10,6 +10,14 @@
       "url": "http://localhost/news/2026/04/15/7-consecutive-zeros-from-bullpen-not-enough-in-11-inning-loss",
       "summary": "Boyle hits his first home run as a Boilermaker but Purdue held scoreless after the 4th inning",
       "date": "2026-04-15T03:01:40+00:00"
+    },
+    {
+      "id": "5c38fd6e0433",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Falls to Miami (Ohio) in 11 Innings - Highlights",
+      "url": "http://localhost/news/2026/04/15/purdue-falls-to-miami-ohio-in-11-innings-highlights",
+      "summary": "",
+      "date": "2026-04-15T02:57:48+00:00"
     },
     {
       "id": "0cceec6a35e4",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/04/11/purdue-wins-game-at-1-at-northwestern-highlights",
       "summary": "",
       "date": "2026-04-11T00:00:04+00:00"
-    },
-    {
-      "id": "c2f57921eee2",
-      "source": "Purdue Athletics MBB",
-      "title": "This Week in Purdue Baseball | April 8, 2026",
-      "url": "http://localhost/news/2026/04/8/this-week-in-purdue-baseball-april-8-2026",
-      "summary": "",
-      "date": "2026-04-08T15:52:50+00:00"
     }
   ]
 }
