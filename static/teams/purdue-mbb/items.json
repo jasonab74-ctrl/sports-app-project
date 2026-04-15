@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-15T05:57:05.275424+00:00",
+  "updated": "2026-04-15T07:45:13.714247+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "532d5e1ec4ea",
+      "source": "Purdue Athletics MBB",
+      "title": "7 Consecutive Zeros from Bullpen Not Enough in 11-Inning Loss",
+      "url": "http://localhost/news/2026/04/15/7-consecutive-zeros-from-bullpen-not-enough-in-11-inning-loss",
+      "summary": "Boyle hits his first home run as a Boilermaker but Purdue held scoreless after the 4th inning",
+      "date": "2026-04-15T03:01:40+00:00"
+    },
     {
       "id": "0cceec6a35e4",
       "source": "Purdue Athletics MBB",
@@ -26,14 +34,6 @@
       "url": "http://localhost/news/2026/04/13/womens-golf-boilermaker-spring-classic-photo-gallery",
       "summary": "",
       "date": "2026-04-13T21:05:21+00:00"
-    },
-    {
-      "id": "6216fa5e90ca",
-      "source": "Purdue Athletics MBB",
-      "title": "Midweek vs Miami Features Pair of 20-Win Teams at Alexander",
-      "url": "http://localhost/news/2026/04/13/midweek-vs-miami-features-pair-of-20-win-teams-at-alexander",
-      "summary": "Purdue rides 5-game win streak into the opener of a 5-game homestand",
-      "date": "2026-04-13T21:01:00+00:00"
     },
     {
       "id": "a8c0a7ec1790",
