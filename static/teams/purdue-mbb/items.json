@@ -1,32 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-16T20:42:13.860785+00:00",
+  "updated": "2026-04-16T21:37:25.013482+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "14449dda3a21",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Travels to Indiana for Big Ten Championships Tune-Up",
-      "url": "http://localhost/news/2026/04/16/purdue-travels-to-indiana-for-big-ten-championships-tune-up",
-      "summary": "",
-      "date": "2026-04-16T15:56:48+00:00"
-    },
-    {
-      "id": "bcf478a543d6",
-      "source": "Purdue Athletics MBB",
-      "title": "Sondrup Signs With the Boilermakers",
-      "url": "http://localhost/news/2026/04/16/sondrup-signs-with-the-boilermakers",
-      "summary": "",
-      "date": "2026-04-16T14:17:43+00:00"
-    },
-    {
-      "id": "6a977ddd8be8",
-      "source": "Purdue Athletics MBB",
-      "title": "This Week in Purdue Baseball | April 15, 2026",
-      "url": "http://localhost/news/2026/04/16/this-week-in-purdue-baseball-april-15-2026",
-      "summary": "",
-      "date": "2026-04-16T10:28:33+00:00"
-    },
     {
       "id": "a0013adaeb21",
       "source": "Purdue Athletics MBB",
@@ -162,6 +138,30 @@
       "url": "http://localhost/news/2026/04/11/lb-charles-correa-spring-showcase-media-session-purdue-football",
       "summary": "",
       "date": "2026-04-11T19:54:58+00:00"
+    },
+    {
+      "id": "7f0a0c738260",
+      "source": "Purdue Athletics MBB",
+      "title": "OC Josh Henson Spring Showcase Media Session | Purdue Football",
+      "url": "http://localhost/news/2026/04/11/oc-josh-henson-spring-showcase-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-04-11T19:53:26+00:00"
+    },
+    {
+      "id": "7fad943be989",
+      "source": "Purdue Athletics MBB",
+      "title": "DC Kevin Kane Spring Showcase Media Session | Purdue Football",
+      "url": "http://localhost/news/2026/04/11/dc-kevin-kane-spring-showcase-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-04-11T19:47:48+00:00"
+    },
+    {
+      "id": "bc435bb0a795",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilers Drop Series Opener at Indiana",
+      "url": "http://localhost/news/2026/04/11/boilers-drop-series-opener-at-indiana",
+      "summary": "Purdue dropped the series opener at rival Indiana falling 4-1Friday evening at Andy Mohr Field.",
+      "date": "2026-04-11T01:40:36+00:00"
     }
   ]
 }
