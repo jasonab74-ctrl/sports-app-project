@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-16T16:53:21.415858+00:00",
+  "updated": "2026-04-16T18:04:06.842015+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "6a977ddd8be8",
+      "source": "Purdue Athletics MBB",
+      "title": "This Week in Purdue Baseball | April 15, 2026",
+      "url": "http://localhost/news/2026/04/16/this-week-in-purdue-baseball-april-15-2026",
+      "summary": "",
+      "date": "2026-04-16T10:28:33+00:00"
+    },
     {
       "id": "a0013adaeb21",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/04/11/dc-kevin-kane-spring-showcase-media-session-purdue-football",
       "summary": "",
       "date": "2026-04-11T19:47:48+00:00"
-    },
-    {
-      "id": "bc435bb0a795",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilers Drop Series Opener at Indiana",
-      "url": "http://localhost/news/2026/04/11/boilers-drop-series-opener-at-indiana",
-      "summary": "Purdue dropped the series opener at rival Indiana falling 4-1Friday evening at Andy Mohr Field.",
-      "date": "2026-04-11T01:40:36+00:00"
     }
   ]
 }
