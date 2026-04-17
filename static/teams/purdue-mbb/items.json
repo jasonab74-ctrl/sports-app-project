@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-17T02:03:56.283556+00:00",
+  "updated": "2026-04-17T05:13:49.181784+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "dd4100e016c2",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Finishes Opening Day of the Wake Forest Invitational",
+      "url": "http://localhost/news/2026/04/17/purdue-finishes-opening-day-of-the-wake-forest-invitational",
+      "summary": "",
+      "date": "2026-04-17T03:27:43+00:00"
+    },
+    {
+      "id": "8caafd30bd3b",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilers Host Buckeyes for Big Ten Spotlight Series",
+      "url": "http://localhost/news/2026/04/17/boilers-host-buckeyes-for-big-ten-spotlight-series",
+      "summary": "Purdue-OSU is 1 of 2 Big Ten series this weekend featuring 2 teams over .500 in league play",
+      "date": "2026-04-17T01:35:17+00:00"
+    },
     {
       "id": "b2561840668d",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "http://localhost/news/2026/04/11/boilers-suffer-5-1-loss-in-game-two",
       "summary": "Purdue fell 5-1 to Indiana in game two of the series, marking its third-consecutive Big Ten series loss.",
       "date": "2026-04-11T21:34:30+00:00"
-    },
-    {
-      "id": "ceb8fcfafb4c",
-      "source": "Purdue Athletics MBB",
-      "title": "Head Coach Barry Odom Spring Showcase Media Session | Purdue Football",
-      "url": "http://localhost/news/2026/04/11/head-coach-barry-odom-spring-showcase-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-04-11T19:57:35+00:00"
-    },
-    {
-      "id": "8d205bc90500",
-      "source": "Purdue Athletics MBB",
-      "title": "QAB Ryan Browne Spring Showcase Media Session | Purdue Football",
-      "url": "http://localhost/news/2026/04/11/qab-ryan-browne-spring-showcase-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-04-11T19:56:50+00:00"
     }
   ]
 }
