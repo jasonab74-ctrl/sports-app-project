@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-17T23:34:02.888225+00:00",
+  "updated": "2026-04-18T01:54:36.264698+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "57ead7a71b6e",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Shut Out at #10 USC",
+      "url": "http://localhost/news/2026/04/17/purdue-shut-out-at-10-usc",
+      "summary": "",
+      "date": "2026-04-17T23:48:16+00:00"
+    },
     {
       "id": "d0f88073027a",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/04/11/baseball-rallies-to-win-extra-innings-thriller-in-10",
       "summary": "Purdue clinches its 5th straight B1G series win & 7th straight series victory vs. Northwestern",
       "date": "2026-04-11T23:49:14+00:00"
-    },
-    {
-      "id": "a72fe9bbd04c",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Rallies for 10-Inning Win at Northwestern - Highlights",
-      "url": "http://localhost/news/2026/04/11/purdue-rallies-for-10-inning-win-at-northwestern-highlights",
-      "summary": "",
-      "date": "2026-04-11T22:54:33+00:00"
     }
   ]
 }
