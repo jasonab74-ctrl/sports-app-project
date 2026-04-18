@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-18T01:54:36.264698+00:00",
+  "updated": "2026-04-18T04:28:44.766673+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "c2c8c050d89d",
+      "source": "Purdue Athletics MBB",
+      "title": "Odiase, Walker Highlight Purdue’s Friday Action",
+      "url": "http://localhost/news/2026/04/18/odiase-walker-highlight-purdues-friday-action",
+      "summary": "",
+      "date": "2026-04-18T02:12:56+00:00"
+    },
+    {
+      "id": "e22b4e437d4c",
+      "source": "Purdue Athletics MBB",
+      "title": "Moore Hits 11th Home Run, Boilers Defeat Rutgers 12-2",
+      "url": "http://localhost/news/2026/04/18/moore-hits-11th-home-run-boilers-defeat-rutgers-12-2",
+      "summary": "Purdue (28-15, 7-9 Big Ten) toppled Rutgers in game one behind three home runs, two from Freshman Anna Moore.",
+      "date": "2026-04-18T01:43:11+00:00"
+    },
     {
       "id": "57ead7a71b6e",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "http://localhost/news/2026/04/12/klug-strikes-out-8-purdue-hits-4-homers-to-complete-sweep",
       "summary": "Purdue scores in 6 different innings to win wire-to-wire at Northwestern 8-3",
       "date": "2026-04-12T22:47:20+00:00"
-    },
-    {
-      "id": "f312f856c942",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Hits 4 Home Runs, Completes Sweep of Northwestern - Highlights",
-      "url": "http://localhost/news/2026/04/12/purdue-hits-4-home-runs-completes-sweep-of-northwestern-highlights",
-      "summary": "",
-      "date": "2026-04-12T21:15:06+00:00"
-    },
-    {
-      "id": "a47157d9e499",
-      "source": "Purdue Athletics MBB",
-      "title": "Baseball Rallies to Win 10-Inning Thriller at NU",
-      "url": "http://localhost/news/2026/04/11/baseball-rallies-to-win-extra-innings-thriller-in-10",
-      "summary": "Purdue clinches its 5th straight B1G series win & 7th straight series victory vs. Northwestern",
-      "date": "2026-04-11T23:49:14+00:00"
     }
   ]
 }
