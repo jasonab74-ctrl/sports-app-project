@@ -1,14 +1,22 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-18T16:48:46.096608+00:00",
+  "updated": "2026-04-18T17:32:23.428642+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "e955f54a1d2e",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilers Move to Saturday Doubleheader",
+      "url": "http://localhost/news/2026/04/18/boilers-move-to-saturday-doubleheader",
+      "summary": "Due to projected inclement weather on Sunday, Purdue and Rutgers will now play a Saturday doubleheader beginning at 3:00 p.m. est.",
+      "date": "2026-04-18T16:55:39+00:00"
+    },
     {
       "id": "83fe4ec847a5",
       "source": "Purdue Athletics MBB",
       "title": "Baseball Rides Big Inning to Game 1 Win vs OSU",
       "url": "http://localhost/news/2026/04/18/baseball-rides-big-inning-to-game-1-win-vs-osu",
-      "summary": "Purdue scored 6 times with 2 outs in the 2nd inning & held on for a 10-9 win in front of 2300 fans at Alexander",
+      "summary": "Purdue scored 6 times with 2 outs in the 2nd inning & held on for a 10-9 win in front of 2,329 fans at Alexander",
       "date": "2026-04-18T03:03:00+00:00"
     },
     {
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/04/13/softball-schedule-updates",
       "summary": "Purdue has made adjustments to the final games on the regular season slate, including adding a midweek against Miami Ohio and rescheduling the previously postponed matchup with UIC.",
       "date": "2026-04-13T19:47:00+00:00"
-    },
-    {
-      "id": "16e6d2e6a4df",
-      "source": "Purdue Athletics MBB",
-      "title": "Klug Strikes Out 8, Purdue Hits 4 Homers to Complete Sweep",
-      "url": "http://localhost/news/2026/04/12/klug-strikes-out-8-purdue-hits-4-homers-to-complete-sweep",
-      "summary": "Purdue scores in 6 different innings to win wire-to-wire at Northwestern 8-3",
-      "date": "2026-04-12T22:47:20+00:00"
     }
   ]
 }
