@@ -1,48 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-18T11:05:43.230727+00:00",
+  "updated": "2026-04-18T11:56:03.540082+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "83fe4ec847a5",
-      "source": "Purdue Athletics MBB",
-      "title": "Baseball Rides Big Inning to Game 1 Win vs OSU",
-      "url": "http://localhost/news/2026/04/18/baseball-rides-big-inning-to-game-1-win-vs-osu",
-      "summary": "Purdue scored 6 times with 2 outs in the 2nd inning & held on for a 10-9 win in front of 2300 fans at Alexander",
-      "date": "2026-04-18T03:03:00+00:00"
-    },
-    {
-      "id": "87d66f273f27",
-      "source": "Purdue Athletics MBB",
-      "title": "6-Run Inning Powers Purdue to Game 1 Win vs OSU - Highlights",
-      "url": "http://localhost/news/2026/04/18/6-run-inning-powers-purdue-to-game-1-win-vs-osu-highlights",
-      "summary": "",
-      "date": "2026-04-18T02:31:42+00:00"
-    },
-    {
-      "id": "c2c8c050d89d",
-      "source": "Purdue Athletics MBB",
-      "title": "Odiase, Walker Highlight Purdue’s Friday Action",
-      "url": "http://localhost/news/2026/04/18/odiase-walker-highlight-purdues-friday-action",
-      "summary": "",
-      "date": "2026-04-18T02:12:56+00:00"
-    },
-    {
-      "id": "e22b4e437d4c",
-      "source": "Purdue Athletics MBB",
-      "title": "Moore Hits 11th Home Run, Boilers Defeat Rutgers 12-2",
-      "url": "http://localhost/news/2026/04/18/moore-hits-11th-home-run-boilers-defeat-rutgers-12-2",
-      "summary": "Purdue (28-15, 7-9 Big Ten) toppled Rutgers in game one behind three home runs, two from Freshman Anna Moore.",
-      "date": "2026-04-18T01:43:11+00:00"
-    },
-    {
-      "id": "57ead7a71b6e",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Shut Out at #10 USC",
-      "url": "http://localhost/news/2026/04/17/purdue-shut-out-at-10-usc",
-      "summary": "",
-      "date": "2026-04-17T23:48:16+00:00"
-    },
     {
       "id": "d0f88073027a",
       "source": "Purdue Athletics MBB",
@@ -58,6 +18,22 @@
       "url": "http://localhost/news/2026/04/17/purdue-finishes-opening-day-of-the-wake-forest-invitational",
       "summary": "",
       "date": "2026-04-17T03:27:43+00:00"
+    },
+    {
+      "id": "8caafd30bd3b",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilers Host Buckeyes for Big Ten Spotlight Series",
+      "url": "http://localhost/news/2026/04/17/boilers-host-buckeyes-for-big-ten-spotlight-series",
+      "summary": "Purdue-OSU is 1 of 2 Big Ten series this weekend featuring 2 teams over .500 in league play",
+      "date": "2026-04-17T01:35:17+00:00"
+    },
+    {
+      "id": "b2561840668d",
+      "source": "Purdue Athletics MBB",
+      "title": "Softball Heads to Rutgers",
+      "url": "http://localhost/news/2026/04/16/softball-heads-to-rutgers",
+      "summary": "Purdue heads to Rutgers for its second road conference series in a row. The Boilers have just 11 guaranteed games left in the regular season.",
+      "date": "2026-04-16T20:14:59+00:00"
     },
     {
       "id": "14449dda3a21",
@@ -162,6 +138,30 @@
       "url": "http://localhost/news/2026/04/12/klug-strikes-out-8-purdue-hits-4-homers-to-complete-sweep",
       "summary": "Purdue scores in 6 different innings to win wire-to-wire at Northwestern 8-3",
       "date": "2026-04-12T22:47:20+00:00"
+    },
+    {
+      "id": "f312f856c942",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Hits 4 Home Runs, Completes Sweep of Northwestern - Highlights",
+      "url": "http://localhost/news/2026/04/12/purdue-hits-4-home-runs-completes-sweep-of-northwestern-highlights",
+      "summary": "",
+      "date": "2026-04-12T21:15:06+00:00"
+    },
+    {
+      "id": "a47157d9e499",
+      "source": "Purdue Athletics MBB",
+      "title": "Baseball Rallies to Win 10-Inning Thriller at NU",
+      "url": "http://localhost/news/2026/04/11/baseball-rallies-to-win-extra-innings-thriller-in-10",
+      "summary": "Purdue clinches its 5th straight B1G series win & 7th straight series victory vs. Northwestern",
+      "date": "2026-04-11T23:49:14+00:00"
+    },
+    {
+      "id": "a72fe9bbd04c",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Rallies for 10-Inning Win at Northwestern - Highlights",
+      "url": "http://localhost/news/2026/04/11/purdue-rallies-for-10-inning-win-at-northwestern-highlights",
+      "summary": "",
+      "date": "2026-04-11T22:54:33+00:00"
     }
   ]
 }
