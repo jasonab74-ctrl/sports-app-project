@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-18T15:58:47.949240+00:00",
+  "updated": "2026-04-18T16:48:46.096608+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "83fe4ec847a5",
+      "source": "Purdue Athletics MBB",
+      "title": "Baseball Rides Big Inning to Game 1 Win vs OSU",
+      "url": "http://localhost/news/2026/04/18/baseball-rides-big-inning-to-game-1-win-vs-osu",
+      "summary": "Purdue scored 6 times with 2 outs in the 2nd inning & held on for a 10-9 win in front of 2300 fans at Alexander",
+      "date": "2026-04-18T03:03:00+00:00"
+    },
+    {
+      "id": "87d66f273f27",
+      "source": "Purdue Athletics MBB",
+      "title": "6-Run Inning Powers Purdue to Game 1 Win vs OSU - Highlights",
+      "url": "http://localhost/news/2026/04/18/6-run-inning-powers-purdue-to-game-1-win-vs-osu-highlights",
+      "summary": "",
+      "date": "2026-04-18T02:31:42+00:00"
+    },
     {
       "id": "c2c8c050d89d",
       "source": "Purdue Athletics MBB",
@@ -42,22 +58,6 @@
       "url": "http://localhost/news/2026/04/17/purdue-finishes-opening-day-of-the-wake-forest-invitational",
       "summary": "",
       "date": "2026-04-17T03:27:43+00:00"
-    },
-    {
-      "id": "8caafd30bd3b",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilers Host Buckeyes for Big Ten Spotlight Series",
-      "url": "http://localhost/news/2026/04/17/boilers-host-buckeyes-for-big-ten-spotlight-series",
-      "summary": "Purdue-OSU is 1 of 2 Big Ten series this weekend featuring 2 teams over .500 in league play",
-      "date": "2026-04-17T01:35:17+00:00"
-    },
-    {
-      "id": "b2561840668d",
-      "source": "Purdue Athletics MBB",
-      "title": "Softball Heads to Rutgers",
-      "url": "http://localhost/news/2026/04/16/softball-heads-to-rutgers",
-      "summary": "Purdue heads to Rutgers for its second road conference series in a row. The Boilers have just 11 guaranteed games left in the regular season.",
-      "date": "2026-04-16T20:14:59+00:00"
     },
     {
       "id": "14449dda3a21",
