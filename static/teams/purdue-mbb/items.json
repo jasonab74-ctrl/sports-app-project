@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-19T22:29:23.300794+00:00",
+  "updated": "2026-04-19T23:05:09.578562+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "9037d60feba4",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Wins Game 3 to Complete Sweep of Ohio St. - Highlights",
-      "url": "http://localhost/news/2026/04/19/purdue-wins-game-3-to-complete-sweep-of-ohio-st-highlights",
-      "summary": "",
-      "date": "2026-04-19T20:53:19+00:00"
-    },
     {
       "id": "6a6154893931",
       "source": "Purdue Athletics MBB",
@@ -162,6 +154,14 @@
       "url": "http://localhost/news/2026/04/14/purdue-mens-basketball-announces-staff-updates",
       "summary": "",
       "date": "2026-04-14T18:48:00+00:00"
+    },
+    {
+      "id": "726182459bf3",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Finishes Runner-Up at Boilermaker Spring Classic",
+      "url": "http://localhost/news/2026/04/13/purdue-finishes-runner-up-at-boilermaker-spring-classic",
+      "summary": "",
+      "date": "2026-04-13T22:34:32+00:00"
     }
   ]
 }
