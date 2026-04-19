@@ -1,8 +1,32 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-19T23:05:09.578562+00:00",
+  "updated": "2026-04-19T23:59:36.462673+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "03440cadb572",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Prep for Big Ten Championships with Solid Effort",
+      "url": "http://localhost/news/2026/04/19/boilermakers-prep-for-big-ten-championships-with-solid-effort",
+      "summary": "",
+      "date": "2026-04-19T23:29:22+00:00"
+    },
+    {
+      "id": "4bd604861c26",
+      "source": "Purdue Athletics MBB",
+      "title": "Brooms Again: Boilers Complete Sweep of Buckeyes",
+      "url": "http://localhost/news/2026/04/19/brooms-again-boilers-complete-sweep-of-buckeyes",
+      "summary": "Purdue wins for 10th time in its last 11 Big Ten games, improves to 19-6 overall since March 10",
+      "date": "2026-04-19T21:45:25+00:00"
+    },
+    {
+      "id": "9037d60feba4",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Wins Game 3 to Complete Sweep of Ohio St. - Highlights",
+      "url": "http://localhost/news/2026/04/19/purdue-wins-game-3-to-complete-sweep-of-ohio-st-highlights",
+      "summary": "",
+      "date": "2026-04-19T20:53:19+00:00"
+    },
     {
       "id": "6a6154893931",
       "source": "Purdue Athletics MBB",
@@ -138,30 +162,6 @@
       "url": "http://localhost/news/2026/04/15/7-consecutive-zeros-from-bullpen-not-enough-in-11-inning-loss",
       "summary": "Boyle hits his first home run as a Boilermaker but Purdue held scoreless after the 4th inning",
       "date": "2026-04-15T03:01:40+00:00"
-    },
-    {
-      "id": "5c38fd6e0433",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Falls to Miami (Ohio) in 11 Innings - Highlights",
-      "url": "http://localhost/news/2026/04/15/purdue-falls-to-miami-ohio-in-11-innings-highlights",
-      "summary": "",
-      "date": "2026-04-15T02:57:48+00:00"
-    },
-    {
-      "id": "0cceec6a35e4",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Men’s Basketball Announces Staff Updates",
-      "url": "http://localhost/news/2026/04/14/purdue-mens-basketball-announces-staff-updates",
-      "summary": "",
-      "date": "2026-04-14T18:48:00+00:00"
-    },
-    {
-      "id": "726182459bf3",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Finishes Runner-Up at Boilermaker Spring Classic",
-      "url": "http://localhost/news/2026/04/13/purdue-finishes-runner-up-at-boilermaker-spring-classic",
-      "summary": "",
-      "date": "2026-04-13T22:34:32+00:00"
     }
   ]
 }
