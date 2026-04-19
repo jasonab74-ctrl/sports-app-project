@@ -1,39 +1,15 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-19T05:54:41.411805+00:00",
+  "updated": "2026-04-19T07:11:30.060637+00:00",
   "count": 20,
   "items": [
     {
-      "id": "6a6154893931",
+      "id": "e955f54a1d2e",
       "source": "Purdue Athletics MBB",
-      "title": "Boilers Complete Sweep of Rutgers",
-      "url": "http://localhost/news/2026/04/19/boilers-complete-sweep-of-rutgers",
-      "summary": "Purdue (30-15, 9-9 Big Ten) secured the series victory over Rutgers, sweeping the Saturday doubleheader, using a dominant offensive outburst in game one before holding off the Scarlet Knights in game two.",
-      "date": "2026-04-19T03:55:53+00:00"
-    },
-    {
-      "id": "e808b8e3a20d",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Scores a Dozen, Clinches 6th Straight Series Win",
-      "url": "http://localhost/news/2026/04/19/purdue-scores-a-dozen-clinches-6th-straight-series-win",
-      "summary": "Boilers post a 6-run inning for 2nd day in a row, claim 1st series win at home vs OSU since 1987",
-      "date": "2026-04-19T00:31:30+00:00"
-    },
-    {
-      "id": "bb667ef66a5c",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Scores 6 in an Inning Again in Game 2 Win vs OSU - Highlights",
-      "url": "http://localhost/news/2026/04/18/purdue-scores-6-in-an-inning-again-in-game-2-win-vs-osu-highlights",
-      "summary": "",
-      "date": "2026-04-18T23:11:53+00:00"
-    },
-    {
-      "id": "21c7696c34a1",
-      "source": "Purdue Athletics MBB",
-      "title": "2 School Records Lead Purdue’s Final Day at the Tom Jones Memorial",
-      "url": "http://localhost/news/2026/04/18/2-school-records-lead-purdues-final-day-at-the-tom-jones-memorial",
-      "summary": "",
-      "date": "2026-04-18T22:46:55+00:00"
+      "title": "Boilers Move to Saturday Doubleheader",
+      "url": "http://localhost/news/2026/04/18/boilers-move-to-saturday-doubleheader",
+      "summary": "Due to projected inclement weather on Sunday, Purdue and Rutgers will now play a Saturday doubleheader beginning at 3:00 p.m. est.",
+      "date": "2026-04-18T16:55:39+00:00"
     },
     {
       "id": "83fe4ec847a5",
@@ -66,6 +42,14 @@
       "url": "http://localhost/news/2026/04/18/moore-hits-11th-home-run-boilers-defeat-rutgers-12-2",
       "summary": "Purdue (28-15, 7-9 Big Ten) toppled Rutgers in game one behind three home runs, two from Freshman Anna Moore.",
       "date": "2026-04-18T01:43:11+00:00"
+    },
+    {
+      "id": "57ead7a71b6e",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Shut Out at #10 USC",
+      "url": "http://localhost/news/2026/04/17/purdue-shut-out-at-10-usc",
+      "summary": "",
+      "date": "2026-04-17T23:48:16+00:00"
     },
     {
       "id": "d0f88073027a",
@@ -162,6 +146,22 @@
       "url": "http://localhost/news/2026/04/13/purdue-finishes-runner-up-at-boilermaker-spring-classic",
       "summary": "",
       "date": "2026-04-13T22:34:32+00:00"
+    },
+    {
+      "id": "270f2450b408",
+      "source": "Purdue Athletics MBB",
+      "title": "Women's Golf Boilermaker Spring Classic Photo Gallery",
+      "url": "http://localhost/news/2026/04/13/womens-golf-boilermaker-spring-classic-photo-gallery",
+      "summary": "",
+      "date": "2026-04-13T21:05:21+00:00"
+    },
+    {
+      "id": "a8c0a7ec1790",
+      "source": "Purdue Athletics MBB",
+      "title": "Softball Schedule Updates",
+      "url": "http://localhost/news/2026/04/13/softball-schedule-updates",
+      "summary": "Purdue has made adjustments to the final games on the regular season slate, including adding a midweek against Miami Ohio and rescheduling the previously postponed matchup with UIC.",
+      "date": "2026-04-13T19:47:00+00:00"
     }
   ]
 }
