@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-20T03:36:02.421962+00:00",
+  "updated": "2026-04-20T06:11:00.385452+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "03440cadb572",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Prep for Big Ten Championships with Solid Effort",
+      "url": "http://localhost/news/2026/04/19/boilermakers-prep-for-big-ten-championships-with-solid-effort",
+      "summary": "",
+      "date": "2026-04-19T23:29:22+00:00"
+    },
     {
       "id": "4bd604861c26",
       "source": "Purdue Athletics MBB",
@@ -98,14 +106,6 @@
       "url": "http://localhost/news/2026/04/17/purdue-finishes-opening-day-of-the-wake-forest-invitational",
       "summary": "",
       "date": "2026-04-17T03:27:43+00:00"
-    },
-    {
-      "id": "14449dda3a21",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Travels to Indiana for Big Ten Championships Tune-Up",
-      "url": "http://localhost/news/2026/04/16/purdue-travels-to-indiana-for-big-ten-championships-tune-up",
-      "summary": "",
-      "date": "2026-04-16T15:56:48+00:00"
     },
     {
       "id": "bcf478a543d6",
