@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-19T23:59:36.462673+00:00",
+  "updated": "2026-04-20T03:36:02.421962+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "03440cadb572",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Prep for Big Ten Championships with Solid Effort",
-      "url": "http://localhost/news/2026/04/19/boilermakers-prep-for-big-ten-championships-with-solid-effort",
-      "summary": "",
-      "date": "2026-04-19T23:29:22+00:00"
-    },
     {
       "id": "4bd604861c26",
       "source": "Purdue Athletics MBB",
@@ -162,6 +154,14 @@
       "url": "http://localhost/news/2026/04/15/7-consecutive-zeros-from-bullpen-not-enough-in-11-inning-loss",
       "summary": "Boyle hits his first home run as a Boilermaker but Purdue held scoreless after the 4th inning",
       "date": "2026-04-15T03:01:40+00:00"
+    },
+    {
+      "id": "5c38fd6e0433",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Falls to Miami (Ohio) in 11 Innings - Highlights",
+      "url": "http://localhost/news/2026/04/15/purdue-falls-to-miami-ohio-in-11-innings-highlights",
+      "summary": "",
+      "date": "2026-04-15T02:57:48+00:00"
     }
   ]
 }
