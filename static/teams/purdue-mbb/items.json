@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-20T20:54:22.327428+00:00",
+  "updated": "2026-04-20T21:41:18.756349+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "0099d3b022b6",
+      "source": "Purdue Athletics MBB",
+      "title": "Moore Earns Third Big Ten Freshman of the Week Honor",
+      "url": "http://localhost/news/2026/04/20/moore-earns-third-big-ten-freshman-of-the-week-honor",
+      "summary": "Anna Moore earned her third Big Ten Freshman of the Week honor after continuing her stellar campaign, helping Purdue to a 4-0 week, while sweeping Rutgers.",
+      "date": "2026-04-20T20:00:00+00:00"
+    },
     {
       "id": "87b7071c42b1",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/04/15/purdue-football-2026-spring-showcase",
       "summary": "",
       "date": "2026-04-15T14:58:56+00:00"
-    },
-    {
-      "id": "532d5e1ec4ea",
-      "source": "Purdue Athletics MBB",
-      "title": "7 Consecutive Zeros from Bullpen Not Enough in 11-Inning Loss",
-      "url": "http://localhost/news/2026/04/15/7-consecutive-zeros-from-bullpen-not-enough-in-11-inning-loss",
-      "summary": "Boyle hits his first home run as a Boilermaker but Purdue held scoreless after the 4th inning",
-      "date": "2026-04-15T03:01:40+00:00"
     }
   ]
 }
