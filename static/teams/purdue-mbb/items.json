@@ -1,8 +1,32 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-21T23:04:19.808174+00:00",
+  "updated": "2026-04-21T23:58:36.789318+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "2a3d240c3a16",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Sweeps Ohio State at Alexander Field",
+      "url": "http://localhost/news/2026/04/21/purdue-sweeps-ohio-state-at-alexander-field",
+      "summary": "",
+      "date": "2026-04-21T22:55:22+00:00"
+    },
+    {
+      "id": "cf04101d66ea",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Volleyball Presents: Laying the Tracks Documentary",
+      "url": "http://localhost/news/2026/04/21/purdue-volleyball-presents-laying-the-tracks-docuseries",
+      "summary": "",
+      "date": "2026-04-21T19:30:00+00:00"
+    },
+    {
+      "id": "547912933c96",
+      "source": "Purdue Athletics MBB",
+      "title": "Rowley Leads Purdue Contingent to U.S. Open",
+      "url": "http://localhost/news/2026/04/21/rowley-leads-purdue-contingent-to-us-open",
+      "summary": "Ten Boilermakers will compete in the national freestyle tournament in Las Vegas.",
+      "date": "2026-04-21T19:16:00+00:00"
+    },
     {
       "id": "0099d3b022b6",
       "source": "Purdue Athletics MBB",
@@ -138,30 +162,6 @@
       "url": "http://localhost/news/2026/04/16/this-week-in-purdue-baseball-april-15-2026",
       "summary": "",
       "date": "2026-04-16T10:28:33+00:00"
-    },
-    {
-      "id": "a0013adaeb21",
-      "source": "Purdue Athletics MBB",
-      "title": "Blaze To Wrestle 3-Time NCAA Champion in RAF Debut",
-      "url": "http://localhost/news/2026/04/15/blaze-to-wrestle-3-time-ncaa-champion-in-raf-debut",
-      "summary": "The Boilermaker is set to wrestle Jason Nolf at RAF 08 in Philadelphia Saturday night.",
-      "date": "2026-04-15T16:02:33+00:00"
-    },
-    {
-      "id": "cabee932359a",
-      "source": "Purdue Athletics MBB",
-      "title": "Honda Awards 50th Anniversary | Purdue Athletics",
-      "url": "http://localhost/news/2026/04/15/honda-awards-50th-anniversary-purdue-athletics",
-      "summary": "",
-      "date": "2026-04-15T15:23:20+00:00"
-    },
-    {
-      "id": "a2c69361dd47",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Football 2026 Spring Showcase",
-      "url": "http://localhost/news/2026/04/15/purdue-football-2026-spring-showcase",
-      "summary": "",
-      "date": "2026-04-15T14:58:56+00:00"
     }
   ]
 }
