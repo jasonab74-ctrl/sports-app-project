@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-22T11:56:25.399626+00:00",
+  "updated": "2026-04-22T13:22:53.360604+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "2a3d240c3a16",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Sweeps Ohio State at Alexander Field",
+      "url": "http://localhost/news/2026/04/21/purdue-sweeps-ohio-state-at-alexander-field",
+      "summary": "",
+      "date": "2026-04-21T22:55:22+00:00"
+    },
     {
       "id": "cf04101d66ea",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/04/16/this-week-in-purdue-baseball-april-15-2026",
       "summary": "",
       "date": "2026-04-16T10:28:33+00:00"
-    },
-    {
-      "id": "a0013adaeb21",
-      "source": "Purdue Athletics MBB",
-      "title": "Blaze To Wrestle 3-Time NCAA Champion in RAF Debut",
-      "url": "http://localhost/news/2026/04/15/blaze-to-wrestle-3-time-ncaa-champion-in-raf-debut",
-      "summary": "The Boilermaker is set to wrestle Jason Nolf at RAF 08 in Philadelphia Saturday night.",
-      "date": "2026-04-15T16:02:33+00:00"
     }
   ]
 }
