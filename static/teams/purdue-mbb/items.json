@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-22T17:31:12.530194+00:00",
+  "updated": "2026-04-22T19:05:45.398362+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "7f589ac52120",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Swimming & Diving Facilities Tour 2026",
+      "url": "http://localhost/news/2026/04/22/purdue-swimming-diving-facilities-tour-2026",
+      "summary": "",
+      "date": "2026-04-22T16:55:54+00:00"
+    },
     {
       "id": "d5bc3962c640",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/04/16/sondrup-signs-with-the-boilermakers",
       "summary": "",
       "date": "2026-04-16T14:17:43+00:00"
-    },
-    {
-      "id": "6a977ddd8be8",
-      "source": "Purdue Athletics MBB",
-      "title": "This Week in Purdue Baseball | April 15, 2026",
-      "url": "http://localhost/news/2026/04/16/this-week-in-purdue-baseball-april-15-2026",
-      "summary": "",
-      "date": "2026-04-16T10:28:33+00:00"
     }
   ]
 }
