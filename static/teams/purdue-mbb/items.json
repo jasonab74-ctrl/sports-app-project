@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-23T20:45:23.976632+00:00",
+  "updated": "2026-04-23T21:40:33.975622+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "4ce261a94eaf",
+      "source": "Purdue Athletics MBB",
+      "title": "Moore Named to NFCA DI National Freshman of the Year Top 25",
+      "url": "http://localhost/news/2026/04/23/moore-named-to-nfca-di-national-freshman-of-the-year-top-25",
+      "summary": "Purdue's Anna Moore was named to the 2026 NFCA D1 National Freshman of the Year list becoming the first freshman to earn the honor in the program's history.",
+      "date": "2026-04-23T18:05:00+00:00"
+    },
+    {
+      "id": "6d4fcdaa6420",
+      "source": "Purdue Athletics MBB",
+      "title": "Make Your Impact - Purdue Day of Giving on April 29",
+      "url": "http://localhost/news/2026/04/23/make-your-impact-pdog26",
+      "summary": "",
+      "date": "2026-04-23T14:30:11+00:00"
+    },
     {
       "id": "b42ced294261",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "http://localhost/news/2026/04/18/moore-hits-11th-home-run-boilers-defeat-rutgers-12-2",
       "summary": "Purdue (28-15, 7-9 Big Ten) toppled Rutgers in game one behind three home runs, two from Freshman Anna Moore.",
       "date": "2026-04-18T01:43:11+00:00"
-    },
-    {
-      "id": "d0f88073027a",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Stories: The Rapid Ascent of Moriah Polar",
-      "url": "http://localhost/news/2026/04/17/purdue-stories-the-rapid-ascent-of-moriah-polar",
-      "summary": "",
-      "date": "2026-04-17T18:08:40+00:00"
-    },
-    {
-      "id": "dd4100e016c2",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Finishes Opening Day of the Wake Forest Invitational",
-      "url": "http://localhost/news/2026/04/17/purdue-finishes-opening-day-of-the-wake-forest-invitational",
-      "summary": "",
-      "date": "2026-04-17T03:27:43+00:00"
     }
   ]
 }
