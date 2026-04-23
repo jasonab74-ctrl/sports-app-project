@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-23T15:24:32.913246+00:00",
+  "updated": "2026-04-23T16:58:01.417142+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "6d4fcdaa6420",
+      "source": "Purdue Athletics MBB",
+      "title": "Make Your Impact - Purdue Day of Giving on April 29",
+      "url": "http://localhost/news/2026/04/23/make-your-impact-pdog26",
+      "summary": "",
+      "date": "2026-04-23T14:30:11+00:00"
+    },
+    {
+      "id": "b42ced294261",
+      "source": "Purdue Athletics MBB",
+      "title": "This Week in Purdue Baseball | April 22, 2026",
+      "url": "http://localhost/news/2026/04/23/this-week-in-purdue-baseball-april-22-2026",
+      "summary": "",
+      "date": "2026-04-23T10:28:44+00:00"
+    },
     {
       "id": "7f589ac52120",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "http://localhost/news/2026/04/17/purdue-stories-the-rapid-ascent-of-moriah-polar",
       "summary": "",
       "date": "2026-04-17T18:08:40+00:00"
-    },
-    {
-      "id": "dd4100e016c2",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Finishes Opening Day of the Wake Forest Invitational",
-      "url": "http://localhost/news/2026/04/17/purdue-finishes-opening-day-of-the-wake-forest-invitational",
-      "summary": "",
-      "date": "2026-04-17T03:27:43+00:00"
-    },
-    {
-      "id": "bcf478a543d6",
-      "source": "Purdue Athletics MBB",
-      "title": "Sondrup Signs With the Boilermakers",
-      "url": "http://localhost/news/2026/04/16/sondrup-signs-with-the-boilermakers",
-      "summary": "",
-      "date": "2026-04-16T14:17:43+00:00"
     }
   ]
 }
