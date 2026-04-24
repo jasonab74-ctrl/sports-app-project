@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-24T02:07:21.906376+00:00",
+  "updated": "2026-04-24T05:19:48.189840+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "5846e172ec0b",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Ride B1G Streaks Out to LA for Big Series at #21 USC",
-      "url": "http://localhost/news/2026/04/23/boilermakers-ride-b1g-streaks-out-to-la-for-big-series-at-usc",
-      "summary": "Purdue aims to become the first Big Ten team to win a game/series in SoCal this season",
-      "date": "2026-04-23T21:18:00+00:00"
-    },
     {
       "id": "4ce261a94eaf",
       "source": "Purdue Athletics MBB",
@@ -162,6 +154,14 @@
       "url": "http://localhost/news/2026/04/18/odiase-walker-highlight-purdues-friday-action",
       "summary": "",
       "date": "2026-04-18T02:12:56+00:00"
+    },
+    {
+      "id": "e22b4e437d4c",
+      "source": "Purdue Athletics MBB",
+      "title": "Moore Hits 11th Home Run, Boilers Defeat Rutgers 12-2",
+      "url": "http://localhost/news/2026/04/18/moore-hits-11th-home-run-boilers-defeat-rutgers-12-2",
+      "summary": "Purdue (28-15, 7-9 Big Ten) toppled Rutgers in game one behind three home runs, two from Freshman Anna Moore.",
+      "date": "2026-04-18T01:43:11+00:00"
     }
   ]
 }
