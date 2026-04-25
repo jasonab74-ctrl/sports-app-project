@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-25T10:11:30.016839+00:00",
+  "updated": "2026-04-25T11:10:02.316288+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "01d0d66ba436",
+      "source": "Purdue Athletics MBB",
+      "title": "Bases-Loaded Opportunities Go by the Board in Game 1 Loss at USC",
+      "url": "http://localhost/news/2026/04/25/bases-loaded-opportunities-go-by-the-board-in-game-1-loss-at-usc",
+      "summary": "Van Assen retires 13 consecutive batters but Purdue kept off the scoreboard after the 2nd inning",
+      "date": "2026-04-25T06:17:00+00:00"
+    },
     {
       "id": "fafd445211c6",
       "source": "Purdue Athletics MBB",
@@ -18,14 +26,6 @@
       "url": "http://localhost/news/2026/04/25/despite-breaking-four-records-purdue-falls-8-7-to-northwestern",
       "summary": "Purdue (32-16, 9-10) falls 8-7 to Northwestern (25-19, 12-7) despite record-breaking performances in the series-opener.",
       "date": "2026-04-25T02:32:44+00:00"
-    },
-    {
-      "id": "5846e172ec0b",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Ride B1G Streaks Out to LA for Big Series at #21 USC",
-      "url": "http://localhost/news/2026/04/23/boilermakers-ride-b1g-streaks-out-to-la-for-big-series-at-usc",
-      "summary": "Purdue aims to become the first Big Ten team to win a game/series in SoCal this season",
-      "date": "2026-04-23T21:18:00+00:00"
     },
     {
       "id": "4ce261a94eaf",
