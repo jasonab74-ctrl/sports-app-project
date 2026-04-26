@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-26T05:23:19.749844+00:00",
+  "updated": "2026-04-26T07:08:49.740192+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "d1973bdcd6f7",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Moves Into 2nd at B1G Championships",
-      "url": "http://localhost/news/2026/04/26/purdue-moves-into-2nd-at-b1g-championships",
-      "summary": "",
-      "date": "2026-04-26T00:42:21+00:00"
-    },
     {
       "id": "3788c1bb2aa2",
       "source": "Purdue Athletics MBB",
@@ -162,6 +154,14 @@
       "url": "http://localhost/news/2026/04/18/purdue-scores-6-in-an-inning-again-in-game-2-win-vs-osu-highlights",
       "summary": "",
       "date": "2026-04-18T23:11:53+00:00"
+    },
+    {
+      "id": "21c7696c34a1",
+      "source": "Purdue Athletics MBB",
+      "title": "2 School Records Lead Purdue’s Final Day at the Tom Jones Memorial",
+      "url": "http://localhost/news/2026/04/18/2-school-records-lead-purdues-final-day-at-the-tom-jones-memorial",
+      "summary": "",
+      "date": "2026-04-18T22:46:55+00:00"
     }
   ]
 }
