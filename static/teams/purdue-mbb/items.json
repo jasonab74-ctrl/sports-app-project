@@ -1,8 +1,32 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-26T09:49:50.453121+00:00",
+  "updated": "2026-04-26T10:39:54.568217+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "e0c7a0109ccb",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Held to Season-Low Run Total in 6-1 Loss",
+      "url": "http://localhost/news/2026/04/26/purdue-held-to-season-low-run-total-in-6-1-loss",
+      "summary": "",
+      "date": "2026-04-26T02:00:33+00:00"
+    },
+    {
+      "id": "d1973bdcd6f7",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Moves Into 2nd at B1G Championships",
+      "url": "http://localhost/news/2026/04/26/purdue-moves-into-2nd-at-b1g-championships",
+      "summary": "",
+      "date": "2026-04-26T00:42:21+00:00"
+    },
+    {
+      "id": "3788c1bb2aa2",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilers Fall 11-4 on Senior Day",
+      "url": "http://localhost/news/2026/04/25/boilers-fall-11-4-on-senior-day",
+      "summary": "Purdue (32-17, 9-11 Big Ten) fell 11-4 in game two of the series against Northwestern on senior day in West Lafayette.",
+      "date": "2026-04-25T20:54:46+00:00"
+    },
     {
       "id": "01d0d66ba436",
       "source": "Purdue Athletics MBB",
@@ -138,30 +162,6 @@
       "url": "http://localhost/news/2026/04/19/purdue-scores-a-dozen-clinches-6th-straight-series-win",
       "summary": "Boilers post a 6-run inning for 2nd day in a row, claim 1st series win at home vs OSU since 1987",
       "date": "2026-04-19T00:31:30+00:00"
-    },
-    {
-      "id": "bb667ef66a5c",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Scores 6 in an Inning Again in Game 2 Win vs OSU - Highlights",
-      "url": "http://localhost/news/2026/04/18/purdue-scores-6-in-an-inning-again-in-game-2-win-vs-osu-highlights",
-      "summary": "",
-      "date": "2026-04-18T23:11:53+00:00"
-    },
-    {
-      "id": "21c7696c34a1",
-      "source": "Purdue Athletics MBB",
-      "title": "2 School Records Lead Purdue’s Final Day at the Tom Jones Memorial",
-      "url": "http://localhost/news/2026/04/18/2-school-records-lead-purdues-final-day-at-the-tom-jones-memorial",
-      "summary": "",
-      "date": "2026-04-18T22:46:55+00:00"
-    },
-    {
-      "id": "83fe4ec847a5",
-      "source": "Purdue Athletics MBB",
-      "title": "Baseball Rides Big Inning to Game 1 Win vs OSU",
-      "url": "http://localhost/news/2026/04/18/baseball-rides-big-inning-to-game-1-win-vs-osu",
-      "summary": "Purdue scored 6 times with 2 outs in the 2nd inning & held on for a 10-9 win in front of 2,329 fans at Alexander",
-      "date": "2026-04-18T03:03:00+00:00"
     }
   ]
 }
