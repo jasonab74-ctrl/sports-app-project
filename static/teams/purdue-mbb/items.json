@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-27T21:32:26.283247+00:00",
+  "updated": "2026-04-27T22:45:02.124240+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "0ab8e2b945bb",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Place 3rd, Best B1G Finish Since 2019",
-      "url": "http://localhost/news/2026/04/27/boilermakers-place-3rd-best-b1g-finish-since-2019",
-      "summary": "",
-      "date": "2026-04-27T01:23:30+00:00"
-    },
     {
       "id": "e09764e66cb4",
       "source": "Purdue Athletics MBB",
@@ -162,6 +154,14 @@
       "url": "http://localhost/news/2026/04/19/purdue-wins-game-3-to-complete-sweep-of-ohio-st-highlights",
       "summary": "",
       "date": "2026-04-19T20:53:19+00:00"
+    },
+    {
+      "id": "6a6154893931",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilers Complete Sweep of Rutgers",
+      "url": "http://localhost/news/2026/04/19/boilers-complete-sweep-of-rutgers",
+      "summary": "Purdue (30-15, 9-9 Big Ten) secured the series victory over Rutgers, sweeping the Saturday doubleheader, using a dominant offensive outburst in game one before holding off the Scarlet Knights in game two.",
+      "date": "2026-04-19T03:55:53+00:00"
     }
   ]
 }
