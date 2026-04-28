@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-28T21:52:14.189145+00:00",
+  "updated": "2026-04-28T22:51:42.062562+00:00",
   "count": 20,
   "items": [
     {
@@ -10,6 +10,14 @@
       "url": "http://localhost/news/2026/04/28/boilermakers-add-guard-aysia-proctor",
       "summary": "",
       "date": "2026-04-28T16:14:55+00:00"
+    },
+    {
+      "id": "11e7780fc538",
+      "source": "Purdue Athletics MBB",
+      "title": "Support Purdue Football on Purdue Day of Giving",
+      "url": "http://localhost/news/2026/04/28/support-football-purdue-day-of-giving",
+      "summary": "",
+      "date": "2026-04-28T11:00:00+00:00"
     },
     {
       "id": "5f259ef0fec5",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/04/20/moore-earns-third-big-ten-freshman-of-the-week-honor",
       "summary": "Anna Moore earned her third Big Ten Freshman of the Week honor after continuing her stellar campaign, helping Purdue to a 4-0 week, while sweeping Rutgers.",
       "date": "2026-04-20T20:00:00+00:00"
-    },
-    {
-      "id": "03440cadb572",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Prep for Big Ten Championships with Solid Effort",
-      "url": "http://localhost/news/2026/04/19/boilermakers-prep-for-big-ten-championships-with-solid-effort",
-      "summary": "",
-      "date": "2026-04-19T23:29:22+00:00"
     }
   ]
 }
