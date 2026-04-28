@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-28T20:46:06.149895+00:00",
+  "updated": "2026-04-28T21:52:14.189145+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "c5701474634e",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Add Guard Aysia Proctor",
+      "url": "http://localhost/news/2026/04/28/boilermakers-add-guard-aysia-proctor",
+      "summary": "",
+      "date": "2026-04-28T16:14:55+00:00"
+    },
+    {
+      "id": "5f259ef0fec5",
+      "source": "Purdue Athletics MBB",
+      "title": "Support Purdue Baseball on Purdue Day of Giving",
+      "url": "http://localhost/news/2026/04/28/support-baseball-purdue-day-of-giving",
+      "summary": "",
+      "date": "2026-04-28T11:00:00+00:00"
+    },
     {
       "id": "0ab8e2b945bb",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "http://localhost/news/2026/04/19/boilermakers-prep-for-big-ten-championships-with-solid-effort",
       "summary": "",
       "date": "2026-04-19T23:29:22+00:00"
-    },
-    {
-      "id": "4bd604861c26",
-      "source": "Purdue Athletics MBB",
-      "title": "Brooms Again: Boilers Complete Sweep of Buckeyes",
-      "url": "http://localhost/news/2026/04/19/brooms-again-boilers-complete-sweep-of-buckeyes",
-      "summary": "Purdue wins for 10th time in its last 11 Big Ten games, improves to 19-6 overall since March 10",
-      "date": "2026-04-19T21:45:25+00:00"
-    },
-    {
-      "id": "9037d60feba4",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Wins Game 3 to Complete Sweep of Ohio St. - Highlights",
-      "url": "http://localhost/news/2026/04/19/purdue-wins-game-3-to-complete-sweep-of-ohio-st-highlights",
-      "summary": "",
-      "date": "2026-04-19T20:53:19+00:00"
     }
   ]
 }
