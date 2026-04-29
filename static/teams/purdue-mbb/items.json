@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-29T20:38:01.197924+00:00",
+  "updated": "2026-04-29T21:55:20.187384+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "02f9de000458",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Earns 11th Straight NCAA Regional Berth",
+      "url": "http://localhost/news/2026/04/29/purdue-earns-11th-straight-ncaa-regional-berth",
+      "summary": "",
+      "date": "2026-04-29T21:43:24+00:00"
+    },
     {
       "id": "06a5e6ac8395",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/04/22/purdue-hits-3-homers-in-6-5-loss-to-indiana-state",
       "summary": "",
       "date": "2026-04-22T03:20:10+00:00"
-    },
-    {
-      "id": "1bdbf91a3921",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilers Set 3 Records, Sweep the Day",
-      "url": "http://localhost/news/2026/04/22/boilers-set-three-records-sweep-the-day",
-      "summary": "Purdue (32-15, 9-9 Big Ten) goes perfect on the day, beating UIC (12-2) and IU Indy (9-1) to extend their win streak to six-straight.",
-      "date": "2026-04-22T01:24:02+00:00"
     }
   ]
 }
