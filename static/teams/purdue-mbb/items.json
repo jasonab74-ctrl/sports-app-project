@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-29T17:54:55.114588+00:00",
+  "updated": "2026-04-29T19:16:30.735766+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "fbf1d50e1c8c",
-      "source": "Purdue Athletics MBB",
-      "title": "Polar Named USA Softball Top 25 Player of the Year Finalist",
-      "url": "http://localhost/news/2026/04/29/polar-named-usa-softball-top-25-player-of-the-year-finalist",
-      "summary": "Just days after earning Purdue's Female Athlete of the Year award, Moriah Polar becomes the first-ever Purdue softball player to be named to the USA Softball Top 25 Player of the Year finalist list.",
-      "date": "2026-04-29T17:09:08+00:00"
-    },
     {
       "id": "80b4b4093a51",
       "source": "Purdue Athletics MBB",
@@ -162,6 +154,14 @@
       "url": "http://localhost/news/2026/04/21/purdue-volleyball-presents-laying-the-tracks-docuseries",
       "summary": "",
       "date": "2026-04-21T19:30:00+00:00"
+    },
+    {
+      "id": "0099d3b022b6",
+      "source": "Purdue Athletics MBB",
+      "title": "Moore Earns Third Big Ten Freshman of the Week Honor",
+      "url": "http://localhost/news/2026/04/20/moore-earns-third-big-ten-freshman-of-the-week-honor",
+      "summary": "Anna Moore earned her third Big Ten Freshman of the Week honor after continuing her stellar campaign, helping Purdue to a 4-0 week, while sweeping Rutgers.",
+      "date": "2026-04-20T20:00:00+00:00"
     }
   ]
 }
