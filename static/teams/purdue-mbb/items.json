@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-29T19:16:30.735766+00:00",
+  "updated": "2026-04-29T20:38:01.197924+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "06a5e6ac8395",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Heads to Pacific Northwest for Big Ten Championships",
+      "url": "http://localhost/news/2026/04/29/purdue-heads-to-pacific-northwest-for-big-ten-championships",
+      "summary": "",
+      "date": "2026-04-29T18:39:00+00:00"
+    },
+    {
+      "id": "fbf1d50e1c8c",
+      "source": "Purdue Athletics MBB",
+      "title": "Polar Named USA Softball Top 25 Player of the Year Finalist",
+      "url": "http://localhost/news/2026/04/29/polar-named-usa-softball-top-25-player-of-the-year-finalist",
+      "summary": "Just days after earning Purdue's Female Athlete of the Year award, Moriah Polar becomes the first-ever Purdue softball player to be named to the USA Softball Top 25 Player of the Year finalist list.",
+      "date": "2026-04-29T17:09:08+00:00"
+    },
     {
       "id": "80b4b4093a51",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "http://localhost/news/2026/04/22/boilers-set-three-records-sweep-the-day",
       "summary": "Purdue (32-15, 9-9 Big Ten) goes perfect on the day, beating UIC (12-2) and IU Indy (9-1) to extend their win streak to six-straight.",
       "date": "2026-04-22T01:24:02+00:00"
-    },
-    {
-      "id": "cf04101d66ea",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Volleyball Presents: Laying the Tracks Documentary",
-      "url": "http://localhost/news/2026/04/21/purdue-volleyball-presents-laying-the-tracks-docuseries",
-      "summary": "",
-      "date": "2026-04-21T19:30:00+00:00"
-    },
-    {
-      "id": "0099d3b022b6",
-      "source": "Purdue Athletics MBB",
-      "title": "Moore Earns Third Big Ten Freshman of the Week Honor",
-      "url": "http://localhost/news/2026/04/20/moore-earns-third-big-ten-freshman-of-the-week-honor",
-      "summary": "Anna Moore earned her third Big Ten Freshman of the Week honor after continuing her stellar campaign, helping Purdue to a 4-0 week, while sweeping Rutgers.",
-      "date": "2026-04-20T20:00:00+00:00"
     }
   ]
 }
