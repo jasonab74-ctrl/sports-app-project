@@ -1,8 +1,56 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-04-30T20:06:29.978629+00:00",
+  "updated": "2026-04-30T21:31:11.046977+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "6a426e5b636c",
+      "source": "Purdue Athletics MBB",
+      "title": "3 Boilers Earn Softball America Honors",
+      "url": "http://localhost/news/2026/04/30/3-boilers-earn-softball-america-honors",
+      "summary": "Three Purdue softball players land on the latest Softball America position rankings, heading into the final conference weekend of the season.",
+      "date": "2026-04-30T17:56:56+00:00"
+    },
+    {
+      "id": "f392d3ac876a",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue to Finish Regular Season in Lexington",
+      "url": "http://localhost/news/2026/04/30/purdue-to-finish-regular-season-in-lexington",
+      "summary": "",
+      "date": "2026-04-30T17:39:06+00:00"
+    },
+    {
+      "id": "cc5b1513e26a",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Athletics Raises Record $16.1 Million on Purdue Day of Giving",
+      "url": "http://localhost/news/2026/04/30/athletics-record-dollar16-1-million-on-pdog",
+      "summary": "The 2026 total of $16.1 million surpasses the previous high mark of $13 million set in 2024",
+      "date": "2026-04-30T16:21:44+00:00"
+    },
+    {
+      "id": "9fd3c5bceafc",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilers Head to Final Big Ten Series at Iowa",
+      "url": "http://localhost/news/2026/04/30/boilers-head-to-final-big-ten-series-at-iowa",
+      "summary": "The Purdue Boilermakers head to Iowa City to take on the Iowa Hawkeyes in the final conference series of the regular season.",
+      "date": "2026-04-30T16:00:00+00:00"
+    },
+    {
+      "id": "c6f94ba3e0c9",
+      "source": "Purdue Athletics MBB",
+      "title": "Bottom of the Lineup Leads the Way in Purdue Win vs USI - Highlights",
+      "url": "http://localhost/news/2026/04/30/bottom-of-the-lineup-leads-the-way-in-purdue-win-vs-usi-highlights",
+      "summary": "",
+      "date": "2026-04-30T02:20:00+00:00"
+    },
+    {
+      "id": "9f95907b5ed5",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Posts 8 Zeros to Win Homestand Opener 5-1",
+      "url": "http://localhost/news/2026/04/30/purdue-posts-8-zeros-to-win-homestand-opener-5-1",
+      "summary": "Bessette leads the way as the bottom third of the lineup enjoys an 8-for-12 night",
+      "date": "2026-04-30T02:10:00+00:00"
+    },
     {
       "id": "02f9de000458",
       "source": "Purdue Athletics MBB",
@@ -34,14 +82,6 @@
       "url": "http://localhost/news/2026/04/28/this-week-in-purdue-baseball-april-28-2026",
       "summary": "",
       "date": "2026-04-28T22:34:10+00:00"
-    },
-    {
-      "id": "948f6a2b70bc",
-      "source": "Purdue Athletics MBB",
-      "title": "Baseball Hosts USI for Opener of 8-Game Homestand",
-      "url": "http://localhost/news/2026/04/28/baseball-hosts-usi-for-opener-of-8-game-homestand",
-      "summary": "Purdue goes for its 10th victory of April & consecutive months with a double-figure win total",
-      "date": "2026-04-28T20:50:00+00:00"
     },
     {
       "id": "c5701474634e",
@@ -122,46 +162,6 @@
       "url": "http://localhost/news/2026/04/25/despite-breaking-four-records-purdue-falls-8-7-to-northwestern",
       "summary": "Purdue (32-16, 9-10) falls 8-7 to Northwestern (25-19, 12-7) despite record-breaking performances in the series-opener.",
       "date": "2026-04-25T02:32:44+00:00"
-    },
-    {
-      "id": "4ce261a94eaf",
-      "source": "Purdue Athletics MBB",
-      "title": "Moore Named to NFCA DI National Freshman of the Year Top 25",
-      "url": "http://localhost/news/2026/04/23/moore-named-to-nfca-di-national-freshman-of-the-year-top-25",
-      "summary": "Purdue's Anna Moore was named to the 2026 NFCA D1 National Freshman of the Year list becoming the first freshman to earn the honor in the program's history.",
-      "date": "2026-04-23T18:05:00+00:00"
-    },
-    {
-      "id": "6d4fcdaa6420",
-      "source": "Purdue Athletics MBB",
-      "title": "Make Your Impact - Purdue Day of Giving on April 29",
-      "url": "http://localhost/news/2026/04/23/make-your-impact-pdog26",
-      "summary": "",
-      "date": "2026-04-23T14:30:11+00:00"
-    },
-    {
-      "id": "b42ced294261",
-      "source": "Purdue Athletics MBB",
-      "title": "This Week in Purdue Baseball | April 22, 2026",
-      "url": "http://localhost/news/2026/04/23/this-week-in-purdue-baseball-april-22-2026",
-      "summary": "",
-      "date": "2026-04-23T10:28:44+00:00"
-    },
-    {
-      "id": "7f589ac52120",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Swimming & Diving Facilities Tour 2026",
-      "url": "http://localhost/news/2026/04/22/purdue-swimming-diving-facilities-tour-2026",
-      "summary": "",
-      "date": "2026-04-22T16:55:54+00:00"
-    },
-    {
-      "id": "d5bc3962c640",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Hits 3 Homers in 6-5 Loss to Indiana State",
-      "url": "http://localhost/news/2026/04/22/purdue-hits-3-homers-in-6-5-loss-to-indiana-state",
-      "summary": "",
-      "date": "2026-04-22T03:20:10+00:00"
     }
   ]
 }
