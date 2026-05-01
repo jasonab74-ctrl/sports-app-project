@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-05-01T14:35:10.664006+00:00",
+  "updated": "2026-05-01T15:51:47.678235+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "1363abd26c3d",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilers Host MVC-Leading Murray St. for Open Weekend in B1G Slate",
-      "url": "http://localhost/news/2026/04/30/boilers-host-mvc-leading-murray-st-for-open-weekend-in-b1g-slate",
-      "summary": "Purdue and Murray State are a combined 56-33 this season",
-      "date": "2026-04-30T22:01:00+00:00"
-    },
     {
       "id": "6a426e5b636c",
       "source": "Purdue Athletics MBB",
@@ -162,6 +154,14 @@
       "url": "http://localhost/news/2026/04/25/purdue-at-usc-game-1-highlights",
       "summary": "",
       "date": "2026-04-25T06:03:48+00:00"
+    },
+    {
+      "id": "0f1b776e65f7",
+      "source": "Purdue Athletics MBB",
+      "title": "Despite Breaking 4 Records, Purdue Falls 8-7 to Northwestern",
+      "url": "http://localhost/news/2026/04/25/despite-breaking-four-records-purdue-falls-8-7-to-northwestern",
+      "summary": "Purdue (32-16, 9-10) falls 8-7 to Northwestern (25-19, 12-7) despite record-breaking performances in the series-opener.",
+      "date": "2026-04-25T02:32:44+00:00"
     }
   ]
 }
