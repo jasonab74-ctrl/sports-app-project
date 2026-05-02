@@ -1,15 +1,31 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-05-02T00:10:52.126357+00:00",
+  "updated": "2026-05-02T03:57:50.351608+00:00",
   "count": 20,
   "items": [
     {
-      "id": "1363abd26c3d",
+      "id": "ee80e4115438",
       "source": "Purdue Athletics MBB",
-      "title": "Boilers Host MVC-Leading Murray St. for Open Weekend in B1G Slate",
-      "url": "http://localhost/news/2026/04/30/boilers-host-mvc-leading-murray-st-for-open-weekend-in-b1g-slate",
-      "summary": "Purdue and Murray State are a combined 56-33 this season",
-      "date": "2026-04-30T22:01:00+00:00"
+      "title": "Van Assen's Quality Start Leads Baseball to 30th Win",
+      "url": "http://localhost/news/2026/05/2/van-assens-quality-start-leads-baseball-to-30th-win",
+      "summary": "Manias homers for 3rd time in last 5 games as Purdue wins series opener 7-5",
+      "date": "2026-05-02T03:00:05+00:00"
+    },
+    {
+      "id": "5ad2eea6b686",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Scuffle on Day 1 of Big Ten Championships",
+      "url": "http://localhost/news/2026/05/2/boilermakers-scuffle-on-day-one-of-big-ten-championships",
+      "summary": "",
+      "date": "2026-05-02T02:09:06+00:00"
+    },
+    {
+      "id": "b11157887131",
+      "source": "Purdue Athletics MBB",
+      "title": "2 Victories Lead Purdue on Friday",
+      "url": "http://localhost/news/2026/05/2/2-victories-lead-purdue-on-friday",
+      "summary": "",
+      "date": "2026-05-02T01:15:36+00:00"
     },
     {
       "id": "6a426e5b636c",
@@ -18,14 +34,6 @@
       "url": "http://localhost/news/2026/04/30/3-boilers-earn-softball-america-honors",
       "summary": "Three Purdue softball players land on the latest Softball America position rankings, heading into the final conference weekend of the season.",
       "date": "2026-04-30T17:56:56+00:00"
-    },
-    {
-      "id": "f392d3ac876a",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue to Finish Regular Season in Lexington",
-      "url": "http://localhost/news/2026/04/30/purdue-to-finish-regular-season-in-lexington",
-      "summary": "",
-      "date": "2026-04-30T17:39:06+00:00"
     },
     {
       "id": "cc5b1513e26a",
@@ -66,14 +74,6 @@
       "url": "http://localhost/news/2026/04/29/purdue-earns-11th-straight-ncaa-regional-berth",
       "summary": "",
       "date": "2026-04-29T21:43:24+00:00"
-    },
-    {
-      "id": "06a5e6ac8395",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Heads to Pacific Northwest for Big Ten Championships",
-      "url": "http://localhost/news/2026/04/29/purdue-heads-to-pacific-northwest-for-big-ten-championships",
-      "summary": "",
-      "date": "2026-04-29T18:39:00+00:00"
     },
     {
       "id": "fbf1d50e1c8c",
