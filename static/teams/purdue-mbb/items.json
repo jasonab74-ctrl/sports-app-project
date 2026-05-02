@@ -1,15 +1,47 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-05-02T11:40:10.680471+00:00",
+  "updated": "2026-05-02T12:57:53.314847+00:00",
   "count": 20,
   "items": [
     {
-      "id": "1363abd26c3d",
+      "id": "60a12a676ad4",
       "source": "Purdue Athletics MBB",
-      "title": "Boilers Host MVC-Leading Murray St. for Open Weekend in B1G Slate",
-      "url": "http://localhost/news/2026/04/30/boilers-host-mvc-leading-murray-st-for-open-weekend-in-b1g-slate",
-      "summary": "Purdue and Murray State are a combined 56-33 this season",
-      "date": "2026-04-30T22:01:00+00:00"
+      "title": "Despite Late Rally, Purdue Falls to Iowa 8-7",
+      "url": "http://localhost/news/2026/05/2/despite-late-rally-purdue-falls-to-iowa-8-7",
+      "summary": "Purdue (32-19, 9-13 Big Ten) mounted a late push but ultimately fell to Iowa, 8-7, on Friday evening at Bob Pearl Field.",
+      "date": "2026-05-02T03:26:59+00:00"
+    },
+    {
+      "id": "ee80e4115438",
+      "source": "Purdue Athletics MBB",
+      "title": "Van Assen's Quality Start Leads Baseball to 30th Win",
+      "url": "http://localhost/news/2026/05/2/van-assens-quality-start-leads-baseball-to-30th-win",
+      "summary": "Manias homers for 3rd time in last 5 games as Purdue wins series opener 7-5",
+      "date": "2026-05-02T03:00:05+00:00"
+    },
+    {
+      "id": "5ad2eea6b686",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Scuffle on Day 1 of Big Ten Championships",
+      "url": "http://localhost/news/2026/05/2/boilermakers-scuffle-on-day-one-of-big-ten-championships",
+      "summary": "",
+      "date": "2026-05-02T02:09:06+00:00"
+    },
+    {
+      "id": "5214644b372c",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue vs Murray St. Game 1 Highlights",
+      "url": "http://localhost/news/2026/05/2/purdue-vs-murray-st-game-1-highlights",
+      "summary": "",
+      "date": "2026-05-02T01:44:54+00:00"
+    },
+    {
+      "id": "b11157887131",
+      "source": "Purdue Athletics MBB",
+      "title": "2 Victories Lead Purdue on Friday",
+      "url": "http://localhost/news/2026/05/2/2-victories-lead-purdue-on-friday",
+      "summary": "",
+      "date": "2026-05-02T01:15:36+00:00"
     },
     {
       "id": "6a426e5b636c",
@@ -20,28 +52,12 @@
       "date": "2026-04-30T17:56:56+00:00"
     },
     {
-      "id": "f392d3ac876a",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue to Finish Regular Season in Lexington",
-      "url": "http://localhost/news/2026/04/30/purdue-to-finish-regular-season-in-lexington",
-      "summary": "",
-      "date": "2026-04-30T17:39:06+00:00"
-    },
-    {
       "id": "cc5b1513e26a",
       "source": "Purdue Athletics MBB",
       "title": "Purdue Athletics Raises Record $16.1 Million on Purdue Day of Giving",
       "url": "http://localhost/news/2026/04/30/athletics-record-dollar16-1-million-on-pdog",
       "summary": "The 2026 total of $16.1 million surpasses the previous high mark of $13 million set in 2024",
       "date": "2026-04-30T16:21:44+00:00"
-    },
-    {
-      "id": "9fd3c5bceafc",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilers Head to Final Big Ten Series at Iowa",
-      "url": "http://localhost/news/2026/04/30/boilers-head-to-final-big-ten-series-at-iowa",
-      "summary": "The Purdue Boilermakers head to Iowa City to take on the Iowa Hawkeyes in the final conference series of the regular season.",
-      "date": "2026-04-30T16:00:00+00:00"
     },
     {
       "id": "c6f94ba3e0c9",
@@ -66,14 +82,6 @@
       "url": "http://localhost/news/2026/04/29/purdue-earns-11th-straight-ncaa-regional-berth",
       "summary": "",
       "date": "2026-04-29T21:43:24+00:00"
-    },
-    {
-      "id": "06a5e6ac8395",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Heads to Pacific Northwest for Big Ten Championships",
-      "url": "http://localhost/news/2026/04/29/purdue-heads-to-pacific-northwest-for-big-ten-championships",
-      "summary": "",
-      "date": "2026-04-29T18:39:00+00:00"
     },
     {
       "id": "fbf1d50e1c8c",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/04/25/bases-loaded-opportunities-go-by-the-board-in-game-1-loss-at-usc",
       "summary": "Van Assen retires 13 consecutive batters but Purdue kept off the scoreboard after the 2nd inning",
       "date": "2026-04-25T06:17:00+00:00"
-    },
-    {
-      "id": "fafd445211c6",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue at USC Game 1 Highlights",
-      "url": "http://localhost/news/2026/04/25/purdue-at-usc-game-1-highlights",
-      "summary": "",
-      "date": "2026-04-25T06:03:48+00:00"
     }
   ]
 }
