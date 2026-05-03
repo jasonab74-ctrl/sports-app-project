@@ -1,8 +1,48 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-05-02T23:37:39.940609+00:00",
+  "updated": "2026-05-03T02:26:51.754534+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "dab6f094d772",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Surges up Leaderboard at Big Ten Championships",
+      "url": "http://localhost/news/2026/05/3/purdue-surges-up-leaderboard-at-big-ten-championships",
+      "summary": "",
+      "date": "2026-05-03T01:09:14+00:00"
+    },
+    {
+      "id": "39dcdce18175",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Pounds Out 16 Hits, Posts 8 Zeros to Clinch Series Win",
+      "url": "http://localhost/news/2026/05/2/purdue-pounds-out-16-hits-posts-8-zeros-to-clinch-series-win",
+      "summary": "Flores hits his 10th homer of the year & Boilers connect for 3 doubles in a 5-run 5th inning",
+      "date": "2026-05-02T22:54:47+00:00"
+    },
+    {
+      "id": "1a6cd6947215",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Pounds Out 16 Hits in Win vs. Murray St. - Highlights",
+      "url": "http://localhost/news/2026/05/2/purdue-pounds-out-16-hits-in-win-vs-murray-st-highlights",
+      "summary": "",
+      "date": "2026-05-02T21:55:10+00:00"
+    },
+    {
+      "id": "ce25c6a2a829",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Wins 2 Events to Close Out Regular Season",
+      "url": "http://localhost/news/2026/05/2/purdue-wins-2-events-to-close-out-regular-season",
+      "summary": "",
+      "date": "2026-05-02T21:52:59+00:00"
+    },
+    {
+      "id": "3db59d1cd6cd",
+      "source": "Purdue Athletics MBB",
+      "title": "Gossett Twirls 1-Hitter, Boilers Defeat Iowa 6-1",
+      "url": "http://localhost/news/2026/05/2/gossett-twirls-a-1-hitter-boilers-defeat-iowa-6-1",
+      "summary": "Purdue (33-19, 10-13 Big Ten) bounced back in dominant fashion on Saturday, defeating Iowa 6-1.",
+      "date": "2026-05-02T21:33:26+00:00"
+    },
     {
       "id": "60a12a676ad4",
       "source": "Purdue Athletics MBB",
@@ -122,46 +162,6 @@
       "url": "http://localhost/news/2026/04/26/purdue-at-usc-game-3-highlights",
       "summary": "",
       "date": "2026-04-26T22:44:41+00:00"
-    },
-    {
-      "id": "275d0e784d3a",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilers Suffer 1-0 Heartbreaker in Home Series Finale",
-      "url": "http://localhost/news/2026/04/26/boilers-suffer-1-0-heartbreaker-in-home-series-finale",
-      "summary": "Purdue (32-18, 9-12 Big Ten) fell 1-0 in a pitcher’s duel to the Northwestern (27-19, 14-7 Big Ten) Wildcats on Sunday afternoon at Bittinger Stadium.",
-      "date": "2026-04-26T19:17:22+00:00"
-    },
-    {
-      "id": "e0c7a0109ccb",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Held to Season-Low Run Total in 6-1 Loss",
-      "url": "http://localhost/news/2026/04/26/purdue-held-to-season-low-run-total-in-6-1-loss",
-      "summary": "",
-      "date": "2026-04-26T02:00:33+00:00"
-    },
-    {
-      "id": "d1973bdcd6f7",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Moves Into 2nd at B1G Championships",
-      "url": "http://localhost/news/2026/04/26/purdue-moves-into-2nd-at-b1g-championships",
-      "summary": "",
-      "date": "2026-04-26T00:42:21+00:00"
-    },
-    {
-      "id": "3788c1bb2aa2",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilers Fall 11-4 on Senior Day",
-      "url": "http://localhost/news/2026/04/25/boilers-fall-11-4-on-senior-day",
-      "summary": "Purdue (32-17, 9-11 Big Ten) fell 11-4 in game two of the series against Northwestern on senior day in West Lafayette.",
-      "date": "2026-04-25T20:54:46+00:00"
-    },
-    {
-      "id": "b431bde9b176",
-      "source": "Purdue Athletics MBB",
-      "title": "Bases-Loaded Opportunities Go by the Board in 4-3 Loss at USC",
-      "url": "http://localhost/news/2026/04/25/bases-loaded-opportunities-go-by-the-board-in-game-1-loss-at-usc",
-      "summary": "Van Assen retires 13 consecutive batters but Purdue kept off the scoreboard after the 2nd inning",
-      "date": "2026-04-25T06:17:00+00:00"
     }
   ]
 }
