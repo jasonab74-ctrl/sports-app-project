@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-05-03T21:36:20.514097+00:00",
+  "updated": "2026-05-03T22:34:48.385785+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "f00fa7ffd97e",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Murray St  Game 3 Highlights",
+      "url": "http://localhost/news/2026/05/3/purdue-murray-st-game-3-highlights",
+      "summary": "",
+      "date": "2026-05-03T21:59:53+00:00"
+    },
     {
       "id": "ee4ef580a57a",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/04/28/this-week-in-purdue-baseball-april-28-2026",
       "summary": "",
       "date": "2026-04-28T22:34:10+00:00"
-    },
-    {
-      "id": "c5701474634e",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Add Guard Aysia Proctor",
-      "url": "http://localhost/news/2026/04/28/boilermakers-add-guard-aysia-proctor",
-      "summary": "",
-      "date": "2026-04-28T16:14:55+00:00"
     }
   ]
 }
