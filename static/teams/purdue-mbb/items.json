@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-05-03T10:29:55.569668+00:00",
+  "updated": "2026-05-03T11:21:15.334494+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "dab6f094d772",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Surges up Leaderboard at Big Ten Championships",
+      "url": "http://localhost/news/2026/05/3/purdue-surges-up-leaderboard-at-big-ten-championships",
+      "summary": "",
+      "date": "2026-05-03T01:09:14+00:00"
+    },
     {
       "id": "39dcdce18175",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/04/26/purdue-at-usc-game-3-highlights",
       "summary": "",
       "date": "2026-04-26T22:44:41+00:00"
-    },
-    {
-      "id": "275d0e784d3a",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilers Suffer 1-0 Heartbreaker in Home Series Finale",
-      "url": "http://localhost/news/2026/04/26/boilers-suffer-1-0-heartbreaker-in-home-series-finale",
-      "summary": "Purdue (32-18, 9-12 Big Ten) fell 1-0 in a pitcher’s duel to the Northwestern (27-19, 14-7 Big Ten) Wildcats on Sunday afternoon at Bittinger Stadium.",
-      "date": "2026-04-26T19:17:22+00:00"
     }
   ]
 }
