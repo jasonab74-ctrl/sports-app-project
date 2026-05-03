@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-05-03T20:36:34.387986+00:00",
+  "updated": "2026-05-03T21:36:20.514097+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "ee4ef580a57a",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilers Scored Five Unanswered Runs to Earn Series Victory at Iowa",
+      "url": "http://localhost/news/2026/05/3/boilers-scored-five-unanswered-runs-to-earn-series-victory-at-iowa",
+      "summary": "Purdue (34-19, 11-13 Big Ten) rallied from an early deficit to secure a 7-5 victory over Iowa on Sunday afternoon at Pearl Field, clinching the series.",
+      "date": "2026-05-03T20:39:16+00:00"
+    },
     {
       "id": "0d709ff5079a",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/04/28/boilermakers-add-guard-aysia-proctor",
       "summary": "",
       "date": "2026-04-28T16:14:55+00:00"
-    },
-    {
-      "id": "0ab8e2b945bb",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Place 3rd, Best B1G Finish Since 2019",
-      "url": "http://localhost/news/2026/04/27/boilermakers-place-3rd-best-b1g-finish-since-2019",
-      "summary": "",
-      "date": "2026-04-27T01:23:30+00:00"
     }
   ]
 }
