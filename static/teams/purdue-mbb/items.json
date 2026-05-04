@@ -1,15 +1,47 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-05-04T08:22:38.405401+00:00",
+  "updated": "2026-05-04T10:30:23.359287+00:00",
   "count": 20,
   "items": [
     {
-      "id": "0d709ff5079a",
+      "id": "20680b11731a",
       "source": "Purdue Athletics MBB",
-      "title": "Purdue Welcomes Riley Kids to Alexander",
-      "url": "http://localhost/news/2026/05/3/purdue-welcomes-riley-kids-to-alexander",
+      "title": "Westin Boyle Hits Purdue's 7th Grand Slam of Season",
+      "url": "http://localhost/news/2026/05/4/westin-boyle-hits-purdues-7th-grand-slam-of-season",
       "summary": "",
-      "date": "2026-05-03T17:58:21+00:00"
+      "date": "2026-05-04T01:49:42+00:00"
+    },
+    {
+      "id": "203b086a88a6",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Wrap Up Big Ten Championships in 6th Place",
+      "url": "http://localhost/news/2026/05/4/boilermakers-wrap-up-big-ten-championships-in-6th-place",
+      "summary": "",
+      "date": "2026-05-04T01:22:16+00:00"
+    },
+    {
+      "id": "817da2127a37",
+      "source": "Purdue Athletics MBB",
+      "title": "Boyle's Slam, 7-Run 6th Inning Power 17-Run Onslaught",
+      "url": "http://localhost/news/2026/05/4/boyles-slam-7-run-6th-inning-power-17-run-onslaught",
+      "summary": "Purdue's sweeps its fourth weekend series of the season, improves to 17-6 at home",
+      "date": "2026-05-04T00:26:40+00:00"
+    },
+    {
+      "id": "f00fa7ffd97e",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Murray St  Game 3 Highlights",
+      "url": "http://localhost/news/2026/05/3/purdue-murray-st-game-3-highlights",
+      "summary": "",
+      "date": "2026-05-03T21:59:53+00:00"
+    },
+    {
+      "id": "46765306cd19",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilers Score Five Unanswered Runs to Earn Series Victory at Iowa",
+      "url": "http://localhost/news/2026/05/3/boilers-scored-five-unanswered-runs-to-earn-series-victory-at-iowa",
+      "summary": "Purdue (34-19, 11-13 Big Ten) rallied from an early deficit to secure a 7-5 victory over Iowa on Sunday afternoon at Pearl Field, clinching the series.",
+      "date": "2026-05-03T20:39:16+00:00"
     },
     {
       "id": "dab6f094d772",
@@ -130,38 +162,6 @@
       "url": "http://localhost/news/2026/04/29/purdue-earns-11th-straight-ncaa-regional-berth",
       "summary": "",
       "date": "2026-04-29T21:43:24+00:00"
-    },
-    {
-      "id": "fbf1d50e1c8c",
-      "source": "Purdue Athletics MBB",
-      "title": "Polar Named USA Softball Top 25 Player of the Year Finalist",
-      "url": "http://localhost/news/2026/04/29/polar-named-usa-softball-top-25-player-of-the-year-finalist",
-      "summary": "Just days after earning Purdue's Female Athlete of the Year award, Moriah Polar becomes the first-ever Purdue softball player to be named to the USA Softball Top 25 Player of the Year finalist list.",
-      "date": "2026-04-29T17:09:08+00:00"
-    },
-    {
-      "id": "80b4b4093a51",
-      "source": "Purdue Athletics MBB",
-      "title": "This Week in Purdue Baseball | April 28, 2026",
-      "url": "http://localhost/news/2026/04/28/this-week-in-purdue-baseball-april-28-2026",
-      "summary": "",
-      "date": "2026-04-28T22:34:10+00:00"
-    },
-    {
-      "id": "c5701474634e",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Add Guard Aysia Proctor",
-      "url": "http://localhost/news/2026/04/28/boilermakers-add-guard-aysia-proctor",
-      "summary": "",
-      "date": "2026-04-28T16:14:55+00:00"
-    },
-    {
-      "id": "0ab8e2b945bb",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Place 3rd, Best B1G Finish Since 2019",
-      "url": "http://localhost/news/2026/04/27/boilermakers-place-3rd-best-b1g-finish-since-2019",
-      "summary": "",
-      "date": "2026-04-27T01:23:30+00:00"
     }
   ]
 }
