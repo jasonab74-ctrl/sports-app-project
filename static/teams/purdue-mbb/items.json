@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-05-04T02:25:42.850912+00:00",
+  "updated": "2026-05-04T05:47:55.810975+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "20680b11731a",
+      "source": "Purdue Athletics MBB",
+      "title": "Westin Boyle Hits Purdue's 7th Grand Slam of Season",
+      "url": "http://localhost/news/2026/05/4/westin-boyle-hits-purdues-7th-grand-slam-of-season",
+      "summary": "",
+      "date": "2026-05-04T01:49:42+00:00"
+    },
     {
       "id": "203b086a88a6",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/04/29/purdue-earns-11th-straight-ncaa-regional-berth",
       "summary": "",
       "date": "2026-04-29T21:43:24+00:00"
-    },
-    {
-      "id": "fbf1d50e1c8c",
-      "source": "Purdue Athletics MBB",
-      "title": "Polar Named USA Softball Top 25 Player of the Year Finalist",
-      "url": "http://localhost/news/2026/04/29/polar-named-usa-softball-top-25-player-of-the-year-finalist",
-      "summary": "Just days after earning Purdue's Female Athlete of the Year award, Moriah Polar becomes the first-ever Purdue softball player to be named to the USA Softball Top 25 Player of the Year finalist list.",
-      "date": "2026-04-29T17:09:08+00:00"
     }
   ]
 }
