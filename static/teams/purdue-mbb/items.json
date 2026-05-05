@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-05-05T22:50:59.387888+00:00",
+  "updated": "2026-05-05T23:42:33.521015+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "433973aae4ce",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue MGOLF at Big Ten Championships",
-      "url": "http://localhost/news/2026/05/5/purdue-mgolf-at-big-ten-championships",
-      "summary": "",
-      "date": "2026-05-05T14:27:39+00:00"
-    },
     {
       "id": "7e0c760c7100",
       "source": "Purdue Athletics MBB",
@@ -162,6 +154,14 @@
       "url": "http://localhost/news/2026/04/30/purdue-posts-8-zeros-to-win-homestand-opener-5-1",
       "summary": "Bessette leads the way as the bottom third of the lineup enjoys an 8-for-12 night",
       "date": "2026-04-30T02:10:00+00:00"
+    },
+    {
+      "id": "02f9de000458",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Earns 11th Straight NCAA Regional Berth",
+      "url": "http://localhost/news/2026/04/29/purdue-earns-11th-straight-ncaa-regional-berth",
+      "summary": "",
+      "date": "2026-04-29T21:43:24+00:00"
     }
   ]
 }
