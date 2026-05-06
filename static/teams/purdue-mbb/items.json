@@ -1,15 +1,23 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-05-06T22:43:55.368872+00:00",
+  "updated": "2026-05-06T23:43:38.708537+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "3199ae147bc9",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermaker Men’s Golf Selected for Corvallis Regional",
+      "url": "http://localhost/news/2026/05/6/boilermaker-mens-golf-selected-for-corvallis-regional",
+      "summary": "",
+      "date": "2026-05-06T19:52:40+00:00"
+    },
     {
       "id": "95e1f56b9754",
       "source": "Purdue Athletics MBB",
       "title": "Schedule Update for Big Ten Tournament Opener",
       "url": "http://localhost/news/2026/05/6/schedule-update-for-big-ten-tournament-opener",
-      "summary": "Purdue's Big Ten openeing game against Wisconsin will now have a 4:00 p.m. est start time.",
-      "date": "2026-05-06T01:19:32+00:00"
+      "summary": "Purdue's Big Ten opening game against Wisconsin will now have a 5:00 p.m. est start time.",
+      "date": "2026-05-06T15:30:00+00:00"
     },
     {
       "id": "81f511c6bcc9",
@@ -18,6 +26,14 @@
       "url": "http://localhost/news/2026/05/5/sam-flores-pov-of-purdue-baseball-practice",
       "summary": "",
       "date": "2026-05-05T20:23:54+00:00"
+    },
+    {
+      "id": "9497185e1b11",
+      "source": "Purdue Athletics MBB",
+      "title": "No. 10 Seed Purdue to Face No. 7 Wisconsin in Big Ten Tournament Opener",
+      "url": "http://localhost/news/2026/05/5/no-10-seed-purdue-to-face-no-7-wisconsin-in-big-ten-tournament-opener",
+      "summary": "No. 10 seed Purdue will take on No. 7 seed Wisconsin in the first round of the Big Ten Tournament on Wednesday, May 6, at 4:30 p.m. est.",
+      "date": "2026-05-05T18:24:52+00:00"
     },
     {
       "id": "433973aae4ce",
@@ -146,22 +162,6 @@
       "url": "http://localhost/news/2026/05/2/2-victories-lead-purdue-on-friday",
       "summary": "",
       "date": "2026-05-02T01:15:36+00:00"
-    },
-    {
-      "id": "6a426e5b636c",
-      "source": "Purdue Athletics MBB",
-      "title": "3 Boilers Earn Softball America Honors",
-      "url": "http://localhost/news/2026/04/30/3-boilers-earn-softball-america-honors",
-      "summary": "Three Purdue softball players land on the latest Softball America position rankings, heading into the final conference weekend of the season.",
-      "date": "2026-04-30T17:56:56+00:00"
-    },
-    {
-      "id": "cc5b1513e26a",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Athletics Raises Record $16.1 Million on Purdue Day of Giving",
-      "url": "http://localhost/news/2026/04/30/athletics-record-dollar16-1-million-on-pdog",
-      "summary": "The 2026 total of $16.1 million surpasses the previous high mark of $13 million set in 2024",
-      "date": "2026-04-30T16:21:44+00:00"
     }
   ]
 }
