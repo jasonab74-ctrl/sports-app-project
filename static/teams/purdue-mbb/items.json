@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-05-07T22:56:47.998653+00:00",
+  "updated": "2026-05-07T23:52:05.527983+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "e47188284e85",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilers Host IU to Close Home Slate for First Time Since 2004",
+      "url": "http://localhost/news/2026/05/7/boilers-host-iu-to-close-home-slate-for-first-time-since-2004",
+      "summary": "Purdue goes for its 5th straight series win at home & with it a chance to post its most home wins this century",
+      "date": "2026-05-07T20:55:16+00:00"
+    },
+    {
+      "id": "dca4cd6530d9",
+      "source": "Purdue Athletics MBB",
+      "title": "This Week in Purdue Baseball | May 6, 2026",
+      "url": "http://localhost/news/2026/05/7/this-week-in-purdue-baseball-may-6-2026",
+      "summary": "",
+      "date": "2026-05-07T10:45:05+00:00"
+    },
     {
       "id": "c4d3fbb8128d",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "http://localhost/news/2026/05/2/purdue-vs-murray-st-game-1-highlights",
       "summary": "",
       "date": "2026-05-02T01:44:54+00:00"
-    },
-    {
-      "id": "b11157887131",
-      "source": "Purdue Athletics MBB",
-      "title": "2 Victories Lead Purdue on Friday",
-      "url": "http://localhost/news/2026/05/2/2-victories-lead-purdue-on-friday",
-      "summary": "",
-      "date": "2026-05-02T01:15:36+00:00"
-    },
-    {
-      "id": "6a426e5b636c",
-      "source": "Purdue Athletics MBB",
-      "title": "3 Boilers Earn Softball America Honors",
-      "url": "http://localhost/news/2026/04/30/3-boilers-earn-softball-america-honors",
-      "summary": "Three Purdue softball players land on the latest Softball America position rankings, heading into the final conference weekend of the season.",
-      "date": "2026-04-30T17:56:56+00:00"
     }
   ]
 }
