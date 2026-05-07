@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-05-07T20:46:01.213825+00:00",
+  "updated": "2026-05-07T21:52:18.982964+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "e47188284e85",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilers Host IU to Close Home Slate for First Time Since 2004",
+      "url": "http://localhost/news/2026/05/7/boilers-host-iu-to-close-home-slate-for-first-time-since-2004",
+      "summary": "Purdue goes for its 5th straight series win at home & with it a chance to post its most home wins this century",
+      "date": "2026-05-07T20:55:16+00:00"
+    },
     {
       "id": "dca4cd6530d9",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/05/2/purdue-vs-murray-st-game-1-highlights",
       "summary": "",
       "date": "2026-05-02T01:44:54+00:00"
-    },
-    {
-      "id": "b11157887131",
-      "source": "Purdue Athletics MBB",
-      "title": "2 Victories Lead Purdue on Friday",
-      "url": "http://localhost/news/2026/05/2/2-victories-lead-purdue-on-friday",
-      "summary": "",
-      "date": "2026-05-02T01:15:36+00:00"
     }
   ]
 }
