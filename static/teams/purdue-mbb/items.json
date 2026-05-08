@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-05-08T21:55:07.592597+00:00",
+  "updated": "2026-05-08T22:52:02.162490+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "ff333d8adbb3",
+      "source": "Purdue Athletics MBB",
+      "title": "Friday Night Football at Ross-Ade: Purdue to Host Washington, October 16",
+      "url": "http://localhost/news/2026/05/8/friday-night-football-at-ross-ade-purdue-to-host-washington-october-16",
+      "summary": "",
+      "date": "2026-05-08T16:00:00+00:00"
+    },
+    {
+      "id": "264f83e396b2",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Lands 6 Players on All-Big Ten Teams",
+      "url": "http://localhost/news/2026/05/8/purdue-lands-6-players-on-all-big-ten-teams",
+      "summary": "Purdue lands three players on the All-Big Ten First team, while also earning three spots on the All-Defensive team, one on the Freshman team, and a sportsmanship honoree.",
+      "date": "2026-05-08T16:00:00+00:00"
+    },
     {
       "id": "e47188284e85",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "http://localhost/news/2026/05/2/van-assens-quality-start-leads-baseball-to-30th-win",
       "summary": "Manias homers for 3rd time in last 5 games as Purdue wins series opener 7-5",
       "date": "2026-05-02T03:00:05+00:00"
-    },
-    {
-      "id": "5ad2eea6b686",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Scuffle on Day 1 of Big Ten Championships",
-      "url": "http://localhost/news/2026/05/2/boilermakers-scuffle-on-day-one-of-big-ten-championships",
-      "summary": "",
-      "date": "2026-05-02T02:09:06+00:00"
-    },
-    {
-      "id": "5214644b372c",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue vs Murray St. Game 1 Highlights",
-      "url": "http://localhost/news/2026/05/2/purdue-vs-murray-st-game-1-highlights",
-      "summary": "",
-      "date": "2026-05-02T01:44:54+00:00"
     }
   ]
 }
