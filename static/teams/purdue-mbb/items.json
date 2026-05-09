@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-05-09T02:26:47.905888+00:00",
+  "updated": "2026-05-09T05:34:14.597462+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "1f91045ef7e4",
+      "source": "Purdue Athletics MBB",
+      "title": "Brandon Rogers Pinch Hit 2-Run Single in Purdue's Comeback Win",
+      "url": "http://localhost/news/2026/05/9/brandon-rogers-pinch-hit-2-run-single-in-purdues-comeback-win",
+      "summary": "",
+      "date": "2026-05-09T04:47:54+00:00"
+    },
+    {
+      "id": "155e319c22b2",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Scores 7 in 8th Inning to Rally for 11-9 Win vs IU - Highlights",
+      "url": "http://localhost/news/2026/05/9/purdue-scores-7-in-8th-inning-to-rally-for-11-9-win-vs-iu-highlights",
+      "summary": "",
+      "date": "2026-05-09T04:45:19+00:00"
+    },
     {
       "id": "ff333d8adbb3",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "http://localhost/news/2026/05/2/gossett-twirls-a-1-hitter-boilers-defeat-iowa-6-1",
       "summary": "Purdue (33-19, 10-13 Big Ten) bounced back in dominant fashion on Saturday, defeating Iowa 6-1.",
       "date": "2026-05-02T21:33:26+00:00"
-    },
-    {
-      "id": "60a12a676ad4",
-      "source": "Purdue Athletics MBB",
-      "title": "Despite Late Rally, Purdue Falls to Iowa 8-7",
-      "url": "http://localhost/news/2026/05/2/despite-late-rally-purdue-falls-to-iowa-8-7",
-      "summary": "Purdue (32-19, 9-13 Big Ten) mounted a late push but ultimately fell to Iowa, 8-7, on Friday evening at Bob Pearl Field.",
-      "date": "2026-05-02T03:26:59+00:00"
-    },
-    {
-      "id": "ee80e4115438",
-      "source": "Purdue Athletics MBB",
-      "title": "Van Assen's Quality Start Leads Baseball to 30th Win",
-      "url": "http://localhost/news/2026/05/2/van-assens-quality-start-leads-baseball-to-30th-win",
-      "summary": "Manias homers for 3rd time in last 5 games as Purdue wins series opener 7-5",
-      "date": "2026-05-02T03:00:05+00:00"
     }
   ]
 }
