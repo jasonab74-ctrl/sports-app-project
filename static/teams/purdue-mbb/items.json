@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-05-10T11:51:14.678122+00:00",
+  "updated": "2026-05-10T13:05:51.557293+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "1669a206d88c",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Ready for NCAA Postseason",
+      "url": "http://localhost/news/2026/05/10/boilermakers-ready-for-ncaa-postseason",
+      "summary": "",
+      "date": "2026-05-10T12:00:00+00:00"
+    },
     {
       "id": "a86e5875bc21",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/05/3/purdue-surges-up-leaderboard-at-big-ten-championships",
       "summary": "",
       "date": "2026-05-03T01:09:14+00:00"
-    },
-    {
-      "id": "39dcdce18175",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Pounds Out 16 Hits, Posts 8 Zeros to Clinch Series Win",
-      "url": "http://localhost/news/2026/05/2/purdue-pounds-out-16-hits-posts-8-zeros-to-clinch-series-win",
-      "summary": "Flores hits his 10th homer of the year & Boilers connect for 3 doubles in a 5-run 5th inning",
-      "date": "2026-05-02T22:54:47+00:00"
     }
   ]
 }
