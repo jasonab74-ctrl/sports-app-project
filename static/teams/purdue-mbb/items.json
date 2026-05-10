@@ -1,24 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-05-10T02:29:48.998496+00:00",
+  "updated": "2026-05-10T05:49:45.745112+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "a86e5875bc21",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue's Walk-off Win & Celebration vs Indiana",
-      "url": "http://localhost/news/2026/05/9/purdues-walk-off-win-celebration-vs-indiana",
-      "summary": "",
-      "date": "2026-05-09T23:24:25+00:00"
-    },
-    {
-      "id": "dc6582ff59c7",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Scores 5 in the 9th to Walk-off Indiana - Highlights",
-      "url": "http://localhost/news/2026/05/9/purdue-scores-5-in-the-9th-to-walk-off-indiana-highlights",
-      "summary": "",
-      "date": "2026-05-09T23:21:07+00:00"
-    },
     {
       "id": "12335fba2e95",
       "source": "Purdue Athletics MBB",
@@ -162,6 +146,22 @@
       "url": "http://localhost/news/2026/05/2/purdue-pounds-out-16-hits-in-win-vs-murray-st-highlights",
       "summary": "",
       "date": "2026-05-02T21:55:10+00:00"
+    },
+    {
+      "id": "ce25c6a2a829",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Wins 2 Events to Close Out Regular Season",
+      "url": "http://localhost/news/2026/05/2/purdue-wins-2-events-to-close-out-regular-season",
+      "summary": "",
+      "date": "2026-05-02T21:52:59+00:00"
+    },
+    {
+      "id": "3db59d1cd6cd",
+      "source": "Purdue Athletics MBB",
+      "title": "Gossett Twirls 1-Hitter, Boilers Defeat Iowa 6-1",
+      "url": "http://localhost/news/2026/05/2/gossett-twirls-a-1-hitter-boilers-defeat-iowa-6-1",
+      "summary": "Purdue (33-19, 10-13 Big Ten) bounced back in dominant fashion on Saturday, defeating Iowa 6-1.",
+      "date": "2026-05-02T21:33:26+00:00"
     }
   ]
 }
