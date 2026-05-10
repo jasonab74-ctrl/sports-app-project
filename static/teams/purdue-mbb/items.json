@@ -1,8 +1,40 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-05-10T15:46:32.433922+00:00",
+  "updated": "2026-05-10T16:47:24.343528+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "1669a206d88c",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Ready for NCAA Postseason",
+      "url": "http://localhost/news/2026/05/10/boilermakers-ready-for-ncaa-postseason",
+      "summary": "",
+      "date": "2026-05-10T12:00:00+00:00"
+    },
+    {
+      "id": "a86e5875bc21",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue's Walk-off Win & Celebration vs Indiana",
+      "url": "http://localhost/news/2026/05/9/purdues-walk-off-win-celebration-vs-indiana",
+      "summary": "",
+      "date": "2026-05-09T23:24:25+00:00"
+    },
+    {
+      "id": "dc6582ff59c7",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Scores 5 in the 9th to Walk-off Indiana - Highlights",
+      "url": "http://localhost/news/2026/05/9/purdue-scores-5-in-the-9th-to-walk-off-indiana-highlights",
+      "summary": "",
+      "date": "2026-05-09T23:21:07+00:00"
+    },
+    {
+      "id": "42c7268936e5",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilers Rally for 5 in 9th, Win on Rogers' 3-Run Double",
+      "url": "http://localhost/news/2026/05/9/boilers-rally-for-5-in-9th-win-on-rogers-3-run-double",
+      "summary": "Rogers clears the bases with double down the right field line as Purdue wins via walk-off for 4th time",
+      "date": "2026-05-09T23:00:00+00:00"
+    },
     {
       "id": "12335fba2e95",
       "source": "Purdue Athletics MBB",
@@ -130,38 +162,6 @@
       "url": "http://localhost/news/2026/05/3/purdue-surges-up-leaderboard-at-big-ten-championships",
       "summary": "",
       "date": "2026-05-03T01:09:14+00:00"
-    },
-    {
-      "id": "39dcdce18175",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Pounds Out 16 Hits, Posts 8 Zeros to Clinch Series Win",
-      "url": "http://localhost/news/2026/05/2/purdue-pounds-out-16-hits-posts-8-zeros-to-clinch-series-win",
-      "summary": "Flores hits his 10th homer of the year & Boilers connect for 3 doubles in a 5-run 5th inning",
-      "date": "2026-05-02T22:54:47+00:00"
-    },
-    {
-      "id": "1a6cd6947215",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Pounds Out 16 Hits in Win vs. Murray St. - Highlights",
-      "url": "http://localhost/news/2026/05/2/purdue-pounds-out-16-hits-in-win-vs-murray-st-highlights",
-      "summary": "",
-      "date": "2026-05-02T21:55:10+00:00"
-    },
-    {
-      "id": "ce25c6a2a829",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Wins 2 Events to Close Out Regular Season",
-      "url": "http://localhost/news/2026/05/2/purdue-wins-2-events-to-close-out-regular-season",
-      "summary": "",
-      "date": "2026-05-02T21:52:59+00:00"
-    },
-    {
-      "id": "3db59d1cd6cd",
-      "source": "Purdue Athletics MBB",
-      "title": "Gossett Twirls 1-Hitter, Boilers Defeat Iowa 6-1",
-      "url": "http://localhost/news/2026/05/2/gossett-twirls-a-1-hitter-boilers-defeat-iowa-6-1",
-      "summary": "Purdue (33-19, 10-13 Big Ten) bounced back in dominant fashion on Saturday, defeating Iowa 6-1.",
-      "date": "2026-05-02T21:33:26+00:00"
     }
   ]
 }
