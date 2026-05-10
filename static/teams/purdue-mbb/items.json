@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-05-10T21:41:56.999172+00:00",
+  "updated": "2026-05-10T22:40:22.875245+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "a621868afe1a",
+      "source": "Purdue Athletics MBB",
+      "title": "Moore's 4-XBH Game Leads Purdue to Sweep of IU - Highlights",
+      "url": "http://localhost/news/2026/05/10/moores-4-xbh-game-leads-purdue-to-sweep-of-iu-highlights",
+      "summary": "",
+      "date": "2026-05-10T22:30:03+00:00"
+    },
     {
       "id": "1669a206d88c",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/05/3/boilers-scored-five-unanswered-runs-to-earn-series-victory-at-iowa",
       "summary": "Purdue (34-19, 11-13 Big Ten) rallied from an early deficit to secure a 7-5 victory over Iowa on Sunday afternoon at Pearl Field, clinching the series.",
       "date": "2026-05-03T20:39:16+00:00"
-    },
-    {
-      "id": "dab6f094d772",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Surges up Leaderboard at Big Ten Championships",
-      "url": "http://localhost/news/2026/05/3/purdue-surges-up-leaderboard-at-big-ten-championships",
-      "summary": "",
-      "date": "2026-05-03T01:09:14+00:00"
     }
   ]
 }
