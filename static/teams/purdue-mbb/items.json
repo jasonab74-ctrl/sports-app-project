@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-05-10T13:05:51.557293+00:00",
+  "updated": "2026-05-10T14:34:20.159334+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "1669a206d88c",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Ready for NCAA Postseason",
-      "url": "http://localhost/news/2026/05/10/boilermakers-ready-for-ncaa-postseason",
-      "summary": "",
-      "date": "2026-05-10T12:00:00+00:00"
-    },
     {
       "id": "a86e5875bc21",
       "source": "Purdue Athletics MBB",
@@ -26,14 +18,6 @@
       "url": "http://localhost/news/2026/05/9/purdue-scores-5-in-the-9th-to-walk-off-indiana-highlights",
       "summary": "",
       "date": "2026-05-09T23:21:07+00:00"
-    },
-    {
-      "id": "42c7268936e5",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilers Rally for 5 in 9th, Win on Rogers' 3-Run Double",
-      "url": "http://localhost/news/2026/05/9/boilers-rally-for-5-in-9th-win-on-rogers-3-run-double",
-      "summary": "Rogers clears the bases with double down the right field line as Purdue wins via walk-off for 4th time",
-      "date": "2026-05-09T23:00:00+00:00"
     },
     {
       "id": "12335fba2e95",
@@ -162,6 +146,22 @@
       "url": "http://localhost/news/2026/05/3/purdue-surges-up-leaderboard-at-big-ten-championships",
       "summary": "",
       "date": "2026-05-03T01:09:14+00:00"
+    },
+    {
+      "id": "39dcdce18175",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Pounds Out 16 Hits, Posts 8 Zeros to Clinch Series Win",
+      "url": "http://localhost/news/2026/05/2/purdue-pounds-out-16-hits-posts-8-zeros-to-clinch-series-win",
+      "summary": "Flores hits his 10th homer of the year & Boilers connect for 3 doubles in a 5-run 5th inning",
+      "date": "2026-05-02T22:54:47+00:00"
+    },
+    {
+      "id": "1a6cd6947215",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Pounds Out 16 Hits in Win vs. Murray St. - Highlights",
+      "url": "http://localhost/news/2026/05/2/purdue-pounds-out-16-hits-in-win-vs-murray-st-highlights",
+      "summary": "",
+      "date": "2026-05-02T21:55:10+00:00"
     }
   ]
 }
