@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-05-11T21:47:50.481411+00:00",
+  "updated": "2026-05-11T22:49:01.973476+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "75d5bb7edad4",
+      "source": "Purdue Athletics MBB",
+      "title": "Brown Paces Purdue in NCAA Regional Opening Round",
+      "url": "http://localhost/news/2026/05/11/brown-paces-purdue-in-ncaa-regional-opening-round",
+      "summary": "",
+      "date": "2026-05-11T20:34:09+00:00"
+    },
     {
       "id": "cff1974049b1",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/05/4/boyles-slam-7-run-6th-inning-power-17-run-onslaught",
       "summary": "Purdue's sweeps its fourth weekend series of the season, improves to 17-6 at home",
       "date": "2026-05-04T00:26:40+00:00"
-    },
-    {
-      "id": "f00fa7ffd97e",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Murray St  Game 3 Highlights",
-      "url": "http://localhost/news/2026/05/3/purdue-murray-st-game-3-highlights",
-      "summary": "",
-      "date": "2026-05-03T21:59:53+00:00"
     }
   ]
 }
