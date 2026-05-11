@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-05-10T23:44:49.457198+00:00",
+  "updated": "2026-05-11T02:39:19.708807+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "cff1974049b1",
+      "source": "Purdue Athletics MBB",
+      "title": "Baseball Completes Sweep of IU with 20th Home Win",
+      "url": "http://localhost/news/2026/05/11/baseball-completes-sweep-of-iu-with-20th-home-win",
+      "summary": "Moore powers Purdue with 4-4-4 game (4-for-4, 4 XBH, 4 RBI); Rogers continues to torment Hoosiers",
+      "date": "2026-05-11T00:07:09+00:00"
+    },
     {
       "id": "a621868afe1a",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "http://localhost/news/2026/05/3/purdue-murray-st-game-3-highlights",
       "summary": "",
       "date": "2026-05-03T21:59:53+00:00"
-    },
-    {
-      "id": "45b20271822b",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilers Score 5 Unanswered Runs to Earn Series Victory at Iowa",
-      "url": "http://localhost/news/2026/05/3/boilers-scored-five-unanswered-runs-to-earn-series-victory-at-iowa",
-      "summary": "Purdue (34-19, 11-13 Big Ten) rallied from an early deficit to secure a 7-5 victory over Iowa on Sunday afternoon at Pearl Field, clinching the series.",
-      "date": "2026-05-03T20:39:16+00:00"
     }
   ]
 }
