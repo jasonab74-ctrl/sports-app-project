@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-05-13T11:38:44.184622+00:00",
+  "updated": "2026-05-13T14:19:29.291465+00:00",
   "count": 20,
   "items": [
     {
@@ -26,14 +26,6 @@
       "url": "https://purduesports.com/news/2026/05/10/moores-4-xbh-game-leads-purdue-to-sweep-of-iu-highlights",
       "summary": "",
       "date": "2026-05-10T22:30:03+00:00"
-    },
-    {
-      "id": "e52f0437b5e0",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Ready for NCAA Postseason",
-      "url": "https://purduesports.com/news/2026/05/10/boilermakers-ready-for-ncaa-postseason",
-      "summary": "",
-      "date": "2026-05-10T12:00:00+00:00"
     },
     {
       "id": "3aa2f8dcb559",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/05/4/boyles-slam-7-run-6th-inning-power-17-run-onslaught",
       "summary": "Purdue's sweeps its fourth weekend series of the season, improves to 17-6 at home",
       "date": "2026-05-04T00:26:40+00:00"
+    },
+    {
+      "id": "dc8372daa998",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Murray St  Game 3 Highlights",
+      "url": "https://purduesports.com/news/2026/05/3/purdue-murray-st-game-3-highlights",
+      "summary": "",
+      "date": "2026-05-03T21:59:53+00:00"
     }
   ]
 }
