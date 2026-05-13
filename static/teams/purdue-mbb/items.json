@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-05-13T21:52:06.364307+00:00",
+  "updated": "2026-05-13T23:00:54.290166+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "279591e3b3dd",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Places 10th at NCAA Regional",
+      "url": "https://purduesports.com/news/2026/05/13/purdue-places-10th-at-ncaa-regional",
+      "summary": "",
+      "date": "2026-05-13T22:04:07+00:00"
+    },
+    {
+      "id": "739fdb66e506",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue vs Iowa in Des Moines to Close Regular Season",
+      "url": "https://purduesports.com/news/2026/05/13/purdue-vs-iowa-at-in-des-moines-to-close-regular-season",
+      "summary": "Purdue is 4-2 at Triple-A stadiums this season after opening the year with 2 winning weekends in Texas",
+      "date": "2026-05-13T21:48:55+00:00"
+    },
     {
       "id": "62cfe96d02d7",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/05/5/purdue-mgolf-at-big-ten-championships",
       "summary": "",
       "date": "2026-05-05T14:27:39+00:00"
-    },
-    {
-      "id": "57a37b3a0634",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Add Center Anjela Minja",
-      "url": "https://purduesports.com/news/2026/05/4/boilermakers-add-center-anjela-minja",
-      "summary": "",
-      "date": "2026-05-04T13:49:41+00:00"
-    },
-    {
-      "id": "9650474d493f",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Wrap Up Big Ten Championships in 6th Place",
-      "url": "https://purduesports.com/news/2026/05/4/boilermakers-wrap-up-big-ten-championships-in-6th-place",
-      "summary": "",
-      "date": "2026-05-04T01:22:16+00:00"
     }
   ]
 }
