@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-05-14T15:04:00.298245+00:00",
+  "updated": "2026-05-14T17:17:11.141806+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "f73c623b3e1d",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Earns 4 Players on NFCA All-Region Teams",
+      "url": "https://purduesports.com/news/2026/05/14/purdue-earns-four-players-on-nfca-all-region-teams",
+      "summary": "Purdue lands four players on the NFCA All-Region teams with Moriah Polar and Haley Painter landing on the First Team, while Anna Moore and Julia Gossett earned a place on the second team.",
+      "date": "2026-05-14T17:05:00+00:00"
+    },
     {
       "id": "279591e3b3dd",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/05/5/sam-flores-pov-of-purdue-baseball-practice",
       "summary": "",
       "date": "2026-05-05T20:23:54+00:00"
-    },
-    {
-      "id": "01c86de6d180",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue MGOLF at Big Ten Championships",
-      "url": "https://purduesports.com/news/2026/05/5/purdue-mgolf-at-big-ten-championships",
-      "summary": "",
-      "date": "2026-05-05T14:27:39+00:00"
     }
   ]
 }
