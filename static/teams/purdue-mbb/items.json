@@ -1,22 +1,14 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-05-15T20:43:48.235434+00:00",
+  "updated": "2026-05-15T21:54:41.734983+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "784c34d58eab",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Heads Back to the Pacific Northwest for NCAA Regionals",
-      "url": "https://purduesports.com/news/2026/05/15/purdue-heads-back-to-the-pacific-northwest-for-ncaa-regionals",
-      "summary": "",
-      "date": "2026-05-15T17:55:00+00:00"
-    },
     {
       "id": "41939f0946c9",
       "source": "Purdue Athletics MBB",
       "title": "Iowa Overcomes Boilers' Early Lead to Take Series Opener",
       "url": "https://purduesports.com/news/2026/05/15/iowa-overcomes-purdues-early-lead-to-take-series-opener",
-      "summary": "Moore & Swiderski register 3-hit nights as Purdue connects for 6 doubles, 8 XBH; Friday's game moved up to 6 p.m. ET",
+      "summary": "Moore & Swiderski register 3-hit nights as Purdue connects for 6 doubles, 8 XBH",
       "date": "2026-05-15T04:04:00+00:00"
     },
     {
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/05/7/this-week-in-purdue-baseball-may-6-2026",
       "summary": "",
       "date": "2026-05-07T10:45:05+00:00"
+    },
+    {
+      "id": "3b1d086ac41c",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilers Conclude Season with 4-3 Loss to Wisconsin",
+      "url": "https://purduesports.com/news/2026/05/7/boilers-conclude-season-with-4-3-loss-to-wisconsin",
+      "summary": "Purdue (34-20, 11-13 Big Ten) closes out its record-breaking season with a 4-3 loss to Wisconsin in the first round of the Big Ten tournament.",
+      "date": "2026-05-07T01:29:25+00:00"
     }
   ]
 }
