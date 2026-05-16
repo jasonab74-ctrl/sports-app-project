@@ -1,8 +1,40 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-05-16T09:28:13.597272+00:00",
+  "updated": "2026-05-16T10:45:52.606119+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "5f206d834806",
+      "source": "Purdue Athletics MBB",
+      "title": "Big Innings Burn Baseball in Game 2 with Iowa",
+      "url": "https://purduesports.com/news/2026/05/16/big-innings-burn-baseball-in-game-2-with-iowa",
+      "summary": "Purdue unable to make leads of 4-0, 5-1 hold up as Hawkeyes take game 2 in Des Moines",
+      "date": "2026-05-16T03:56:29+00:00"
+    },
+    {
+      "id": "b3b81ef6c9ac",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue vs Iowa in Des Moines - Game 2 Highlights",
+      "url": "https://purduesports.com/news/2026/05/16/purdue-vs-iowa-in-des-moines-game-2-highlights",
+      "summary": "",
+      "date": "2026-05-16T02:14:51+00:00"
+    },
+    {
+      "id": "784c34d58eab",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Heads Back to the Pacific Northwest for NCAA Regionals",
+      "url": "https://purduesports.com/news/2026/05/15/purdue-heads-back-to-the-pacific-northwest-for-ncaa-regionals",
+      "summary": "",
+      "date": "2026-05-15T17:55:00+00:00"
+    },
+    {
+      "id": "41939f0946c9",
+      "source": "Purdue Athletics MBB",
+      "title": "Iowa Overcomes Boilers' Early Lead to Take Series Opener",
+      "url": "https://purduesports.com/news/2026/05/15/iowa-overcomes-purdues-early-lead-to-take-series-opener",
+      "summary": "Moore & Swiderski register 3-hit nights as Purdue connects for 6 doubles, 8 XBH; Friday's game moved up to 6 p.m. ET",
+      "date": "2026-05-15T04:04:00+00:00"
+    },
     {
       "id": "935edefe1243",
       "source": "Purdue Athletics MBB",
@@ -34,14 +66,6 @@
       "url": "https://purduesports.com/news/2026/05/13/purdue-places-10th-at-ncaa-regional",
       "summary": "",
       "date": "2026-05-13T22:04:07+00:00"
-    },
-    {
-      "id": "739fdb66e506",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue vs Iowa in Des Moines to Close Regular Season",
-      "url": "https://purduesports.com/news/2026/05/13/purdue-vs-iowa-at-in-des-moines-to-close-regular-season",
-      "summary": "Purdue is 4-2 at Triple-A stadiums this season after opening the year with 2 winning weekends in Texas",
-      "date": "2026-05-13T21:48:55+00:00"
     },
     {
       "id": "62cfe96d02d7",
@@ -138,30 +162,6 @@
       "url": "https://purduesports.com/news/2026/05/8/friday-night-football-at-ross-ade-purdue-to-host-washington-october-16",
       "summary": "",
       "date": "2026-05-08T16:00:00+00:00"
-    },
-    {
-      "id": "26fdc36348b8",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Lands 6 Players on All-Big Ten Teams",
-      "url": "https://purduesports.com/news/2026/05/8/purdue-lands-6-players-on-all-big-ten-teams",
-      "summary": "Purdue lands three players on the All-Big Ten First team, while also earning three spots on the All-Defensive team, one on the Freshman team, and a sportsmanship honoree.",
-      "date": "2026-05-08T16:00:00+00:00"
-    },
-    {
-      "id": "e6b2b3be275b",
-      "source": "Purdue Athletics MBB",
-      "title": "This Week in Purdue Baseball | May 6, 2026",
-      "url": "https://purduesports.com/news/2026/05/7/this-week-in-purdue-baseball-may-6-2026",
-      "summary": "",
-      "date": "2026-05-07T10:45:05+00:00"
-    },
-    {
-      "id": "3b1d086ac41c",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilers Conclude Season with 4-3 Loss to Wisconsin",
-      "url": "https://purduesports.com/news/2026/05/7/boilers-conclude-season-with-4-3-loss-to-wisconsin",
-      "summary": "Purdue (34-20, 11-13 Big Ten) closes out its record-breaking season with a 4-3 loss to Wisconsin in the first round of the Big Ten tournament.",
-      "date": "2026-05-07T01:29:25+00:00"
     }
   ]
 }
