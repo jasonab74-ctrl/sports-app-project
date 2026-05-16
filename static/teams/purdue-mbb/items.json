@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-05-16T02:29:23.641601+00:00",
+  "updated": "2026-05-16T05:40:10.561763+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "5f206d834806",
+      "source": "Purdue Athletics MBB",
+      "title": "Big Innings Burn Baseball in Game 2 with Iowa",
+      "url": "https://purduesports.com/news/2026/05/16/big-innings-burn-baseball-in-game-2-with-iowa",
+      "summary": "Purdue unable to make leads of 4-0, 5-1 hold up as Hawkeyes take game 2 in Des Moines",
+      "date": "2026-05-16T03:56:29+00:00"
+    },
+    {
+      "id": "b3b81ef6c9ac",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue vs Iowa in Des Moines - Game 2 Highlights",
+      "url": "https://purduesports.com/news/2026/05/16/purdue-vs-iowa-in-des-moines-game-2-highlights",
+      "summary": "",
+      "date": "2026-05-16T02:14:51+00:00"
+    },
     {
       "id": "784c34d58eab",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/05/8/friday-night-football-at-ross-ade-purdue-to-host-washington-october-16",
       "summary": "",
       "date": "2026-05-08T16:00:00+00:00"
-    },
-    {
-      "id": "26fdc36348b8",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Lands 6 Players on All-Big Ten Teams",
-      "url": "https://purduesports.com/news/2026/05/8/purdue-lands-6-players-on-all-big-ten-teams",
-      "summary": "Purdue lands three players on the All-Big Ten First team, while also earning three spots on the All-Defensive team, one on the Freshman team, and a sportsmanship honoree.",
-      "date": "2026-05-08T16:00:00+00:00"
-    },
-    {
-      "id": "e6b2b3be275b",
-      "source": "Purdue Athletics MBB",
-      "title": "This Week in Purdue Baseball | May 6, 2026",
-      "url": "https://purduesports.com/news/2026/05/7/this-week-in-purdue-baseball-may-6-2026",
-      "summary": "",
-      "date": "2026-05-07T10:45:05+00:00"
     }
   ]
 }
