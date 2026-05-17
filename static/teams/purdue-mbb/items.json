@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-05-17T12:02:53.086396+00:00",
+  "updated": "2026-05-17T14:01:48.813666+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "698688ba67a3",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue's Trio of 2-Run Homers Not Enough in Iowa Finale",
+      "url": "https://purduesports.com/news/2026/05/16/purdues-trio-of-2-run-homers-not-enough-in-iowa-finale",
+      "summary": "Boilermakers will be 5-seed at the Big Ten Tournament, play Michigan St. on Tuesday at 10 a.m. ET",
+      "date": "2026-05-16T22:53:27+00:00"
+    },
+    {
+      "id": "05d54db8fd4e",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue vs Iowa in Des Moines - Game 3 Highlights",
+      "url": "https://purduesports.com/news/2026/05/16/purdue-vs-iowa-in-des-moines-game-3-highlights",
+      "summary": "",
+      "date": "2026-05-16T22:15:24+00:00"
+    },
     {
       "id": "5f206d834806",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/05/9/purdue-scores-7-in-8th-inning-to-rally-for-11-9-win-vs-iu-highlights",
       "summary": "",
       "date": "2026-05-09T04:45:19+00:00"
-    },
-    {
-      "id": "9d97f6ba19b2",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Scores 7 in the 8th for its Biggest Comeback Ever at Alexander",
-      "url": "https://purduesports.com/news/2026/05/9/purdue-scores-7-in-the-8th-for-its-biggest-comeback-ever-at-alexander",
-      "summary": "Boilermakers overcome deficits of 8-0, 9-2 to win for the 8th time in the last 9 home games",
-      "date": "2026-05-09T03:55:00+00:00"
-    },
-    {
-      "id": "038db65e18bc",
-      "source": "Purdue Athletics MBB",
-      "title": "Friday Night at Ross-Ade: Purdue to Host Washington, Oct. 16",
-      "url": "https://purduesports.com/news/2026/05/8/friday-night-football-at-ross-ade-purdue-to-host-washington-october-16",
-      "summary": "",
-      "date": "2026-05-08T16:00:00+00:00"
     }
   ]
 }
