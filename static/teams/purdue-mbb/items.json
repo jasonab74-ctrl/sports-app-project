@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-05-18T20:12:51.217163+00:00",
+  "updated": "2026-05-18T21:44:19.494728+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "9a4c4ef2c017",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Stories: Grit Defines Baseball's Remarkable Season",
+      "url": "https://purduesports.com/news/2026/05/18/purdue-stories-grit-defines-baseballs-remarkable-season",
+      "summary": "Purdue Baseball is highlighted in the latest feature installment of Purdue Stories.",
+      "date": "2026-05-18T20:15:07+00:00"
+    },
     {
       "id": "842e3080dc25",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/05/9/purdue-scores-5-in-the-9th-to-walk-off-indiana-highlights",
       "summary": "",
       "date": "2026-05-09T23:21:07+00:00"
-    },
-    {
-      "id": "619f071c6522",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilers Rally for 5 in 9th, Win on Rogers' 3-Run Double",
-      "url": "https://purduesports.com/news/2026/05/9/boilers-rally-for-5-in-9th-win-on-rogers-3-run-double",
-      "summary": "Rogers clears the bases with double down the right field line as Purdue wins via walk-off for 4th time",
-      "date": "2026-05-09T23:00:00+00:00"
     }
   ]
 }
