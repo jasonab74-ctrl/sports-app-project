@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-05-18T01:27:40.136316+00:00",
+  "updated": "2026-05-18T05:44:04.846035+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "1d523b3b26c5",
+      "source": "Purdue Athletics MBB",
+      "title": "Aniamaka Takes B1G Gold, Purdue Earns 5 Medals in B1G Finale",
+      "url": "https://purduesports.com/news/2026/05/17/aniamaka-takes-b1g-gold-purdue-earns-5-medals-in-b1g-finale",
+      "summary": "",
+      "date": "2026-05-17T23:35:00+00:00"
+    },
     {
       "id": "698688ba67a3",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/05/9/260508-game-1-vs-indiana",
       "summary": "",
       "date": "2026-05-09T05:17:28+00:00"
-    },
-    {
-      "id": "8dd4b2784fe6",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Scores 7 in 8th Inning to Rally for 11-9 Win vs IU - Highlights",
-      "url": "https://purduesports.com/news/2026/05/9/purdue-scores-7-in-8th-inning-to-rally-for-11-9-win-vs-iu-highlights",
-      "summary": "",
-      "date": "2026-05-09T04:45:19+00:00"
     }
   ]
 }
