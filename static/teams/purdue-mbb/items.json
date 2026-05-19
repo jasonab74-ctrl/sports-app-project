@@ -1,24 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-05-19T17:34:59.930603+00:00",
+  "updated": "2026-05-19T19:46:23.436299+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "8339a5c189bb",
-      "source": "Purdue Athletics MBB",
-      "title": "3 of Purdue's Hitters Earn All-Big Ten Honors",
-      "url": "https://purduesports.com/news/2026/05/19/3-of-purdues-hitters-earn-all-big-ten-honors",
-      "summary": "",
-      "date": "2026-05-19T16:01:00+00:00"
-    },
-    {
-      "id": "e4f9c419d172",
-      "source": "Purdue Athletics MBB",
-      "title": "Polar, Moore Named Softball America All-Americans",
-      "url": "https://purduesports.com/news/2026/05/19/polar-moore-named-softball-america-all-americans",
-      "summary": "For the first time in program history, Purdue earns two names on Softball America’s All-American teams, with Moriah Polar landing on the second team and Anna Moore on the freshman team.",
-      "date": "2026-05-19T16:00:00+00:00"
-    },
     {
       "id": "5a8445a26e17",
       "source": "Purdue Athletics MBB",
@@ -162,6 +146,22 @@
       "url": "https://purduesports.com/news/2026/05/12/this-week-in-purdue-baseball-may-13-2026",
       "summary": "",
       "date": "2026-05-12T18:38:37+00:00"
+    },
+    {
+      "id": "50d2f80fae90",
+      "source": "Purdue Athletics MBB",
+      "title": "Brown Paces Purdue in NCAA Regional Opening Round",
+      "url": "https://purduesports.com/news/2026/05/11/brown-paces-purdue-in-ncaa-regional-opening-round",
+      "summary": "",
+      "date": "2026-05-11T20:34:09+00:00"
+    },
+    {
+      "id": "17787ef48d9e",
+      "source": "Purdue Athletics MBB",
+      "title": "Baseball Completes Sweep of IU with 20th Home Win",
+      "url": "https://purduesports.com/news/2026/05/11/baseball-completes-sweep-of-iu-with-20th-home-win",
+      "summary": "Moore powers Purdue with 4-4-4 game (4-for-4, 4 XBH, 4 RBI); Rogers continues to torment Hoosiers",
+      "date": "2026-05-11T00:07:09+00:00"
     }
   ]
 }
