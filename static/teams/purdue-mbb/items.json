@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-05-19T19:46:23.436299+00:00",
+  "updated": "2026-05-19T21:14:14.123925+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "5a8445a26e17",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Baseball: Big Ten Tournament Week is Here",
-      "url": "https://purduesports.com/news/2026/05/19/purdue-baseball-big-ten-tournament-week-is-here",
-      "summary": "",
-      "date": "2026-05-19T07:13:15+00:00"
-    },
     {
       "id": "35e612b69182",
       "source": "Purdue Athletics MBB",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/05/11/baseball-completes-sweep-of-iu-with-20th-home-win",
       "summary": "Moore powers Purdue with 4-4-4 game (4-for-4, 4 XBH, 4 RBI); Rogers continues to torment Hoosiers",
       "date": "2026-05-11T00:07:09+00:00"
+    },
+    {
+      "id": "13a42fd9456a",
+      "source": "Purdue Athletics MBB",
+      "title": "Moore's 4-XBH Game Leads Purdue to Sweep of IU - Highlights",
+      "url": "https://purduesports.com/news/2026/05/10/moores-4-xbh-game-leads-purdue-to-sweep-of-iu-highlights",
+      "summary": "",
+      "date": "2026-05-10T22:30:03+00:00"
     }
   ]
 }
