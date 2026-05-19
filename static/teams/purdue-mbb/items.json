@@ -1,8 +1,40 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-05-19T00:01:10.097556+00:00",
+  "updated": "2026-05-19T04:39:22.396753+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "35e612b69182",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Top Leaderboard After 18 Holes in Corvallis",
+      "url": "https://purduesports.com/news/2026/05/18/boilermakers-top-leaderboard-after-18-holes-in-corvallis",
+      "summary": "",
+      "date": "2026-05-18T22:49:56+00:00"
+    },
+    {
+      "id": "43c3e46650ee",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Set for Big Week at Big Ten Tournament",
+      "url": "https://purduesports.com/news/2026/05/18/boilermakers-set-for-big-week-at-big-ten-tournament",
+      "summary": "Purdue paired with MSU, Iowa, Illinois in double-elimination bracket to begin Big Ten Tournament",
+      "date": "2026-05-18T20:41:00+00:00"
+    },
+    {
+      "id": "9a4c4ef2c017",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Stories: Grit Defines Baseball's Remarkable Season",
+      "url": "https://purduesports.com/news/2026/05/18/purdue-stories-grit-defines-baseballs-remarkable-season",
+      "summary": "Purdue Baseball is highlighted in the latest feature installment of Purdue Stories.",
+      "date": "2026-05-18T20:15:07+00:00"
+    },
+    {
+      "id": "842e3080dc25",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Awards Brees with Honorary Doctorate",
+      "url": "https://purduesports.com/news/2026/05/18/purdue-awards-brees-with-honorary-doctorate",
+      "summary": "",
+      "date": "2026-05-18T16:05:47+00:00"
+    },
     {
       "id": "1d523b3b26c5",
       "source": "Purdue Athletics MBB",
@@ -130,38 +162,6 @@
       "url": "https://purduesports.com/news/2026/05/10/moores-4-xbh-game-leads-purdue-to-sweep-of-iu-highlights",
       "summary": "",
       "date": "2026-05-10T22:30:03+00:00"
-    },
-    {
-      "id": "3aa2f8dcb559",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue's Walk-off Win & Celebration vs Indiana",
-      "url": "https://purduesports.com/news/2026/05/9/purdues-walk-off-win-celebration-vs-indiana",
-      "summary": "",
-      "date": "2026-05-09T23:24:25+00:00"
-    },
-    {
-      "id": "cb5d688f354d",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Scores 5 in the 9th to Walk-off Indiana - Highlights",
-      "url": "https://purduesports.com/news/2026/05/9/purdue-scores-5-in-the-9th-to-walk-off-indiana-highlights",
-      "summary": "",
-      "date": "2026-05-09T23:21:07+00:00"
-    },
-    {
-      "id": "619f071c6522",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilers Rally for 5 in 9th, Win on Rogers' 3-Run Double",
-      "url": "https://purduesports.com/news/2026/05/9/boilers-rally-for-5-in-9th-win-on-rogers-3-run-double",
-      "summary": "Rogers clears the bases with double down the right field line as Purdue wins via walk-off for 4th time",
-      "date": "2026-05-09T23:00:00+00:00"
-    },
-    {
-      "id": "75e8bd9d2894",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue vs Indiana Game 1 Photo Gallery",
-      "url": "https://purduesports.com/news/2026/05/9/260508-game-1-vs-indiana",
-      "summary": "",
-      "date": "2026-05-09T05:17:28+00:00"
     }
   ]
 }
