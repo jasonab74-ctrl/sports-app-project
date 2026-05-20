@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-05-20T07:38:38.578306+00:00",
+  "updated": "2026-05-20T10:45:07.836900+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "1ea6a7a2fb7e",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers In Hunt For Regional Title After 36 Holes",
+      "url": "https://purduesports.com/news/2026/05/19/boilermakers-in-hunt-for-regional-title-after-36-holes",
+      "summary": "",
+      "date": "2026-05-19T22:38:56+00:00"
+    },
+    {
+      "id": "ebc2409ba96e",
+      "source": "Purdue Athletics MBB",
+      "title": "Early Deficit Dooms Baseball on Day 1 of Big Ten Tournament",
+      "url": "https://purduesports.com/news/2026/05/19/early-deficit-dooms-baseball-on-day-1-of-big-ten-tournament",
+      "summary": "Purdue scores 4 over final 2 innings but leaves potential tying run on deck in 9th",
+      "date": "2026-05-19T19:32:34+00:00"
+    },
     {
       "id": "1519fc18c142",
       "source": "Purdue Athletics MBB",
@@ -34,14 +50,6 @@
       "url": "https://purduesports.com/news/2026/05/18/boilermakers-top-leaderboard-after-18-holes-in-corvallis",
       "summary": "",
       "date": "2026-05-18T22:49:56+00:00"
-    },
-    {
-      "id": "43c3e46650ee",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Set for Big Week at Big Ten Tournament",
-      "url": "https://purduesports.com/news/2026/05/18/boilermakers-set-for-big-week-at-big-ten-tournament",
-      "summary": "Purdue paired with MSU, Iowa, Illinois in double-elimination bracket to begin Big Ten Tournament",
-      "date": "2026-05-18T20:41:00+00:00"
     },
     {
       "id": "9a4c4ef2c017",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/05/13/purdue-launches-cathy-wright-eger-legacy-of-leadership-program",
       "summary": "Boilermakers to create scholarship endowment with lead gift from New York Times bestselling author Susan Stoker",
       "date": "2026-05-13T19:45:52+00:00"
-    },
-    {
-      "id": "03808b4dd01a",
-      "source": "Purdue Athletics MBB",
-      "title": "This Week in Purdue Baseball | May 13, 2026",
-      "url": "https://purduesports.com/news/2026/05/12/this-week-in-purdue-baseball-may-13-2026",
-      "summary": "",
-      "date": "2026-05-12T18:38:37+00:00"
     }
   ]
 }
