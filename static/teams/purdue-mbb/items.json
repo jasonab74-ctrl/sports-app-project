@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-05-20T13:34:32.145635+00:00",
+  "updated": "2026-05-20T16:49:00.312484+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "b029dfca4bf8",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue to Face Connecticut in Exhibition Game",
+      "url": "https://purduesports.com/news/2026/05/20/purdue-to-face-connecticut-in-exhibition-game",
+      "summary": "",
+      "date": "2026-05-20T15:00:00+00:00"
+    },
     {
       "id": "1ea6a7a2fb7e",
       "source": "Purdue Athletics MBB",
@@ -106,14 +114,6 @@
       "url": "https://purduesports.com/news/2026/05/16/purdue-vs-iowa-in-des-moines-game-2-highlights",
       "summary": "",
       "date": "2026-05-16T02:14:51+00:00"
-    },
-    {
-      "id": "784c34d58eab",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Heads Back to the Pacific Northwest for NCAA Regionals",
-      "url": "https://purduesports.com/news/2026/05/15/purdue-heads-back-to-the-pacific-northwest-for-ncaa-regionals",
-      "summary": "",
-      "date": "2026-05-15T17:55:00+00:00"
     },
     {
       "id": "41939f0946c9",
