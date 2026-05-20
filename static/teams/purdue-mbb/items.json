@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-05-20T16:49:00.312484+00:00",
+  "updated": "2026-05-20T19:19:56.607189+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "3773c5e34953",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Rallies for 3 in 8th in Comeback Win at Big Ten Tournament",
+      "url": "https://purduesports.com/news/2026/05/20/purdue-rallies-for-3-in-8th-in-comeback-win-at-big-ten-tournament",
+      "summary": "",
+      "date": "2026-05-20T19:02:24+00:00"
+    },
+    {
+      "id": "14996f58fc78",
+      "source": "Purdue Athletics MBB",
+      "title": "Ersland Signs National JUCO Athlete of the Year",
+      "url": "https://purduesports.com/news/2026/05/20/ersland-signs-national-juco-athlete-of-the-year",
+      "summary": "2026 NJCAA national champion Austin Richens is headed to West Lafayette.",
+      "date": "2026-05-20T18:30:00+00:00"
+    },
     {
       "id": "b029dfca4bf8",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/05/14/purdue-earns-four-players-on-nfca-all-region-teams",
       "summary": "Purdue lands four players on the NFCA All-Region teams with Moriah Polar and Haley Painter landing on the First Team, while Anna Moore and Julia Gossett earned a place on the second team.",
       "date": "2026-05-14T17:05:00+00:00"
-    },
-    {
-      "id": "279591e3b3dd",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Places 10th at NCAA Regional",
-      "url": "https://purduesports.com/news/2026/05/13/purdue-places-10th-at-ncaa-regional",
-      "summary": "",
-      "date": "2026-05-13T22:04:07+00:00"
-    },
-    {
-      "id": "62cfe96d02d7",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Launches Cathy Wright-Eger Legacy of Leadership Program",
-      "url": "https://purduesports.com/news/2026/05/13/purdue-launches-cathy-wright-eger-legacy-of-leadership-program",
-      "summary": "Boilermakers to create scholarship endowment with lead gift from New York Times bestselling author Susan Stoker",
-      "date": "2026-05-13T19:45:52+00:00"
     }
   ]
 }
