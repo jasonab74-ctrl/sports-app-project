@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-05-21T11:47:13.422059+00:00",
+  "updated": "2026-05-21T14:53:09.291837+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "352e9d5409f8",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Punches Ticket to NCAA National Championships",
+      "url": "https://purduesports.com/news/2026/05/20/purdue-punches-ticket-to-ncaa-national-championships",
+      "summary": "",
+      "date": "2026-05-20T23:23:39+00:00"
+    },
     {
       "id": "6853ce51d97f",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/05/15/purdue-vs-iowa-in-des-moines-game-1-highlights",
       "summary": "",
       "date": "2026-05-15T03:27:43+00:00"
-    },
-    {
-      "id": "513340d30dcc",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Baseball Practice",
-      "url": "https://purduesports.com/news/2026/05/14/purdue-baseball-practice",
-      "summary": "",
-      "date": "2026-05-14T22:19:02+00:00"
     }
   ]
 }
