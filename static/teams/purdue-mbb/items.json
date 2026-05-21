@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-05-21T19:26:05.918030+00:00",
+  "updated": "2026-05-21T21:10:16.690915+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "9b93d01b0b6f",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue to Face DePaul, Oklahoma in 2026 Fort Myers Tip-Off",
+      "url": "https://purduesports.com/news/2026/05/21/purdue-to-face-depaul-oklahoma-in-2026-fort-myers-tip-off",
+      "summary": "",
+      "date": "2026-05-21T17:30:00+00:00"
+    },
+    {
+      "id": "1d535b28d1e2",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Earns 27 Qualifications to the NCAA East First Round",
+      "url": "https://purduesports.com/news/2026/05/21/purdue-earns-27-qualifications-to-the-ncaa-east-first-round",
+      "summary": "",
+      "date": "2026-05-21T16:00:00+00:00"
+    },
     {
       "id": "352e9d5409f8",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/05/16/purdue-vs-iowa-in-des-moines-game-2-highlights",
       "summary": "",
       "date": "2026-05-16T02:14:51+00:00"
-    },
-    {
-      "id": "41939f0946c9",
-      "source": "Purdue Athletics MBB",
-      "title": "Iowa Overcomes Boilers' Early Lead to Take Series Opener",
-      "url": "https://purduesports.com/news/2026/05/15/iowa-overcomes-purdues-early-lead-to-take-series-opener",
-      "summary": "Moore & Swiderski register 3-hit nights as Purdue connects for 6 doubles, 8 XBH; Friday's game moved up to 6 p.m. ET",
-      "date": "2026-05-15T04:04:00+00:00"
-    },
-    {
-      "id": "935edefe1243",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue vs Iowa in Des Moines - Game 1 Highlights",
-      "url": "https://purduesports.com/news/2026/05/15/purdue-vs-iowa-in-des-moines-game-1-highlights",
-      "summary": "",
-      "date": "2026-05-15T03:27:43+00:00"
     }
   ]
 }
