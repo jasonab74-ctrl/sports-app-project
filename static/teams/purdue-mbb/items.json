@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-05-22T18:12:51.236635+00:00",
+  "updated": "2026-05-22T20:16:43.776084+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "0f5131e74a89",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Posts 8 Zeros, Scores 8 Runs to Top Iowa at Big Ten Tournament",
+      "url": "https://purduesports.com/news/2026/05/22/purdue-posts-8-zeros-scores-8-runs-to-top-iowa-at-big-ten-tournament",
+      "summary": "",
+      "date": "2026-05-22T00:21:29+00:00"
+    },
+    {
+      "id": "44897bdd5273",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Scores 8, Posts 8 Zeros to Top Iowa in Omaha",
+      "url": "https://purduesports.com/news/2026/05/22/purdue-scores-8-posts-8-zeros-to-top-iowa-in-omaha",
+      "summary": "First pitch vs UCLA now set for 7 p.m. ET on Friday (live on BTN) due to rain in the morning & afternoon",
+      "date": "2026-05-22T00:08:00+00:00"
+    },
     {
       "id": "9b93d01b0b6f",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/05/16/purdue-vs-iowa-in-des-moines-game-3-highlights",
       "summary": "",
       "date": "2026-05-16T22:15:24+00:00"
-    },
-    {
-      "id": "5f206d834806",
-      "source": "Purdue Athletics MBB",
-      "title": "Big Innings Burn Baseball in Game 2 with Iowa",
-      "url": "https://purduesports.com/news/2026/05/16/big-innings-burn-baseball-in-game-2-with-iowa",
-      "summary": "Purdue unable to make leads of 4-0, 5-1 hold up as Hawkeyes take game 2 in Des Moines",
-      "date": "2026-05-16T03:56:29+00:00"
-    },
-    {
-      "id": "b3b81ef6c9ac",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue vs Iowa in Des Moines - Game 2 Highlights",
-      "url": "https://purduesports.com/news/2026/05/16/purdue-vs-iowa-in-des-moines-game-2-highlights",
-      "summary": "",
-      "date": "2026-05-16T02:14:51+00:00"
     }
   ]
 }
