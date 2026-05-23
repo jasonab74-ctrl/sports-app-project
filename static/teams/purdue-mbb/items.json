@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-05-23T09:18:13.323277+00:00",
+  "updated": "2026-05-23T10:49:52.359117+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "a00702a1c051",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Fall in Walk-off Heartbreaker vs #1 UCLA",
+      "url": "https://purduesports.com/news/2026/05/23/boilermakers-fall-in-walk-off-heartbreaker-vs-1-ucla",
+      "summary": "Howard posted 5 zeros in a heroic effort but the Bruins rallied for a walk-off at the Big Ten Tournament",
+      "date": "2026-05-23T04:45:46+00:00"
+    },
+    {
+      "id": "cc5f921ae8e4",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue-UCLA at the Big Ten Tournament Highlights",
+      "url": "https://purduesports.com/news/2026/05/23/purdue-ucla-at-the-big-ten-tournament-highlights",
+      "summary": "",
+      "date": "2026-05-23T04:25:46+00:00"
+    },
     {
       "id": "0f5131e74a89",
       "source": "Purdue Athletics MBB",
@@ -16,7 +32,7 @@
       "source": "Purdue Athletics MBB",
       "title": "Purdue Scores 8, Posts 8 Zeros to Top Iowa in Omaha",
       "url": "https://purduesports.com/news/2026/05/22/purdue-scores-8-posts-8-zeros-to-top-iowa-in-omaha",
-      "summary": "Boilermakers advance to take on #1 UCLA in Big Ten Tournament quarterfinals on Friday at 2 p.m. ET",
+      "summary": "Updated: First pitch vs UCLA now set for 8 p.m. ET on Friday in Omaha (live on BTN)",
       "date": "2026-05-22T00:08:00+00:00"
     },
     {
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/05/17/aniamaka-takes-b1g-gold-purdue-earns-5-medals-in-b1g-finale",
       "summary": "",
       "date": "2026-05-17T23:35:00+00:00"
-    },
-    {
-      "id": "698688ba67a3",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue's Trio of 2-Run Homers Not Enough in Iowa Finale",
-      "url": "https://purduesports.com/news/2026/05/16/purdues-trio-of-2-run-homers-not-enough-in-iowa-finale",
-      "summary": "Boilermakers will be 5-seed at the Big Ten Tournament, play Michigan St. on Tuesday at 10 a.m. ET",
-      "date": "2026-05-16T22:53:27+00:00"
-    },
-    {
-      "id": "05d54db8fd4e",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue vs Iowa in Des Moines - Game 3 Highlights",
-      "url": "https://purduesports.com/news/2026/05/16/purdue-vs-iowa-in-des-moines-game-3-highlights",
-      "summary": "",
-      "date": "2026-05-16T22:15:24+00:00"
     }
   ]
 }
