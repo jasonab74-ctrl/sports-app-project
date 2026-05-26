@@ -1,8 +1,32 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-05-26T20:05:42.175353+00:00",
+  "updated": "2026-05-26T22:03:01.925565+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "337393807e4c",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Set for 2026 NCAA East First Round",
+      "url": "https://purduesports.com/news/2026/05/26/purdue-set-for-2026-ncaa-east-first-round",
+      "summary": "",
+      "date": "2026-05-26T18:03:45+00:00"
+    },
+    {
+      "id": "4cf05212464b",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Lands 5 on CSC Academic All-District Team",
+      "url": "https://purduesports.com/news/2026/05/26/purdue-lands-5-on-csc-academic-all-district-team",
+      "summary": "College Sports Communicators has announced its Academic All-District Team, with five Boilers earning nods including Haley Painter, Brooke Perez, Delaney Reefe, Maura Condon, and Kylie Franks.",
+      "date": "2026-05-26T15:47:21+00:00"
+    },
+    {
+      "id": "d1ec3d5cd59f",
+      "source": "Purdue Athletics MBB",
+      "title": "Andrews Makes MLB Debut as 1st Big Leaguer of Alexander Field Era",
+      "url": "https://purduesports.com/news/2026/05/26/andrews-set-to-become-1st-big-leaguer-of-alexander-field-era",
+      "summary": "Purdue's three-year Opening Day starter & 2018 All-Big Ten honoree called up by Blue Jays",
+      "date": "2026-05-26T01:45:00+00:00"
+    },
     {
       "id": "a00702a1c051",
       "source": "Purdue Athletics MBB",
@@ -138,30 +162,6 @@
       "url": "https://purduesports.com/news/2026/05/18/boilermakers-top-leaderboard-after-18-holes-in-corvallis",
       "summary": "",
       "date": "2026-05-18T22:49:56+00:00"
-    },
-    {
-      "id": "9a4c4ef2c017",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Stories: Grit Defines Baseball's Remarkable Season",
-      "url": "https://purduesports.com/news/2026/05/18/purdue-stories-grit-defines-baseballs-remarkable-season",
-      "summary": "Purdue Baseball is highlighted in the latest feature installment of Purdue Stories.",
-      "date": "2026-05-18T20:15:07+00:00"
-    },
-    {
-      "id": "842e3080dc25",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Awards Brees with Honorary Doctorate",
-      "url": "https://purduesports.com/news/2026/05/18/purdue-awards-brees-with-honorary-doctorate",
-      "summary": "",
-      "date": "2026-05-18T16:05:47+00:00"
-    },
-    {
-      "id": "1d523b3b26c5",
-      "source": "Purdue Athletics MBB",
-      "title": "Aniamaka Takes B1G Gold, Purdue Earns 5 Medals in B1G Finale",
-      "url": "https://purduesports.com/news/2026/05/17/aniamaka-takes-b1g-gold-purdue-earns-5-medals-in-b1g-finale",
-      "summary": "",
-      "date": "2026-05-17T23:35:00+00:00"
     }
   ]
 }
