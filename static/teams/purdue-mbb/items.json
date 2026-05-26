@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-05-26T00:00:54.285218+00:00",
+  "updated": "2026-05-26T04:40:53.573300+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "d1ec3d5cd59f",
+      "source": "Purdue Athletics MBB",
+      "title": "Andrews Makes MLB Debut as 1st Big Leaguer of Alexander Field Era",
+      "url": "https://purduesports.com/news/2026/05/26/andrews-set-to-become-1st-big-leaguer-of-alexander-field-era",
+      "summary": "Purdue's three-year Opening Day starter & 2018 All-Big Ten honoree called up by Blue Jays",
+      "date": "2026-05-26T01:45:00+00:00"
+    },
     {
       "id": "a00702a1c051",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/05/18/purdue-awards-brees-with-honorary-doctorate",
       "summary": "",
       "date": "2026-05-18T16:05:47+00:00"
-    },
-    {
-      "id": "1d523b3b26c5",
-      "source": "Purdue Athletics MBB",
-      "title": "Aniamaka Takes B1G Gold, Purdue Earns 5 Medals in B1G Finale",
-      "url": "https://purduesports.com/news/2026/05/17/aniamaka-takes-b1g-gold-purdue-earns-5-medals-in-b1g-finale",
-      "summary": "",
-      "date": "2026-05-17T23:35:00+00:00"
     }
   ]
 }
