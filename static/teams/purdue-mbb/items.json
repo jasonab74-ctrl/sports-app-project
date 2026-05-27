@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-05-27T17:40:21.519085+00:00",
+  "updated": "2026-05-27T20:07:16.607526+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "e003d006f79e",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Set for 3rd Straight Appearance in National Championships",
+      "url": "https://purduesports.com/news/2026/05/27/purdue-travels-to-california-for-3rd-straight-trip-in-national-championships",
+      "summary": "",
+      "date": "2026-05-27T14:38:17+00:00"
+    },
     {
       "id": "337393807e4c",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/05/19/polar-moore-named-softball-america-all-americans",
       "summary": "For the first time in program history, Purdue earns two names on Softball America’s All-American teams, with Moriah Polar landing on the second team and Anna Moore on the freshman team.",
       "date": "2026-05-19T16:00:00+00:00"
-    },
-    {
-      "id": "35e612b69182",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Top Leaderboard After 18 Holes in Corvallis",
-      "url": "https://purduesports.com/news/2026/05/18/boilermakers-top-leaderboard-after-18-holes-in-corvallis",
-      "summary": "",
-      "date": "2026-05-18T22:49:56+00:00"
     }
   ]
 }
