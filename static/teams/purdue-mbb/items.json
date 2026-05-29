@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-05-28T22:38:44.756232+00:00",
+  "updated": "2026-05-29T00:06:32.541228+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "7ae98a8420a7",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Releases 2026-27 Non-Conference Hoops Schedule",
+      "url": "https://purduesports.com/news/2026/05/28/purdue-releases-2026-27-non-conference-hoops-schedule",
+      "summary": "",
+      "date": "2026-05-28T19:28:00+00:00"
+    },
+    {
+      "id": "d814c209bb02",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Sends 6 to U23 Nationals, U20 World Team Trials",
+      "url": "https://purduesports.com/news/2026/05/28/purdue-sends-6-to-u23-nationals-u20-world-team-trials",
+      "summary": "The Boilermakers are headed to Geneva, Ohio.",
+      "date": "2026-05-28T13:45:00+00:00"
+    },
     {
       "id": "41a8b6dfe4e1",
       "source": "Purdue Athletics MBB",
@@ -18,14 +34,6 @@
       "url": "https://purduesports.com/news/2026/05/27/purdue-travels-to-california-for-3rd-straight-trip-in-national-championships",
       "summary": "",
       "date": "2026-05-27T14:38:17+00:00"
-    },
-    {
-      "id": "337393807e4c",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Set for 2026 NCAA East First Round",
-      "url": "https://purduesports.com/news/2026/05/26/purdue-set-for-2026-ncaa-east-first-round",
-      "summary": "",
-      "date": "2026-05-26T18:03:45+00:00"
     },
     {
       "id": "4cf05212464b",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/05/19/purdue-vs-michigan-st-at-big-ten-tournament-highlights",
       "summary": "",
       "date": "2026-05-19T17:31:04+00:00"
-    },
-    {
-      "id": "8339a5c189bb",
-      "source": "Purdue Athletics MBB",
-      "title": "3 of Purdue's Hitters Earn All-Big Ten Honors",
-      "url": "https://purduesports.com/news/2026/05/19/3-of-purdues-hitters-earn-all-big-ten-honors",
-      "summary": "",
-      "date": "2026-05-19T16:01:00+00:00"
     }
   ]
 }
