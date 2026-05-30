@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-05-30T16:56:05.474301+00:00",
+  "updated": "2026-05-30T18:00:21.573491+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "4253536c01d0",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue in Middle of Pack After Round One of NCAA Championships",
-      "url": "https://purduesports.com/news/2026/05/30/purdue-in-middle-of-pack-after-round-one-of-ncaa-championships",
-      "summary": "",
-      "date": "2026-05-30T01:44:49+00:00"
-    },
     {
       "id": "7ae98a8420a7",
       "source": "Purdue Athletics MBB",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/05/19/early-deficit-dooms-baseball-on-day-1-of-big-ten-tournament",
       "summary": "Purdue scores 4 over final 2 innings but leaves potential tying run on deck in 9th",
       "date": "2026-05-19T19:32:34+00:00"
+    },
+    {
+      "id": "1519fc18c142",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue vs Michigan St. at Big Ten Tournament - Highlights",
+      "url": "https://purduesports.com/news/2026/05/19/purdue-vs-michigan-st-at-big-ten-tournament-highlights",
+      "summary": "",
+      "date": "2026-05-19T17:31:04+00:00"
     }
   ]
 }
