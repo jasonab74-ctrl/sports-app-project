@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-06-02T05:08:38.354135+00:00",
+  "updated": "2026-06-02T09:46:32.400370+00:00",
   "count": 20,
   "items": [
     {
@@ -26,14 +26,6 @@
       "url": "https://purduesports.com/news/2026/05/28/purdue-releases-2026-27-non-conference-hoops-schedule",
       "summary": "",
       "date": "2026-05-28T19:28:00+00:00"
-    },
-    {
-      "id": "d814c209bb02",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Sends 6 to U23 Nationals, U20 World Team Trials",
-      "url": "https://purduesports.com/news/2026/05/28/purdue-sends-6-to-u23-nationals-u20-world-team-trials",
-      "summary": "The Boilermakers are headed to Geneva, Ohio.",
-      "date": "2026-05-28T13:45:00+00:00"
     },
     {
       "id": "41a8b6dfe4e1",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/05/19/boilermakers-in-hunt-for-regional-title-after-36-holes",
       "summary": "",
       "date": "2026-05-19T22:38:56+00:00"
+    },
+    {
+      "id": "ebc2409ba96e",
+      "source": "Purdue Athletics MBB",
+      "title": "Early Deficit Dooms Baseball on Day 1 of Big Ten Tournament",
+      "url": "https://purduesports.com/news/2026/05/19/early-deficit-dooms-baseball-on-day-1-of-big-ten-tournament",
+      "summary": "Purdue scores 4 over final 2 innings but leaves potential tying run on deck in 9th",
+      "date": "2026-05-19T19:32:34+00:00"
     }
   ]
 }
