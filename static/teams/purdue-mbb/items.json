@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-06-03T20:34:37.924450+00:00",
+  "updated": "2026-06-03T23:01:13.670434+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "0c0ebcba6f46",
+      "source": "Purdue Athletics MBB",
+      "title": "Bobinski announces plan to retire at end of year",
+      "url": "https://purduesports.com/news/2026/06/3/bobinski-announces-plan-to-retire-at-end-of-year",
+      "summary": "Leader of Purdue Athletics to step down after 10 years guiding the Boilermakers",
+      "date": "2026-06-03T19:25:00+00:00"
+    },
     {
       "id": "956fb1229eac",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/05/20/purdue-to-face-connecticut-in-exhibition-game",
       "summary": "",
       "date": "2026-05-20T15:00:00+00:00"
-    },
-    {
-      "id": "1ea6a7a2fb7e",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers In Hunt For Regional Title After 36 Holes",
-      "url": "https://purduesports.com/news/2026/05/19/boilermakers-in-hunt-for-regional-title-after-36-holes",
-      "summary": "",
-      "date": "2026-05-19T22:38:56+00:00"
     }
   ]
 }
