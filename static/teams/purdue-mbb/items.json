@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-06-02T23:15:39.661357+00:00",
+  "updated": "2026-06-03T02:05:13.925166+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "956fb1229eac",
+      "source": "Purdue Athletics MBB",
+      "title": "5 of Purdue's 2026 Grads Named Academic All-District",
+      "url": "https://purduesports.com/news/2026/06/2/5-of-baseballs-2026-grads-honored-as-academic-all-district",
+      "summary": "",
+      "date": "2026-06-02T16:52:00+00:00"
+    },
     {
       "id": "753340e39aa7",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/05/19/boilermakers-in-hunt-for-regional-title-after-36-holes",
       "summary": "",
       "date": "2026-05-19T22:38:56+00:00"
-    },
-    {
-      "id": "ebc2409ba96e",
-      "source": "Purdue Athletics MBB",
-      "title": "Early Deficit Dooms Baseball on Day 1 of Big Ten Tournament",
-      "url": "https://purduesports.com/news/2026/05/19/early-deficit-dooms-baseball-on-day-1-of-big-ten-tournament",
-      "summary": "Purdue scores 4 over final 2 innings but leaves potential tying run on deck in 9th",
-      "date": "2026-05-19T19:32:34+00:00"
     }
   ]
 }
