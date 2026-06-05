@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-06-05T21:06:05.519377+00:00",
+  "updated": "2026-06-05T22:39:15.140915+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "4680606e4014",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Baseball's Summer League Assignments",
-      "url": "https://purduesports.com/news/2026/06/5/purdue-baseballs-summer-league-assignments26",
-      "summary": "",
-      "date": "2026-06-05T20:28:42+00:00"
-    },
     {
       "id": "3598390ecc8d",
       "source": "Purdue Athletics MBB",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/05/20/purdue-rallies-for-3-in-8th-in-comeback-win-at-big-ten-tournament",
       "summary": "",
       "date": "2026-05-20T19:02:24+00:00"
+    },
+    {
+      "id": "14996f58fc78",
+      "source": "Purdue Athletics MBB",
+      "title": "Ersland Signs National JUCO Athlete of the Year",
+      "url": "https://purduesports.com/news/2026/05/20/ersland-signs-national-juco-athlete-of-the-year",
+      "summary": "2026 NJCAA national champion Austin Richens is headed to West Lafayette.",
+      "date": "2026-05-20T18:30:00+00:00"
     }
   ]
 }
