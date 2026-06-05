@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-06-05T19:14:36.556253+00:00",
+  "updated": "2026-06-05T21:06:05.519377+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "4680606e4014",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Baseball's Summer League Assignments",
+      "url": "https://purduesports.com/news/2026/06/5/purdue-baseballs-summer-league-assignments26",
+      "summary": "",
+      "date": "2026-06-05T20:28:42+00:00"
+    },
+    {
+      "id": "3598390ecc8d",
+      "source": "Purdue Athletics MBB",
+      "title": "Nick Logan Named Head of John Purdue Club",
+      "url": "https://purduesports.com/news/2026/06/5/nick-logan-named-head-of-jpc",
+      "summary": "Logan to permanently lead John Purdue Club after serving as interim director since November 2025",
+      "date": "2026-06-05T15:50:15+00:00"
+    },
     {
       "id": "0c0ebcba6f46",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/05/20/purdue-rallies-for-3-in-8th-in-comeback-win-at-big-ten-tournament",
       "summary": "",
       "date": "2026-05-20T19:02:24+00:00"
-    },
-    {
-      "id": "14996f58fc78",
-      "source": "Purdue Athletics MBB",
-      "title": "Ersland Signs National JUCO Athlete of the Year",
-      "url": "https://purduesports.com/news/2026/05/20/ersland-signs-national-juco-athlete-of-the-year",
-      "summary": "2026 NJCAA national champion Austin Richens is headed to West Lafayette.",
-      "date": "2026-05-20T18:30:00+00:00"
-    },
-    {
-      "id": "b029dfca4bf8",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue to Face Connecticut in Exhibition Game",
-      "url": "https://purduesports.com/news/2026/05/20/purdue-to-face-connecticut-in-exhibition-game",
-      "summary": "",
-      "date": "2026-05-20T15:00:00+00:00"
     }
   ]
 }
