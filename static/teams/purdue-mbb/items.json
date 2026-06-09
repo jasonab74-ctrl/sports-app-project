@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-06-09T13:40:37.058114+00:00",
+  "updated": "2026-06-09T16:27:58.804308+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "35566c3ffc5c",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Heads to Eugene for NCAA Outdoor Championships",
+      "url": "https://purduesports.com/news/2026/06/9/purdue-heads-to-eugene-for-ncaa-outdoor-championships",
+      "summary": "",
+      "date": "2026-06-09T15:15:00+00:00"
+    },
+    {
+      "id": "662c10f2cc0e",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers to Face Purdue Fort Wayne in Exhibition Game",
+      "url": "https://purduesports.com/news/2026/06/9/boilermakers-to-face-purdue-fort-wayne-in-exhibition-game",
+      "summary": "",
+      "date": "2026-06-09T15:00:00+00:00"
+    },
     {
       "id": "4680606e4014",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/05/20/purdue-punches-ticket-to-ncaa-national-championships",
       "summary": "",
       "date": "2026-05-20T23:23:39+00:00"
-    },
-    {
-      "id": "6853ce51d97f",
-      "source": "Purdue Athletics MBB",
-      "title": "Anderson Delivers with Bases Loaded as Boilers Rally for Win",
-      "url": "https://purduesports.com/news/2026/05/20/anderson-delivers-with-bases-loads-as-boilers-rally-for-win",
-      "summary": "Erdman's quality start, Anderson's go-ahead single carry Purdue to 3-1 victory at Big Ten Tournament",
-      "date": "2026-05-20T19:58:34+00:00"
-    },
-    {
-      "id": "3773c5e34953",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Rallies for 3 in 8th in Comeback Win at Big Ten Tournament",
-      "url": "https://purduesports.com/news/2026/05/20/purdue-rallies-for-3-in-8th-in-comeback-win-at-big-ten-tournament",
-      "summary": "",
-      "date": "2026-05-20T19:02:24+00:00"
     }
   ]
 }
