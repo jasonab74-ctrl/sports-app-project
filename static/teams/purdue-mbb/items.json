@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-06-10T14:33:20.256828+00:00",
+  "updated": "2026-06-10T17:54:06.849689+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "a140b5d49352",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Men's Basketball Begins Summer Workouts",
+      "url": "https://purduesports.com/news/2026/06/10/purdue-mens-basketball-begins-summer-workouts",
+      "summary": "",
+      "date": "2026-06-10T14:06:15+00:00"
+    },
     {
       "id": "35566c3ffc5c",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/05/21/purdue-earns-27-qualifications-to-the-ncaa-east-first-round",
       "summary": "",
       "date": "2026-05-21T16:00:00+00:00"
-    },
-    {
-      "id": "352e9d5409f8",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Punches Ticket to NCAA National Championships",
-      "url": "https://purduesports.com/news/2026/05/20/purdue-punches-ticket-to-ncaa-national-championships",
-      "summary": "",
-      "date": "2026-05-20T23:23:39+00:00"
     }
   ]
 }
