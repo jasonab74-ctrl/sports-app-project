@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-06-10T23:54:46.655436+00:00",
+  "updated": "2026-06-11T03:24:38.553916+00:00",
   "count": 20,
   "items": [
     {
@@ -10,14 +10,6 @@
       "url": "https://purduesports.com/news/2026/06/10/purdue-mens-basketball-begins-summer-workouts",
       "summary": "",
       "date": "2026-06-10T14:06:15+00:00"
-    },
-    {
-      "id": "6505a4aa44e4",
-      "source": "Purdue Athletics MBB",
-      "title": "Flores, Kramer Honored as All-Region by ABCA",
-      "url": "https://purduesports.com/news/2026/06/9/flores-kramer-honored-as-all-region-by-abca",
-      "summary": "Purdue was the only Big Ten team to have multiple players on the All-Midwest Region teams",
-      "date": "2026-06-09T19:34:00+00:00"
     },
     {
       "id": "35566c3ffc5c",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/05/21/purdue-to-face-depaul-oklahoma-in-2026-fort-myers-tip-off",
       "summary": "",
       "date": "2026-05-21T17:30:00+00:00"
+    },
+    {
+      "id": "1d535b28d1e2",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Earns 27 Qualifications to the NCAA East First Round",
+      "url": "https://purduesports.com/news/2026/05/21/purdue-earns-27-qualifications-to-the-ncaa-east-first-round",
+      "summary": "",
+      "date": "2026-05-21T16:00:00+00:00"
     }
   ]
 }
