@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-06-12T14:06:26.384511+00:00",
+  "updated": "2026-06-12T17:19:50.211532+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "47f3793c29b3",
+      "source": "Purdue Athletics MBB",
+      "title": "Smith Leads Purdue on Thursday with Second Team All-American Honor",
+      "url": "https://purduesports.com/news/2026/06/12/smith-leads-purdue-on-thursday-with-second-team-all-american-honor",
+      "summary": "",
+      "date": "2026-06-12T04:10:24+00:00"
+    },
     {
       "id": "65feee83d6da",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/05/22/purdue-scores-8-posts-8-zeros-to-top-iowa-in-omaha",
       "summary": "Updated: First pitch vs UCLA now set for 8 p.m. ET on Friday in Omaha (live on BTN)",
       "date": "2026-05-22T00:08:00+00:00"
-    },
-    {
-      "id": "9b93d01b0b6f",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue to Face DePaul, Oklahoma in 2026 Fort Myers Tip-Off",
-      "url": "https://purduesports.com/news/2026/05/21/purdue-to-face-depaul-oklahoma-in-2026-fort-myers-tip-off",
-      "summary": "",
-      "date": "2026-05-21T17:30:00+00:00"
     }
   ]
 }
