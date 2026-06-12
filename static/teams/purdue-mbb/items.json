@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-06-12T01:42:53.364366+00:00",
+  "updated": "2026-06-12T06:29:10.438741+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "65feee83d6da",
+      "source": "Purdue Athletics MBB",
+      "title": "73 Boilers Earn Spring Academic All-B1G Acclaim",
+      "url": "https://purduesports.com/news/2026/06/10/73-boilermakers-earn-spring-academic-all-big-ten-accolades",
+      "summary": "32 of Purdue's 73 honorees are now multi-year Academic All-Big Ten achievers",
+      "date": "2026-06-10T18:53:00+00:00"
+    },
     {
       "id": "a140b5d49352",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/05/21/purdue-to-face-depaul-oklahoma-in-2026-fort-myers-tip-off",
       "summary": "",
       "date": "2026-05-21T17:30:00+00:00"
-    },
-    {
-      "id": "1d535b28d1e2",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Earns 27 Qualifications to the NCAA East First Round",
-      "url": "https://purduesports.com/news/2026/05/21/purdue-earns-27-qualifications-to-the-ncaa-east-first-round",
-      "summary": "",
-      "date": "2026-05-21T16:00:00+00:00"
     }
   ]
 }
