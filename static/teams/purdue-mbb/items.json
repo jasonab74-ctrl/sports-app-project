@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-06-13T17:51:37.170123+00:00",
+  "updated": "2026-06-13T19:16:44.233101+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "d56b0939be14",
-      "source": "Purdue Athletics MBB",
-      "title": "Vessat Shows Out to Lead Purdue’s 3 Podium Finishes at NCAAs",
-      "url": "https://purduesports.com/news/2026/06/13/vessat-shows-out-to-lead-purdues-3-podium-finishes-at-ncaas",
-      "summary": "",
-      "date": "2026-06-13T05:54:52+00:00"
-    },
     {
       "id": "47f3793c29b3",
       "source": "Purdue Athletics MBB",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/05/22/purdue-posts-8-zeros-scores-8-runs-to-top-iowa-at-big-ten-tournament",
       "summary": "",
       "date": "2026-05-22T00:21:29+00:00"
+    },
+    {
+      "id": "44897bdd5273",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Scores 8, Posts 8 Zeros to Top Iowa in Omaha",
+      "url": "https://purduesports.com/news/2026/05/22/purdue-scores-8-posts-8-zeros-to-top-iowa-in-omaha",
+      "summary": "Updated: First pitch vs UCLA now set for 8 p.m. ET on Friday in Omaha (live on BTN)",
+      "date": "2026-05-22T00:08:00+00:00"
     }
   ]
 }
