@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-06-15T22:13:15.860018+00:00",
+  "updated": "2026-06-16T00:08:19.023828+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "0b979c1cad62",
+      "source": "Purdue Athletics MBB",
+      "title": "Liam Channon Signs with Boilermakers",
+      "url": "https://purduesports.com/news/2026/06/15/liam-channon-signs-with-boilermakers",
+      "summary": "",
+      "date": "2026-06-15T17:25:00+00:00"
+    },
     {
       "id": "d56b0939be14",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/05/23/purdue-ucla-at-the-big-ten-tournament-highlights",
       "summary": "",
       "date": "2026-05-23T04:25:46+00:00"
-    },
-    {
-      "id": "0f5131e74a89",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Posts 8 Zeros, Scores 8 Runs to Top Iowa at Big Ten Tournament",
-      "url": "https://purduesports.com/news/2026/05/22/purdue-posts-8-zeros-scores-8-runs-to-top-iowa-at-big-ten-tournament",
-      "summary": "",
-      "date": "2026-05-22T00:21:29+00:00"
     }
   ]
 }
