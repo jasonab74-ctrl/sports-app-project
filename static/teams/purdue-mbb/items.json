@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-06-17T16:34:44.019521+00:00",
+  "updated": "2026-06-17T19:21:09.908582+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "7c7ec2a95f5c",
-      "source": "Purdue Athletics MBB",
-      "title": "5 Boilermakers Added to CSC Academic All-District At-Large Teams",
-      "url": "https://purduesports.com/news/2026/06/17/5-boilermakers-added-to-csc-academic-all-district-at-large-teams",
-      "summary": "Three Purdue wrestlers and two women's golfers earned national recognition for excellence in athletics and academics.",
-      "date": "2026-06-17T05:33:42+00:00"
-    },
     {
       "id": "0b979c1cad62",
       "source": "Purdue Athletics MBB",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/05/23/boilermakers-fall-in-walk-off-heartbreaker-vs-1-ucla",
       "summary": "Howard posted 5 zeros in a heroic effort but the Bruins rallied for a walk-off at the Big Ten Tournament",
       "date": "2026-05-23T04:45:46+00:00"
+    },
+    {
+      "id": "cc5f921ae8e4",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue-UCLA at the Big Ten Tournament Highlights",
+      "url": "https://purduesports.com/news/2026/05/23/purdue-ucla-at-the-big-ten-tournament-highlights",
+      "summary": "",
+      "date": "2026-05-23T04:25:46+00:00"
     }
   ]
 }
