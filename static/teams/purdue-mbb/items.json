@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-06-24T21:18:29.004124+00:00",
+  "updated": "2026-06-24T22:44:46.775038+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "905723854aeb",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Men’s Basketball Announces Schedule for Canadian Tour",
-      "url": "https://purduesports.com/news/2026/06/24/purdue-mens-basketball-announces-schedule-for-canadian-tour",
-      "summary": "",
-      "date": "2026-06-24T14:04:19+00:00"
-    },
     {
       "id": "ca51623d2c1e",
       "source": "Purdue Athletics MBB",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/05/27/polar-named-third-nfca-all-american-in-program-history",
       "summary": "For the first time since 2022, Purdue lands a name on the NFCA All-America team, with Moriah Polar being tabbed a Third Team honoree.",
       "date": "2026-05-27T21:05:00+00:00"
+    },
+    {
+      "id": "e003d006f79e",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Set for 3rd Straight Appearance in National Championships",
+      "url": "https://purduesports.com/news/2026/05/27/purdue-travels-to-california-for-3rd-straight-trip-in-national-championships",
+      "summary": "",
+      "date": "2026-05-27T14:38:17+00:00"
     }
   ]
 }
