@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-06-29T11:54:33.022289+00:00",
+  "updated": "2026-06-29T15:36:56.325778+00:00",
   "count": 19,
   "items": [
+    {
+      "id": "7fc7e8fba20f",
+      "source": "Purdue Athletics MBB",
+      "title": "2025-26 Purdue Athletics Season in Review",
+      "url": "https://purduesports.com/news/2026/06/29/2025-26-purdue-athletics-season-in-review",
+      "summary": "",
+      "date": "2026-06-29T14:12:00+00:00"
+    },
     {
       "id": "061c8b5568ec",
       "source": "Purdue Athletics MBB",
@@ -146,14 +154,6 @@
       "url": "https://purduesports.com/news/2026/05/30/purdue-in-middle-of-pack-after-round-one-of-ncaa-championships",
       "summary": "",
       "date": "2026-05-30T01:44:49+00:00"
-    },
-    {
-      "id": "7ae98a8420a7",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Releases 2026-27 Non-Conference Hoops Schedule",
-      "url": "https://purduesports.com/news/2026/05/28/purdue-releases-2026-27-non-conference-hoops-schedule",
-      "summary": "",
-      "date": "2026-05-28T19:28:00+00:00"
     }
   ]
 }
