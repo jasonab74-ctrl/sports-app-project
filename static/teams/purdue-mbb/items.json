@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-07-07T19:46:52.915342+00:00",
+  "updated": "2026-07-07T21:17:52.895631+00:00",
   "count": 19,
   "items": [
+    {
+      "id": "d700fd73959f",
+      "source": "Purdue Athletics MBB",
+      "title": "Mackey Magic Returns",
+      "url": "https://purduesports.com/news/2026/07/7/mackey-magic-returns",
+      "summary": "",
+      "date": "2026-07-07T15:45:00+00:00"
+    },
     {
       "id": "97b77cb1c2ba",
       "source": "Purdue Athletics MBB",
@@ -146,14 +154,6 @@
       "url": "https://purduesports.com/news/2026/06/2/5-of-baseballs-2026-grads-honored-as-academic-all-district",
       "summary": "",
       "date": "2026-06-02T16:52:00+00:00"
-    },
-    {
-      "id": "753340e39aa7",
-      "source": "Purdue Athletics MBB",
-      "title": "Big Numbers Doom Boilermakers in Round 2 at NCAAs",
-      "url": "https://purduesports.com/news/2026/05/31/big-numbers-doom-boilermakers-in-round-2-at-ncaas",
-      "summary": "",
-      "date": "2026-05-31T03:02:13+00:00"
     }
   ]
 }
