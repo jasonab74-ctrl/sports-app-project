@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-07-14T03:42:44.317845+00:00",
+  "updated": "2026-07-14T06:05:46.366455+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "6f5ff08a5b14",
-      "source": "Purdue Athletics MBB",
-      "title": "45 Boilermakers Recognized as Big Ten Distinguished Scholars",
-      "url": "https://purduesports.com/news/2026/07/14/45-boilermakers-recognized-as-big-ten-distinguished-scholars",
-      "summary": "",
-      "date": "2026-07-14T00:20:00+00:00"
-    },
     {
       "id": "7d4e48a794a6",
       "source": "Purdue Athletics MBB",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/06/5/nick-logan-named-head-of-jpc",
       "summary": "Logan to permanently lead John Purdue Club after serving as interim director since November 2025",
       "date": "2026-06-05T15:50:15+00:00"
+    },
+    {
+      "id": "0c0ebcba6f46",
+      "source": "Purdue Athletics MBB",
+      "title": "Bobinski announces plan to retire at end of year",
+      "url": "https://purduesports.com/news/2026/06/3/bobinski-announces-plan-to-retire-at-end-of-year",
+      "summary": "Leader of Purdue Athletics to step down after 10 years guiding the Boilermakers",
+      "date": "2026-06-03T19:25:00+00:00"
     }
   ]
 }
