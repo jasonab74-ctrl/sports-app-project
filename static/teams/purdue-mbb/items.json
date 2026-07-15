@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-07-15T17:44:26.497220+00:00",
+  "updated": "2026-07-15T19:02:04.198205+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "6f5010612caf",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Trio Named to NABC Honors Court; Team also Recognized by NABC",
+      "url": "https://purduesports.com/news/2026/07/15/purdue-trio-named-to-nabc-honors-court-team-also-recognized-by-nabc",
+      "summary": "",
+      "date": "2026-07-15T16:00:00+00:00"
+    },
+    {
+      "id": "ef1d876b665a",
+      "source": "Purdue Athletics MBB",
+      "title": "Ersland Unveils 2026-27 Wrestling Schedule",
+      "url": "https://purduesports.com/news/2026/07/15/ersland-unveils-2026-27-wrestling-schedule",
+      "summary": "Purdue Wrestling gears up for its 107th season.",
+      "date": "2026-07-15T14:33:32+00:00"
+    },
     {
       "id": "ffda4131f040",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/06/9/flores-kramer-honored-as-all-region-by-abca",
       "summary": "Purdue was the only Big Ten team to have multiple players on the All-Midwest Region teams",
       "date": "2026-06-09T19:34:00+00:00"
-    },
-    {
-      "id": "662c10f2cc0e",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers to Face Purdue Fort Wayne in Exhibition Game",
-      "url": "https://purduesports.com/news/2026/06/9/boilermakers-to-face-purdue-fort-wayne-in-exhibition-game",
-      "summary": "",
-      "date": "2026-06-09T15:00:00+00:00"
-    },
-    {
-      "id": "4680606e4014",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Baseball's Summer League Assignments",
-      "url": "https://purduesports.com/news/2026/06/5/purdue-baseballs-summer-league-assignments26",
-      "summary": "",
-      "date": "2026-06-05T20:28:42+00:00"
     }
   ]
 }
