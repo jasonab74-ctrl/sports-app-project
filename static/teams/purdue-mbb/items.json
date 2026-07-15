@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-07-15T22:53:43.098327+00:00",
+  "updated": "2026-07-15T23:53:53.009440+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "cedaa48535b1",
+      "source": "Purdue Athletics MBB",
+      "title": "Rioux Becomes Indiana's First 7-Time Fargo All-American",
+      "url": "https://purduesports.com/news/2026/07/15/rioux-becomes-indianas-first-7-time-fargo-all-american",
+      "summary": "Purdue freshman Nathan Rioux placed third in Junior Boys Freestyle at Fargo Nationals.",
+      "date": "2026-07-15T20:00:00+00:00"
+    },
     {
       "id": "6f5010612caf",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/06/10/purdue-mens-basketball-begins-summer-workouts",
       "summary": "",
       "date": "2026-06-10T14:06:15+00:00"
-    },
-    {
-      "id": "6505a4aa44e4",
-      "source": "Purdue Athletics MBB",
-      "title": "Flores, Kramer Honored as All-Region by ABCA",
-      "url": "https://purduesports.com/news/2026/06/9/flores-kramer-honored-as-all-region-by-abca",
-      "summary": "Purdue was the only Big Ten team to have multiple players on the All-Midwest Region teams",
-      "date": "2026-06-09T19:34:00+00:00"
     }
   ]
 }
