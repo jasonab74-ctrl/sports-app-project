@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-07-17T06:35:22.253077+00:00",
+  "updated": "2026-07-17T09:04:44.402426+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "6b97e127641f",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue to Battle Colorado in 5th Annual Indy Classic",
-      "url": "https://purduesports.com/news/2026/07/16/purdue-to-battle-colorado-in-5th-annual-indy-classic",
-      "summary": "",
-      "date": "2026-07-16T14:00:00+00:00"
-    },
     {
       "id": "cedaa48535b1",
       "source": "Purdue Athletics MBB",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/06/10/73-boilermakers-earn-spring-academic-all-big-ten-accolades",
       "summary": "32 of Purdue's 74 honorees are now multi-year Academic All-Big Ten achievers",
       "date": "2026-06-10T18:53:00+00:00"
+    },
+    {
+      "id": "a140b5d49352",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Men's Basketball Begins Summer Workouts",
+      "url": "https://purduesports.com/news/2026/06/10/purdue-mens-basketball-begins-summer-workouts",
+      "summary": "",
+      "date": "2026-06-10T14:06:15+00:00"
     }
   ]
 }
