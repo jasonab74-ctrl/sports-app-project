@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-07-21T02:06:33.934091+00:00",
+  "updated": "2026-07-21T05:33:35.373826+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "7db231127679",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers in Mackey Practice Clips",
+      "url": "https://purduesports.com/news/2026/07/20/boilermakers-in-mackey-practice-clips",
+      "summary": "",
+      "date": "2026-07-20T17:58:51+00:00"
+    },
     {
       "id": "6b97e127641f",
       "source": "Purdue Athletics MBB",
@@ -20,9 +28,9 @@
       "date": "2026-07-15T20:00:00+00:00"
     },
     {
-      "id": "6f5010612caf",
+      "id": "44ea92f2ffe0",
       "source": "Purdue Athletics MBB",
-      "title": "Purdue Trio Named to NABC Honors Court; Team also Recognized by NABC",
+      "title": "Purdue Trio Named to NABC Honors Court; Team also Recognized",
       "url": "https://purduesports.com/news/2026/07/15/purdue-trio-named-to-nabc-honors-court-team-also-recognized-by-nabc",
       "summary": "",
       "date": "2026-07-15T16:00:00+00:00"
@@ -50,22 +58,6 @@
       "url": "https://purduesports.com/news/2026/07/14/45-boilermakers-recognized-as-big-ten-distinguished-scholars",
       "summary": "",
       "date": "2026-07-14T00:20:00+00:00"
-    },
-    {
-      "id": "7d4e48a794a6",
-      "source": "Purdue Athletics MBB",
-      "title": "4 Purdue Freshmen Head to Fargo Junior Nationals",
-      "url": "https://purduesports.com/news/2026/07/8/4-purdue-freshmen-head-to-fargo-junior-nationals",
-      "summary": "",
-      "date": "2026-07-08T21:19:12+00:00"
-    },
-    {
-      "id": "b6b29ae2c560",
-      "source": "Purdue Athletics MBB",
-      "title": "4 Boilermakers Set to Begin NBA Summer League",
-      "url": "https://purduesports.com/news/2026/07/8/4-boilermakers-set-to-begin-nba-summer-league",
-      "summary": "",
-      "date": "2026-07-08T00:50:02+00:00"
     },
     {
       "id": "d700fd73959f",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/06/10/73-boilermakers-earn-spring-academic-all-big-ten-accolades",
       "summary": "32 of Purdue's 74 honorees are now multi-year Academic All-Big Ten achievers",
       "date": "2026-06-10T18:53:00+00:00"
+    },
+    {
+      "id": "a140b5d49352",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Men's Basketball Begins Summer Workouts",
+      "url": "https://purduesports.com/news/2026/06/10/purdue-mens-basketball-begins-summer-workouts",
+      "summary": "",
+      "date": "2026-06-10T14:06:15+00:00"
     }
   ]
 }
