@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-07-21T19:10:39.948204+00:00",
+  "updated": "2026-07-21T20:41:54.824136+00:00",
   "count": 19,
   "items": [
-    {
-      "id": "90270df493c0",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermaker Quartet Wraps up Summer League Play",
-      "url": "https://purduesports.com/news/2026/07/21/boilermaker-quartet-wraps-up-summer-league-play",
-      "summary": "",
-      "date": "2026-07-21T13:38:01+00:00"
-    },
     {
       "id": "7db231127679",
       "source": "Purdue Athletics MBB",
@@ -154,6 +146,14 @@
       "url": "https://purduesports.com/news/2026/06/12/smith-leads-purdue-on-thursday-with-second-team-all-american-honor",
       "summary": "",
       "date": "2026-06-12T04:10:24+00:00"
+    },
+    {
+      "id": "67681451830b",
+      "source": "Purdue Athletics MBB",
+      "title": "74 Boilers Earn Spring Academic All-B1G Acclaim",
+      "url": "https://purduesports.com/news/2026/06/10/73-boilermakers-earn-spring-academic-all-big-ten-accolades",
+      "summary": "32 of Purdue's 74 honorees are now multi-year Academic All-Big Ten achievers",
+      "date": "2026-06-10T18:53:00+00:00"
     }
   ]
 }
