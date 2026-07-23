@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-07-23T21:33:42.702555+00:00",
+  "updated": "2026-07-23T22:51:00.582906+00:00",
   "count": 18,
   "items": [
+    {
+      "id": "95f4342b0017",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Set for Trip to Vancouver",
+      "url": "https://purduesports.com/news/2026/07/23/boilermakers-set-for-trip-to-vancouver",
+      "summary": "",
+      "date": "2026-07-23T13:36:11+00:00"
+    },
     {
       "id": "8792c310ba81",
       "source": "Purdue Athletics MBB",
@@ -138,14 +146,6 @@
       "url": "https://purduesports.com/news/2026/06/17/5-boilermakers-added-to-csc-academic-all-district-at-large-teams",
       "summary": "Three Purdue wrestlers and two women's golfers earned national recognition for excellence in athletics and academics.",
       "date": "2026-06-17T05:33:42+00:00"
-    },
-    {
-      "id": "0b979c1cad62",
-      "source": "Purdue Athletics MBB",
-      "title": "Liam Channon Signs with Boilermakers",
-      "url": "https://purduesports.com/news/2026/06/15/liam-channon-signs-with-boilermakers",
-      "summary": "",
-      "date": "2026-06-15T17:25:00+00:00"
     }
   ]
 }
