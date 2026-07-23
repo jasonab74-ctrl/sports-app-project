@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-07-23T13:42:55.040331+00:00",
-  "count": 18,
+  "updated": "2026-07-23T15:50:48.124073+00:00",
+  "count": 19,
   "items": [
-    {
-      "id": "8792c310ba81",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Earns 5th Straight ABCA Team Academic Excellence Award",
-      "url": "https://purduesports.com/news/2026/07/22/purdue-earns-5th-straight-abca-team-academic-excellence-award",
-      "summary": "",
-      "date": "2026-07-22T21:55:31+00:00"
-    },
     {
       "id": "90270df493c0",
       "source": "Purdue Athletics MBB",
@@ -146,6 +138,22 @@
       "url": "https://purduesports.com/news/2026/06/15/liam-channon-signs-with-boilermakers",
       "summary": "",
       "date": "2026-06-15T17:25:00+00:00"
+    },
+    {
+      "id": "d56b0939be14",
+      "source": "Purdue Athletics MBB",
+      "title": "Vessat Shows Out to Lead Purdue’s 3 Podium Finishes at NCAAs",
+      "url": "https://purduesports.com/news/2026/06/13/vessat-shows-out-to-lead-purdues-3-podium-finishes-at-ncaas",
+      "summary": "",
+      "date": "2026-06-13T05:54:52+00:00"
+    },
+    {
+      "id": "47f3793c29b3",
+      "source": "Purdue Athletics MBB",
+      "title": "Smith Leads Purdue on Thursday with Second Team All-American Honor",
+      "url": "https://purduesports.com/news/2026/06/12/smith-leads-purdue-on-thursday-with-second-team-all-american-honor",
+      "summary": "",
+      "date": "2026-06-12T04:10:24+00:00"
     }
   ]
 }
