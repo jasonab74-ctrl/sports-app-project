@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-07-26T13:07:00.492738+00:00",
+  "updated": "2026-07-26T14:46:54.675312+00:00",
   "count": 19,
   "items": [
+    {
+      "id": "52f655b1f597",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Rolls Past Vancouver Selects in Opening Contest",
+      "url": "https://purduesports.com/news/2026/07/26/purdue-rolls-past-vancouver-selects-in-opening-contest",
+      "summary": "",
+      "date": "2026-07-26T01:58:48+00:00"
+    },
     {
       "id": "bd574a4fd188",
       "source": "Purdue Athletics MBB",
@@ -146,14 +154,6 @@
       "url": "https://purduesports.com/news/2026/06/22/purdue-stories-vessats-unlikely-sprint-toward-the-olympics",
       "summary": "The latest installment of Purdue Stories features First Team All-American Samuel Vessat.",
       "date": "2026-06-22T19:02:25+00:00"
-    },
-    {
-      "id": "7c7ec2a95f5c",
-      "source": "Purdue Athletics MBB",
-      "title": "5 Boilermakers Added to CSC Academic All-District At-Large Teams",
-      "url": "https://purduesports.com/news/2026/06/17/5-boilermakers-added-to-csc-academic-all-district-at-large-teams",
-      "summary": "Three Purdue wrestlers and two women's golfers earned national recognition for excellence in athletics and academics.",
-      "date": "2026-06-17T05:33:42+00:00"
     }
   ]
 }
