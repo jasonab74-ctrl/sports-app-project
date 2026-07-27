@@ -1,24 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-07-27T20:49:02.110612+00:00",
+  "updated": "2026-07-27T22:00:14.266488+00:00",
   "count": 19,
   "items": [
-    {
-      "id": "aa2d753fd7bf",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Defeat Trinity Western 82-66",
-      "url": "https://purduesports.com/news/2026/07/27/boilers-defeat-trinity-western-82-66",
-      "summary": "",
-      "date": "2026-07-27T01:06:23+00:00"
-    },
-    {
-      "id": "af2836ef2959",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Win 14 Golds, 23 Medals at FISU America Games",
-      "url": "https://purduesports.com/news/2026/07/27/boilermakers-win-14-golds-23-medals-at-fisu-america-games",
-      "summary": "",
-      "date": "2026-07-27T01:04:00+00:00"
-    },
     {
       "id": "52f655b1f597",
       "source": "Purdue Athletics MBB",
@@ -26,6 +10,22 @@
       "url": "https://purduesports.com/news/2026/07/26/purdue-rolls-past-vancouver-selects-in-opening-contest",
       "summary": "",
       "date": "2026-07-26T01:58:48+00:00"
+    },
+    {
+      "id": "bd574a4fd188",
+      "source": "Purdue Athletics MBB",
+      "title": "8 Boilermakers Set to Race at America Games in Peru",
+      "url": "https://purduesports.com/news/2026/07/23/8-boilermakers-set-to-race-at-america-games-in-peru",
+      "summary": "",
+      "date": "2026-07-23T17:50:00+00:00"
+    },
+    {
+      "id": "95f4342b0017",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Set for Trip to Vancouver",
+      "url": "https://purduesports.com/news/2026/07/23/boilermakers-set-for-trip-to-vancouver",
+      "summary": "",
+      "date": "2026-07-23T13:36:11+00:00"
     },
     {
       "id": "8792c310ba81",
