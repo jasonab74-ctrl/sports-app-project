@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-07-28T16:01:31.380455+00:00",
-  "count": 18,
+  "updated": "2026-07-28T17:50:10.732690+00:00",
+  "count": 19,
   "items": [
+    {
+      "id": "8448e463228d",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue to Play in WBCA Showcase at Walt Disney World Resort in November",
+      "url": "https://purduesports.com/news/2026/07/28/purdue-to-play-in-wbca-showcase-at-walt-disney-world-resort-in-november",
+      "summary": "",
+      "date": "2026-07-28T16:57:00+00:00"
+    },
     {
       "id": "aa2d753fd7bf",
       "source": "Purdue Athletics MBB",
@@ -26,6 +34,14 @@
       "url": "https://purduesports.com/news/2026/07/26/purdue-rolls-past-vancouver-selects-in-opening-contest",
       "summary": "",
       "date": "2026-07-26T01:58:48+00:00"
+    },
+    {
+      "id": "95f4342b0017",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Set for Trip to Vancouver",
+      "url": "https://purduesports.com/news/2026/07/23/boilermakers-set-for-trip-to-vancouver",
+      "summary": "",
+      "date": "2026-07-23T13:36:11+00:00"
     },
     {
       "id": "8792c310ba81",
@@ -122,14 +138,6 @@
       "url": "https://purduesports.com/news/2026/06/25/wright-kaufman-renn-represent-purdue-as-big-ten-medal-of-honor-recipients",
       "summary": "",
       "date": "2026-06-25T19:00:00+00:00"
-    },
-    {
-      "id": "905723854aeb",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Men’s Basketball Announces Schedule for Canadian Tour",
-      "url": "https://purduesports.com/news/2026/06/24/purdue-mens-basketball-announces-schedule-for-canadian-tour",
-      "summary": "",
-      "date": "2026-06-24T14:04:19+00:00"
     },
     {
       "id": "ca51623d2c1e",
