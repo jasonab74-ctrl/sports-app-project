@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-07-29T23:56:58.505452+00:00",
+  "updated": "2026-07-30T02:12:35.648325+00:00",
   "count": 19,
   "items": [
+    {
+      "id": "0d0bdc1f14d5",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue at 2026 Big Ten Football Media Day",
+      "url": "https://purduesports.com/news/2026/07/29/purdue-at-2026-big-ten-football-media-day",
+      "summary": "",
+      "date": "2026-07-29T21:30:00+00:00"
+    },
     {
       "id": "8448e463228d",
       "source": "Purdue Athletics MBB",
@@ -146,14 +154,6 @@
       "url": "https://purduesports.com/news/2026/06/23/purdue-accepts-invitation-to-throwdown-on-the-yorktown-iii",
       "summary": "The Boilermakers will wrestle in the historic event aboard the USS Yorktown CV-10 aircraft carrier.",
       "date": "2026-06-23T13:00:00+00:00"
-    },
-    {
-      "id": "11f857acd59a",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Stories: Vessat's Unlikely Sprint Toward the Olympics",
-      "url": "https://purduesports.com/news/2026/06/22/purdue-stories-vessats-unlikely-sprint-toward-the-olympics",
-      "summary": "The latest installment of Purdue Stories features First Team All-American Samuel Vessat.",
-      "date": "2026-06-22T19:02:25+00:00"
     }
   ]
 }
