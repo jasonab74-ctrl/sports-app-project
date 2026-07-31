@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-07-31T02:12:19.692551+00:00",
+  "updated": "2026-07-31T05:48:13.114038+00:00",
   "count": 18,
   "items": [
+    {
+      "id": "be8a5712a533",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Announces 2026 Cross Country Schedule",
+      "url": "https://purduesports.com/news/2026/07/30/purdue-announces-2026-cross-country-schedule",
+      "summary": "",
+      "date": "2026-07-30T18:34:57+00:00"
+    },
     {
       "id": "0d0bdc1f14d5",
       "source": "Purdue Athletics MBB",
@@ -42,14 +50,6 @@
       "url": "https://purduesports.com/news/2026/07/26/purdue-rolls-past-vancouver-selects-in-opening-contest",
       "summary": "",
       "date": "2026-07-26T01:58:48+00:00"
-    },
-    {
-      "id": "95f4342b0017",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Set for Trip to Vancouver",
-      "url": "https://purduesports.com/news/2026/07/23/boilermakers-set-for-trip-to-vancouver",
-      "summary": "",
-      "date": "2026-07-23T13:36:11+00:00"
     },
     {
       "id": "8792c310ba81",
