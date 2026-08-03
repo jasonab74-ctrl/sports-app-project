@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-08-03T12:16:10.081439+00:00",
-  "count": 18,
+  "updated": "2026-08-03T15:23:08.026147+00:00",
+  "count": 19,
   "items": [
+    {
+      "id": "36dcfe5deffb",
+      "source": "CBS Sports College Basketball",
+      "title": "Purdue All-American Braden Smith will not explore return to college basketball after new eligibility ruling",
+      "url": "https://www.cbssports.com/college-basketball/news/braden-smith-purdue-new-eligibility-ruling-indiana-pacers/",
+      "summary": "Smith was a second-round draft pick by the Indiana Pacers, but he has not signed a rookie contract yet",
+      "date": "2026-08-03T15:08:50+00:00"
+    },
     {
       "id": "6bd23069da13",
       "source": "Purdue Athletics MBB",
