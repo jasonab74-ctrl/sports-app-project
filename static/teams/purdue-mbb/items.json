@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-08-03T17:23:01.328576+00:00",
-  "count": 19,
+  "updated": "2026-08-03T19:03:25.942453+00:00",
+  "count": 18,
   "items": [
+    {
+      "id": "805b76d96c12",
+      "source": "Purdue Athletics MBB",
+      "title": "Big Ten Volleyball Media Day Press Conference | Purdue Volleyball",
+      "url": "https://purduesports.com/news/2026/08/3/big-ten-volleyball-media-day-press-conference-purdue-volleyball",
+      "summary": "",
+      "date": "2026-08-03T17:41:02+00:00"
+    },
     {
       "id": "36dcfe5deffb",
       "source": "CBS Sports College Basketball",
@@ -138,22 +146,6 @@
       "url": "https://purduesports.com/news/2026/07/7/mackey-magic-returns",
       "summary": "",
       "date": "2026-07-07T15:45:00+00:00"
-    },
-    {
-      "id": "97b77cb1c2ba",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue’s Class of 2026 Finishes Ranked #22",
-      "url": "https://purduesports.com/news/2026/06/29/purdues-class-of-2026-finishes-ranked-22",
-      "summary": "Purdue secures its third top 25 class in the past four years.",
-      "date": "2026-06-29T17:37:14+00:00"
-    },
-    {
-      "id": "7fc7e8fba20f",
-      "source": "Purdue Athletics MBB",
-      "title": "2025-26 Purdue Athletics Season in Review",
-      "url": "https://purduesports.com/news/2026/06/29/2025-26-purdue-athletics-season-in-review",
-      "summary": "",
-      "date": "2026-06-29T14:12:00+00:00"
     }
   ]
 }
