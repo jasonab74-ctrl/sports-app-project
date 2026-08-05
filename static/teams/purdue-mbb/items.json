@@ -1,7 +1,7 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-08-05T16:58:45.971554+00:00",
-  "count": 17,
+  "updated": "2026-08-05T18:23:18.625567+00:00",
+  "count": 18,
   "items": [
     {
       "id": "805b76d96c12",
@@ -138,6 +138,14 @@
       "url": "https://purduesports.com/news/2026/07/14/45-boilermakers-recognized-as-big-ten-distinguished-scholars",
       "summary": "",
       "date": "2026-07-14T00:20:00+00:00"
+    },
+    {
+      "id": "d700fd73959f",
+      "source": "Purdue Athletics MBB",
+      "title": "Mackey Magic Returns",
+      "url": "https://purduesports.com/news/2026/07/7/mackey-magic-returns",
+      "summary": "",
+      "date": "2026-07-07T15:45:00+00:00"
     }
   ]
 }
