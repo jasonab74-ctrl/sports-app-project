@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-08-05T23:54:43.446776+00:00",
+  "updated": "2026-08-06T02:01:45.313978+00:00",
   "count": 18,
   "items": [
-    {
-      "id": "d9503ea1023d",
-      "source": "Purdue Athletics MBB",
-      "title": "Tommy McClelland to Become New Purdue Athletics Director",
-      "url": "https://purduesports.com/news/2026/08/5/tommy-mcclelland-to-become-new-purdue-athletics-director",
-      "summary": "The new Boilermaker leader will be introduced by the Purdue Board of Trustees and President Mitch Daniels at a press conference on Thursday (11 a.m. ET)",
-      "date": "2026-08-05T16:15:00+00:00"
-    },
     {
       "id": "805b76d96c12",
       "source": "Purdue Athletics MBB",
@@ -146,6 +138,14 @@
       "url": "https://purduesports.com/news/2026/07/14/45-boilermakers-recognized-as-big-ten-distinguished-scholars",
       "summary": "",
       "date": "2026-07-14T00:20:00+00:00"
+    },
+    {
+      "id": "d700fd73959f",
+      "source": "Purdue Athletics MBB",
+      "title": "Mackey Magic Returns",
+      "url": "https://purduesports.com/news/2026/07/7/mackey-magic-returns",
+      "summary": "",
+      "date": "2026-07-07T15:45:00+00:00"
     }
   ]
 }
