@@ -1,24 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-08-07T22:03:41.757159+00:00",
+  "updated": "2026-08-07T23:03:09.764449+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "adebd641931e",
-      "source": "Purdue Athletics MBB",
-      "title": "Josh Henson Post Practice Interview Aug. 7 | Purdue Football",
-      "url": "https://purduesports.com/news/2026/08/7/josh-henson-post-practice-interview-aug-7-purdue-football",
-      "summary": "",
-      "date": "2026-08-07T17:14:53+00:00"
-    },
-    {
-      "id": "7ff4d0aeea30",
-      "source": "Purdue Athletics MBB",
-      "title": "Jojo Hayden Post Practice Interview Aug. 7 | Purdue Football",
-      "url": "https://purduesports.com/news/2026/08/7/jojo-hayden-post-practice-interview-aug-7-purdue-football",
-      "summary": "",
-      "date": "2026-08-07T15:56:37+00:00"
-    },
     {
       "id": "fdbc97c8e2af",
       "source": "Purdue Athletics MBB",
@@ -162,6 +146,22 @@
       "url": "https://purduesports.com/news/2026/07/20/boilermakers-in-mackey-practice-clips",
       "summary": "",
       "date": "2026-07-20T17:58:51+00:00"
+    },
+    {
+      "id": "6b97e127641f",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue to Battle Colorado in 5th Annual Indy Classic",
+      "url": "https://purduesports.com/news/2026/07/16/purdue-to-battle-colorado-in-5th-annual-indy-classic",
+      "summary": "",
+      "date": "2026-07-16T14:00:00+00:00"
+    },
+    {
+      "id": "cedaa48535b1",
+      "source": "Purdue Athletics MBB",
+      "title": "Rioux Becomes Indiana's First 7-Time Fargo All-American",
+      "url": "https://purduesports.com/news/2026/07/15/rioux-becomes-indianas-first-7-time-fargo-all-american",
+      "summary": "Purdue freshman Nathan Rioux placed third in Junior Boys Freestyle at Fargo Nationals.",
+      "date": "2026-07-15T20:00:00+00:00"
     }
   ]
 }
