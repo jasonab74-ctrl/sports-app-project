@@ -1,8 +1,40 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-08-11T20:41:55.607216+00:00",
+  "updated": "2026-08-11T21:39:16.741633+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "19ad8d603338",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Charles Clark Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/08/11/coach-charles-clark-media-session-purdue-football-1",
+      "summary": "",
+      "date": "2026-08-11T16:33:08+00:00"
+    },
+    {
+      "id": "9fb19f858052",
+      "source": "Purdue Athletics MBB",
+      "title": "John Slaughter Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/08/11/john-slaughter-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-08-11T16:32:20+00:00"
+    },
+    {
+      "id": "765364296f6a",
+      "source": "Purdue Athletics MBB",
+      "title": "Jaden Mangham Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/08/11/jaden-mangham-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-08-11T16:29:09+00:00"
+    },
+    {
+      "id": "c99e94731784",
+      "source": "Purdue Athletics MBB",
+      "title": "Justin Denson, Jr. Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/08/11/justin-denson-jr-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-08-11T16:28:59+00:00"
+    },
     {
       "id": "48a2072e5638",
       "source": "Purdue Athletics MBB",
@@ -130,38 +162,6 @@
       "url": "https://purduesports.com/news/2026/07/30/dave-shondell-post-practice-media-session-purdue-volleyball",
       "summary": "",
       "date": "2026-07-30T21:51:19+00:00"
-    },
-    {
-      "id": "be8a5712a533",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Announces 2026 Cross Country Schedule",
-      "url": "https://purduesports.com/news/2026/07/30/purdue-announces-2026-cross-country-schedule",
-      "summary": "",
-      "date": "2026-07-30T18:34:57+00:00"
-    },
-    {
-      "id": "0d0bdc1f14d5",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue at 2026 Big Ten Football Media Day",
-      "url": "https://purduesports.com/news/2026/07/29/purdue-at-2026-big-ten-football-media-day",
-      "summary": "",
-      "date": "2026-07-29T21:30:00+00:00"
-    },
-    {
-      "id": "8448e463228d",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue to Play in WBCA Showcase at Walt Disney World Resort in November",
-      "url": "https://purduesports.com/news/2026/07/28/purdue-to-play-in-wbca-showcase-at-walt-disney-world-resort-in-november",
-      "summary": "",
-      "date": "2026-07-28T16:57:00+00:00"
-    },
-    {
-      "id": "aa2d753fd7bf",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Defeat Trinity Western 82-66",
-      "url": "https://purduesports.com/news/2026/07/27/boilers-defeat-trinity-western-82-66",
-      "summary": "",
-      "date": "2026-07-27T01:06:23+00:00"
     }
   ]
 }
