@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-08-11T04:14:33.954171+00:00",
+  "updated": "2026-08-11T05:33:20.700398+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "48a2072e5638",
+      "source": "Purdue Athletics MBB",
+      "title": "Drew Brees Joins Boilermakers at Monday Practice",
+      "url": "https://purduesports.com/news/2026/08/10/brees-joins-boilermakers-at-monday-practice",
+      "summary": "",
+      "date": "2026-08-10T18:50:00+00:00"
+    },
     {
       "id": "83f1ed644301",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/07/27/boilers-defeat-trinity-western-82-66",
       "summary": "",
       "date": "2026-07-27T01:06:23+00:00"
-    },
-    {
-      "id": "af2836ef2959",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Win 14 Golds, 23 Medals at FISU America Games",
-      "url": "https://purduesports.com/news/2026/07/27/boilermakers-win-14-golds-23-medals-at-fisu-america-games",
-      "summary": "",
-      "date": "2026-07-27T01:04:00+00:00"
     }
   ]
 }
