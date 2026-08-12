@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-08-12T19:34:34.566656+00:00",
+  "updated": "2026-08-12T20:36:31.068313+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "76c51fd4202c",
+      "source": "Purdue Athletics MBB",
+      "title": "Soccer Begins in West Lafayette",
+      "url": "https://purduesports.com/news/2026/08/12/soccer-begins-in-west-lafayette",
+      "summary": "",
+      "date": "2026-08-12T14:48:35+00:00"
+    },
     {
       "id": "05dbda96182b",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/08/5/tommy-mcclelland-to-become-new-purdue-athletics-director",
       "summary": "The new Boilermaker leader will be introduced by the Purdue Board of Trustees and President Mitch Daniels at a press conference on Thursday (11 a.m. ET)",
       "date": "2026-08-05T16:15:00+00:00"
-    },
-    {
-      "id": "805b76d96c12",
-      "source": "Purdue Athletics MBB",
-      "title": "Big Ten Volleyball Media Day Press Conference | Purdue Volleyball",
-      "url": "https://purduesports.com/news/2026/08/3/big-ten-volleyball-media-day-press-conference-purdue-volleyball",
-      "summary": "",
-      "date": "2026-08-03T17:41:02+00:00"
     }
   ]
 }
