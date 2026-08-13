@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-08-13T22:34:41.612718+00:00",
+  "updated": "2026-08-13T23:34:36.268918+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "669e81e103f8",
-      "source": "Purdue Athletics MBB",
-      "title": "Week 1 of Fall Camp | Purdue Football",
-      "url": "https://purduesports.com/news/2026/08/13/week-1-of-fall-camp-purdue-football",
-      "summary": "",
-      "date": "2026-08-13T19:43:39+00:00"
-    },
     {
       "id": "e772b61dbaec",
       "source": "Purdue Athletics MBB",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/08/7/jojo-hayden-post-practice-interview-aug-7-purdue-football",
       "summary": "",
       "date": "2026-08-07T15:56:37+00:00"
+    },
+    {
+      "id": "fdbc97c8e2af",
+      "source": "Purdue Athletics MBB",
+      "title": "Drew Brees Hall of Fame Press Conference | Purdue Football",
+      "url": "https://purduesports.com/news/2026/08/6/drew-brees-hall-of-fame-press-conference-purdue-football",
+      "summary": "",
+      "date": "2026-08-06T21:11:58+00:00"
     }
   ]
 }
