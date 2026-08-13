@@ -1,8 +1,40 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-08-13T18:25:35.138174+00:00",
+  "updated": "2026-08-13T19:32:44.392493+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "772ad2508668",
+      "source": "Purdue Athletics MBB",
+      "title": "Quarterback Bennett Meredith Media Session| Purdue Football",
+      "url": "https://purduesports.com/news/2026/08/13/quarterback-bennett-meredith-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-08-13T15:54:21+00:00"
+    },
+    {
+      "id": "e6b49d3b737c",
+      "source": "Purdue Athletics MBB",
+      "title": "Quarterback Evans Chuba Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/08/13/quarterback-evans-chuba-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-08-13T15:53:52+00:00"
+    },
+    {
+      "id": "f558ff0096ce",
+      "source": "Purdue Athletics MBB",
+      "title": "Quarterback Ryan Browne Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/08/13/quarterback-ryan-browne-media-session-purdue-football-1",
+      "summary": "",
+      "date": "2026-08-13T15:53:24+00:00"
+    },
+    {
+      "id": "80ffd04b3317",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Darin Hinshaw Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/08/13/coach-darin-hinshaw-media-session-purdue-football-2",
+      "summary": "",
+      "date": "2026-08-13T15:52:59+00:00"
+    },
     {
       "id": "76c51fd4202c",
       "source": "Purdue Athletics MBB",
@@ -130,38 +162,6 @@
       "url": "https://purduesports.com/news/2026/08/6/coach-barry-odom-media-session-purdue-football-6",
       "summary": "",
       "date": "2026-08-06T21:09:02+00:00"
-    },
-    {
-      "id": "27a83f6ff553",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Gets Underway in 2026 Fall Camp",
-      "url": "https://purduesports.com/news/2026/08/6/purdue-gets-underway-in-2026-fall-camp",
-      "summary": "",
-      "date": "2026-08-06T18:30:00+00:00"
-    },
-    {
-      "id": "933767c44cc7",
-      "source": "Purdue Athletics MBB",
-      "title": "McClelland Introduced as New Athletics Director at Purdue",
-      "url": "https://purduesports.com/news/2026/08/6/mcclelland-introduced-as-new-athletics-director-at-purdue",
-      "summary": "New Boilermaker leader becomes the 10th full-time athletics director in school history",
-      "date": "2026-08-06T15:02:00+00:00"
-    },
-    {
-      "id": "2fd1f88569b1",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Trio to Compete in U.S. Amateur",
-      "url": "https://purduesports.com/news/2026/08/6/purdue-trio-to-compete-in-us-amateur",
-      "summary": "",
-      "date": "2026-08-06T14:17:20+00:00"
-    },
-    {
-      "id": "d9503ea1023d",
-      "source": "Purdue Athletics MBB",
-      "title": "Tommy McClelland to Become New Purdue Athletics Director",
-      "url": "https://purduesports.com/news/2026/08/5/tommy-mcclelland-to-become-new-purdue-athletics-director",
-      "summary": "The new Boilermaker leader will be introduced by the Purdue Board of Trustees and President Mitch Daniels at a press conference on Thursday (11 a.m. ET)",
-      "date": "2026-08-05T16:15:00+00:00"
     }
   ]
 }
