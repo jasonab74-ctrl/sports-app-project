@@ -1,8 +1,40 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-08-14T16:13:10.575038+00:00",
+  "updated": "2026-08-14T17:25:37.022510+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "8f8e063c8ef0",
+      "source": "Purdue Athletics MBB",
+      "title": "Practice Footage, Fall Camp | Purdue Football",
+      "url": "https://purduesports.com/news/2026/08/14/practice-footage-fall-camp-purdue-football",
+      "summary": "",
+      "date": "2026-08-14T15:41:16+00:00"
+    },
+    {
+      "id": "0ed1e1f253d6",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Jake Trump Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/08/14/coach-jake-trump-media-session-purdue-football-1",
+      "summary": "",
+      "date": "2026-08-14T15:39:55+00:00"
+    },
+    {
+      "id": "70a21ddc459d",
+      "source": "Purdue Athletics MBB",
+      "title": "C.J. Madden Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/08/14/cj-madden-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-08-14T15:37:32+00:00"
+    },
+    {
+      "id": "ba397329bb45",
+      "source": "Purdue Athletics MBB",
+      "title": "Elo Modozie Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/08/14/elo-modozie-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-08-14T15:34:56+00:00"
+    },
     {
       "id": "669e81e103f8",
       "source": "Purdue Athletics MBB",
@@ -130,38 +162,6 @@
       "url": "https://purduesports.com/news/2026/08/10/curt-neal-media-session-purdue-football",
       "summary": "",
       "date": "2026-08-10T16:27:16+00:00"
-    },
-    {
-      "id": "6a0afdeea05c",
-      "source": "Purdue Athletics MBB",
-      "title": "Xavier Townsend Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/08/10/xavier-townsend-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-08-10T16:25:27+00:00"
-    },
-    {
-      "id": "adebd641931e",
-      "source": "Purdue Athletics MBB",
-      "title": "Josh Henson Post Practice Interview Aug. 7 | Purdue Football",
-      "url": "https://purduesports.com/news/2026/08/7/josh-henson-post-practice-interview-aug-7-purdue-football",
-      "summary": "",
-      "date": "2026-08-07T17:14:53+00:00"
-    },
-    {
-      "id": "7ff4d0aeea30",
-      "source": "Purdue Athletics MBB",
-      "title": "Jojo Hayden Post Practice Interview Aug. 7 | Purdue Football",
-      "url": "https://purduesports.com/news/2026/08/7/jojo-hayden-post-practice-interview-aug-7-purdue-football",
-      "summary": "",
-      "date": "2026-08-07T15:56:37+00:00"
-    },
-    {
-      "id": "fdbc97c8e2af",
-      "source": "Purdue Athletics MBB",
-      "title": "Drew Brees Hall of Fame Press Conference | Purdue Football",
-      "url": "https://purduesports.com/news/2026/08/6/drew-brees-hall-of-fame-press-conference-purdue-football",
-      "summary": "",
-      "date": "2026-08-06T21:11:58+00:00"
     }
   ]
 }
