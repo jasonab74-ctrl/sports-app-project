@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-08-14T20:54:55.802553+00:00",
+  "updated": "2026-08-14T21:18:59.582603+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "6e79ce67750d",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Indoors for Friday Practice",
+      "url": "https://purduesports.com/news/2026/08/14/purdue-indoors-for-friday-practice",
+      "summary": "",
+      "date": "2026-08-14T17:15:00+00:00"
+    },
     {
       "id": "8f8e063c8ef0",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/08/10/coach-barry-odom-media-session-purdue-football-7",
       "summary": "",
       "date": "2026-08-10T16:27:51+00:00"
-    },
-    {
-      "id": "1a0bdca9d464",
-      "source": "Purdue Athletics MBB",
-      "title": "Curt Neal Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/08/10/curt-neal-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-08-10T16:27:16+00:00"
     }
   ]
 }
