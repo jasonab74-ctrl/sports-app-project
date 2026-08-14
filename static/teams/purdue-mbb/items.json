@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-08-14T03:35:33.687519+00:00",
+  "updated": "2026-08-14T05:27:12.507599+00:00",
   "count": 20,
   "items": [
     {
@@ -50,14 +50,6 @@
       "url": "https://purduesports.com/news/2026/08/13/coach-darin-hinshaw-media-session-purdue-football-2",
       "summary": "",
       "date": "2026-08-13T15:52:59+00:00"
-    },
-    {
-      "id": "76c51fd4202c",
-      "source": "Purdue Athletics MBB",
-      "title": "Soccer Begins in West Lafayette",
-      "url": "https://purduesports.com/news/2026/08/12/soccer-begins-in-west-lafayette",
-      "summary": "",
-      "date": "2026-08-12T14:48:35+00:00"
     },
     {
       "id": "05dbda96182b",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/08/7/jojo-hayden-post-practice-interview-aug-7-purdue-football",
       "summary": "",
       "date": "2026-08-07T15:56:37+00:00"
+    },
+    {
+      "id": "fdbc97c8e2af",
+      "source": "Purdue Athletics MBB",
+      "title": "Drew Brees Hall of Fame Press Conference | Purdue Football",
+      "url": "https://purduesports.com/news/2026/08/6/drew-brees-hall-of-fame-press-conference-purdue-football",
+      "summary": "",
+      "date": "2026-08-06T21:11:58+00:00"
     }
   ]
 }
