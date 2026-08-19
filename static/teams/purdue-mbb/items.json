@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-08-19T10:53:22.735949+00:00",
+  "updated": "2026-08-19T11:19:01.859490+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "d813daeb9e8b",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Partners with Progressive Insurance for 2026 Season",
+      "url": "https://purduesports.com/news/2026/08/18/purdue-partners-with-progressive-for-2026-season",
+      "summary": "",
+      "date": "2026-08-18T15:00:00+00:00"
+    },
     {
       "id": "a1f4d2fe98d2",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/08/11/john-slaughter-media-session-purdue-football",
       "summary": "",
       "date": "2026-08-11T16:32:20+00:00"
-    },
-    {
-      "id": "765364296f6a",
-      "source": "Purdue Athletics MBB",
-      "title": "Jaden Mangham Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/08/11/jaden-mangham-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-08-11T16:29:09+00:00"
     }
   ]
 }
