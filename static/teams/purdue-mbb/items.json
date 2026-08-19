@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-08-19T22:17:52.270138+00:00",
+  "updated": "2026-08-19T22:48:53.391697+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "eb04a55d2291",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Football Documentary Series Set to Debut August 26",
+      "url": "https://purduesports.com/news/2026/08/19/purdue-football-documentary-series-set-to-debut-august-26",
+      "summary": "",
+      "date": "2026-08-19T19:32:13+00:00"
+    },
     {
       "id": "d813daeb9e8b",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/08/11/coach-charles-clark-media-session-purdue-football-1",
       "summary": "",
       "date": "2026-08-11T16:33:08+00:00"
-    },
-    {
-      "id": "9fb19f858052",
-      "source": "Purdue Athletics MBB",
-      "title": "John Slaughter Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/08/11/john-slaughter-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-08-11T16:32:20+00:00"
     }
   ]
 }
