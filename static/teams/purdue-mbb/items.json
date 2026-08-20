@@ -1,40 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-08-20T07:35:22.509225+00:00",
+  "updated": "2026-08-20T08:30:08.614237+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "a5737e9e02a8",
-      "source": "Purdue Athletics MBB",
-      "title": "RB Antonio Harris Post Practice Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/08/20/rb-antonio-harris-post-practice-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-08-20T01:56:57+00:00"
-    },
-    {
-      "id": "b10d0a7ebba3",
-      "source": "Purdue Athletics MBB",
-      "title": "Running Backs Coach Cornell Ford Post Practice Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/08/20/running-backs-coach-cornell-ford-post-practice-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-08-20T01:56:54+00:00"
-    },
-    {
-      "id": "bc77d10f25af",
-      "source": "Purdue Athletics MBB",
-      "title": "RB Fame Ijebo Post Practice Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/08/20/rb-fame-ijebo-post-practice-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-08-20T01:56:48+00:00"
-    },
-    {
-      "id": "bf1ebd4ccda7",
-      "source": "Purdue Athletics MBB",
-      "title": "BoilerRoom: Purdue Football All-Access Coming Soon",
-      "url": "https://purduesports.com/news/2026/08/19/boilerroom-purdue-football-all-access-coming-soon",
-      "summary": "",
-      "date": "2026-08-19T23:02:24+00:00"
-    },
     {
       "id": "eb04a55d2291",
       "source": "Purdue Athletics MBB",
@@ -162,6 +130,38 @@
       "url": "https://purduesports.com/news/2026/08/13/quarterback-evans-chuba-media-session-purdue-football",
       "summary": "",
       "date": "2026-08-13T15:53:52+00:00"
+    },
+    {
+      "id": "f558ff0096ce",
+      "source": "Purdue Athletics MBB",
+      "title": "Quarterback Ryan Browne Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/08/13/quarterback-ryan-browne-media-session-purdue-football-1",
+      "summary": "",
+      "date": "2026-08-13T15:53:24+00:00"
+    },
+    {
+      "id": "80ffd04b3317",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Darin Hinshaw Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/08/13/coach-darin-hinshaw-media-session-purdue-football-2",
+      "summary": "",
+      "date": "2026-08-13T15:52:59+00:00"
+    },
+    {
+      "id": "05dbda96182b",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Football Day 1",
+      "url": "https://purduesports.com/news/2026/08/12/purdue-football-day-1",
+      "summary": "",
+      "date": "2026-08-12T00:23:51+00:00"
+    },
+    {
+      "id": "19ad8d603338",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Charles Clark Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/08/11/coach-charles-clark-media-session-purdue-football-1",
+      "summary": "",
+      "date": "2026-08-11T16:33:08+00:00"
     }
   ]
 }
