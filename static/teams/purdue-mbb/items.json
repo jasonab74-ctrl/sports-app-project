@@ -1,8 +1,32 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-08-21T16:31:37.074957+00:00",
+  "updated": "2026-08-21T17:22:05.498584+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "da477b985c1c",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights: Purdue 7, Chicago State 0",
+      "url": "https://purduesports.com/news/2026/08/21/highlights-purdue-7-chicago-state-0",
+      "summary": "",
+      "date": "2026-08-21T02:06:58+00:00"
+    },
+    {
+      "id": "2adb3d046a30",
+      "source": "Purdue Athletics MBB",
+      "title": "Staff Feature: Carrie Gurnell | Purdue Volleyball",
+      "url": "https://purduesports.com/news/2026/08/20/staff-feature-carrie-gurnell-purdue-volleyball",
+      "summary": "",
+      "date": "2026-08-20T21:21:20+00:00"
+    },
+    {
+      "id": "0df8188b5686",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Stories: Gurnell Continues to Make Her Mark",
+      "url": "https://purduesports.com/news/2026/08/20/purdue-stories-gurnell-continues-to-make-her-mark",
+      "summary": "",
+      "date": "2026-08-20T21:11:55+00:00"
+    },
     {
       "id": "a89af47b8ecc",
       "source": "CBS Sports College Basketball",
@@ -138,30 +162,6 @@
       "url": "https://purduesports.com/news/2026/08/14/elo-modozie-media-session-purdue-football",
       "summary": "",
       "date": "2026-08-14T15:34:56+00:00"
-    },
-    {
-      "id": "669e81e103f8",
-      "source": "Purdue Athletics MBB",
-      "title": "Week 1 of Fall Camp | Purdue Football",
-      "url": "https://purduesports.com/news/2026/08/13/week-1-of-fall-camp-purdue-football",
-      "summary": "",
-      "date": "2026-08-13T19:43:39+00:00"
-    },
-    {
-      "id": "e772b61dbaec",
-      "source": "Purdue Athletics MBB",
-      "title": "2026 Purdue Volleyball Mackey Matches Hype",
-      "url": "https://purduesports.com/news/2026/08/13/2026-purdue-volleyball-mackey-matches-hype",
-      "summary": "",
-      "date": "2026-08-13T19:22:59+00:00"
-    },
-    {
-      "id": "772ad2508668",
-      "source": "Purdue Athletics MBB",
-      "title": "Quarterback Bennett Meredith Media Session| Purdue Football",
-      "url": "https://purduesports.com/news/2026/08/13/quarterback-bennett-meredith-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-08-13T15:54:21+00:00"
     }
   ]
 }
