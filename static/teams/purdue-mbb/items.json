@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-08-21T05:56:09.454663+00:00",
+  "updated": "2026-08-21T06:39:33.272028+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "da477b985c1c",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights: Purdue 7, Chicago State 0",
+      "url": "https://purduesports.com/news/2026/08/21/highlights-purdue-7-chicago-state-0",
+      "summary": "",
+      "date": "2026-08-21T02:06:58+00:00"
+    },
     {
       "id": "2adb3d046a30",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/08/14/elo-modozie-media-session-purdue-football",
       "summary": "",
       "date": "2026-08-14T15:34:56+00:00"
-    },
-    {
-      "id": "669e81e103f8",
-      "source": "Purdue Athletics MBB",
-      "title": "Week 1 of Fall Camp | Purdue Football",
-      "url": "https://purduesports.com/news/2026/08/13/week-1-of-fall-camp-purdue-football",
-      "summary": "",
-      "date": "2026-08-13T19:43:39+00:00"
     }
   ]
 }
