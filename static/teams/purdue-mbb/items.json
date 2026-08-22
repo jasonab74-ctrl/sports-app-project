@@ -1,8 +1,48 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-08-22T02:12:49.839943+00:00",
+  "updated": "2026-08-22T03:12:56.665424+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "38a0def282d1",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Zach Crabtree Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/08/21/coach-zach-crabtree-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-08-21T17:51:58+00:00"
+    },
+    {
+      "id": "b94738b2a60b",
+      "source": "Purdue Athletics MBB",
+      "title": "Boaz Stanley Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/08/21/boaz-stanley-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-08-21T17:46:54+00:00"
+    },
+    {
+      "id": "fa30157da0ea",
+      "source": "Purdue Athletics MBB",
+      "title": "Nuku Mafi Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/08/21/nuku-mafi-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-08-21T17:43:08+00:00"
+    },
+    {
+      "id": "2e4aace5865a",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Practices in Ross-Ade on Friday",
+      "url": "https://purduesports.com/news/2026/08/21/purdue-practices-in-ross-ade-on-friday",
+      "summary": "",
+      "date": "2026-08-21T17:30:00+00:00"
+    },
+    {
+      "id": "fac95dfd77fa",
+      "source": "Purdue Athletics MBB",
+      "title": "2026 Camp Week 2 | Purdue Football",
+      "url": "https://purduesports.com/news/2026/08/21/2026-camp-week-2-purdue-football",
+      "summary": "",
+      "date": "2026-08-21T17:04:53+00:00"
+    },
     {
       "id": "da477b985c1c",
       "source": "Purdue Athletics MBB",
@@ -122,46 +162,6 @@
       "url": "https://purduesports.com/news/2026/08/16/highlights-purdue-7-purdue-fort-wayne-1-purdue-soccer",
       "summary": "",
       "date": "2026-08-16T21:13:42+00:00"
-    },
-    {
-      "id": "6e79ce67750d",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Indoors for Friday Practice",
-      "url": "https://purduesports.com/news/2026/08/14/purdue-indoors-for-friday-practice",
-      "summary": "",
-      "date": "2026-08-14T17:15:00+00:00"
-    },
-    {
-      "id": "8f8e063c8ef0",
-      "source": "Purdue Athletics MBB",
-      "title": "Practice Footage, Fall Camp | Purdue Football",
-      "url": "https://purduesports.com/news/2026/08/14/practice-footage-fall-camp-purdue-football",
-      "summary": "",
-      "date": "2026-08-14T15:41:16+00:00"
-    },
-    {
-      "id": "0ed1e1f253d6",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Jake Trump Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/08/14/coach-jake-trump-media-session-purdue-football-1",
-      "summary": "",
-      "date": "2026-08-14T15:39:55+00:00"
-    },
-    {
-      "id": "70a21ddc459d",
-      "source": "Purdue Athletics MBB",
-      "title": "C.J. Madden Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/08/14/cj-madden-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-08-14T15:37:32+00:00"
-    },
-    {
-      "id": "ba397329bb45",
-      "source": "Purdue Athletics MBB",
-      "title": "Elo Modozie Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/08/14/elo-modozie-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-08-14T15:34:56+00:00"
     }
   ]
 }
