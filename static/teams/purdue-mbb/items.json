@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-08-24T02:20:27.047614+00:00",
+  "updated": "2026-08-24T03:29:48.431146+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "d7fe1c817469",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights: Purdue 8, Eastern Illinois 0",
+      "url": "https://purduesports.com/news/2026/08/23/highlights-purdue-8-eastern-illinois-0",
+      "summary": "",
+      "date": "2026-08-23T21:19:34+00:00"
+    },
     {
       "id": "38a0def282d1",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/08/17/chauncey-magwood-media-session-purdue-football",
       "summary": "",
       "date": "2026-08-17T16:48:29+00:00"
-    },
-    {
-      "id": "f77c2dabc4ef",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights: Purdue 7, Purdue-Fort Wayne 1 | Purdue Soccer",
-      "url": "https://purduesports.com/news/2026/08/16/highlights-purdue-7-purdue-fort-wayne-1-purdue-soccer",
-      "summary": "",
-      "date": "2026-08-16T21:13:42+00:00"
     }
   ]
 }
