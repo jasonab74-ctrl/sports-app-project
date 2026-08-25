@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-08-25T18:31:17.805980+00:00",
+  "updated": "2026-08-25T19:25:36.767073+00:00",
   "count": 20,
   "items": [
     {
@@ -10,6 +10,14 @@
       "url": "https://purduesports.com/news/2026/08/24/coach-barry-odom-media-session-purdue-football-9",
       "summary": "",
       "date": "2026-08-24T18:46:32+00:00"
+    },
+    {
+      "id": "971e192b18d8",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue AD Tommy McClelland on BTN",
+      "url": "https://purduesports.com/news/2026/08/24/purdue-ad-tommy-mcclelland-on-btn",
+      "summary": "",
+      "date": "2026-08-24T17:59:38+00:00"
     },
     {
       "id": "d7fe1c817469",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/08/17/coach-barry-odom-media-session-purdue-football-8",
       "summary": "",
       "date": "2026-08-17T16:52:21+00:00"
-    },
-    {
-      "id": "88ff57b9b135",
-      "source": "Purdue Athletics MBB",
-      "title": "Charles Correa Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/08/17/charles-correa-media-session-purdue-football-3",
-      "summary": "",
-      "date": "2026-08-17T16:50:52+00:00"
     }
   ]
 }
