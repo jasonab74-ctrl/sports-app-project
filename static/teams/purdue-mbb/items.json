@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-08-26T06:57:21.061749+00:00",
+  "updated": "2026-08-26T07:45:28.107929+00:00",
   "count": 20,
   "items": [
     {
@@ -58,6 +58,14 @@
       "url": "https://purduesports.com/news/2026/08/21/nuku-mafi-media-session-purdue-football",
       "summary": "",
       "date": "2026-08-21T17:43:08+00:00"
+    },
+    {
+      "id": "2e4aace5865a",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Practices in Ross-Ade on Friday",
+      "url": "https://purduesports.com/news/2026/08/21/purdue-practices-in-ross-ade-on-friday",
+      "summary": "",
+      "date": "2026-08-21T17:30:00+00:00"
     },
     {
       "id": "fac95dfd77fa",
@@ -148,20 +156,12 @@
       "date": "2026-08-18T15:00:00+00:00"
     },
     {
-      "id": "4ec03327e98d",
+      "id": "a1f4d2fe98d2",
       "source": "Purdue Athletics MBB",
-      "title": "Coach Barry Odom Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/08/17/coach-barry-odom-media-session-purdue-football-8",
+      "title": "Purdue Begins New Week of Fall Camp",
+      "url": "https://purduesports.com/news/2026/08/17/purdue-begins-new-week-of-fall-camp",
       "summary": "",
-      "date": "2026-08-17T16:52:21+00:00"
-    },
-    {
-      "id": "88ff57b9b135",
-      "source": "Purdue Athletics MBB",
-      "title": "Charles Correa Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/08/17/charles-correa-media-session-purdue-football-3",
-      "summary": "",
-      "date": "2026-08-17T16:50:52+00:00"
+      "date": "2026-08-17T18:30:00+00:00"
     }
   ]
 }
