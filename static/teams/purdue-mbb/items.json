@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-08-28T03:37:53.320168+00:00",
+  "updated": "2026-08-28T15:50:35.252416+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "07d814746642",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Men's Golf Opens Fall Campaign in New Jersey",
+      "url": "https://purduesports.com/news/2026/08/28/purdue-mens-golf-opens-fall-campaign-in-new-jersey",
+      "summary": "",
+      "date": "2026-08-28T13:45:00+00:00"
+    },
+    {
+      "id": "1c328eb63a67",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights: Purdue 5, Ball State 0",
+      "url": "https://purduesports.com/news/2026/08/28/highlights-purdue-5-ball-state-0",
+      "summary": "",
+      "date": "2026-08-28T03:09:47+00:00"
+    },
     {
       "id": "b5764446efe0",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/08/20/rb-fame-ijebo-post-practice-media-session-purdue-football",
       "summary": "",
       "date": "2026-08-20T01:56:48+00:00"
-    },
-    {
-      "id": "bf1ebd4ccda7",
-      "source": "Purdue Athletics MBB",
-      "title": "BoilerRoom: Purdue Football All-Access Coming Soon",
-      "url": "https://purduesports.com/news/2026/08/19/boilerroom-purdue-football-all-access-coming-soon",
-      "summary": "",
-      "date": "2026-08-19T23:02:24+00:00"
-    },
-    {
-      "id": "d813daeb9e8b",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Partners with Progressive Insurance for 2026 Season",
-      "url": "https://purduesports.com/news/2026/08/18/purdue-partners-with-progressive-for-2026-season",
-      "summary": "",
-      "date": "2026-08-18T15:00:00+00:00"
     }
   ]
 }
