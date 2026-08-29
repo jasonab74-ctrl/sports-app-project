@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-08-29T13:16:09.530792+00:00",
+  "updated": "2026-08-29T17:15:59.209798+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "f01f4af36f22",
+      "source": "Purdue Athletics MBB",
+      "title": "One Week Out | Purdue Football",
+      "url": "https://purduesports.com/news/2026/08/29/one-week-out-purdue-football",
+      "summary": "",
+      "date": "2026-08-29T15:23:43+00:00"
+    },
     {
       "id": "cbf6cf7b9096",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/08/24/coach-barry-odom-media-session-purdue-football-9",
       "summary": "",
       "date": "2026-08-24T18:46:32+00:00"
-    },
-    {
-      "id": "971e192b18d8",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue AD Tommy McClelland on BTN",
-      "url": "https://purduesports.com/news/2026/08/24/purdue-ad-tommy-mcclelland-on-btn",
-      "summary": "",
-      "date": "2026-08-24T17:59:38+00:00"
     }
   ]
 }
