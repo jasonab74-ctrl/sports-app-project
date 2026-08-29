@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-08-29T07:14:06.590109+00:00",
+  "updated": "2026-08-29T13:16:09.530792+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "cbf6cf7b9096",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Fall in 5",
+      "url": "https://purduesports.com/news/2026/08/29/boilermakers-fall-in-5",
+      "summary": "",
+      "date": "2026-08-29T01:56:49+00:00"
+    },
     {
       "id": "07d814746642",
       "source": "Purdue Athletics MBB",
@@ -26,6 +34,38 @@
       "url": "https://purduesports.com/news/2026/08/27/purdue-closes-out-final-open-practice-of-fall-camp",
       "summary": "",
       "date": "2026-08-27T18:55:00+00:00"
+    },
+    {
+      "id": "44c458e2000d",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach James Shibest Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/08/27/coach-james-shibest-media-session-purdue-football-3",
+      "summary": "",
+      "date": "2026-08-27T17:40:47+00:00"
+    },
+    {
+      "id": "17c9008e4a87",
+      "source": "Purdue Athletics MBB",
+      "title": "Dylan Drennan Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/08/27/dylan-drennan-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-08-27T17:38:28+00:00"
+    },
+    {
+      "id": "9331ff35fb4c",
+      "source": "Purdue Athletics MBB",
+      "title": "Seth Turner Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/08/27/seth-turner-media-session-purdue-football-1",
+      "summary": "",
+      "date": "2026-08-27T17:34:27+00:00"
+    },
+    {
+      "id": "0655b9dd8f15",
+      "source": "Purdue Athletics MBB",
+      "title": "Jacobo Echeverria Lozano Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/08/27/jacobo-echeverria-lozano-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-08-27T17:33:15+00:00"
     },
     {
       "id": "db9739c9895e",
@@ -52,6 +92,62 @@
       "date": "2026-08-26T19:00:00+00:00"
     },
     {
+      "id": "b9843398d069",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Kelvin Green Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/08/26/coach-kelvin-green-media-session-purdue-football-2",
+      "summary": "",
+      "date": "2026-08-26T18:14:47+00:00"
+    },
+    {
+      "id": "e2453cef0d1f",
+      "source": "Purdue Athletics MBB",
+      "title": "Rodney Lora Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/08/26/rodney-lora-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-08-26T18:14:16+00:00"
+    },
+    {
+      "id": "775281b1f0cc",
+      "source": "Purdue Athletics MBB",
+      "title": "Ian Jeffries Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/08/26/ian-jeffries-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-08-26T18:11:57+00:00"
+    },
+    {
+      "id": "c2821c803a32",
+      "source": "Purdue Athletics MBB",
+      "title": "Full Pads Cinematic | Purdue Football",
+      "url": "https://purduesports.com/news/2026/08/25/full-pads-cinematic-purdue-football",
+      "summary": "",
+      "date": "2026-08-25T20:15:10+00:00"
+    },
+    {
+      "id": "63e8630f93c7",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Bilal Marshall Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/08/25/coach-bilal-marshall-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-08-25T17:39:30+00:00"
+    },
+    {
+      "id": "677260b31031",
+      "source": "Purdue Athletics MBB",
+      "title": "Tra'Mar Harris Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/08/25/tramar-harris-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-08-25T17:38:20+00:00"
+    },
+    {
+      "id": "ebf726ce1033",
+      "source": "Purdue Athletics MBB",
+      "title": "Bisi Owens Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/08/25/bisi-owens-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-08-25T17:36:13+00:00"
+    },
+    {
       "id": "738dd79927ec",
       "source": "Purdue Athletics MBB",
       "title": "Coach Barry Odom Media Session | Purdue Football",
@@ -66,102 +162,6 @@
       "url": "https://purduesports.com/news/2026/08/24/purdue-ad-tommy-mcclelland-on-btn",
       "summary": "",
       "date": "2026-08-24T17:59:38+00:00"
-    },
-    {
-      "id": "d7fe1c817469",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights: Purdue 8, Eastern Illinois 0",
-      "url": "https://purduesports.com/news/2026/08/23/highlights-purdue-8-eastern-illinois-0",
-      "summary": "",
-      "date": "2026-08-23T21:19:34+00:00"
-    },
-    {
-      "id": "38a0def282d1",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Zach Crabtree Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/08/21/coach-zach-crabtree-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-08-21T17:51:58+00:00"
-    },
-    {
-      "id": "b94738b2a60b",
-      "source": "Purdue Athletics MBB",
-      "title": "Boaz Stanley Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/08/21/boaz-stanley-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-08-21T17:46:54+00:00"
-    },
-    {
-      "id": "fa30157da0ea",
-      "source": "Purdue Athletics MBB",
-      "title": "Nuku Mafi Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/08/21/nuku-mafi-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-08-21T17:43:08+00:00"
-    },
-    {
-      "id": "fac95dfd77fa",
-      "source": "Purdue Athletics MBB",
-      "title": "2026 Camp Week 2 | Purdue Football",
-      "url": "https://purduesports.com/news/2026/08/21/2026-camp-week-2-purdue-football",
-      "summary": "",
-      "date": "2026-08-21T17:04:53+00:00"
-    },
-    {
-      "id": "da477b985c1c",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights: Purdue 7, Chicago State 0",
-      "url": "https://purduesports.com/news/2026/08/21/highlights-purdue-7-chicago-state-0",
-      "summary": "",
-      "date": "2026-08-21T02:06:58+00:00"
-    },
-    {
-      "id": "2adb3d046a30",
-      "source": "Purdue Athletics MBB",
-      "title": "Staff Feature: Carrie Gurnell | Purdue Volleyball",
-      "url": "https://purduesports.com/news/2026/08/20/staff-feature-carrie-gurnell-purdue-volleyball",
-      "summary": "",
-      "date": "2026-08-20T21:21:20+00:00"
-    },
-    {
-      "id": "0df8188b5686",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Stories: Gurnell Continues to Make Her Mark",
-      "url": "https://purduesports.com/news/2026/08/20/purdue-stories-gurnell-continues-to-make-her-mark",
-      "summary": "",
-      "date": "2026-08-20T21:11:55+00:00"
-    },
-    {
-      "id": "a89af47b8ecc",
-      "source": "CBS Sports College Basketball",
-      "title": "Matt Painter opens up about Purdue's new-look roster, departure of program's 'Big Three'",
-      "url": "https://www.cbssports.com/college-basketball/news/matt-painter-purdue-basketball-2026-27/",
-      "summary": "With Braden Smith, Trey Kaufman-Renn and Fletcher Loyer departing, the Boilermakers will have a new-look roster under Matt Painter.",
-      "date": "2026-08-20T14:53:44+00:00"
-    },
-    {
-      "id": "a5737e9e02a8",
-      "source": "Purdue Athletics MBB",
-      "title": "RB Antonio Harris Post Practice Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/08/20/rb-antonio-harris-post-practice-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-08-20T01:56:57+00:00"
-    },
-    {
-      "id": "b10d0a7ebba3",
-      "source": "Purdue Athletics MBB",
-      "title": "Running Backs Coach Cornell Ford Post Practice Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/08/20/running-backs-coach-cornell-ford-post-practice-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-08-20T01:56:54+00:00"
-    },
-    {
-      "id": "bc77d10f25af",
-      "source": "Purdue Athletics MBB",
-      "title": "RB Fame Ijebo Post Practice Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/08/20/rb-fame-ijebo-post-practice-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-08-20T01:56:48+00:00"
     }
   ]
 }
