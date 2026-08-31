@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-08-31T12:26:28.704354+00:00",
+  "updated": "2026-08-31T19:11:18.339837+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "f5fc2f74ed3e",
+      "source": "CBS Sports College Basketball",
+      "title": "Inside Trey Kaufman-Renn's case for a sixth year of eligibility: Does the former Purdue star have a case?",
+      "url": "https://www.cbssports.com/college-basketball/news/trey-kaufman-renn-purdue-sixth-year-eligibility/",
+      "summary": "Kaufman-Renn graduated from high school in 2021 and redshirted during the 2021-22 season at Purdue. He is seeking a temporary restraining order to play a sixth season of college basketball.",
+      "date": "2026-08-31T13:42:51+00:00"
+    },
     {
       "id": "194a1bf5a012",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/08/25/tramar-harris-media-session-purdue-football",
       "summary": "",
       "date": "2026-08-25T17:38:20+00:00"
-    },
-    {
-      "id": "ebf726ce1033",
-      "source": "Purdue Athletics MBB",
-      "title": "Bisi Owens Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/08/25/bisi-owens-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-08-25T17:36:13+00:00"
     }
   ]
 }
