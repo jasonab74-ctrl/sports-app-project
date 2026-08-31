@@ -1,8 +1,48 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-08-31T19:11:18.339837+00:00",
+  "updated": "2026-08-31T23:15:42.822678+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "2d253ed0b26d",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights: Purdue 3, Southern Indiana 0",
+      "url": "https://purduesports.com/news/2026/08/31/highlights-purdue-3-southern-indiana-0",
+      "summary": "",
+      "date": "2026-08-31T16:49:07+00:00"
+    },
+    {
+      "id": "35c4d07e708f",
+      "source": "Purdue Athletics MBB",
+      "title": "Head Coach Barry Odom Weekly Press Conference vs Indiana State | Purdue Football",
+      "url": "https://purduesports.com/news/2026/08/31/head-coach-barry-odom-weekly-press-conference-vs-indiana-state-purdue-football",
+      "summary": "",
+      "date": "2026-08-31T16:11:22+00:00"
+    },
+    {
+      "id": "209f86efe200",
+      "source": "Purdue Athletics MBB",
+      "title": "DC Kevin Kane Weekly Press Conference vs Indiana State | Purdue Football",
+      "url": "https://purduesports.com/news/2026/08/31/dc-kevin-kane-weekly-press-conference-vs-indiana-state-purdue-football",
+      "summary": "",
+      "date": "2026-08-31T16:11:19+00:00"
+    },
+    {
+      "id": "771d41ce734f",
+      "source": "Purdue Athletics MBB",
+      "title": "OC Josh Henson Weekly Press Conference vs Indiana State | Purdue Football",
+      "url": "https://purduesports.com/news/2026/08/31/oc-josh-henson-weekly-press-conference-vs-indiana-state-purdue-football",
+      "summary": "",
+      "date": "2026-08-31T16:11:18+00:00"
+    },
+    {
+      "id": "8aad9b8e7a9e",
+      "source": "Purdue Athletics MBB",
+      "title": "Barry Odom Press Conference vs. Indiana State | Purdue Football",
+      "url": "https://purduesports.com/news/2026/08/31/barry-odom-press-conference-vs-indiana-state-purdue-football",
+      "summary": "",
+      "date": "2026-08-31T15:46:02+00:00"
+    },
     {
       "id": "f5fc2f74ed3e",
       "source": "CBS Sports College Basketball",
@@ -122,46 +162,6 @@
       "url": "https://purduesports.com/news/2026/08/26/coach-kelvin-green-media-session-purdue-football-2",
       "summary": "",
       "date": "2026-08-26T18:14:47+00:00"
-    },
-    {
-      "id": "e2453cef0d1f",
-      "source": "Purdue Athletics MBB",
-      "title": "Rodney Lora Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/08/26/rodney-lora-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-08-26T18:14:16+00:00"
-    },
-    {
-      "id": "775281b1f0cc",
-      "source": "Purdue Athletics MBB",
-      "title": "Ian Jeffries Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/08/26/ian-jeffries-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-08-26T18:11:57+00:00"
-    },
-    {
-      "id": "c2821c803a32",
-      "source": "Purdue Athletics MBB",
-      "title": "Full Pads Cinematic | Purdue Football",
-      "url": "https://purduesports.com/news/2026/08/25/full-pads-cinematic-purdue-football",
-      "summary": "",
-      "date": "2026-08-25T20:15:10+00:00"
-    },
-    {
-      "id": "63e8630f93c7",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Bilal Marshall Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/08/25/coach-bilal-marshall-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-08-25T17:39:30+00:00"
-    },
-    {
-      "id": "677260b31031",
-      "source": "Purdue Athletics MBB",
-      "title": "Tra'Mar Harris Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/08/25/tramar-harris-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-08-25T17:38:20+00:00"
     }
   ]
 }
