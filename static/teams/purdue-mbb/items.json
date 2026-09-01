@@ -1,8 +1,32 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-08-31T23:15:42.822678+00:00",
+  "updated": "2026-09-01T01:55:54.810263+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "09c26ac55b1d",
+      "source": "Purdue Athletics MBB",
+      "title": "Brown Paces Purdue to Begin Boilermaker Classic",
+      "url": "https://purduesports.com/news/2026/09/1/brown-paces-purdue-to-begin-boilermaker-classic",
+      "summary": "",
+      "date": "2026-09-01T01:25:52+00:00"
+    },
+    {
+      "id": "816f118e0c34",
+      "source": "Purdue Athletics MBB",
+      "title": "The Bell is Back | Purdue Football",
+      "url": "https://purduesports.com/news/2026/08/31/the-bell-is-back-purdue-football",
+      "summary": "",
+      "date": "2026-08-31T23:00:05+00:00"
+    },
+    {
+      "id": "1cece257873d",
+      "source": "Purdue Athletics MBB",
+      "title": "Big Ten/SEC Challenge Descends on Mackey Arena",
+      "url": "https://purduesports.com/news/2026/08/31/big-tensec-challenge-descends-on-mackey-arena",
+      "summary": "",
+      "date": "2026-08-31T21:45:00+00:00"
+    },
     {
       "id": "2d253ed0b26d",
       "source": "Purdue Athletics MBB",
@@ -138,30 +162,6 @@
       "url": "https://purduesports.com/news/2026/08/27/swim-dive-schedules-announced-mens-big-tens-diving-zones-return-to-purdue",
       "summary": "Boilermakers to host a bevy of home meets from January through March",
       "date": "2026-08-27T16:01:00+00:00"
-    },
-    {
-      "id": "3dd17ec6e6a4",
-      "source": "Purdue Athletics MBB",
-      "title": "Boiler Room: Purdue Football All-Access Ep. 1",
-      "url": "https://purduesports.com/news/2026/08/26/boiler-room-purdue-football-all-access-ep-1",
-      "summary": "",
-      "date": "2026-08-26T23:01:00+00:00"
-    },
-    {
-      "id": "7feba97aee58",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Launches 2026 'We Give Blood' Drive",
-      "url": "https://purduesports.com/news/2026/08/26/purdue-launches-2026-we-give-blood-drive",
-      "summary": "Purdue University, Abbott and the Big Ten Conference team up to tackle the national blood crisis.",
-      "date": "2026-08-26T19:00:00+00:00"
-    },
-    {
-      "id": "b9843398d069",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Kelvin Green Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/08/26/coach-kelvin-green-media-session-purdue-football-2",
-      "summary": "",
-      "date": "2026-08-26T18:14:47+00:00"
     }
   ]
 }
