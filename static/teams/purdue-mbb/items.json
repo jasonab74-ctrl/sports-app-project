@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-09-02T20:24:18.003422+00:00",
+  "updated": "2026-09-02T22:44:54.894523+00:00",
   "count": 20,
   "items": [
     {
@@ -18,14 +18,6 @@
       "url": "https://purduesports.com/news/2026/09/2/purdue-to-play-at-home-for-3-of-4-fall-exhibition-games",
       "summary": "",
       "date": "2026-09-02T17:36:14+00:00"
-    },
-    {
-      "id": "d2cc3727a745",
-      "source": "Purdue Athletics MBB",
-      "title": "Game 1 Prep: Purdue Opens 2026 Friday Night Against Indiana State",
-      "url": "https://purduesports.com/news/2026/09/2/game-1-purdue-opens-2026-friday-night-against-indiana-state",
-      "summary": "",
-      "date": "2026-09-02T17:01:00+00:00"
     },
     {
       "id": "bcf2503e627e",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/08/30/fall-camp-week-3-purdue-football",
       "summary": "",
       "date": "2026-08-30T14:51:19+00:00"
+    },
+    {
+      "id": "f01f4af36f22",
+      "source": "Purdue Athletics MBB",
+      "title": "One Week Out | Purdue Football",
+      "url": "https://purduesports.com/news/2026/08/29/one-week-out-purdue-football",
+      "summary": "",
+      "date": "2026-08-29T15:23:43+00:00"
     }
   ]
 }
