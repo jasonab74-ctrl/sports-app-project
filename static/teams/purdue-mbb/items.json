@@ -1,8 +1,32 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-09-02T17:49:49.133058+00:00",
+  "updated": "2026-09-02T20:24:18.003422+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "c5defd49e32c",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights: #14 Purdue 3, #12 Texas A&M 0",
+      "url": "https://purduesports.com/news/2026/09/2/highlights-14-purdue-3-12-texas-am-0",
+      "summary": "",
+      "date": "2026-09-02T17:41:55+00:00"
+    },
+    {
+      "id": "a2a4d50888c6",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue to Play at Home for 3 of 4 Fall Exhibition Games",
+      "url": "https://purduesports.com/news/2026/09/2/purdue-to-play-at-home-for-3-of-4-fall-exhibition-games",
+      "summary": "",
+      "date": "2026-09-02T17:36:14+00:00"
+    },
+    {
+      "id": "d2cc3727a745",
+      "source": "Purdue Athletics MBB",
+      "title": "Game 1 Prep: Purdue Opens 2026 Friday Night Against Indiana State",
+      "url": "https://purduesports.com/news/2026/09/2/game-1-purdue-opens-2026-friday-night-against-indiana-state",
+      "summary": "",
+      "date": "2026-09-02T17:01:00+00:00"
+    },
     {
       "id": "bcf2503e627e",
       "source": "Purdue Athletics MBB",
@@ -138,30 +162,6 @@
       "url": "https://purduesports.com/news/2026/08/30/fall-camp-week-3-purdue-football",
       "summary": "",
       "date": "2026-08-30T14:51:19+00:00"
-    },
-    {
-      "id": "f01f4af36f22",
-      "source": "Purdue Athletics MBB",
-      "title": "One Week Out | Purdue Football",
-      "url": "https://purduesports.com/news/2026/08/29/one-week-out-purdue-football",
-      "summary": "",
-      "date": "2026-08-29T15:23:43+00:00"
-    },
-    {
-      "id": "cbf6cf7b9096",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Fall in 5",
-      "url": "https://purduesports.com/news/2026/08/29/boilermakers-fall-in-5",
-      "summary": "",
-      "date": "2026-08-29T01:56:49+00:00"
-    },
-    {
-      "id": "1c328eb63a67",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights: Purdue 5, Ball State 0",
-      "url": "https://purduesports.com/news/2026/08/28/highlights-purdue-5-ball-state-0",
-      "summary": "",
-      "date": "2026-08-28T03:09:47+00:00"
     }
   ]
 }
