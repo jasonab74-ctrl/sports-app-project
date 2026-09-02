@@ -1,8 +1,32 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-09-01T22:42:35.758707+00:00",
+  "updated": "2026-09-02T00:45:42.925173+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "c9dba016fc17",
+      "source": "Purdue Athletics MBB",
+      "title": "Keyshawn Burgos Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/09/1/keyshawn-burgos-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-09-01T17:02:27+00:00"
+    },
+    {
+      "id": "e747def34e1e",
+      "source": "Purdue Athletics MBB",
+      "title": "Jude McCoskey Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/09/1/jude-mccoskey-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-09-01T16:57:07+00:00"
+    },
+    {
+      "id": "013313b1d9c5",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermaker Classic Day 1 Photo Gallery",
+      "url": "https://purduesports.com/news/2026/09/1/boilermaker-classic-day-1-photo-gallery",
+      "summary": "",
+      "date": "2026-09-01T04:02:51+00:00"
+    },
     {
       "id": "09c26ac55b1d",
       "source": "Purdue Athletics MBB",
@@ -100,14 +124,6 @@
       "date": "2026-08-29T01:56:49+00:00"
     },
     {
-      "id": "07d814746642",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Men's Golf Opens Fall Campaign in New Jersey",
-      "url": "https://purduesports.com/news/2026/08/28/purdue-mens-golf-opens-fall-campaign-in-new-jersey",
-      "summary": "",
-      "date": "2026-08-28T13:45:00+00:00"
-    },
-    {
       "id": "1c328eb63a67",
       "source": "Purdue Athletics MBB",
       "title": "Highlights: Purdue 5, Ball State 0",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/08/27/seth-turner-media-session-purdue-football-1",
       "summary": "",
       "date": "2026-08-27T17:34:27+00:00"
-    },
-    {
-      "id": "0655b9dd8f15",
-      "source": "Purdue Athletics MBB",
-      "title": "Jacobo Echeverria Lozano Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/08/27/jacobo-echeverria-lozano-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-08-27T17:33:15+00:00"
-    },
-    {
-      "id": "db9739c9895e",
-      "source": "Purdue Athletics MBB",
-      "title": "Swim-Dive Slates Unveiled: Purdue Hosting Men's Big Tens, Diving Zones",
-      "url": "https://purduesports.com/news/2026/08/27/swim-dive-schedules-announced-mens-big-tens-diving-zones-return-to-purdue",
-      "summary": "Boilermakers to host a bevy of home meets from January through March",
-      "date": "2026-08-27T16:01:00+00:00"
     }
   ]
 }
