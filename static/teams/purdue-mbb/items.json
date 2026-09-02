@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-09-02T05:21:06.434272+00:00",
+  "updated": "2026-09-02T09:47:03.515087+00:00",
   "count": 20,
   "items": [
     {
@@ -10,6 +10,14 @@
       "url": "https://purduesports.com/news/2026/09/2/mackey-match-win-over-ranked-texas-aandm-photo-gallery",
       "summary": "",
       "date": "2026-09-02T04:50:35+00:00"
+    },
+    {
+      "id": "4e2ad4eeb93f",
+      "source": "Purdue Athletics MBB",
+      "title": "Dave Shondell Becomes Purdue's Winningest Head Coach | Volleyball",
+      "url": "https://purduesports.com/news/2026/09/2/dave-shondell-becomes-purdues-winningest-head-coach-volleyball",
+      "summary": "",
+      "date": "2026-09-02T04:36:04+00:00"
     },
     {
       "id": "97b675e89ee3",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/08/29/boilermakers-fall-in-5",
       "summary": "",
       "date": "2026-08-29T01:56:49+00:00"
-    },
-    {
-      "id": "1c328eb63a67",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights: Purdue 5, Ball State 0",
-      "url": "https://purduesports.com/news/2026/08/28/highlights-purdue-5-ball-state-0",
-      "summary": "",
-      "date": "2026-08-28T03:09:47+00:00"
     }
   ]
 }
