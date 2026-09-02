@@ -1,8 +1,40 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-09-02T00:45:42.925173+00:00",
+  "updated": "2026-09-02T05:21:06.434272+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "bcf2503e627e",
+      "source": "Purdue Athletics MBB",
+      "title": "Mackey Match Win over Ranked Texas A&M Photo Gallery",
+      "url": "https://purduesports.com/news/2026/09/2/mackey-match-win-over-ranked-texas-aandm-photo-gallery",
+      "summary": "",
+      "date": "2026-09-02T04:50:35+00:00"
+    },
+    {
+      "id": "97b675e89ee3",
+      "source": "Purdue Athletics MBB",
+      "title": "Shondell Dubbed Purdue's Winningest Head Coach of All-Time",
+      "url": "https://purduesports.com/news/2026/09/2/shondell-dubbed-winningest-head-coach-of-all-time",
+      "summary": "",
+      "date": "2026-09-02T03:26:14+00:00"
+    },
+    {
+      "id": "bddee07ccc72",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermaker Classic Day 2 Photo Gallery",
+      "url": "https://purduesports.com/news/2026/09/1/boilermaker-classic-day-2-photo-gallery",
+      "summary": "",
+      "date": "2026-09-01T21:29:14+00:00"
+    },
+    {
+      "id": "4a5a38fec788",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Moves Up Leaderboard, Places 4th in Season Opener",
+      "url": "https://purduesports.com/news/2026/09/1/purdue-moves-up-leaderboard-places-4th-in-season-opener",
+      "summary": "",
+      "date": "2026-09-01T20:40:33+00:00"
+    },
     {
       "id": "c9dba016fc17",
       "source": "Purdue Athletics MBB",
@@ -130,38 +162,6 @@
       "url": "https://purduesports.com/news/2026/08/28/highlights-purdue-5-ball-state-0",
       "summary": "",
       "date": "2026-08-28T03:09:47+00:00"
-    },
-    {
-      "id": "b5764446efe0",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Closes Out Final Open Practice of Fall Camp",
-      "url": "https://purduesports.com/news/2026/08/27/purdue-closes-out-final-open-practice-of-fall-camp",
-      "summary": "",
-      "date": "2026-08-27T18:55:00+00:00"
-    },
-    {
-      "id": "44c458e2000d",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach James Shibest Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/08/27/coach-james-shibest-media-session-purdue-football-3",
-      "summary": "",
-      "date": "2026-08-27T17:40:47+00:00"
-    },
-    {
-      "id": "17c9008e4a87",
-      "source": "Purdue Athletics MBB",
-      "title": "Dylan Drennan Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/08/27/dylan-drennan-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-08-27T17:38:28+00:00"
-    },
-    {
-      "id": "9331ff35fb4c",
-      "source": "Purdue Athletics MBB",
-      "title": "Seth Turner Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/08/27/seth-turner-media-session-purdue-football-1",
-      "summary": "",
-      "date": "2026-08-27T17:34:27+00:00"
     }
   ]
 }
