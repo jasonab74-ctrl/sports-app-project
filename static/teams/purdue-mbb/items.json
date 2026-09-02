@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-09-02T14:00:10.758986+00:00",
+  "updated": "2026-09-02T17:49:49.133058+00:00",
   "count": 20,
   "items": [
     {
@@ -84,14 +84,6 @@
       "date": "2026-08-31T23:00:05+00:00"
     },
     {
-      "id": "1cece257873d",
-      "source": "Purdue Athletics MBB",
-      "title": "Big Ten/SEC Challenge Descends on Mackey Arena",
-      "url": "https://purduesports.com/news/2026/08/31/big-tensec-challenge-descends-on-mackey-arena",
-      "summary": "",
-      "date": "2026-08-31T21:45:00+00:00"
-    },
-    {
       "id": "2d253ed0b26d",
       "source": "Purdue Athletics MBB",
       "title": "Highlights: Purdue 3, Southern Indiana 0",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/08/29/boilermakers-fall-in-5",
       "summary": "",
       "date": "2026-08-29T01:56:49+00:00"
+    },
+    {
+      "id": "1c328eb63a67",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights: Purdue 5, Ball State 0",
+      "url": "https://purduesports.com/news/2026/08/28/highlights-purdue-5-ball-state-0",
+      "summary": "",
+      "date": "2026-08-28T03:09:47+00:00"
     }
   ]
 }
