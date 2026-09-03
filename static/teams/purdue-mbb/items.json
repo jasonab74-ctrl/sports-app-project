@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-09-03T14:17:37.326644+00:00",
+  "updated": "2026-09-03T17:56:18.337792+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "0f85641033eb",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights: #14 Purdue 3, Georgia 2",
-      "url": "https://purduesports.com/news/2026/09/3/highlights-14-purdue-3-georgia-2",
-      "summary": "",
-      "date": "2026-09-03T11:39:57+00:00"
-    },
     {
       "id": "12e869580b32",
       "source": "Purdue Athletics MBB",
@@ -122,6 +114,14 @@
       "url": "https://purduesports.com/news/2026/09/1/boilermaker-classic-day-1-photo-gallery",
       "summary": "",
       "date": "2026-09-01T04:02:51+00:00"
+    },
+    {
+      "id": "09c26ac55b1d",
+      "source": "Purdue Athletics MBB",
+      "title": "Brown Paces Purdue to Begin Boilermaker Classic",
+      "url": "https://purduesports.com/news/2026/09/1/brown-paces-purdue-to-begin-boilermaker-classic",
+      "summary": "",
+      "date": "2026-09-01T01:25:52+00:00"
     },
     {
       "id": "816f118e0c34",
