@@ -1,32 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-09-05T15:23:45.211243+00:00",
+  "updated": "2026-09-05T17:26:04.028061+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "df09066bc975",
-      "source": "Purdue Athletics MBB",
-      "title": "Players' Postgame Press Conference vs. Indiana State | Purdue Football",
-      "url": "https://purduesports.com/news/2026/09/5/players-postgame-press-conference-vs-indiana-state-purdue-football",
-      "summary": "",
-      "date": "2026-09-05T03:10:01+00:00"
-    },
-    {
-      "id": "b98e17b8d871",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Barry Odom Postgame Press Conference vs. Indiana State | Purdue Football",
-      "url": "https://purduesports.com/news/2026/09/5/coach-barry-odom-postgame-press-conference-vs-indiana-state-purdue-football",
-      "summary": "",
-      "date": "2026-09-05T03:07:09+00:00"
-    },
-    {
-      "id": "e26931130efc",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilers Chop Sycamores 44-19 in Opener",
-      "url": "https://purduesports.com/news/2026/09/5/boilers-chop-sycamores-in-season-opener",
-      "summary": "Purdue defeats Indiana State, 44-19, under the lights of Ross-Ade in the 2026 season opener.",
-      "date": "2026-09-05T01:09:00+00:00"
-    },
     {
       "id": "ea0337c1510b",
       "source": "Purdue Athletics MBB",
@@ -82,6 +58,14 @@
       "url": "https://purduesports.com/news/2026/09/2/purdue-to-play-at-home-for-3-of-4-fall-exhibition-games",
       "summary": "",
       "date": "2026-09-02T17:36:14+00:00"
+    },
+    {
+      "id": "d2cc3727a745",
+      "source": "Purdue Athletics MBB",
+      "title": "Game 1 Prep: Purdue Opens 2026 Friday Night Against Indiana State",
+      "url": "https://purduesports.com/news/2026/09/2/game-1-purdue-opens-2026-friday-night-against-indiana-state",
+      "summary": "",
+      "date": "2026-09-02T17:01:00+00:00"
     },
     {
       "id": "bcf2503e627e",
@@ -162,6 +146,22 @@
       "url": "https://purduesports.com/news/2026/08/31/highlights-purdue-3-southern-indiana-0",
       "summary": "",
       "date": "2026-08-31T16:49:07+00:00"
+    },
+    {
+      "id": "35c4d07e708f",
+      "source": "Purdue Athletics MBB",
+      "title": "Head Coach Barry Odom Weekly Press Conference vs Indiana State | Purdue Football",
+      "url": "https://purduesports.com/news/2026/08/31/head-coach-barry-odom-weekly-press-conference-vs-indiana-state-purdue-football",
+      "summary": "",
+      "date": "2026-08-31T16:11:22+00:00"
+    },
+    {
+      "id": "209f86efe200",
+      "source": "Purdue Athletics MBB",
+      "title": "DC Kevin Kane Weekly Press Conference vs Indiana State | Purdue Football",
+      "url": "https://purduesports.com/news/2026/08/31/dc-kevin-kane-weekly-press-conference-vs-indiana-state-purdue-football",
+      "summary": "",
+      "date": "2026-08-31T16:11:19+00:00"
     }
   ]
 }
