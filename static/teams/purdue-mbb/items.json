@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-09-05T04:45:36.203216+00:00",
+  "updated": "2026-09-05T08:44:55.874004+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "e26931130efc",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilers Chop Sycamores 44-19 in Opener",
-      "url": "https://purduesports.com/news/2026/09/5/boilers-chop-sycamores-in-season-opener",
-      "summary": "Purdue defeats Indiana State, 44-19, under the lights of Ross-Ade in the 2026 season opener.",
-      "date": "2026-09-05T01:09:00+00:00"
-    },
     {
       "id": "ea0337c1510b",
       "source": "Purdue Athletics MBB",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/08/31/head-coach-barry-odom-weekly-press-conference-vs-indiana-state-purdue-football",
       "summary": "",
       "date": "2026-08-31T16:11:22+00:00"
+    },
+    {
+      "id": "209f86efe200",
+      "source": "Purdue Athletics MBB",
+      "title": "DC Kevin Kane Weekly Press Conference vs Indiana State | Purdue Football",
+      "url": "https://purduesports.com/news/2026/08/31/dc-kevin-kane-weekly-press-conference-vs-indiana-state-purdue-football",
+      "summary": "",
+      "date": "2026-08-31T16:11:19+00:00"
     }
   ]
 }
