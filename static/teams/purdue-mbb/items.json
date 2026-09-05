@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-09-05T12:16:47.902023+00:00",
+  "updated": "2026-09-05T15:23:45.211243+00:00",
   "count": 20,
   "items": [
     {
@@ -84,14 +84,6 @@
       "date": "2026-09-02T17:36:14+00:00"
     },
     {
-      "id": "d2cc3727a745",
-      "source": "Purdue Athletics MBB",
-      "title": "Game 1 Prep: Purdue Opens 2026 Friday Night Against Indiana State",
-      "url": "https://purduesports.com/news/2026/09/2/game-1-purdue-opens-2026-friday-night-against-indiana-state",
-      "summary": "",
-      "date": "2026-09-02T17:01:00+00:00"
-    },
-    {
       "id": "bcf2503e627e",
       "source": "Purdue Athletics MBB",
       "title": "Mackey Match Win over Ranked Texas A&M Photo Gallery",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/08/31/the-bell-is-back-purdue-football",
       "summary": "",
       "date": "2026-08-31T23:00:05+00:00"
+    },
+    {
+      "id": "2d253ed0b26d",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights: Purdue 3, Southern Indiana 0",
+      "url": "https://purduesports.com/news/2026/08/31/highlights-purdue-3-southern-indiana-0",
+      "summary": "",
+      "date": "2026-08-31T16:49:07+00:00"
     }
   ]
 }
