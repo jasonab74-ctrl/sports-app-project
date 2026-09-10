@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-09-10T09:33:43.295838+00:00",
+  "updated": "2026-09-10T14:00:17.651404+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "4470eade87d1",
+      "source": "Purdue Athletics MBB",
+      "title": "#14 Purdue Serves Up 3-0 Sweep",
+      "url": "https://purduesports.com/news/2026/09/10/14-purdue-serves-up-sweep",
+      "summary": "",
+      "date": "2026-09-10T00:18:00+00:00"
+    },
+    {
+      "id": "77a230de0e89",
+      "source": "Purdue Athletics MBB",
+      "title": "Boiler Room: Purdue Football All-Access Ep. 3",
+      "url": "https://purduesports.com/news/2026/09/9/boiler-room-purdue-football-all-access-ep-3",
+      "summary": "",
+      "date": "2026-09-09T23:00:00+00:00"
+    },
     {
       "id": "8962c24a844f",
       "source": "CBS Sports College Basketball",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/09/1/keyshawn-burgos-media-session-purdue-football",
       "summary": "",
       "date": "2026-09-01T17:02:27+00:00"
-    },
-    {
-      "id": "e747def34e1e",
-      "source": "Purdue Athletics MBB",
-      "title": "Jude McCoskey Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/09/1/jude-mccoskey-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-09-01T16:57:07+00:00"
-    },
-    {
-      "id": "013313b1d9c5",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermaker Classic Day 1 Photo Gallery",
-      "url": "https://purduesports.com/news/2026/09/1/boilermaker-classic-day-1-photo-gallery",
-      "summary": "",
-      "date": "2026-09-01T04:02:51+00:00"
     }
   ]
 }
