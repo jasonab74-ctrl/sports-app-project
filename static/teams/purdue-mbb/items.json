@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-09-11T05:32:29.039416+00:00",
+  "updated": "2026-09-11T10:26:34.057194+00:00",
   "count": 20,
   "items": [
     {
@@ -10,14 +10,6 @@
       "url": "https://purduesports.com/news/2026/09/10/highlights-14-purdue-3-iu-indy-0",
       "summary": "",
       "date": "2026-09-10T12:50:41+00:00"
-    },
-    {
-      "id": "e57e409c6f03",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Unveil 2026-27 Non-Conference Slate",
-      "url": "https://purduesports.com/news/2026/09/10/boilermakers-unveil-2026-27-non-conference-slate",
-      "summary": "",
-      "date": "2026-09-10T11:33:00+00:00"
     },
     {
       "id": "4470eade87d1",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/09/1/boilermaker-classic-day-2-photo-gallery",
       "summary": "",
       "date": "2026-09-01T21:29:14+00:00"
+    },
+    {
+      "id": "4a5a38fec788",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Moves Up Leaderboard, Places 4th in Season Opener",
+      "url": "https://purduesports.com/news/2026/09/1/purdue-moves-up-leaderboard-places-4th-in-season-opener",
+      "summary": "",
+      "date": "2026-09-01T20:40:33+00:00"
     }
   ]
 }
