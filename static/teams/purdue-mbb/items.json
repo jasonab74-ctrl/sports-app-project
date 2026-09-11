@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-09-11T18:05:56.207936+00:00",
+  "updated": "2026-09-11T21:06:41.560607+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "8dc017969027",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Face Loaded Field at The Inverness Club",
+      "url": "https://purduesports.com/news/2026/09/11/boilermakers-face-loaded-field-at-the-inverness-club",
+      "summary": "",
+      "date": "2026-09-11T14:30:05+00:00"
+    },
+    {
+      "id": "eebff4e57e05",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Celebrates the 1966 Rose Bowl Team",
+      "url": "https://purduesports.com/news/2026/09/11/purdue-celebrates-the-1966-rose-bowl-team",
+      "summary": "",
+      "date": "2026-09-11T13:16:24+00:00"
+    },
     {
       "id": "761818fb8f36",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/09/2/dave-shondell-becomes-purdues-winningest-head-coach-volleyball",
       "summary": "",
       "date": "2026-09-02T04:36:04+00:00"
-    },
-    {
-      "id": "97b675e89ee3",
-      "source": "Purdue Athletics MBB",
-      "title": "Shondell Dubbed Purdue's Winningest Head Coach of All-Time",
-      "url": "https://purduesports.com/news/2026/09/2/shondell-dubbed-winningest-head-coach-of-all-time",
-      "summary": "",
-      "date": "2026-09-02T03:26:14+00:00"
-    },
-    {
-      "id": "bddee07ccc72",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermaker Classic Day 2 Photo Gallery",
-      "url": "https://purduesports.com/news/2026/09/1/boilermaker-classic-day-2-photo-gallery",
-      "summary": "",
-      "date": "2026-09-01T21:29:14+00:00"
     }
   ]
 }
