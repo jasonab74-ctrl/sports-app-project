@@ -1,8 +1,48 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-09-13T02:41:19.595551+00:00",
+  "updated": "2026-09-13T07:54:52.303245+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "90344857b01b",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Barry Odom Postgame Press Conference vs. Wake Forest | Purdue Football",
+      "url": "https://purduesports.com/news/2026/09/12/coach-barry-odom-postgame-press-conference-vs-wake-forest-purdue-football",
+      "summary": "",
+      "date": "2026-09-12T20:52:08+00:00"
+    },
+    {
+      "id": "60e06b7cec32",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Drops Double Overtime Heartbreaker",
+      "url": "https://purduesports.com/news/2026/09/12/2ot-heartbreaker-dooms-purdue-against-wake-forest",
+      "summary": "",
+      "date": "2026-09-12T20:49:32+00:00"
+    },
+    {
+      "id": "2ed7f1969d3e",
+      "source": "Purdue Athletics MBB",
+      "title": "Players Postgame Press Conference vs. Wake Forest | Purdue Football",
+      "url": "https://purduesports.com/news/2026/09/12/players-postgame-press-conference-vs-wake-forest-purdue-football",
+      "summary": "",
+      "date": "2026-09-12T20:47:53+00:00"
+    },
+    {
+      "id": "b545f8b96a4f",
+      "source": "Purdue Athletics MBB",
+      "title": "Full Game Highlights | Purdue Football",
+      "url": "https://purduesports.com/news/2026/09/12/full-game-highlights-purdue-football",
+      "summary": "",
+      "date": "2026-09-12T20:11:59+00:00"
+    },
+    {
+      "id": "c447277a8ecb",
+      "source": "Purdue Athletics MBB",
+      "title": "Condensed Game Highlights | Purdue Football",
+      "url": "https://purduesports.com/news/2026/09/12/condensed-game-highlights-purdue-football",
+      "summary": "",
+      "date": "2026-09-12T19:51:00+00:00"
+    },
     {
       "id": "fe4929be09eb",
       "source": "Purdue Athletics MBB",
@@ -68,14 +108,6 @@
       "date": "2026-09-09T20:21:10+00:00"
     },
     {
-      "id": "ebba0ecd9af1",
-      "source": "Purdue Athletics MBB",
-      "title": "Game 2 Prep: Purdue Hosts Wake Forest in Ross-Ade Stadium on Saturday",
-      "url": "https://purduesports.com/news/2026/09/9/game-2-prep-purdue-hosts-wake-forest-in-ross-ade-stadium-on-saturday",
-      "summary": "",
-      "date": "2026-09-09T16:01:00+00:00"
-    },
-    {
       "id": "df09066bc975",
       "source": "Purdue Athletics MBB",
       "title": "Players' Postgame Press Conference vs. Indiana State | Purdue Football",
@@ -130,38 +162,6 @@
       "url": "https://purduesports.com/news/2026/09/3/boilers-gut-out-3-2-win-in-mackey",
       "summary": "",
       "date": "2026-09-03T04:38:00+00:00"
-    },
-    {
-      "id": "a43d18c74b85",
-      "source": "Purdue Athletics MBB",
-      "title": "Boiler Room: Purdue Football All-Access Ep. 2",
-      "url": "https://purduesports.com/news/2026/09/2/boiler-room-purdue-football-all-access-ep-2",
-      "summary": "",
-      "date": "2026-09-02T23:00:00+00:00"
-    },
-    {
-      "id": "c5defd49e32c",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights: #14 Purdue 3, #12 Texas A&M 0",
-      "url": "https://purduesports.com/news/2026/09/2/highlights-14-purdue-3-12-texas-am-0",
-      "summary": "",
-      "date": "2026-09-02T17:41:55+00:00"
-    },
-    {
-      "id": "a2a4d50888c6",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue to Play at Home for 3 of 4 Fall Exhibition Games",
-      "url": "https://purduesports.com/news/2026/09/2/purdue-to-play-at-home-for-3-of-4-fall-exhibition-games",
-      "summary": "",
-      "date": "2026-09-02T17:36:14+00:00"
-    },
-    {
-      "id": "bcf2503e627e",
-      "source": "Purdue Athletics MBB",
-      "title": "Mackey Match Win over Ranked Texas A&M Photo Gallery",
-      "url": "https://purduesports.com/news/2026/09/2/mackey-match-win-over-ranked-texas-aandm-photo-gallery",
-      "summary": "",
-      "date": "2026-09-02T04:50:35+00:00"
     }
   ]
 }
