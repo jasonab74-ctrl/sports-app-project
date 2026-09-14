@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-09-14T05:14:06.712140+00:00",
+  "updated": "2026-09-14T10:51:08.029452+00:00",
   "count": 20,
   "items": [
     {
@@ -50,14 +50,6 @@
       "url": "https://purduesports.com/news/2026/09/11/game-trailer-vs-wake-forest-purdue-football",
       "summary": "",
       "date": "2026-09-11T22:00:29+00:00"
-    },
-    {
-      "id": "8dc017969027",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Face Loaded Field at The Inverness Club",
-      "url": "https://purduesports.com/news/2026/09/11/boilermakers-face-loaded-field-at-the-inverness-club",
-      "summary": "",
-      "date": "2026-09-11T14:30:05+00:00"
     },
     {
       "id": "eebff4e57e05",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/09/3/boilers-gut-out-3-2-win-in-mackey",
       "summary": "",
       "date": "2026-09-03T04:38:00+00:00"
+    },
+    {
+      "id": "a43d18c74b85",
+      "source": "Purdue Athletics MBB",
+      "title": "Boiler Room: Purdue Football All-Access Ep. 2",
+      "url": "https://purduesports.com/news/2026/09/2/boiler-room-purdue-football-all-access-ep-2",
+      "summary": "",
+      "date": "2026-09-02T23:00:00+00:00"
     }
   ]
 }
