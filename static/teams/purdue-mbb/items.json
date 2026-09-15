@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-09-15T17:52:47.908058+00:00",
+  "updated": "2026-09-15T20:45:40.551514+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "0056bff586fd",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Announces 2027 Conference Slate",
+      "url": "https://purduesports.com/news/2026/09/15/purdue-announces-2027-conference-slate",
+      "summary": "",
+      "date": "2026-09-15T17:59:37+00:00"
+    },
     {
       "id": "89e070b15582",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/09/3/mackey-match-win-vs-georgia-photo-gallery",
       "summary": "",
       "date": "2026-09-03T04:59:41+00:00"
-    },
-    {
-      "id": "8b676c2ce786",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilers Gut-Out the 3-2 Win in Mackey",
-      "url": "https://purduesports.com/news/2026/09/3/boilers-gut-out-3-2-win-in-mackey",
-      "summary": "",
-      "date": "2026-09-03T04:38:00+00:00"
     }
   ]
 }
