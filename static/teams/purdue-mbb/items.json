@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-09-17T07:02:08.994120+00:00",
+  "updated": "2026-09-17T12:40:09.147954+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "f9f827688d7a",
-      "source": "Purdue Athletics MBB",
-      "title": "Game 3 Prep: Purdue Heads West for Late Night Showdown at UCLA",
-      "url": "https://purduesports.com/news/2026/09/16/game-3-prep-purdue-heads-west-for-late-night-showdown-at-ucla",
-      "summary": "",
-      "date": "2026-09-16T13:01:00+00:00"
-    },
     {
       "id": "0056bff586fd",
       "source": "Purdue Athletics MBB",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/09/3/highlights-14-purdue-3-georgia-2",
       "summary": "",
       "date": "2026-09-03T11:39:57+00:00"
+    },
+    {
+      "id": "12e869580b32",
+      "source": "Purdue Athletics MBB",
+      "title": "Mackey Match win vs Georgia Photo Gallery",
+      "url": "https://purduesports.com/news/2026/09/3/mackey-match-win-vs-georgia-photo-gallery",
+      "summary": "",
+      "date": "2026-09-03T04:59:41+00:00"
     }
   ]
 }
