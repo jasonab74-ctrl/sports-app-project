@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-09-20T17:13:40.451348+00:00",
+  "updated": "2026-09-20T19:35:53.412148+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "f3e2aab08f91",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Drops Big Ten Opener at UCLA",
-      "url": "https://purduesports.com/news/2026/09/20/purdue-drops-big-ten-opener-at-ucla",
-      "summary": "",
-      "date": "2026-09-20T07:06:40+00:00"
-    },
     {
       "id": "d78ce297a638",
       "source": "Purdue Athletics MBB",
@@ -34,6 +26,14 @@
       "url": "https://purduesports.com/news/2026/09/18/brown-and-kim-go-low-purdue-sits-in-2nd-after-round-1",
       "summary": "",
       "date": "2026-09-18T22:36:50+00:00"
+    },
+    {
+      "id": "f9f827688d7a",
+      "source": "Purdue Athletics MBB",
+      "title": "Game 3 Prep: Purdue Heads West for Late Night Showdown at UCLA",
+      "url": "https://purduesports.com/news/2026/09/16/game-3-prep-purdue-heads-west-for-late-night-showdown-at-ucla",
+      "summary": "",
+      "date": "2026-09-16T13:01:00+00:00"
     },
     {
       "id": "0056bff586fd",
