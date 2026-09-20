@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-09-20T13:52:16.821415+00:00",
+  "updated": "2026-09-20T17:13:40.451348+00:00",
   "count": 20,
   "items": [
     {
@@ -34,14 +34,6 @@
       "url": "https://purduesports.com/news/2026/09/18/brown-and-kim-go-low-purdue-sits-in-2nd-after-round-1",
       "summary": "",
       "date": "2026-09-18T22:36:50+00:00"
-    },
-    {
-      "id": "f9f827688d7a",
-      "source": "Purdue Athletics MBB",
-      "title": "Game 3 Prep: Purdue Heads West for Late Night Showdown at UCLA",
-      "url": "https://purduesports.com/news/2026/09/16/game-3-prep-purdue-heads-west-for-late-night-showdown-at-ucla",
-      "summary": "",
-      "date": "2026-09-16T13:01:00+00:00"
     },
     {
       "id": "0056bff586fd",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/09/5/players-postgame-press-conference-vs-indiana-state-purdue-football",
       "summary": "",
       "date": "2026-09-05T03:10:01+00:00"
+    },
+    {
+      "id": "b98e17b8d871",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Barry Odom Postgame Press Conference vs. Indiana State | Purdue Football",
+      "url": "https://purduesports.com/news/2026/09/5/coach-barry-odom-postgame-press-conference-vs-indiana-state-purdue-football",
+      "summary": "",
+      "date": "2026-09-05T03:07:09+00:00"
     }
   ]
 }
