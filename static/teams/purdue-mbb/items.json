@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-09-21T20:44:12.153361+00:00",
+  "updated": "2026-09-21T23:45:57.257014+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "a898b282b71b",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights:  #11 Purdue 3, UCF 0",
+      "url": "https://purduesports.com/news/2026/09/21/highlights-11-purdue-3-ucf-0",
+      "summary": "",
+      "date": "2026-09-21T13:56:37+00:00"
+    },
+    {
+      "id": "22816a5fbeca",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights:  #11 Purdue 3, UAlbany 0",
+      "url": "https://purduesports.com/news/2026/09/21/highlights-11-purdue-3-ualbany-0",
+      "summary": "",
+      "date": "2026-09-21T13:55:12+00:00"
+    },
     {
       "id": "7ceda1db7901",
       "source": "Purdue Athletics MBB",
@@ -34,14 +50,6 @@
       "url": "https://purduesports.com/news/2026/09/19/purdue-completes-2026-opener",
       "summary": "",
       "date": "2026-09-19T14:32:40+00:00"
-    },
-    {
-      "id": "9647aab74eda",
-      "source": "Purdue Athletics MBB",
-      "title": "Brown and Kim Go Low, Purdue Sits in 2nd After Round 1",
-      "url": "https://purduesports.com/news/2026/09/18/brown-and-kim-go-low-purdue-sits-in-2nd-after-round-1",
-      "summary": "",
-      "date": "2026-09-18T22:36:50+00:00"
     },
     {
       "id": "0056bff586fd",
@@ -154,14 +162,6 @@
       "url": "https://www.cbssports.com/college-basketball/news/trey-kaufman-renn-purdue-best-fits-destinations-tro-lsu-kentucky-kansas-arizona/",
       "summary": "Here are the destinations that make the most sense for the former Purdue star if he is eligible to return to college",
       "date": "2026-09-09T20:21:10+00:00"
-    },
-    {
-      "id": "df09066bc975",
-      "source": "Purdue Athletics MBB",
-      "title": "Players' Postgame Press Conference vs. Indiana State | Purdue Football",
-      "url": "https://purduesports.com/news/2026/09/5/players-postgame-press-conference-vs-indiana-state-purdue-football",
-      "summary": "",
-      "date": "2026-09-05T03:10:01+00:00"
     }
   ]
 }
