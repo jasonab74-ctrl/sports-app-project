@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-09-23T12:51:13.331581+00:00",
+  "updated": "2026-09-23T17:38:42.705838+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "c6de455bdb30",
+      "source": "Purdue Athletics MBB",
+      "title": "Game 4 Prep: Purdue Hosts #3 Notre Dame in the Battle of the Shillelagh Trophy",
+      "url": "https://purduesports.com/news/2026/09/23/game-4-prep-purdue-hosts-3-notre-dame-in-the-battle-of-the-shillelagh-trophy",
+      "summary": "",
+      "date": "2026-09-23T12:01:00+00:00"
+    },
     {
       "id": "a898b282b71b",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/09/9/boiler-room-purdue-football-all-access-ep-3",
       "summary": "",
       "date": "2026-09-09T23:00:00+00:00"
-    },
-    {
-      "id": "8962c24a844f",
-      "source": "CBS Sports College Basketball",
-      "title": "Trey Kaufman-Renn best fits: Five destinations where Purdue star could land if granted sixth year",
-      "url": "https://www.cbssports.com/college-basketball/news/trey-kaufman-renn-purdue-best-fits-destinations-tro-lsu-kentucky-kansas-arizona/",
-      "summary": "Here are the destinations that make the most sense for the former Purdue star if he is eligible to return to college",
-      "date": "2026-09-09T20:21:10+00:00"
     }
   ]
 }
