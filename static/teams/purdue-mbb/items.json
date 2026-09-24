@@ -1,24 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-09-23T23:26:17.684213+00:00",
+  "updated": "2026-09-24T01:34:43.810363+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "2752a0505de7",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Men’s Basketball Day One",
-      "url": "https://purduesports.com/news/2026/09/23/purdue-mens-basketball-day-one",
-      "summary": "",
-      "date": "2026-09-23T22:29:05+00:00"
-    },
-    {
-      "id": "928802fd3583",
-      "source": "Purdue Athletics MBB",
-      "title": "Big Ten Play to Open in West Lafayette",
-      "url": "https://purduesports.com/news/2026/09/23/big-ten-play-to-open-in-west-lafayette",
-      "summary": "",
-      "date": "2026-09-23T21:51:00+00:00"
-    },
     {
       "id": "c6de455bdb30",
       "source": "Purdue Athletics MBB",
@@ -26,14 +10,6 @@
       "url": "https://purduesports.com/news/2026/09/23/game-4-prep-purdue-hosts-3-notre-dame-in-the-battle-of-the-shillelagh-trophy",
       "summary": "",
       "date": "2026-09-23T12:01:00+00:00"
-    },
-    {
-      "id": "291b3b835cc9",
-      "source": "Purdue Athletics MBB",
-      "title": "Quartet of Juniors Reps Purdue on Big Ten Preseason Watch Lists",
-      "url": "https://purduesports.com/news/2026/09/22/quartet-of-juniors-reps-purdue-on-big-ten-preseason-watch-lists",
-      "summary": "",
-      "date": "2026-09-22T17:05:00+00:00"
     },
     {
       "id": "a898b282b71b",
@@ -162,6 +138,30 @@
       "url": "https://purduesports.com/news/2026/09/10/highlights-14-purdue-3-iu-indy-0",
       "summary": "",
       "date": "2026-09-10T12:50:41+00:00"
+    },
+    {
+      "id": "e57e409c6f03",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Unveil 2026-27 Non-Conference Slate",
+      "url": "https://purduesports.com/news/2026/09/10/boilermakers-unveil-2026-27-non-conference-slate",
+      "summary": "",
+      "date": "2026-09-10T11:33:00+00:00"
+    },
+    {
+      "id": "4470eade87d1",
+      "source": "Purdue Athletics MBB",
+      "title": "#14 Purdue Serves Up 3-0 Sweep",
+      "url": "https://purduesports.com/news/2026/09/10/14-purdue-serves-up-sweep",
+      "summary": "",
+      "date": "2026-09-10T00:18:00+00:00"
+    },
+    {
+      "id": "77a230de0e89",
+      "source": "Purdue Athletics MBB",
+      "title": "Boiler Room: Purdue Football All-Access Ep. 3",
+      "url": "https://purduesports.com/news/2026/09/9/boiler-room-purdue-football-all-access-ep-3",
+      "summary": "",
+      "date": "2026-09-09T23:00:00+00:00"
     }
   ]
 }
