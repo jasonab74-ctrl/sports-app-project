@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-09-24T21:02:13.905539+00:00",
+  "updated": "2026-09-24T23:56:06.830287+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "ea48e53328a6",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Heads to Chicago for Sean Earl Loyola Lakefront Invitational",
+      "url": "https://purduesports.com/news/2026/09/24/purdue-heads-to-chicago-for-sean-earl-loyola-lakefront-invitational",
+      "summary": "",
+      "date": "2026-09-24T19:35:22+00:00"
+    },
+    {
+      "id": "50b320861b8f",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue MBB First Day of Practice",
+      "url": "https://purduesports.com/news/2026/09/24/purdue-mbb-first-day-of-practice",
+      "summary": "",
+      "date": "2026-09-24T17:12:10+00:00"
+    },
     {
       "id": "2752a0505de7",
       "source": "Purdue Athletics MBB",
@@ -18,6 +34,14 @@
       "url": "https://purduesports.com/news/2026/09/23/big-ten-play-to-open-in-west-lafayette",
       "summary": "",
       "date": "2026-09-23T21:51:00+00:00"
+    },
+    {
+      "id": "10fba43f5466",
+      "source": "Purdue Athletics MBB",
+      "title": "BoilerBall’s C.J. Cox, VB’s Addy Tindall, Spider-Man is a Boilermaker?! | For Pete’s Sake S2, E4",
+      "url": "https://purduesports.com/news/2026/09/23/boilerballs-cj-cox-vbs-addy-tindall-spider-man-is-a-boilermaker-for-petes-sake-s2-e4",
+      "summary": "",
+      "date": "2026-09-23T19:00:10+00:00"
     },
     {
       "id": "c6de455bdb30",
@@ -138,30 +162,6 @@
       "url": "https://purduesports.com/news/2026/09/12/condensed-game-highlights-purdue-football",
       "summary": "",
       "date": "2026-09-12T19:51:00+00:00"
-    },
-    {
-      "id": "fe4929be09eb",
-      "source": "Purdue Athletics MBB",
-      "title": "Game Trailer vs. Wake Forest | Purdue Football",
-      "url": "https://purduesports.com/news/2026/09/11/game-trailer-vs-wake-forest-purdue-football",
-      "summary": "",
-      "date": "2026-09-11T22:00:29+00:00"
-    },
-    {
-      "id": "eebff4e57e05",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Celebrates the 1966 Rose Bowl Team",
-      "url": "https://purduesports.com/news/2026/09/11/purdue-celebrates-the-1966-rose-bowl-team",
-      "summary": "",
-      "date": "2026-09-11T13:16:24+00:00"
-    },
-    {
-      "id": "761818fb8f36",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights: #14 Purdue 3, IU Indy 0",
-      "url": "https://purduesports.com/news/2026/09/10/highlights-14-purdue-3-iu-indy-0",
-      "summary": "",
-      "date": "2026-09-10T12:50:41+00:00"
     }
   ]
 }
