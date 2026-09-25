@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-09-25T19:05:59.300900+00:00",
+  "updated": "2026-09-25T22:35:11.445423+00:00",
   "count": 20,
   "items": [
     {
@@ -10,14 +10,6 @@
       "url": "https://purduesports.com/news/2026/09/25/the-streak-continues-purdue-sweeps-maryland",
       "summary": "",
       "date": "2026-09-25T02:00:00+00:00"
-    },
-    {
-      "id": "ea48e53328a6",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Heads to Chicago for Sean Earl Loyola Lakefront Invitational",
-      "url": "https://purduesports.com/news/2026/09/24/purdue-heads-to-chicago-for-sean-earl-loyola-lakefront-invitational",
-      "summary": "",
-      "date": "2026-09-24T19:35:22+00:00"
     },
     {
       "id": "50b320861b8f",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/09/12/condensed-game-highlights-purdue-football",
       "summary": "",
       "date": "2026-09-12T19:51:00+00:00"
+    },
+    {
+      "id": "fe4929be09eb",
+      "source": "Purdue Athletics MBB",
+      "title": "Game Trailer vs. Wake Forest | Purdue Football",
+      "url": "https://purduesports.com/news/2026/09/11/game-trailer-vs-wake-forest-purdue-football",
+      "summary": "",
+      "date": "2026-09-11T22:00:29+00:00"
     }
   ]
 }
