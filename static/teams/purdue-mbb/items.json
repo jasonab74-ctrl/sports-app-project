@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-09-28T01:01:22.646318+00:00",
+  "updated": "2026-09-28T07:13:13.985861+00:00",
   "count": 20,
   "items": [
     {
@@ -26,14 +26,6 @@
       "url": "https://purduesports.com/news/2026/09/26/purdue-falls-to-3-notre-dame",
       "summary": "",
       "date": "2026-09-26T21:06:07+00:00"
-    },
-    {
-      "id": "d2519da56efc",
-      "source": "Purdue Athletics MBB",
-      "title": "Top-10 Showdown Set for Mackey",
-      "url": "https://purduesports.com/news/2026/09/26/top-10-showdown-set-for-mackey",
-      "summary": "",
-      "date": "2026-09-26T19:00:00+00:00"
     },
     {
       "id": "389be4510d6f",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/09/12/players-postgame-press-conference-vs-wake-forest-purdue-football",
       "summary": "",
       "date": "2026-09-12T20:47:53+00:00"
+    },
+    {
+      "id": "b545f8b96a4f",
+      "source": "Purdue Athletics MBB",
+      "title": "Full Game Highlights | Purdue Football",
+      "url": "https://purduesports.com/news/2026/09/12/full-game-highlights-purdue-football",
+      "summary": "",
+      "date": "2026-09-12T20:11:59+00:00"
     }
   ]
 }
