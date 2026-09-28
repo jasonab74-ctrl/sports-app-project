@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-09-27T22:27:09.685821+00:00",
+  "updated": "2026-09-28T01:01:22.646318+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "5d935fd8c55a",
+      "source": "Purdue Athletics MBB",
+      "title": "#10 Purdue Falls to #6 Wisconsin",
+      "url": "https://purduesports.com/news/2026/09/27/10-purdue-falls-to-6-wisconsin",
+      "summary": "",
+      "date": "2026-09-27T22:30:00+00:00"
+    },
     {
       "id": "18a71d28a93b",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/09/12/players-postgame-press-conference-vs-wake-forest-purdue-football",
       "summary": "",
       "date": "2026-09-12T20:47:53+00:00"
-    },
-    {
-      "id": "b545f8b96a4f",
-      "source": "Purdue Athletics MBB",
-      "title": "Full Game Highlights | Purdue Football",
-      "url": "https://purduesports.com/news/2026/09/12/full-game-highlights-purdue-football",
-      "summary": "",
-      "date": "2026-09-12T20:11:59+00:00"
     }
   ]
 }
