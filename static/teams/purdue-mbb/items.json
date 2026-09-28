@@ -1,8 +1,56 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-09-28T15:42:22.601457+00:00",
+  "updated": "2026-09-28T21:30:53.591358+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "32b1de6546f8",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Volleyball Postgame Press Conference vs. #6 Wisconsin | Purdue Volleyball",
+      "url": "https://purduesports.com/news/2026/09/28/purdue-volleyball-postgame-press-conference-vs-6-wisconsin-purdue-volleyball",
+      "summary": "",
+      "date": "2026-09-28T02:33:00+00:00"
+    },
+    {
+      "id": "5d935fd8c55a",
+      "source": "Purdue Athletics MBB",
+      "title": "#10 Purdue Falls to #6 Wisconsin",
+      "url": "https://purduesports.com/news/2026/09/27/10-purdue-falls-to-6-wisconsin",
+      "summary": "",
+      "date": "2026-09-27T22:30:00+00:00"
+    },
+    {
+      "id": "18a71d28a93b",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Wins Fighting Irish Classic by 22 Shots",
+      "url": "https://purduesports.com/news/2026/09/27/purdue-wins-fighting-irish-classic-by-22-shots",
+      "summary": "",
+      "date": "2026-09-27T20:55:03+00:00"
+    },
+    {
+      "id": "b82d127aa211",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights: Purdue 3, Minnesota 0",
+      "url": "https://purduesports.com/news/2026/09/27/highlights-purdue-3-minnesota-0",
+      "summary": "",
+      "date": "2026-09-27T19:41:32+00:00"
+    },
+    {
+      "id": "b145a934a4ac",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Barry Odom Postgame Press Conference vs. Notre Dame | Purdue Football",
+      "url": "https://purduesports.com/news/2026/09/26/coach-barry-odom-postgame-press-conference-vs-notre-dame-purdue-football",
+      "summary": "",
+      "date": "2026-09-26T22:21:13+00:00"
+    },
+    {
+      "id": "60ca3a539a89",
+      "source": "Purdue Athletics MBB",
+      "title": "Players' Postgame Press Conference vs. Notre Dame | Purdue Football",
+      "url": "https://purduesports.com/news/2026/09/26/players-postgame-press-conference-vs-notre-dame-purdue-football",
+      "summary": "",
+      "date": "2026-09-26T22:19:49+00:00"
+    },
     {
       "id": "cf2c5255be01",
       "source": "Purdue Athletics MBB",
@@ -12,12 +60,52 @@
       "date": "2026-09-26T21:06:07+00:00"
     },
     {
-      "id": "d2519da56efc",
+      "id": "3eaf2cf824cc",
       "source": "Purdue Athletics MBB",
-      "title": "Top-10 Showdown Set for Mackey",
-      "url": "https://purduesports.com/news/2026/09/26/top-10-showdown-set-for-mackey",
+      "title": "Coach Matt Painter Media Session | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/09/25/coach-matt-painter-media-session-purdue-mens-basketball-2",
       "summary": "",
-      "date": "2026-09-26T19:00:00+00:00"
+      "date": "2026-09-25T21:44:30+00:00"
+    },
+    {
+      "id": "65e539590a77",
+      "source": "Purdue Athletics MBB",
+      "title": "Omer Mayer Media Session | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/09/25/omer-mayer-media-session-purdue-mens-basketball-2",
+      "summary": "",
+      "date": "2026-09-25T21:44:11+00:00"
+    },
+    {
+      "id": "a496eb0a6dee",
+      "source": "Purdue Athletics MBB",
+      "title": "Practice Footage, Week One | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/09/25/practice-footage-week-one-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-09-25T21:42:27+00:00"
+    },
+    {
+      "id": "144bc372ae92",
+      "source": "Purdue Athletics MBB",
+      "title": "Antione West Media Session | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/09/25/antione-west-media-session-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-09-25T21:27:12+00:00"
+    },
+    {
+      "id": "efccd256969a",
+      "source": "Purdue Athletics MBB",
+      "title": "Get to Know Purdue Women's Basketball: Aysia Proctor & Kyndall Hunter",
+      "url": "https://purduesports.com/news/2026/09/25/get-to-know-purdue-womens-basketball-aysia-proctor-kyndall-hunter",
+      "summary": "",
+      "date": "2026-09-25T16:53:16+00:00"
+    },
+    {
+      "id": "7134b3b129ea",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights:  #10 Purdue 3, Maryland 0",
+      "url": "https://purduesports.com/news/2026/09/25/highlights-10-purdue-3-maryland-0",
+      "summary": "",
+      "date": "2026-09-25T14:04:06+00:00"
     },
     {
       "id": "389be4510d6f",
@@ -26,6 +114,14 @@
       "url": "https://purduesports.com/news/2026/09/25/the-streak-continues-purdue-sweeps-maryland",
       "summary": "",
       "date": "2026-09-25T02:00:00+00:00"
+    },
+    {
+      "id": "4e2725db6686",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights: Purdue 3, Illinois 0",
+      "url": "https://purduesports.com/news/2026/09/25/highlights-purdue-3-illinois-0",
+      "summary": "",
+      "date": "2026-09-25T01:48:15+00:00"
     },
     {
       "id": "50b320861b8f",
@@ -60,108 +156,12 @@
       "date": "2026-09-22T17:05:00+00:00"
     },
     {
-      "id": "a898b282b71b",
+      "id": "234df3d19987",
       "source": "Purdue Athletics MBB",
-      "title": "Highlights:  #11 Purdue 3, UCF 0",
-      "url": "https://purduesports.com/news/2026/09/21/highlights-11-purdue-3-ucf-0",
+      "title": "Practice Highlights - Day One | Purdue Women's Basketball",
+      "url": "https://purduesports.com/news/2026/09/21/practice-highlights-day-one-purdue-womens-basketball",
       "summary": "",
-      "date": "2026-09-21T13:56:37+00:00"
-    },
-    {
-      "id": "22816a5fbeca",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights:  #11 Purdue 3, UAlbany 0",
-      "url": "https://purduesports.com/news/2026/09/21/highlights-11-purdue-3-ualbany-0",
-      "summary": "",
-      "date": "2026-09-21T13:55:12+00:00"
-    },
-    {
-      "id": "7ceda1db7901",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Fires Lowest Final Round, Cracks Top 5 in Stacked Field",
-      "url": "https://purduesports.com/news/2026/09/20/purdue-fires-lowest-final-round-cracks-top-5-in-stacked-field",
-      "summary": "",
-      "date": "2026-09-20T21:44:25+00:00"
-    },
-    {
-      "id": "f3e2aab08f91",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Drops Big Ten Opener at UCLA",
-      "url": "https://purduesports.com/news/2026/09/20/purdue-drops-big-ten-opener-at-ucla",
-      "summary": "",
-      "date": "2026-09-20T07:06:40+00:00"
-    },
-    {
-      "id": "d78ce297a638",
-      "source": "Purdue Athletics MBB",
-      "title": "#11 Purdue Rockets Past UCF",
-      "url": "https://purduesports.com/news/2026/09/19/11-purdue-rockets-past-ucf",
-      "summary": "",
-      "date": "2026-09-19T19:27:04+00:00"
-    },
-    {
-      "id": "40cae16195ac",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Completes 2026 Opener",
-      "url": "https://purduesports.com/news/2026/09/19/purdue-completes-2026-opener",
-      "summary": "",
-      "date": "2026-09-19T14:32:40+00:00"
-    },
-    {
-      "id": "0056bff586fd",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Announces 2027 Conference Slate",
-      "url": "https://purduesports.com/news/2026/09/15/purdue-announces-2027-conference-slate",
-      "summary": "",
-      "date": "2026-09-15T17:59:37+00:00"
-    },
-    {
-      "id": "89e070b15582",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights: Purdue 2, USC 0",
-      "url": "https://purduesports.com/news/2026/09/14/highlights-purdue-2-usc-0",
-      "summary": "",
-      "date": "2026-09-14T19:31:55+00:00"
-    },
-    {
-      "id": "90344857b01b",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Barry Odom Postgame Press Conference vs. Wake Forest | Purdue Football",
-      "url": "https://purduesports.com/news/2026/09/12/coach-barry-odom-postgame-press-conference-vs-wake-forest-purdue-football",
-      "summary": "",
-      "date": "2026-09-12T20:52:08+00:00"
-    },
-    {
-      "id": "60e06b7cec32",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Drops Double Overtime Heartbreaker",
-      "url": "https://purduesports.com/news/2026/09/12/2ot-heartbreaker-dooms-purdue-against-wake-forest",
-      "summary": "Boilermakers come up short despite career days from quarterback Ryan Browne and running back Fame Ijeboi.",
-      "date": "2026-09-12T20:49:32+00:00"
-    },
-    {
-      "id": "2ed7f1969d3e",
-      "source": "Purdue Athletics MBB",
-      "title": "Players Postgame Press Conference vs. Wake Forest | Purdue Football",
-      "url": "https://purduesports.com/news/2026/09/12/players-postgame-press-conference-vs-wake-forest-purdue-football",
-      "summary": "",
-      "date": "2026-09-12T20:47:53+00:00"
-    },
-    {
-      "id": "b545f8b96a4f",
-      "source": "Purdue Athletics MBB",
-      "title": "Full Game Highlights | Purdue Football",
-      "url": "https://purduesports.com/news/2026/09/12/full-game-highlights-purdue-football",
-      "summary": "",
-      "date": "2026-09-12T20:11:59+00:00"
-    },
-    {
-      "id": "c447277a8ecb",
-      "source": "Purdue Athletics MBB",
-      "title": "Condensed Game Highlights | Purdue Football",
-      "url": "https://purduesports.com/news/2026/09/12/condensed-game-highlights-purdue-football",
-      "summary": "",
-      "date": "2026-09-12T19:51:00+00:00"
+      "date": "2026-09-21T19:57:06+00:00"
     }
   ]
 }
