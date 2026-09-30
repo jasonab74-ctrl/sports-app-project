@@ -1,8 +1,32 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-09-30T15:31:27.747753+00:00",
+  "updated": "2026-09-30T20:27:24.534387+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "987c8e6b79ee",
+      "source": "Purdue Athletics MBB",
+      "title": "Cooper McCutchan Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/09/30/cooper-mccutchan-media-session-purdue-football",
+      "summary": "",
+      "date": "2026-09-30T18:16:00+00:00"
+    },
+    {
+      "id": "6b1dadd3ed32",
+      "source": "Purdue Athletics MBB",
+      "title": "Curt Neal Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/09/30/curt-neal-media-session-purdue-football-1",
+      "summary": "",
+      "date": "2026-09-30T18:11:10+00:00"
+    },
+    {
+      "id": "b2aa86c88118",
+      "source": "Purdue Athletics MBB",
+      "title": "Dylan Drennan Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/09/30/dylan-drennan-media-session-purdue-football-1",
+      "summary": "",
+      "date": "2026-09-30T18:10:37+00:00"
+    },
     {
       "id": "f8caa2e5c289",
       "source": "Purdue Athletics MBB",
@@ -138,30 +162,6 @@
       "url": "https://purduesports.com/news/2026/09/25/the-streak-continues-purdue-sweeps-maryland",
       "summary": "",
       "date": "2026-09-25T02:00:00+00:00"
-    },
-    {
-      "id": "4e2725db6686",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights: Purdue 3, Illinois 0",
-      "url": "https://purduesports.com/news/2026/09/25/highlights-purdue-3-illinois-0",
-      "summary": "",
-      "date": "2026-09-25T01:48:15+00:00"
-    },
-    {
-      "id": "50b320861b8f",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue MBB First Day of Practice",
-      "url": "https://purduesports.com/news/2026/09/24/purdue-mbb-first-day-of-practice",
-      "summary": "",
-      "date": "2026-09-24T17:12:10+00:00"
-    },
-    {
-      "id": "2752a0505de7",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Men’s Basketball Day One",
-      "url": "https://purduesports.com/news/2026/09/23/purdue-mens-basketball-day-one",
-      "summary": "",
-      "date": "2026-09-23T22:29:05+00:00"
     }
   ]
 }
