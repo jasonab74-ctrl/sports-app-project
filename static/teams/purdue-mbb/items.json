@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-09-30T08:48:17.043775+00:00",
+  "updated": "2026-09-30T15:31:27.747753+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "f8caa2e5c289",
+      "source": "Purdue Athletics MBB",
+      "title": "Game 5 Prep: Purdue Heads to Illinois with Cannon Trophy on the Line",
+      "url": "https://purduesports.com/news/2026/09/30/game-5-prep-purdue-heads-to-illinois-with-cannon-trophy-on-the-line",
+      "summary": "",
+      "date": "2026-09-30T13:01:00+00:00"
+    },
+    {
+      "id": "4fa6160ef966",
+      "source": "Purdue Athletics MBB",
+      "title": "Big Ten Reveals 2026-27 Wrestling Schedule",
+      "url": "https://purduesports.com/news/2026/09/29/big-ten-reveals-2026-27-wrestling-schedule",
+      "summary": "The Big Ten Conference finalized dates for Purdue's 107th season of wrestling.",
+      "date": "2026-09-29T20:00:00+00:00"
+    },
     {
       "id": "f1a84c5e5ab6",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/09/23/purdue-mens-basketball-day-one",
       "summary": "",
       "date": "2026-09-23T22:29:05+00:00"
-    },
-    {
-      "id": "10fba43f5466",
-      "source": "Purdue Athletics MBB",
-      "title": "BoilerBall’s C.J. Cox, VB’s Addy Tindall, Spider-Man is a Boilermaker?! | For Pete’s Sake S2, E4",
-      "url": "https://purduesports.com/news/2026/09/23/boilerballs-cj-cox-vbs-addy-tindall-spider-man-is-a-boilermaker-for-petes-sake-s2-e4",
-      "summary": "",
-      "date": "2026-09-23T19:00:10+00:00"
-    },
-    {
-      "id": "291b3b835cc9",
-      "source": "Purdue Athletics MBB",
-      "title": "Quartet of Juniors Reps Purdue on Big Ten Preseason Watch Lists",
-      "url": "https://purduesports.com/news/2026/09/22/quartet-of-juniors-reps-purdue-on-big-ten-preseason-watch-lists",
-      "summary": "",
-      "date": "2026-09-22T17:05:00+00:00"
     }
   ]
 }
