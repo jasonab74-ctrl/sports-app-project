@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-01T13:40:03.319594+00:00",
+  "updated": "2026-10-01T19:11:56.619137+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "3102c78ec790",
+      "source": "Purdue Athletics MBB",
+      "title": "#10 Purdue Takes on the Pacific Northwest",
+      "url": "https://purduesports.com/news/2026/10/1/10-purdue-takes-on-the-pacific-northwest",
+      "summary": "",
+      "date": "2026-10-01T17:16:00+00:00"
+    },
+    {
+      "id": "50b1ed795394",
+      "source": "Purdue Athletics MBB",
+      "title": "Ersland Announces Staff Updates, Hiring of Collin Purinton",
+      "url": "https://purduesports.com/news/2026/10/1/ersland-announces-staff-updates-hiring-of-collin-purinton",
+      "summary": "Head coach Tony Ersland unveils an updated Purdue staff for the 2026-27 wrestling season.",
+      "date": "2026-10-01T13:00:00+00:00"
+    },
     {
       "id": "987c8e6b79ee",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/09/25/get-to-know-purdue-womens-basketball-aysia-proctor-kyndall-hunter",
       "summary": "",
       "date": "2026-09-25T16:53:16+00:00"
-    },
-    {
-      "id": "7134b3b129ea",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights:  #10 Purdue 3, Maryland 0",
-      "url": "https://purduesports.com/news/2026/09/25/highlights-10-purdue-3-maryland-0",
-      "summary": "",
-      "date": "2026-09-25T14:04:06+00:00"
-    },
-    {
-      "id": "389be4510d6f",
-      "source": "Purdue Athletics MBB",
-      "title": "The Streak Continues: Purdue Sweeps Maryland",
-      "url": "https://purduesports.com/news/2026/09/25/the-streak-continues-purdue-sweeps-maryland",
-      "summary": "",
-      "date": "2026-09-25T02:00:00+00:00"
     }
   ]
 }
