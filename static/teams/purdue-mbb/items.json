@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-02T02:23:21.527416+00:00",
+  "updated": "2026-10-02T08:45:56.890706+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "faf3ea8516ea",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Open with Big Ten Dual at Illinois",
+      "url": "https://purduesports.com/news/2026/10/1/boilermakers-open-with-big-ten-dual-at-illinois",
+      "summary": "",
+      "date": "2026-10-01T18:59:00+00:00"
+    },
     {
       "id": "3102c78ec790",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/09/25/antione-west-media-session-purdue-mens-basketball",
       "summary": "",
       "date": "2026-09-25T21:27:12+00:00"
-    },
-    {
-      "id": "efccd256969a",
-      "source": "Purdue Athletics MBB",
-      "title": "Get to Know Purdue Women's Basketball: Aysia Proctor & Kyndall Hunter",
-      "url": "https://purduesports.com/news/2026/09/25/get-to-know-purdue-womens-basketball-aysia-proctor-kyndall-hunter",
-      "summary": "",
-      "date": "2026-09-25T16:53:16+00:00"
     }
   ]
 }
