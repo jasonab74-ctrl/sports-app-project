@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-02T20:02:05.320152+00:00",
+  "updated": "2026-10-02T23:54:43.129307+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "766353234fff",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Men’s Golf Travels to Notre Dame After 3-Week Hiatus",
+      "url": "https://purduesports.com/news/2026/10/2/purdue-mens-golf-travels-to-notre-dame-after-3-week-hiatus",
+      "summary": "",
+      "date": "2026-10-02T15:00:22+00:00"
+    },
     {
       "id": "faf3ea8516ea",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/09/25/practice-footage-week-one-purdue-mens-basketball",
       "summary": "",
       "date": "2026-09-25T21:42:27+00:00"
-    },
-    {
-      "id": "144bc372ae92",
-      "source": "Purdue Athletics MBB",
-      "title": "Antione West Media Session | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/09/25/antione-west-media-session-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-09-25T21:27:12+00:00"
     }
   ]
 }
