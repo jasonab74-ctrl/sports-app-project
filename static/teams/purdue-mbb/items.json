@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-03T09:20:01.383350+00:00",
+  "updated": "2026-10-03T14:22:04.890717+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "3d14cd8231b4",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Compete in Battle at the Bay",
+      "url": "https://purduesports.com/news/2026/10/3/boilermakers-compete-in-battle-at-the-bay",
+      "summary": "",
+      "date": "2026-10-03T04:07:44+00:00"
+    },
+    {
+      "id": "1704c3bd1f95",
+      "source": "Purdue Athletics MBB",
+      "title": "#10 Purdue Suffers Reverse Sweep at #17 Oregon",
+      "url": "https://purduesports.com/news/2026/10/3/10-purdue-suffers-reverse-sweep-at-17-oregon",
+      "summary": "",
+      "date": "2026-10-03T02:48:00+00:00"
+    },
     {
       "id": "0a5d25db0f80",
       "source": "Purdue Athletics MBB",
@@ -26,14 +42,6 @@
       "url": "https://purduesports.com/news/2026/10/1/boilermakers-open-with-big-ten-dual-at-illinois",
       "summary": "",
       "date": "2026-10-01T18:59:00+00:00"
-    },
-    {
-      "id": "3102c78ec790",
-      "source": "Purdue Athletics MBB",
-      "title": "#10 Purdue Takes on the Pacific Northwest",
-      "url": "https://purduesports.com/news/2026/10/1/10-purdue-takes-on-the-pacific-northwest",
-      "summary": "",
-      "date": "2026-10-01T17:16:00+00:00"
     },
     {
       "id": "50b1ed795394",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/09/25/coach-matt-painter-media-session-purdue-mens-basketball-2",
       "summary": "",
       "date": "2026-09-25T21:44:30+00:00"
-    },
-    {
-      "id": "65e539590a77",
-      "source": "Purdue Athletics MBB",
-      "title": "Omer Mayer Media Session | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/09/25/omer-mayer-media-session-purdue-mens-basketball-2",
-      "summary": "",
-      "date": "2026-09-25T21:44:11+00:00"
     }
   ]
 }
