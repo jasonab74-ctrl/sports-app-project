@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-03T14:22:04.890717+00:00",
+  "updated": "2026-10-03T18:05:25.790386+00:00",
   "count": 20,
   "items": [
     {
@@ -20,6 +20,14 @@
       "date": "2026-10-03T02:48:00+00:00"
     },
     {
+      "id": "d36cddad1f0f",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Wins 9 Events in Season-Opening Victory at Illinois",
+      "url": "https://purduesports.com/news/2026/10/3/purdue-wins-9-events-in-season-opening-victory-at-illinois",
+      "summary": "",
+      "date": "2026-10-03T02:00:00+00:00"
+    },
+    {
       "id": "0a5d25db0f80",
       "source": "Purdue Athletics MBB",
       "title": "Boilermakers Host Louisville as Fall Ball Slate Continues",
@@ -34,14 +42,6 @@
       "url": "https://purduesports.com/news/2026/10/2/purdue-mens-golf-travels-to-notre-dame-after-3-week-hiatus",
       "summary": "",
       "date": "2026-10-02T15:00:22+00:00"
-    },
-    {
-      "id": "faf3ea8516ea",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Open with Big Ten Dual at Illinois",
-      "url": "https://purduesports.com/news/2026/10/1/boilermakers-open-with-big-ten-dual-at-illinois",
-      "summary": "",
-      "date": "2026-10-01T18:59:00+00:00"
     },
     {
       "id": "50b1ed795394",
