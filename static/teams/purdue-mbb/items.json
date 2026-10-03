@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-03T03:23:56.251801+00:00",
+  "updated": "2026-10-03T09:20:01.383350+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "0a5d25db0f80",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Host Louisville as Fall Ball Slate Continues",
+      "url": "https://purduesports.com/news/2026/10/2/boilermakers-host-louisville-as-fall-ball-slate-continues",
+      "summary": "",
+      "date": "2026-10-02T19:53:00+00:00"
+    },
     {
       "id": "766353234fff",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/09/25/omer-mayer-media-session-purdue-mens-basketball-2",
       "summary": "",
       "date": "2026-09-25T21:44:11+00:00"
-    },
-    {
-      "id": "a496eb0a6dee",
-      "source": "Purdue Athletics MBB",
-      "title": "Practice Footage, Week One | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/09/25/practice-footage-week-one-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-09-25T21:42:27+00:00"
     }
   ]
 }
