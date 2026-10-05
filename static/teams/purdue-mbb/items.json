@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-04T23:23:41.724547+00:00",
+  "updated": "2026-10-05T02:13:01.896009+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "b12afed23ec0",
+      "source": "Purdue Athletics MBB",
+      "title": "#10 Purdue Suffers Defeat at #22 Washington",
+      "url": "https://purduesports.com/news/2026/10/4/vb-recap-at-22-washington",
+      "summary": "",
+      "date": "2026-10-04T22:32:00+00:00"
+    },
     {
       "id": "56ba4278abc3",
       "source": "Purdue Athletics MBB",
@@ -90,14 +98,6 @@
       "url": "https://purduesports.com/news/2026/09/30/dylan-drennan-media-session-purdue-football-1",
       "summary": "",
       "date": "2026-09-30T18:10:37+00:00"
-    },
-    {
-      "id": "f8caa2e5c289",
-      "source": "Purdue Athletics MBB",
-      "title": "Game 5 Prep: Purdue Heads to Illinois with Cannon Trophy on the Line",
-      "url": "https://purduesports.com/news/2026/09/30/game-5-prep-purdue-heads-to-illinois-with-cannon-trophy-on-the-line",
-      "summary": "",
-      "date": "2026-09-30T13:01:00+00:00"
     },
     {
       "id": "4fa6160ef966",
