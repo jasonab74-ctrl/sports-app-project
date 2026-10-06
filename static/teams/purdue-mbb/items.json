@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-05T18:40:43.778816+00:00",
+  "updated": "2026-10-06T00:31:59.683231+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "1efd6f1e1247",
+      "source": "Purdue Athletics MBB",
+      "title": "Timpf Paces Purdue Through 36 Holes",
+      "url": "https://purduesports.com/news/2026/10/6/timpf-paces-purdue-through-36-holes",
+      "summary": "",
+      "date": "2026-10-06T00:11:53+00:00"
+    },
+    {
+      "id": "c39e71db1780",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights:  Purdue 2, Penn State 2",
+      "url": "https://purduesports.com/news/2026/10/5/highlights-purdue-2-penn-state-2",
+      "summary": "",
+      "date": "2026-10-05T12:14:20+00:00"
+    },
     {
       "id": "b12afed23ec0",
       "source": "Purdue Athletics MBB",
@@ -58,14 +74,6 @@
       "url": "https://purduesports.com/news/2026/10/2/purdue-mens-golf-travels-to-notre-dame-after-3-week-hiatus",
       "summary": "",
       "date": "2026-10-02T15:00:22+00:00"
-    },
-    {
-      "id": "08bcc0c5256c",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Compete in Battle at the Bay",
-      "url": "https://purduesports.com/news/2026/10/2/boilermakers-compete-in-battle-at-the-bay",
-      "summary": "",
-      "date": "2026-10-02T03:07:00+00:00"
     },
     {
       "id": "50b1ed795394",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/09/26/coach-barry-odom-postgame-press-conference-vs-notre-dame-purdue-football",
       "summary": "",
       "date": "2026-09-26T22:21:13+00:00"
-    },
-    {
-      "id": "60ca3a539a89",
-      "source": "Purdue Athletics MBB",
-      "title": "Players' Postgame Press Conference vs. Notre Dame | Purdue Football",
-      "url": "https://purduesports.com/news/2026/09/26/players-postgame-press-conference-vs-notre-dame-purdue-football",
-      "summary": "",
-      "date": "2026-09-26T22:19:49+00:00"
     }
   ]
 }
