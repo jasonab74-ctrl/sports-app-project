@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-06T19:38:18.916580+00:00",
+  "updated": "2026-10-06T23:30:15.864453+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "a5f3cd015b3e",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Place 5th in Field Full of Top 25 Teams",
+      "url": "https://purduesports.com/news/2026/10/6/boilermakers-place-5th-in-field-full-of-top-25-teams",
+      "summary": "",
+      "date": "2026-10-06T20:27:32+00:00"
+    },
     {
       "id": "062d98af0815",
       "source": "CBS Sports College Basketball",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/09/27/purdue-wins-fighting-irish-classic-by-22-shots",
       "summary": "",
       "date": "2026-09-27T20:55:03+00:00"
-    },
-    {
-      "id": "b82d127aa211",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights: Purdue 3, Minnesota 0",
-      "url": "https://purduesports.com/news/2026/09/27/highlights-purdue-3-minnesota-0",
-      "summary": "",
-      "date": "2026-09-27T19:41:32+00:00"
     }
   ]
 }
