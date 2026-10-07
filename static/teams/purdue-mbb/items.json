@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-07T10:46:45.762248+00:00",
+  "updated": "2026-10-07T17:37:42.858478+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "efe0d1c147e6",
+      "source": "Purdue Athletics MBB",
+      "title": "Cinematic Recap at Illinois | Purdue Football",
+      "url": "https://purduesports.com/news/2026/10/7/cinematic-recap-at-illinois-purdue-football",
+      "summary": "",
+      "date": "2026-10-07T16:48:38+00:00"
+    },
+    {
+      "id": "e416e0c8009c",
+      "source": "Purdue Athletics MBB",
+      "title": "Game 6 Prep: Purdue Hosts Minnesota for Hammer Down Cancer",
+      "url": "https://purduesports.com/news/2026/10/7/game-6-prep-purdue-hosts-minnesota-for-hammer-down-cancer",
+      "summary": "",
+      "date": "2026-10-07T13:01:00+00:00"
+    },
     {
       "id": "a5f3cd015b3e",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/09/28/purdue-volleyball-postgame-press-conference-vs-6-wisconsin-purdue-volleyball",
       "summary": "",
       "date": "2026-09-28T02:33:00+00:00"
-    },
-    {
-      "id": "5d935fd8c55a",
-      "source": "Purdue Athletics MBB",
-      "title": "#10 Purdue Falls to #6 Wisconsin",
-      "url": "https://purduesports.com/news/2026/09/27/10-purdue-falls-to-6-wisconsin",
-      "summary": "",
-      "date": "2026-09-27T22:30:00+00:00"
-    },
-    {
-      "id": "18a71d28a93b",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Wins Fighting Irish Classic by 22 Shots",
-      "url": "https://purduesports.com/news/2026/09/27/purdue-wins-fighting-irish-classic-by-22-shots",
-      "summary": "",
-      "date": "2026-09-27T20:55:03+00:00"
     }
   ]
 }
