@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-08T02:23:36.610715+00:00",
+  "updated": "2026-10-08T09:16:14.386039+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "d51762ab71cf",
+      "source": "Purdue Athletics MBB",
+      "title": "Mallard's 3-Win Debut Makes Her B1G Freshman of the Week",
+      "url": "https://purduesports.com/news/2026/10/7/mallards-3-win-debut-makes-her-b1g-freshman-of-the-week",
+      "summary": "Charlotte native swept the butterfly events in Purdue's season opener at Illinois",
+      "date": "2026-10-07T21:06:39+00:00"
+    },
+    {
+      "id": "290e3c8ccf01",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Hosts #21 Michigan, #2 Michigan State",
+      "url": "https://purduesports.com/news/2026/10/7/purdue-hosts-21-michigan-2-michigan-state",
+      "summary": "",
+      "date": "2026-10-07T20:36:15+00:00"
+    },
     {
       "id": "f2f9302e4aed",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/10/4/full-game-highlights-vs-illinois-purdue-football",
       "summary": "",
       "date": "2026-10-04T00:31:06+00:00"
-    },
-    {
-      "id": "dca77dcf8dcd",
-      "source": "Purdue Athletics MBB",
-      "title": "Condensed Game Highlights | Purdue Football",
-      "url": "https://purduesports.com/news/2026/10/4/condensed-game-highlights-purdue-football-1",
-      "summary": "",
-      "date": "2026-10-04T00:31:03+00:00"
-    },
-    {
-      "id": "dabf14c2aa1c",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilers Topple Illini, 24-17, to Bring Home Cannon Trophy",
-      "url": "https://purduesports.com/news/2026/10/3/boilers-topple-illini-24-17-to-bring-home-cannon-trophy",
-      "summary": "Purdue made clutch plays on the road to secure its first Big Ten win of the season.",
-      "date": "2026-10-03T23:00:00+00:00"
     }
   ]
 }
