@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-09T20:13:01.188571+00:00",
+  "updated": "2026-10-10T00:09:55.602244+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "c97e43185553",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Win 4 Events in the Rain on Day 1 at FSU",
+      "url": "https://purduesports.com/news/2026/10/9/boilermakers-win-4-events-in-the-rain-on-day-1-at-fsu",
+      "summary": "Purdue was victorious in 3-meter diving, 50 free, 50 breast and 200 medley relay while competing outdoors in Tallahassee.",
+      "date": "2026-10-09T23:33:08+00:00"
+    },
     {
       "id": "cc94fb48ea8e",
       "source": "Purdue Athletics MBB",
@@ -18,14 +26,6 @@
       "url": "https://purduesports.com/news/2026/10/9/highlights-purdue-6-21-michigan-5",
       "summary": "",
       "date": "2026-10-09T02:11:30+00:00"
-    },
-    {
-      "id": "a7f1ae0cd18b",
-      "source": "Purdue Athletics MBB",
-      "title": "15 Men Travel for Opener as Purdue Returns to Florida St.",
-      "url": "https://purduesports.com/news/2026/10/8/15-men-travel-for-opener-as-purdue-returns-to-florida-st",
-      "summary": "",
-      "date": "2026-10-08T20:36:00+00:00"
     },
     {
       "id": "378b673e3fc3",
