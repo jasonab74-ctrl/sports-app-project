@@ -1,48 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-11T22:13:08.131402+00:00",
+  "updated": "2026-10-12T01:29:13.612814+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "d4907c6d9dad",
-      "source": "Purdue Athletics MBB",
-      "title": "Get to Know Purdue Women's Basketball | Maya & Zoja",
-      "url": "https://purduesports.com/news/2026/10/11/get-to-know-purdue-womens-basketball-maya-zoja",
-      "summary": "",
-      "date": "2026-10-11T14:31:33+00:00"
-    },
-    {
-      "id": "5d2da176f61f",
-      "source": "Purdue Athletics MBB",
-      "title": "On a Mission. Game 6 Trailer | Purdue Football",
-      "url": "https://purduesports.com/news/2026/10/11/on-a-mission-game-6-trailer-purdue-football",
-      "summary": "",
-      "date": "2026-10-11T14:30:57+00:00"
-    },
-    {
-      "id": "0bee8ef0d0d9",
-      "source": "Purdue Athletics MBB",
-      "title": "Snacks Around the World at Big Ten Media Day | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2026/10/11/snacks-around-the-world-at-big-ten-media-day-purdue-womens-basketball",
-      "summary": "",
-      "date": "2026-10-11T14:25:47+00:00"
-    },
-    {
-      "id": "6a7b877ad34e",
-      "source": "Purdue Athletics MBB",
-      "title": "Hammer Down Cancer with Purdue Football",
-      "url": "https://purduesports.com/news/2026/10/11/hammer-down-cancer-with-purdue-football",
-      "summary": "",
-      "date": "2026-10-11T14:17:52+00:00"
-    },
-    {
-      "id": "a3e8aa42c71e",
-      "source": "Purdue Athletics MBB",
-      "title": "Snacks Around the World - Slovakia | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2026/10/11/snacks-around-the-world-slovakia-purdue-womens-basketball",
-      "summary": "",
-      "date": "2026-10-11T14:02:36+00:00"
-    },
     {
       "id": "97ef56e43a3b",
       "source": "Purdue Athletics MBB",
@@ -162,6 +122,46 @@
       "url": "https://purduesports.com/news/2026/10/7/barry-odom-matt-painter-katie-gearlds-or-for-petes-sake-s2-e5",
       "summary": "",
       "date": "2026-10-07T17:25:09+00:00"
+    },
+    {
+      "id": "048f749bd449",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach James Shibest Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/10/7/coach-james-shibest-media-session-purdue-football-4",
+      "summary": "",
+      "date": "2026-10-07T17:06:46+00:00"
+    },
+    {
+      "id": "18b00d0cfde5",
+      "source": "Purdue Athletics MBB",
+      "title": "Antonio Harris Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/10/7/antonio-harris-media-session-purdue-football-1",
+      "summary": "",
+      "date": "2026-10-07T17:04:37+00:00"
+    },
+    {
+      "id": "ddc6faccb068",
+      "source": "Purdue Athletics MBB",
+      "title": "John Slaughter Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/10/7/john-slaughter-media-session-purdue-football-1",
+      "summary": "",
+      "date": "2026-10-07T17:03:16+00:00"
+    },
+    {
+      "id": "e6ffa9ba9058",
+      "source": "Purdue Athletics MBB",
+      "title": "Jacobo Echeverria Lozano Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/10/7/jacobo-echeverria-lozano-media-session-purdue-football-1",
+      "summary": "",
+      "date": "2026-10-07T17:01:09+00:00"
+    },
+    {
+      "id": "efe0d1c147e6",
+      "source": "Purdue Athletics MBB",
+      "title": "Cinematic Recap at Illinois | Purdue Football",
+      "url": "https://purduesports.com/news/2026/10/7/cinematic-recap-at-illinois-purdue-football",
+      "summary": "",
+      "date": "2026-10-07T16:48:38+00:00"
     }
   ]
 }
