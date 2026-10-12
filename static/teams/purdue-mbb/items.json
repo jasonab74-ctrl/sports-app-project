@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-12T07:51:41.104898+00:00",
+  "updated": "2026-10-12T23:42:06.915033+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "4035f549363f",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights: #16 Purdue 3, #24 Illinois 2",
+      "url": "https://purduesports.com/news/2026/10/12/highlights-16-purdue-3-24-illinois-2",
+      "summary": "",
+      "date": "2026-10-12T12:06:39+00:00"
+    },
     {
       "id": "a07fabc7691d",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/10/8/daniel-jacobsen-and-cj-cox-at-big-ten-media-day-purdue-mens-basketball",
       "summary": "",
       "date": "2026-10-08T18:51:42+00:00"
-    },
-    {
-      "id": "1f5cbe1458b5",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Stories: The Strength of Jack Rock",
-      "url": "https://purduesports.com/news/2026/10/8/purdue-stories-the-strength-of-jack-rock",
-      "summary": "",
-      "date": "2026-10-08T15:09:24+00:00"
     }
   ]
 }
