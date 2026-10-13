@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-13T19:41:46.842176+00:00",
+  "updated": "2026-10-13T23:32:58.719155+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "53ab8c9f88c9",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermaker Fall Invitational Photo Gallery",
+      "url": "https://purduesports.com/news/2026/10/13/boilermaker-fall-invitational-photo-gallery",
+      "summary": "",
+      "date": "2026-10-13T21:54:48+00:00"
+    },
+    {
+      "id": "c3fe25ac2640",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Men’s Golf Wins Fall Invitational for Second Straight Year",
+      "url": "https://purduesports.com/news/2026/10/13/purdue-mens-golf-wins-fall-invitational-for-second-straight-year",
+      "summary": "",
+      "date": "2026-10-13T20:27:45+00:00"
+    },
     {
       "id": "b557ae7a5d03",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/10/9/purdue-mens-golf-hosts-purdue-fall-invitational",
       "summary": "",
       "date": "2026-10-09T15:25:08+00:00"
-    },
-    {
-      "id": "5815505aef0e",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights: Purdue 6, #21 Michigan 5",
-      "url": "https://purduesports.com/news/2026/10/9/highlights-purdue-6-21-michigan-5",
-      "summary": "",
-      "date": "2026-10-09T02:11:30+00:00"
-    },
-    {
-      "id": "378b673e3fc3",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Matt Painter Big Ten Media Day | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/10/8/coach-matt-painter-big-ten-media-day-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-10-08T18:53:35+00:00"
     }
   ]
 }
