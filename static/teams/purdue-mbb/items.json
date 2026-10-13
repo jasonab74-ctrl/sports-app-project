@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-13T12:50:17.650877+00:00",
+  "updated": "2026-10-13T19:41:46.842176+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "b557ae7a5d03",
+      "source": "Purdue Athletics MBB",
+      "title": "Game 7 Prep: Purdue Squares Off with Washington in Ross-Ade on Friday",
+      "url": "https://purduesports.com/news/2026/10/13/game-7-prep-purdue-squares-off-with-washington-in-ross-ade-on-friday",
+      "summary": "",
+      "date": "2026-10-13T13:01:00+00:00"
+    },
     {
       "id": "4035f549363f",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/10/8/coach-matt-painter-big-ten-media-day-purdue-mens-basketball",
       "summary": "",
       "date": "2026-10-08T18:53:35+00:00"
-    },
-    {
-      "id": "ea1f9d3a747d",
-      "source": "Purdue Athletics MBB",
-      "title": "Daniel Jacobsen and C.J. Cox at Big Ten Media Day | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/10/8/daniel-jacobsen-and-cj-cox-at-big-ten-media-day-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-10-08T18:51:42+00:00"
     }
   ]
 }
