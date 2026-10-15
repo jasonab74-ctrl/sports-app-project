@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-15T18:49:41.260409+00:00",
+  "updated": "2026-10-15T21:53:53.645353+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "96363466429f",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue to Conclude Regular Season at Pre-National Invitational",
+      "url": "https://purduesports.com/news/2026/10/15/purdue-to-conclude-regular-season-at-pre-national-invitational",
+      "summary": "",
+      "date": "2026-10-15T19:16:54+00:00"
+    },
     {
       "id": "054a966c6622",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/10/11/full-game-highlights-purdue-football-1",
       "summary": "",
       "date": "2026-10-11T04:32:14+00:00"
-    },
-    {
-      "id": "735294988403",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Barry Odom Postgame Press Conference vs. Minnesota | Purdue Football",
-      "url": "https://purduesports.com/news/2026/10/11/coach-barry-odom-postgame-press-conference-vs-minnesota-purdue-football",
-      "summary": "",
-      "date": "2026-10-11T04:16:22+00:00"
     }
   ]
 }
