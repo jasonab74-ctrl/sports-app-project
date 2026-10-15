@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-15T09:39:05.664515+00:00",
+  "updated": "2026-10-15T14:36:29.287446+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "054a966c6622",
+      "source": "Purdue Athletics MBB",
+      "title": "#13 Purdue Heads to Iowa, #1 Nebraska",
+      "url": "https://purduesports.com/news/2026/10/14/13-purdue-heads-to-iowa-1-nebraska",
+      "summary": "",
+      "date": "2026-10-14T23:04:00+00:00"
+    },
     {
       "id": "378f246d0798",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/10/11/coach-barry-odom-postgame-press-conference-vs-minnesota-purdue-football",
       "summary": "",
       "date": "2026-10-11T04:16:22+00:00"
-    },
-    {
-      "id": "0ac87c23ed83",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Runs Past Minnesota for Second Straight B1G Win",
-      "url": "https://purduesports.com/news/2026/10/11/purdue-runs-past-minnesota-for-second-straight-b1g-win",
-      "summary": "RB Fame Ijeboi starred in a dominant rushing performance with 195 yards and three touchdowns.",
-      "date": "2026-10-11T04:15:00+00:00"
     }
   ]
 }
