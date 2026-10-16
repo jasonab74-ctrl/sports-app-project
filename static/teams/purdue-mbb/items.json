@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-16T18:14:29.709242+00:00",
+  "updated": "2026-10-16T21:27:52.329969+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "7b87492b1e2c",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Finishes Regular Season at Pre-National Invitational",
+      "url": "https://purduesports.com/news/2026/10/16/purdue-finishes-regular-season-at-pre-national-invitational",
+      "summary": "",
+      "date": "2026-10-16T17:53:38+00:00"
+    },
     {
       "id": "56e250889112",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/10/11/purdue-football-win-over-minnesota",
       "summary": "",
       "date": "2026-10-11T05:16:02+00:00"
-    },
-    {
-      "id": "a5cf5e1813f7",
-      "source": "Purdue Athletics MBB",
-      "title": "Full Game Highlights | Purdue Football",
-      "url": "https://purduesports.com/news/2026/10/11/full-game-highlights-purdue-football-1",
-      "summary": "",
-      "date": "2026-10-11T04:32:14+00:00"
     }
   ]
 }
