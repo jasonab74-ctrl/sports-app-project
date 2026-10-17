@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-17T02:37:06.169859+00:00",
+  "updated": "2026-10-17T07:25:59.264096+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "3b38f8caf42d",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Barry Odom Postgame Press Conference vs. Washington | Purdue Football",
+      "url": "https://purduesports.com/news/2026/10/17/coach-barry-odom-postgame-press-conference-vs-washington-purdue-football",
+      "summary": "",
+      "date": "2026-10-17T04:42:20+00:00"
+    },
+    {
+      "id": "96c73af4a537",
+      "source": "Purdue Athletics MBB",
+      "title": "Players' Postgame Press Conference vs. Washington | Purdue Football",
+      "url": "https://purduesports.com/news/2026/10/17/players-postgame-press-conference-vs-washington-purdue-football",
+      "summary": "",
+      "date": "2026-10-17T04:38:44+00:00"
+    },
     {
       "id": "7b87492b1e2c",
       "source": "Purdue Athletics MBB",
@@ -18,14 +34,6 @@
       "url": "https://purduesports.com/news/2026/10/16/tindall-powers-13-purdue-to-sweep",
       "summary": "",
       "date": "2026-10-16T03:12:00+00:00"
-    },
-    {
-      "id": "96363466429f",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue to Conclude Regular Season at Pre-National Invitational",
-      "url": "https://purduesports.com/news/2026/10/15/purdue-to-conclude-regular-season-at-pre-national-invitational",
-      "summary": "",
-      "date": "2026-10-15T19:16:54+00:00"
     },
     {
       "id": "378f246d0798",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/10/11/snacks-around-the-world-slovakia-purdue-womens-basketball",
       "summary": "",
       "date": "2026-10-11T14:02:36+00:00"
-    },
-    {
-      "id": "97ef56e43a3b",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Football Win Over Minnesota Photo Gallery",
-      "url": "https://purduesports.com/news/2026/10/11/purdue-football-win-over-minnesota",
-      "summary": "",
-      "date": "2026-10-11T05:16:02+00:00"
     }
   ]
 }
