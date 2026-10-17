@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-17T22:00:01.753972+00:00",
+  "updated": "2026-10-17T23:55:08.113986+00:00",
   "count": 20,
   "items": [
     {
@@ -84,14 +84,6 @@
       "date": "2026-10-13T20:27:45+00:00"
     },
     {
-      "id": "b557ae7a5d03",
-      "source": "Purdue Athletics MBB",
-      "title": "Game 7 Prep: Purdue Squares Off with Washington in Ross-Ade on Friday",
-      "url": "https://purduesports.com/news/2026/10/13/game-7-prep-purdue-squares-off-with-washington-in-ross-ade-on-friday",
-      "summary": "",
-      "date": "2026-10-13T13:01:00+00:00"
-    },
-    {
       "id": "4035f549363f",
       "source": "Purdue Athletics MBB",
       "title": "Highlights: #16 Purdue 3, #24 Illinois 2",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/10/11/snacks-around-the-world-slovakia-purdue-womens-basketball",
       "summary": "",
       "date": "2026-10-11T14:02:36+00:00"
+    },
+    {
+      "id": "97ef56e43a3b",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Football Win Over Minnesota Photo Gallery",
+      "url": "https://purduesports.com/news/2026/10/11/purdue-football-win-over-minnesota",
+      "summary": "",
+      "date": "2026-10-11T05:16:02+00:00"
     }
   ]
 }
