@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-18T18:44:44.134663+00:00",
+  "updated": "2026-10-18T21:12:49.124043+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "697bb07228ad",
+      "source": "Purdue Athletics MBB",
+      "title": "#20 Purdue Falls to #3 Ohio State",
+      "url": "https://purduesports.com/news/2026/10/18/20-purdue-falls-to-3-ohio-state",
+      "summary": "",
+      "date": "2026-10-18T19:42:27+00:00"
+    },
+    {
+      "id": "fbb263386b6f",
+      "source": "Purdue Athletics MBB",
+      "title": "Wrestle-Offs: Gold vs. Black Photo Gallery",
+      "url": "https://purduesports.com/news/2026/10/18/wrestle-offs-gold-vs-black-photo-gallery",
+      "summary": "Team Black defeated Team Gold, 25-17, in the annual Boilermaker Wrestle-Offs open scrimmage.",
+      "date": "2026-10-18T16:07:52+00:00"
+    },
     {
       "id": "02b49342d4b6",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/10/11/snacks-around-the-world-at-big-ten-media-day-purdue-womens-basketball",
       "summary": "",
       "date": "2026-10-11T14:25:47+00:00"
-    },
-    {
-      "id": "6a7b877ad34e",
-      "source": "Purdue Athletics MBB",
-      "title": "Hammer Down Cancer with Purdue Football",
-      "url": "https://purduesports.com/news/2026/10/11/hammer-down-cancer-with-purdue-football",
-      "summary": "",
-      "date": "2026-10-11T14:17:52+00:00"
-    },
-    {
-      "id": "a3e8aa42c71e",
-      "source": "Purdue Athletics MBB",
-      "title": "Snacks Around the World - Slovakia | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2026/10/11/snacks-around-the-world-slovakia-purdue-womens-basketball",
-      "summary": "",
-      "date": "2026-10-11T14:02:36+00:00"
     }
   ]
 }
