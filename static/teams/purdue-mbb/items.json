@@ -1,8 +1,32 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-18T21:12:49.124043+00:00",
+  "updated": "2026-10-18T23:26:12.602279+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "a616a115c007",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Blow Out Ball State in Exhibition Opener",
+      "url": "https://purduesports.com/news/2026/10/18/boilermakers-blow-out-ball-state-in-exhibition-opener",
+      "summary": "",
+      "date": "2026-10-18T20:53:15+00:00"
+    },
+    {
+      "id": "f1112c6e876d",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Matt Painter Postgame Press Conference vs. Ball State | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/10/18/coach-matt-painter-postgame-press-conference-vs-ball-state-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-10-18T20:43:30+00:00"
+    },
+    {
+      "id": "5c9d70f4c623",
+      "source": "Purdue Athletics MBB",
+      "title": "Players' Postgame Press Conference vs. Ball State | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/10/18/players-postgame-press-conference-vs-ball-state-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-10-18T20:28:42+00:00"
+    },
     {
       "id": "697bb07228ad",
       "source": "Purdue Athletics MBB",
@@ -138,30 +162,6 @@
       "url": "https://purduesports.com/news/2026/10/11/highlights-purdue-2-2-michigan-state-1",
       "summary": "",
       "date": "2026-10-11T20:44:14+00:00"
-    },
-    {
-      "id": "d4907c6d9dad",
-      "source": "Purdue Athletics MBB",
-      "title": "Get to Know Purdue Women's Basketball | Maya & Zoja",
-      "url": "https://purduesports.com/news/2026/10/11/get-to-know-purdue-womens-basketball-maya-zoja",
-      "summary": "",
-      "date": "2026-10-11T14:31:33+00:00"
-    },
-    {
-      "id": "5d2da176f61f",
-      "source": "Purdue Athletics MBB",
-      "title": "On a Mission. Game 6 Trailer | Purdue Football",
-      "url": "https://purduesports.com/news/2026/10/11/on-a-mission-game-6-trailer-purdue-football",
-      "summary": "",
-      "date": "2026-10-11T14:30:57+00:00"
-    },
-    {
-      "id": "0bee8ef0d0d9",
-      "source": "Purdue Athletics MBB",
-      "title": "Snacks Around the World at Big Ten Media Day | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2026/10/11/snacks-around-the-world-at-big-ten-media-day-purdue-womens-basketball",
-      "summary": "",
-      "date": "2026-10-11T14:25:47+00:00"
     }
   ]
 }
