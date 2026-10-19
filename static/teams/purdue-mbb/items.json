@@ -1,16 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-19T20:02:12.965281+00:00",
+  "updated": "2026-10-19T23:50:12.827667+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "44c454a817de",
-      "source": "Purdue Athletics MBB",
-      "title": "John Purdue Club Student-Athlete Spotlight Series - Kayla Budish",
-      "url": "https://purduesports.com/news/2026/10/19/john-purdue-club-student-athlete-spotlight-series-kayla-budish",
-      "summary": "",
-      "date": "2026-10-19T19:02:13+00:00"
-    },
     {
       "id": "6228170fff8d",
       "source": "CBS Sports College Basketball",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/10/12/highlights-16-purdue-3-24-illinois-2",
       "summary": "",
       "date": "2026-10-12T12:06:39+00:00"
+    },
+    {
+      "id": "a07fabc7691d",
+      "source": "Purdue Athletics MBB",
+      "title": "#16 Purdue Secures 3-2 Victory Over #24 Illinois",
+      "url": "https://purduesports.com/news/2026/10/12/16-purdue-secures-3-2-victory-over-24-illinois",
+      "summary": "",
+      "date": "2026-10-12T02:02:00+00:00"
     }
   ]
 }
