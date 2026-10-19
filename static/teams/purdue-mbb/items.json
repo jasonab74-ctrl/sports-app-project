@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-18T23:26:12.602279+00:00",
+  "updated": "2026-10-19T01:29:23.569671+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "b37dab6a887f",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights: Purdue 87, Ball State 55",
+      "url": "https://purduesports.com/news/2026/10/18/highlights-purdue-87-ball-state-55",
+      "summary": "",
+      "date": "2026-10-18T22:52:03+00:00"
+    },
     {
       "id": "a616a115c007",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/10/11/purdue-takes-down-2-michigan-state",
       "summary": "",
       "date": "2026-10-11T20:53:32+00:00"
-    },
-    {
-      "id": "3c180513f702",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights: Purdue 2, #2 Michigan State 1",
-      "url": "https://purduesports.com/news/2026/10/11/highlights-purdue-2-2-michigan-state-1",
-      "summary": "",
-      "date": "2026-10-11T20:44:14+00:00"
     }
   ]
 }
