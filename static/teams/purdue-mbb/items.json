@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-20T14:01:58.640073+00:00",
+  "updated": "2026-10-20T18:34:36.401335+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "287926731fdf",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue MBB vs. Ball State Exhibition Gallery",
+      "url": "https://purduesports.com/news/2026/10/20/purdue-mbb-vs-ball-state-exhibition-gallery",
+      "summary": "Men's Basketball",
+      "date": "2026-10-20T14:12:55+00:00"
+    },
+    {
+      "id": "686d856cc7e1",
+      "source": "CBS Sports College Basketball",
+      "title": "College basketball rankings: Kansas makes big move in Top 25 And 1 after landing Trey Kaufman-Renn",
+      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-rankings-kansas-in-top-25-and-1-trey-kaufman-renn/",
+      "summary": "The Purdue star signed with the Jayhawks, who move into the top five of the CBS Sports preseason rankings",
+      "date": "2026-10-20T13:36:29+00:00"
+    },
     {
       "id": "a08b64f9b2d3",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/10/14/george-burhenn-media-session-purdue-football-3",
       "summary": "",
       "date": "2026-10-14T16:13:35+00:00"
-    },
-    {
-      "id": "53ab8c9f88c9",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermaker Fall Invitational Photo Gallery",
-      "url": "https://purduesports.com/news/2026/10/13/boilermaker-fall-invitational-photo-gallery",
-      "summary": "",
-      "date": "2026-10-13T21:54:48+00:00"
-    },
-    {
-      "id": "c3fe25ac2640",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Men’s Golf Wins Fall Invitational for Second Straight Year",
-      "url": "https://purduesports.com/news/2026/10/13/purdue-mens-golf-wins-fall-invitational-for-second-straight-year",
-      "summary": "",
-      "date": "2026-10-13T20:27:45+00:00"
     }
   ]
 }
