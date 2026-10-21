@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-21T20:15:49.190914+00:00",
+  "updated": "2026-10-21T23:29:25.734724+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "2132a98a55da",
+      "source": "Purdue Athletics MBB",
+      "title": "#12 Purdue Welcomes #20 Minnesota, Northwestern",
+      "url": "https://purduesports.com/news/2026/10/21/12-purdue-welcomes-20-minnesota-northwestern",
+      "summary": "",
+      "date": "2026-10-21T19:30:00+00:00"
+    },
+    {
+      "id": "a3388f76c5cc",
+      "source": "Purdue Athletics MBB",
+      "title": "Head Coach Matt Painter Press Conference | Purdue Fort Wayne Exhibition Preview",
+      "url": "https://purduesports.com/news/2026/10/21/head-coach-matt-painter-press-conference-purdue-fort-wayne-exhibition-preview",
+      "summary": "",
+      "date": "2026-10-21T18:13:32+00:00"
+    },
     {
       "id": "6dba0c25e08b",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/10/16/tindall-powers-13-purdue-to-sweep",
       "summary": "",
       "date": "2026-10-16T03:12:00+00:00"
-    },
-    {
-      "id": "378f246d0798",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Men’s Basketball Promotional Schedule Announced",
-      "url": "https://purduesports.com/news/2026/10/14/purdue-mens-basketball-promotional-schedule-announced",
-      "summary": "",
-      "date": "2026-10-14T20:37:08+00:00"
-    },
-    {
-      "id": "e92bac8a8f56",
-      "source": "Purdue Athletics MBB",
-      "title": "Quarterback Ryan Browne Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/10/14/quarterback-ryan-browne-media-session-purdue-football-2",
-      "summary": "",
-      "date": "2026-10-14T16:16:53+00:00"
     }
   ]
 }
