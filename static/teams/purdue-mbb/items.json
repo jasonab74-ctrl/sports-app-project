@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-21T16:00:34.795637+00:00",
+  "updated": "2026-10-21T20:15:49.190914+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "6dba0c25e08b",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Wrestle-Offs Quick Hits",
+      "url": "https://purduesports.com/news/2026/10/21/purdue-wrestle-offs-quick-hits",
+      "summary": "",
+      "date": "2026-10-21T16:27:27+00:00"
+    },
     {
       "id": "64d59d6eeecc",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/10/14/quarterback-ryan-browne-media-session-purdue-football-2",
       "summary": "",
       "date": "2026-10-14T16:16:53+00:00"
-    },
-    {
-      "id": "c3f3800d0572",
-      "source": "Purdue Athletics MBB",
-      "title": "Ian Jeffries Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/10/14/ian-jeffries-media-session-purdue-football-1",
-      "summary": "",
-      "date": "2026-10-14T16:15:05+00:00"
     }
   ]
 }
