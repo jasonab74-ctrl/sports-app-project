@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-22T17:49:02.378835+00:00",
+  "updated": "2026-10-22T21:06:13.335023+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "5bcd323c783f",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Set for Lone Exhibition Saturday vs. UIC",
+      "url": "https://purduesports.com/news/2026/10/22/purdue-set-for-lone-exhibition-saturday-vs-uic",
+      "summary": "",
+      "date": "2026-10-22T18:09:00+00:00"
+    },
     {
       "id": "11e2cb148952",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/10/18/wrestle-offs-gold-vs-black-photo-gallery",
       "summary": "Team Black defeated Team Gold, 25-17, in the annual Boilermaker Wrestle-Offs open scrimmage.",
       "date": "2026-10-18T16:07:52+00:00"
-    },
-    {
-      "id": "02b49342d4b6",
-      "source": "Purdue Athletics MBB",
-      "title": "#13 Purdue Steals Set From #1 Nebraska",
-      "url": "https://purduesports.com/news/2026/10/17/13-purdue-steals-set-from-1-nebraska",
-      "summary": "",
-      "date": "2026-10-17T23:04:00+00:00"
     }
   ]
 }
