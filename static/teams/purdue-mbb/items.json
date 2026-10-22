@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-21T23:29:25.734724+00:00",
+  "updated": "2026-10-22T01:42:49.448403+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "e645fd0dcf15",
+      "source": "Purdue Athletics MBB",
+      "title": "Boiler Room: Purdue Football All-Access Ep. 4",
+      "url": "https://purduesports.com/news/2026/10/21/boiler-room-purdue-football-all-access-ep-4",
+      "summary": "",
+      "date": "2026-10-21T23:00:00+00:00"
+    },
     {
       "id": "2132a98a55da",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/10/16/purdue-finishes-regular-season-at-pre-national-invitational",
       "summary": "",
       "date": "2026-10-16T17:53:38+00:00"
-    },
-    {
-      "id": "56e250889112",
-      "source": "Purdue Athletics MBB",
-      "title": "Tindall Powers #13 Purdue to Sweep",
-      "url": "https://purduesports.com/news/2026/10/16/tindall-powers-13-purdue-to-sweep",
-      "summary": "",
-      "date": "2026-10-16T03:12:00+00:00"
     }
   ]
 }
