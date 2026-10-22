@@ -1,8 +1,40 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-22T01:42:49.448403+00:00",
+  "updated": "2026-10-22T06:58:18.729696+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "11e2cb148952",
+      "source": "Purdue Athletics MBB",
+      "title": "Get to Know Purdue Women's Basketball: McKenna Layden and Katka Sediva",
+      "url": "https://purduesports.com/news/2026/10/22/get-to-know-purdue-womens-basketball-mckenna-layden-and-katka-sediva",
+      "summary": "",
+      "date": "2026-10-22T02:10:17+00:00"
+    },
+    {
+      "id": "558a2b04bf22",
+      "source": "Purdue Athletics MBB",
+      "title": "Get to Know Purdue Women's Basketball: Avery Gordon and Anjela Minja",
+      "url": "https://purduesports.com/news/2026/10/22/get-to-know-purdue-womens-basketball-avery-gordon-and-anjela-minja",
+      "summary": "",
+      "date": "2026-10-22T02:09:37+00:00"
+    },
+    {
+      "id": "cf6de7c6fe86",
+      "source": "Purdue Athletics MBB",
+      "title": "Get to Know Purdue Women's Basketball - Jelena Bulajic and Keona Douwstra",
+      "url": "https://purduesports.com/news/2026/10/22/get-to-know-purdue-womens-basketball-jelena-bulajic-and-keona-douwstra",
+      "summary": "",
+      "date": "2026-10-22T02:08:54+00:00"
+    },
+    {
+      "id": "c072886bc811",
+      "source": "Purdue Athletics MBB",
+      "title": "#23 Purdue Soars Up Leaderboard, Secures Top 5 Finish",
+      "url": "https://purduesports.com/news/2026/10/21/23-purdue-soars-up-leaderboard-secures-top-5-finish",
+      "summary": "",
+      "date": "2026-10-21T23:56:07+00:00"
+    },
     {
       "id": "e645fd0dcf15",
       "source": "Purdue Athletics MBB",
@@ -58,14 +90,6 @@
       "url": "https://purduesports.com/news/2026/10/20/purdue-mbb-vs-ball-state-exhibition-gallery",
       "summary": "Men's Basketball",
       "date": "2026-10-20T14:12:55+00:00"
-    },
-    {
-      "id": "a08b64f9b2d3",
-      "source": "Purdue Athletics MBB",
-      "title": "Timpf’s 70 Leads Purdue in Texas",
-      "url": "https://purduesports.com/news/2026/10/19/timpfs-70-leads-purdue-in-texas",
-      "summary": "",
-      "date": "2026-10-19T23:51:09+00:00"
     },
     {
       "id": "44c454a817de",
@@ -138,30 +162,6 @@
       "url": "https://purduesports.com/news/2026/10/17/13-purdue-steals-set-from-1-nebraska",
       "summary": "",
       "date": "2026-10-17T23:04:00+00:00"
-    },
-    {
-      "id": "3b38f8caf42d",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Barry Odom Postgame Press Conference vs. Washington | Purdue Football",
-      "url": "https://purduesports.com/news/2026/10/17/coach-barry-odom-postgame-press-conference-vs-washington-purdue-football",
-      "summary": "",
-      "date": "2026-10-17T04:42:20+00:00"
-    },
-    {
-      "id": "96c73af4a537",
-      "source": "Purdue Athletics MBB",
-      "title": "Players' Postgame Press Conference vs. Washington | Purdue Football",
-      "url": "https://purduesports.com/news/2026/10/17/players-postgame-press-conference-vs-washington-purdue-football",
-      "summary": "",
-      "date": "2026-10-17T04:38:44+00:00"
-    },
-    {
-      "id": "7b87492b1e2c",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Finishes Regular Season at Pre-National Invitational",
-      "url": "https://purduesports.com/news/2026/10/16/purdue-finishes-regular-season-at-pre-national-invitational",
-      "summary": "",
-      "date": "2026-10-16T17:53:38+00:00"
     }
   ]
 }
