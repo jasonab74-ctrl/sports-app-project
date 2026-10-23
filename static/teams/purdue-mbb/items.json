@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-23T10:20:20.541249+00:00",
+  "updated": "2026-10-23T15:18:53.468777+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "ffc1c02cc797",
+      "source": "CBS Sports College Basketball",
+      "title": "NIL arms race: Matt Painter leads ranking of college basketball coaches outperforming their roster budgets",
+      "url": "https://www.cbssports.com/college-basketball/news/nil-arms-race-coaches-outperforming-roster-budgets-matt-painter-tj-otzelberger-nate-oats-fred-hoiberg/",
+      "summary": "Purdue's Matt Painter and Alabama's Nate Oats lead a group of high-major coaches routinely beating college basketball's biggest spenders on a fraction of the budget",
+      "date": "2026-10-23T11:45:07+00:00"
+    },
+    {
+      "id": "1ccd7654357c",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights:  Purdue 92, Purdue-Ft. Wayne 62",
+      "url": "https://purduesports.com/news/2026/10/23/highlights-purdue-92-purdue-ft-wayne-62",
+      "summary": "",
+      "date": "2026-10-23T01:17:36+00:00"
+    },
     {
       "id": "9a55d6739d72",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/10/18/coach-matt-painter-postgame-press-conference-vs-ball-state-purdue-mens-basketball",
       "summary": "",
       "date": "2026-10-18T20:43:30+00:00"
-    },
-    {
-      "id": "5c9d70f4c623",
-      "source": "Purdue Athletics MBB",
-      "title": "Players' Postgame Press Conference vs. Ball State | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/10/18/players-postgame-press-conference-vs-ball-state-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-10-18T20:28:42+00:00"
-    },
-    {
-      "id": "697bb07228ad",
-      "source": "Purdue Athletics MBB",
-      "title": "#20 Purdue Falls to #3 Ohio State",
-      "url": "https://purduesports.com/news/2026/10/18/20-purdue-falls-to-3-ohio-state",
-      "summary": "",
-      "date": "2026-10-18T19:42:27+00:00"
     }
   ]
 }
