@@ -1,8 +1,32 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-23T19:24:52.985451+00:00",
+  "updated": "2026-10-23T22:28:23.564162+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "d4b32f181f84",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue MBB Photo Gallery vs. Purdue Fort Wayne",
+      "url": "https://purduesports.com/news/2026/10/23/purdue-mbb-photo-gallery-vs-purdue-fort-wayne",
+      "summary": "",
+      "date": "2026-10-23T20:16:11+00:00"
+    },
+    {
+      "id": "ec0c944ac7a8",
+      "source": "Purdue Athletics MBB",
+      "title": "Katie Gearlds Pre-UIC Media Session | Purdue Women's Basketball",
+      "url": "https://purduesports.com/news/2026/10/23/katie-gearlds-pre-uic-media-session-purdue-womens-basketball",
+      "summary": "",
+      "date": "2026-10-23T18:55:04+00:00"
+    },
+    {
+      "id": "125ad45f7a61",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights: #22 Purdue 5, Indiana 0",
+      "url": "https://purduesports.com/news/2026/10/23/highlights-22-purdue-5-indiana-0",
+      "summary": "",
+      "date": "2026-10-23T14:55:08+00:00"
+    },
     {
       "id": "ffc1c02cc797",
       "source": "CBS Sports College Basketball",
@@ -138,30 +162,6 @@
       "url": "https://purduesports.com/news/2026/10/18/highlights-purdue-87-ball-state-55",
       "summary": "",
       "date": "2026-10-18T22:52:03+00:00"
-    },
-    {
-      "id": "5d02311dff71",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Rolls Past Mastodons in 2nd Exhibition Outing",
-      "url": "https://purduesports.com/news/2026/10/18/purdue-rolls-past-mastodons-in-2nd-exhibition-outing",
-      "summary": "",
-      "date": "2026-10-18T20:53:15+00:00"
-    },
-    {
-      "id": "a616a115c007",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Blow Out Ball State in Exhibition Opener",
-      "url": "https://purduesports.com/news/2026/10/18/boilermakers-blow-out-ball-state-in-exhibition-opener",
-      "summary": "",
-      "date": "2026-10-18T20:53:15+00:00"
-    },
-    {
-      "id": "f1112c6e876d",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Matt Painter Postgame Press Conference vs. Ball State | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/10/18/coach-matt-painter-postgame-press-conference-vs-ball-state-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-10-18T20:43:30+00:00"
     }
   ]
 }
