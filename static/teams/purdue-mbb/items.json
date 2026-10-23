@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-23T05:08:28.976991+00:00",
+  "updated": "2026-10-23T10:20:20.541249+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "9a55d6739d72",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Brings Home the Golden Boot in 5-0 Victory",
+      "url": "https://purduesports.com/news/2026/10/23/purdue-brings-home-the-golden-boot-in-5-0-victory",
+      "summary": "",
+      "date": "2026-10-23T00:54:32+00:00"
+    },
     {
       "id": "5bcd323c783f",
       "source": "Purdue Athletics MBB",
@@ -76,14 +84,6 @@
       "date": "2026-10-21T16:27:27+00:00"
     },
     {
-      "id": "64d59d6eeecc",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilers Face Purdue Fort Wayne in 2nd Exhibition Outing",
-      "url": "https://purduesports.com/news/2026/10/21/boilers-face-purdue-fort-wayne-in-2nd-exhibition-outing",
-      "summary": "",
-      "date": "2026-10-21T13:59:48+00:00"
-    },
-    {
       "id": "686d856cc7e1",
       "source": "CBS Sports College Basketball",
       "title": "College basketball rankings: Kansas makes big move in Top 25 And 1 after landing Trey Kaufman-Renn",
@@ -124,6 +124,14 @@
       "date": "2026-10-18T22:52:03+00:00"
     },
     {
+      "id": "5d02311dff71",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Rolls Past Mastodons in 2nd Exhibition Outing",
+      "url": "https://purduesports.com/news/2026/10/18/purdue-rolls-past-mastodons-in-2nd-exhibition-outing",
+      "summary": "",
+      "date": "2026-10-18T20:53:15+00:00"
+    },
+    {
       "id": "a616a115c007",
       "source": "Purdue Athletics MBB",
       "title": "Boilermakers Blow Out Ball State in Exhibition Opener",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/10/18/20-purdue-falls-to-3-ohio-state",
       "summary": "",
       "date": "2026-10-18T19:42:27+00:00"
-    },
-    {
-      "id": "fbb263386b6f",
-      "source": "Purdue Athletics MBB",
-      "title": "Wrestle-Offs: Gold vs. Black Photo Gallery",
-      "url": "https://purduesports.com/news/2026/10/18/wrestle-offs-gold-vs-black-photo-gallery",
-      "summary": "Team Black defeated Team Gold, 25-17, in the annual Boilermaker Wrestle-Offs open scrimmage.",
-      "date": "2026-10-18T16:07:52+00:00"
     }
   ]
 }
