@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-24T00:57:10.361398+00:00",
+  "updated": "2026-10-24T05:24:30.428665+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "7a5f95899620",
+      "source": "Purdue Athletics MBB",
+      "title": "#12 Purdue Serves Up 3-2 Victory vs. #20 Minnesota",
+      "url": "https://purduesports.com/news/2026/10/24/12-purdue-serves-up-3-2-victory-vs-20-minnesota",
+      "summary": "",
+      "date": "2026-10-24T03:00:00+00:00"
+    },
+    {
+      "id": "a552cf24dc5b",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Split Triple Dual with Iowa, UCLA",
+      "url": "https://purduesports.com/news/2026/10/23/boilermakers-split-triple-dual-with-iowa-ucla",
+      "summary": "Worobel sweeps the springboards; Chen, Mallard, Sands all win events again as well",
+      "date": "2026-10-23T23:47:00+00:00"
+    },
     {
       "id": "d4b32f181f84",
       "source": "Purdue Athletics MBB",
@@ -100,14 +116,6 @@
       "date": "2026-10-21T23:00:00+00:00"
     },
     {
-      "id": "2132a98a55da",
-      "source": "Purdue Athletics MBB",
-      "title": "#12 Purdue Welcomes #20 Minnesota, Northwestern",
-      "url": "https://purduesports.com/news/2026/10/21/12-purdue-welcomes-20-minnesota-northwestern",
-      "summary": "",
-      "date": "2026-10-21T19:30:00+00:00"
-    },
-    {
       "id": "a3388f76c5cc",
       "source": "Purdue Athletics MBB",
       "title": "Head Coach Matt Painter Press Conference | Purdue Fort Wayne Exhibition Preview",
@@ -154,14 +162,6 @@
       "url": "https://www.cbssports.com/college-basketball/news/trey-kaufman-renn-signs-with-kansas-sixth-year-of-eligibility-purdue/",
       "summary": "Kaufman-Renn is seeking a sixth year of eligibility after playing his first five seasons at Purdue",
       "date": "2026-10-19T15:21:55+00:00"
-    },
-    {
-      "id": "b37dab6a887f",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights: Purdue 87, Ball State 55",
-      "url": "https://purduesports.com/news/2026/10/18/highlights-purdue-87-ball-state-55",
-      "summary": "",
-      "date": "2026-10-18T22:52:03+00:00"
     }
   ]
 }
