@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-25T09:58:35.421055+00:00",
+  "updated": "2026-10-25T14:09:33.448132+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "667a750a43c1",
+      "source": "Purdue Athletics MBB",
+      "title": "Freshmen Impress as Purdue Wins 20 Events at Home Opener",
+      "url": "https://purduesports.com/news/2026/10/24/freshmen-impress-as-purdue-wins-20-events-at-home-opener",
+      "summary": "Chen eclipses freshman record in the 100 breast that had stood since 2011",
+      "date": "2026-10-24T23:37:00+00:00"
+    },
     {
       "id": "c4c5dc8cd2e8",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/10/19/john-purdue-club-student-athlete-spotlight-series-kayla-budish",
       "summary": "",
       "date": "2026-10-19T19:02:13+00:00"
-    },
-    {
-      "id": "6228170fff8d",
-      "source": "CBS Sports College Basketball",
-      "title": "Trey Kaufman-Renn signs with Kansas: Former Purdue star is seeking unprecedented sixth year of eligibility",
-      "url": "https://www.cbssports.com/college-basketball/news/trey-kaufman-renn-signs-with-kansas-sixth-year-of-eligibility-purdue/",
-      "summary": "Kaufman-Renn is seeking a sixth year of eligibility after playing his first five seasons at Purdue",
-      "date": "2026-10-19T15:21:55+00:00"
     }
   ]
 }
