@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-26T00:56:00.031604+00:00",
+  "updated": "2026-10-26T05:44:08.360324+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "31bf87a90e58",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights: #22 Purdue 3, Northwestern 1",
+      "url": "https://purduesports.com/news/2026/10/26/highlights-22-purdue-3-northwestern-1",
+      "summary": "",
+      "date": "2026-10-26T00:19:36+00:00"
+    },
     {
       "id": "667a750a43c1",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/10/20/purdue-mbb-vs-ball-state-exhibition-gallery",
       "summary": "Men's Basketball",
       "date": "2026-10-20T14:12:55+00:00"
-    },
-    {
-      "id": "44c454a817de",
-      "source": "Purdue Athletics MBB",
-      "title": "John Purdue Club Student-Athlete Spotlight Series - Kayla Budish",
-      "url": "https://purduesports.com/news/2026/10/19/john-purdue-club-student-athlete-spotlight-series-kayla-budish",
-      "summary": "",
-      "date": "2026-10-19T19:02:13+00:00"
     }
   ]
 }
