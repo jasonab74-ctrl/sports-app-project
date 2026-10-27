@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-27T18:50:36.832972+00:00",
+  "updated": "2026-10-27T22:48:41.699139+00:00",
   "count": 20,
   "items": [
     {
@@ -10,6 +10,22 @@
       "url": "https://www.cbssports.com/college-basketball/news/matt-painter-contract-extension-purdue-highest-paid-coaches/",
       "summary": "Painter will earn a reported $7 milllion this season in a new deal running through the 2030-31 season",
       "date": "2026-10-27T17:47:03+00:00"
+    },
+    {
+      "id": "5d0d05f5d867",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Baseball Black & Gold Series",
+      "url": "https://purduesports.com/news/2026/10/27/purdue-baseball-black-gold-series",
+      "summary": "",
+      "date": "2026-10-27T14:30:49+00:00"
+    },
+    {
+      "id": "8d51ac8b4098",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue and Coach Painter Announce Contract Extension",
+      "url": "https://purduesports.com/news/2026/10/27/purdue-and-coach-painter-announce-contract-extension",
+      "summary": "Amended agreement extends Painter through the 2030-31 season",
+      "date": "2026-10-27T14:30:00+00:00"
     },
     {
       "id": "fa40634c43d8",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/10/22/get-to-know-purdue-womens-basketball-jelena-bulajic-and-keona-douwstra",
       "summary": "",
       "date": "2026-10-22T02:08:54+00:00"
-    },
-    {
-      "id": "c072886bc811",
-      "source": "Purdue Athletics MBB",
-      "title": "#23 Purdue Soars Up Leaderboard, Secures Top 5 Finish",
-      "url": "https://purduesports.com/news/2026/10/21/23-purdue-soars-up-leaderboard-secures-top-5-finish",
-      "summary": "",
-      "date": "2026-10-21T23:56:07+00:00"
-    },
-    {
-      "id": "e645fd0dcf15",
-      "source": "Purdue Athletics MBB",
-      "title": "Boiler Room: Purdue Football All-Access Ep. 4",
-      "url": "https://purduesports.com/news/2026/10/21/boiler-room-purdue-football-all-access-ep-4",
-      "summary": "",
-      "date": "2026-10-21T23:00:00+00:00"
     }
   ]
 }
