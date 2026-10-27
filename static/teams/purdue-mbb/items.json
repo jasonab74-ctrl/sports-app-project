@@ -1,32 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-27T01:54:32.639316+00:00",
+  "updated": "2026-10-27T07:11:00.174907+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "fa40634c43d8",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights: #12 Purdue 3, Northwestern 0",
-      "url": "https://purduesports.com/news/2026/10/26/highlights-12-purdue-3-northwestern-0",
-      "summary": "",
-      "date": "2026-10-26T19:36:58+00:00"
-    },
-    {
-      "id": "48596c362d4b",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights: #12 Purdue 3, #20 Minnesota 2",
-      "url": "https://purduesports.com/news/2026/10/26/highlights-12-purdue-3-20-minnesota-2",
-      "summary": "",
-      "date": "2026-10-26T19:32:42+00:00"
-    },
-    {
-      "id": "9a0bee325488",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Closes Out Exhibition Play at #4 Connecticut",
-      "url": "https://purduesports.com/news/2026/10/26/purdue-closes-out-exhibition-play-at-no-4-connecticut",
-      "summary": "",
-      "date": "2026-10-26T17:37:23+00:00"
-    },
     {
       "id": "31bf87a90e58",
       "source": "Purdue Athletics MBB",
@@ -162,6 +138,30 @@
       "url": "https://purduesports.com/news/2026/10/21/head-coach-matt-painter-press-conference-purdue-fort-wayne-exhibition-preview",
       "summary": "",
       "date": "2026-10-21T18:13:32+00:00"
+    },
+    {
+      "id": "6dba0c25e08b",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Wrestle-Offs Quick Hits",
+      "url": "https://purduesports.com/news/2026/10/21/purdue-wrestle-offs-quick-hits",
+      "summary": "",
+      "date": "2026-10-21T16:27:27+00:00"
+    },
+    {
+      "id": "686d856cc7e1",
+      "source": "CBS Sports College Basketball",
+      "title": "College basketball rankings: Kansas makes big move in Top 25 And 1 after landing Trey Kaufman-Renn",
+      "url": "https://www.cbssports.com/college-basketball/news/college-basketball-rankings-kansas-in-top-25-and-1-trey-kaufman-renn/",
+      "summary": "The Purdue star signed with the Jayhawks, who move into the top five of the CBS Sports preseason rankings",
+      "date": "2026-10-20T19:01:42+00:00"
+    },
+    {
+      "id": "287926731fdf",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue MBB vs. Ball State Exhibition Gallery",
+      "url": "https://purduesports.com/news/2026/10/20/purdue-mbb-vs-ball-state-exhibition-gallery",
+      "summary": "Men's Basketball",
+      "date": "2026-10-20T14:12:55+00:00"
     }
   ]
 }
