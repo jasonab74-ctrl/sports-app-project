@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-28T08:02:55.402980+00:00",
+  "updated": "2026-10-28T15:16:18.300619+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "78bd51d48b9e",
+      "source": "Purdue Athletics MBB",
+      "title": "Game 8 Prep: Purdue Heads to Penn State for Halloween Showdown",
+      "url": "https://purduesports.com/news/2026/10/28/game-8-prep-purdue-heads-to-penn-state-for-halloween-showdown",
+      "summary": "",
+      "date": "2026-10-28T13:01:00+00:00"
+    },
     {
       "id": "ffaf8f0e75f5",
       "source": "CBS Sports College Basketball",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/10/22/get-to-know-purdue-womens-basketball-mckenna-layden-and-katka-sediva",
       "summary": "",
       "date": "2026-10-22T02:10:17+00:00"
-    },
-    {
-      "id": "558a2b04bf22",
-      "source": "Purdue Athletics MBB",
-      "title": "Get to Know Purdue Women's Basketball: Avery Gordon and Anjela Minja",
-      "url": "https://purduesports.com/news/2026/10/22/get-to-know-purdue-womens-basketball-avery-gordon-and-anjela-minja",
-      "summary": "",
-      "date": "2026-10-22T02:09:37+00:00"
     }
   ]
 }
