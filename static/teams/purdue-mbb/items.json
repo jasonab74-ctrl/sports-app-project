@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-28T01:58:42.144686+00:00",
+  "updated": "2026-10-28T08:02:55.402980+00:00",
   "count": 20,
   "items": [
     {
@@ -140,6 +140,14 @@
       "date": "2026-10-23T00:54:32+00:00"
     },
     {
+      "id": "72f41f377c25",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Rolls Past Mastodons in 2nd Exhibition Outing",
+      "url": "https://purduesports.com/news/2026/10/22/purdue-rolls-past-mastodons-in-2nd-exhibition-outing",
+      "summary": "",
+      "date": "2026-10-22T20:53:00+00:00"
+    },
+    {
       "id": "11e2cb148952",
       "source": "Purdue Athletics MBB",
       "title": "Get to Know Purdue Women's Basketball: McKenna Layden and Katka Sediva",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/10/22/get-to-know-purdue-womens-basketball-avery-gordon-and-anjela-minja",
       "summary": "",
       "date": "2026-10-22T02:09:37+00:00"
-    },
-    {
-      "id": "cf6de7c6fe86",
-      "source": "Purdue Athletics MBB",
-      "title": "Get to Know Purdue Women's Basketball - Jelena Bulajic and Keona Douwstra",
-      "url": "https://purduesports.com/news/2026/10/22/get-to-know-purdue-womens-basketball-jelena-bulajic-and-keona-douwstra",
-      "summary": "",
-      "date": "2026-10-22T02:08:54+00:00"
     }
   ]
 }
