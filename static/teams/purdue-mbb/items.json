@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-28T20:25:28.927189+00:00",
+  "updated": "2026-10-29T00:08:35.909683+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "c341c7145d58",
+      "source": "Purdue Athletics MBB",
+      "title": "#11 Purdue Looks to Extend Winning Streak",
+      "url": "https://purduesports.com/news/2026/10/28/11-purdue-looks-to-extend-winning-streak",
+      "summary": "",
+      "date": "2026-10-28T20:30:00+00:00"
+    },
+    {
+      "id": "41b849425475",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Katie Gearlds Media Session | Purdue Women's Basketball",
+      "url": "https://purduesports.com/news/2026/10/28/coach-katie-gearlds-media-session-purdue-womens-basketball-2",
+      "summary": "",
+      "date": "2026-10-28T19:42:27+00:00"
+    },
     {
       "id": "38fd5ae4d14e",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://www.cbssports.com/college-basketball/news/nil-arms-race-coaches-outperforming-roster-budgets-matt-painter-tj-otzelberger-nate-oats-fred-hoiberg/",
       "summary": "Purdue's Matt Painter and Alabama's Nate Oats lead a group of high-major coaches routinely beating college basketball's biggest spenders on a fraction of the budget",
       "date": "2026-10-23T11:45:07+00:00"
-    },
-    {
-      "id": "1ccd7654357c",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights:  Purdue 92, Purdue-Ft. Wayne 62",
-      "url": "https://purduesports.com/news/2026/10/23/highlights-purdue-92-purdue-ft-wayne-62",
-      "summary": "",
-      "date": "2026-10-23T01:17:36+00:00"
-    },
-    {
-      "id": "9a55d6739d72",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Brings Home the Golden Boot in 5-0 Victory",
-      "url": "https://purduesports.com/news/2026/10/23/purdue-brings-home-the-golden-boot-in-5-0-victory",
-      "summary": "",
-      "date": "2026-10-23T00:54:32+00:00"
     }
   ]
 }
