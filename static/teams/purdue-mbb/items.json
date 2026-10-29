@@ -1,8 +1,40 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-29T13:27:57.214063+00:00",
+  "updated": "2026-10-29T19:06:21.733792+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "00a87259fe69",
+      "source": "Purdue Athletics MBB",
+      "title": "Gicarri Harris Media Session | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/10/29/gicarri-harris-media-session-purdue-mens-basketball-1",
+      "summary": "",
+      "date": "2026-10-29T18:02:06+00:00"
+    },
+    {
+      "id": "f05db909fb1f",
+      "source": "Purdue Athletics MBB",
+      "title": "Omer Mayer Media Session | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/10/29/omer-mayer-media-session-purdue-mens-basketball-3",
+      "summary": "",
+      "date": "2026-10-29T17:56:16+00:00"
+    },
+    {
+      "id": "e6874ebfa6c6",
+      "source": "Purdue Athletics MBB",
+      "title": "Wrestling to Open Season at Home for First Time Since 1960",
+      "url": "https://purduesports.com/news/2026/10/29/wrestling-to-open-season-at-home-for-first-time-since-1960",
+      "summary": "The Boilermakers host Kent State on Sunday in a rare opening dual at home.",
+      "date": "2026-10-29T15:38:42+00:00"
+    },
+    {
+      "id": "20389c7b731a",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Faces Nebraska in Big Ten Regular-Season Finale",
+      "url": "https://purduesports.com/news/2026/10/29/purdue-faces-nebraska-in-big-ten-regular-season-finale",
+      "summary": "",
+      "date": "2026-10-29T15:10:18+00:00"
+    },
     {
       "id": "c341c7145d58",
       "source": "Purdue Athletics MBB",
@@ -130,38 +162,6 @@
       "url": "https://purduesports.com/news/2026/10/23/boilermakers-split-triple-dual-with-iowa-ucla",
       "summary": "Worobel sweeps the springboards; Chen, Mallard, Sands all win events again as well",
       "date": "2026-10-23T23:47:00+00:00"
-    },
-    {
-      "id": "d4b32f181f84",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue MBB Photo Gallery vs. Purdue Fort Wayne",
-      "url": "https://purduesports.com/news/2026/10/23/purdue-mbb-photo-gallery-vs-purdue-fort-wayne",
-      "summary": "",
-      "date": "2026-10-23T20:16:11+00:00"
-    },
-    {
-      "id": "ec0c944ac7a8",
-      "source": "Purdue Athletics MBB",
-      "title": "Katie Gearlds Pre-UIC Media Session | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2026/10/23/katie-gearlds-pre-uic-media-session-purdue-womens-basketball",
-      "summary": "",
-      "date": "2026-10-23T18:55:04+00:00"
-    },
-    {
-      "id": "125ad45f7a61",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights: #22 Purdue 5, Indiana 0",
-      "url": "https://purduesports.com/news/2026/10/23/highlights-22-purdue-5-indiana-0",
-      "summary": "",
-      "date": "2026-10-23T14:55:08+00:00"
-    },
-    {
-      "id": "ffc1c02cc797",
-      "source": "CBS Sports College Basketball",
-      "title": "NIL arms race: Matt Painter leads ranking of college basketball coaches outperforming their roster budgets",
-      "url": "https://www.cbssports.com/college-basketball/news/nil-arms-race-coaches-outperforming-roster-budgets-matt-painter-tj-otzelberger-nate-oats-fred-hoiberg/",
-      "summary": "Purdue's Matt Painter and Alabama's Nate Oats lead a group of high-major coaches routinely beating college basketball's biggest spenders on a fraction of the budget",
-      "date": "2026-10-23T11:45:07+00:00"
     }
   ]
 }
