@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-29T19:06:21.733792+00:00",
+  "updated": "2026-10-29T23:28:03.084657+00:00",
   "count": 20,
   "items": [
     {
@@ -42,6 +42,14 @@
       "url": "https://purduesports.com/news/2026/10/28/11-purdue-looks-to-extend-winning-streak",
       "summary": "",
       "date": "2026-10-28T20:30:00+00:00"
+    },
+    {
+      "id": "f0e0bdac227a",
+      "source": "Purdue Athletics MBB",
+      "title": "Higbie, Worobel Give Purdue B1G Diver of the Week Sweep",
+      "url": "https://purduesports.com/news/2026/10/28/higbie-worobel-give-purdue-b1g-diver-of-the-week-sweep",
+      "summary": "",
+      "date": "2026-10-28T20:03:00+00:00"
     },
     {
       "id": "41b849425475",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/10/24/12-purdue-serves-up-3-2-victory-vs-20-minnesota",
       "summary": "",
       "date": "2026-10-24T03:00:00+00:00"
-    },
-    {
-      "id": "a552cf24dc5b",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Split Triple Dual with Iowa, UCLA",
-      "url": "https://purduesports.com/news/2026/10/23/boilermakers-split-triple-dual-with-iowa-ucla",
-      "summary": "Worobel sweeps the springboards; Chen, Mallard, Sands all win events again as well",
-      "date": "2026-10-23T23:47:00+00:00"
     }
   ]
 }
