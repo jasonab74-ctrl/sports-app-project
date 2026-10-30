@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-30T16:08:03.950396+00:00",
+  "updated": "2026-10-30T20:57:12.823926+00:00",
   "count": 20,
   "items": [
     {
@@ -26,6 +26,14 @@
       "url": "https://purduesports.com/news/2026/10/29/halloween-weekend-home-and-home-series-with-oakland-continues",
       "summary": "Purdue's final home meet of the fall semester features action Friday at 5 p.m., Saturday at 11 a.m.",
       "date": "2026-10-29T19:42:00+00:00"
+    },
+    {
+      "id": "ea7202aec6fc",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Matt Painter Press Conference vs. Gonzaga | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/10/29/coach-matt-painter-press-conference-vs-gonzaga-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-10-29T18:27:47+00:00"
     },
     {
       "id": "00a87259fe69",
@@ -58,14 +66,6 @@
       "url": "https://purduesports.com/news/2026/10/29/purdue-faces-nebraska-in-big-ten-regular-season-finale",
       "summary": "",
       "date": "2026-10-29T15:10:18+00:00"
-    },
-    {
-      "id": "c341c7145d58",
-      "source": "Purdue Athletics MBB",
-      "title": "#11 Purdue Looks to Extend Winning Streak",
-      "url": "https://purduesports.com/news/2026/10/28/11-purdue-looks-to-extend-winning-streak",
-      "summary": "",
-      "date": "2026-10-28T20:30:00+00:00"
     },
     {
       "id": "f0e0bdac227a",
