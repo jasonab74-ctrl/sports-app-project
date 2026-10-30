@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-29T23:28:03.084657+00:00",
+  "updated": "2026-10-30T02:48:07.582385+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "2f0ff1664005",
+      "source": "Purdue Athletics MBB",
+      "title": "Halloween Weekend Home & Home Series with Oakland Continues",
+      "url": "https://purduesports.com/news/2026/10/29/halloween-weekend-home-and-home-series-with-oakland-continues",
+      "summary": "Purdue's final home meet of the fall semester features action Friday at 5 p.m., Saturday at 11 a.m.",
+      "date": "2026-10-29T19:42:00+00:00"
+    },
     {
       "id": "00a87259fe69",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/10/24/purdue-tops-uic-in-saturday-exhibition",
       "summary": "",
       "date": "2026-10-24T19:15:00+00:00"
-    },
-    {
-      "id": "7a5f95899620",
-      "source": "Purdue Athletics MBB",
-      "title": "#12 Purdue Serves Up 3-2 Victory vs. #20 Minnesota",
-      "url": "https://purduesports.com/news/2026/10/24/12-purdue-serves-up-3-2-victory-vs-20-minnesota",
-      "summary": "",
-      "date": "2026-10-24T03:00:00+00:00"
     }
   ]
 }
