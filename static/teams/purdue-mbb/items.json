@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-30T02:48:07.582385+00:00",
+  "updated": "2026-10-30T09:27:14.154012+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "93b9d94262b5",
+      "source": "Purdue Athletics MBB",
+      "title": "9 Aces Lead #11 Purdue to Victory",
+      "url": "https://purduesports.com/news/2026/10/30/9-aces-lead-11-purdue-to-victory",
+      "summary": "",
+      "date": "2026-10-30T02:07:29+00:00"
+    },
     {
       "id": "2f0ff1664005",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/10/24/freshmen-impress-as-purdue-wins-20-events-at-home-opener",
       "summary": "Chen eclipses freshman record in the 100 breast that had stood since 2011",
       "date": "2026-10-24T23:37:00+00:00"
-    },
-    {
-      "id": "c4c5dc8cd2e8",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Tops UIC in Saturday Exhibition",
-      "url": "https://purduesports.com/news/2026/10/24/purdue-tops-uic-in-saturday-exhibition",
-      "summary": "",
-      "date": "2026-10-24T19:15:00+00:00"
     }
   ]
 }
