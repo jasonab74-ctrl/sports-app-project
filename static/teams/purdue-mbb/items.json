@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-31T17:28:28.236880+00:00",
+  "updated": "2026-10-31T20:36:32.427566+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "0c71bc36f890",
+      "source": "Purdue Athletics MBB",
+      "title": "#11 Purdue Falls in Rec Hall",
+      "url": "https://purduesports.com/news/2026/10/31/11-purdue-falls-in-rec-hall",
+      "summary": "",
+      "date": "2026-10-31T18:52:00+00:00"
+    },
     {
       "id": "7a03c2e42311",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/10/27/purdue-and-coach-painter-announce-contract-extension",
       "summary": "Amended agreement extends Painter through the 2030-31 season",
       "date": "2026-10-27T14:30:00+00:00"
-    },
-    {
-      "id": "fa40634c43d8",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights: #12 Purdue 3, Northwestern 0",
-      "url": "https://purduesports.com/news/2026/10/26/highlights-12-purdue-3-northwestern-0",
-      "summary": "",
-      "date": "2026-10-26T19:36:58+00:00"
     }
   ]
 }
