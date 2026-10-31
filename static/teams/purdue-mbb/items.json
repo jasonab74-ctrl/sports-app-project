@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-31T00:25:10.546389+00:00",
+  "updated": "2026-10-31T06:03:37.601377+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "537c3fa06036",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Defeats Nebraska 2-1, Earns Most Big Ten Wins in Program History",
+      "url": "https://purduesports.com/news/2026/10/31/purdue-defeats-nebraska-2-1-earns-most-big-ten-wins-in-program-history",
+      "summary": "",
+      "date": "2026-10-31T01:48:45+00:00"
+    },
     {
       "id": "d2071ab41c49",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/10/26/highlights-12-purdue-3-northwestern-0",
       "summary": "",
       "date": "2026-10-26T19:36:58+00:00"
-    },
-    {
-      "id": "48596c362d4b",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights: #12 Purdue 3, #20 Minnesota 2",
-      "url": "https://purduesports.com/news/2026/10/26/highlights-12-purdue-3-20-minnesota-2",
-      "summary": "",
-      "date": "2026-10-26T19:32:42+00:00"
     }
   ]
 }
