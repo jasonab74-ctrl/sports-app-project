@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-30T20:57:12.823926+00:00",
+  "updated": "2026-10-31T00:25:10.546389+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "d2071ab41c49",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Opens 2026-27 Season Monday Night vs. IU Indy",
+      "url": "https://purduesports.com/news/2026/10/30/purdue-opens-2026-27-season-monday-night-vs-iu-indy",
+      "summary": "",
+      "date": "2026-10-30T18:09:00+00:00"
+    },
     {
       "id": "ba7096b89060",
       "source": "Purdue Athletics MBB",
@@ -56,7 +64,7 @@
       "source": "Purdue Athletics MBB",
       "title": "Wrestling to Open Season at Home for First Time Since 1960",
       "url": "https://purduesports.com/news/2026/10/29/wrestling-to-open-season-at-home-for-first-time-since-1960",
-      "summary": "The Boilermakers host Kent State on Sunday in a rare opening dual at home.",
+      "summary": "The Boilermakers host Kent State on Sunday in Holloway Gymnasium.",
       "date": "2026-10-29T15:38:42+00:00"
     },
     {
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/10/26/highlights-12-purdue-3-20-minnesota-2",
       "summary": "",
       "date": "2026-10-26T19:32:42+00:00"
-    },
-    {
-      "id": "31bf87a90e58",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights: #22 Purdue 3, Northwestern 1",
-      "url": "https://purduesports.com/news/2026/10/26/highlights-22-purdue-3-northwestern-1",
-      "summary": "",
-      "date": "2026-10-26T00:19:36+00:00"
     }
   ]
 }
