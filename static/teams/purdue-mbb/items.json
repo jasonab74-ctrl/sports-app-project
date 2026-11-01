@@ -1,31 +1,23 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-10-31T23:54:04.328656+00:00",
+  "updated": "2026-11-01T03:51:37.571855+00:00",
   "count": 20,
   "items": [
     {
-      "id": "01b7b8f2690e",
+      "id": "6d666e697b75",
       "source": "Purdue Athletics MBB",
-      "title": "Purdue Football",
-      "url": "https://purduesports.com/news/2026/10/31/purdue-football-8",
+      "title": "Road Boilermakers Fall at Penn State",
+      "url": "https://purduesports.com/news/2026/10/31/road-boilermakers-fall-at-penn-state",
       "summary": "",
-      "date": "2026-10-31T21:14:11+00:00"
+      "date": "2026-10-31T23:41:15+00:00"
     },
     {
-      "id": "62df54b81093",
+      "id": "9a363fc10067",
       "source": "Purdue Athletics MBB",
-      "title": "Purdue Football",
-      "url": "https://purduesports.com/news/2026/10/31/purdue-football-7",
-      "summary": "",
-      "date": "2026-10-31T20:46:03+00:00"
-    },
-    {
-      "id": "ed1d6a1f6101",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Football",
-      "url": "https://purduesports.com/news/2026/10/31/purdue-football-6",
-      "summary": "",
-      "date": "2026-10-31T20:45:27+00:00"
+      "title": "Purdue Completes Dual Sweep at Home on Halloween",
+      "url": "https://purduesports.com/news/2026/10/31/purdue-completes-dual-sweep-at-home-on-halloween",
+      "summary": "Men & Women both win 7 more events Saturday to close out the dual sweep of Oakland",
+      "date": "2026-10-31T21:23:00+00:00"
     },
     {
       "id": "0c71bc36f890",
@@ -50,14 +42,6 @@
       "url": "https://purduesports.com/news/2026/10/31/purdue-defeats-nebraska-2-1-earns-most-big-ten-wins-in-program-history",
       "summary": "",
       "date": "2026-10-31T01:48:45+00:00"
-    },
-    {
-      "id": "b196df7cde07",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Go 1-2 in 13 Events on Their Way to 18 Wins",
-      "url": "https://purduesports.com/news/2026/10/31/boilermakers-go-1-2-in-13-events-on-their-way-to-18-wins",
-      "summary": "Higbie, Worobel, Mackesy & Sands all sweep their individual events on Day 1 vs. Oakland",
-      "date": "2026-10-31T01:30:00+00:00"
     },
     {
       "id": "d2071ab41c49",
@@ -162,6 +146,22 @@
       "url": "https://purduesports.com/news/2026/10/28/game-8-prep-purdue-heads-to-penn-state-for-halloween-showdown",
       "summary": "",
       "date": "2026-10-28T13:01:00+00:00"
+    },
+    {
+      "id": "ffaf8f0e75f5",
+      "source": "CBS Sports College Basketball",
+      "title": "Matt Painter agrees to contract extension with Purdue, jumps into top 10 of highest-paid coaches",
+      "url": "https://www.cbssports.com/college-basketball/news/matt-painter-contract-extension-purdue-highest-paid-coaches/",
+      "summary": "Painter will earn a reported $7 milllion this season in a new deal running through the 2030-31 season",
+      "date": "2026-10-27T17:47:03+00:00"
+    },
+    {
+      "id": "5d0d05f5d867",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Baseball Black & Gold Series",
+      "url": "https://purduesports.com/news/2026/10/27/purdue-baseball-black-gold-series",
+      "summary": "",
+      "date": "2026-10-27T14:30:49+00:00"
     }
   ]
 }
