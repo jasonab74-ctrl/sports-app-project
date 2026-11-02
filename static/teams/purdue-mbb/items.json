@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-11-02T07:11:52.856187+00:00",
+  "updated": "2026-11-02T17:17:51.339034+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "44c9819ac2f4",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Wraps Up Big Ten Individuals",
+      "url": "https://purduesports.com/news/2026/11/2/purdue-wraps-up-big-ten-individuals",
+      "summary": "",
+      "date": "2026-11-02T01:33:00+00:00"
+    },
     {
       "id": "adfc0c1ae840",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/10/28/game-8-prep-purdue-heads-to-penn-state-for-halloween-showdown",
       "summary": "",
       "date": "2026-10-28T13:01:00+00:00"
-    },
-    {
-      "id": "ffaf8f0e75f5",
-      "source": "CBS Sports College Basketball",
-      "title": "Matt Painter agrees to contract extension with Purdue, jumps into top 10 of highest-paid coaches",
-      "url": "https://www.cbssports.com/college-basketball/news/matt-painter-contract-extension-purdue-highest-paid-coaches/",
-      "summary": "Painter will earn a reported $7 milllion this season in a new deal running through the 2030-31 season",
-      "date": "2026-10-27T17:47:03+00:00"
     }
   ]
 }
