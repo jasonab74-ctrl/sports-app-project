@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-11-02T17:17:51.339034+00:00",
+  "updated": "2026-11-02T23:57:42.206303+00:00",
   "count": 20,
   "items": [
     {
@@ -50,6 +50,14 @@
       "url": "https://purduesports.com/news/2026/10/31/purdue-soccer-win-vs-nebraska-photo-gallery",
       "summary": "",
       "date": "2026-10-31T04:23:38+00:00"
+    },
+    {
+      "id": "03acf2e240f7",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights: #18 Purdue 2, Nebraska 1",
+      "url": "https://purduesports.com/news/2026/10/31/highlights-18-purdue-2-nebraska-1",
+      "summary": "",
+      "date": "2026-10-31T01:57:46+00:00"
     },
     {
       "id": "537c3fa06036",
@@ -108,14 +116,6 @@
       "date": "2026-10-29T17:56:16+00:00"
     },
     {
-      "id": "e6874ebfa6c6",
-      "source": "Purdue Athletics MBB",
-      "title": "Wrestling to Open Season at Home for First Time Since 1960",
-      "url": "https://purduesports.com/news/2026/10/29/wrestling-to-open-season-at-home-for-first-time-since-1960",
-      "summary": "The Boilermakers host Kent State on Sunday in Holloway Gymnasium.",
-      "date": "2026-10-29T15:38:42+00:00"
-    },
-    {
       "id": "f0e0bdac227a",
       "source": "Purdue Athletics MBB",
       "title": "Higbie, Worobel Give Purdue B1G Diver of the Week Sweep",
@@ -156,12 +156,12 @@
       "date": "2026-10-28T14:24:22+00:00"
     },
     {
-      "id": "78bd51d48b9e",
-      "source": "Purdue Athletics MBB",
-      "title": "Game 8 Prep: Purdue Heads to Penn State for Halloween Showdown",
-      "url": "https://purduesports.com/news/2026/10/28/game-8-prep-purdue-heads-to-penn-state-for-halloween-showdown",
-      "summary": "",
-      "date": "2026-10-28T13:01:00+00:00"
+      "id": "ffaf8f0e75f5",
+      "source": "CBS Sports College Basketball",
+      "title": "Matt Painter agrees to contract extension with Purdue, jumps into top 10 of highest-paid coaches",
+      "url": "https://www.cbssports.com/college-basketball/news/matt-painter-contract-extension-purdue-highest-paid-coaches/",
+      "summary": "Painter will earn a reported $7 milllion this season in a new deal running through the 2030-31 season",
+      "date": "2026-10-27T17:47:03+00:00"
     }
   ]
 }
