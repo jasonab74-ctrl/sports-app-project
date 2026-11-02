@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-11-02T00:56:29.221136+00:00",
+  "updated": "2026-11-02T07:11:52.856187+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "adfc0c1ae840",
+      "source": "Purdue Athletics MBB",
+      "title": "2026-27 Purdue Men’s Basketball Season Hype",
+      "url": "https://purduesports.com/news/2026/11/2/2026-27-purdue-mens-basketball-season-hype",
+      "summary": "",
+      "date": "2026-11-02T00:25:02+00:00"
+    },
     {
       "id": "6d666e697b75",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://www.cbssports.com/college-basketball/news/matt-painter-contract-extension-purdue-highest-paid-coaches/",
       "summary": "Painter will earn a reported $7 milllion this season in a new deal running through the 2030-31 season",
       "date": "2026-10-27T17:47:03+00:00"
-    },
-    {
-      "id": "5d0d05f5d867",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Baseball Black & Gold Series",
-      "url": "https://purduesports.com/news/2026/10/27/purdue-baseball-black-gold-series",
-      "summary": "",
-      "date": "2026-10-27T14:30:49+00:00"
     }
   ]
 }
