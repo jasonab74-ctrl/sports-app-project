@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-11-03T13:27:59.491708+00:00",
+  "updated": "2026-11-03T20:13:01.655164+00:00",
   "count": 20,
   "items": [
     {
@@ -116,14 +116,6 @@
       "date": "2026-10-31T01:48:45+00:00"
     },
     {
-      "id": "d2071ab41c49",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Opens 2026-27 Season Monday Night vs. IU Indy",
-      "url": "https://purduesports.com/news/2026/10/30/purdue-opens-2026-27-season-monday-night-vs-iu-indy",
-      "summary": "",
-      "date": "2026-10-30T18:09:00+00:00"
-    },
-    {
       "id": "ba7096b89060",
       "source": "Purdue Athletics MBB",
       "title": "Lilly and Purdue Athletics Announce Iconic Court Branding Partnership",
@@ -162,6 +154,14 @@
       "url": "https://purduesports.com/news/2026/10/29/omer-mayer-media-session-purdue-mens-basketball-3",
       "summary": "",
       "date": "2026-10-29T17:56:16+00:00"
+    },
+    {
+      "id": "f0e0bdac227a",
+      "source": "Purdue Athletics MBB",
+      "title": "Higbie, Worobel Give Purdue B1G Diver of the Week Sweep",
+      "url": "https://purduesports.com/news/2026/10/28/higbie-worobel-give-purdue-b1g-diver-of-the-week-sweep",
+      "summary": "",
+      "date": "2026-10-28T20:03:00+00:00"
     }
   ]
 }
