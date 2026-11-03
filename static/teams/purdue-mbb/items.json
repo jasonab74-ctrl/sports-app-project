@@ -1,8 +1,56 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-11-02T23:57:42.206303+00:00",
+  "updated": "2026-11-03T05:40:50.876332+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "e589f568bc7a",
+      "source": "CBS Sports College Basketball",
+      "title": "Trey Kaufman-Renn makes Kansas debut: Ex-Purdue star finally takes floor for Jayhawks",
+      "url": "https://www.cbssports.com/college-basketball/news/trey-kaufman-renn-kansas-debut-season-opener-sixth-season/",
+      "summary": "Kaufman-Renn came off the bench to score nine points in the Jayhawks' 95-65 win vs. Fordham",
+      "date": "2026-11-03T04:59:41+00:00"
+    },
+    {
+      "id": "34f1c40d19ec",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Katie Gearlds Postgame Press Conference vs. IU Indy | Purdue Women's Basketball",
+      "url": "https://purduesports.com/news/2026/11/3/coach-katie-gearlds-postgame-press-conference-vs-iu-indy-purdue-womens-basketball",
+      "summary": "",
+      "date": "2026-11-03T02:57:15+00:00"
+    },
+    {
+      "id": "2f63ae73d99f",
+      "source": "Purdue Athletics MBB",
+      "title": "Players' Postgame Press Conference vs. IU Indy | Purdue Women's Basketball",
+      "url": "https://purduesports.com/news/2026/11/3/players-postgame-press-conference-vs-iu-indy-purdue-womens-basketball",
+      "summary": "",
+      "date": "2026-11-03T02:54:26+00:00"
+    },
+    {
+      "id": "34c3c97eca44",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Women's Basketball",
+      "url": "https://purduesports.com/news/2026/11/3/purdue-womens-basketball-2",
+      "summary": "",
+      "date": "2026-11-03T02:45:45+00:00"
+    },
+    {
+      "id": "eb7cd48cc758",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Women's Basketball",
+      "url": "https://purduesports.com/news/2026/11/3/purdue-womens-basketball-1",
+      "summary": "",
+      "date": "2026-11-03T02:42:21+00:00"
+    },
+    {
+      "id": "8d17798147ca",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Women's Basketball",
+      "url": "https://purduesports.com/news/2026/11/3/purdue-womens-basketball",
+      "summary": "",
+      "date": "2026-11-03T02:39:42+00:00"
+    },
     {
       "id": "44c9819ac2f4",
       "source": "Purdue Athletics MBB",
@@ -114,54 +162,6 @@
       "url": "https://purduesports.com/news/2026/10/29/omer-mayer-media-session-purdue-mens-basketball-3",
       "summary": "",
       "date": "2026-10-29T17:56:16+00:00"
-    },
-    {
-      "id": "f0e0bdac227a",
-      "source": "Purdue Athletics MBB",
-      "title": "Higbie, Worobel Give Purdue B1G Diver of the Week Sweep",
-      "url": "https://purduesports.com/news/2026/10/28/higbie-worobel-give-purdue-b1g-diver-of-the-week-sweep",
-      "summary": "",
-      "date": "2026-10-28T20:03:00+00:00"
-    },
-    {
-      "id": "41b849425475",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Katie Gearlds Media Session | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2026/10/28/coach-katie-gearlds-media-session-purdue-womens-basketball-2",
-      "summary": "",
-      "date": "2026-10-28T19:42:27+00:00"
-    },
-    {
-      "id": "38fd5ae4d14e",
-      "source": "Purdue Athletics MBB",
-      "title": "Hadauri Hines Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/10/28/hadauri-hines-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-10-28T16:26:57+00:00"
-    },
-    {
-      "id": "87e3ab9a6fbf",
-      "source": "Purdue Athletics MBB",
-      "title": "Rico Schrieber Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/10/28/rico-schrieber-media-session-purdue-football",
-      "summary": "",
-      "date": "2026-10-28T16:26:01+00:00"
-    },
-    {
-      "id": "b637b8b2cbf6",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue MBB at #4 Connecticut",
-      "url": "https://purduesports.com/news/2026/10/28/purdue-mbb-at-4-connecticut",
-      "summary": "",
-      "date": "2026-10-28T14:24:22+00:00"
-    },
-    {
-      "id": "ffaf8f0e75f5",
-      "source": "CBS Sports College Basketball",
-      "title": "Matt Painter agrees to contract extension with Purdue, jumps into top 10 of highest-paid coaches",
-      "url": "https://www.cbssports.com/college-basketball/news/matt-painter-contract-extension-purdue-highest-paid-coaches/",
-      "summary": "Painter will earn a reported $7 milllion this season in a new deal running through the 2030-31 season",
-      "date": "2026-10-27T17:47:03+00:00"
     }
   ]
 }
