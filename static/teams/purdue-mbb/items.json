@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-11-04T15:37:29.712379+00:00",
+  "updated": "2026-11-04T21:40:18.227956+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "02bd29b2fc38",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Hosts Eastern Michigan Thursday Night",
+      "url": "https://purduesports.com/news/2026/11/4/purdue-hosts-eastern-michigan-thursday-night",
+      "summary": "",
+      "date": "2026-11-04T17:08:44+00:00"
+    },
+    {
+      "id": "f0ca0e603238",
+      "source": "Purdue Athletics MBB",
+      "title": "Game 9 Prep: Purdue Squares Off with Maryland for Homecoming",
+      "url": "https://purduesports.com/news/2026/11/4/game-9-prep-purdue-squares-off-with-maryland-for-homecoming",
+      "summary": "",
+      "date": "2026-11-04T14:01:00+00:00"
+    },
     {
       "id": "a28801b9414d",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/10/29/coach-matt-painter-press-conference-vs-gonzaga-purdue-mens-basketball",
       "summary": "",
       "date": "2026-10-29T18:27:47+00:00"
-    },
-    {
-      "id": "00a87259fe69",
-      "source": "Purdue Athletics MBB",
-      "title": "Gicarri Harris Media Session | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/10/29/gicarri-harris-media-session-purdue-mens-basketball-1",
-      "summary": "",
-      "date": "2026-10-29T18:02:06+00:00"
-    },
-    {
-      "id": "f05db909fb1f",
-      "source": "Purdue Athletics MBB",
-      "title": "Omer Mayer Media Session | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/10/29/omer-mayer-media-session-purdue-mens-basketball-3",
-      "summary": "",
-      "date": "2026-10-29T17:56:16+00:00"
     }
   ]
 }
