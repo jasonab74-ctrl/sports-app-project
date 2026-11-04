@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-11-03T20:13:01.655164+00:00",
+  "updated": "2026-11-04T00:44:20.913461+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "a28801b9414d",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Football Adds Matchup with West Virginia to 2027 Schedule",
+      "url": "https://purduesports.com/news/2026/11/3/purdue-football-adds-matchup-with-west-virginia-to-2027-schedule",
+      "summary": "",
+      "date": "2026-11-03T16:00:00+00:00"
+    },
     {
       "id": "e589f568bc7a",
       "source": "CBS Sports College Basketball",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/10/29/omer-mayer-media-session-purdue-mens-basketball-3",
       "summary": "",
       "date": "2026-10-29T17:56:16+00:00"
-    },
-    {
-      "id": "f0e0bdac227a",
-      "source": "Purdue Athletics MBB",
-      "title": "Higbie, Worobel Give Purdue B1G Diver of the Week Sweep",
-      "url": "https://purduesports.com/news/2026/10/28/higbie-worobel-give-purdue-b1g-diver-of-the-week-sweep",
-      "summary": "",
-      "date": "2026-10-28T20:03:00+00:00"
     }
   ]
 }
