@@ -1,8 +1,32 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-11-04T21:40:18.227956+00:00",
+  "updated": "2026-11-05T01:56:37.461684+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "b1cb75f5f554",
+      "source": "Purdue Athletics MBB",
+      "title": "Bisi Owens Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/11/4/bisi-owens-media-session-purdue-football-1",
+      "summary": "",
+      "date": "2026-11-04T19:50:04+00:00"
+    },
+    {
+      "id": "73d6542316fe",
+      "source": "Purdue Athletics MBB",
+      "title": "Jude McCoskey Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/11/4/jude-mccoskey-media-session-purdue-football-1",
+      "summary": "",
+      "date": "2026-11-04T19:47:00+00:00"
+    },
+    {
+      "id": "a554de6ba00a",
+      "source": "Purdue Athletics MBB",
+      "title": "#3-Seeded Purdue Takes on #6-Seeded Penn State in Big Ten Quarterfinals",
+      "url": "https://purduesports.com/news/2026/11/4/3-seeded-purdue-takes-on-6-seeded-penn-state-in-big-ten-quarterfinals",
+      "summary": "",
+      "date": "2026-11-04T19:20:06+00:00"
+    },
     {
       "id": "02bd29b2fc38",
       "source": "Purdue Athletics MBB",
@@ -138,30 +162,6 @@
       "url": "https://purduesports.com/news/2026/10/31/purdue-defeats-nebraska-2-1-earns-most-big-ten-wins-in-program-history",
       "summary": "",
       "date": "2026-10-31T01:48:45+00:00"
-    },
-    {
-      "id": "ba7096b89060",
-      "source": "Purdue Athletics MBB",
-      "title": "Lilly and Purdue Athletics Announce Iconic Court Branding Partnership",
-      "url": "https://purduesports.com/news/2026/10/30/lilly-and-purdue-athletics-announce-iconic-court-branding-partnership",
-      "summary": "",
-      "date": "2026-10-30T12:10:00+00:00"
-    },
-    {
-      "id": "93b9d94262b5",
-      "source": "Purdue Athletics MBB",
-      "title": "9 Aces Lead #11 Purdue to Victory",
-      "url": "https://purduesports.com/news/2026/10/30/9-aces-lead-11-purdue-to-victory",
-      "summary": "",
-      "date": "2026-10-30T02:07:29+00:00"
-    },
-    {
-      "id": "ea7202aec6fc",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Matt Painter Press Conference vs. Gonzaga | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/10/29/coach-matt-painter-press-conference-vs-gonzaga-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-10-29T18:27:47+00:00"
     }
   ]
 }
