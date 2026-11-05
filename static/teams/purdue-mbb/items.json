@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-11-05T08:57:18.495082+00:00",
+  "updated": "2026-11-05T17:07:39.284469+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "be8a0a0bc512",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Earns 5 Big Ten Weekly Honors",
+      "url": "https://purduesports.com/news/2026/11/4/purdue-earns-5-big-ten-weekly-honors",
+      "summary": "Bissett, Higbie, Worobel & Mallard all recognized after combining for 12 event wins at Purdue's two-day dual",
+      "date": "2026-11-04T21:18:00+00:00"
+    },
     {
       "id": "b1cb75f5f554",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/10/31/highlights-18-purdue-2-nebraska-1",
       "summary": "",
       "date": "2026-10-31T01:57:46+00:00"
-    },
-    {
-      "id": "537c3fa06036",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Defeats Nebraska 2-1, Earns Most Big Ten Wins in Program History",
-      "url": "https://purduesports.com/news/2026/10/31/purdue-defeats-nebraska-2-1-earns-most-big-ten-wins-in-program-history",
-      "summary": "",
-      "date": "2026-10-31T01:48:45+00:00"
     }
   ]
 }
