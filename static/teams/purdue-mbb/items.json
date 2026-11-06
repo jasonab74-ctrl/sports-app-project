@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-11-06T11:16:17.123852+00:00",
+  "updated": "2026-11-06T18:10:26.801466+00:00",
   "count": 20,
   "items": [
     {
@@ -124,22 +124,6 @@
       "date": "2026-11-04T19:47:00+00:00"
     },
     {
-      "id": "a554de6ba00a",
-      "source": "Purdue Athletics MBB",
-      "title": "#3-Seeded Purdue Takes on #6-Seeded Penn State in Big Ten Quarterfinals",
-      "url": "https://purduesports.com/news/2026/11/4/3-seeded-purdue-takes-on-6-seeded-penn-state-in-big-ten-quarterfinals",
-      "summary": "",
-      "date": "2026-11-04T19:20:06+00:00"
-    },
-    {
-      "id": "02bd29b2fc38",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Hosts Eastern Michigan Thursday Night",
-      "url": "https://purduesports.com/news/2026/11/4/purdue-hosts-eastern-michigan-thursday-night",
-      "summary": "",
-      "date": "2026-11-04T17:08:44+00:00"
-    },
-    {
       "id": "f0ca0e603238",
       "source": "Purdue Athletics MBB",
       "title": "Game 9 Prep: Purdue Squares Off with Maryland for Homecoming",
@@ -162,6 +146,22 @@
       "url": "https://www.cbssports.com/college-basketball/news/trey-kaufman-renn-kansas-debut-season-opener-sixth-season/",
       "summary": "Kaufman-Renn came off the bench to score nine points in the Jayhawks' 95-65 win vs. Fordham",
       "date": "2026-11-03T06:39:09+00:00"
+    },
+    {
+      "id": "34f1c40d19ec",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Katie Gearlds Postgame Press Conference vs. IU Indy | Purdue Women's Basketball",
+      "url": "https://purduesports.com/news/2026/11/3/coach-katie-gearlds-postgame-press-conference-vs-iu-indy-purdue-womens-basketball",
+      "summary": "",
+      "date": "2026-11-03T02:57:15+00:00"
+    },
+    {
+      "id": "2f63ae73d99f",
+      "source": "Purdue Athletics MBB",
+      "title": "Players' Postgame Press Conference vs. IU Indy | Purdue Women's Basketball",
+      "url": "https://purduesports.com/news/2026/11/3/players-postgame-press-conference-vs-iu-indy-purdue-womens-basketball",
+      "summary": "",
+      "date": "2026-11-03T02:54:26+00:00"
     }
   ]
 }
