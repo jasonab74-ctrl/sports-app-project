@@ -1,8 +1,48 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-11-05T22:44:19.902303+00:00",
+  "updated": "2026-11-06T03:01:43.870765+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "8658ccf124c2",
+      "source": "Purdue Athletics MBB",
+      "title": "Back in Mackey Arena",
+      "url": "https://purduesports.com/news/2026/11/6/back-in-mackey-arena",
+      "summary": "",
+      "date": "2026-11-06T00:28:24+00:00"
+    },
+    {
+      "id": "ff0ff4bed60f",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Matt Painter Media Session | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/11/5/coach-matt-painter-media-session-purdue-mens-basketball-3",
+      "summary": "",
+      "date": "2026-11-05T19:34:57+00:00"
+    },
+    {
+      "id": "88553885fd0d",
+      "source": "Purdue Athletics MBB",
+      "title": "Caden Pierce Media Session | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/11/5/caden-pierce-media-session-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-11-05T19:31:52+00:00"
+    },
+    {
+      "id": "491a4e09e142",
+      "source": "Purdue Athletics MBB",
+      "title": "Jack Benter Media Session | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/11/5/jack-benter-media-session-purdue-mens-basketball-1",
+      "summary": "",
+      "date": "2026-11-05T19:28:57+00:00"
+    },
+    {
+      "id": "e78bbd031437",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilers Ready for Throwdown on the Yorktown",
+      "url": "https://purduesports.com/news/2026/11/5/boilers-ready-for-throwdown-on-the-yorktown",
+      "summary": "Purdue is set to wrestle on the top deck of the USS Yorktown (CV-10) aircraft carrier.",
+      "date": "2026-11-05T19:20:49+00:00"
+    },
     {
       "id": "342fc1581002",
       "source": "Purdue Athletics MBB",
@@ -122,46 +162,6 @@
       "url": "https://purduesports.com/news/2026/11/2/purdue-wraps-up-big-ten-individuals",
       "summary": "",
       "date": "2026-11-02T01:33:00+00:00"
-    },
-    {
-      "id": "adfc0c1ae840",
-      "source": "Purdue Athletics MBB",
-      "title": "2026-27 Purdue Men’s Basketball Season Hype",
-      "url": "https://purduesports.com/news/2026/11/2/2026-27-purdue-mens-basketball-season-hype",
-      "summary": "",
-      "date": "2026-11-02T00:25:02+00:00"
-    },
-    {
-      "id": "6d666e697b75",
-      "source": "Purdue Athletics MBB",
-      "title": "Road Boilermakers Fall at Penn State",
-      "url": "https://purduesports.com/news/2026/10/31/road-boilermakers-fall-at-penn-state",
-      "summary": "",
-      "date": "2026-10-31T23:41:15+00:00"
-    },
-    {
-      "id": "9a363fc10067",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Completes Dual Sweep at Home on Halloween",
-      "url": "https://purduesports.com/news/2026/10/31/purdue-completes-dual-sweep-at-home-on-halloween",
-      "summary": "Men & Women both win 7 more events Saturday to close out the dual sweep of Oakland",
-      "date": "2026-10-31T21:23:00+00:00"
-    },
-    {
-      "id": "0c71bc36f890",
-      "source": "Purdue Athletics MBB",
-      "title": "#11 Purdue Falls in Rec Hall",
-      "url": "https://purduesports.com/news/2026/10/31/11-purdue-falls-in-rec-hall",
-      "summary": "",
-      "date": "2026-10-31T18:52:00+00:00"
-    },
-    {
-      "id": "7a03c2e42311",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Soccer Win vs. Nebraska Photo Gallery",
-      "url": "https://purduesports.com/news/2026/10/31/purdue-soccer-win-vs-nebraska-photo-gallery",
-      "summary": "",
-      "date": "2026-10-31T04:23:38+00:00"
     }
   ]
 }
