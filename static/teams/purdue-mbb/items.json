@@ -1,8 +1,48 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-11-06T03:01:43.870765+00:00",
+  "updated": "2026-11-06T11:16:17.123852+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "4d8adabe79f3",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights: #16 Purdue 2, #21 Penn State 1",
+      "url": "https://purduesports.com/news/2026/11/6/highlights-16-purdue-2-21-penn-state-1",
+      "summary": "",
+      "date": "2026-11-06T05:16:46+00:00"
+    },
+    {
+      "id": "238443010df4",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Advances to Big Ten Semifinals With Overtime Winner",
+      "url": "https://purduesports.com/news/2026/11/6/purdue-advances-to-big-ten-semifinals-with-overtime-winner",
+      "summary": "",
+      "date": "2026-11-06T04:57:41+00:00"
+    },
+    {
+      "id": "c806ec97efa4",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Katie Gearlds Postgame Press Conference vs. Eastern Michigan | Purdue Women's Basketball",
+      "url": "https://purduesports.com/news/2026/11/6/coach-katie-gearlds-postgame-press-conference-vs-eastern-michigan-purdue-womens-basketball",
+      "summary": "",
+      "date": "2026-11-06T02:54:23+00:00"
+    },
+    {
+      "id": "c8a1a995972c",
+      "source": "Purdue Athletics MBB",
+      "title": "Player Postgame Press Conference vs. Eastern Michigan | Purdue Women's Basketball",
+      "url": "https://purduesports.com/news/2026/11/6/player-postgame-press-conference-vs-eastern-michigan-purdue-womens-basketball",
+      "summary": "",
+      "date": "2026-11-06T02:43:34+00:00"
+    },
+    {
+      "id": "265d501a0d69",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights vs. Eastern Michigan | Purdue Women's Basketball",
+      "url": "https://purduesports.com/news/2026/11/6/highlights-vs-eastern-michigan-purdue-womens-basketball",
+      "summary": "",
+      "date": "2026-11-06T02:36:02+00:00"
+    },
     {
       "id": "8658ccf124c2",
       "source": "Purdue Athletics MBB",
@@ -10,6 +50,14 @@
       "url": "https://purduesports.com/news/2026/11/6/back-in-mackey-arena",
       "summary": "",
       "date": "2026-11-06T00:28:24+00:00"
+    },
+    {
+      "id": "4692b8e223af",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Bounce Eastern Michigan",
+      "url": "https://purduesports.com/news/2026/11/6/boilermakers-bounce-eastern-michigan",
+      "summary": "",
+      "date": "2026-11-06T00:05:49+00:00"
     },
     {
       "id": "ff0ff4bed60f",
@@ -114,54 +162,6 @@
       "url": "https://www.cbssports.com/college-basketball/news/trey-kaufman-renn-kansas-debut-season-opener-sixth-season/",
       "summary": "Kaufman-Renn came off the bench to score nine points in the Jayhawks' 95-65 win vs. Fordham",
       "date": "2026-11-03T06:39:09+00:00"
-    },
-    {
-      "id": "34f1c40d19ec",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Katie Gearlds Postgame Press Conference vs. IU Indy | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2026/11/3/coach-katie-gearlds-postgame-press-conference-vs-iu-indy-purdue-womens-basketball",
-      "summary": "",
-      "date": "2026-11-03T02:57:15+00:00"
-    },
-    {
-      "id": "2f63ae73d99f",
-      "source": "Purdue Athletics MBB",
-      "title": "Players' Postgame Press Conference vs. IU Indy | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2026/11/3/players-postgame-press-conference-vs-iu-indy-purdue-womens-basketball",
-      "summary": "",
-      "date": "2026-11-03T02:54:26+00:00"
-    },
-    {
-      "id": "34c3c97eca44",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2026/11/3/purdue-womens-basketball-2",
-      "summary": "",
-      "date": "2026-11-03T02:45:45+00:00"
-    },
-    {
-      "id": "eb7cd48cc758",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2026/11/3/purdue-womens-basketball-1",
-      "summary": "",
-      "date": "2026-11-03T02:42:21+00:00"
-    },
-    {
-      "id": "8d17798147ca",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2026/11/3/purdue-womens-basketball",
-      "summary": "",
-      "date": "2026-11-03T02:39:42+00:00"
-    },
-    {
-      "id": "44c9819ac2f4",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Wraps Up Big Ten Individuals",
-      "url": "https://purduesports.com/news/2026/11/2/purdue-wraps-up-big-ten-individuals",
-      "summary": "",
-      "date": "2026-11-02T01:33:00+00:00"
     }
   ]
 }
