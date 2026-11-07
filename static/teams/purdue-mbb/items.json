@@ -1,8 +1,40 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-11-07T20:22:44.894271+00:00",
+  "updated": "2026-11-07T23:45:44.267661+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "a0eb0d574e53",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Barry Odom Postgame Press Conference vs. Maryland | Purdue Football",
+      "url": "https://purduesports.com/news/2026/11/7/coach-barry-odom-postgame-press-conference-vs-maryland-purdue-football",
+      "summary": "",
+      "date": "2026-11-07T21:43:27+00:00"
+    },
+    {
+      "id": "a8b909209019",
+      "source": "Purdue Athletics MBB",
+      "title": "Players' Postgame Press Conference vs. Maryland | Purdue Football",
+      "url": "https://purduesports.com/news/2026/11/7/players-postgame-press-conference-vs-maryland-purdue-football",
+      "summary": "",
+      "date": "2026-11-07T21:39:57+00:00"
+    },
+    {
+      "id": "8d7fc0034a66",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Football",
+      "url": "https://purduesports.com/news/2026/11/7/purdue-football-9",
+      "summary": "",
+      "date": "2026-11-07T19:52:07+00:00"
+    },
+    {
+      "id": "3b997ebff204",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Volleyball on B1G Tailgate",
+      "url": "https://purduesports.com/news/2026/11/7/purdue-volleyball-on-b1g-tailgate",
+      "summary": "",
+      "date": "2026-11-07T17:15:08+00:00"
+    },
     {
       "id": "be46a45a7103",
       "source": "CBS Sports College Basketball",
@@ -130,38 +162,6 @@
       "url": "https://purduesports.com/news/2026/11/4/purdue-earns-5-big-ten-weekly-honors",
       "summary": "Bissett, Higbie, Worobel & Mallard all recognized after combining for 12 event wins at Purdue's two-day dual",
       "date": "2026-11-04T21:18:00+00:00"
-    },
-    {
-      "id": "b1cb75f5f554",
-      "source": "Purdue Athletics MBB",
-      "title": "Bisi Owens Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/11/4/bisi-owens-media-session-purdue-football-1",
-      "summary": "",
-      "date": "2026-11-04T19:50:04+00:00"
-    },
-    {
-      "id": "73d6542316fe",
-      "source": "Purdue Athletics MBB",
-      "title": "Jude McCoskey Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/11/4/jude-mccoskey-media-session-purdue-football-1",
-      "summary": "",
-      "date": "2026-11-04T19:47:00+00:00"
-    },
-    {
-      "id": "f0ca0e603238",
-      "source": "Purdue Athletics MBB",
-      "title": "Game 9 Prep: Purdue Squares Off with Maryland for Homecoming",
-      "url": "https://purduesports.com/news/2026/11/4/game-9-prep-purdue-squares-off-with-maryland-for-homecoming",
-      "summary": "",
-      "date": "2026-11-04T14:01:00+00:00"
-    },
-    {
-      "id": "a28801b9414d",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Football Adds Matchup with West Virginia to 2027 Schedule",
-      "url": "https://purduesports.com/news/2026/11/3/purdue-football-adds-matchup-with-west-virginia-to-2027-schedule",
-      "summary": "",
-      "date": "2026-11-03T16:00:00+00:00"
     }
   ]
 }
