@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-11-07T09:46:22.282305+00:00",
+  "updated": "2026-11-07T16:01:31.606269+00:00",
   "count": 20,
   "items": [
     {
@@ -10,6 +10,30 @@
       "url": "https://www.cbssports.com/college-basketball/news/valparaiso-upsets-purdue-buzzer-beater-overtime/",
       "summary": "Purdue entered Friday's game against Valparaiso as a 19.5-point favorite",
       "date": "2026-11-07T05:22:26+00:00"
+    },
+    {
+      "id": "f4a549b1c10c",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Matt Painter Postgame Press Conference vs. Valparaiso | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/11/7/coach-matt-painter-postgame-press-conference-vs-valparaiso-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-11-07T03:41:03+00:00"
+    },
+    {
+      "id": "625af8882432",
+      "source": "Purdue Athletics MBB",
+      "title": "Players' Postgame Press Conference vs. Valparaiso | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/11/7/players-postgame-press-conference-vs-valparaiso-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-11-07T03:40:13+00:00"
+    },
+    {
+      "id": "d57627ec62c7",
+      "source": "Purdue Athletics MBB",
+      "title": "Valparaiso Stuns Purdue 83-80 in Double Overtime",
+      "url": "https://purduesports.com/news/2026/11/7/valparaiso-stuns-purdue-83-80-in-double-overtime",
+      "summary": "",
+      "date": "2026-11-07T02:25:29+00:00"
     },
     {
       "id": "4d8adabe79f3",
@@ -50,14 +74,6 @@
       "url": "https://purduesports.com/news/2026/11/6/highlights-vs-eastern-michigan-purdue-womens-basketball",
       "summary": "",
       "date": "2026-11-06T02:36:02+00:00"
-    },
-    {
-      "id": "8658ccf124c2",
-      "source": "Purdue Athletics MBB",
-      "title": "Back in Mackey Arena",
-      "url": "https://purduesports.com/news/2026/11/6/back-in-mackey-arena",
-      "summary": "",
-      "date": "2026-11-06T00:28:24+00:00"
     },
     {
       "id": "4692b8e223af",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/11/3/purdue-football-adds-matchup-with-west-virginia-to-2027-schedule",
       "summary": "",
       "date": "2026-11-03T16:00:00+00:00"
-    },
-    {
-      "id": "e589f568bc7a",
-      "source": "CBS Sports College Basketball",
-      "title": "Trey Kaufman-Renn makes Kansas debut: Ex-Purdue star finally takes floor for Jayhawks",
-      "url": "https://www.cbssports.com/college-basketball/news/trey-kaufman-renn-kansas-debut-season-opener-sixth-season/",
-      "summary": "Kaufman-Renn came off the bench to score nine points in the Jayhawks' 95-65 win vs. Fordham",
-      "date": "2026-11-03T06:39:09+00:00"
-    },
-    {
-      "id": "34f1c40d19ec",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Katie Gearlds Postgame Press Conference vs. IU Indy | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2026/11/3/coach-katie-gearlds-postgame-press-conference-vs-iu-indy-purdue-womens-basketball",
-      "summary": "",
-      "date": "2026-11-03T02:57:15+00:00"
     }
   ]
 }
