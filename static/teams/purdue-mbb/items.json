@@ -1,24 +1,8 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-11-08T03:55:25.653607+00:00",
+  "updated": "2026-11-08T10:59:21.402113+00:00",
   "count": 20,
   "items": [
-    {
-      "id": "305eee402400",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilers Fly Over Air Force on Day 1 Aboard USS Yorktown",
-      "url": "https://purduesports.com/news/2026/11/7/boilers-fly-over-air-force-on-day-1-aboard-uss-yorktown",
-      "summary": "Purdue defeats Air Force, 30-12, on Day 1 at Throwdown on the Yorktown.",
-      "date": "2026-11-07T23:36:24+00:00"
-    },
-    {
-      "id": "ddb8512a067c",
-      "source": "Purdue Athletics MBB",
-      "title": "#16 Purdue Faces Wisconsin in the Big Ten Semifinals",
-      "url": "https://purduesports.com/news/2026/11/7/16-purdue-faces-wisconsin-in-the-big-ten-semifinals",
-      "summary": "",
-      "date": "2026-11-07T23:08:20+00:00"
-    },
     {
       "id": "a0eb0d574e53",
       "source": "Purdue Athletics MBB",
@@ -162,6 +146,22 @@
       "url": "https://purduesports.com/news/2026/11/5/boilers-ready-for-throwdown-on-the-yorktown",
       "summary": "Purdue is set to wrestle on the top deck of the USS Yorktown (CV-10) aircraft carrier.",
       "date": "2026-11-05T19:20:49+00:00"
+    },
+    {
+      "id": "342fc1581002",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights: #14 Purdue 3, Ohio State 0",
+      "url": "https://purduesports.com/news/2026/11/5/highlights-14-purdue-3-ohio-state-0",
+      "summary": "",
+      "date": "2026-11-05T13:18:19+00:00"
+    },
+    {
+      "id": "be8a0a0bc512",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Earns 5 Big Ten Weekly Honors",
+      "url": "https://purduesports.com/news/2026/11/4/purdue-earns-5-big-ten-weekly-honors",
+      "summary": "Bissett, Higbie, Worobel & Mallard all recognized after combining for 12 event wins at Purdue's two-day dual",
+      "date": "2026-11-04T21:18:00+00:00"
     }
   ]
 }
