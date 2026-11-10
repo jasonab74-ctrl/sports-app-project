@@ -1,8 +1,48 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-11-09T07:32:36.902214+00:00",
+  "updated": "2026-11-10T01:41:21.044962+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "428f685671e7",
+      "source": "Purdue Athletics MBB",
+      "title": "Throwdown on the Yorktown Photo Gallery",
+      "url": "https://purduesports.com/news/2026/11/10/throwdown-on-the-yorktown-photo-gallery",
+      "summary": "Photos by Trish Sexton and Purdue Athletics",
+      "date": "2026-11-10T00:30:00+00:00"
+    },
+    {
+      "id": "e5faf524e55e",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Takes on SEMO Tuesday Night at Mackey",
+      "url": "https://purduesports.com/news/2026/11/9/purdue-takes-on-semo-tuesday-night-at-mackey",
+      "summary": "",
+      "date": "2026-11-09T21:32:34+00:00"
+    },
+    {
+      "id": "dce10d55f7cd",
+      "source": "CBS Sports College Basketball",
+      "title": "Florida stays atop Coaches Poll top 25; Kentucky, Purdue drop out of college basketball rankings",
+      "url": "https://www.cbssports.com/college-basketball/news/coaches-poll-top-25-kentucky-purdue-drops-out/",
+      "summary": "There was plenty of movement in the latest Coaches Poll for college basketball",
+      "date": "2026-11-09T18:33:59+00:00"
+    },
+    {
+      "id": "c0fe17455bb0",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights: #14 Purdue 3, UCLA 1",
+      "url": "https://purduesports.com/news/2026/11/9/highlights-14-purdue-3-ucla-1",
+      "summary": "",
+      "date": "2026-11-09T16:49:53+00:00"
+    },
+    {
+      "id": "5bb76fe7721f",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights: #16 Purdue 2, Wisconsin 2 (PKs 4-3)",
+      "url": "https://purduesports.com/news/2026/11/9/highlights-16-purdue-2-wisconsin-2-pks-4-3",
+      "summary": "",
+      "date": "2026-11-09T05:21:41+00:00"
+    },
     {
       "id": "40bb568b9338",
       "source": "Purdue Athletics MBB",
@@ -18,14 +58,6 @@
       "url": "https://purduesports.com/news/2026/11/7/boilers-fly-over-air-force-on-day-1-aboard-uss-yorktown",
       "summary": "Purdue defeats Air Force, 30-12, on Day 1 at Throwdown on the Yorktown.",
       "date": "2026-11-07T23:36:24+00:00"
-    },
-    {
-      "id": "ddb8512a067c",
-      "source": "Purdue Athletics MBB",
-      "title": "#16 Purdue Faces Wisconsin in the Big Ten Semifinals",
-      "url": "https://purduesports.com/news/2026/11/7/16-purdue-faces-wisconsin-in-the-big-ten-semifinals",
-      "summary": "",
-      "date": "2026-11-07T23:08:20+00:00"
     },
     {
       "id": "a0eb0d574e53",
@@ -130,38 +162,6 @@
       "url": "https://purduesports.com/news/2026/11/6/highlights-vs-eastern-michigan-purdue-womens-basketball",
       "summary": "",
       "date": "2026-11-06T02:36:02+00:00"
-    },
-    {
-      "id": "4692b8e223af",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Bounce Eastern Michigan",
-      "url": "https://purduesports.com/news/2026/11/6/boilermakers-bounce-eastern-michigan",
-      "summary": "",
-      "date": "2026-11-06T00:05:49+00:00"
-    },
-    {
-      "id": "ff0ff4bed60f",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Matt Painter Media Session | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/11/5/coach-matt-painter-media-session-purdue-mens-basketball-3",
-      "summary": "",
-      "date": "2026-11-05T19:34:57+00:00"
-    },
-    {
-      "id": "88553885fd0d",
-      "source": "Purdue Athletics MBB",
-      "title": "Caden Pierce Media Session | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/11/5/caden-pierce-media-session-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-11-05T19:31:52+00:00"
-    },
-    {
-      "id": "491a4e09e142",
-      "source": "Purdue Athletics MBB",
-      "title": "Jack Benter Media Session | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/11/5/jack-benter-media-session-purdue-mens-basketball-1",
-      "summary": "",
-      "date": "2026-11-05T19:28:57+00:00"
     }
   ]
 }
