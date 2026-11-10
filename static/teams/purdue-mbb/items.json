@@ -1,8 +1,48 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-11-10T01:41:21.044962+00:00",
+  "updated": "2026-11-10T09:05:21.859689+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "5ae8027c87c3",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Matt Painter Postgame Press Conference vs. Illinois State | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/11/10/coach-matt-painter-postgame-press-conference-vs-illinois-state-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-11-10T04:24:34+00:00"
+    },
+    {
+      "id": "5e705d496709",
+      "source": "Purdue Athletics MBB",
+      "title": "Players Postgame Press Conference vs. Illinois State | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/11/10/players-postgame-press-conference-vs-illinois-state-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-11-10T04:18:16+00:00"
+    },
+    {
+      "id": "618826a88b7b",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Earns First Win, Defeats Illinois State 76-59",
+      "url": "https://purduesports.com/news/2026/11/10/purdue-earns-first-win-defeats-illinois-state-76-59",
+      "summary": "",
+      "date": "2026-11-10T04:17:08+00:00"
+    },
+    {
+      "id": "927d8e8d7c8f",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights:  Purdue 76, Illinois State 59",
+      "url": "https://purduesports.com/news/2026/11/10/highlights-purdue-76-illinois-state-59",
+      "summary": "",
+      "date": "2026-11-10T04:02:19+00:00"
+    },
+    {
+      "id": "07dadb99770f",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue MBB vs. Illinois State Photo Gallery",
+      "url": "https://purduesports.com/news/2026/11/10/purdue-mbb-vs-illinois-state",
+      "summary": "",
+      "date": "2026-11-10T01:54:11+00:00"
+    },
     {
       "id": "428f685671e7",
       "source": "Purdue Athletics MBB",
@@ -122,46 +162,6 @@
       "url": "https://purduesports.com/news/2026/11/7/valparaiso-stuns-purdue-83-80-in-double-overtime",
       "summary": "",
       "date": "2026-11-07T02:25:29+00:00"
-    },
-    {
-      "id": "4d8adabe79f3",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights: #16 Purdue 2, #21 Penn State 1",
-      "url": "https://purduesports.com/news/2026/11/6/highlights-16-purdue-2-21-penn-state-1",
-      "summary": "",
-      "date": "2026-11-06T05:16:46+00:00"
-    },
-    {
-      "id": "238443010df4",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Advances to Big Ten Semifinals With Overtime Winner",
-      "url": "https://purduesports.com/news/2026/11/6/purdue-advances-to-big-ten-semifinals-with-overtime-winner",
-      "summary": "",
-      "date": "2026-11-06T04:57:41+00:00"
-    },
-    {
-      "id": "c806ec97efa4",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Katie Gearlds Postgame Press Conference vs. Eastern Michigan | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2026/11/6/coach-katie-gearlds-postgame-press-conference-vs-eastern-michigan-purdue-womens-basketball",
-      "summary": "",
-      "date": "2026-11-06T02:54:23+00:00"
-    },
-    {
-      "id": "c8a1a995972c",
-      "source": "Purdue Athletics MBB",
-      "title": "Player Postgame Press Conference vs. Eastern Michigan | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2026/11/6/player-postgame-press-conference-vs-eastern-michigan-purdue-womens-basketball",
-      "summary": "",
-      "date": "2026-11-06T02:43:34+00:00"
-    },
-    {
-      "id": "265d501a0d69",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights vs. Eastern Michigan | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2026/11/6/highlights-vs-eastern-michigan-purdue-womens-basketball",
-      "summary": "",
-      "date": "2026-11-06T02:36:02+00:00"
     }
   ]
 }
