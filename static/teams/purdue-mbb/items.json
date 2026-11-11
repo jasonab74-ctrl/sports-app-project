@@ -1,8 +1,40 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-11-11T02:03:30.596652+00:00",
+  "updated": "2026-11-11T09:40:51.714912+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "8a612b677d71",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Katie Gearlds Postgame Press Conference vs. SEMO | Purdue Women's Basketball",
+      "url": "https://purduesports.com/news/2026/11/11/coach-katie-gearlds-postgame-press-conference-vs-semo-purdue-womens-basketball",
+      "summary": "",
+      "date": "2026-11-11T02:46:02+00:00"
+    },
+    {
+      "id": "fdde4a2e384e",
+      "source": "Purdue Athletics MBB",
+      "title": "Players' Postgame Press Conference vs. SEMO | Purdue Women's Basketball",
+      "url": "https://purduesports.com/news/2026/11/11/players-postgame-press-conference-vs-semo-purdue-womens-basketball",
+      "summary": "",
+      "date": "2026-11-11T02:38:01+00:00"
+    },
+    {
+      "id": "063c0e3e7a8a",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights vs. SEMP | Purdue Women's Basketball",
+      "url": "https://purduesports.com/news/2026/11/11/highlights-vs-semp-purdue-womens-basketball",
+      "summary": "",
+      "date": "2026-11-11T02:13:42+00:00"
+    },
+    {
+      "id": "a5e69e7e6a6e",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Downs SEMO to Improve to 3-0",
+      "url": "https://purduesports.com/news/2026/11/11/purdue-downs-semo-to-improve-to-3-0",
+      "summary": "",
+      "date": "2026-11-11T01:23:00+00:00"
+    },
     {
       "id": "5ae8027c87c3",
       "source": "Purdue Athletics MBB",
@@ -130,38 +162,6 @@
       "url": "https://purduesports.com/news/2026/11/7/purdue-volleyball-on-b1g-tailgate",
       "summary": "",
       "date": "2026-11-07T17:15:08+00:00"
-    },
-    {
-      "id": "be46a45a7103",
-      "source": "CBS Sports College Basketball",
-      "title": "Valparaiso stuns Purdue: Buzzer-beating 3-pointer in 2OT sends Boilermakers to first 0-2 start since 1976",
-      "url": "https://www.cbssports.com/college-basketball/news/valparaiso-upsets-purdue-buzzer-beater-overtime/",
-      "summary": "Purdue entered Friday's game against Valparaiso as a 19.5-point favorite",
-      "date": "2026-11-07T05:22:26+00:00"
-    },
-    {
-      "id": "f4a549b1c10c",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Matt Painter Postgame Press Conference vs. Valparaiso | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/11/7/coach-matt-painter-postgame-press-conference-vs-valparaiso-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-11-07T03:41:03+00:00"
-    },
-    {
-      "id": "625af8882432",
-      "source": "Purdue Athletics MBB",
-      "title": "Players' Postgame Press Conference vs. Valparaiso | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/11/7/players-postgame-press-conference-vs-valparaiso-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-11-07T03:40:13+00:00"
-    },
-    {
-      "id": "d57627ec62c7",
-      "source": "Purdue Athletics MBB",
-      "title": "Valparaiso Stuns Purdue 83-80 in Double Overtime",
-      "url": "https://purduesports.com/news/2026/11/7/valparaiso-stuns-purdue-83-80-in-double-overtime",
-      "summary": "",
-      "date": "2026-11-07T02:25:29+00:00"
     }
   ]
 }
