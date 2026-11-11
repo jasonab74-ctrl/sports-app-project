@@ -1,8 +1,48 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-11-11T17:38:06.487474+00:00",
+  "updated": "2026-11-11T23:56:38.717309+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "2d85caacc458",
+      "source": "Purdue Athletics MBB",
+      "title": "George Burhenn Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/11/11/george-burhenn-media-session-purdue-football-4",
+      "summary": "",
+      "date": "2026-11-11T20:06:56+00:00"
+    },
+    {
+      "id": "587ef23be29f",
+      "source": "Purdue Athletics MBB",
+      "title": "Nuku Mafi Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/11/11/nuku-mafi-media-session-purdue-football-1",
+      "summary": "",
+      "date": "2026-11-11T20:04:41+00:00"
+    },
+    {
+      "id": "56d60238bfbc",
+      "source": "Purdue Athletics MBB",
+      "title": "Boaz Stanley Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/11/11/boaz-stanley-media-session-purdue-football-1",
+      "summary": "",
+      "date": "2026-11-11T20:03:07+00:00"
+    },
+    {
+      "id": "73cb7b213650",
+      "source": "Purdue Athletics MBB",
+      "title": "Women’s Golf Welcomes 2 New Boilermakers on National Signing Day",
+      "url": "https://purduesports.com/news/2026/11/11/womens-golf-welcomes-2-new-boilermakers-on-national-signing-day",
+      "summary": "",
+      "date": "2026-11-11T18:37:29+00:00"
+    },
+    {
+      "id": "6e2115d29eb7",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Adds 8 Wrestlers on National Signing Day",
+      "url": "https://purduesports.com/news/2026/11/11/purdue-adds-8-wrestlers-on-national-signing-day",
+      "summary": "Head coach Tony Ersland welcomes eight newcomers in the Class of 2027.",
+      "date": "2026-11-11T17:50:00+00:00"
+    },
     {
       "id": "eb86df910a6a",
       "source": "Purdue Athletics MBB",
@@ -84,14 +124,6 @@
       "date": "2026-11-10T00:30:00+00:00"
     },
     {
-      "id": "f5b490382305",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Takes on SEMO Tuesday Night at Mackey",
-      "url": "https://purduesports.com/news/2026/11/09/purdue-takes-on-semo-tuesday-night-at-mackey",
-      "summary": "",
-      "date": "2026-11-09T21:32:34+00:00"
-    },
-    {
       "id": "dce10d55f7cd",
       "source": "CBS Sports College Basketball",
       "title": "Florida stays atop Coaches Poll top 25; Kentucky, Purdue drop out of college basketball rankings",
@@ -130,38 +162,6 @@
       "url": "https://purduesports.com/news/2026/11/07/boilers-fly-over-air-force-on-day-1-aboard-uss-yorktown",
       "summary": "Purdue defeats Air Force, 30-12, on Day 1 at Throwdown on the Yorktown.",
       "date": "2026-11-07T23:36:24+00:00"
-    },
-    {
-      "id": "773bd621c8c6",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Barry Odom Postgame Press Conference vs. Maryland | Purdue Football",
-      "url": "https://purduesports.com/news/2026/11/07/coach-barry-odom-postgame-press-conference-vs-maryland-purdue-football",
-      "summary": "",
-      "date": "2026-11-07T21:43:27+00:00"
-    },
-    {
-      "id": "996741427972",
-      "source": "Purdue Athletics MBB",
-      "title": "Players' Postgame Press Conference vs. Maryland | Purdue Football",
-      "url": "https://purduesports.com/news/2026/11/07/players-postgame-press-conference-vs-maryland-purdue-football",
-      "summary": "",
-      "date": "2026-11-07T21:39:57+00:00"
-    },
-    {
-      "id": "3660a5d781da",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Falls on Homecoming to Maryland",
-      "url": "https://purduesports.com/news/2026/11/07/purdue-falls-on-homecoming-to-maryland",
-      "summary": "",
-      "date": "2026-11-07T19:02:00+00:00"
-    },
-    {
-      "id": "782c56fe651b",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Volleyball on B1G Tailgate",
-      "url": "https://purduesports.com/news/2026/11/07/purdue-volleyball-on-b1g-tailgate",
-      "summary": "",
-      "date": "2026-11-07T17:15:08+00:00"
     }
   ]
 }
