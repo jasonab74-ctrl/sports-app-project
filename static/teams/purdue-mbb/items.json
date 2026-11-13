@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-11-12T21:32:14.590447+00:00",
+  "updated": "2026-11-13T02:19:13.172443+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "b43660f94695",
+      "source": "Purdue Athletics MBB",
+      "title": "#17 Boilermakers Return to Tiger Style Invite",
+      "url": "https://purduesports.com/news/2026/11/12/17-boilermakers-return-to-tiger-style-invite",
+      "summary": "Purdue is set to compete in its first varsity tournament of the season on Saturday.",
+      "date": "2026-11-12T21:14:36+00:00"
+    },
+    {
+      "id": "4c3108cbcf6a",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Matt Painter Media Session | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/11/12/coach-matt-painter-media-session-purdue-mens-basketball-4",
+      "summary": "",
+      "date": "2026-11-12T19:12:15+00:00"
+    },
     {
       "id": "8c2f39317c7f",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/11/09/players-postgame-press-conference-vs-illinois-state-purdue-mens-basketball",
       "summary": "",
       "date": "2026-11-10T04:18:16+00:00"
-    },
-    {
-      "id": "99f79353fd4d",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Earns First Win, Defeats Illinois State 76-59",
-      "url": "https://purduesports.com/news/2026/11/09/purdue-earns-first-win-defeats-illinois-state-76-59",
-      "summary": "",
-      "date": "2026-11-10T04:17:08+00:00"
-    },
-    {
-      "id": "0ac04d7187cd",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights:  Purdue 76, Illinois State 59",
-      "url": "https://purduesports.com/news/2026/11/09/highlights-purdue-76-illinois-state-59",
-      "summary": "",
-      "date": "2026-11-10T04:02:19+00:00"
     }
   ]
 }
