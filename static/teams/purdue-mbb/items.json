@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-11-13T02:19:13.172443+00:00",
+  "updated": "2026-11-13T09:49:07.877970+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "fb7f511641de",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue MBB ready for Ohio",
+      "url": "https://purduesports.com/news/2026/11/12/purdue-mbb-ready-for-ohio",
+      "summary": "",
+      "date": "2026-11-13T02:06:06+00:00"
+    },
+    {
+      "id": "0bf0f70db3b6",
+      "source": "Purdue Athletics MBB",
+      "title": "Anderson Ignites #13 Purdue to 3-1 Victory",
+      "url": "https://purduesports.com/news/2026/11/12/anderson-ignites-13-purdue-to-3-1-victory",
+      "summary": "",
+      "date": "2026-11-13T01:20:00+00:00"
+    },
     {
       "id": "b43660f94695",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/11/10/purdue-downs-semo-to-improve-to-3-0",
       "summary": "",
       "date": "2026-11-11T01:23:00+00:00"
-    },
-    {
-      "id": "e6ed80fe51f2",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Matt Painter Postgame Press Conference vs. Illinois State | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/11/09/coach-matt-painter-postgame-press-conference-vs-illinois-state-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-11-10T04:24:34+00:00"
-    },
-    {
-      "id": "3d04b58316ef",
-      "source": "Purdue Athletics MBB",
-      "title": "Players Postgame Press Conference vs. Illinois State | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/11/09/players-postgame-press-conference-vs-illinois-state-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-11-10T04:18:16+00:00"
     }
   ]
 }
