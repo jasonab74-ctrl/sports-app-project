@@ -1,8 +1,40 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-11-14T02:51:42.779156+00:00",
+  "updated": "2026-11-14T09:44:09.941027+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "9251f3abeea4",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Wins the Big Ten Tournament Championship",
+      "url": "https://purduesports.com/news/2026/11/13/purdue-wins-the-big-ten-tournament-championship",
+      "summary": "",
+      "date": "2026-11-14T04:34:05+00:00"
+    },
+    {
+      "id": "4a4481281b81",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights:  Big Ten Champions!  |  Purdue Soccer",
+      "url": "https://purduesports.com/news/2026/11/13/highlights-big-ten-champions-purdue-soccer",
+      "summary": "",
+      "date": "2026-11-14T02:53:05+00:00"
+    },
+    {
+      "id": "8cceac1da546",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Matt Painter Postgame Press Conference vs. Ohio | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/11/13/coach-matt-painter-postgame-press-conference-vs-ohio-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-11-14T02:46:20+00:00"
+    },
+    {
+      "id": "cc7f106f1984",
+      "source": "Purdue Athletics MBB",
+      "title": "Players' Postgame Press Conference vs. Ohio | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/11/13/players-postgame-press-conference-vs-ohio-purdue-mens-basketball",
+      "summary": "",
+      "date": "2026-11-14T02:27:11+00:00"
+    },
     {
       "id": "0bf0f70db3b6",
       "source": "Purdue Athletics MBB",
@@ -42,14 +74,6 @@
       "url": "https://purduesports.com/news/2026/11/12/luke-ertel-media-session-purdue-mens-basketball",
       "summary": "",
       "date": "2026-11-12T18:55:35+00:00"
-    },
-    {
-      "id": "b9f6afe1a389",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Looks for 2nd Straight Win Friday vs. Ohio",
-      "url": "https://purduesports.com/news/2026/11/12/purdue-looks-for-2nd-straight-win-friday-vs-ohio",
-      "summary": "",
-      "date": "2026-11-12T15:41:51+00:00"
     },
     {
       "id": "ea6ce0fa638b",
@@ -138,30 +162,6 @@
       "url": "https://purduesports.com/news/2026/11/10/highlights-vs-semp-purdue-womens-basketball",
       "summary": "",
       "date": "2026-11-11T02:13:42+00:00"
-    },
-    {
-      "id": "6d9eda2c20d1",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Downs SEMO to Improve to 3-0",
-      "url": "https://purduesports.com/news/2026/11/10/purdue-downs-semo-to-improve-to-3-0",
-      "summary": "",
-      "date": "2026-11-11T01:23:00+00:00"
-    },
-    {
-      "id": "e6ed80fe51f2",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Matt Painter Postgame Press Conference vs. Illinois State | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/11/09/coach-matt-painter-postgame-press-conference-vs-illinois-state-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-11-10T04:24:34+00:00"
-    },
-    {
-      "id": "3d04b58316ef",
-      "source": "Purdue Athletics MBB",
-      "title": "Players Postgame Press Conference vs. Illinois State | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/11/09/players-postgame-press-conference-vs-illinois-state-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-11-10T04:18:16+00:00"
     }
   ]
 }
