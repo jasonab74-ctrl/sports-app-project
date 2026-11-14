@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-11-14T16:18:49.156371+00:00",
+  "updated": "2026-11-14T20:50:55.490788+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "6d341f197453",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Closes 4-Game Homestand Sunday vs. Samford",
+      "url": "https://purduesports.com/news/2026/11/14/purdue-closes-4-game-homestand-sunday-vs-samford",
+      "summary": "",
+      "date": "2026-11-14T15:05:00+00:00"
+    },
     {
       "id": "9251f3abeea4",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/11/10/players-postgame-press-conference-vs-semo-purdue-womens-basketball",
       "summary": "",
       "date": "2026-11-11T02:38:01+00:00"
-    },
-    {
-      "id": "b792d06a1a11",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights vs. SEMO | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2026/11/10/highlights-vs-semp-purdue-womens-basketball",
-      "summary": "",
-      "date": "2026-11-11T02:13:42+00:00"
     }
   ]
 }
