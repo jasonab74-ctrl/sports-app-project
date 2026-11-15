@@ -1,8 +1,32 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-11-15T00:37:04.419891+00:00",
+  "updated": "2026-11-15T07:26:57.631511+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "5479bc523444",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Drops Road Game at #15 Iowa",
+      "url": "https://purduesports.com/news/2026/11/14/purdue-drops-road-game-at-15-iowa",
+      "summary": "",
+      "date": "2026-11-15T03:28:04+00:00"
+    },
+    {
+      "id": "f5f981eb01f0",
+      "source": "Purdue Athletics MBB",
+      "title": "#17 Purdue Produces 11 Placewinners at Tiger Style Invite",
+      "url": "https://purduesports.com/news/2026/11/14/17-purdue-produces-11-placewinners-at-tiger-style-invite",
+      "summary": "Boilermakers place third as a team with 108.5 team points, improving on last season's mark.",
+      "date": "2026-11-15T02:41:47+00:00"
+    },
+    {
+      "id": "c003c5391594",
+      "source": "Purdue Athletics MBB",
+      "title": "17 Blocks Power #13 Purdue to Victory",
+      "url": "https://purduesports.com/news/2026/11/14/17-blocks-power-13-purdue-to-victory",
+      "summary": "",
+      "date": "2026-11-15T01:40:00+00:00"
+    },
     {
       "id": "6d341f197453",
       "source": "Purdue Athletics MBB",
@@ -138,30 +162,6 @@
       "url": "https://purduesports.com/news/2026/11/11/purdue-adds-8-wrestlers-on-national-signing-day",
       "summary": "Head coach Tony Ersland welcomes eight newcomers in the Class of 2027.",
       "date": "2026-11-11T17:50:00+00:00"
-    },
-    {
-      "id": "0bbe41571bcb",
-      "source": "Purdue Athletics MBB",
-      "title": "Soccer Championship Preview, VB Def. Player of the Week & Coach Matt Painter | For Pete's Sake S2 E7",
-      "url": "https://purduesports.com/news/2026/11/11/soccer-championship-preview-vb-def-player-of-the-week-coach-matt-painter-for-petes-sake-s2-e7",
-      "summary": "",
-      "date": "2026-11-11T17:30:10+00:00"
-    },
-    {
-      "id": "eb86df910a6a",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Katie Gearlds Postgame Press Conference vs. SEMO | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2026/11/10/coach-katie-gearlds-postgame-press-conference-vs-semo-purdue-womens-basketball",
-      "summary": "",
-      "date": "2026-11-11T02:46:02+00:00"
-    },
-    {
-      "id": "863a45b31309",
-      "source": "Purdue Athletics MBB",
-      "title": "Players' Postgame Press Conference vs. SEMO | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2026/11/10/players-postgame-press-conference-vs-semo-purdue-womens-basketball",
-      "summary": "",
-      "date": "2026-11-11T02:38:01+00:00"
     }
   ]
 }
