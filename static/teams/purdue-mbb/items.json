@@ -1,12 +1,36 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-11-16T16:53:02.651379+00:00",
+  "updated": "2026-11-17T00:36:39.800954+00:00",
   "count": 20,
   "items": [
     {
-      "id": "2a0aeb186562",
+      "id": "0123ba698d68",
       "source": "Purdue Athletics MBB",
-      "title": "Purdue Sports YouTube",
+      "title": "Purdue MBB Photos vs. Ohio",
+      "url": "https://purduesports.com/news/2026/11/16/purdue-mbb-photos-vs-ohio",
+      "summary": "",
+      "date": "2026-11-16T20:57:59+00:00"
+    },
+    {
+      "id": "b089161ac8d8",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Aim For 3rd Straight Win Tuesday vs. Lipscomb",
+      "url": "https://purduesports.com/news/2026/11/16/boilermakers-aim-for-3rd-straight-win-tuesday-vs-lipscomb",
+      "summary": "",
+      "date": "2026-11-16T19:05:06+00:00"
+    },
+    {
+      "id": "473d8bcc921a",
+      "source": "Purdue Athletics MBB",
+      "title": "Viola Selected in First Round of Banana Ball Draft",
+      "url": "https://purduesports.com/news/2026/11/16/viola-selected-in-first-round-of-banana-ball-draft",
+      "summary": "Purdue's 2022 Defensive Team MVP selected by the defending champion Texas Tailgaters",
+      "date": "2026-11-16T18:36:32+00:00"
+    },
+    {
+      "id": "977b8a2ae6cc",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights: #13 Purdue 3, Michigan 1",
       "url": "https://purduesports.com/news/2026/11/15/purdue-sports-youtube",
       "summary": "",
       "date": "2026-11-15T19:50:32+00:00"
@@ -138,30 +162,6 @@
       "url": "https://purduesports.com/news/2026/11/12/who-we-play-for-2026-27-purdue-womens-basketball",
       "summary": "",
       "date": "2026-11-12T15:24:00+00:00"
-    },
-    {
-      "id": "28baeb80be4d",
-      "source": "Purdue Athletics MBB",
-      "title": "Football Weather in West Lafayette",
-      "url": "https://purduesports.com/news/2026/11/12/football-weather-in-west-lafayette",
-      "summary": "",
-      "date": "2026-11-12T15:06:53+00:00"
-    },
-    {
-      "id": "2d85caacc458",
-      "source": "Purdue Athletics MBB",
-      "title": "George Burhenn Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/11/11/george-burhenn-media-session-purdue-football-4",
-      "summary": "",
-      "date": "2026-11-11T20:06:56+00:00"
-    },
-    {
-      "id": "587ef23be29f",
-      "source": "Purdue Athletics MBB",
-      "title": "Nuku Mafi Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/11/11/nuku-mafi-media-session-purdue-football-1",
-      "summary": "",
-      "date": "2026-11-11T20:04:41+00:00"
     }
   ]
 }
