@@ -1,8 +1,48 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-11-18T08:47:29.280315+00:00",
+  "updated": "2026-11-18T17:43:56.577823+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "e24215a151d7",
+      "source": "Purdue Athletics MBB",
+      "title": "West Jr. Scores 27 in Purdue's 3rd-Straight Victory",
+      "url": "https://purduesports.com/news/2026/11/17/west-jr-scores-27-in-purdues-3rd-straight-victory",
+      "summary": "",
+      "date": "2026-11-18T02:45:00+00:00"
+    },
+    {
+      "id": "8452c909d49c",
+      "source": "Purdue Athletics MBB",
+      "title": "#13 Purdue Upended at #23 Indiana",
+      "url": "https://purduesports.com/news/2026/11/17/13-purdue-upended-at-23-indiana",
+      "summary": "",
+      "date": "2026-11-18T02:19:00+00:00"
+    },
+    {
+      "id": "7ca21dace8a0",
+      "source": "Purdue Athletics MBB",
+      "title": "Head Coach Matt Painter Postgame Press Conference vs Lipscomb",
+      "url": "https://purduesports.com/news/2026/11/17/head-coach-matt-painter-postgame-press-conference-vs-lipscomb",
+      "summary": "",
+      "date": "2026-11-18T02:10:01+00:00"
+    },
+    {
+      "id": "0ecb6758c1f3",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights: Purdue 95, Lipscomb 78",
+      "url": "https://purduesports.com/news/2026/11/17/highlights-purdue-95-lipscomb-78",
+      "summary": "",
+      "date": "2026-11-18T02:01:03+00:00"
+    },
+    {
+      "id": "b55ec1711485",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue MBB Photo Gallery vs Lipscomb",
+      "url": "https://purduesports.com/news/2026/11/17/purdue-mbb-vs-lipscomb",
+      "summary": "",
+      "date": "2026-11-18T00:42:32+00:00"
+    },
     {
       "id": "708b8c1b66b8",
       "source": "Purdue Athletics MBB",
@@ -28,28 +68,12 @@
       "date": "2026-11-17T17:25:24+00:00"
     },
     {
-      "id": "53c5b9f1b5b3",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilers Set for Midseason Showcase with Mega Meet Field",
-      "url": "https://purduesports.com/news/2026/11/16/boilers-set-for-midseason-showcase-with-mega-meet-field",
-      "summary": "Ohio State Invitational to feature 18 universities; Purdue 1 of 8 with full co-ed representation",
-      "date": "2026-11-16T21:01:00+00:00"
-    },
-    {
       "id": "0123ba698d68",
       "source": "Purdue Athletics MBB",
       "title": "Purdue MBB Photos vs. Ohio",
       "url": "https://purduesports.com/news/2026/11/16/purdue-mbb-photos-vs-ohio",
       "summary": "",
       "date": "2026-11-16T20:57:59+00:00"
-    },
-    {
-      "id": "b089161ac8d8",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Aim For 3rd Straight Win Tuesday vs. Lipscomb",
-      "url": "https://purduesports.com/news/2026/11/16/boilermakers-aim-for-3rd-straight-win-tuesday-vs-lipscomb",
-      "summary": "",
-      "date": "2026-11-16T19:05:06+00:00"
     },
     {
       "id": "473d8bcc921a",
@@ -138,30 +162,6 @@
       "url": "https://purduesports.com/news/2026/11/13/highlights-big-ten-champions-purdue-soccer",
       "summary": "",
       "date": "2026-11-14T02:53:05+00:00"
-    },
-    {
-      "id": "8cceac1da546",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Matt Painter Postgame Press Conference vs. Ohio | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/11/13/coach-matt-painter-postgame-press-conference-vs-ohio-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-11-14T02:46:20+00:00"
-    },
-    {
-      "id": "cc7f106f1984",
-      "source": "Purdue Athletics MBB",
-      "title": "Players' Postgame Press Conference vs. Ohio | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/11/13/players-postgame-press-conference-vs-ohio-purdue-mens-basketball",
-      "summary": "",
-      "date": "2026-11-14T02:27:11+00:00"
-    },
-    {
-      "id": "0bf0f70db3b6",
-      "source": "Purdue Athletics MBB",
-      "title": "Anderson Ignites #13 Purdue to 3-1 Victory",
-      "url": "https://purduesports.com/news/2026/11/12/anderson-ignites-13-purdue-to-3-1-victory",
-      "summary": "",
-      "date": "2026-11-13T01:20:00+00:00"
     }
   ]
 }
