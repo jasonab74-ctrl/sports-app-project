@@ -1,8 +1,56 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-11-18T17:43:56.577823+00:00",
+  "updated": "2026-11-18T23:47:40.236948+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "f90dc51fcf00",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Heads to Nation's Capital for Doubleheader",
+      "url": "https://purduesports.com/news/2026/11/18/purdue-heads-to-nations-capital-for-doubleheader",
+      "summary": "",
+      "date": "2026-11-18T22:57:51+00:00"
+    },
+    {
+      "id": "81619ad47ed4",
+      "source": "Purdue Athletics MBB",
+      "title": "#13 Purdue Hosts Southern Illinois in NCAA First Round",
+      "url": "https://purduesports.com/news/2026/11/18/13-purdue-host-southern-illinois-in-ncaa-first-round-on-friday",
+      "summary": "",
+      "date": "2026-11-18T19:08:57+00:00"
+    },
+    {
+      "id": "50ee884943f6",
+      "source": "Purdue Athletics MBB",
+      "title": "Jacobo Echeverria-Lozano Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/11/18/jacobo-echeverria-lozano-media-session-purdue-football-2",
+      "summary": "",
+      "date": "2026-11-18T18:40:51+00:00"
+    },
+    {
+      "id": "c8c9ee1ed395",
+      "source": "Purdue Athletics MBB",
+      "title": "Antonio Harris Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/11/18/antonio-harris-media-session-purdue-football-2",
+      "summary": "",
+      "date": "2026-11-18T18:39:03+00:00"
+    },
+    {
+      "id": "6d4dab496ca9",
+      "source": "Purdue Athletics MBB",
+      "title": "Curt Neal Media Session | Purdue Football",
+      "url": "https://purduesports.com/news/2026/11/18/curt-neal-media-session-purdue-football-2",
+      "summary": "",
+      "date": "2026-11-18T18:36:51+00:00"
+    },
+    {
+      "id": "7f0c4a9a7b2b",
+      "source": "Purdue Athletics MBB",
+      "title": "Game 11 Prep: Purdue Takes on Wisconsin for Senior Day",
+      "url": "https://purduesports.com/news/2026/11/18/purdue-takes-on-wisconsin-for-senior-day",
+      "summary": "",
+      "date": "2026-11-18T16:50:00+00:00"
+    },
     {
       "id": "e24215a151d7",
       "source": "Purdue Athletics MBB",
@@ -114,54 +162,6 @@
       "url": "https://purduesports.com/news/2026/11/15/highlights-purdue-70-samford-61-purdue-womens-basketball",
       "summary": "",
       "date": "2026-11-15T19:21:22+00:00"
-    },
-    {
-      "id": "dca020b100c3",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Downs Samford to Stay Perfect",
-      "url": "https://purduesports.com/news/2026/11/15/purdue-downs-samford-to-stay-perfect",
-      "summary": "",
-      "date": "2026-11-15T17:59:02+00:00"
-    },
-    {
-      "id": "5479bc523444",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Drops Road Game at #15 Iowa",
-      "url": "https://purduesports.com/news/2026/11/14/purdue-drops-road-game-at-15-iowa",
-      "summary": "",
-      "date": "2026-11-15T03:28:04+00:00"
-    },
-    {
-      "id": "f5f981eb01f0",
-      "source": "Purdue Athletics MBB",
-      "title": "#17 Purdue Produces 11 Placewinners at Tiger Style Invite",
-      "url": "https://purduesports.com/news/2026/11/14/17-purdue-produces-11-placewinners-at-tiger-style-invite",
-      "summary": "Boilermakers place third as a team with 108.5 team points, improving on last season's mark.",
-      "date": "2026-11-15T02:41:47+00:00"
-    },
-    {
-      "id": "c003c5391594",
-      "source": "Purdue Athletics MBB",
-      "title": "17 Blocks Power #13 Purdue to Victory",
-      "url": "https://purduesports.com/news/2026/11/14/17-blocks-power-13-purdue-to-victory",
-      "summary": "",
-      "date": "2026-11-15T01:40:00+00:00"
-    },
-    {
-      "id": "9251f3abeea4",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Wins the Big Ten Tournament Championship",
-      "url": "https://purduesports.com/news/2026/11/13/purdue-wins-the-big-ten-tournament-championship",
-      "summary": "",
-      "date": "2026-11-14T04:34:05+00:00"
-    },
-    {
-      "id": "4a4481281b81",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights:  Big Ten Champions!  |  Purdue Soccer",
-      "url": "https://purduesports.com/news/2026/11/13/highlights-big-ten-champions-purdue-soccer",
-      "summary": "",
-      "date": "2026-11-14T02:53:05+00:00"
     }
   ]
 }
