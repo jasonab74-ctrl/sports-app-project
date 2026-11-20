@@ -1,12 +1,52 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-11-19T22:42:30.239521+00:00",
+  "updated": "2026-11-20T03:49:28.402017+00:00",
   "count": 20,
   "items": [
     {
-      "id": "f90dc51fcf00",
+      "id": "046a1082f28a",
       "source": "Purdue Athletics MBB",
-      "title": "Purdue Heads to Nation's Capital for Doubleheader",
+      "title": "Coach Matt Painter Media Session | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/11/19/coach-matt-painter-media-session-purdue-mens-basketball-5",
+      "summary": "",
+      "date": "2026-11-19T19:52:49+00:00"
+    },
+    {
+      "id": "4d0ab4036e93",
+      "source": "Purdue Athletics MBB",
+      "title": "Antione West, Jr. Media Session | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/11/19/antione-west-jr-media-session-purdue-mens-basketball-1",
+      "summary": "",
+      "date": "2026-11-19T19:50:27+00:00"
+    },
+    {
+      "id": "b4bb7706c135",
+      "source": "Purdue Athletics MBB",
+      "title": "Daniel Jacobsen Media Session | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/11/19/daniel-jacobsen-media-session-purdue-mens-basketball-1",
+      "summary": "",
+      "date": "2026-11-19T19:48:52+00:00"
+    },
+    {
+      "id": "e1d3c9af52bc",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Closes Homestand Friday vs. Oakland",
+      "url": "https://purduesports.com/news/2026/11/19/purdue-closes-homestand-friday-vs-oakland",
+      "summary": "",
+      "date": "2026-11-19T19:39:58+00:00"
+    },
+    {
+      "id": "706c5a6c93c8",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Rally Comes Up Short Against Florida State",
+      "url": "https://purduesports.com/news/2026/11/19/purdue-rally-comes-up-short-against-florida-state",
+      "summary": "",
+      "date": "2026-11-19T16:16:48+00:00"
+    },
+    {
+      "id": "7a8e1667b0fa",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Heads to Nation's Capital for Friday Doubleheader",
       "url": "https://purduesports.com/news/2026/11/18/purdue-heads-to-nations-capital-for-doubleheader",
       "summary": "",
       "date": "2026-11-18T22:57:51+00:00"
@@ -122,46 +162,6 @@
       "url": "https://purduesports.com/news/2026/11/16/purdue-mbb-photos-vs-ohio",
       "summary": "",
       "date": "2026-11-16T20:57:59+00:00"
-    },
-    {
-      "id": "473d8bcc921a",
-      "source": "Purdue Athletics MBB",
-      "title": "Viola Selected in First Round of Banana Ball Draft",
-      "url": "https://purduesports.com/news/2026/11/16/viola-selected-in-first-round-of-banana-ball-draft",
-      "summary": "Purdue's 2022 Defensive Team MVP selected by the defending champion Texas Tailgaters",
-      "date": "2026-11-16T18:36:32+00:00"
-    },
-    {
-      "id": "977b8a2ae6cc",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights: #13 Purdue 3, Michigan 1",
-      "url": "https://purduesports.com/news/2026/11/15/purdue-sports-youtube",
-      "summary": "",
-      "date": "2026-11-15T19:50:32+00:00"
-    },
-    {
-      "id": "12d7cef97578",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Katie Gearlds Postgame Press Conference vs. Samford | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2026/11/15/coach-katie-gearlds-postgame-press-conference-vs-samford-purdue-womens-basketball",
-      "summary": "",
-      "date": "2026-11-15T19:48:37+00:00"
-    },
-    {
-      "id": "a27230dec061",
-      "source": "Purdue Athletics MBB",
-      "title": "Players' Postgame vs. Samford | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2026/11/15/players-postgame-vs-samford-purdue-womens-basketball",
-      "summary": "",
-      "date": "2026-11-15T19:45:49+00:00"
-    },
-    {
-      "id": "41e598cb2009",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights: Purdue 70, Samford  61 | Purdue Women's Basketball",
-      "url": "https://purduesports.com/news/2026/11/15/highlights-purdue-70-samford-61-purdue-womens-basketball",
-      "summary": "",
-      "date": "2026-11-15T19:21:22+00:00"
     }
   ]
 }
