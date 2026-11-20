@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-11-20T12:24:59.443864+00:00",
+  "updated": "2026-11-20T20:37:30.927486+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "a3dc1a18de7a",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Squares Off with Texas Tech Saturday at the WBCA Showcase",
+      "url": "https://purduesports.com/news/2026/11/20/purdue-squares-off-with-texas-tech-saturday-at-the-wbca-showcase",
+      "summary": "",
+      "date": "2026-11-20T11:53:35+00:00"
+    },
     {
       "id": "669a040b36bf",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/11/17/purdue-kicker-named-lou-groza-award-semifinalist",
       "summary": "",
       "date": "2026-11-17T17:25:24+00:00"
-    },
-    {
-      "id": "0123ba698d68",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue MBB Photos vs. Ohio",
-      "url": "https://purduesports.com/news/2026/11/16/purdue-mbb-photos-vs-ohio",
-      "summary": "",
-      "date": "2026-11-16T20:57:59+00:00"
     }
   ]
 }
