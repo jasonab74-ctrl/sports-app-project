@@ -1,8 +1,56 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-11-21T01:55:29.245846+00:00",
+  "updated": "2026-11-21T09:05:16.130639+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "bd5dd2cd4082",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Soccer takes down SIU in NCAA first round photo gallery",
+      "url": "https://purduesports.com/news/2026/11/20/purdue-soccer-takes-down-siu-in-ncaa-first-round-photo-gallery",
+      "summary": "",
+      "date": "2026-11-21T03:55:57+00:00"
+    },
+    {
+      "id": "e535ce5420ca",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Matt Painter Postgame Press Conference vs. Oakland | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/11/20/coach-matt-painter-postgame-press-conference-vs-oakland-purdue-mens-basketball-1",
+      "summary": "",
+      "date": "2026-11-21T02:39:52+00:00"
+    },
+    {
+      "id": "f9b4478a52f2",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights:  Purdue 95, Oakland 49",
+      "url": "https://purduesports.com/news/2026/11/20/highlights-purdue-95-oakland-49",
+      "summary": "",
+      "date": "2026-11-21T02:36:25+00:00"
+    },
+    {
+      "id": "d8467666ee56",
+      "source": "Purdue Athletics MBB",
+      "title": "Players' Postgame Press Conference vs. Oakland | Purdue Men's Basketball",
+      "url": "https://purduesports.com/news/2026/11/20/players-postgame-press-conference-vs-oakland-purdue-mens-basketball-1",
+      "summary": "",
+      "date": "2026-11-21T02:28:52+00:00"
+    },
+    {
+      "id": "56c710eb8282",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue MBB Photo Gallery vs. Oakland",
+      "url": "https://purduesports.com/news/2026/11/20/mbb-vs-oakland",
+      "summary": "",
+      "date": "2026-11-21T01:46:29+00:00"
+    },
+    {
+      "id": "9252f3b3bcfb",
+      "source": "Purdue Athletics MBB",
+      "title": "School-record 21 3-Pointers Lead Purdue Past Oakland 95-49",
+      "url": "https://purduesports.com/news/2026/11/20/21-three-pointers-lead-purdue-past-oakland-95-49",
+      "summary": "",
+      "date": "2026-11-21T00:43:18+00:00"
+    },
     {
       "id": "aa6905e85fcc",
       "source": "Purdue Athletics MBB",
@@ -60,14 +108,6 @@
       "date": "2026-11-19T19:48:52+00:00"
     },
     {
-      "id": "e1d3c9af52bc",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Closes Homestand Friday vs. Oakland",
-      "url": "https://purduesports.com/news/2026/11/19/purdue-closes-homestand-friday-vs-oakland",
-      "summary": "",
-      "date": "2026-11-19T19:39:58+00:00"
-    },
-    {
       "id": "706c5a6c93c8",
       "source": "Purdue Athletics MBB",
       "title": "Purdue Rally Comes Up Short Against Florida State",
@@ -82,14 +122,6 @@
       "url": "https://purduesports.com/news/2026/11/18/purdue-heads-to-nations-capital-for-doubleheader",
       "summary": "",
       "date": "2026-11-18T22:57:51+00:00"
-    },
-    {
-      "id": "81619ad47ed4",
-      "source": "Purdue Athletics MBB",
-      "title": "#13 Purdue Hosts Southern Illinois in NCAA First Round",
-      "url": "https://purduesports.com/news/2026/11/18/13-purdue-host-southern-illinois-in-ncaa-first-round-on-friday",
-      "summary": "",
-      "date": "2026-11-18T19:08:57+00:00"
     },
     {
       "id": "50ee884943f6",
@@ -130,38 +162,6 @@
       "url": "https://purduesports.com/news/2026/11/17/west-jr-scores-27-in-purdues-3rd-straight-victory",
       "summary": "",
       "date": "2026-11-18T02:45:00+00:00"
-    },
-    {
-      "id": "8452c909d49c",
-      "source": "Purdue Athletics MBB",
-      "title": "#13 Purdue Upended at #23 Indiana",
-      "url": "https://purduesports.com/news/2026/11/17/13-purdue-upended-at-23-indiana",
-      "summary": "",
-      "date": "2026-11-18T02:19:00+00:00"
-    },
-    {
-      "id": "7ca21dace8a0",
-      "source": "Purdue Athletics MBB",
-      "title": "Head Coach Matt Painter Postgame Press Conference vs Lipscomb",
-      "url": "https://purduesports.com/news/2026/11/17/head-coach-matt-painter-postgame-press-conference-vs-lipscomb",
-      "summary": "",
-      "date": "2026-11-18T02:10:01+00:00"
-    },
-    {
-      "id": "0ecb6758c1f3",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights: Purdue 95, Lipscomb 78",
-      "url": "https://purduesports.com/news/2026/11/17/highlights-purdue-95-lipscomb-78",
-      "summary": "",
-      "date": "2026-11-18T02:01:03+00:00"
-    },
-    {
-      "id": "b55ec1711485",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue MBB Photo Gallery vs Lipscomb",
-      "url": "https://purduesports.com/news/2026/11/17/purdue-mbb-vs-lipscomb",
-      "summary": "",
-      "date": "2026-11-18T00:42:32+00:00"
     }
   ]
 }
