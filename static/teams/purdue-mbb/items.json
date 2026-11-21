@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-11-21T16:52:48.031304+00:00",
+  "updated": "2026-11-21T21:58:50.947652+00:00",
   "count": 20,
   "items": [
     {
@@ -76,14 +76,6 @@
       "date": "2026-11-20T11:53:35+00:00"
     },
     {
-      "id": "669a040b36bf",
-      "source": "Purdue Athletics MBB",
-      "title": "Bissett Eclipses 200 IM Records, Divers Sweep Again",
-      "url": "https://purduesports.com/news/2026/11/19/bissett-sets-200-im-record-divers-sweep-again",
-      "summary": "Worobel, Wills victorious as part of another diving sweep, making Purdue 18-for-18 in event wins",
-      "date": "2026-11-20T02:16:00+00:00"
-    },
-    {
       "id": "046a1082f28a",
       "source": "Purdue Athletics MBB",
       "title": "Coach Matt Painter Media Session | Purdue Men's Basketball",
@@ -114,14 +106,6 @@
       "url": "https://purduesports.com/news/2026/11/19/purdue-rally-comes-up-short-against-florida-state",
       "summary": "",
       "date": "2026-11-19T16:16:48+00:00"
-    },
-    {
-      "id": "7a8e1667b0fa",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Heads to Nation's Capital for Friday Doubleheader",
-      "url": "https://purduesports.com/news/2026/11/18/purdue-heads-to-nations-capital-for-doubleheader",
-      "summary": "",
-      "date": "2026-11-18T22:57:51+00:00"
     },
     {
       "id": "50ee884943f6",
@@ -162,6 +146,22 @@
       "url": "https://purduesports.com/news/2026/11/17/west-jr-scores-27-in-purdues-3rd-straight-victory",
       "summary": "",
       "date": "2026-11-18T02:45:00+00:00"
+    },
+    {
+      "id": "8452c909d49c",
+      "source": "Purdue Athletics MBB",
+      "title": "#13 Purdue Upended at #23 Indiana",
+      "url": "https://purduesports.com/news/2026/11/17/13-purdue-upended-at-23-indiana",
+      "summary": "",
+      "date": "2026-11-18T02:19:00+00:00"
+    },
+    {
+      "id": "7ca21dace8a0",
+      "source": "Purdue Athletics MBB",
+      "title": "Head Coach Matt Painter Postgame Press Conference vs Lipscomb",
+      "url": "https://purduesports.com/news/2026/11/17/head-coach-matt-painter-postgame-press-conference-vs-lipscomb",
+      "summary": "",
+      "date": "2026-11-18T02:10:01+00:00"
     }
   ]
 }
