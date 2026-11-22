@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-11-22T09:28:07.320767+00:00",
+  "updated": "2026-11-22T17:17:33.094839+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "e6758a9969e0",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermaker Volleyball takes down Michigan Big Ten Tournament photo gallery",
+      "url": "https://purduesports.com/news/2026/11/22/boilermaker-volleyball-takes-down-michigan-big-ten-tournament-photo-gallery",
+      "summary": "",
+      "date": "2026-11-22T06:09:02+00:00"
+    },
     {
       "id": "29b0db542e6d",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/11/18/antonio-harris-media-session-purdue-football-2",
       "summary": "",
       "date": "2026-11-18T18:39:03+00:00"
-    },
-    {
-      "id": "6d4dab496ca9",
-      "source": "Purdue Athletics MBB",
-      "title": "Curt Neal Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/11/18/curt-neal-media-session-purdue-football-2",
-      "summary": "",
-      "date": "2026-11-18T18:36:51+00:00"
     }
   ]
 }
