@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-11-22T17:17:33.094839+00:00",
+  "updated": "2026-11-22T22:39:21.401029+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "374a8470f999",
+      "source": "Purdue Athletics MBB",
+      "title": "#13/5 Purdue Defeats #12/4 Oregon in Straight Sets",
+      "url": "https://purduesports.com/news/2026/11/22/135-purdue-defeats-124-oregon-in-straight-sets",
+      "summary": "",
+      "date": "2026-11-22T21:24:00+00:00"
+    },
+    {
+      "id": "d0694c37188b",
+      "source": "Purdue Athletics MBB",
+      "title": "Rioux Wins Title, Purdue Adds 6 Placewinners at Findlay Open",
+      "url": "https://purduesports.com/news/2026/11/22/rioux-wins-title-purdue-adds-6-placewinners-at-findlay-open",
+      "summary": "",
+      "date": "2026-11-22T19:45:02+00:00"
+    },
     {
       "id": "e6758a9969e0",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/11/19/purdue-rally-comes-up-short-against-florida-state",
       "summary": "",
       "date": "2026-11-19T16:16:48+00:00"
-    },
-    {
-      "id": "50ee884943f6",
-      "source": "Purdue Athletics MBB",
-      "title": "Jacobo Echeverria-Lozano Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/11/18/jacobo-echeverria-lozano-media-session-purdue-football-2",
-      "summary": "",
-      "date": "2026-11-18T18:40:51+00:00"
-    },
-    {
-      "id": "c8c9ee1ed395",
-      "source": "Purdue Athletics MBB",
-      "title": "Antonio Harris Media Session | Purdue Football",
-      "url": "https://purduesports.com/news/2026/11/18/antonio-harris-media-session-purdue-football-2",
-      "summary": "",
-      "date": "2026-11-18T18:39:03+00:00"
     }
   ]
 }
