@@ -1,8 +1,40 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-11-21T21:58:50.947652+00:00",
+  "updated": "2026-11-22T01:58:02.838961+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "29b0db542e6d",
+      "source": "Purdue Athletics MBB",
+      "title": "#5-Seeded Purdue Sweeps #12-Seeded Michigan to Advance to Quarterfinals",
+      "url": "https://purduesports.com/news/2026/11/21/5-seeded-purdue-sweeps-12-seeded-michigan-to-advance-to-quarterfinals",
+      "summary": "",
+      "date": "2026-11-21T22:28:00+00:00"
+    },
+    {
+      "id": "8dfef99b3dca",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights: #13 Purdue 3, Michigan 0",
+      "url": "https://purduesports.com/news/2026/11/21/highlights-13-purdue-3-michigan-0",
+      "summary": "",
+      "date": "2026-11-21T22:08:27+00:00"
+    },
+    {
+      "id": "f50a32ef7b24",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Barry Odom Postgame Press Conference vs. Wisconsin | Purdue Football",
+      "url": "https://purduesports.com/news/2026/11/21/coach-barry-odom-postgame-press-conference-vs-wisconsin-purdue-football",
+      "summary": "",
+      "date": "2026-11-21T21:07:36+00:00"
+    },
+    {
+      "id": "d1288bcb2c0d",
+      "source": "Purdue Athletics MBB",
+      "title": "Players' Postgame Press Conference vs. Wisconsin | Purdue Football",
+      "url": "https://purduesports.com/news/2026/11/21/players-postgame-press-conference-vs-wisconsin-purdue-football",
+      "summary": "",
+      "date": "2026-11-21T21:05:33+00:00"
+    },
     {
       "id": "bd5dd2cd4082",
       "source": "Purdue Athletics MBB",
@@ -130,38 +162,6 @@
       "url": "https://purduesports.com/news/2026/11/18/curt-neal-media-session-purdue-football-2",
       "summary": "",
       "date": "2026-11-18T18:36:51+00:00"
-    },
-    {
-      "id": "7f0c4a9a7b2b",
-      "source": "Purdue Athletics MBB",
-      "title": "Game 11 Prep: Purdue Takes on Wisconsin for Senior Day",
-      "url": "https://purduesports.com/news/2026/11/18/purdue-takes-on-wisconsin-for-senior-day",
-      "summary": "",
-      "date": "2026-11-18T16:50:00+00:00"
-    },
-    {
-      "id": "e24215a151d7",
-      "source": "Purdue Athletics MBB",
-      "title": "West Jr. Scores 27 in Purdue's 3rd-Straight Victory",
-      "url": "https://purduesports.com/news/2026/11/17/west-jr-scores-27-in-purdues-3rd-straight-victory",
-      "summary": "",
-      "date": "2026-11-18T02:45:00+00:00"
-    },
-    {
-      "id": "8452c909d49c",
-      "source": "Purdue Athletics MBB",
-      "title": "#13 Purdue Upended at #23 Indiana",
-      "url": "https://purduesports.com/news/2026/11/17/13-purdue-upended-at-23-indiana",
-      "summary": "",
-      "date": "2026-11-18T02:19:00+00:00"
-    },
-    {
-      "id": "7ca21dace8a0",
-      "source": "Purdue Athletics MBB",
-      "title": "Head Coach Matt Painter Postgame Press Conference vs Lipscomb",
-      "url": "https://purduesports.com/news/2026/11/17/head-coach-matt-painter-postgame-press-conference-vs-lipscomb",
-      "summary": "",
-      "date": "2026-11-18T02:10:01+00:00"
     }
   ]
 }
