@@ -1,6 +1,6 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-11-22T01:58:02.838961+00:00",
+  "updated": "2026-11-22T09:28:07.320767+00:00",
   "count": 20,
   "items": [
     {
@@ -34,6 +34,14 @@
       "url": "https://purduesports.com/news/2026/11/21/players-postgame-press-conference-vs-wisconsin-purdue-football",
       "summary": "",
       "date": "2026-11-21T21:05:33+00:00"
+    },
+    {
+      "id": "2c0e1d784c97",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Falls to Texas Tech on Buzzer Beater",
+      "url": "https://purduesports.com/news/2026/11/21/purdue-falls-to-texas-tech-on-buzzer-beater",
+      "summary": "",
+      "date": "2026-11-21T20:35:29+00:00"
     },
     {
       "id": "bd5dd2cd4082",
@@ -98,14 +106,6 @@
       "url": "https://purduesports.com/news/2026/11/20/ncaa-first-round-postgame-press-conference-purdue-soccer",
       "summary": "",
       "date": "2026-11-20T22:08:24+00:00"
-    },
-    {
-      "id": "a3dc1a18de7a",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Squares Off with Texas Tech Saturday at the WBCA Showcase",
-      "url": "https://purduesports.com/news/2026/11/20/purdue-squares-off-with-texas-tech-saturday-at-the-wbca-showcase",
-      "summary": "",
-      "date": "2026-11-20T11:53:35+00:00"
     },
     {
       "id": "046a1082f28a",
