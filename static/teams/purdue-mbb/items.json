@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-11-22T22:39:21.401029+00:00",
+  "updated": "2026-11-23T03:26:32.219048+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "bd5d7d4551c8",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Faces DePaul in Tuesday's Fort Myers Tip-off",
+      "url": "https://purduesports.com/news/2026/11/22/purdue-faces-depaul-in-tuesdays-fort-myers-tip-off",
+      "summary": "",
+      "date": "2026-11-22T22:44:52+00:00"
+    },
     {
       "id": "374a8470f999",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/11/19/daniel-jacobsen-media-session-purdue-mens-basketball-1",
       "summary": "",
       "date": "2026-11-19T19:48:52+00:00"
-    },
-    {
-      "id": "706c5a6c93c8",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Rally Comes Up Short Against Florida State",
-      "url": "https://purduesports.com/news/2026/11/19/purdue-rally-comes-up-short-against-florida-state",
-      "summary": "",
-      "date": "2026-11-19T16:16:48+00:00"
     }
   ]
 }
