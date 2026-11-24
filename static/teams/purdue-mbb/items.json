@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-11-23T13:27:34.224504+00:00",
+  "updated": "2026-11-24T01:07:14.862326+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "6e4202732c07",
+      "source": "Purdue Athletics MBB",
+      "title": "20 Consecutive In-State Games on Baseball's 2027 Schedule",
+      "url": "https://purduesports.com/news/2026/11/23/20-consecutive-in-state-games-on-baseballs-2027-schedule",
+      "summary": "9-game homestand begins April 13-May 16 stretch in which Purdue does not leave the state",
+      "date": "2026-11-23T22:05:00+00:00"
+    },
+    {
+      "id": "6080aafb3936",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights: #13 Purdue 3, #12 Oregon 0",
+      "url": "https://purduesports.com/news/2026/11/23/highlights-13-purdue-3-12-oregon-0",
+      "summary": "",
+      "date": "2026-11-23T13:14:10+00:00"
+    },
     {
       "id": "47ff8e023fa3",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/11/19/coach-matt-painter-media-session-purdue-mens-basketball-5",
       "summary": "",
       "date": "2026-11-19T19:52:49+00:00"
-    },
-    {
-      "id": "4d0ab4036e93",
-      "source": "Purdue Athletics MBB",
-      "title": "Antione West, Jr. Media Session | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/11/19/antione-west-jr-media-session-purdue-mens-basketball-1",
-      "summary": "",
-      "date": "2026-11-19T19:50:27+00:00"
-    },
-    {
-      "id": "b4bb7706c135",
-      "source": "Purdue Athletics MBB",
-      "title": "Daniel Jacobsen Media Session | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/11/19/daniel-jacobsen-media-session-purdue-mens-basketball-1",
-      "summary": "",
-      "date": "2026-11-19T19:48:52+00:00"
     }
   ]
 }
