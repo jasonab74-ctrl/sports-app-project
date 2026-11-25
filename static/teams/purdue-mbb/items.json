@@ -1,8 +1,40 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-11-25T14:45:51.307872+00:00",
+  "updated": "2026-11-25T23:26:35.562036+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "973cd890e70b",
+      "source": "Purdue Athletics MBB",
+      "title": "Coach Katie Gearlds Postgame Press Conference vs. Murray State | Purdue Women's Basketball",
+      "url": "https://purduesports.com/news/2026/11/25/coach-katie-gearlds-postgame-press-conference-vs-murray-state-purdue-womens-basketball",
+      "summary": "",
+      "date": "2026-11-25T20:13:12+00:00"
+    },
+    {
+      "id": "80f9875544d6",
+      "source": "Purdue Athletics MBB",
+      "title": "Players' Postgame Press Conference vs. Murray State | Purdue Women's Basketball",
+      "url": "https://purduesports.com/news/2026/11/25/players-postgame-press-conference-vs-murray-state-purdue-womens-basketball",
+      "summary": "",
+      "date": "2026-11-25T20:12:39+00:00"
+    },
+    {
+      "id": "e73e04b4d1fb",
+      "source": "Purdue Athletics MBB",
+      "title": "Highlights: Purdue 110, Murray State 106 2OT | Purdue Women's Basketball",
+      "url": "https://purduesports.com/news/2026/11/25/highlights-purdue-110-murray-state-106-2ot-purdue-womens-basketball",
+      "summary": "",
+      "date": "2026-11-25T19:39:35+00:00"
+    },
+    {
+      "id": "250a4eee0e79",
+      "source": "Purdue Athletics MBB",
+      "title": "Game 12 Prep: Purdue Set for 128th Old Oaken Bucket Game at Indiana",
+      "url": "https://purduesports.com/news/2026/11/25/game-12-prep-purdue-set-for-128th-old-oaken-bucket-game-at-indiana",
+      "summary": "",
+      "date": "2026-11-25T14:53:00+00:00"
+    },
     {
       "id": "eeacd3ed0111",
       "source": "Purdue Athletics MBB",
@@ -130,38 +162,6 @@
       "url": "https://purduesports.com/news/2026/11/21/purdue-falls-to-texas-tech-on-buzzer-beater",
       "summary": "",
       "date": "2026-11-21T20:35:29+00:00"
-    },
-    {
-      "id": "bd5dd2cd4082",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Soccer takes down SIU in NCAA first round photo gallery",
-      "url": "https://purduesports.com/news/2026/11/20/purdue-soccer-takes-down-siu-in-ncaa-first-round-photo-gallery",
-      "summary": "",
-      "date": "2026-11-21T03:55:57+00:00"
-    },
-    {
-      "id": "e535ce5420ca",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Matt Painter Postgame Press Conference vs. Oakland | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/11/20/coach-matt-painter-postgame-press-conference-vs-oakland-purdue-mens-basketball-1",
-      "summary": "",
-      "date": "2026-11-21T02:39:52+00:00"
-    },
-    {
-      "id": "f9b4478a52f2",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights:  Purdue 95, Oakland 49",
-      "url": "https://purduesports.com/news/2026/11/20/highlights-purdue-95-oakland-49",
-      "summary": "",
-      "date": "2026-11-21T02:36:25+00:00"
-    },
-    {
-      "id": "d8467666ee56",
-      "source": "Purdue Athletics MBB",
-      "title": "Players' Postgame Press Conference vs. Oakland | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/11/20/players-postgame-press-conference-vs-oakland-purdue-mens-basketball-1",
-      "summary": "",
-      "date": "2026-11-21T02:28:52+00:00"
     }
   ]
 }
