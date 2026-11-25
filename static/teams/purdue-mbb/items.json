@@ -1,8 +1,32 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-11-25T04:25:55.588953+00:00",
+  "updated": "2026-11-25T14:45:51.307872+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "eeacd3ed0111",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue MBB Photo Gallery vs. DePaul",
+      "url": "https://purduesports.com/news/2026/11/24/purdue-mbb-photo-gallery-vs-depaul",
+      "summary": "",
+      "date": "2026-11-25T03:41:26+00:00"
+    },
+    {
+      "id": "23c059844bb9",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Falls to DePaul in Fort Myers Tip-off",
+      "url": "https://purduesports.com/news/2026/11/24/purdue-falls-to-depaul-in-fort-myers-tip-off",
+      "summary": "",
+      "date": "2026-11-25T01:54:40+00:00"
+    },
+    {
+      "id": "d9e17c94243c",
+      "source": "Purdue Athletics MBB",
+      "title": "#12/5 Purdue Falls to #1/1 Nebraska in Four Frames",
+      "url": "https://purduesports.com/news/2026/11/24/125-purdue-falls-to-11-nebraska-in-four-frames",
+      "summary": "",
+      "date": "2026-11-25T01:51:00+00:00"
+    },
     {
       "id": "3ad249309139",
       "source": "Purdue Athletics MBB",
@@ -42,14 +66,6 @@
       "url": "https://purduesports.com/news/2026/11/23/highlights-13-purdue-3-12-oregon-0",
       "summary": "",
       "date": "2026-11-23T13:14:10+00:00"
-    },
-    {
-      "id": "47ff8e023fa3",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue Faces DePaul in Tuesday's Skechers Fort Myers Tip-off",
-      "url": "https://purduesports.com/news/2026/11/22/purdue-faces-depaul-in-tuesdays-fort-myers-tip-off",
-      "summary": "",
-      "date": "2026-11-22T22:44:52+00:00"
     },
     {
       "id": "374a8470f999",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/11/20/players-postgame-press-conference-vs-oakland-purdue-mens-basketball-1",
       "summary": "",
       "date": "2026-11-21T02:28:52+00:00"
-    },
-    {
-      "id": "56c710eb8282",
-      "source": "Purdue Athletics MBB",
-      "title": "Purdue MBB Photo Gallery vs. Oakland",
-      "url": "https://purduesports.com/news/2026/11/20/mbb-vs-oakland",
-      "summary": "",
-      "date": "2026-11-21T01:46:29+00:00"
-    },
-    {
-      "id": "9252f3b3bcfb",
-      "source": "Purdue Athletics MBB",
-      "title": "School-record 21 3-Pointers Lead Purdue Past Oakland 95-49",
-      "url": "https://purduesports.com/news/2026/11/20/21-three-pointers-lead-purdue-past-oakland-95-49",
-      "summary": "",
-      "date": "2026-11-21T00:43:18+00:00"
     }
   ]
 }
