@@ -1,8 +1,32 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-11-24T21:25:55.561386+00:00",
+  "updated": "2026-11-25T04:25:55.588953+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "3ad249309139",
+      "source": "Purdue Athletics MBB",
+      "title": "10 Records Fall as 43 Boilers Score at Ohio State Invite",
+      "url": "https://purduesports.com/news/2026/11/24/10-records-fall-as-43-boilers-score-at-ohio-state-invite",
+      "summary": "Nine Boilermakers scored in three individual events at the midseason mega meet",
+      "date": "2026-11-24T22:48:49+00:00"
+    },
+    {
+      "id": "b3f67447fb52",
+      "source": "Purdue Athletics MBB",
+      "title": "Boilermakers Open 5-Game Homestand Wednesday with Murray State",
+      "url": "https://purduesports.com/news/2026/11/24/boilermakers-open-5-game-homestand-wednesday-with-murray-state",
+      "summary": "",
+      "date": "2026-11-24T20:23:01+00:00"
+    },
+    {
+      "id": "3906fbe75433",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue Stories: The Sacrifice Behind Fame Ijeboi's Success",
+      "url": "https://purduesports.com/news/2026/11/24/purdue-stories-the-sacrifice-behind-fame-ijebois-success",
+      "summary": "",
+      "date": "2026-11-24T19:36:30+00:00"
+    },
     {
       "id": "aa0e0ad3f2a4",
       "source": "Purdue Athletics MBB",
@@ -138,30 +162,6 @@
       "url": "https://purduesports.com/news/2026/11/20/21-three-pointers-lead-purdue-past-oakland-95-49",
       "summary": "",
       "date": "2026-11-21T00:43:18+00:00"
-    },
-    {
-      "id": "aa6905e85fcc",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights: #13 Purdue 4, Southern Illinois 0",
-      "url": "https://purduesports.com/news/2026/11/20/highlights-13-purdue-4-southern-illinois-0",
-      "summary": "",
-      "date": "2026-11-20T23:49:11+00:00"
-    },
-    {
-      "id": "5aa89f69ff2a",
-      "source": "Purdue Athletics MBB",
-      "title": "NCAA First Round Postgame Press Conference | Purdue Soccer",
-      "url": "https://purduesports.com/news/2026/11/20/ncaa-first-round-postgame-press-conference-purdue-soccer",
-      "summary": "",
-      "date": "2026-11-20T22:08:24+00:00"
-    },
-    {
-      "id": "046a1082f28a",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Matt Painter Media Session | Purdue Men's Basketball",
-      "url": "https://purduesports.com/news/2026/11/19/coach-matt-painter-media-session-purdue-mens-basketball-5",
-      "summary": "",
-      "date": "2026-11-19T19:52:49+00:00"
     }
   ]
 }
