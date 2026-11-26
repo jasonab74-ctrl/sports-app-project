@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-11-25T23:26:35.562036+00:00",
+  "updated": "2026-11-26T05:17:09.420100+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "baa1685eead3",
+      "source": "Purdue Athletics MBB",
+      "title": "3's Company for Purdue's Trifecta of Big Ten Weekly Honors",
+      "url": "https://purduesports.com/news/2026/11/25/3s-company-as-part-of-trifecta-of-big-ten-weekly-honors",
+      "summary": "Worobel, Bissett & Mallard all recognized for the third time this fall",
+      "date": "2026-11-25T21:42:00+00:00"
+    },
     {
       "id": "973cd890e70b",
       "source": "Purdue Athletics MBB",
@@ -66,14 +74,6 @@
       "url": "https://purduesports.com/news/2026/11/24/10-records-fall-as-43-boilers-score-at-ohio-state-invite",
       "summary": "Nine Boilermakers scored in three individual events at the midseason mega meet",
       "date": "2026-11-24T22:48:49+00:00"
-    },
-    {
-      "id": "b3f67447fb52",
-      "source": "Purdue Athletics MBB",
-      "title": "Boilermakers Open 5-Game Homestand Wednesday with Murray State",
-      "url": "https://purduesports.com/news/2026/11/24/boilermakers-open-5-game-homestand-wednesday-with-murray-state",
-      "summary": "",
-      "date": "2026-11-24T20:23:01+00:00"
     },
     {
       "id": "3906fbe75433",
