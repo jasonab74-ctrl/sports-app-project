@@ -1,8 +1,16 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-11-27T00:14:09.193712+00:00",
+  "updated": "2026-11-27T08:53:53.750765+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "6657022df1d8",
+      "source": "Purdue Athletics MBB",
+      "title": "Purdue MBB Photo Gallery vs. Oklahoma",
+      "url": "https://purduesports.com/news/2026/11/26/purdue-mbb-photo-gallery-vs-oklahoma",
+      "summary": "",
+      "date": "2026-11-26T23:10:03+00:00"
+    },
     {
       "id": "a8990331b54c",
       "source": "Purdue Athletics MBB",
@@ -154,14 +162,6 @@
       "url": "https://purduesports.com/news/2026/11/21/coach-barry-odom-postgame-press-conference-vs-wisconsin-purdue-football",
       "summary": "",
       "date": "2026-11-21T21:07:36+00:00"
-    },
-    {
-      "id": "d1288bcb2c0d",
-      "source": "Purdue Athletics MBB",
-      "title": "Players' Postgame Press Conference vs. Wisconsin | Purdue Football",
-      "url": "https://purduesports.com/news/2026/11/21/players-postgame-press-conference-vs-wisconsin-purdue-football",
-      "summary": "",
-      "date": "2026-11-21T21:05:33+00:00"
     }
   ]
 }
