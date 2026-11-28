@@ -1,8 +1,24 @@
 {
   "team": "purdue-mbb",
-  "updated": "2026-11-27T18:38:20.561975+00:00",
+  "updated": "2026-11-28T01:45:00.095243+00:00",
   "count": 20,
   "items": [
+    {
+      "id": "6327511de3de",
+      "source": "Purdue Athletics MBB",
+      "title": "#13 Purdue Defeats #23 Houston to Advance to the Third Round of NCAA Tournament",
+      "url": "https://purduesports.com/news/2026/11/27/13-purdue-defeats-23-houston-to-advance-to-the-third-round-of-ncaa-tournament",
+      "summary": "",
+      "date": "2026-11-27T22:16:43+00:00"
+    },
+    {
+      "id": "192bb148f17d",
+      "source": "Purdue Athletics MBB",
+      "title": "Ramos, Sabatello To Compete at RAF 15",
+      "url": "https://purduesports.com/news/2026/11/27/ramos-sabatello-to-compete-at-raf-15",
+      "summary": "The former Boilermakers will compete on the national stage.",
+      "date": "2026-11-27T17:16:24+00:00"
+    },
     {
       "id": "6657022df1d8",
       "source": "Purdue Athletics MBB",
@@ -146,22 +162,6 @@
       "url": "https://purduesports.com/news/2026/11/21/5-seeded-purdue-sweeps-12-seeded-michigan-to-advance-to-quarterfinals",
       "summary": "",
       "date": "2026-11-21T22:28:00+00:00"
-    },
-    {
-      "id": "8dfef99b3dca",
-      "source": "Purdue Athletics MBB",
-      "title": "Highlights: #13 Purdue 3, Michigan 0",
-      "url": "https://purduesports.com/news/2026/11/21/highlights-13-purdue-3-michigan-0",
-      "summary": "",
-      "date": "2026-11-21T22:08:27+00:00"
-    },
-    {
-      "id": "f50a32ef7b24",
-      "source": "Purdue Athletics MBB",
-      "title": "Coach Barry Odom Postgame Press Conference vs. Wisconsin | Purdue Football",
-      "url": "https://purduesports.com/news/2026/11/21/coach-barry-odom-postgame-press-conference-vs-wisconsin-purdue-football",
-      "summary": "",
-      "date": "2026-11-21T21:07:36+00:00"
     }
   ]
 }
